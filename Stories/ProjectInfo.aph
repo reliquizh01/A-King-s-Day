@@ -1,0 +1,19 @@
+<ProjectInfo Version="1">
+  <Signature>7A1D90C3C648417FA4A79A79C2DF44CED425CFF2F5106259AB8D7151E8449DFE</Signature>
+  <Content>
+    <Project Guid="8208f8ee-eace-43aa-b24a-c79e68855782">
+      <DisplayName Value="Lost Prince"/>
+      <DetailName Value="A Short Story Arc where you start as the rightful heir."/>
+      <MainProjectGuid Value="795b6a06-eaa6-4cfb-ae58-016684dcb369"/>
+      <IconType Value="0"/>
+      <IdProjectIcon Value="00000000-0000-0000-0000-000000000000"/>
+      <ScmProviderGuid Value="0745c2ee-abe3-451b-934e-7f597f56c0d7"/>
+      <ScmConfiguration Value=""/>
+      <CreationTimeStamp Value="637251487506022673"/>
+      <PartitionHash Value="6E19D9072A5D16BD2459CB60B7EEB6135020D182EFA1DD9ABBE21035680166F6"/>
+      <SaveFileVersion Value="45"/>
+      <ProjectType Value="0"/>
+      <IsOnlineProject Value="False"/>
+    </Project>
+  </Content>
+</ProjectInfo>
