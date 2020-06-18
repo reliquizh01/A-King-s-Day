@@ -1,0 +1,980 @@
+fileFormatVersion: 2
+guid: 886827932ce65524d82be2ffbfdfb01e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5008479102982899110
+    second: ShortWall
+  - first:
+      213: 3976527771941171682
+    second: Armory
+  - first:
+      213: 2685276311278580196
+    second: Right Wall
+  - first:
+      213: -8252010095873672285
+    second: Ruin_ShortWall
+  - first:
+      213: 7363592534359052243
+    second: Farm_Empty
+  - first:
+      213: -706323320546204443
+    second: Ruin_LongWall
+  - first:
+      213: 6071202586623568709
+    second: LeftWall
+  - first:
+      213: 5735205421160323268
+    second: Ruin_Armory
+  - first:
+      213: 7746021511020961917
+    second: Farm_Filled
+  - first:
+      213: 1273870856411699103
+    second: Kingdom Land
+  - first:
+      213: -6261363278112637643
+    second: Long_Wall
+  - first:
+      213: 8781448717417432628
+    second: Tavern_3
+  - first:
+      213: 1413830625943051940
+    second: Tavern_1
+  - first:
+      213: -6661684639202035744
+    second: Tavern_2
+  - first:
+      213: 2000269382710195925
+    second: Market_Post_1
+  - first:
+      213: -5875969723455908450
+    second: Left Side Entrance
+  - first:
+      213: -1846912176722868319
+    second: Fountain
+  - first:
+      213: 2783419269769881305
+    second: Ruin_Fountain
+  - first:
+      213: -1508609358689037615
+    second: Short Wall
+  - first:
+      213: -5848424553311269642
+    second: Wall Rim
+  - first:
+      213: 7104005102999160372
+    second: SideEntrance Part
+  - first:
+      213: -8808960771080466339
+    second: Lower FLoor
+  - first:
+      213: 1752997747650834259
+    second: Short_Wall_Laddered
+  - first:
+      213: -442378308329164667
+    second: Short_Wall_Fixed
+  - first:
+      213: 424066796706031699
+    second: Armory_Fixed
+  - first:
+      213: 3271804250650801526
+    second: Market_Empty
+  - first:
+      213: 3233165342543443856
+    second: Short_Wall_Broken
+  - first:
+      213: -3393484080003254303
+    second: Empty_Farm_Field
+  - first:
+      213: 7136197013914368092
+    second: Long_Wall_Broken
+  - first:
+      213: 2155217529458856805
+    second: Armory_Ruin
+  - first:
+      213: -419165619705211586
+    second: Filled_Farm_Field
+  - first:
+      213: -4042548403863918738
+    second: King's Land
+  - first:
+      213: -552752542032130386
+    second: Long_Wall_Fixed
+  - first:
+      213: 2693299333641116026
+    second: Fix_Tavern_Anim_1
+  - first:
+      213: -7099879038797042253
+    second: Fix Tavern
+  - first:
+      213: 8377259156482226946
+    second: Fix_Tavern_Anim_2
+  - first:
+      213: 4837798528876998823
+    second: Ruin_Tavern
+  - first:
+      213: -8155757464489545383
+    second: Market_Post_1
+  - first:
+      213: -8746686725521823048
+    second: Towered_Wall_1
+  - first:
+      213: 7529659365286128064
+    second: Fixed_Fountain
+  - first:
+      213: -946536044365589114
+    second: Ruin_Fountain
+  - first:
+      213: -5008479102982899110
+    second: Stairs_Wall
+  - first:
+      213: 3976527771941171682
+    second: Entrance_Wall_Right_Side
+  - first:
+      213: -8252010095873672285
+    second: Entrance_Wall_Left_Side
+  - first:
+      213: 7363592534359052243
+    second: Entrance_Wall_Top_Side
+  - first:
+      213: 6071202586623568709
+    second: Entrance_Wall_Lower_Side
+  - first:
+      213: 5735205421160323268
+    second: Long_Wall
+  - first:
+      213: -706323320546204443
+    second: Short_Wall
+  - first:
+      213: 7746021511020961917
+    second: Long_Wall_2
+  - first:
+      213: 1273870856411699103
+    second: Market_Tools
+  - first:
+      213: -7492561750288069477
+    second: Market_Food
+  - first:
+      213: 8781448717417432628
+    second: Market_Weapons
+  - first:
+      213: 1413830625943051940
+    second: Market_Reverse_Tools
+  - first:
+      213: -6661684639202035744
+    second: Market_Empty_Reverse
+  - first:
+      213: -8155757464489545383
+    second: Market_Post_1
+  - first:
+      213: -5875969723455908450
+    second: Market_Post_2
+  - first:
+      213: 2685276311278580196
+    second: Balcony_Castle
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 350
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Short_Wall_Fixed
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 262
+        width: 69
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 580b3bbb54b5cd9f0800000000000000
+      internalID: -442378308329164667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Armory_Fixed
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 217
+        width: 95
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35863ba318692e500800000000000000
+      internalID: 424066796706031699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Short_Wall_Broken
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 225
+        width: 69
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 097f76ebfb28edc20800000000000000
+      internalID: 3233165342543443856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Empty_Farm_Field
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 238
+        width: 106
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e7767c653ce7e0d0800000000000000
+      internalID: -3393484080003254303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long_Wall_Broken
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 177
+        width: 107
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c58b19dff5dd80360800000000000000
+      internalID: 7136197013914368092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Armory_Ruin
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 148
+        width: 95
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56317199ceed8ed10800000000000000
+      internalID: 2155217529458856805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Filled_Farm_Field
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 188
+        width: 106
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e351a67f613de2af0800000000000000
+      internalID: -419165619705211586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King's Land
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 153
+        width: 451
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e676e5025abf5e7c0800000000000000
+      internalID: -4042548403863918738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long_Wall_Fixed
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 134
+        width: 107
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eae0b7bdd7a3458f0800000000000000
+      internalID: -552752542032130386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix_Tavern_Anim_1
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 94
+        width: 63
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7999776975806520800000000000000
+      internalID: 2693299333641116026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix Tavern
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 94
+        width: 60
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bda24881a9287d90800000000000000
+      internalID: -7099879038797042253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix_Tavern_Anim_2
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 95
+        width: 60
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20bf28571d0024470800000000000000
+      internalID: 8377259156482226946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruin_Tavern
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 94
+        width: 60
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a0fe985120532340800000000000000
+      internalID: 4837798528876998823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Market_Post_1
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 6
+        width: 37
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9513cde0ccde0de80800000000000000
+      internalID: -8155757464489545383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Towered_Wall_1
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 34
+        width: 28
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8baa5abd3c68d9680800000000000000
+      internalID: -8746686725521823048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fixed_Fountain
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 44
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c9a2938c49be7860800000000000000
+      internalID: 7529659365286128064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruin_Fountain
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 0
+        width: 44
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6855c7c8b7a3dd2f0800000000000000
+      internalID: -946536044365589114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stairs_Wall
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 34
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5abcb9bace4e7ab0800000000000000
+      internalID: -5008479102982899110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Entrance_Wall_Right_Side
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 34
+        width: 19
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e17706a0f67f2730800000000000000
+      internalID: 3976527771941171682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Entrance_Wall_Left_Side
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 34
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ab3380f988fa7d80800000000000000
+      internalID: -8252010095873672285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Entrance_Wall_Top_Side
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 48
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3df8031656cb03660800000000000000
+      internalID: 7363592534359052243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Entrance_Wall_Lower_Side
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 33
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54b612ff59e314450800000000000000
+      internalID: 6071202586623568709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long_Wall
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 34
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c8d722b1fa879f40800000000000000
+      internalID: 5735205421160323268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Short_Wall
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 34
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e4e446aea2a236f0800000000000000
+      internalID: -706323320546204443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long_Wall_2
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 34
+        width: 59
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7060fa26856f7b60800000000000000
+      internalID: 7746021511020961917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Market_Empty
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 97
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67577a691a8c76d20800000000000000
+      internalID: 3271804250650801526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Market_Tools
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 97
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f97542e6bc2bda110800000000000000
+      internalID: 1273870856411699103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Market_Food
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 97
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c866019c2150890800000000000000
+      internalID: -7492561750288069477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Market_Weapons
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 97
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 436c9f61519fdd970800000000000000
+      internalID: 8781448717417432628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Market_Reverse_Tools
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 95
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ae57e7a67fee9310800000000000000
+      internalID: 1413830625943051940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Market_Empty_Reverse
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 95
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e7bfa2ad11fc83a0800000000000000
+      internalID: -6661684639202035744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Market_Post_2
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 12
+        width: 43
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e95d5723bac547ea0800000000000000
+      internalID: -5875969723455908450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Balcony_Castle
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 37
+        width: 94
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e1f781f394044520800000000000000
+      internalID: 2685276311278580196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

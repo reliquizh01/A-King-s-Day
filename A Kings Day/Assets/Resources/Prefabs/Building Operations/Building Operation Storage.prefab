@@ -1,0 +1,1039 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6967622701344404624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5721280733032286892}
+  - component: {fileID: 4751678235221911478}
+  m_Layer: 0
+  m_Name: Building Operation Storage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5721280733032286892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6967622701344404624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4751678235221911478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6967622701344404624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4b6b5d4c03d6a04b96ccb980f6a32da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingOperationList:
+  - BuildingName: Barracks
+    buildingType: 1
+    buildingCard:
+    - cardName: Recruit
+      cardIcon: {fileID: 3097286565735694711, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+        type: 3}
+      actionTypes:
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Soldier
+        rewardList:
+        - resourceType: 1
+          rewardAmount: 1
+        - resourceType: 2
+          rewardAmount: -1
+        - resourceType: 3
+          rewardAmount: -10
+        AcceptMesg:
+        - I'd love to take them in!
+        - I hope this one's not as teary as that previous guy
+        - Oh well! another pair to train!
+        DenyMesg:
+        - Not enough people to train
+        - Com on, we dont have enough men.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Townsfolk
+        rewardList:
+        - resourceType: 1
+          rewardAmount: -1
+        - resourceType: 2
+          rewardAmount: 1
+        AcceptMesg:
+        - De-listing one person, again.
+        - When I remove them in the list sometimes the reason is death.
+        DenyMesg:
+        - There's no troops to resign, maybe I should  resign!
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Sell Soldier
+        rewardList:
+        - resourceType: 1
+          rewardAmount: -1
+        - resourceType: 3
+          rewardAmount: 15
+        AcceptMesg:
+        - Selling them is like them winning a battle without dying. gold.
+        - So we train them and sell them, atleast they're cold hearted.
+        DenyMesg:
+        - We dont have any troops to sell.
+      cardPosMesg:
+      - Okay let's see if we have some recruits..
+      - Ha! now we're talking!
+      cardNegMesg:
+      - We cant recruit at the moment.
+    - cardName: Train Troops
+      cardIcon: {fileID: 878979566806840911, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+        type: 3}
+      actionTypes:
+      - actionType: 3
+        costResource: 0
+        logoIcon: {fileID: 791580562967185319, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+          type: 3}
+        message: 
+        rewardList:
+        - resourceType: 11
+          rewardAmount: 1
+        - resourceType: 1
+          rewardAmount: -1
+        - resourceType: 3
+          rewardAmount: -5
+        AcceptMesg:
+        - Ah the swordmens, the hand that slits the throat where it sits.
+        - The most basic of them all, but the most balanced.
+        DenyMesg:
+        - If you need Swords! Bring me the men and gold it takes!
+      - actionType: 3
+        costResource: 0
+        logoIcon: {fileID: 9029295832776591723, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+          type: 3}
+        message: 
+        rewardList:
+        - resourceType: 12
+          rewardAmount: 1
+        - resourceType: 1
+          rewardAmount: -1
+        - resourceType: 3
+          rewardAmount: -5
+        AcceptMesg:
+        - The spear bearers, pierce makers, how shall i train them..
+        - Spear is speed's enemy, the best pace-stopper in town.
+        DenyMesg:
+        - These spears need men, and the gold to pay for training.
+      - actionType: 3
+        costResource: 0
+        logoIcon: {fileID: 87444261590327566, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+          type: 3}
+        message: 
+        rewardList:
+        - resourceType: 1
+          rewardAmount: -1
+        - resourceType: 3
+          rewardAmount: -10
+        - resourceType: 10
+          rewardAmount: 1
+        AcceptMesg:
+        - A shot to the head without getting harmed, is a kill.
+        - No honor? who can say that when they're dead.
+        DenyMesg:
+        - should we train them to throw stones? Get the gold my king.
+      cardPosMesg:
+      - Choke the dummies,Check,Choke me da- the dummy, check.
+      - We need to repair those walls, these bums keep hitting them.
+      - A new training routine from the king is good!
+      cardNegMesg:
+      - Training right now is impossible!
+    - cardName: Train Hero
+      cardIcon: {fileID: -2101350720878376097, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+        type: 3}
+      actionTypes:
+      - actionType: 1
+        costResource: 0
+        logoIcon: {fileID: 8819155330738142235, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+          type: 3}
+        message: Health
+        rewardList:
+        - resourceType: 3
+          rewardAmount: -5
+        - resourceType: 0
+          rewardAmount: -10
+        AcceptMesg:
+        - Push up, Running and muscle grinding, i think he's ready.
+        - 100, 101, 102 and now for 15 miles of running and repeat!
+        DenyMesg:
+        - We need coins to get the proper trainers at his current level.
+      - actionType: 1
+        costResource: 0
+        logoIcon: {fileID: -7621245386961359428, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+          type: 3}
+        message: Damage
+        rewardList:
+        - resourceType: 0
+          rewardAmount: -10
+        - resourceType: 3
+          rewardAmount: -5
+        AcceptMesg:
+        - Focus! Aim your hits! and remember to breathe in and out!
+        - Understand that it is kill or be killed.
+        DenyMesg:
+        - We need coins to get the proper trainers at his current level.
+      - actionType: 1
+        costResource: 0
+        logoIcon: {fileID: -6866828706736253922, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+          type: 3}
+        message: Speed
+        rewardList:
+        - resourceType: 3
+          rewardAmount: -5
+        - resourceType: 0
+          rewardAmount: -10
+        AcceptMesg:
+        - Speed is your enemy, timing with speed is your friend.
+        - Speed is not about the fastest, but the one who's first.
+        DenyMesg:
+        - And apparently, you're not the first, its your gold, not enough.
+        - We need coins to get the proper trainers at his current level.
+      cardPosMesg:
+      - So this is the one who'll lead us, Hmm, interesting
+      cardNegMesg:
+      - How can you train a hero without one?
+    introductionMessages:
+    - My king! here we house the most loyal to your cause.
+    - Everyone! Gather! Your king is here!
+    - Everyone! March! Your king is here!
+  - BuildingName: Market
+    buildingType: 3
+    buildingCard:
+    - cardName: Sponsor Festival
+      cardIcon: {fileID: 3403175251718106097, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+        type: 3}
+      actionTypes:
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Traditional
+        rewardList:
+        - resourceType: 0
+          rewardAmount: -10
+        - resourceType: 3
+          rewardAmount: -10
+        AcceptMesg:
+        - Good of you to remember that ol' Hero and celebrate his day!
+        - Oh it's that heroine we'll be feasting about, this will remind us!
+        DenyMesg:
+        - Unfortunately his day won't be remembered, see your purse.
+        - I know how much you think about her, but unfortunately...
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Feast
+        rewardList:
+        - resourceType: 0
+          rewardAmount: -20
+        - resourceType: 3
+          rewardAmount: -20
+        AcceptMesg:
+        - A celebration for our One of our many victories in the past!
+        - To us and the future victories of this great kingdom!
+        DenyMesg:
+        - We can celebrate them in our minds my king, its cheaper..
+        - Maybe we can celebrate with all of us just sitting out there..
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Grand Celebration
+        rewardList:
+        - resourceType: 3
+          rewardAmount: -100
+        - resourceType: 0
+          rewardAmount: -50
+        AcceptMesg:
+        - Behold! as we celebrate the feast of the Winterbeast!
+        - We will celebrate that defeat for today! we are victors!
+        DenyMesg:
+        - Oh I guess its nearby, its a shame we lack the coins for it.
+      cardPosMesg:
+      - And the king sponsors our food! who we celebrating eh? eh?
+      - Magnanimous indeed to his fellowmen and to all the men!
+      cardNegMesg:
+      - Bring enough coins again and come back my king.
+    - cardName: Check Items Sold
+      cardIcon: {fileID: 4029706435026645084, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+        type: 3}
+      actionTypes:
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Item 1
+        rewardList: []
+        AcceptMesg:
+        - Thats a great buy my king!
+        - Positively that one is more than whatever you need!
+        - To tell you the truth, thats a purchase only you would do.
+        DenyMesg:
+        - I love this kingdom, I do, but we're here to earn my king.
+        - Can you find a coin for that item? we dont run a charity here..
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Item 2
+        rewardList: []
+        AcceptMesg:
+        - Thats a great buy my king!
+        - Positively that one is more than whatever you need!
+        - To tell you the truth, thats a purchase only you would do.
+        DenyMesg:
+        - I love this kingdom, I do, but we're here to earn my king.
+        - Can you find a coin for that item? we dont run a charity here..
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Item 3
+        rewardList: []
+        AcceptMesg:
+        - Thats a great buy my king!
+        - Positively that one is more than whatever you need!
+        - To tell you the truth, thats a purchase only you would do.
+        DenyMesg:
+        - Can you find a coin for that item? we dont run a charity here..
+        - I love this kingdom, I do, but we're here to earn my king.
+      cardPosMesg:
+      - Welcome to my little stall, my king.
+      cardNegMesg:
+      - Unfortunately the stall is empty.
+      - I guess you need to attract a merchant before we shop.
+    - cardName: Find Merchant
+      cardIcon: {fileID: 2830022091024966801, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+        type: 3}
+      actionTypes:
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Goods Merchant
+        rewardList:
+        - resourceType: 3
+          rewardAmount: -30
+        AcceptMesg:
+        - A Goods merchant is nice.
+        - Goods it is!
+        - Goods are great to find these days.
+        DenyMesg:
+        - Sad to see that we dont have coins for that.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Heroes Merchant
+        rewardList:
+        - resourceType: 3
+          rewardAmount: -50
+        AcceptMesg:
+        - Someone for our champions? very well.
+        - That's so nice! to fight and clothed for the kingdom.
+        DenyMesg:
+        - Our champions have to make do, we're lacking money.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Exotic Merchant
+        rewardList:
+        - resourceType: 3
+          rewardAmount: -100
+        AcceptMesg:
+        - The rarest of them all? I wonder if one would come.
+        - To buy their stuff, you need ALOT of money, as IN ALOT.
+        DenyMesg:
+        - No point inviting them,you cant even afford to get them here
+      cardPosMesg:
+      - So who do you want this time?
+      cardNegMesg:
+      - With the money in the treasury? We'd be lucky to attract a rat.
+      - Not enough coins, my king.
+    introductionMessages:
+    - Ah! the king, the Tax lord, the magnanimous himself, come!
+    - Are you here to buy something, or maybe you want to feast?
+  - BuildingName: Tavern
+    buildingType: 6
+    buildingCard:
+    - cardName: Recruit Hero
+      cardIcon: {fileID: 5047891255180530619, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+        type: 3}
+      actionTypes:
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Hire
+        rewardList: []
+        AcceptMesg:
+        - Okay, I'll talk to him and send him to the courtroom
+        - Understood, next week first morning, courtroom.
+        - I'll make sure he'll come in the courtroom by next week.
+        DenyMesg: []
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Ask to Stay More
+        rewardList: []
+        AcceptMesg:
+        - I can provide him free stay for 2 more weeks, for the king.
+        - If you insist, 2 more weeks.
+        - I think you like that brat, a mongrel but okay, 2 more weeks.
+        DenyMesg:
+        - Not enough coins for 2 weeks, this is still a business my king.
+        - That chap might come back once he leaves, who knows.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Not Interested
+        rewardList: []
+        AcceptMesg:
+        - Okay, I'll make sure a transport will be done by next week.
+        DenyMesg:
+        - How can I make a paid customer leave with no pay?
+        - A king is just, not mad, compensate that poor fellow and me.
+      cardPosMesg:
+      - So there's this group of potential wannabes, I can tell u about.
+      - I don't see much potential in them, but you might.
+      - Here's a list of all the wanna be who's still here roaming by.
+      cardNegMesg: []
+    - cardName: Buy Drinks
+      cardIcon: {fileID: 1518080418170435227, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+        type: 3}
+      actionTypes:
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: For Merchants!
+        rewardList:
+        - resourceType: 3
+          rewardAmount: -10
+        - resourceType: 0
+          rewardAmount: -5
+        AcceptMesg:
+        - Cheers to those who trade with us!
+        - For the merchants who bring goods! d'is for you!
+        DenyMesg:
+        - We dont have enough money my king.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: For Heroes!
+        rewardList:
+        - resourceType: 0
+          rewardAmount: -5
+        - resourceType: 3
+          rewardAmount: -10
+        AcceptMesg:
+        - For the champions and wanna-be.
+        - The king is with you heroes all throughout!
+        - We close the gates and we are in!
+        DenyMesg:
+        - We dont have enough money my king.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: For Mercenaries
+        rewardList:
+        - resourceType: 0
+          rewardAmount: -5
+        - resourceType: 3
+          rewardAmount: -10
+        AcceptMesg:
+        - For those who wanna get paid! Prepare yourselves!
+        - Bounties are real admit it! the king gives it all!
+        - To think you want coins for your life! how about booze!
+        DenyMesg:
+        - We dont have enough money my king.
+      cardPosMesg:
+      - So how much are we spending tonight?
+      - More nights like this brings more people in, good for business.
+      cardNegMesg:
+      - Enough to buy a couple, but not enough to buy them all...
+    - cardName: Hire Mercenary
+      cardIcon: {fileID: 7132887961597409650, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+        type: 3}
+      actionTypes:
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Swordsmen
+        rewardList: []
+        AcceptMesg:
+        - A swordsmen is available and ready to serve.
+        - He has his own sword, included in the charge.
+        - I dont think he'll use a bow, nope, he cant, a sword barely.
+        DenyMesg:
+        - We dont have enough to hire someone to fight for us.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Spearmen
+        rewardList: []
+        AcceptMesg:
+        - See how he flungs that stick, he'll pack a punch.
+        - I wonder if that spear is his....we'll see in battle.
+        - I dont think that spear will last 2 clashes, I wonder...
+        DenyMesg:
+        - We dont have enough to hire someone to fight for us.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Archer
+        rewardList: []
+        AcceptMesg:
+        - He can aim alright, now to test him while drunk.
+        - I throwed a pot last night, i think he's the one who broke it.
+        - I saw him hunting last week, i wonder what he caught.
+        DenyMesg:
+        - We dont have enough to hire someone to fight for us.
+      cardPosMesg:
+      - Some might take the coins, but they run away faster.
+      - As long as we use them first, they wont run.
+      cardNegMesg:
+      - We dont have enough to hire someone to fight for us.
+    introductionMessages:
+    - So the king arrives, alone. Anything you want to know?
+    - A few of those men can use a drink or two my king...
+  - BuildingName: Shop
+    buildingType: 5
+    buildingCard:
+    - cardName: First Stall
+      cardIcon: {fileID: 4029706435026645084, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+        type: 3}
+      actionTypes:
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Buy Item 1
+        rewardList: []
+        AcceptMesg:
+        - That's a great purchase my king!
+        - possibly one of the best deals i can offer!
+        DenyMesg:
+        - I dont think you have the money for that.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Buy Item 2
+        rewardList: []
+        AcceptMesg:
+        - Let me tell you this, you're the only one who bought it cheap.
+        - I'll give you more next week! thank you for buying from me.
+        - Finally got rid of that, hopefully its useful for you.
+        DenyMesg:
+        - I dont think you have the money for that.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Buy Item 3
+        rewardList: []
+        AcceptMesg:
+        - I guess its a price you can pay! deal!
+        - Nice! Now i can restock that spot!
+        - Thank you for buying that!
+        DenyMesg:
+        - I dont think you have the money for that.
+      cardPosMesg:
+      - Ah the first stall seems to restock every now and then
+      - I dont think he's from here, I saw him sending ravens out.
+      - That merchant looks weird, I cant figure out if its a he or she.
+      cardNegMesg:
+      - Stall is Empty right now, maybe attract some merchants?
+    - cardName: Second Stall
+      cardIcon: {fileID: 4029706435026645084, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+        type: 3}
+      actionTypes:
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Buy Item 1
+        rewardList: []
+        AcceptMesg:
+        - Not bad, you have a great taste.
+        - I thought i'd never sell that, thanks for buying it.
+        - Anything the king can see, i think you can buy.
+        DenyMesg:
+        - I dont think you have the money for that.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Buy Item 2
+        rewardList: []
+        AcceptMesg: []
+        DenyMesg: []
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Buy Item 3
+        rewardList: []
+        AcceptMesg: []
+        DenyMesg: []
+      cardPosMesg:
+      - That merchant looks weird, I cant figure out if its a he or she.
+      - I dont think he's from here, I saw him sending ravens out.
+      - Ah the first stall seems to restock every now and then
+      cardNegMesg:
+      - Stall is Empty right now, maybe attract some merchants?
+    - cardName: Third Stall
+      cardIcon: {fileID: 4029706435026645084, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+        type: 3}
+      actionTypes:
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Buy Item 1
+        rewardList: []
+        AcceptMesg:
+        - Ah! Ah! that one is nice! you see! here good too!
+        - We offer buy 1 take one, but not now, next time maybe?
+        - I can give you free massage voucher next time.
+        DenyMesg:
+        - No, this is business, we leave if you want.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Buy Item 2
+        rewardList: []
+        AcceptMesg: []
+        DenyMesg: []
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Buy Item 3
+        rewardList: []
+        AcceptMesg: []
+        DenyMesg: []
+      cardPosMesg:
+      - That merchant looks weird, I cant figure out if its a he or she.
+      - I dont think he's from here, I saw him sending ravens out.
+      - Ah the first stall seems to restock every now and then
+      cardNegMesg:
+      - Stall is Empty right now, maybe attract some merchants?
+    introductionMessages:
+    - Handling this stallls is good! they ensure flow of trade..
+  - BuildingName: Smithery
+    buildingType: 7
+    buildingCard:
+    - cardName: Craft Item
+      cardIcon: {fileID: -1503813222287230182, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+        type: 3}
+      actionTypes:
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Increase
+        rewardList: []
+        AcceptMesg:
+        - A magnanimous king indeed!
+        - Ah whoever is having this item will love this item!
+        - Hmm, with this i might be able to purchase that item
+        - Imagine the price tag on this one after we create it!
+        - Looks like we can place that material in this item
+        DenyMesg:
+        - We can have more but I dont think you brought alot.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Craft
+        rewardList: []
+        AcceptMesg:
+        - And the Hammering Starts!
+        - Give us some time to buy the materials and we'll be done!
+        - Crafting isnt easy! on you go my king, we'll inform you.
+        DenyMesg:
+        - We're not yet ready to craft something, perhaps next time?
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Decrease
+        rewardList: []
+        AcceptMesg:
+        - Wha-! okay we'll cross this material out of the list then!
+        - Hmm, perhaps with this much coin we have to compensate.
+        - Now I need to find an alternative for that part!
+        DenyMesg:
+        - We cant decrease more than this! or go find another smith!
+      cardPosMesg:
+      - Now lets talk about the budget.
+      - The higher the budget, the better the item!
+      - We craft the best quality, your money decides the materials.
+      cardNegMesg:
+      - With this gold, we'd be better fighting with stones!
+    - cardName: Equip Hero
+      cardIcon: {fileID: 3936279452888101280, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+        type: 3}
+      actionTypes:
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Equip
+        rewardList: []
+        AcceptMesg:
+        - Let's make sure thats well fitted, there!
+        - Ah yes that Item fits you very well!
+        - I wonder if we took ur sizes back then....
+        DenyMesg:
+        - It's already equipped or am I  blind?
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Unequip
+        rewardList: []
+        AcceptMesg:
+        - Now lets remove that for a minute.
+        - I dont think this suits u
+        - I'll place this in the back, for future use.
+        DenyMesg:
+        - I dont think you can't unequip this one.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Upgrade
+        rewardList: []
+        AcceptMesg:
+        - A few stitch and hammering here and there
+        - Perhaps replacing that material, okay, we can do this.
+        - Hmm, I think we can upgrade this.
+        DenyMesg:
+        - Either Its already a masterpiece or we're lacking in skills..
+      cardPosMesg:
+      - Send him here! we'll see what we can do!
+      - Isn't this that item we crafted before?
+      cardNegMesg: []
+    introductionMessages:
+    - Aaah, the Smell of Iron! and the smell of filthy rich kings haha!
+    - Give us enough gold, and we'll craft it for you!
+  - BuildingName: Houses
+    buildingType: 2
+    buildingCard:
+    - cardName: Provide Food
+      cardIcon: {fileID: -6406115455207733383, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+        type: 3}
+      actionTypes:
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: 5
+        rewardList:
+        - resourceType: 0
+          rewardAmount: -5
+        AcceptMesg:
+        - This is more than enough to calm their minds.
+        - Atleast they've felt your presence
+        - Food from the castle is always better than nothing to eat.
+        DenyMesg:
+        - Not enough food in our storage.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: 10
+        rewardList:
+        - resourceType: 0
+          rewardAmount: -10
+        AcceptMesg:
+        - This is alot, this might encourage our people to procreate.
+        - Ah, they'll feel better with this, Thank you my king.
+        - I didn't expect it to be this abundant, what a surprise.
+        DenyMesg:
+        - Not enough food in our storage.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: 15
+        rewardList:
+        - resourceType: 0
+          rewardAmount: -15
+        AcceptMesg:
+        - My King! this is alot! you dont have to prove yourself.
+        - We're already thankful for the protection, but this?! Thanks your grace,
+        - Will we ever forget this day, when the mightiest of kings, spread his richness
+          for us.
+        DenyMesg:
+        - Not enough food in our storage.
+      cardPosMesg:
+      - This is a surprise, Never expected you to deliver it yourself.
+      - So we can taste food prepared by your chefs...interesting.
+      - Some of this folks never tasted fresh bread, maybe now.
+      cardNegMesg:
+      - Not enough food in our storage.
+    - cardName: Build Shelter
+      cardIcon: {fileID: -5061758616054256777, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+        type: 3}
+      actionTypes:
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Small Houses
+        rewardList:
+        - resourceType: 3
+          rewardAmount: -20
+        - resourceType: 0
+          rewardAmount: -10
+        AcceptMesg:
+        - Maybe a family of 5 can adjust to this
+        - So another family will grow here... that is nice of you my king.
+        DenyMesg:
+        - We dont have the coins for this project at the moment.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Two Floor House
+        rewardList:
+        - resourceType: 0
+          rewardAmount: -20
+        - resourceType: 3
+          rewardAmount: -50
+        AcceptMesg:
+        - Goodnesss, 10 kins of the future generation, in this house.
+        - I wonder how would they grow up to be, will they enrich the kingdom? I
+          hope so.
+        DenyMesg:
+        - We dont have the coins for this project at the moment.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Protective Shelters
+        rewardList:
+        - resourceType: 0
+          rewardAmount: -30
+        - resourceType: 3
+          rewardAmount: -30
+        AcceptMesg:
+        - A house this large would take time to get filled, around 15 maybe? but
+          that is quite a huge family.
+        - A huge family would also require huge amount of food, can we truly withstand
+          that...
+        DenyMesg:
+        - We dont have the coins for this project at the moment.
+      cardPosMesg:
+      - Making a house is one thing, supporting the family in it is another.
+      - Perhaps a storage room for families would mean alot.
+      - As always, the magnanimous king sponsors the caslte of his mens
+      cardNegMesg:
+      - We dont have the coins for this project at the moment.
+    - cardName: Hire Cleaners
+      cardIcon: {fileID: -2544064736828391766, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+        type: 3}
+      actionTypes:
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: 10 Coins
+        rewardList:
+        - resourceType: 3
+          rewardAmount: -10
+        AcceptMesg:
+        - This would improve our smell a little, specilaly that house.
+        - I can't believe we've waited so long to clean this place.
+        - I dont know if I understand how they get dirty like this.
+        DenyMesg:
+        - We dont have the coins for this project at the moment.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: 50 Coins
+        rewardList:
+        - resourceType: 3
+          rewardAmount: -50
+        AcceptMesg:
+        - Now we wash all corners, this cleansing will last longer.
+        - Definitely the best time to clean is always.
+        - You there! wash every inch of that place!
+        DenyMesg:
+        - We dont have the coins for this project at the moment.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: 100 Coins
+        rewardList:
+        - resourceType: 3
+          rewardAmount: -100
+        AcceptMesg:
+        - I dont think even the blood plague could withstand this cleaning
+        - We even hired priests and shamans for other worldly cleansing... oh my.
+        DenyMesg:
+        - We dont have the coins for this project at the moment.
+      cardPosMesg:
+      - Its that time of the year I guess, cleaning the community
+      - Maybe do this on a weekly basis could improve our lives?
+      cardNegMesg:
+      - We dont have the coins for this project at the moment.
+    introductionMessages:
+    - My king, welcome to the urban community!
+    - The castles of your population lies here, in the community.
+  - BuildingName: Farm
+    buildingType: 0
+    buildingCard:
+    - cardName: Add Farmers
+      cardIcon: {fileID: -1579297797110594810, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+        type: 3}
+      actionTypes:
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Increase
+        rewardList:
+        - resourceType: 13
+          rewardAmount: 1
+        - resourceType: 2
+          rewardAmount: -1
+        AcceptMesg:
+        - Step right up, pick a hoe and get going!
+        - So who will be the next hoe handler?
+        DenyMesg:
+        - We dont have enough people for that.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Decrease
+        rewardList:
+        - resourceType: 2
+          rewardAmount: 1
+        - resourceType: 13
+          rewardAmount: -1
+        AcceptMesg:
+        - You, You're a free man now!
+        - Hey! yeah you! the king needs you somewhere else!
+        DenyMesg:
+        - There's no farmers at the moment.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Sell Food
+        rewardList:
+        - resourceType: 0
+          rewardAmount: -5
+        - resourceType: 3
+          rewardAmount: 3
+        AcceptMesg:
+        - Balance the need for coins and food my king.
+        DenyMesg:
+        - we dont have enough food to sell.
+      cardPosMesg:
+      - The farm is fine, a little bit of men would do much help.
+      - Our rich soil is to die for in this part of the continent.
+      - I guess the heat from the volcano makes it easy to grow them.
+      cardNegMesg:
+      - We dont have enough people for that.
+    - cardName: Add Herdsman
+      cardIcon: {fileID: -8916734382251162532, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+        type: 3}
+      actionTypes:
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Increase
+        rewardList:
+        - resourceType: 14
+          rewardAmount: 1
+        - resourceType: 2
+          rewardAmount: -1
+        AcceptMesg:
+        - The cattle there is yours, and that too, take care of them.
+        - That's my favorite right there, take good care of it.
+        DenyMesg:
+        - We dont have people for that at the moment.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Decrease
+        rewardList:
+        - resourceType: 14
+          rewardAmount: -1
+        - resourceType: 2
+          rewardAmount: 1
+        AcceptMesg:
+        - Step out! you're king needs you somewhere else!
+        - Kinda hard to leave that cow behind, but its for the best.
+        DenyMesg:
+        - We dont have people for that at the moment.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Cow To Food
+        rewardList:
+        - resourceType: 9
+          rewardAmount: -1
+        - resourceType: 0
+          rewardAmount: 5
+        AcceptMesg:
+        - Farewell to you my cow, please make yourself tasty.
+        - Shh now my friend, shh..
+        DenyMesg:
+        - We need a cow to do that.
+      cardPosMesg:
+      - Sometimes you make me wonder, why bring cattles here?
+      - So you take a liking of that cow eh, give its meat some love.
+      cardNegMesg:
+      - We dont have people for that at the moment.
+    - cardName: Add Storage Keeper
+      cardIcon: {fileID: -1317204292785076276, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+        type: 3}
+      actionTypes:
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Increase
+        rewardList:
+        - resourceType: 2
+          rewardAmount: -1
+        - resourceType: 15
+          rewardAmount: 1
+        AcceptMesg:
+        - You run the errands and ill list you down, welcome.
+        - Fit the gloves and fit the shoes, good, you're in.
+        DenyMesg:
+        - We dont have people for that at the moment.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Decrease
+        rewardList:
+        - resourceType: 15
+          rewardAmount: -1
+        - resourceType: 2
+          rewardAmount: 1
+        AcceptMesg:
+        - Leave the shoes behind, and the gloves is yours, too.
+        - Ah, your muscles are such a waste, oh well.
+        DenyMesg:
+        - We dont have people for that at the moment.
+      - actionType: 0
+        costResource: 0
+        logoIcon: {fileID: 0}
+        message: Expand Barn
+        rewardList:
+        - resourceType: 3
+          rewardAmount: -10
+        AcceptMesg:
+        - More houses for the dairy queens.
+        - Ah, another haystack storage.
+        DenyMesg: []
+      cardPosMesg:
+      - Put the haystack over there, and place the meat-- my king.
+      - With what we have right now, my estimate is we -- my king.
+      - Goodness someone take that stench out of this place!
+      cardNegMesg:
+      - We dont have people for that at the moment.
+    introductionMessages:
+    - The fruits here is what we serve to our people.
+    - The dirt is plentiful, but not all can grow food like ours.

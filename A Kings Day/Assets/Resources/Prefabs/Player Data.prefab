@@ -1,0 +1,392 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &476620222638388977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6136754647877889182}
+  - component: {fileID: 8093035889446869702}
+  m_Layer: 0
+  m_Name: PopBehavior
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6136754647877889182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476620222638388977}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3862405520960112767}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8093035889446869702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476620222638388977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0613196b45767e4ab03fed7a806c38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceType: 2
+  curPlayer:
+    kingdomsName: 
+    dynastyName: 
+    level: 0
+    weekCount: 1
+    storyRoll: 0.007
+    currentRoll: 0.007
+    finishedStories: []
+    troops: 0
+    troopsLoyalty: 0
+    population: 0
+    pouplationLoyalty: 0
+    curTaxWeeksCounter: 0
+    canReceiveTax: 0
+    farmerCount: 0
+    foods: 0
+    cows: 0
+    curGrainWeeksCounter: 0
+    canReceiveGrainProduce: 0
+    curCowBirthCounter: 0
+    canReceiveNewCows: 0
+    coins: 0
+    curMonthTaxCounter: 0
+    canReceiveMonthlyTax: 0
+    currentTechanologies: []
+  baseBirthrate: 20
+  techBirthrate: 0
+  settlerChance: 10
+  techSettlerChance: 0
+  PopPerFood: 4
+  techPopPerFood: 0
+  maxPopulation: 50
+  techMaxPopulation: 0
+  coinPerPop: 1
+  techCoinPerPop: 0
+  taxInterval: 4
+--- !u!1 &1137374738326216730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2301102186471367042}
+  - component: {fileID: 8728936477097277812}
+  m_Layer: 0
+  m_Name: CoinBehavior
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2301102186471367042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137374738326216730}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3862405520960112767}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8728936477097277812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137374738326216730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8ba3c924c574e54fb2fef7f39efc54a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceType: 3
+  curPlayer:
+    kingdomsName: 
+    dynastyName: 
+    level: 0
+    weekCount: 1
+    storyRoll: 0.007
+    currentRoll: 0.007
+    finishedStories: []
+    troops: 0
+    troopsLoyalty: 0
+    population: 0
+    pouplationLoyalty: 0
+    curTaxWeeksCounter: 0
+    canReceiveTax: 0
+    farmerCount: 0
+    foods: 0
+    cows: 0
+    curGrainWeeksCounter: 0
+    canReceiveGrainProduce: 0
+    curCowBirthCounter: 0
+    canReceiveNewCows: 0
+    coins: 0
+    curMonthTaxCounter: 0
+    canReceiveMonthlyTax: 0
+    currentTechanologies: []
+  techTechDiscount: 0
+  techDiscountCoinPenalty: 0
+  baseMerchantArrival: 20
+  techMerchantArrival: 0
+  techSecurityIncome: 0
+  baseMonthlyIncome: 5
+  techMonthlyIncome: 0
+--- !u!1 &2199620300969017393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1616879665811930930}
+  - component: {fileID: 7462824223398964572}
+  m_Layer: 0
+  m_Name: TroopBehavior
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1616879665811930930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2199620300969017393}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3862405520960112767}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7462824223398964572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2199620300969017393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb41f070e72c0843b9120feca359206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceType: 1
+  curPlayer:
+    kingdomsName: 
+    dynastyName: 
+    level: 0
+    weekCount: 1
+    storyRoll: 0.007
+    currentRoll: 0.007
+    finishedStories: []
+    troops: 0
+    troopsLoyalty: 0
+    population: 0
+    pouplationLoyalty: 0
+    curTaxWeeksCounter: 0
+    canReceiveTax: 0
+    farmerCount: 0
+    foods: 0
+    cows: 0
+    curGrainWeeksCounter: 0
+    canReceiveGrainProduce: 0
+    curCowBirthCounter: 0
+    canReceiveNewCows: 0
+    coins: 0
+    curMonthTaxCounter: 0
+    canReceiveMonthlyTax: 0
+    currentTechanologies: []
+  troopHealth: 10
+  techHealth: 0
+  troopDmg: 1
+  techDmg: 0
+  recruitCoin: 10
+  techCoin: 0
+  maxTroops: 50
+  techMaxTroops: 0
+  curMorale: 100
+  techMorale: 0
+--- !u!1 &3862405520960112764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3862405520960112767}
+  - component: {fileID: 3862405520960112766}
+  m_Layer: 0
+  m_Name: Player Data
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3862405520960112767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3862405520960112764}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 662.041, y: 364.17212, z: -3.875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6414861804376413269}
+  - {fileID: 1616879665811930930}
+  - {fileID: 2301102186471367042}
+  - {fileID: 6136754647877889182}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3862405520960112766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3862405520960112764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8b129481819d24fa7d2e4ea9472653, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodBehavior: {fileID: 749643651005963144}
+  troopBehavior: {fileID: 7462824223398964572}
+  populationBehavior: {fileID: 8093035889446869702}
+  coinBehavior: {fileID: 8728936477097277812}
+  playerData:
+    kingdomsName: 
+    dynastyName: 
+    level: 0
+    weekCount: 1
+    storyRoll: 0.007
+    currentRoll: 0.007
+    finishedStories: []
+    troops: 30
+    troopsLoyalty: 0
+    population: 30
+    pouplationLoyalty: 0
+    curTaxWeeksCounter: 0
+    canReceiveTax: 0
+    farmerCount: 0
+    foods: 30
+    cows: 0
+    curGrainWeeksCounter: 0
+    canReceiveGrainProduce: 0
+    curCowBirthCounter: 0
+    canReceiveNewCows: 0
+    coins: 30
+    curMonthTaxCounter: 0
+    canReceiveMonthlyTax: 0
+    currentTechanologies: []
+--- !u!1 &7414676175570051930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6414861804376413269}
+  - component: {fileID: 749643651005963144}
+  m_Layer: 0
+  m_Name: FoodBehavior
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6414861804376413269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414676175570051930}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3862405520960112767}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &749643651005963144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414676175570051930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0ee3b6c30f49ab45923d73cf32786ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceType: 0
+  curPlayer:
+    kingdomsName: 
+    dynastyName: 
+    level: 0
+    weekCount: 1
+    storyRoll: 0.007
+    currentRoll: 0.007
+    finishedStories: []
+    troops: 0
+    troopsLoyalty: 0
+    population: 0
+    pouplationLoyalty: 0
+    curTaxWeeksCounter: 0
+    canReceiveTax: 0
+    farmerCount: 0
+    foods: 0
+    cows: 0
+    curGrainWeeksCounter: 0
+    canReceiveGrainProduce: 0
+    curCowBirthCounter: 0
+    canReceiveNewCows: 0
+    coins: 0
+    curMonthTaxCounter: 0
+    canReceiveMonthlyTax: 0
+    currentTechanologies: []
+  curWeeksCounter: 0
+  curHarvestWeekCounter: 10
+  foodStorageCounter: 50
+  curMaxVillageWorkers: 5
+  techHarvestProduce: 0
+  techAddVillageWorkers: 0
+  canCowBirth: 0
+  techBirthChance: 0
+  cowMeatPerKill: 10
+  techMeatPerKill: 0

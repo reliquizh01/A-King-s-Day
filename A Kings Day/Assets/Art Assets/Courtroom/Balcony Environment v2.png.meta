@@ -1,0 +1,1220 @@
+fileFormatVersion: 2
+guid: 30b7cca8887cced47852c4a8d89ccebb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -91764578179016550
+    second: Wooden_Wall_Long
+  - first:
+      213: -5502269390804241303
+    second: Wooden_Wall_Curve
+  - first:
+      213: 5490387579956654767
+    second: Wall_Gates
+  - first:
+      213: -1340880865259924787
+    second: Large_Stair_Barracks
+  - first:
+      213: -8162701588762461154
+    second: Small_Barracks
+  - first:
+      213: -4571757711165830070
+    second: Wall_Fence_Cloth_1
+  - first:
+      213: 7496769555106113729
+    second: Wall_Fence_Cloth_3
+  - first:
+      213: 9728704305182030
+    second: Wall_Fence_Cloth_2
+  - first:
+      213: 8249054149416795201
+    second: Target_Dummy
+  - first:
+      213: 1300376548712526622
+    second: Target_Practice
+  - first:
+      213: 2375473059427368870
+    second: Group_of_Barrels
+  - first:
+      213: 1029995298474261819
+    second: Single_Barrel
+  - first:
+      213: 4038475244594421339
+    second: Barracks_Land
+  - first:
+      213: -1922750928055291475
+    second: Market
+  - first:
+      213: -4653177233707702714
+    second: Warehouse
+  - first:
+      213: -3810717411960361731
+    second: Church_Level_3
+  - first:
+      213: 6354895436144955189
+    second: Church_Level_1
+  - first:
+      213: -6067108594983975387
+    second: Church_Level_2
+  - first:
+      213: 2554140469884089386
+    second: Farm_Filled
+  - first:
+      213: -8025660277787728280
+    second: Large_House_Balcony
+  - first:
+      213: -6188235474871117138
+    second: Large_House
+  - first:
+      213: -7538296573601265634
+    second: Small_House
+  - first:
+      213: -3499013028647775617
+    second: Stage_Grounds
+  - first:
+      213: 5092646390472201640
+    second: Farm_Empty
+  - first:
+      213: -4742300255256100213
+    second: Shop_Blacksmith
+  - first:
+      213: -9092815947296763084
+    second: Shop_Merchandise
+  - first:
+      213: -2917971312156500293
+    second: Tavern
+  - first:
+      213: 4819043688791803408
+    second: Left_Wall_Fence
+  - first:
+      213: -8580990149200300479
+    second: Right_Wall_Fence
+  - first:
+      213: 6576663497927107358
+    second: Left_Wall
+  - first:
+      213: 4595638546768444122
+    second: Left_Tower_Entrance_Wall
+  - first:
+      213: 3383324446774392224
+    second: Large_Right_Wall
+  - first:
+      213: -4792717662947822575
+    second: Top_Entrance_Wall
+  - first:
+      213: 7152851963965141073
+    second: Lower_Left_Entrance_Wall
+  - first:
+      213: 1515282616577795336
+    second: Broken_Large_Stair_Barracks
+  - first:
+      213: -4245001745125407868
+    second: Broken_Shop_Merchandise
+  - first:
+      213: -6249863943181891707
+    second: Broken_Shop_Blacksmith
+  - first:
+      213: -1888463349178562175
+    second: Broken_Large_House
+  - first:
+      213: 680766448982636083
+    second: Broken_Warehouse
+  - first:
+      213: -7853907039175380082
+    second: Broken_Small_Barracks
+  - first:
+      213: 2219854485713991477
+    second: Broken_Large_House_Balcony
+  - first:
+      213: -8625253598093277383
+    second: Broken_Small_House
+  - first:
+      213: -6576550351653856979
+    second: Broken_Tavern
+  - first:
+      213: 2076029657868609452
+    second: Statue
+  - first:
+      213: -52709742058052787
+    second: Kingdom Road
+  - first:
+      213: 6248479988254061087
+    second: Kingdom Land
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 350
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Wooden_Wall_Long
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 741
+        width: 63
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a981da23a9cf9bef0800000000000000
+      internalID: -91764578179016550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden_Wall_Curve
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 738
+        width: 76
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 964bb9e242304a3b0800000000000000
+      internalID: -5502269390804241303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_Gates
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 732
+        width: 70
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa278862a66c13c40800000000000000
+      internalID: 5490387579956654767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large_Stair_Barracks
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 664
+        width: 95
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc2501415fb346de0800000000000000
+      internalID: -1340880865259924787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Small_Barracks
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 667
+        width: 50
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1cfb42272248be80800000000000000
+      internalID: -8162701588762461154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_Fence_Cloth_1
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 705
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4cceca759add80c0800000000000000
+      internalID: -4571757711165830070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_Fence_Cloth_3
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 714
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c82017d030e90860800000000000000
+      internalID: 7496769555106113729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_Fence_Cloth_2
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 705
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e453c3c7430922000800000000000000
+      internalID: 9728704305182030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Target_Dummy
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 686
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14c33f42b078a7270800000000000000
+      internalID: 8249054149416795201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Target_Practice
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 686
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e133244d49ddb0210800000000000000
+      internalID: 1300376548712526622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Group_of_Barrels
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 627
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6afbda8692067f020800000000000000
+      internalID: 2375473059427368870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Single_Barrel
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 635
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3d71ed44474b4e00800000000000000
+      internalID: 1029995298474261819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracks_Land
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 621
+        width: 138
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5e524496db8b0830800000000000000
+      internalID: 4038475244594421339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Market
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 541
+        width: 186
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da136b5d7340155e0800000000000000
+      internalID: -1922750928055291475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warehouse
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 429
+        width: 142
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 646eae3a5f79c6fb0800000000000000
+      internalID: -4653177233707702714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Church_Level_3
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 431
+        width: 112
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfce4b034bc9d1bc0800000000000000
+      internalID: -3810717411960361731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Church_Level_1
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 431
+        width: 110
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53fcb20cabf113850800000000000000
+      internalID: 6354895436144955189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Church_Level_2
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 432
+        width: 110
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 526c246b0ec4dcba0800000000000000
+      internalID: -6067108594983975387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farm_Filled
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 324
+        width: 161
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a24f3e59931227320800000000000000
+      internalID: 2554140469884089386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large_House_Balcony
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 329
+        width: 124
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 866ef76cf702f9090800000000000000
+      internalID: -8025660277787728280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large_House
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 328
+        width: 104
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaa16dd4f98fe1aa0800000000000000
+      internalID: -6188235474871117138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Small_House
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 328
+        width: 61
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e18c3f6b437926790800000000000000
+      internalID: -7538296573601265634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stage_Grounds
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 338
+        width: 187
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f725cf26032017fc0800000000000000
+      internalID: -3499013028647775617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farm_Empty
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 236
+        width: 161
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a555cef8e6bca640800000000000000
+      internalID: 5092646390472201640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop_Blacksmith
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 243
+        width: 62
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b82473b2b07ff2eb0800000000000000
+      internalID: -4742300255256100213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop_Merchandise
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 243
+        width: 61
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4339e5d5214dfc180800000000000000
+      internalID: -9092815947296763084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tavern
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 209
+        width: 106
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbe912a3d884187d0800000000000000
+      internalID: -2917971312156500293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Wall_Fence
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 136
+        width: 881
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016068bd3bea0e240800000000000000
+      internalID: 4819043688791803408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right_Wall_Fence
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 136
+        width: 426
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1463acf5ce23ae880800000000000000
+      internalID: -8580990149200300479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Wall
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 9
+        width: 883
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1329315b90054b50800000000000000
+      internalID: 6576663497927107358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Tower_Entrance_Wall
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 37
+        width: 47
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adab938d8ecf6cf30800000000000000
+      internalID: 4595638546768444122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large_Right_Wall
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 9
+        width: 482
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5f1e1a8abf3fe20800000000000000
+      internalID: 3383324446774392224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Top_Entrance_Wall
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 37
+        width: 76
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 114314fada8dc7db0800000000000000
+      internalID: -4792717662947822575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lower_Left_Entrance_Wall
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 9
+        width: 58
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 150f81bb6f8044360800000000000000
+      internalID: 7152851963965141073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken_Large_Stair_Barracks
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 704
+        width: 81
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 805a17fe28d570510800000000000000
+      internalID: 1515282616577795336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken_Shop_Merchandise
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 705
+        width: 61
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48303ee5769b615c0800000000000000
+      internalID: -4245001745125407868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken_Shop_Blacksmith
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 704
+        width: 62
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5870f1c5bd50449a0800000000000000
+      internalID: -6249863943181891707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken_Large_House
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 700
+        width: 104
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1890ed4e694dac5e0800000000000000
+      internalID: -1888463349178562175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken_Warehouse
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 589
+        width: 142
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3363d9e7a71927900800000000000000
+      internalID: 680766448982636083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken_Small_Barracks
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 592
+        width: 50
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e83f20fd821510390800000000000000
+      internalID: -7853907039175380082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken_Large_House_Balcony
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 604
+        width: 124
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5373a0ab4e18ece10800000000000000
+      internalID: 2219854485713991477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken_Small_House
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 603
+        width: 61
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9378df31d81fc4880800000000000000
+      internalID: -8625253598093277383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken_Tavern
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 207
+        width: 106
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d29933a9c466bb4a0800000000000000
+      internalID: -6576550351653856979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 543
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca72f6c79f98fcc10800000000000000
+      internalID: 2076029657868609452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kingdom Road
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 427
+        width: 701
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d436d64d4ccb44ff0800000000000000
+      internalID: -52709742058052787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kingdom Land
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 231
+        width: 881
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f123506817f07b650800000000000000
+      internalID: 6248479988254061087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

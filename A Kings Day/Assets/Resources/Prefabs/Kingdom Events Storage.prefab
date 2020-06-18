@@ -1,0 +1,702 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3800852427780697963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3223302206029159952}
+  - component: {fileID: 1685336381357493434}
+  m_Layer: 0
+  m_Name: Kingdom Events Storage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3223302206029159952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3800852427780697963}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1256.0397, y: 547.5562, z: -23.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1685336381357493434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3800852427780697963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71894a6467d65f248a4b64455657ebfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kingdomEvents:
+  - title: Lost Men
+    eventType: 0
+    reporterType: 1
+    levelRequired: 0
+    difficultyType: 0
+    description: My king, it seems we caught some men lurking within our castle walls,
+      they dont look like us and cant speak our language, but they wear clothes and
+      leather... if you dont mind my lord, i think we're not the first...
+    isStoryArc: 1
+    storyArc: Unknown Lands
+    arcEnd: 0
+    eventDecision:
+    - optionDescription: '[Believe your captain] very well, imprison them.'
+      rewards:
+      - resourceType: 0
+        rewardAmount: -5
+      nextArcIdx: 1
+    - optionDescription: '[Trust Instinct] Are you from this lands? Enslave them!'
+      rewards:
+      - resourceType: 2
+        rewardAmount: 3
+      nextArcIdx: 1
+  - title: A Noble Merchant
+    eventType: 0
+    reporterType: 0
+    levelRequired: 0
+    difficultyType: 0
+    description: A Trader from our homeland has come and brought news to us, it seems
+      they want to obtain rights to trade with our new found kingdom.... exclusively,
+      for a hefty price.
+    isStoryArc: 1
+    storyArc: Rights of Trade
+    arcEnd: 0
+    eventDecision:
+    - optionDescription: Very well, all the rights are yours.
+      rewards:
+      - resourceType: 3
+        rewardAmount: 20
+      - resourceType: 1
+        rewardAmount: 5
+      - resourceType: 2
+        rewardAmount: 10
+      nextArcIdx: 1
+  - title: Celebrating the night
+    eventType: 0
+    reporterType: 1
+    levelRequired: 0
+    difficultyType: 0
+    description: My king, your subjects wishes to celebrate today, a couple beloved
+      by the town will tie the knot, they only ask for some coins to prepare the
+      feast...
+    isStoryArc: 0
+    storyArc: 
+    arcEnd: 0
+    eventDecision:
+    - optionDescription: Very well.
+      rewards:
+      - resourceType: 3
+        rewardAmount: -5
+      - resourceType: 2
+        rewardAmount: 10
+      - resourceType: 0
+        rewardAmount: -10
+      nextArcIdx: 0
+    - optionDescription: I can only give them my blessing.
+      rewards:
+      - resourceType: 0
+        rewardAmount: -10
+      - resourceType: 2
+        rewardAmount: 1
+      nextArcIdx: 0
+    - optionDescription: Bah! we have other things to use them on!
+      rewards: []
+      nextArcIdx: 0
+  - title: Request to Venture
+    eventType: 0
+    reporterType: 0
+    levelRequired: 0
+    difficultyType: 1
+    description: My king, I wish to lead an expedition to traverse the land further
+      than what we know right now, I believe that there might be kingdoms and settlers
+      that we can make trade with, if you allow us.
+    isStoryArc: 0
+    storyArc: 
+    arcEnd: 0
+    eventDecision:
+    - optionDescription: So be it, bring our men for your disposal.
+      rewards:
+      - resourceType: 0
+        rewardAmount: -5
+      - resourceType: 1
+        rewardAmount: -3
+      - resourceType: 2
+        rewardAmount: 1
+      nextArcIdx: 0
+    - optionDescription: Very well, but you'll go on your own.
+      rewards:
+      - resourceType: 0
+        rewardAmount: -1
+      - resourceType: 2
+        rewardAmount: -1
+      nextArcIdx: 0
+    - optionDescription: No, we need all the men here,  for now.
+      rewards:
+      - resourceType: 2
+        rewardAmount: 1
+      nextArcIdx: 0
+  - title: An old rival
+    eventType: 0
+    reporterType: 0
+    levelRequired: 0
+    difficultyType: 2
+    description: Our scouts has seen a familiar banner flying further away and also
+      by the coast, it seems that a kingdom from our home land is also trying to
+      settle here, should we make haste, we can stop them while they're still weak.
+    isStoryArc: 1
+    storyArc: An Old Rival
+    arcEnd: 0
+    eventDecision:
+    - optionDescription: '[Attack]Prepare your men, leave no life behind.'
+      rewards:
+      - resourceType: 1
+        rewardAmount: -15
+      - resourceType: 0
+        rewardAmount: -5
+      - resourceType: 3
+        rewardAmount: 20
+      nextArcIdx: 1
+    - optionDescription: '[Diplomacy]Send an envoy, this is our land.'
+      rewards:
+      - resourceType: 1
+        rewardAmount: -1
+      - resourceType: 3
+        rewardAmount: -1
+      nextArcIdx: 2
+    - optionDescription: Starve them! burn their food at night!
+      rewards:
+      - resourceType: 1
+        rewardAmount: -10
+      - resourceType: 3
+        rewardAmount: -5
+      - resourceType: 2
+        rewardAmount: -5
+      nextArcIdx: 1
+    - optionDescription: Leave them be.
+      rewards: []
+      nextArcIdx: 1
+  - title: Stones Unturned
+    eventType: 0
+    reporterType: 1
+    levelRequired: 0
+    difficultyType: 1
+    description: There's this child I accidentally bumped with, he was holding this
+      precious stone, surprised as we have not brought those since its unnecessary,
+      I asked him where he got it, 'underneath our floors he said, I think we might
+      have hit a fortune nearby.
+    isStoryArc: 0
+    storyArc: 
+    arcEnd: 0
+    eventDecision:
+    - optionDescription: Very well, Start digging.
+      rewards:
+      - resourceType: 2
+        rewardAmount: -3
+      - resourceType: 1
+        rewardAmount: -5
+      - resourceType: 0
+        rewardAmount: -3
+      nextArcIdx: 0
+    - optionDescription: Verify the stone, send it home!
+      rewards:
+      - resourceType: 1
+        rewardAmount: -5
+      - resourceType: 0
+        rewardAmount: -5
+      nextArcIdx: 0
+  - title: A Ghostly Rumor
+    eventType: 0
+    reporterType: 0
+    levelRequired: 0
+    difficultyType: 1
+    description: Ever since we overtook this place, our overzealous subjects think
+      we tresspassed a sanctuary for settling on these ruined castle, they said there's
+      a demon, doing malicious things, this is causing frustration and panic my king...
+    isStoryArc: 0
+    storyArc: 
+    arcEnd: 0
+    eventDecision:
+    - optionDescription: Feed their souls! hire a priest from home.
+      rewards:
+      - resourceType: 3
+        rewardAmount: -2
+      - resourceType: 0
+        rewardAmount: -2
+      nextArcIdx: 0
+    - optionDescription: Feed their bellies, it'll keep them sane.
+      rewards:
+      - resourceType: 0
+        rewardAmount: -10
+      nextArcIdx: 0
+    - optionDescription: Spread the coins, keep them calm.
+      rewards:
+      - resourceType: 3
+        rewardAmount: -5
+      nextArcIdx: 0
+  - title: Excessive Income
+    eventType: 0
+    reporterType: 0
+    levelRequired: 0
+    difficultyType: 0
+    description: Some of our local villagers had a surplus of coins, they'd wish
+      to offer it to our coffers, would you like it converted to food?
+    isStoryArc: 0
+    storyArc: 
+    arcEnd: 0
+    eventDecision:
+    - optionDescription: Please do
+      rewards:
+      - resourceType: 3
+        rewardAmount: 5
+      nextArcIdx: 0
+    - optionDescription: We need the food.
+      rewards:
+      - resourceType: 0
+        rewardAmount: 10
+      nextArcIdx: 0
+  - title: Goods to sell
+    eventType: 0
+    reporterType: 0
+    levelRequired: 0
+    difficultyType: 0
+    description: Some of our local villagers had a surplus of food, they'd wish to
+      offer it to our coffers, would you like it converted to coins?
+    isStoryArc: 0
+    storyArc: 
+    arcEnd: 0
+    eventDecision:
+    - optionDescription: Very well.
+      rewards:
+      - resourceType: 3
+        rewardAmount: 5
+      nextArcIdx: 0
+    - optionDescription: We need the food
+      rewards:
+      - resourceType: 0
+        rewardAmount: 10
+      nextArcIdx: 0
+  - title: A horde approaching
+    eventType: 0
+    reporterType: 0
+    levelRequired: 0
+    difficultyType: 2
+    description: 'There seem to be a bad news my lord, our scouts are reporting a
+      huge army further north, they hear
+
+      the same shout of the men we captured
+      earlier... perhaps they''re of value, if we show them these prisoners, perhaps
+      we can negotiate.'
+    isStoryArc: 1
+    storyArc: Unknown Lands
+    arcEnd: 0
+    eventDecision:
+    - optionDescription: prepare them both, clean them up!
+      rewards:
+      - resourceType: 0
+        rewardAmount: -3
+      - resourceType: 3
+        rewardAmount: -1
+      - resourceType: 2
+        rewardAmount: -2
+      nextArcIdx: 2
+    - optionDescription: Send an envoy, ask what they want.
+      rewards:
+      - resourceType: 1
+        rewardAmount: -2
+      nextArcIdx: 2
+    - optionDescription: Send an envoy with offering, enough gold and food maybe.
+      rewards:
+      - resourceType: 0
+        rewardAmount: -5
+      - resourceType: 3
+        rewardAmount: -5
+      nextArcIdx: 2
+    - optionDescription: Prepare the army! we shall face them!
+      rewards:
+      - resourceType: 1
+        rewardAmount: -20
+      nextArcIdx: 2
+  - title: Wavering Rival
+    eventType: 0
+    reporterType: 0
+    levelRequired: 0
+    difficultyType: 0
+    description: Our rival has find the new lands harsh, whether they face our wrath
+      or the land within their vicinity, they're not making any progress, now rumors
+      are spreading there's no king inside the settlement, now their people are going
+      towards us.
+    isStoryArc: 1
+    storyArc: An Old Rival
+    arcEnd: 1
+    eventDecision:
+    - optionDescription: Accept the people, we need them.
+      rewards:
+      - resourceType: 0
+        rewardAmount: -8
+      - resourceType: 2
+        rewardAmount: 16
+      - resourceType: 3
+        rewardAmount: 10
+      nextArcIdx: 2
+    - optionDescription: Send them back, but take a coin for every men.
+      rewards:
+      - resourceType: 1
+        rewardAmount: -5
+      - resourceType: 3
+        rewardAmount: 26
+      nextArcIdx: 2
+    - optionDescription: Raze and loot them, we cant feed them all!
+      rewards:
+      - resourceType: 3
+        rewardAmount: 30
+      nextArcIdx: 2
+  - title: People's Hero
+    eventType: 0
+    reporterType: 0
+    levelRequired: 0
+    difficultyType: 0
+    description: Although they're grateful for a king like you, they love to see
+      heroes in action, such as one of our men, the morale has risen up, and it seems
+      to ease finding more people to train.
+    isStoryArc: 0
+    storyArc: 
+    arcEnd: 0
+    eventDecision:
+    - optionDescription: This is a nice culture to sustain, heroism.
+      rewards:
+      - resourceType: 1
+        rewardAmount: 5
+      nextArcIdx: 0
+  - title: Stolen Goods
+    eventType: 0
+    reporterType: 0
+    levelRequired: 0
+    difficultyType: 0
+    description: My lord, it seems that the goods ordered by the nobles at home was
+      stolen while travelling across the sea, some of the sailors we interrogated
+      described one of the attackers as one of us...
+    isStoryArc: 1
+    storyArc: Rights of Trade
+    arcEnd: 0
+    eventDecision:
+    - optionDescription: Pay the merchants! I want this prisoner's head!
+      rewards:
+      - resourceType: 3
+        rewardAmount: -8
+      - resourceType: 1
+        rewardAmount: -2
+      - resourceType: 2
+        rewardAmount: -2
+      nextArcIdx: 2
+  - title: New Realm, New Alliance
+    eventType: 0
+    reporterType: 0
+    levelRequired: 0
+    difficultyType: 0
+    description: It seems the prince that was sent out from our rival kingdom has
+      a different plan, he wants to be sovereign and demands that we make peace for
+      the prosperity of both our new founded kingdom.
+    isStoryArc: 1
+    storyArc: An Old Rival
+    arcEnd: 1
+    eventDecision:
+    - optionDescription: Alright.
+      rewards:
+      - resourceType: 3
+        rewardAmount: 5
+      - resourceType: 1
+        rewardAmount: 2
+      - resourceType: 0
+        rewardAmount: 2
+      - resourceType: 2
+        rewardAmount: 3
+      nextArcIdx: 3
+    - optionDescription: This vast lands is ours! prepare to march! this is war!
+      rewards: []
+      nextArcIdx: 3
+  storyArcEvents:
+  - startingWeek: 3
+    repetitionType: 0
+    storyTitle: Unknown Lands
+    description: Are we really the first or merely the guest...
+    isLinear: 0
+    curEventIdx: 0
+    storyEventTitlesList:
+    - Lost Men
+    - A horde approaching
+    - Lost Men
+    storyEvents:
+    - title: Lost Men
+      eventType: 0
+      reporterType: 1
+      levelRequired: 0
+      difficultyType: 0
+      description: My king, it seems we caught some men lurking within our castle
+        walls, they dont look like us and cant speak our language, but they wear
+        clothes and leather... if you dont mind my lord, i think we're not the first...
+      isStoryArc: 1
+      storyArc: Unknown Lands
+      arcEnd: 0
+      eventDecision:
+      - optionDescription: '[Believe your captain] very well, imprison them.'
+        rewards:
+        - resourceType: 0
+          rewardAmount: -5
+        nextArcIdx: 1
+      - optionDescription: '[Trust Instinct] Are you from this lands? Enslave them!'
+        rewards:
+        - resourceType: 2
+          rewardAmount: 3
+        nextArcIdx: 1
+    - title: A horde approaching
+      eventType: 0
+      reporterType: 0
+      levelRequired: 0
+      difficultyType: 2
+      description: 'There seem to be a bad news my lord, our scouts are reporting
+        a huge army further north, they hear
+
+        the same shout of the men we
+        captured earlier... perhaps they''re of value, if we show them these prisoners,
+        perhaps we can negotiate.'
+      isStoryArc: 1
+      storyArc: Unknown Lands
+      arcEnd: 0
+      eventDecision:
+      - optionDescription: prepare them both, clean them up!
+        rewards:
+        - resourceType: 0
+          rewardAmount: -3
+        - resourceType: 3
+          rewardAmount: -1
+        - resourceType: 2
+          rewardAmount: -2
+        nextArcIdx: 0
+      - optionDescription: Send an envoy, ask what they want.
+        rewards:
+        - resourceType: 1
+          rewardAmount: -2
+        nextArcIdx: 0
+      - optionDescription: Send an envoy with offering, enough gold and food maybe.
+        rewards:
+        - resourceType: 0
+          rewardAmount: -5
+        - resourceType: 3
+          rewardAmount: -5
+        nextArcIdx: 0
+      - optionDescription: Prepare the army! we shall face them!
+        rewards:
+        - resourceType: 1
+          rewardAmount: -20
+        nextArcIdx: 0
+    eventIntervals: 0300000000000000
+    eventBoosts:
+    - 15
+    - 2
+    nextEventWeek: 0
+  - startingWeek: 5
+    repetitionType: 0
+    storyTitle: Rights of Trade
+    description: How true can you be to your pacts, merchants are not bound by loyalty,
+      they go wherever money is.
+    isLinear: 0
+    curEventIdx: 0
+    storyEventTitlesList:
+    - A Noble Merchant
+    - Stolen Goods
+    storyEvents:
+    - title: A Noble Merchant
+      eventType: 0
+      reporterType: 0
+      levelRequired: 0
+      difficultyType: 0
+      description: A Trader from our homeland has come and brought news to us, it
+        seems they want to obtain rights to trade with our new found kingdom....
+        exclusively, for a hefty price.
+      isStoryArc: 1
+      storyArc: Rights of Trade
+      arcEnd: 0
+      eventDecision:
+      - optionDescription: Very well, all the rights are yours.
+        rewards:
+        - resourceType: 3
+          rewardAmount: 20
+        - resourceType: 1
+          rewardAmount: 5
+        - resourceType: 2
+          rewardAmount: 10
+        nextArcIdx: 0
+    - title: Stolen Goods
+      eventType: 0
+      reporterType: 0
+      levelRequired: 0
+      difficultyType: 0
+      description: My lord, it seems that the goods ordered by the nobles at home
+        was stolen while travelling across the sea, some of the sailors we interrogated
+        described one of the attackers as one of us...
+      isStoryArc: 1
+      storyArc: Rights of Trade
+      arcEnd: 0
+      eventDecision:
+      - optionDescription: Pay the merchants! I want this prisoner's head!
+        rewards:
+        - resourceType: 3
+          rewardAmount: -8
+        - resourceType: 1
+          rewardAmount: -2
+        - resourceType: 2
+          rewardAmount: -2
+        nextArcIdx: 0
+    eventIntervals: 030000000500000000000000
+    eventBoosts:
+    - 5
+    - 0.5
+    nextEventWeek: 0
+  - startingWeek: 10
+    repetitionType: 0
+    storyTitle: An Old Rival
+    description: "It seems we're not the only one interested in this \nlands.."
+    isLinear: 0
+    curEventIdx: 0
+    storyEventTitlesList:
+    - An old rival
+    - Wavering Rival
+    - New Realm, New Alliance
+    - An old rival
+    storyEvents:
+    - title: An old rival
+      eventType: 0
+      reporterType: 0
+      levelRequired: 0
+      difficultyType: 2
+      description: Our scouts has seen a familiar banner flying further away and
+        also by the coast, it seems that a kingdom from our home land is also trying
+        to settle here, should we make haste, we can stop them while they're still
+        weak.
+      isStoryArc: 1
+      storyArc: An Old Rival
+      arcEnd: 0
+      eventDecision:
+      - optionDescription: '[Attack]Prepare your men, leave no life behind.'
+        rewards:
+        - resourceType: 1
+          rewardAmount: -15
+        - resourceType: 0
+          rewardAmount: -5
+        - resourceType: 3
+          rewardAmount: 20
+        nextArcIdx: 1
+      - optionDescription: '[Diplomacy]Send an envoy, this is our land.'
+        rewards:
+        - resourceType: 1
+          rewardAmount: -1
+        - resourceType: 3
+          rewardAmount: -1
+        nextArcIdx: 2
+      - optionDescription: Starve them! burn their food at night!
+        rewards:
+        - resourceType: 1
+          rewardAmount: -10
+        - resourceType: 3
+          rewardAmount: -5
+        - resourceType: 2
+          rewardAmount: -5
+        nextArcIdx: 1
+      - optionDescription: Leave them be.
+        rewards: []
+        nextArcIdx: 1
+    - title: Wavering Rival
+      eventType: 0
+      reporterType: 0
+      levelRequired: 0
+      difficultyType: 0
+      description: Our rival has find the new lands harsh, whether they face our
+        wrath or the land within their vicinity, they're not making any progress,
+        now rumors are spreading there's no king inside the settlement, now their
+        people are going towards us.
+      isStoryArc: 1
+      storyArc: An Old Rival
+      arcEnd: 1
+      eventDecision:
+      - optionDescription: Accept the people, we need them.
+        rewards:
+        - resourceType: 0
+          rewardAmount: -8
+        - resourceType: 2
+          rewardAmount: 16
+        - resourceType: 3
+          rewardAmount: 10
+        nextArcIdx: 2
+      - optionDescription: Send them back, but take a coin for every men.
+        rewards:
+        - resourceType: 1
+          rewardAmount: -5
+        - resourceType: 3
+          rewardAmount: 26
+        nextArcIdx: 2
+      - optionDescription: Raze and loot them, we cant feed them all!
+        rewards:
+        - resourceType: 3
+          rewardAmount: 30
+        nextArcIdx: 2
+    - title: New Realm, New Alliance
+      eventType: 0
+      reporterType: 0
+      levelRequired: 0
+      difficultyType: 0
+      description: It seems the prince that was sent out from our rival kingdom has
+        a different plan, he wants to be sovereign and demands that we make peace
+        for the prosperity of both our new founded kingdom.
+      isStoryArc: 1
+      storyArc: An Old Rival
+      arcEnd: 1
+      eventDecision:
+      - optionDescription: Alright.
+        rewards:
+        - resourceType: 3
+          rewardAmount: 5
+        - resourceType: 1
+          rewardAmount: 2
+        - resourceType: 0
+          rewardAmount: 2
+        - resourceType: 2
+          rewardAmount: 3
+        nextArcIdx: 3
+      - optionDescription: This vast lands is ours! prepare to march! this is war!
+        rewards: []
+        nextArcIdx: 3
+    eventIntervals: 00000000000000000000000000000000
+    eventBoosts:
+    - 0.5
+    - 0.5
+    - 0.5
+    nextEventWeek: 0
+  threateningChance: 1.1
+  currentThreateningChance: 1.1
+  troublesomeChance: 1.9
+  currentTroublesomeChance: 1.9
+  storyChance: 3.5
+  currentStoryChance: 3.5
+  EnableDebugging: 0
+  Difficultyforced: 0
+  forceDifficulty: 0
+  forceArc: 0
+  initialEventOnly: 0
+  allStoryArcEvents: 0
+  arcForced: Unknown Lands

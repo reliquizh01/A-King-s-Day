@@ -1,0 +1,346 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2842106699175787233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1805752726939862559}
+  - component: {fileID: 6392029614673191808}
+  m_Layer: 0
+  m_Name: Tech Storage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1805752726939862559
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2842106699175787233}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6392029614673191808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2842106699175787233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24fb1e1be2565946abfb2860a3e36f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  technologies:
+  - technologyName: More Tools
+    improvedType: 0
+    techIcon: {fileID: 5223897934056880932, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+      type: 3}
+    goldLevelRequirements: 0a0000002800000064000000b4000000f0000000
+    currentLevel: 0
+    goldRequirement: 0
+    curGold: 0
+    bonusIncrement: 1
+    troopTechType: 0
+    popTechType: 0
+    foodTechType: 2
+    coinTechType: 0
+    effectMesg: +1 Food per Farmer
+    wittyMesg: So we're not supposed to use hands..
+  - technologyName: Horse Plougher
+    improvedType: 0
+    techIcon: {fileID: -1940123647689072542, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+      type: 3}
+    goldLevelRequirements: 64000000c80000002c010000
+    currentLevel: 0
+    goldRequirement: 0
+    curGold: 0
+    bonusIncrement: 1
+    troopTechType: 0
+    popTechType: 0
+    foodTechType: 1
+    coinTechType: 0
+    effectMesg: -1 Timer
+    wittyMesg: Horse with blades, imagine getting chased.
+  - technologyName: Better Cuts
+    improvedType: 0
+    techIcon: {fileID: -2148009633409561155, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+      type: 3}
+    goldLevelRequirements: 1e00000064000000c80000002c01000090010000
+    currentLevel: 0
+    goldRequirement: 0
+    curGold: 0
+    bonusIncrement: 1
+    troopTechType: 0
+    popTechType: 0
+    foodTechType: 4
+    coinTechType: 0
+    effectMesg: +1 Food / Cow
+    wittyMesg: One cut or a hundred, its the same.
+  - technologyName: More Storage
+    improvedType: 0
+    techIcon: {fileID: 6381620529307163975, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+      type: 3}
+    goldLevelRequirements: 64000000c80000002c01000090010000f4010000
+    currentLevel: 0
+    goldRequirement: 0
+    curGold: 0
+    bonusIncrement: 5
+    troopTechType: 0
+    popTechType: 0
+    foodTechType: 0
+    coinTechType: 0
+    effectMesg: +5 Capacity
+    wittyMesg: There's still some ants, but all is well..
+  - technologyName: Better Herd Food
+    improvedType: 0
+    techIcon: {fileID: -2645013052145306436, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+      type: 3}
+    goldLevelRequirements: c80000002c01000090010000f401000058020000
+    currentLevel: 0
+    goldRequirement: 0
+    curGold: 0
+    bonusIncrement: 2
+    troopTechType: 0
+    popTechType: 0
+    foodTechType: 3
+    coinTechType: 0
+    effectMesg: +2% Cow Birthrate
+    wittyMesg: They eat our food, we eat them.
+  - technologyName: Better Armor
+    improvedType: 1
+    techIcon: {fileID: 3196400111240885306, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+      type: 3}
+    goldLevelRequirements: 64000000c80000002c01000090010000f4010000
+    currentLevel: 0
+    goldRequirement: 0
+    curGold: 0
+    bonusIncrement: 1
+    troopTechType: 0
+    popTechType: 0
+    foodTechType: 0
+    coinTechType: 0
+    effectMesg: +1 Health
+    wittyMesg: Do we need to shine this things?
+  - technologyName: Professional Training
+    improvedType: 1
+    techIcon: {fileID: 5221690847314397059, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+      type: 3}
+    goldLevelRequirements: 50000000a0000000f00000004001000090010000
+    currentLevel: 0
+    goldRequirement: 0
+    curGold: 0
+    bonusIncrement: 1
+    troopTechType: 1
+    popTechType: 0
+    foodTechType: 0
+    coinTechType: 0
+    effectMesg: -1 Coin Cost
+    wittyMesg: So we train each other, imagine that.
+  - technologyName: Improved Weapons
+    improvedType: 1
+    techIcon: {fileID: 1403755455686264174, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+      type: 3}
+    goldLevelRequirements: 50000000a0000000f00000004001000090010000
+    currentLevel: 0
+    goldRequirement: 0
+    curGold: 0
+    bonusIncrement: 1
+    troopTechType: 2
+    popTechType: 0
+    foodTechType: 0
+    coinTechType: 0
+    effectMesg: +1 Damage
+    wittyMesg: We shine this with blood, right?
+  - technologyName: More Bunkers
+    improvedType: 1
+    techIcon: {fileID: 3705514516554134358, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+      type: 3}
+    goldLevelRequirements: 64000000c80000002c01000090010000f4010000
+    currentLevel: 0
+    goldRequirement: 0
+    curGold: 0
+    bonusIncrement: 1
+    troopTechType: 3
+    popTechType: 0
+    foodTechType: 0
+    coinTechType: 0
+    effectMesg: +1 Capacity
+    wittyMesg: But we're still sleeping straight.
+  - technologyName: Better Wage and Ration
+    improvedType: 1
+    techIcon: {fileID: 1709792392713523223, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+      type: 3}
+    goldLevelRequirements: 64000000c80000002c01000090010000f4010000
+    currentLevel: 0
+    goldRequirement: 0
+    curGold: 0
+    bonusIncrement: 10
+    troopTechType: 4
+    popTechType: 0
+    foodTechType: 0
+    coinTechType: 0
+    effectMesg: +10 Morale
+    wittyMesg: Or you know, we rebel, just kidding.
+  - technologyName: Finer Housing
+    improvedType: 2
+    techIcon: {fileID: -1020896093242781435, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+      type: 3}
+    goldLevelRequirements: 64000000c80000002c01000090010000f4010000
+    currentLevel: 0
+    goldRequirement: 0
+    curGold: 0
+    bonusIncrement: 1
+    troopTechType: 0
+    popTechType: 0
+    foodTechType: 0
+    coinTechType: 0
+    effectMesg: +1% Pop Birthrate
+    wittyMesg: No more holes for peepers!
+  - technologyName: Festival
+    improvedType: 2
+    techIcon: {fileID: -6405885113916026587, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+      type: 3}
+    goldLevelRequirements: c80000002c01000090010000f401000058020000
+    currentLevel: 0
+    goldRequirement: 0
+    curGold: 0
+    bonusIncrement: 1
+    troopTechType: 0
+    popTechType: 1
+    foodTechType: 0
+    coinTechType: 0
+    effectMesg: +1% New Settler
+    wittyMesg: '*hic* *hic* my king... *hic*'
+  - technologyName: Food Storage
+    improvedType: 2
+    techIcon: {fileID: 8344438251469931493, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+      type: 3}
+    goldLevelRequirements: 280000005000000078000000c80000002c010000
+    currentLevel: 0
+    goldRequirement: 0
+    curGold: 0
+    bonusIncrement: 1
+    troopTechType: 0
+    popTechType: 2
+    foodTechType: 0
+    coinTechType: 0
+    effectMesg: +1 Pop per Food
+    wittyMesg: I keep telling you! thats not the loo!
+  - technologyName: More House
+    improvedType: 2
+    techIcon: {fileID: 1316546189387464872, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+      type: 3}
+    goldLevelRequirements: 6400000064000000640000002c0100002c0100002c01000090010000900100009001000090010000
+    currentLevel: 0
+    goldRequirement: 0
+    curGold: 0
+    bonusIncrement: 5
+    troopTechType: 0
+    popTechType: 3
+    foodTechType: 0
+    coinTechType: 0
+    effectMesg: +1 Max Villager
+    wittyMesg: Finally! a new neighbor to fight with.
+  - technologyName: Invested Villagers
+    improvedType: 2
+    techIcon: {fileID: -4896230536849319097, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+      type: 3}
+    goldLevelRequirements: 6400000096000000c80000002c01000090010000
+    currentLevel: 0
+    goldRequirement: 0
+    curGold: 0
+    bonusIncrement: 1
+    troopTechType: 0
+    popTechType: 4
+    foodTechType: 0
+    coinTechType: 0
+    effectMesg: +1 Coin Tax
+    wittyMesg: As long as you clean my front, I'm good.
+  - technologyName: Innovation Tax
+    improvedType: 3
+    techIcon: {fileID: 5690192253094528978, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+      type: 3}
+    goldLevelRequirements: 1e0000003c0000005a0000007800000096000000b4000000d2000000f00000000e0100002c010000
+    currentLevel: 0
+    goldRequirement: 0
+    curGold: 0
+    bonusIncrement: 5
+    troopTechType: 0
+    popTechType: 0
+    foodTechType: 0
+    coinTechType: 0
+    effectMesg: -5 Coin for all Tech for -1 Coin Tax
+    wittyMesg: I bet they're buying wines with this.
+  - technologyName: King's Investment
+    improvedType: 3
+    techIcon: {fileID: 4698376793395596520, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+      type: 3}
+    goldLevelRequirements: 64000000c8000000c80000002c0100002c010000
+    currentLevel: 0
+    goldRequirement: 0
+    curGold: 0
+    bonusIncrement: 1
+    troopTechType: 0
+    popTechType: 0
+    foodTechType: 0
+    coinTechType: 1
+    effectMesg: +1% Merchant Arrival
+    wittyMesg: Should we cross fingers and pray?
+  - technologyName: Guarded Market
+    improvedType: 3
+    techIcon: {fileID: 8520981986330747531, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+      type: 3}
+    goldLevelRequirements: 50000000a0000000f00000004001000090010000
+    currentLevel: 0
+    goldRequirement: 0
+    curGold: 0
+    bonusIncrement: 3
+    troopTechType: 0
+    popTechType: 0
+    foodTechType: 0
+    coinTechType: 2
+    effectMesg: +3 Coin Tax per 10 Troops
+    wittyMesg: Its nice to have guards nearby..
+  - technologyName: Efficient Collection
+    improvedType: 3
+    techIcon: {fileID: -6111602437574283955, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+      type: 3}
+    goldLevelRequirements: 320000006400000096000000c8000000fa000000
+    currentLevel: 0
+    goldRequirement: 0
+    curGold: 0
+    bonusIncrement: 2
+    troopTechType: 0
+    popTechType: 0
+    foodTechType: 0
+    coinTechType: 3
+    effectMesg: +1 Coin Tax
+    wittyMesg: My wish list is not to be in that list.
+  - technologyName: Sealed Contracts
+    improvedType: 3
+    techIcon: {fileID: -6642446689720041290, guid: e831a7aa9fdf9944eb2bb71f8270a962,
+      type: 3}
+    goldLevelRequirements: 1e000000460000006400000096000000c8000000
+    currentLevel: 0
+    goldRequirement: 0
+    curGold: 0
+    bonusIncrement: 5
+    troopTechType: 0
+    popTechType: 0
+    foodTechType: 0
+    coinTechType: 4
+    effectMesg: +5 coin every merchant visit .
+    wittyMesg: Halt! Pay the king for the roads!

@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Background
+  - Foreground UI
+  - Loading Screen
+  - Tooltip
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Environment Background
+    uniqueID: 1325606307
+    locked: 0
+  - name: Back Environment
+    uniqueID: 1968155215
+    locked: 0
+  - name: Middle Background
+    uniqueID: 1423042251
+    locked: 0
+  - name: Middle Environment
+    uniqueID: 967355653
+    locked: 0
+  - name: Below In-game Interactables
+    uniqueID: 1279758585
+    locked: 0
+  - name: Characters
+    uniqueID: 2438500633
+    locked: 0
+  - name: Above Player Environment
+    uniqueID: 3203258325
+    locked: 0
+  - name: In game Interactables
+    uniqueID: 4122880857
+    locked: 0

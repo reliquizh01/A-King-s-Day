@@ -1,0 +1,1766 @@
+fileFormatVersion: 2
+guid: e831a7aa9fdf9944eb2bb71f8270a962
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4401203198970868267
+    second: Circle Silver
+  - first:
+      213: -7281660142676487341
+    second: Circle Gold
+  - first:
+      213: 8621583171619949093
+    second: Close Circle
+  - first:
+      213: 6736874840340672174
+    second: Arrow_Gold
+  - first:
+      213: -246574607474632246
+    second: Tech_Icon
+  - first:
+      213: -1496275953165801253
+    second: Arrow_Gold_2
+  - first:
+      213: 8514274462101901038
+    second: MoreTools_1
+  - first:
+      213: 3231751097297476082
+    second: Bell
+  - first:
+      213: 6625205584083236636
+    second: Silver_Circle
+  - first:
+      213: 5099975821263361202
+    second: Gold_Circle
+  - first:
+      213: -2785202304765965472
+    second: X_Circle
+  - first:
+      213: -1517534098895705379
+    second: Point_Right_Arrow
+  - first:
+      213: 8463904827888647028
+    second: Tech_Icon
+  - first:
+      213: 3097286565735694711
+    second: HorsePlougher_Icon
+  - first:
+      213: -1940123647689072542
+    second: MoreTools_1
+  - first:
+      213: 5223897934056880932
+    second: Tech_More_Tools
+  - first:
+      213: -9066628660522898624
+    second: Point_Left_Arrow
+  - first:
+      213: -6642446689720041290
+    second: MoreStorage_1
+  - first:
+      213: -6111602437574283955
+    second: BetterHerdFood_1
+  - first:
+      213: 5690192253094528978
+    second: BetterCuts_1
+  - first:
+      213: 8520981986330747531
+    second: Tech_Guarded_Market
+  - first:
+      213: 878979566806840911
+    second: ImprovedWeapons_1
+  - first:
+      213: -2101350720878376097
+    second: MoreBunkers_1
+  - first:
+      213: 1491248984042105532
+    second: BetterWageAndRation_1
+  - first:
+      213: -6406115455207733383
+    second: ProfessionalTraining_1
+  - first:
+      213: -5061758616054256777
+    second: BetterArmor_1
+  - first:
+      213: -2544064736828391766
+    second: InvestedVillagers_1
+  - first:
+      213: -1579297797110594810
+    second: MoreHouses_1
+  - first:
+      213: -8916734382251162532
+    second: FoodStorage_1
+  - first:
+      213: -1317204292785076276
+    second: Festival_1
+  - first:
+      213: -5155505051200308803
+    second: FinerHousing_1
+  - first:
+      213: 4401203198970868267
+    second: Silver_Circle
+  - first:
+      213: -7281660142676487341
+    second: Gold_Circle
+  - first:
+      213: 8621583171619949093
+    second: X_Circle
+  - first:
+      213: 6736874840340672174
+    second: Point_Right_Arrow
+  - first:
+      213: -1496275953165801253
+    second: Death_Rate_Icon
+  - first:
+      213: -1940123647689072542
+    second: Tech_Horse_Plougher
+  - first:
+      213: 3231751097297476082
+    second: Tech_More_Tools
+  - first:
+      213: -4818989591678866328
+    second: Point_Left_Arrow
+  - first:
+      213: -2930112696676977940
+    second: Bell_Icon
+  - first:
+      213: 6381620529307163975
+    second: Tech_More_Storage
+  - first:
+      213: -2645013052145306436
+    second: Tech_Better_Herd_Food
+  - first:
+      213: -2148009633409561155
+    second: Tech_Guarded_Market
+  - first:
+      213: 4698376793395596520
+    second: Tech_Kings_Investment
+  - first:
+      213: 1403755455686264174
+    second: Tech_Improved_Weapons
+  - first:
+      213: 3705514516554134358
+    second: Tech_More_Bunkers
+  - first:
+      213: 1709792392713523223
+    second: Tech_Bonus_Wage'n_Ration
+  - first:
+      213: 5221690847314397059
+    second: Tech_Professional_Training
+  - first:
+      213: 3196400111240885306
+    second: Tech_Better_Armor
+  - first:
+      213: -4896230536849319097
+    second: Tech_Invested_Villager
+  - first:
+      213: 1316546189387464872
+    second: Tech_More_Houses
+  - first:
+      213: 8344438251469931493
+    second: Tech_Food_Storage
+  - first:
+      213: -6405885113916026587
+    second: Tech_Festivals
+  - first:
+      213: -1020896093242781435
+    second: Tech_Finer_Housing
+  - first:
+      213: 8463904827888647028
+    second: Tech Panel
+  - first:
+      213: -4818989591678866328
+    second: Technology Atlas_8
+  - first:
+      213: 4401203198970868267
+    second: Technology Atlas_0
+  - first:
+      213: -7281660142676487341
+    second: Technology Atlas_1
+  - first:
+      213: 8621583171619949093
+    second: Technology Atlas_2
+  - first:
+      213: 6736874840340672174
+    second: Technology Atlas_3
+  - first:
+      213: 3097286565735694711
+    second: Death_Rate_Icon
+  - first:
+      213: 8514274462101901038
+    second: Tech_Horse_Plougher
+  - first:
+      213: -6642446689720041290
+    second: Tech_Sealed_Contracts
+  - first:
+      213: -6111602437574283955
+    second: Tech_More_Storage
+  - first:
+      213: 5690192253094528978
+    second: Tech_Better_Herd_Food
+  - first:
+      213: -2101350720878376097
+    second: Tech_Improved_Weapons
+  - first:
+      213: 1491248984042105532
+    second: Tech_More_Bunkers
+  - first:
+      213: -6406115455207733383
+    second: Tech_Bonus_Wage'n_Ration
+  - first:
+      213: -5061758616054256777
+    second: Tech_Professional_Training
+  - first:
+      213: -2544064736828391766
+    second: Tech_Better_Armor
+  - first:
+      213: -1579297797110594810
+    second: Tech_Invested_Villager
+  - first:
+      213: -8916734382251162532
+    second: Tech_More_Houses
+  - first:
+      213: -1317204292785076276
+    second: Tech_Food_Storage
+  - first:
+      213: -5155505051200308803
+    second: Tech_Festivals
+  - first:
+      213: 5829012146252092248
+    second: Tech_Finer_Housing
+  - first:
+      213: -3875562208015021106
+    second: Card_Unselected
+  - first:
+      213: -246574607474632246
+    second: Technology_Icon
+  - first:
+      213: 8514274462101901038
+    second: Technology Atlas_6
+  - first:
+      213: -6111602437574283955
+    second: Tech_Efficient_Collection
+  - first:
+      213: 5690192253094528978
+    second: Tech_Innovation_Tax
+  - first:
+      213: -2148009633409561155
+    second: Tech_Guarded_Market
+  - first:
+      213: -2148009633409561155
+    second: Tech_Better_Cuts
+  - first:
+      213: 8520981986330747531
+    second: Tech_Guarded_Market
+  - first:
+      213: 878979566806840911
+    second: Action_Card_Train_Troops
+  - first:
+      213: -2101350720878376097
+    second: Action_Card_Train_Hero
+  - first:
+      213: 1491248984042105532
+    second: Watch_Icon
+  - first:
+      213: -6406115455207733383
+    second: Action_Card_Provide_Food
+  - first:
+      213: -5061758616054256777
+    second: Action_Card_Build_Houses
+  - first:
+      213: -2544064736828391766
+    second: Action_Card_Clean_Area
+  - first:
+      213: -1579297797110594810
+    second: Action_Card_Add_Farmers
+  - first:
+      213: -8916734382251162532
+    second: Action_Card_Add_Cow_Breeder
+  - first:
+      213: -1317204292785076276
+    second: Action_Card_Add_Storage_Helper
+  - first:
+      213: -5155505051200308803
+    second: Card_Selected
+  - first:
+      213: -1955346441573943856
+    second: Card_Action_Button
+  - first:
+      213: 3403175251718106097
+    second: Action_Card_Prepare_Festival
+  - first:
+      213: 4029706435026645084
+    second: Action_Card_Festival_Merchant
+  - first:
+      213: 2830022091024966801
+    second: Action_Card_Post_Demand
+  - first:
+      213: 5393651931708289265
+    second: ActionCard_Panel
+  - first:
+      213: 5047891255180530619
+    second: Action_Card_Hire_Hero
+  - first:
+      213: 1518080418170435227
+    second: Action_Card_Buy_Drinks
+  - first:
+      213: 7132887961597409650
+    second: Action_Card_Hire_Mercenary
+  - first:
+      213: 3196816435994406208
+    second: Card_Information_Panel
+  - first:
+      213: -2490655402985036327
+    second: Building_Panel
+  - first:
+      213: -1503813222287230182
+    second: Action_Card_Craft_Weapon
+  - first:
+      213: 3936279452888101280
+    second: Action_Card_Equip_Hero
+  - first:
+      213: 9124925265673271503
+    second: Arrow_Button_Brown
+  - first:
+      213: -6866828706736253922
+    second: Speed_Icon
+  - first:
+      213: -7621245386961359428
+    second: Damage_Icon
+  - first:
+      213: 8819155330738142235
+    second: Health_Icon
+  - first:
+      213: 791580562967185319
+    second: Sword_Icon
+  - first:
+      213: 9029295832776591723
+    second: Spear_Icon
+  - first:
+      213: 87444261590327566
+    second: Bow_Icon
+  - first:
+      213: 3097286565735694711
+    second: Death_Rate_Icon
+  - first:
+      213: 3097286565735694711
+    second: Action_card_Recruit_Troops
+  - first:
+      213: 5455269037575013251
+    second: Technology Atlas_44
+  - first:
+      213: 4547751729935902508
+    second: Technology Atlas_45
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 350
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 1
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 1
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 1
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tech Panel
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 257
+        width: 143
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47b3407e894d57570800000000000000
+      internalID: 8463904827888647028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech_Horse_Plougher
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 427
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 260682752db4315e0800000000000000
+      internalID: -1940123647689072542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Silver_Circle
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 421
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b22b8faadf6341d30800000000000000
+      internalID: 4401203198970868267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gold_Circle
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 420
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 353d5ac1ea852fa90800000000000000
+      internalID: -7281660142676487341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: X_Circle
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 420
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52a84e9273406a770800000000000000
+      internalID: 8621583171619949093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Point_Right_Arrow
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 470
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaea5ca49ff2e7d50800000000000000
+      internalID: 6736874840340672174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech_More_Tools
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 427
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f915ec108c79dc20800000000000000
+      internalID: 3231751097297476082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Technology Atlas_8
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 359
+        width: 43
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c2dab9f728f1db0800000000000000
+      internalID: -4818989591678866328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bell_Icon
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 412
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce2f4bad6062657d0800000000000000
+      internalID: -2930112696676977940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech_More_Storage
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 371
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74d91b46f02109850800000000000000
+      internalID: 6381620529307163975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech_Better_Herd_Food
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 370
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb47b9894a60b4bd0800000000000000
+      internalID: -2645013052145306436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech_Better_Cuts
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 369
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd818a7e9cb032e0800000000000000
+      internalID: -2148009633409561155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech_Improved_Weapons
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 302
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6542b746242b7310800000000000000
+      internalID: 1403755455686264174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech_More_Bunkers
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 302
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6533345f1d1ac6330800000000000000
+      internalID: 3705514516554134358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech_Bonus_Wage'n_Ration
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 302
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 710da5f4f176ab710800000000000000
+      internalID: 1709792392713523223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech_Professional_Training
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 238
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3874511f82c277840800000000000000
+      internalID: 5221690847314397059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech_Better_Armor
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 238
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a34388647f4eb5c20800000000000000
+      internalID: 3196400111240885306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech_Invested_Villager
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 176
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b1da0a4481d0cb0800000000000000
+      internalID: -4896230536849319097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech_More_Houses
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 176
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a085dca8cf454210800000000000000
+      internalID: 1316546189387464872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech_Food_Storage
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 176
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e30c0501666dc370800000000000000
+      internalID: 8344438251469931493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech_Festivals
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 113
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5219211cd69b917a0800000000000000
+      internalID: -6405885113916026587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech_Finer_Housing
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 113
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5011ea1896c05d1f0800000000000000
+      internalID: -1020896093242781435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Technology_Icon
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 470
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac9d7de63bdf39cf0800000000000000
+      internalID: -246574607474632246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Technology Atlas_6
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 441
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eee83c14387c82670800000000000000
+      internalID: 8514274462101901038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech_Sealed_Contracts
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 56
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b084cbcde941d3a0800000000000000
+      internalID: -6642446689720041290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech_Efficient_Collection
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 56
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d29f3b6f93f2ba0800000000000000
+      internalID: -6111602437574283955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech_Innovation_Tax
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 56
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d7016dc4bf97fe40800000000000000
+      internalID: 5690192253094528978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech_Kings_Investment
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 2
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ec884fecccf33140800000000000000
+      internalID: 4698376793395596520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech_Guarded_Market
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 2
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b822fb078fb904670800000000000000
+      internalID: 8520981986330747531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_card_Recruit_Troops
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 439
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 771044ea8b5cbfa20800000000000000
+      internalID: 3097286565735694711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_Card_Train_Troops
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 439
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f46395c4243c23c00800000000000000
+      internalID: 878979566806840911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_Card_Train_Hero
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 439
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b888d17a086d2e0800000000000000
+      internalID: -2101350720878376097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watch_Icon
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 441
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbaed7dcc0bf1b410800000000000000
+      internalID: 1491248984042105532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_Card_Provide_Food
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 375
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 977043e3fe7e817a0800000000000000
+      internalID: -6406115455207733383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_Card_Build_Houses
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 375
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b20576b5501c9b0800000000000000
+      internalID: -5061758616054256777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_Card_Clean_Area
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 375
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaefeb3d99aa1bcd0800000000000000
+      internalID: -2544064736828391766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_Card_Add_Farmers
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 309
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6038aa06505351ae0800000000000000
+      internalID: -1579297797110594810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_Card_Add_Cow_Breeder
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 309
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c54486d7255614480800000000000000
+      internalID: -8916734382251162532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_Card_Add_Storage_Helper
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 309
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc70defaca958bde0800000000000000
+      internalID: -1317204292785076276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Card_Selected
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 286
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db939719877f378b0800000000000000
+      internalID: -5155505051200308803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Card_Unselected
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 286
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecb065694bc373ac0800000000000000
+      internalID: -3875562208015021106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Card_Action_Button
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 261
+        width: 91
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d5392175c63dd4e0800000000000000
+      internalID: -1955346441573943856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_Card_Prepare_Festival
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 244
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fbee035cd18a3f20800000000000000
+      internalID: 3403175251718106097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_Card_Festival_Merchant
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 244
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c507ed007a46ce730800000000000000
+      internalID: 4029706435026645084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_Card_Post_Demand
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 244
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1942d020912464720800000000000000
+      internalID: 2830022091024966801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionCard_Panel
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 186
+        width: 203
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f07297ead91ada40800000000000000
+      internalID: 5393651931708289265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_Card_Hire_Hero
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 181
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb316d90a56bd0640800000000000000
+      internalID: 5047891255180530619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_Card_Buy_Drinks
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 181
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b967681e81e411510800000000000000
+      internalID: 1518080418170435227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_Card_Hire_Mercenary
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 181
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2797ca53fcb1df260800000000000000
+      internalID: 7132887961597409650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Card_Information_Panel
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 55
+        width: 105
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04da39f6c9f5d5c20800000000000000
+      internalID: 3196816435994406208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building_Panel
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 56
+        width: 102
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 19, y: 25, z: 20, w: 17}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d56b276b1a6f6dd0800000000000000
+      internalID: -2490655402985036327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_Card_Craft_Weapon
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 116
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1bb80587d1612be0800000000000000
+      internalID: -1503813222287230182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_Card_Equip_Hero
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 116
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a1701e9e4970a630800000000000000
+      internalID: 3936279452888101280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arrow_Button_Brown
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 28
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc83176ee2f32ae70800000000000000
+      internalID: 9124925265673271503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speed_Icon
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 31
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14d7895caf14b0a0800000000000000
+      internalID: -6866828706736253922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Damage_Icon
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 32
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbd651c13b5eb3690800000000000000
+      internalID: -7621245386961359428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health_Icon
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 34
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1cb3a32c0fe36a70800000000000000
+      internalID: 8819155330738142235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Icon
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 241
+        width: 33
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a743caf3524cfa00800000000000000
+      internalID: 791580562967185319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spear_Icon
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 220
+        width: 56
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69409c78b08e4d70800000000000000
+      internalID: 9029295832776591723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bow_Icon
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 192
+        width: 38
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e01ecb5b71aa63100800000000000000
+      internalID: 87444261590327566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Technology Atlas_44
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 5
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38388d2594205bb40800000000000000
+      internalID: 5455269037575013251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Technology Atlas_45
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 5
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c276f757a1cdc1f30800000000000000
+      internalID: 4547751729935902508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
