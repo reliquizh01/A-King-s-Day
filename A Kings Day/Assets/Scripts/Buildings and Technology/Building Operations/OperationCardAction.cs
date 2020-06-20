@@ -33,28 +33,18 @@ namespace Buildings
         public GameObject coinCostPanel;
         public TextMeshProUGUI coinCostMesg;
 
-        Action onEnterCallback, onExitCallback;
         public void SetActionType(CardActionType thisType, string Mesg = "")
         {
 
         }
-        public void SetExitCallback(Action newCallback)
-        {
-            onExitCallback = newCallback;
-        }
-        public void SetEnterCallback(Action newCallback)
-        {
-            onEnterCallback = newCallback;
-        }
-
         public void OnMouseHover()
         {
-            onEnterCallback();
+
         }
 
         public void OnMouseLeave()
         {
-            onExitCallback();
+
         }
     }
 }

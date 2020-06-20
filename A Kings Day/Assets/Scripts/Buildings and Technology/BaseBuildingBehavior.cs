@@ -49,10 +49,6 @@ namespace Buildings
             }
             myCol = GetComponent<BoxCollider2D>();
 
-            if(testMode)
-            {
-                SetupInteractableInformation();
-            }
         }
 
         public override void SetupInteractableInformation()

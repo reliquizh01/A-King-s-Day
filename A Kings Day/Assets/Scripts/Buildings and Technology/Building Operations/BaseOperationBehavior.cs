@@ -17,11 +17,13 @@ namespace Buildings
         public BaseBuildingBehavior currentBuildingClicked;
 
         public OperationCardsHandler cardHandler;
-        public OperationCardActionHandler cardActionHandler;
-        public BuildingInformationHandler informationhandler;
 
+
+        [Header("Cards Information")]
         public List<OperationCard> operationCardsList;
         public OperationCard currentCard;
+        [Header("Building Information")]
+        public InformationActionHandler informationActionHandler;
 
 
         [Header("Visual Informations")]
@@ -29,7 +31,8 @@ namespace Buildings
         public TextMeshProUGUI cardNameText;
         public TextMeshProUGUI flavorText;
         public Image focusedCardIcon;
-        private int selectedCardIdx;
+        public int selectedCardIdx;
+
         public void Start()
         {
             flavorText.text = "";
@@ -41,8 +44,7 @@ namespace Buildings
             SetupCardInformation();
             StartCoroutine(myPanel.WaitAnimationForAction(myPanel.openAnimationName, StartIntroduction));
             // Open Building [ NOT THE CARD ]
-            informationhandler.OpenBuildingInformation(currentBuildingClicked.buildingInformation.buildingType);
-            if (ResourceInformationController.GetInstance != null)
+           if (ResourceInformationController.GetInstance != null)
             {
                 ResourceInformationController.GetInstance.ShowResourcePanel(ResourcePanelType.side);
             }
@@ -50,9 +52,10 @@ namespace Buildings
         public void CloseOperationTab()
         {
             StartCoroutine(myPanel.WaitAnimationForAction(myPanel.closeAnimationName, ResetInformation));
-            informationhandler.CloseBuildingInformation();
             EventBroadcaster.Instance.PostEvent(EventNames.DISABLE_TAB_COVER);
-
+            informationActionHandler.HideInfoBlocker();
+            informationActionHandler.ResetActionList();
+            informationActionHandler.ClosePanelList();
             if (ResourceInformationController.GetInstance != null)
             {
                 ResourceInformationController.GetInstance.ShowResourcePanel(ResourcePanelType.overhead);
@@ -63,7 +66,7 @@ namespace Buildings
             focusedCardIcon.gameObject.SetActive(false);
             flavorText.text = "";
             cardNameText.text = "";
-            cardActionHandler.ResetActionList();
+            informationActionHandler.ResetActionList();
         }
         public void StartIntroduction()
         {
@@ -74,7 +77,6 @@ namespace Buildings
         }
         public void SetupCardInformation()
         {
-            Debug.Log("Setting Up Operations Cards Sprites!");
             // Setup Titles
             buildingNameText.text = currentBuildingClicked.buildingInformation.BuildingName;
             // Setup Cards
@@ -113,24 +115,18 @@ namespace Buildings
                 else
                 {
                     operationCardsList[i].SetAsSelected();
+                    informationActionHandler.selectedCardIdx = i;
                     selectedCardIdx = i;
                     cardNameText.text = currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].cardName;
                 }
             }
 
             // OPEN CARD INFORMATION [AFTER BUILDING]
-            informationhandler.SetCurrentCardAction(selectedCardIdx);
-            cardActionHandler.SetupActionList(currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].actionTypes);
-        }
-        public virtual void ImplementThisAction(int actionIdx)
-        {
+            informationActionHandler.SetupActionList(currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].actionTypes);
+            informationActionHandler.OpenPanel(currentBuildingClicked.buildingType);
 
         }
 
-        public void OnEnterShowPotential(int buttonIdx)
-        {
-            
-        }
         public void CardClickFlavorText(OperationCard thisCard)
         {
             int cardClickedIdx = operationCardsList.FindIndex(x => x == thisCard);

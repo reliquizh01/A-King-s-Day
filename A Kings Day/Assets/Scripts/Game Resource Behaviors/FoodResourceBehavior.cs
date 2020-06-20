@@ -33,7 +33,7 @@ namespace GameResource
         {
             get
             {
-                return foodStorageCounter + techStorageCounter;
+                return foodStorageCounter + techStorageCounter + (2 * curPlayer.storageKeeperCount);
             }
         }
 
@@ -58,7 +58,7 @@ namespace GameResource
         {
             get
             {
-                return cowBirthChance + techBirthChance;
+                return cowBirthChance + techBirthChance + ((float)curPlayer.herdsmanCount * 0.01f);
             }
         }
         private float twinsBirthChance = 0.05f; // chance of having 2 new cows.
@@ -66,7 +66,7 @@ namespace GameResource
 
         private int birthRollWeekInterval = 5; // Every 5 weeks roll dice for cowbirth.
 
-        public int cowMeatPerKill = 10;
+        public int cowMeatPerKill = 3;
         public int techMeatPerKill = 0;
 
         public override void SetupResourceBehavior()
@@ -139,19 +139,12 @@ namespace GameResource
 
             if(curPlayer.canReceiveGrainProduce)
             {
-                int checkSurplus = curPlayer.foods + GetGrainProduction();
-                int surplusFood = 0;
-                int addedFood = 0;
-                if (checkSurplus > GetMaxFoodStorage)
-                {
-                    surplusFood = checkSurplus - GetMaxFoodStorage;
-                    Debug.LogWarning("Food over capacity! Silos need improvements!");
-                }
-                addedFood += GetGrainProduction() - surplusFood;
+                int addedFood = GetGrainProduction();
                 if (ProductionManager.GetInstance != null)
                 {
                     ProductionManager.GetInstance.ShowFoodNotif(addedFood);
                 }
+
                 curPlayer.foods += addedFood;
                 curPlayer.canReceiveGrainProduce = false;
             }
@@ -159,7 +152,7 @@ namespace GameResource
         }
         public int GetGrainProduction()
         {
-            int thisWeeksProduce = (curPlayer.farmerCount * techHarvestProduce);
+            int thisWeeksProduce = (curPlayer.farmerCount * (techHarvestProduce+1));
 
             return thisWeeksProduce;
         }

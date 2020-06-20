@@ -15,6 +15,7 @@ namespace Characters
     [Serializable]
     public class BaseMerchantInformationData
     {
+        public string merchantName;
         public List<ItemInformationData> itemsSold;
     }
 }

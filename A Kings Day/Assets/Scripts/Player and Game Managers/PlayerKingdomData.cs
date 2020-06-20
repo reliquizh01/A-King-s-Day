@@ -62,12 +62,20 @@ namespace Kingdoms
         public int farmerCount, herdsmanCount, storageKeeperCount;
 
         [Header("Game Chances")]
+        public int populationBurst = 0;
+        public int potentialRefugee = 0;
+        public int potentialMerchantArrival = 0;
+        public int potentialGoodsMerchant = 0;
+        public int potentialEquipsMerchant = 0;
+        public int potentialExoticMerchant = 0;
+
         [Header("Heroes")]
         public List<BaseHeroInformationData> myHeroes;
 
         [Header("Merchants")]
         public List<BaseMerchantInformationData> currentShopMerchants;
-        
+        public List<BaseMerchantInformationData> currentFestivalMerchants;
+
         public int GetPopulationCount
         {
             get { return farmerCount + herdsmanCount + storageKeeperCount + population; }
@@ -93,6 +101,7 @@ namespace Kingdoms
 
         public int curGrainWeeksCounter;
         public bool canReceiveGrainProduce;
+
         public int curCowBirthCounter;
         public bool canReceiveNewCows;
         [Header("Coins")]
