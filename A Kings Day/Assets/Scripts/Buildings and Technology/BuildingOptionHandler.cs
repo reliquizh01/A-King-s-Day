@@ -58,11 +58,11 @@ namespace Buildings
         }
         public void FilterIcons()
         {
-            if(myBuilding.resTechType == Kingdoms.ResourceType.Shop || myBuilding.resTechType == Kingdoms.ResourceType.Tavern)
+            if(myBuilding.buildingType == BuildingType.Smithery|| myBuilding.buildingType == BuildingType.Tavern)
             {
                 buildingOptions.Find(x => x.type == BuildingOptionType.Tech).SetInteraction(false);
             }
-            if(myBuilding.resTechType == Kingdoms.ResourceType.Food)
+            if(myBuilding.buildingType == BuildingType.Farm)
             {
                 buildingOptions.Find(x => x.type == BuildingOptionType.Upgrade).SetInteraction(false);
             }
@@ -127,7 +127,6 @@ namespace Buildings
             {
                 return;
             }
-
             myBuilding.TechBuilding();
             CloseIcons();
         }

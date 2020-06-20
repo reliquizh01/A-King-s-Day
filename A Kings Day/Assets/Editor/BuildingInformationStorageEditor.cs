@@ -242,7 +242,7 @@ namespace Buildings
             // Building Information
             GUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("Type: ", EditorStyles.boldLabel, GUILayout.Width(100));
-            curBuildingData.buildingType = (ResourceType)EditorGUILayout.EnumPopup(curBuildingData.buildingType, GUILayout.MaxWidth(100));
+            curBuildingData.buildingType = (BuildingType)EditorGUILayout.EnumPopup(curBuildingData.buildingType, GUILayout.MaxWidth(100));
             GUILayout.EndHorizontal();
             GUILayout.EndArea();
 

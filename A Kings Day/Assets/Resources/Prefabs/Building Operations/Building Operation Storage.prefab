@@ -222,7 +222,7 @@ MonoBehaviour:
     - Everyone! Gather! Your king is here!
     - Everyone! March! Your king is here!
   - BuildingName: Market
-    buildingType: 3
+    buildingType: 6
     buildingCard:
     - cardName: Sponsor Festival
       cardIcon: {fileID: 3403175251718106097, guid: e831a7aa9fdf9944eb2bb71f8270a962,
@@ -372,7 +372,7 @@ MonoBehaviour:
     - Ah! the king, the Tax lord, the magnanimous himself, come!
     - Are you here to buy something, or maybe you want to feast?
   - BuildingName: Tavern
-    buildingType: 6
+    buildingType: 2
     buildingCard:
     - cardName: Recruit Hero
       cardIcon: {fileID: 5047891255180530619, guid: e831a7aa9fdf9944eb2bb71f8270a962,
@@ -514,7 +514,7 @@ MonoBehaviour:
     - So the king arrives, alone. Anything you want to know?
     - A few of those men can use a drink or two my king...
   - BuildingName: Shop
-    buildingType: 5
+    buildingType: 0
     buildingCard:
     - cardName: First Stall
       cardIcon: {fileID: 4029706435026645084, guid: e831a7aa9fdf9944eb2bb71f8270a962,
@@ -631,7 +631,7 @@ MonoBehaviour:
     introductionMessages:
     - Handling this stallls is good! they ensure flow of trade..
   - BuildingName: Smithery
-    buildingType: 7
+    buildingType: 3
     buildingCard:
     - cardName: Craft Item
       cardIcon: {fileID: -1503813222287230182, guid: e831a7aa9fdf9944eb2bb71f8270a962,
@@ -723,7 +723,7 @@ MonoBehaviour:
     - Aaah, the Smell of Iron! and the smell of filthy rich kings haha!
     - Give us enough gold, and we'll craft it for you!
   - BuildingName: Houses
-    buildingType: 2
+    buildingType: 4
     buildingCard:
     - cardName: Provide Food
       cardIcon: {fileID: -6406115455207733383, guid: e831a7aa9fdf9944eb2bb71f8270a962,
@@ -881,7 +881,7 @@ MonoBehaviour:
     - My king, welcome to the urban community!
     - The castles of your population lies here, in the community.
   - BuildingName: Farm
-    buildingType: 0
+    buildingType: 5
     buildingCard:
     - cardName: Add Farmers
       cardIcon: {fileID: -1579297797110594810, guid: e831a7aa9fdf9944eb2bb71f8270a962,

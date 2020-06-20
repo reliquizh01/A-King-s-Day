@@ -170,7 +170,7 @@ MonoBehaviour:
     buildingType: 0
     buildingCard: []
     introductionMessages: []
-  resTechType: 5
+  buildingType: 0
   repairPrice: 20
 --- !u!1 &3915599988027265558
 GameObject:
@@ -1470,13 +1470,13 @@ MonoBehaviour:
   optionHandler: {fileID: 4468999781242270073}
   ruinEmpty: {fileID: 3915599988632249935}
   fixFilled: {fileID: 3915599988632249935}
-  informationName: 
+  informationName: Market
   buildingInformation:
     BuildingName: 
     buildingType: 0
     buildingCard: []
     introductionMessages: []
-  resTechType: 3
+  buildingType: 6
   repairPrice: 20
 --- !u!1 &3915599988649811910
 GameObject:
@@ -2434,7 +2434,7 @@ MonoBehaviour:
     buildingType: 0
     buildingCard: []
     introductionMessages: []
-  resTechType: 1
+  buildingType: 1
   repairPrice: 20
 --- !u!1 &3915599989068777336
 GameObject:
@@ -3377,7 +3377,7 @@ MonoBehaviour:
     buildingType: 0
     buildingCard: []
     introductionMessages: []
-  resTechType: 0
+  buildingType: 5
   repairPrice: 20
 --- !u!1 &3915599989312739007
 GameObject:
@@ -3779,7 +3779,7 @@ MonoBehaviour:
     buildingType: 0
     buildingCard: []
     introductionMessages: []
-  resTechType: 2
+  buildingType: 4
   repairPrice: 10
 --- !u!1 &3915599989382763215
 GameObject:
@@ -3906,7 +3906,7 @@ MonoBehaviour:
     buildingType: 0
     buildingCard: []
     introductionMessages: []
-  resTechType: 6
+  buildingType: 2
   repairPrice: 20
 --- !u!1 &3915599989440727798
 GameObject:
@@ -4701,7 +4701,7 @@ MonoBehaviour:
     buildingType: 0
     buildingCard: []
     introductionMessages: []
-  resTechType: 7
+  buildingType: 3
   repairPrice: 20
 --- !u!1 &3915599989804100706
 GameObject:

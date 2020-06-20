@@ -85,11 +85,60 @@ namespace ResourceUI
         }
         public void ShowResourcePanel(ResourcePanelType panelType)
         {
-            if(currentPanel != null)
+
+            if (currentPanel != null)
             {
-                currentPanel.myPanel.PlayCloseAnimation();
+                if (currentPanel == sidePanel)
+                {
+                    StartCoroutine(currentPanel.myPanel.WaitAnimationForAction(currentPanel.myPanel.closeAnimationName, () => SwapDelay(panelType)));
+                }
+                else
+                {
+                    currentPanel.myPanel.PlayCloseAnimation();
+                    switch (panelType)
+                    {
+                        case ResourcePanelType.overhead:
+                            overheadPanel.gameObject.SetActive(true);
+                            overheadPanel.InitializeData();
+                            overheadPanel.myPanel.PlayOpenAnimation();
+                            currentPanel = overheadPanel;
+                            break;
+                        case ResourcePanelType.side:
+                            sidePanel.gameObject.SetActive(true);
+                            sidePanel.InitializeData();
+                            sidePanel.myPanel.PlayOpenAnimation();
+                            currentPanel = sidePanel;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+            else
+            {
+                switch (panelType)
+                {
+                    case ResourcePanelType.overhead:
+                        overheadPanel.gameObject.SetActive(true);
+                        overheadPanel.InitializeData();
+                        overheadPanel.myPanel.PlayOpenAnimation();
+                        currentPanel = overheadPanel;
+                        break;
+                    case ResourcePanelType.side:
+                        sidePanel.gameObject.SetActive(true);
+                        sidePanel.InitializeData();
+                        sidePanel.myPanel.PlayOpenAnimation();
+                        currentPanel = sidePanel;
+                        break;
+                    default:
+                        break;
+                }
             }
 
+        }
+
+        public void SwapDelay(ResourcePanelType panelType)
+        {
             switch (panelType)
             {
                 case ResourcePanelType.overhead:
@@ -107,6 +156,7 @@ namespace ResourceUI
                 default:
                     break;
             }
+
         }
         public void ShowWeekendPanel()
         {

@@ -13,5 +13,10 @@ namespace Buildings
         {
             return buildingOperationList.Find(x => x.BuildingName == buildingName);
         }
+
+        public BuildingInformationData ObtainBuildingOperation(BuildingType type)
+        {
+            return buildingOperationList.Find(x => x.buildingType == type);
+        }
     }
 }

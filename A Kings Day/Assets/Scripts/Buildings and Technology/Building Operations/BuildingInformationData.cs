@@ -21,7 +21,7 @@ namespace Buildings
     public class BuildingInformationData
     {
         public string BuildingName;
-        public ResourceType buildingType;
+        public BuildingType buildingType;
 
         public List<BuildingCardData> buildingCard;
         
@@ -64,6 +64,10 @@ namespace Buildings
         public bool costResource;
         public Sprite logoIcon;
         public string message;
+
+        [Header("Action Information")]
+        public bool hasCooldown;
+        public int cooldownCount;
 
         [Header("Reward List")]
         public List<ResourceReward> rewardList;

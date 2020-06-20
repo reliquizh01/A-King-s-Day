@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Territory;
 using Technology;
+using Characters;
 
 namespace Kingdoms
 {
@@ -60,6 +61,13 @@ namespace Kingdoms
         public bool canReceiveTax;
         public int farmerCount, herdsmanCount, storageKeeperCount;
 
+        [Header("Game Chances")]
+        [Header("Heroes")]
+        public List<BaseHeroInformationData> myHeroes;
+
+        [Header("Merchants")]
+        public List<BaseMerchantInformationData> currentShopMerchants;
+        
         public int GetPopulationCount
         {
             get { return farmerCount + herdsmanCount + storageKeeperCount + population; }

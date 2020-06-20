@@ -8,6 +8,16 @@ using Managers;
 using UnityEngine.EventSystems;
 namespace Buildings
 {
+    public enum BuildingType
+    {
+        Shop,
+        Barracks,
+        Tavern,
+        Smithery,
+        Houses,
+        Farm,
+        Market,
+    }
     /// <summary>
     /// Handles all basic behavior of buildings inside the balcony scene
     /// </summary>
@@ -23,9 +33,13 @@ namespace Buildings
         [Header("Building Information")]
         public string informationName;
         public BuildingInformationData buildingInformation;
-        public ResourceType resTechType;
+        public BuildingType buildingType;
         public int repairPrice = 20;
         private BoxCollider2D myCol;
+
+        [Header("Test And Debugging Only")]
+        [SerializeField] private bool testMode = false;
+
         public override void Start()
         {
             base.Start();
@@ -35,12 +49,23 @@ namespace Buildings
             }
             myCol = GetComponent<BoxCollider2D>();
 
+            if(testMode)
+            {
+                SetupInteractableInformation();
+            }
         }
 
         public override void SetupInteractableInformation()
         {
             base.SetupInteractableInformation();
-            buildingInformation = TransitionManager.GetInstance.currentSceneManager.buildingInformationStorage.ObtainBuildingOperation(informationName);
+            if(TransitionManager.GetInstance != null)
+            {
+                buildingInformation = TransitionManager.GetInstance.currentSceneManager.buildingInformationStorage.ObtainBuildingOperation(informationName);
+            }
+            else if(testMode)
+            {
+                buildingInformation = BalconySceneManager.GetInstance.buildingInformationStorage.ObtainBuildingOperation(buildingType);
+            }
         }
         public void OnMouseEnter()
         {
@@ -107,7 +132,7 @@ namespace Buildings
         {
             if (BalconyManager.GetInstance != null)
             {
-                BalconyManager.GetInstance.OpenTechTab(resTechType);
+                BalconyManager.GetInstance.OpenTechTab(buildingType);
             }
         }
         public void UseBuilding()

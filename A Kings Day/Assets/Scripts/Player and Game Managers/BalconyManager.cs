@@ -71,9 +71,9 @@ namespace Managers
         }
 
 
-        public void OpenTechTab(Kingdoms.ResourceType type)
+        public void OpenTechTab(BuildingType type)
         {
-            if(type == Kingdoms.ResourceType.Shop || type == Kingdoms.ResourceType.Blacksmith)
+            if(type == BuildingType.Shop || type == BuildingType.Smithery)
             {
                 return;
             }

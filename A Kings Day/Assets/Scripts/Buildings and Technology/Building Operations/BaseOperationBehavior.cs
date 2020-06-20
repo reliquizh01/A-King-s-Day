@@ -18,6 +18,7 @@ namespace Buildings
 
         public OperationCardsHandler cardHandler;
         public OperationCardActionHandler cardActionHandler;
+        public BuildingInformationHandler informationhandler;
 
         public List<OperationCard> operationCardsList;
         public OperationCard currentCard;
@@ -34,12 +35,14 @@ namespace Buildings
             flavorText.text = "";
             cardNameText.text = "";
         }
-        public void OpenOperationTab(BaseBuildingBehavior buildingInformation)
+        public void OpenOperationTab(BaseBuildingBehavior thisBuilding)
         {
-            currentBuildingClicked = buildingInformation;
+            currentBuildingClicked = thisBuilding;
             SetupCardInformation();
             StartCoroutine(myPanel.WaitAnimationForAction(myPanel.openAnimationName, StartIntroduction));
-            if(ResourceInformationController.GetInstance != null)
+            // Open Building [ NOT THE CARD ]
+            informationhandler.OpenBuildingInformation(currentBuildingClicked.buildingInformation.buildingType);
+            if (ResourceInformationController.GetInstance != null)
             {
                 ResourceInformationController.GetInstance.ShowResourcePanel(ResourcePanelType.side);
             }
@@ -47,6 +50,7 @@ namespace Buildings
         public void CloseOperationTab()
         {
             StartCoroutine(myPanel.WaitAnimationForAction(myPanel.closeAnimationName, ResetInformation));
+            informationhandler.CloseBuildingInformation();
             EventBroadcaster.Instance.PostEvent(EventNames.DISABLE_TAB_COVER);
 
             if (ResourceInformationController.GetInstance != null)
@@ -65,6 +69,8 @@ namespace Buildings
         {
             int rand = Random.Range(0, currentBuildingClicked.buildingInformation.introductionMessages.Count - 1);
             flavorText.text = currentBuildingClicked.buildingInformation.introductionMessages[rand];
+
+            SetAsCurrentCard(operationCardsList[0]);
         }
         public void SetupCardInformation()
         {
@@ -78,16 +84,22 @@ namespace Buildings
                 operationCardsList[i].SetAsUnselected();
             }
         }
+
+
         public void SetAsCurrentCard(OperationCard thisCard)
         {
             if(thisCard != currentCard)
             {
                 currentCard = thisCard;
+
+                // BACKGROUND ENLARGED VERSION OF THE IMAGE BUT NOT VISIBLE
                 if(!focusedCardIcon.gameObject.activeInHierarchy)
                 {
                     focusedCardIcon.gameObject.SetActive(true);
                 }
                 focusedCardIcon.sprite = currentCard.cardIcon.sprite;
+                // --------------------------- IF FOUND USELESS [RECOMMENDED TO REMOVE]
+
                 CardClickFlavorText(currentCard);
             }
 
@@ -106,6 +118,8 @@ namespace Buildings
                 }
             }
 
+            // OPEN CARD INFORMATION [AFTER BUILDING]
+            informationhandler.SetCurrentCardAction(selectedCardIdx);
             cardActionHandler.SetupActionList(currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].actionTypes);
         }
         public virtual void ImplementThisAction(int actionIdx)
@@ -113,6 +127,10 @@ namespace Buildings
 
         }
 
+        public void OnEnterShowPotential(int buttonIdx)
+        {
+            
+        }
         public void CardClickFlavorText(OperationCard thisCard)
         {
             int cardClickedIdx = operationCardsList.FindIndex(x => x == thisCard);

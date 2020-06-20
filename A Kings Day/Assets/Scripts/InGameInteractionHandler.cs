@@ -12,6 +12,8 @@ namespace Managers
         public List<BaseInteractableBehavior> interactableList;
 
         public BaseInteractableBehavior currentlyInteractingWith;
+
+
         public void Awake()
         {
             if(EventBroadcaster.Instance != null)
@@ -20,6 +22,7 @@ namespace Managers
                 EventBroadcaster.Instance.AddObserver(EventNames.DISABLE_IN_GAME_INTERACTION, DisableAllInteraction);
             }
         }
+
         public void OnDestroy()
         {
             if (EventBroadcaster.Instance != null)
@@ -46,7 +49,6 @@ namespace Managers
 
         public void DisableAllInteraction(Parameters p = null)
         {
-            Debug.Log("Awh!");
             for (int i = 0; i < interactableList.Count; i++)
             {
                 interactableList[i].isClickable = false;
