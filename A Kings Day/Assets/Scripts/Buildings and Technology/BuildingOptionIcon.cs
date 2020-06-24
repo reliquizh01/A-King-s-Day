@@ -26,13 +26,13 @@ namespace Buildings
             base.OnMouseEnter();
             iconAnim.Play();
 
-            if(myController != null && type == BuildingOptionType.Upgrade && myController.myBuilding.currentCondition == BuildingCondition.Ruins)
+            if(myController != null && type == BuildingOptionType.Upgrade && myController.myBuilding.buildingInformation.buildingCondition == BuildingCondition.Ruins)
             {
                 myController.ShowRepairAmountTooltip();
             }   
             else
             {
-                if(myController.myBuilding.currentCondition == BuildingCondition.Functioning)
+                if(myController.myBuilding.buildingInformation.buildingCondition == BuildingCondition.Functioning)
                 {
                     myController.ShowToolTip("Upgrade");
                 }
@@ -85,9 +85,10 @@ namespace Buildings
             }
             else
             {
-                iconBackground.color = new Color(1, 1, 1, 0.5f);
-                optionIcon.color = new Color(1, 1, 1, 0.5f);
+                iconBackground.color = new Color(0.02f, 0.02f, 0.02f, 0.25f);
+                optionIcon.color = new Color(0.02f, 0.02f, 0.02f, 0.25f);
             }
+            transform.localScale = new Vector3(1, 1, 1);
         }
 
         public void ShowInsufficientMesg(string mesg = "")

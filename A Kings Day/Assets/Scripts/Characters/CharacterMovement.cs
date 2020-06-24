@@ -72,6 +72,7 @@ public class CharacterMovement : MonoBehaviour
                             targetPos = currentTargetPoint.sceneOffset.transform.position;
                             PointReachedCallback();
                             isMoving = false;
+                            pathIdx = 0;
                         }
                         else
                         {
@@ -101,6 +102,7 @@ public class CharacterMovement : MonoBehaviour
                     if(currentPoint == currentTargetPoint)
                     {
                         isMoving = false;
+                        pathToTargetPoint.Clear();
                         PointReachedCallback();
                         pathIdx = 0;
                     }
@@ -155,6 +157,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void SetNewTargetPoint(ScenePointBehavior newPoint)
     {
+        Debug.Log("Moving towards: " + newPoint.gameObject.name);
         if (currentTargetPoint != null)
         {
             currentTargetPoint.isInteractingWith = false;

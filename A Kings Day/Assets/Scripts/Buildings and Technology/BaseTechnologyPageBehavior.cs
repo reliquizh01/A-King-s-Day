@@ -55,7 +55,7 @@ namespace Technology
         }
         public void SetType(ResourceType thisType)
         {
-            currentTechs = PlayerGameManager.GetInstance.playerData.currentTechanologies.FindAll(x => x.improvedType == thisType);
+            currentTechs = PlayerGameManager.GetInstance.playerData.currentTechnologies.FindAll(x => x.improvedType == thisType);
             for (int i = 0; i < currentTechs.Count; i++)
             {
                 techOptions[i].techIcon.sprite = currentTechs[i].techIcon;

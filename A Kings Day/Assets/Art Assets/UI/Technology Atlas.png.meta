@@ -169,7 +169,7 @@ TextureImporter:
     second: Tech Panel
   - first:
       213: -4818989591678866328
-    second: Technology Atlas_8
+    second: Quest_Signature
   - first:
       213: 4401203198970868267
     second: Technology Atlas_0
@@ -235,7 +235,7 @@ TextureImporter:
     second: Technology_Icon
   - first:
       213: 8514274462101901038
-    second: Technology Atlas_6
+    second: Point_Left_Arrow
   - first:
       213: -6111602437574283955
     second: Tech_Efficient_Collection
@@ -350,6 +350,27 @@ TextureImporter:
   - first:
       213: 4547751729935902508
     second: Technology Atlas_45
+  - first:
+      213: -1496275953165801253
+    second: Card_Information_Panel_Highlighted
+  - first:
+      213: -6810417852090977
+    second: Technology Atlas_46
+  - first:
+      213: -6259988380174652966
+    second: Blue_Panel_2
+  - first:
+      213: 6830552733946433732
+    second: Blue_Panel_3
+  - first:
+      213: -3643951712462015826
+    second: Technology Atlas_49
+  - first:
+      213: -1204906143119157609
+    second: Technology Atlas_50
+  - first:
+      213: 8637753909675204096
+    second: Blue_Panel_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -450,8 +471,8 @@ TextureImporter:
       name: Tech Panel
       rect:
         serializedVersion: 2
-        x: 15
-        y: 257
+        x: 6
+        y: 255
         width: 143
         height: 141
       alignment: 0
@@ -471,8 +492,8 @@ TextureImporter:
       name: Tech_Horse_Plougher
       rect:
         serializedVersion: 2
-        x: 547
-        y: 427
+        x: 538
+        y: 425
         width: 46
         height: 46
       alignment: 0
@@ -492,8 +513,8 @@ TextureImporter:
       name: Silver_Circle
       rect:
         serializedVersion: 2
-        x: 19
-        y: 421
+        x: 10
+        y: 419
         width: 60
         height: 61
       alignment: 0
@@ -513,8 +534,8 @@ TextureImporter:
       name: Gold_Circle
       rect:
         serializedVersion: 2
-        x: 87
-        y: 420
+        x: 78
+        y: 418
         width: 60
         height: 61
       alignment: 0
@@ -534,8 +555,8 @@ TextureImporter:
       name: X_Circle
       rect:
         serializedVersion: 2
-        x: 156
-        y: 420
+        x: 147
+        y: 418
         width: 60
         height: 61
       alignment: 0
@@ -555,8 +576,8 @@ TextureImporter:
       name: Point_Right_Arrow
       rect:
         serializedVersion: 2
-        x: 239
-        y: 470
+        x: 230
+        y: 468
         width: 12
         height: 17
       alignment: 0
@@ -576,8 +597,8 @@ TextureImporter:
       name: Tech_More_Tools
       rect:
         serializedVersion: 2
-        x: 639
-        y: 427
+        x: 630
+        y: 425
         width: 46
         height: 46
       alignment: 0
@@ -594,11 +615,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Technology Atlas_8
+      name: Quest_Signature
       rect:
         serializedVersion: 2
-        x: 197
-        y: 359
+        x: 188
+        y: 357
         width: 43
         height: 33
       alignment: 0
@@ -618,8 +639,8 @@ TextureImporter:
       name: Bell_Icon
       rect:
         serializedVersion: 2
-        x: 236
-        y: 412
+        x: 227
+        y: 410
         width: 18
         height: 19
       alignment: 0
@@ -639,8 +660,8 @@ TextureImporter:
       name: Tech_More_Storage
       rect:
         serializedVersion: 2
-        x: 547
-        y: 371
+        x: 538
+        y: 369
         width: 46
         height: 46
       alignment: 0
@@ -660,8 +681,8 @@ TextureImporter:
       name: Tech_Better_Herd_Food
       rect:
         serializedVersion: 2
-        x: 639
-        y: 370
+        x: 630
+        y: 368
         width: 46
         height: 46
       alignment: 0
@@ -681,8 +702,8 @@ TextureImporter:
       name: Tech_Better_Cuts
       rect:
         serializedVersion: 2
-        x: 727
-        y: 369
+        x: 718
+        y: 367
         width: 46
         height: 46
       alignment: 0
@@ -702,8 +723,8 @@ TextureImporter:
       name: Tech_Improved_Weapons
       rect:
         serializedVersion: 2
-        x: 547
-        y: 302
+        x: 538
+        y: 300
         width: 46
         height: 46
       alignment: 0
@@ -723,8 +744,8 @@ TextureImporter:
       name: Tech_More_Bunkers
       rect:
         serializedVersion: 2
-        x: 639
-        y: 302
+        x: 630
+        y: 300
         width: 46
         height: 46
       alignment: 0
@@ -744,8 +765,8 @@ TextureImporter:
       name: Tech_Bonus_Wage'n_Ration
       rect:
         serializedVersion: 2
-        x: 727
-        y: 302
+        x: 718
+        y: 300
         width: 46
         height: 46
       alignment: 0
@@ -765,8 +786,8 @@ TextureImporter:
       name: Tech_Professional_Training
       rect:
         serializedVersion: 2
-        x: 547
-        y: 238
+        x: 538
+        y: 236
         width: 46
         height: 46
       alignment: 0
@@ -786,8 +807,8 @@ TextureImporter:
       name: Tech_Better_Armor
       rect:
         serializedVersion: 2
-        x: 639
-        y: 238
+        x: 630
+        y: 236
         width: 46
         height: 46
       alignment: 0
@@ -807,8 +828,8 @@ TextureImporter:
       name: Tech_Invested_Villager
       rect:
         serializedVersion: 2
-        x: 547
-        y: 176
+        x: 538
+        y: 174
         width: 46
         height: 46
       alignment: 0
@@ -828,8 +849,8 @@ TextureImporter:
       name: Tech_More_Houses
       rect:
         serializedVersion: 2
-        x: 639
-        y: 176
+        x: 630
+        y: 174
         width: 46
         height: 46
       alignment: 0
@@ -849,8 +870,8 @@ TextureImporter:
       name: Tech_Food_Storage
       rect:
         serializedVersion: 2
-        x: 727
-        y: 176
+        x: 718
+        y: 174
         width: 46
         height: 46
       alignment: 0
@@ -870,8 +891,8 @@ TextureImporter:
       name: Tech_Festivals
       rect:
         serializedVersion: 2
-        x: 547
-        y: 113
+        x: 538
+        y: 111
         width: 46
         height: 46
       alignment: 0
@@ -891,8 +912,8 @@ TextureImporter:
       name: Tech_Finer_Housing
       rect:
         serializedVersion: 2
-        x: 639
-        y: 113
+        x: 630
+        y: 111
         width: 46
         height: 46
       alignment: 0
@@ -912,8 +933,8 @@ TextureImporter:
       name: Technology_Icon
       rect:
         serializedVersion: 2
-        x: 269
-        y: 470
+        x: 260
+        y: 468
         width: 15
         height: 20
       alignment: 0
@@ -930,11 +951,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Technology Atlas_6
+      name: Point_Left_Arrow
       rect:
         serializedVersion: 2
-        x: 239
-        y: 441
+        x: 230
+        y: 439
         width: 12
         height: 17
       alignment: 0
@@ -954,8 +975,8 @@ TextureImporter:
       name: Tech_Sealed_Contracts
       rect:
         serializedVersion: 2
-        x: 547
-        y: 56
+        x: 538
+        y: 54
         width: 46
         height: 46
       alignment: 0
@@ -975,8 +996,8 @@ TextureImporter:
       name: Tech_Efficient_Collection
       rect:
         serializedVersion: 2
-        x: 639
-        y: 56
+        x: 630
+        y: 54
         width: 46
         height: 46
       alignment: 0
@@ -996,8 +1017,8 @@ TextureImporter:
       name: Tech_Innovation_Tax
       rect:
         serializedVersion: 2
-        x: 727
-        y: 56
+        x: 718
+        y: 54
         width: 46
         height: 46
       alignment: 0
@@ -1017,8 +1038,8 @@ TextureImporter:
       name: Tech_Kings_Investment
       rect:
         serializedVersion: 2
-        x: 639
-        y: 2
+        x: 630
+        y: 0
         width: 46
         height: 46
       alignment: 0
@@ -1038,8 +1059,8 @@ TextureImporter:
       name: Tech_Guarded_Market
       rect:
         serializedVersion: 2
-        x: 547
-        y: 2
+        x: 538
+        y: 0
         width: 46
         height: 46
       alignment: 0
@@ -1059,8 +1080,8 @@ TextureImporter:
       name: Action_card_Recruit_Troops
       rect:
         serializedVersion: 2
-        x: 309
-        y: 439
+        x: 300
+        y: 437
         width: 49
         height: 56
       alignment: 0
@@ -1080,8 +1101,8 @@ TextureImporter:
       name: Action_Card_Train_Troops
       rect:
         serializedVersion: 2
-        x: 385
-        y: 439
+        x: 376
+        y: 437
         width: 49
         height: 56
       alignment: 0
@@ -1101,8 +1122,8 @@ TextureImporter:
       name: Action_Card_Train_Hero
       rect:
         serializedVersion: 2
-        x: 454
-        y: 439
+        x: 445
+        y: 437
         width: 49
         height: 56
       alignment: 0
@@ -1122,8 +1143,8 @@ TextureImporter:
       name: Watch_Icon
       rect:
         serializedVersion: 2
-        x: 272
-        y: 441
+        x: 263
+        y: 439
         width: 11
         height: 10
       alignment: 0
@@ -1143,8 +1164,8 @@ TextureImporter:
       name: Action_Card_Provide_Food
       rect:
         serializedVersion: 2
-        x: 309
-        y: 375
+        x: 300
+        y: 373
         width: 49
         height: 56
       alignment: 0
@@ -1164,8 +1185,8 @@ TextureImporter:
       name: Action_Card_Build_Houses
       rect:
         serializedVersion: 2
-        x: 385
-        y: 375
+        x: 376
+        y: 373
         width: 49
         height: 56
       alignment: 0
@@ -1185,8 +1206,8 @@ TextureImporter:
       name: Action_Card_Clean_Area
       rect:
         serializedVersion: 2
-        x: 454
-        y: 375
+        x: 445
+        y: 373
         width: 49
         height: 56
       alignment: 0
@@ -1206,8 +1227,8 @@ TextureImporter:
       name: Action_Card_Add_Farmers
       rect:
         serializedVersion: 2
-        x: 308
-        y: 309
+        x: 299
+        y: 307
         width: 49
         height: 56
       alignment: 0
@@ -1227,8 +1248,8 @@ TextureImporter:
       name: Action_Card_Add_Cow_Breeder
       rect:
         serializedVersion: 2
-        x: 384
-        y: 309
+        x: 375
+        y: 307
         width: 49
         height: 56
       alignment: 0
@@ -1248,8 +1269,8 @@ TextureImporter:
       name: Action_Card_Add_Storage_Helper
       rect:
         serializedVersion: 2
-        x: 453
-        y: 309
+        x: 444
+        y: 307
         width: 49
         height: 56
       alignment: 0
@@ -1269,8 +1290,8 @@ TextureImporter:
       name: Card_Selected
       rect:
         serializedVersion: 2
-        x: 165
-        y: 286
+        x: 156
+        y: 284
         width: 53
         height: 60
       alignment: 0
@@ -1290,8 +1311,8 @@ TextureImporter:
       name: Card_Unselected
       rect:
         serializedVersion: 2
-        x: 226
-        y: 286
+        x: 217
+        y: 284
         width: 53
         height: 60
       alignment: 0
@@ -1311,8 +1332,8 @@ TextureImporter:
       name: Card_Action_Button
       rect:
         serializedVersion: 2
-        x: 177
-        y: 261
+        x: 168
+        y: 259
         width: 91
         height: 21
       alignment: 0
@@ -1332,8 +1353,8 @@ TextureImporter:
       name: Action_Card_Prepare_Festival
       rect:
         serializedVersion: 2
-        x: 307
-        y: 244
+        x: 298
+        y: 242
         width: 49
         height: 56
       alignment: 0
@@ -1353,8 +1374,8 @@ TextureImporter:
       name: Action_Card_Festival_Merchant
       rect:
         serializedVersion: 2
-        x: 383
-        y: 244
+        x: 374
+        y: 242
         width: 49
         height: 56
       alignment: 0
@@ -1374,8 +1395,8 @@ TextureImporter:
       name: Action_Card_Post_Demand
       rect:
         serializedVersion: 2
-        x: 452
-        y: 244
+        x: 443
+        y: 242
         width: 49
         height: 56
       alignment: 0
@@ -1395,8 +1416,8 @@ TextureImporter:
       name: ActionCard_Panel
       rect:
         serializedVersion: 2
-        x: 14
-        y: 186
+        x: 5
+        y: 184
         width: 203
         height: 66
       alignment: 0
@@ -1416,8 +1437,8 @@ TextureImporter:
       name: Action_Card_Hire_Hero
       rect:
         serializedVersion: 2
-        x: 306
-        y: 181
+        x: 297
+        y: 179
         width: 49
         height: 56
       alignment: 0
@@ -1437,8 +1458,8 @@ TextureImporter:
       name: Action_Card_Buy_Drinks
       rect:
         serializedVersion: 2
-        x: 382
-        y: 181
+        x: 373
+        y: 179
         width: 49
         height: 56
       alignment: 0
@@ -1458,8 +1479,8 @@ TextureImporter:
       name: Action_Card_Hire_Mercenary
       rect:
         serializedVersion: 2
-        x: 451
-        y: 181
+        x: 442
+        y: 179
         width: 49
         height: 56
       alignment: 0
@@ -1479,8 +1500,8 @@ TextureImporter:
       name: Card_Information_Panel
       rect:
         serializedVersion: 2
-        x: 11
-        y: 55
+        x: 2
+        y: 53
         width: 105
         height: 120
       alignment: 0
@@ -1500,8 +1521,8 @@ TextureImporter:
       name: Building_Panel
       rect:
         serializedVersion: 2
-        x: 127
-        y: 56
+        x: 118
+        y: 54
         width: 102
         height: 125
       alignment: 0
@@ -1521,8 +1542,8 @@ TextureImporter:
       name: Action_Card_Craft_Weapon
       rect:
         serializedVersion: 2
-        x: 382
-        y: 116
+        x: 373
+        y: 114
         width: 49
         height: 56
       alignment: 0
@@ -1542,8 +1563,8 @@ TextureImporter:
       name: Action_Card_Equip_Hero
       rect:
         serializedVersion: 2
-        x: 451
-        y: 116
+        x: 442
+        y: 114
         width: 49
         height: 56
       alignment: 0
@@ -1563,8 +1584,8 @@ TextureImporter:
       name: Arrow_Button_Brown
       rect:
         serializedVersion: 2
-        x: 13
-        y: 28
+        x: 4
+        y: 26
         width: 14
         height: 21
       alignment: 0
@@ -1584,8 +1605,8 @@ TextureImporter:
       name: Speed_Icon
       rect:
         serializedVersion: 2
-        x: 38
-        y: 31
+        x: 29
+        y: 29
         width: 13
         height: 14
       alignment: 0
@@ -1605,8 +1626,8 @@ TextureImporter:
       name: Damage_Icon
       rect:
         serializedVersion: 2
-        x: 63
-        y: 32
+        x: 54
+        y: 30
         width: 13
         height: 13
       alignment: 0
@@ -1626,8 +1647,8 @@ TextureImporter:
       name: Health_Icon
       rect:
         serializedVersion: 2
-        x: 90
-        y: 34
+        x: 81
+        y: 32
         width: 14
         height: 12
       alignment: 0
@@ -1647,8 +1668,8 @@ TextureImporter:
       name: Sword_Icon
       rect:
         serializedVersion: 2
-        x: 244
-        y: 241
+        x: 235
+        y: 239
         width: 33
         height: 10
       alignment: 0
@@ -1668,8 +1689,8 @@ TextureImporter:
       name: Spear_Icon
       rect:
         serializedVersion: 2
-        x: 236
-        y: 220
+        x: 227
+        y: 218
         width: 56
         height: 4
       alignment: 0
@@ -1689,8 +1710,8 @@ TextureImporter:
       name: Bow_Icon
       rect:
         serializedVersion: 2
-        x: 240
-        y: 192
+        x: 231
+        y: 190
         width: 38
         height: 6
       alignment: 0
@@ -1707,13 +1728,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Technology Atlas_44
+      name: Card_Information_Panel_Highlighted
       rect:
         serializedVersion: 2
-        x: 9
-        y: 5
-        width: 6
-        height: 6
+        x: 230
+        y: 50
+        width: 105
+        height: 120
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1721,20 +1742,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38388d2594205bb40800000000000000
-      internalID: 5455269037575013251
+      spriteID: bd8e79db2f82c3be0800000000000000
+      internalID: -1496275953165801253
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Technology Atlas_45
+      name: Blue_Panel_2
       rect:
         serializedVersion: 2
-        x: 24
+        x: 95
         y: 5
-        width: 6
-        height: 6
+        width: 69
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1742,8 +1763,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c276f757a1cdc1f30800000000000000
-      internalID: 4547751729935902508
+      spriteID: ad9ed9d2cbd0029a0800000000000000
+      internalID: -6259988380174652966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Panel_3
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 5
+        width: 54
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c0537e858fface50800000000000000
+      internalID: 6830552733946433732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Panel_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 4
+        width: 54
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00e9e638a677fd770800000000000000
+      internalID: 8637753909675204096
       vertices: []
       indices: 
       edges: []

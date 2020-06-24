@@ -99,7 +99,7 @@ namespace GameResource
             {
                 return;
             }
-            List<BaseTechnology> relatedTech = curPlayer.currentTechanologies.FindAll(x => x.improvedType == ResourceType.Food);
+            List<BaseTechnology> relatedTech = curPlayer.currentTechnologies.FindAll(x => x.improvedType == ResourceType.Food);
 
             foreach (BaseTechnology technology in relatedTech)
             {

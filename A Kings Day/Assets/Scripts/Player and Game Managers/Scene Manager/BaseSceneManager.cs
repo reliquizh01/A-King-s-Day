@@ -9,6 +9,7 @@ namespace Managers
 {
     public enum SceneType
     {
+        Opening,
         Courtroom,
         Balcony,
     }

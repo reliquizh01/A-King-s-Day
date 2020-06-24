@@ -49,7 +49,6 @@ namespace Managers
 
         public void SaveQueuedData(List<EventDecisionData> queuedDataList, int finishCount)
         {
-            Debug.Log("SAVING SHIT!");
             queuedDataEventsList = queuedDataList;
             eventFinished = finishCount;
         }
@@ -66,7 +65,6 @@ namespace Managers
 
         public void ClearSavedData()
         {
-            Debug.Log("CLEARING DATA!");
             queuedDataEventsList.Clear();
             curDataEvent = null;
             curDataStory = null;

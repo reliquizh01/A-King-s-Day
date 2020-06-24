@@ -31,7 +31,7 @@ namespace Territory
             {
                 return false;
             }
-            if (troopReq > thisKingdom.troops)
+            if (troopReq > thisKingdom.GetTotalTroops)
             {
                 return false;
             }

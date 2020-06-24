@@ -26,5 +26,8 @@ namespace Utilities
         // Resource UIs
         public const string SHOW_RESOURCES = "SHOW_RESOURCES";
         public const string HIDE_RESOURCES = "HIDE_RESOURCES";
+
+        // SAVE PLAYER DATA
+        public const string SAVE_PLAYER_DATA = "SAVE_PLAYER_DATA";
     }
 }

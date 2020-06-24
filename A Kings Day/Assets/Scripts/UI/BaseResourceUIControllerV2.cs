@@ -7,6 +7,7 @@ using TMPro;
 using Utilities;
 using UnityEngine.EventSystems;
 using Kingdoms;
+using Managers;
 
 namespace ResourceUI
 {
@@ -30,9 +31,18 @@ namespace ResourceUI
             storageCapacity = newCapacity;
             storageFill.capacity = newCapacity;
         }
-        public void UpdatePanel()
+        public void UpdatePanel(int amount)
         {
+            int difference = Mathf.Abs(amount - currentCount);
 
+            if (amount > currentCount)
+            {
+                IncreaseResource(difference);
+            }
+            else
+            {
+                DecreaseResource(difference);
+            }
         }
         public void OnPointerEnter(PointerEventData eventData)
         {

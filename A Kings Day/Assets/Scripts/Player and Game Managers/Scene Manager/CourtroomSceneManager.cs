@@ -35,19 +35,20 @@ namespace Managers
         public override void Start()
         {
             base.Start();
-            TransitionManager.GetInstance.currentSceneManager = this;
             if(TransitionManager.GetInstance.previousScene != sceneType)
             {
                 SetPositionFromTransition(TransitionManager.GetInstance.previousScene);
             }
+
+            TransitionManager.GetInstance.SetAsNewSceneManager(this);
+            scenePointHandler.gameObject.SetActive(true);
         }
 
         public override void PreOpenManager()
         {
             base.PreOpenManager();
-            scenePointHandler.gameObject.SetActive(true);
-            KingdomManager.GetInstance.PreOpenManager();
         }
+
         public void MakeGuardLeave(Action callback = null)
         {
             leftGuard.OrderMovement(scenePointHandler.scenePoints[5]);
@@ -102,7 +103,12 @@ namespace Managers
             {
                 if(prevGate != null)
                 {
-                    king.myMovements.SetPosition(prevGate, true);
+                    if(prevScene != SceneType.Opening)
+                    {
+                        Debug.Log("Previous Scene : " + prevScene);
+                        king.myMovements.SetPosition(prevGate, true);
+                    }
+
                     if (GameUIManager.GetInstance != null)
                     {
                         GameUIManager.GetInstance.PreOpenManager();

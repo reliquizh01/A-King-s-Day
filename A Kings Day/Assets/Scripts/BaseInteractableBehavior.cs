@@ -14,7 +14,7 @@ public class BaseInteractableBehavior : MonoBehaviour
     public bool hasInteractionOptions = true;
     //MAKE AN INTERACTABLE FURNITURES.
     public bool isFurniture = false;
-
+    public BoxCollider2D myCol;
     public virtual void Start()
     {
 

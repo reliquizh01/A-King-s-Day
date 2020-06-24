@@ -49,9 +49,14 @@ namespace ResourceUI
             }
             // Then Proceed to Week 2
             KingdomManager.GetInstance.ProceedToNextWeek();
-            weekCountText.text.text = "Week " + PlayerGameManager.GetInstance.playerData.weekCount.ToString();
+
+            UpdateWeekCountText();
         }
 
+        public void UpdateWeekCountText()
+        {
+            weekCountText.text.text = "Week " + PlayerGameManager.GetInstance.playerData.weekCount.ToString();
+        }
         public void OnWeekCountHover()
         {
             endWeekBtnText.text.gameObject.SetActive(true);

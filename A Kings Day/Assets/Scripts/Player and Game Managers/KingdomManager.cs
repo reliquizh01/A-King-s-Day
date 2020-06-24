@@ -7,6 +7,7 @@ using KingEvents;
 using Territory;
 using Kingdoms;
 using ResourceUI;
+using SaveData;
 
 namespace Managers
 {
@@ -73,10 +74,12 @@ namespace Managers
 
             // FOR TESTING ONLY
             // ADD ONBOARDING HERE ONCE BALANCING IS DONE
-            if(KingdomDataManager.GetInstance != null && !TransitionManager.GetInstance.isNewGame)
+            if(PlayerGameManager.GetInstance != null && !TransitionManager.GetInstance.isNewGame)
             {
-                KingdomDataManager mgr = KingdomDataManager.GetInstance;
-                LoadSavedData(mgr.queuedDataEventsList, mgr.curDataEvent, mgr.curDataStory);
+                PlayerGameManager mgr = PlayerGameManager.GetInstance;
+                Debug.Log("Player Queued Events : " + mgr.playerData.queuedDataEventsList.Count);
+                LoadSavedData(mgr.playerData.queuedDataEventsList, mgr.playerData.curDataEvent, mgr.playerData.curDataStory);
+                AllowStartEvent();
             }
             else
             {
@@ -92,18 +95,21 @@ namespace Managers
         public void LoadSavedData(List<EventDecisionData> prevQueuedData, EventDecisionData prevCurData, StoryArcEventsData prevStoryData)
         {
             queuedEventsList = new List<EventDecisionData>();
+            Debug.Log(prevQueuedData.Count);
             queuedEventsList.AddRange(prevQueuedData);
             currentEvent = prevCurData;
             currentStory = prevStoryData;
-            eventFinished = KingdomDataManager.GetInstance.eventFinished;
+            eventFinished = PlayerGameManager.GetInstance.playerData.eventFinished;
             savedDataLoaded = true;
         }
 
         public void SaveData(Parameters p = null)
         {
-            KingdomDataManager.GetInstance.SaveCurDataEvent(currentEvent);
-            KingdomDataManager.GetInstance.SaveQueuedData(queuedEventsList, eventFinished);
-            KingdomDataManager.GetInstance.SaveCurStory(currentStory);
+            PlayerGameManager.GetInstance.SaveCurDataEvent(currentEvent);
+            PlayerGameManager.GetInstance.SaveQueuedData(queuedEventsList, eventFinished);
+            PlayerGameManager.GetInstance.SaveCurStory(currentStory);
+
+            SaveLoadManager.GetInstance.SaveCurrentData();
         }
         public void ProceedToNextWeek()
         {
@@ -203,18 +209,15 @@ namespace Managers
             if (TransitionManager.GetInstance.previousScene != SceneType.Courtroom)
             {
                 // Check if there's Saved Events.
-                KingdomDataManager mgr = KingdomDataManager.GetInstance;
-                if (mgr.queuedDataEventsList.Count <= 0 || mgr.curDataEvent == null)
+                PlayerGameManager mgr = PlayerGameManager.GetInstance;
+                if (mgr.playerData.queuedDataEventsList.Count <= 0 || mgr.playerData.curDataEvent == null)
                 {
-                    Debug.Log("Obtaining New Events!");
                     temp = eventStorage.ObtainWeeklyEvents(playerData.level, eventsToAdd, playerData, isInStory);
                 }
                 else
                 {
-                    Debug.Log("Obtaining Old Events!");
                     // if there is
-                    LoadSavedData(mgr.queuedDataEventsList, mgr.curDataEvent, mgr.curDataStory);
-                    mgr.ClearSavedData();
+                    LoadSavedData(mgr.playerData.queuedDataEventsList, mgr.playerData.curDataEvent, mgr.playerData.curDataStory);
                     savedDataLoaded = false;
                 }
             }
@@ -239,6 +242,8 @@ namespace Managers
                     Debug.Log("Item Name: " + TransitionManager.GetInstance.currentSceneManager.gameObject.name + " Manager Name: " + CourtroomSceneManager.GetInstance.gameObject.name);
                 }
             }
+
+            SaveData();
         }
 
         public void AllowStartEvent()
@@ -433,13 +438,13 @@ namespace Managers
 
             if(playerData.finishedStories == null)
             {
-                playerData.finishedStories = new List<string>();
+                playerData.finishedStories = new List<StoryArcEventsData>();
             }
 
             // SAVE ALL ONE TIME STORIES SO THEY WONT REPEAT AGAIN.
             if(currentStory.repetitionType == StoryRepetitionType.Once)
             {
-                playerData.finishedStories.Add(currentStory.storyTitle);
+                playerData.finishedStories.Add(currentStory);
             }
 
             currentStory = null;

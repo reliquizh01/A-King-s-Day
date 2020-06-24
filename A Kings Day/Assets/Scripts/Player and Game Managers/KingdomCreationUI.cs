@@ -20,12 +20,12 @@ public class KingdomCreationUI : MonoBehaviour
 
     public void OnEnable()
     {
-        temporaryKingdom.troops += 10;
+        temporaryKingdom.recruits += 10;
         temporaryKingdom.foods += 10;
         temporaryKingdom.coins += 10;
         temporaryKingdom.population += 10;
         food.IncreaseResource(10); foodCount.text = temporaryKingdom.foods.ToString();
-        troops.IncreaseResource(10); troopCount.text = temporaryKingdom.troops.ToString();
+        troops.IncreaseResource(10); troopCount.text = temporaryKingdom.GetTotalTroops.ToString();
         population.IncreaseResource(10); popCount.text = temporaryKingdom.population.ToString();
         coins.IncreaseResource(10); coinCount.text = temporaryKingdom.coins.ToString();
     }
@@ -95,9 +95,9 @@ public class KingdomCreationUI : MonoBehaviour
                 break;
 
             case 1:
-                if (temporaryKingdom.troops >= 50) return;
-                temporaryKingdom.troops += amountToAdd;
-                troopCount.text = temporaryKingdom.troops.ToString();
+                if (temporaryKingdom.recruits >= 50) return;
+                temporaryKingdom.recruits += amountToAdd;
+                troopCount.text = temporaryKingdom.recruits.ToString();
                 troops.IncreaseResource(amountToAdd);
                 break;
             case 2:
@@ -148,14 +148,14 @@ public class KingdomCreationUI : MonoBehaviour
                 break;
 
             case 1:
-                if (temporaryKingdom.troops <= 5)
+                if (temporaryKingdom.recruits <= 5)
                 {
                     noChanges = true;
                     break;
                 }
-                amountToRemove = (temporaryKingdom.troops < amountToRemove) ? temporaryKingdom.troops : amountToRemove;
-                temporaryKingdom.troops -= amountToRemove;
-                troopCount.text = temporaryKingdom.troops.ToString();
+                amountToRemove = (temporaryKingdom.recruits < amountToRemove) ? temporaryKingdom.recruits : amountToRemove;
+                temporaryKingdom.recruits -= amountToRemove;
+                troopCount.text = temporaryKingdom.recruits.ToString();
                 troops.DecreaseResource(amountToRemove);
                 break;
             case 2:
@@ -193,13 +193,18 @@ public class KingdomCreationUI : MonoBehaviour
     {
         temporaryKingdom.weekCount = 1;
         temporaryKingdom.coinsCapacity = 50;
-        temporaryKingdom.populationCapacity = 50;
-        temporaryKingdom.troopsCapacity = 50;
-        temporaryKingdom.foodCapacity = 50;
-        temporaryKingdom.cowCapacity = 50;
+        temporaryKingdom.safePopulation= 50;
+        temporaryKingdom.barracksCapacity = 50;
+        temporaryKingdom.safeFood = 50;
+        temporaryKingdom.safeCows = 10;
+        temporaryKingdom.fileData = true;
+        temporaryKingdom.myItems = new List<GameItems.ItemInformationData>();
 
         PlayerGameManager.GetInstance.ReceiveData(temporaryKingdom);
+        SaveData.SaveLoadManager.GetInstance.SetNewSaveData(PlayerGameManager.GetInstance.playerData);
+        SaveData.SaveLoadManager.GetInstance.SaveData();
         temporaryKingdom = null;
+        TransitionManager.GetInstance.LoadScene(SceneType.Courtroom);
         TransitionManager.GetInstance.TransitionToNextGameView(GameViews.CourtroomView);
         if(TechnologyManager.GetInstance != null)
         {

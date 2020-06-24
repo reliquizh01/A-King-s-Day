@@ -34,7 +34,7 @@ namespace Technology
                     resType = ResourceType.Food;
                     break;
                 case BuildingType.Market:
-                    resType = ResourceType.Market;
+                    resType = ResourceType.Coin;
                     break;
 
                 case BuildingType.Tavern:

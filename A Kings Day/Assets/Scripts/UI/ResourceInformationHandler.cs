@@ -29,12 +29,13 @@ namespace ResourceUI
         {
             PlayerKingdomData data = PlayerGameManager.GetInstance.playerData;
 
-            foodControl.SetupStorageCapacity(data.foodCapacity);
-            troopControl.SetupStorageCapacity(data.troopsCapacity);
-            villagerControl.SetupStorageCapacity(data.populationCapacity);
+
+            foodControl.SetupStorageCapacity(data.safeFood);
+            troopControl.SetupStorageCapacity(data.barracksCapacity);
+            villagerControl.SetupStorageCapacity(data.safePopulation);
             coinControl.SetupStorageCapacity(data.coinsCapacity);
             foodControl.SetResource(data.foods);
-            troopControl.SetResource(data.troops);
+            troopControl.SetResource(data.GetTotalTroops);
             villagerControl.SetResource(data.population);
             coinControl.SetResource(data.coins);
         }
@@ -126,7 +127,6 @@ namespace ResourceUI
         }
         private void UpdatePopulation(bool isIncrease = true, int amount = 0)
         {
-            PlayerKingdomData data = PlayerGameManager.GetInstance.playerData;
             if (isIncrease)
             {
                 villagerControl.IncreaseResource(amount);
@@ -138,7 +138,6 @@ namespace ResourceUI
         }
         private void UpdateCoins(bool isIncrease = true, int amount = 0)
         {
-            PlayerKingdomData data = PlayerGameManager.GetInstance.playerData;
             if (isIncrease)
             {
                 coinControl.IncreaseResource(amount);
@@ -150,7 +149,6 @@ namespace ResourceUI
         }
         private void UpdateTroops(bool isIncrease = true, int amount = 0)
         {
-            PlayerKingdomData data = PlayerGameManager.GetInstance.playerData;
             if (isIncrease)
             {
                 troopControl.IncreaseResource(amount);
@@ -162,7 +160,6 @@ namespace ResourceUI
         }
         private void UpdateFood(bool isIncrease = true, int amount = 0)
         {
-            PlayerKingdomData data = PlayerGameManager.GetInstance.playerData;
             if (isIncrease)
             {
                 foodControl.IncreaseResource(amount);

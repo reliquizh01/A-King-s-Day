@@ -78,7 +78,6 @@ public class InformationActionHandler : MonoBehaviour
 
                     break;
                 case CardActionType.LogoOnly:
-                    Debug.Log("Going For Logo : " + actionList[i].gameObject.name);
                     actionList[i].iconMesgGroup.SetActive(false);
                     actionList[i].coinCostPanel.SetActive(false);
                     actionList[i].iconOnly.gameObject.SetActive(true);

@@ -36,16 +36,23 @@ namespace Buildings
         {
             for (int i = 0; i < buildingOptions.Count; i++)
             {
-                if (myBuilding.currentCondition == BuildingCondition.Ruins)
+                if (myBuilding.buildingInformation.buildingCondition == BuildingCondition.Ruins)
                 {
                     if (buildingOptions[i].type != BuildingOptionType.Upgrade)
                     {
-                        buildingOptions[i].allowInteraction = false;
+                        buildingOptions[i].SetInteraction(false);
                     }
                 }
                 else
                 {
-                    buildingOptions[i].allowInteraction = true;
+                    if (buildingOptions[i].type == BuildingOptionType.Upgrade)
+                    {
+                        buildingOptions[i].SetInteraction(false);
+                    }
+                    else
+                    {
+                        buildingOptions[i].SetInteraction(true);
+                    }
                 }
             }
         }
@@ -99,7 +106,7 @@ namespace Buildings
         }
         public void SetupUpgrades()
         {
-            switch(myBuilding.currentCondition)
+            switch(myBuilding.buildingInformation.buildingCondition)
             {
                 case BuildingCondition.Ruins:
 
@@ -117,7 +124,7 @@ namespace Buildings
                 return;
             }
             // Show Upgrade Tab
-            myBuilding.UpgradeBuiilding();
+            myBuilding.UpgradeBuilding();
         }
 
         public void TechClicked()

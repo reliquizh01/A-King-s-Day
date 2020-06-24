@@ -44,6 +44,7 @@ namespace Managers
             for (int i = 0; i < interactableList.Count; i++)
             {
                 interactableList[i].isClickable = true;
+                interactableList[i].myCol.enabled = true;
             }
         }
 
@@ -52,6 +53,7 @@ namespace Managers
             for (int i = 0; i < interactableList.Count; i++)
             {
                 interactableList[i].isClickable = false;
+                interactableList[i].myCol.enabled = false;
             }
         }
     }

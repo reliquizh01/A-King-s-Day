@@ -7,6 +7,10 @@ using Kingdoms;
 using Technology;
 using GameResource;
 using ResourceUI;
+using GameItems;
+using Characters;
+using KingEvents;
+using Managers;
 
 namespace Managers
 {
@@ -46,21 +50,6 @@ namespace Managers
         {
 
         }
-        public void UpdatePlayerbasedVisuals()
-        {
-            if (GameUIManager.GetInstance == null)
-            {
-                return;
-            }
-            if (playerData.farmerCount <= 0)
-            {
-                ResourceInformationController.GetInstance.currentPanel.foodControl.EnableWarning("No Farmers!");
-            }
-            else if(playerData.foods <= 5 && playerData.foods >= 0)
-            {
-                ResourceInformationController.GetInstance.currentPanel.foodControl.EnableWarning("Low Food!");
-            }
-        }
 
         public void SetupResourceProductionUpdate()
         {
@@ -78,41 +67,181 @@ namespace Managers
         }
         public void ReceiveData(PlayerKingdomData newData)
         {
+            playerData.fileData = newData.fileData;
             playerData.kingdomsName = newData.kingdomsName;
             playerData.dynastyName = newData.dynastyName;
+            playerData.level = newData.level;
+            playerData.weekCount = newData.weekCount;
+
+            playerData.finishedStories = newData.finishedStories;
+
+            playerData.queuedDataEventsList.AddRange(newData.queuedDataEventsList);
+            playerData.curDataEvent = newData.curDataEvent;
+            playerData.curDataStory = newData.curDataStory;
+            playerData.eventFinished = newData.eventFinished;
+
+            playerData.recruits = newData.recruits;
+            playerData.barracksCapacity = newData.barracksCapacity;
+            playerData.troopsLoyalty = newData.troopsLoyalty;
+            playerData.swordsmenCount = newData.swordsmenCount;
+            playerData.spearmenCount = newData.spearmenCount;
+            playerData.archerCount= newData.archerCount;
+            playerData.swordsmenMercCount = newData.swordsmenMercCount;
+            playerData.spearmenMercCount = newData.spearmenMercCount;
+            playerData.archerMercCount = newData.archerMercCount;
+
+            playerData.population = newData.population;
+            playerData.safePopulation = newData.safePopulation;
+            playerData.pouplationLoyalty = newData.pouplationLoyalty;
+            playerData.curTaxWeeksCounter = newData.curTaxWeeksCounter;
+            playerData.canReceiveTax = newData.canReceiveTax;
+            playerData.farmerCount = newData.farmerCount;
+            playerData.herdsmanCount = newData.herdsmanCount;
+            playerData.storageKeeperCount = newData.storageKeeperCount;
+
+            playerData.populationBurst = newData.populationBurst;
+            playerData.potentialRefugee = newData.potentialRefugee;
+            playerData.potentialMerchantArrival = newData.potentialMerchantArrival;
+
+            playerData.balconyBuildingsAdded = newData.balconyBuildingsAdded;
+            playerData.buildingInformationData = newData.buildingInformationData;
+
+            playerData.potentialGoodsMerchant = newData.potentialGoodsMerchant;
+            playerData.potentialExoticMerchant = newData.potentialExoticMerchant;
+            playerData.potentialEquipsMerchant = newData.potentialEquipsMerchant;
+
+            playerData.potentialCommonHero = newData.potentialCommonHero;
+            playerData.potentialRareHero = newData.potentialRareHero;
+            playerData.potentialLegHero = newData.potentialLegHero;
+
+            playerData.potentialMercSwords = newData.potentialMercSwords;
+            playerData.potentialMercSpear = newData.potentialMercSpear;
+            playerData.potentialMercArcher = newData.potentialMercArcher;
+
+            playerData.swordsmenMercAvail = newData.swordsmenMercAvail;
+            playerData.spearmenMercAvail = newData.spearmenMercAvail;
+            playerData.archerMercAvail = newData.archerMercAvail;
+
+            playerData.myHeroes = new List<BaseHeroInformationData>();
+            for (int i = 0; i < newData.myHeroes.Count; i++)
+            {
+                BaseHeroInformationData tmp = new BaseHeroInformationData();
+
+                tmp.damageGrowthRate = newData.myHeroes[i].damageGrowthRate;
+                tmp.healthGrowthRate = newData.myHeroes[i].healthGrowthRate;
+                tmp.speedGrowthRate = newData.myHeroes[i].speedGrowthRate;
+                tmp.unitInformation = newData.myHeroes[i].unitInformation;
+                tmp.equipments = newData.myHeroes[i].equipments;
+
+                playerData.myHeroes.Add(tmp);
+            }
+
+            playerData.tavernHeroes = new List<BaseHeroInformationData>();
+            for (int i = 0; i < newData.tavernHeroes.Count; i++)
+            {
+                BaseHeroInformationData tmp = new BaseHeroInformationData();
+
+                tmp.damageGrowthRate = newData.tavernHeroes[i].damageGrowthRate;
+                tmp.healthGrowthRate = newData.tavernHeroes[i].healthGrowthRate;
+                tmp.speedGrowthRate = newData.tavernHeroes[i].speedGrowthRate;
+                tmp.unitInformation = newData.tavernHeroes[i].unitInformation;
+                tmp.equipments = newData.tavernHeroes[i].equipments;
+
+                playerData.tavernHeroes.Add(tmp);
+            }
+
+            playerData.myItems = new List<ItemInformationData>();
+            for (int i = 0; i < newData.myItems.Count; i++)
+            {
+                GameItems.ItemInformationData tmp = newData.myItems[i];
+                playerData.myItems.Add(tmp);
+            }
+
+            playerData.currentShopMerchants = new List<BaseMerchantInformationData>();
+            for (int i = 0; i < newData.currentShopMerchants.Count; i++)
+            {
+                BaseMerchantInformationData tmp = new BaseMerchantInformationData();
+                tmp.merchantName = newData.currentShopMerchants[i].merchantName;
+                tmp.itemsSold = newData.currentShopMerchants[i].itemsSold;
+
+                playerData.currentShopMerchants.Add(tmp);
+            }
+
+            playerData.foods = newData.foods;
+            playerData.safeFood = newData.safeFood;
+            playerData.cows = newData.cows;
+            playerData.safeCows = newData.safeCows;
+            playerData.curGrainWeeksCounter = newData.curGrainWeeksCounter;
+            playerData.canReceiveGrainProduce = newData.canReceiveGrainProduce;
+
+            playerData.curCowBirthCounter = newData.curCowBirthCounter;
+            playerData.canReceiveNewCows = newData.canReceiveNewCows;
+
             playerData.coins = newData.coins;
             playerData.coinsCapacity = newData.coinsCapacity;
-            playerData.foods = newData.foods;
-            playerData.foodCapacity = newData.foodCapacity;
-            playerData.population = newData.population;
-            playerData.populationCapacity = newData.populationCapacity;
-            playerData.pouplationLoyalty = newData.pouplationLoyalty;
-            playerData.troops = newData.troops;
-            playerData.troopsCapacity = newData.troopsCapacity;
-            playerData.troopsLoyalty = newData.troopsLoyalty;
-            playerData.weekCount = newData.weekCount;
-            playerData.finishedStories = newData.finishedStories;
+            playerData.curMonthTaxCounter = newData.curMonthTaxCounter;
+            playerData.canReceiveMonthlyTax = newData.canReceiveMonthlyTax;
+
+            playerData.currentTechnologies = new List<BaseTechnology>();
+            for (int i = 0; i < newData.currentTechnologies.Count; i++)
+            {
+                BaseTechnology tmp = new BaseTechnology();
+                tmp.bonusIncrement = newData.currentTechnologies[i].bonusIncrement;
+                tmp.coinTechType = newData.currentTechnologies[i].coinTechType;
+                tmp.curGold = newData.currentTechnologies[i].curGold;
+                tmp.currentLevel = newData.currentTechnologies[i].currentLevel;
+                tmp.effectMesg = newData.currentTechnologies[i].effectMesg;
+                tmp.foodTechType = newData.currentTechnologies[i].foodTechType;
+                tmp.goldLevelRequirements = newData.currentTechnologies[i].goldLevelRequirements;
+                tmp.goldRequirement = newData.currentTechnologies[i].goldRequirement;
+                tmp.improvedType = newData.currentTechnologies[i].improvedType;
+                tmp.popTechType = newData.currentTechnologies[i].popTechType;
+                tmp.techIcon = newData.currentTechnologies[i].techIcon;
+                tmp.technologyName = newData.currentTechnologies[i].technologyName;
+                tmp.troopTechType = newData.currentTechnologies[i].troopTechType;
+                tmp.wittyMesg = newData.currentTechnologies[i].wittyMesg;
+
+                playerData.currentTechnologies.Add(tmp);
+            }
 
             SetupResourceProductionUpdate();
         }
 
         public void ReceiveResource(int amount, ResourceType type)
         {
-            switch(type)
+            switch (type)
             {
                 case ResourceType.Food:
                     playerData.foods += amount;
                     break;
-                case ResourceType.Coin:
-                    playerData.coins += amount;
+                case ResourceType.Troops:
+                    playerData.recruits += amount;
                     break;
                 case ResourceType.Population:
                     playerData.SetPopulation(amount);
                     break;
-                case ResourceType.Troops:
-                    playerData.troops += amount;
+                case ResourceType.Coin:
+                    playerData.coins += amount;
+                    break;
+                case ResourceType.Cows:
+                    break;
+                case ResourceType.Archer:
+                    break;
+                case ResourceType.Swordsmen:
+                    break;
+                case ResourceType.Spearmen:
+                    break;
+                case ResourceType.farmer:
+                    break;
+                case ResourceType.herdsmen:
+                    break;
+                case ResourceType.storageKeeper:
+                    break;
+                default:
                     break;
             }
+
+            SaveData.SaveLoadManager.GetInstance.SaveCurrentData();
         }
         public void RemoveResource(int amount, ResourceType type)
         {
@@ -129,9 +258,38 @@ namespace Managers
                     playerData.SetPopulation(-amount);
                     break;
                 case ResourceType.Troops:
-                    playerData.troops -= amount;
+                    playerData.recruits -= amount;
                     break;
             }
+
+            SaveData.SaveLoadManager.GetInstance.SaveCurrentData();
+        }
+        public void SaveQueuedData(List<EventDecisionData> queuedDataList, int finishCount)
+        {
+            playerData.queuedDataEventsList = queuedDataList;
+            playerData.eventFinished = finishCount;
+        }
+        public void SaveCurStory(StoryArcEventsData thisStory)
+        {
+            playerData.curDataStory = thisStory;
+        }
+
+        public void SaveCurDataEvent(EventDecisionData eventData)
+        {
+            playerData.curDataEvent = new EventDecisionData();
+
+            if(eventData.title != null && !string.IsNullOrEmpty(eventData.title))
+            {
+                playerData.curDataEvent.title = eventData.title;
+            }
+            playerData.curDataEvent.description = eventData.description;
+            playerData.curDataEvent.difficultyType = eventData.difficultyType;
+            playerData.curDataEvent.arcEnd = eventData.arcEnd;
+            playerData.curDataEvent.eventDecision = eventData.eventDecision;
+            playerData.curDataEvent.eventType = eventData.eventType;
+            playerData.curDataEvent.isStoryArc = eventData.isStoryArc;
+            playerData.curDataEvent.storyArc = eventData.storyArc;
+            playerData.curDataEvent.reporterType = eventData.reporterType;
         }
 
         public bool CheckResourceEnough(int amount, ResourceType type)
@@ -143,7 +301,7 @@ namespace Managers
                 case ResourceType.Food:
                     return (playerData.foods >= amount);
                 case ResourceType.Troops:
-                    return (playerData.troops >= amount);
+                    return (playerData.recruits >= amount);
                 case ResourceType.Population:
                     return (playerData.population >= amount);
                 case ResourceType.Coin:

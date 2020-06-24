@@ -110,6 +110,109 @@ MonoBehaviour:
   gameView: 0
   isViewManager: 0
   notifHandler: {fileID: 1182668336}
+--- !u!1 &25642977559592656
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7584879238770501596}
+  - component: {fileID: 7778844333057714340}
+  m_Layer: 0
+  m_Name: SaveLoadManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7584879238770501596
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25642977559592656}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.61413854, y: 0.6332981, z: -0.18017578}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5353435844139813303}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7778844333057714340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25642977559592656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2ea612ae57c60b489c093719eef331b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curSaveSlotIdx: 0
+  saveDataList: []
+  currentData:
+    kingdomsName: 
+    dynastyName: 
+    level: 0
+    weekCount: 1
+    storyRoll: 0.007
+    currentRoll: 0.007
+    finishedStories: []
+    recruits: 0
+    barracksCapacity: 0
+    troopsLoyalty: 0
+    swordsmenCount: 0
+    spearmenCount: 0
+    archerCount: 0
+    swordsmenMercCount: 0
+    spearmenMercCount: 0
+    archerMercCount: 0
+    population: 0
+    safePopulation: 50
+    pouplationLoyalty: 0
+    curTaxWeeksCounter: 0
+    canReceiveTax: 0
+    farmerCount: 0
+    herdsmanCount: 0
+    storageKeeperCount: 0
+    populationBurst: 0
+    potentialRefugee: 0
+    potentialMerchantArrival: 0
+    buildingInformationData: []
+    potentialGoodsMerchant: 0
+    potentialEquipsMerchant: 0
+    potentialExoticMerchant: 0
+    potentialCommonHero: 20
+    potentialRareHero: 10
+    potentialLegHero: 5
+    potentialMercSwords: 5
+    potentialMercSpear: 5
+    potentialMercArcher: 5
+    swordsmenMercAvail: 0
+    spearmenMercAvail: 0
+    archerMercAvail: 0
+    myHeroes: []
+    tavernHeroes: []
+    currentShopMerchants: []
+    currentFestivalMerchants: []
+    foods: 0
+    safeFood: 0
+    cows: 0
+    safeCows: 0
+    curGrainWeeksCounter: 0
+    canReceiveGrainProduce: 0
+    curCowBirthCounter: 0
+    canReceiveNewCows: 0
+    coins: 0
+    coinsCapacity: 0
+    curMonthTaxCounter: 0
+    canReceiveMonthlyTax: 0
+    currentTechnologies: []
 --- !u!1 &5061995814525637329
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +402,7 @@ MonoBehaviour:
   myAnim: {fileID: 5353435843653126605}
   openAnimationName: Show Loading Anim
   closeAnimationName: Hide Loading Anim
+  closeOnExit: 0
   playOpeningOnAwake: 0
   isPlaying: 0
 --- !u!1 &5353435843961454836
@@ -432,6 +536,7 @@ Transform:
   m_Children:
   - {fileID: 5353435843961454839}
   - {fileID: 6122082536848781658}
+  - {fileID: 7584879238770501596}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1471,6 +1576,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0be5990705067847be00f6cd0a7183b, type: 3}
+--- !u!224 &528799817433583986 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5556761517461479138, guid: a0be5990705067847be00f6cd0a7183b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5353435844356181904}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &546938505056624481 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5610398978426507505, guid: a0be5990705067847be00f6cd0a7183b,
@@ -1483,12 +1594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134a6e28d9785494c8c21e33f788fa27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &528799817433583986 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5556761517461479138, guid: a0be5990705067847be00f6cd0a7183b,
-    type: 3}
-  m_PrefabInstance: {fileID: 5353435844356181904}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7647008735743987933
 PrefabInstance:
   m_ObjectHideFlags: 0

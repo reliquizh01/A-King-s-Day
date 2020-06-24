@@ -5,6 +5,7 @@ using Buildings;
 using TMPro;
 using UnityEngine.UI;
 using GameItems;
+using Characters;
 
 public enum PanelType
 {
@@ -12,6 +13,7 @@ public enum PanelType
     GrowthCounter,
     MultiCounter,
     FlexibleCounter,
+    HeroCounter,
 }
 public class InformationPanel : MonoBehaviour
 {
@@ -23,6 +25,11 @@ public class InformationPanel : MonoBehaviour
     {
         panelIcon.sprite = newSprite;
     }
+    public virtual void SetHeroSkillIcons(Sprite firstSkill, Sprite secondSkill)
+    {
+
+    }
+
     public virtual void SetSingleCounter(int newCount, string newDescription, string newTitle = "")
     {
 
@@ -34,6 +41,11 @@ public class InformationPanel : MonoBehaviour
     }
 
     public virtual void SetMultiCounter(List<int> newCounts, string newTitle = "")
+    {
+
+    }
+
+    public virtual void SetHeroCounter(List<int> healthCount, List<int> damageCount, List<int> speedCount, UnitAttackType attackType, string heroName = "")
     {
 
     }

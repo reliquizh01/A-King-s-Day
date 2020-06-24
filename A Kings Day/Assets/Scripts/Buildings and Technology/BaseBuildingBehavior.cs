@@ -6,6 +6,7 @@ using Kingdoms;
 using Utilities;
 using Managers;
 using UnityEngine.EventSystems;
+using ResourceUI;
 namespace Buildings
 {
     public enum BuildingType
@@ -25,7 +26,6 @@ namespace Buildings
     public class BaseBuildingBehavior : BaseInteractableBehavior
     {
         [Header("Building Condition")]
-        public BuildingCondition currentCondition;
         public BuildingOptionHandler optionHandler;
         public GameObject ruinEmpty, fixFilled;
 
@@ -35,11 +35,10 @@ namespace Buildings
         public BuildingInformationData buildingInformation;
         public BuildingType buildingType;
         public int repairPrice = 20;
-        private BoxCollider2D myCol;
+
 
         [Header("Test And Debugging Only")]
         [SerializeField] private bool testMode = false;
-
         public override void Start()
         {
             base.Start();
@@ -48,13 +47,27 @@ namespace Buildings
                 optionHandler.myBuilding = this;
             }
             myCol = GetComponent<BoxCollider2D>();
-
+            
         }
 
         public override void SetupInteractableInformation()
         {
             base.SetupInteractableInformation();
-            if(TransitionManager.GetInstance != null)
+            PlayerKingdomData playerData = PlayerGameManager.GetInstance.playerData;
+
+            if(PlayerGameManager.GetInstance != null && playerData.buildingInformationData != null 
+                && playerData.buildingInformationData.Count > 0 && 
+                playerData.buildingInformationData.Find( x=> x.buildingName == this.buildingInformation.BuildingName) != null)
+            {
+                BuildingSavedData tmp = playerData.buildingInformationData.Find(x => x.buildingType == buildingType);
+
+                buildingInformation = TransitionManager.GetInstance.currentSceneManager.buildingInformationStorage.ObtainBuildingOperation(informationName);
+
+                buildingInformation.buildingCondition = tmp.buildingCondition;
+                buildingInformation.buildingLevel = tmp.buildingLevel;
+                buildingInformation.buildingType = tmp.buildingType;
+            }
+            else if(TransitionManager.GetInstance != null)
             {
                 buildingInformation = TransitionManager.GetInstance.currentSceneManager.buildingInformationStorage.ObtainBuildingOperation(informationName);
             }
@@ -62,7 +75,10 @@ namespace Buildings
             {
                 buildingInformation = BalconySceneManager.GetInstance.buildingInformationStorage.ObtainBuildingOperation(buildingType);
             }
+            UpdateBuildingState();
+
         }
+
         public void OnMouseEnter()
         {
             if (EventSystem.current.IsPointerOverGameObject())
@@ -104,7 +120,13 @@ namespace Buildings
             }
         }
 
-        public void UpgradeBuiilding()
+        public void UpdateBuildingState()
+        {
+            optionHandler.UpdateRuinState();
+            ruinEmpty.gameObject.SetActive(false);
+            fixFilled.gameObject.SetActive(true);
+        }
+        public void UpgradeBuilding()
         {
             if (!PlayerGameManager.GetInstance.CheckResourceEnough(repairPrice, ResourceType.Coin))
             {
@@ -112,16 +134,20 @@ namespace Buildings
                 return;
             }
 
-            PlayerGameManager.GetInstance.RemoveResource(repairPrice, ResourceType.Coin);
-            if(currentCondition == BuildingCondition.Ruins)
+
+            if (buildingInformation.buildingCondition == BuildingCondition.Ruins)
             {
-                currentCondition = BuildingCondition.Functioning;
-                optionHandler.UpdateRuinState();
-                ruinEmpty.gameObject.SetActive(false);
-                fixFilled.gameObject.SetActive(true);
+                PlayerGameManager.GetInstance.RemoveResource(repairPrice, ResourceType.Coin);
+                ResourceInformationController.GetInstance.currentPanel.UpdateResourceData(ResourceType.Coin, repairPrice, false);
+                PlayerGameManager.GetInstance.playerData.buildingInformationData.Find(x => x.buildingName == this.buildingInformation.BuildingName).buildingCondition = BuildingCondition.Functioning;
+                buildingInformation.buildingCondition = BuildingCondition.Functioning;
+
+                UpdateBuildingState();
             }
 
             optionHandler.CloseIcons();
+
+            SaveData.SaveLoadManager.GetInstance.SaveCurrentData();
         }
 
         public void TechBuilding()

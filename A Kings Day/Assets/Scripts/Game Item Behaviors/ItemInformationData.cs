@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace GameItems
 {
@@ -10,6 +11,7 @@ namespace GameItems
         Equipment,
     }
 
+    [Serializable]
     public class ItemInformationData
     {
         public ItemType ItemType;

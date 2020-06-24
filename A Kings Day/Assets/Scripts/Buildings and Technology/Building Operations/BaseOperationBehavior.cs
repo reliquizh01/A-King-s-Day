@@ -52,14 +52,15 @@ namespace Buildings
         public void CloseOperationTab()
         {
             StartCoroutine(myPanel.WaitAnimationForAction(myPanel.closeAnimationName, ResetInformation));
-            EventBroadcaster.Instance.PostEvent(EventNames.DISABLE_TAB_COVER);
+
+            if (ResourceInformationController.GetInstance != null)
+            {
+                ResourceInformationController.GetInstance.ShowResourcePanel(ResourcePanelType.overhead, () => EventBroadcaster.Instance.PostEvent(EventNames.DISABLE_TAB_COVER));
+            }
+
             informationActionHandler.HideInfoBlocker();
             informationActionHandler.ResetActionList();
             informationActionHandler.ClosePanelList();
-            if (ResourceInformationController.GetInstance != null)
-            {
-                ResourceInformationController.GetInstance.ShowResourcePanel(ResourcePanelType.overhead);
-            }
         }
         public void ResetInformation()
         {

@@ -5,6 +5,9 @@ using UnityEngine;
 using Territory;
 using Technology;
 using Characters;
+using KingEvents;
+using GameItems;
+using Buildings;
 
 namespace Kingdoms
 {
@@ -15,11 +18,6 @@ namespace Kingdoms
         Population,
         Coin,
         Cows,
-        Shop,
-        Tavern,
-        Blacksmith,
-        Market,
-        Cow,
         Archer,
         Swordsmen,
         Spearmen,
@@ -33,29 +31,36 @@ namespace Kingdoms
     [Serializable]
     public class PlayerKingdomData
     {
+        public bool fileData = false;
         public string kingdomsName;
         public string dynastyName;
         public TerritoryLevel level;
         public int weekCount = 1;
         public float storyRoll = 0.007f;
         public float currentRoll = 0.007f;
-        public List<string> finishedStories;
+
+        [Header("Events and Stories")]
+        public List<StoryArcEventsData> finishedStories;
+        public List<EventDecisionData> queuedDataEventsList;
+        public StoryArcEventsData curDataStory;
+        public EventDecisionData curDataEvent;
+        public int eventFinished;
+
         [Header("Troops")]
-        // Troops
-        public int troops;
-        public int troopsCapacity;
+        public int recruits;
+        public int barracksCapacity;
         public int troopsLoyalty;
         public int swordsmenCount, spearmenCount, archerCount;
         public int swordsmenMercCount, spearmenMercCount, archerMercCount;
 
-        public int GetTroopsCount
+        public int GetTotalTroops
         {
-            get { return troops + swordsmenCount + spearmenCount + archerCount; }
+            get { return recruits + swordsmenCount + spearmenCount + archerCount; }
         }
+
         [Header("Population")]
-        // Population
         public int population;
-        public int populationCapacity;
+        public int safePopulation = 50;
         public int pouplationLoyalty;
         public int curTaxWeeksCounter;
         public bool canReceiveTax;
@@ -65,12 +70,31 @@ namespace Kingdoms
         public int populationBurst = 0;
         public int potentialRefugee = 0;
         public int potentialMerchantArrival = 0;
+
+
+        [Header("Building Information")]
+        public bool balconyBuildingsAdded;
+        public List<BuildingSavedData> buildingInformationData;
+
+
+        [Header("Tavern Stuff")]
         public int potentialGoodsMerchant = 0;
         public int potentialEquipsMerchant = 0;
         public int potentialExoticMerchant = 0;
+        public int potentialCommonHero = 20;
+        public int potentialRareHero = 10;
+        public int potentialLegHero = 5;
+        public int potentialMercSwords = 5;
+        public int potentialMercSpear = 5;
+        public int potentialMercArcher = 5;
+        public int swordsmenMercAvail, spearmenMercAvail, archerMercAvail;
 
         [Header("Heroes")]
         public List<BaseHeroInformationData> myHeroes;
+        public List<BaseHeroInformationData> tavernHeroes;
+
+        [Header("Item Inventory")]
+        public List<ItemInformationData> myItems;
 
         [Header("Merchants")]
         public List<BaseMerchantInformationData> currentShopMerchants;
@@ -95,9 +119,9 @@ namespace Kingdoms
         [Header("Food")]
         // Food
         public int foods;
-        public int foodCapacity;
+        public int safeFood;
         public int cows;
-        public int cowCapacity;
+        public int safeCows;
 
         public int curGrainWeeksCounter;
         public bool canReceiveGrainProduce;
@@ -111,13 +135,13 @@ namespace Kingdoms
         public int curMonthTaxCounter;
         public bool canReceiveMonthlyTax;
         // Technology
-        public List<BaseTechnology> currentTechanologies;
+        public List<BaseTechnology> currentTechnologies;
 
         public bool IsStoryArcFinished(string storyTitle)
         {
             bool result = false;
 
-            result = finishedStories.Contains(storyTitle);
+            result = finishedStories.Find(x => x.storyTitle == storyTitle) != null;
 
             return result;
         }

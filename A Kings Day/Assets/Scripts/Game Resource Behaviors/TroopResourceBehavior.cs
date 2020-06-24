@@ -75,12 +75,12 @@ namespace GameResource
             curPlayer.coins -= GetRecruitCoins;
             curPlayer.SetPopulation(-1);
 
-            curPlayer.troops += 1;
+            curPlayer.recruits += 1;
         }
 
         public override void ImplementTechnology()
         {
-            List<BaseTechnology> relatedTech = curPlayer.currentTechanologies.FindAll(x => x.improvedType == ResourceType.Food);
+            List<BaseTechnology> relatedTech = curPlayer.currentTechnologies.FindAll(x => x.improvedType == ResourceType.Food);
 
 
             foreach (BaseTechnology technology in relatedTech)

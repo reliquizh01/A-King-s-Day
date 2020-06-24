@@ -39,6 +39,7 @@ namespace Managers
                 if (TransitionManager.GetInstance.managerList.Find(x => x.gameView == gameView) == null)
                 {
                     TransitionManager.GetInstance.AddManager(this);
+                    TransitionManager.GetInstance.SetAsCurrentManager(this.gameView);
                 }
             }
             else

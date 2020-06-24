@@ -40,15 +40,19 @@ public class BuildingInformationPanel : MonoBehaviour
         switch (buildingType)
         {
             case BuildingType.Shop:
+                UpdateShop();
                 break;
             case BuildingType.Barracks:
                 UpdateBarracks();
                 break;
             case BuildingType.Tavern:
+                UpdateTavern();
                 break;
             case BuildingType.Smithery:
+
                 break;
             case BuildingType.Houses:
+                UpdateHouses();
                 break;
             case BuildingType.Farm:
                 UpdateFarm();
@@ -66,15 +70,20 @@ public class BuildingInformationPanel : MonoBehaviour
     // UPDATE BARRACKS NEEDS MORE DATA (HERO AND UNIT INFORMATION DATA)
     public void UpdateBarracks()
     {
-
+        TroopResourceBehavior troopsBehavior = PlayerGameManager.GetInstance.troopBehavior;
         if(cardIdx == 0) // TRAIN NEW SOLDIER
         {
             // Placeholders, need proper Unit Storage later on
             int hp = 4, dmg = 1, spd = 1;
+            List<int> tmp = new List<int>();tmp.Add(playerData.GetTotalTroops);; tmp.Add(hp); tmp.Add(dmg); tmp.Add(spd);
+            currentPage.informationPanelList[0].SetMultiCounter(tmp, "Recruits"); // HP DAMAGE SPEED
 
-            currentPage.informationPanelList[0].SetSingleCounter(hp, "HEALTH", "SOLDIER");
-            currentPage.informationPanelList[1].SetSingleCounter(dmg, "DAMAGE");
-            currentPage.informationPanelList[2].SetSingleCounter(spd, "SPEED");
+            string secondDescription = "Maximum units the barracks can support [" + playerData.recruits +"," 
+                + playerData.swordsmenCount +"," + playerData.spearmenCount + "," + playerData.archerCount + "]";
+            currentPage.informationPanelList[1].SetSingleCounter(playerData.barracksCapacity,secondDescription, "Barracks Capacity"); // BARRACKS CAPACITY
+
+            string thirdDescription = "Training cost to arm a person.";
+            currentPage.informationPanelList[2].SetSingleCounter(troopsBehavior.GetRecruitCoins, thirdDescription, "Training Cost"); // TRAINING COST
         }
         else if(cardIdx == 2) // HEROES
         {
@@ -82,7 +91,6 @@ public class BuildingInformationPanel : MonoBehaviour
             {
                 if(PlayerGameManager.GetInstance.playerData.myHeroes != null && PlayerGameManager.GetInstance.playerData.myHeroes.Count > 0)
                 {
-                    Debug.Log("PUSSH");
                     BaseHeroInformationData curHero = PlayerGameManager.GetInstance.playerData.myHeroes[selectedHeroIdx];
                     currentPage.informationPanelList[0].SetGrowthCounter((int)curHero.unitInformation.maxHealth, curHero.healthGrowthRate, "HEALTH", curHero.heroName);
                     currentPage.informationPanelList[1].SetGrowthCounter((int)curHero.unitInformation.maxDamage, curHero.damageGrowthRate, "DAMAGE");
@@ -222,7 +230,128 @@ public class BuildingInformationPanel : MonoBehaviour
 
 
             string thirdDescription = "Gain <color=green>+2</color> safe cows for every expansion.";
-            currentPage.informationPanelList[2].SetSingleCounter(playerData.cowCapacity, thirdDescription, "Safe Cow Barn");
+            currentPage.informationPanelList[2].SetSingleCounter(playerData.safeCows, thirdDescription, "Safe Cow Barn");
         }
+    }
+
+    public void UpdateHouses()
+    {
+        PopulationResourceBehavior populationBehavior = PlayerGameManager.GetInstance.populationBehavior;
+        if (cardIdx == 0) // Birthrate Chance
+        {
+            string firstDescription = "Chance of people dying per week.";
+            currentPage.informationPanelList[0].SetSingleCounter(populationBehavior.baseDeathChance, firstDescription, "Weekly Death Chance");
+            string secondDescription = "Population supported by 1 food consumed per week.";
+            currentPage.informationPanelList[1].SetSingleCounter(populationBehavior.GetPopPerFood, secondDescription, "Rotten Food");
+
+            string thirdDescription = "Chance of plague events occurring";
+            currentPage.informationPanelList[2].SetSingleCounter(populationBehavior.uncleanWeeks, thirdDescription, "Plague Events");
+        }
+        else if (cardIdx == 1) // Build New Houses
+        {
+            string firstDescription = "Chance of attracting new settlers.";
+            currentPage.informationPanelList[0].SetSingleCounter(populationBehavior.GetSettlerChance, firstDescription, "Rising Land Value");
+
+            string secondDescription = "Maximum population who can live in your kingdom";
+            currentPage.informationPanelList[1].SetSingleCounter(populationBehavior.GetMaxPopulation, secondDescription, "Population Capacity");
+
+            string thirdDescription = "Population we can save in case of raids.";
+            currentPage.informationPanelList[2].SetSingleCounter(playerData.safePopulation, thirdDescription, "Stone House");
+        }
+        else if (cardIdx == 2) // Clean the area
+        {
+            string firstDescription = "Chance of people dying per week.";
+            currentPage.informationPanelList[0].SetSingleCounter(populationBehavior.baseDeathChance, firstDescription, "Weekly Death Chance");
+
+            string secondDescription = "Population supported by <color=green>1</color> food consumed per week.";
+            currentPage.informationPanelList[1].SetSingleCounter(populationBehavior.GetPopPerFood, secondDescription, "Rotten Food");
+
+            string thirdDescription = "Chance of plague events occurring";
+            currentPage.informationPanelList[2].SetSingleCounter(populationBehavior.uncleanWeeks, thirdDescription, "Plague Events");
+
+        }
+    }
+
+    public void UpdateTavern()
+    {
+        if(cardIdx == 0) // RECRUIT HEROES
+        {
+            if(playerData.tavernHeroes == null || playerData.tavernHeroes.Count <= 0)
+            {
+                myController.ShowInfoBlocker("No Heroes has Arrived");
+            }
+            else
+            {
+                for (int i = 0; i < currentPage.informationPanelList.Count; i++)
+                {
+                    if(playerData.tavernHeroes[i] == null)
+                    {
+                        break;
+                    }
+                    List<int> health = new List<int>();
+                    health.Add((int)playerData.tavernHeroes[i].unitInformation.maxHealth);
+                    health.Add((int)playerData.tavernHeroes[i].healthGrowthRate);
+                    List<int> speed = new List<int>();
+                    speed.Add((int)playerData.tavernHeroes[i].unitInformation.origSpeed);
+                    speed.Add((int)playerData.tavernHeroes[i].speedGrowthRate);
+                    List<int> damage = new List<int>();
+                    damage.Add((int)playerData.tavernHeroes[i].unitInformation.minDamage);
+                    damage.Add((int)playerData.tavernHeroes[i].unitInformation.maxDamage);
+                    damage.Add((int)playerData.tavernHeroes[i].damageGrowthRate);
+
+                    currentPage.informationPanelList[i].SetHeroCounter(health, damage, speed, playerData.tavernHeroes[i].unitInformation.attackType,
+                        playerData.tavernHeroes[i].heroName);
+                }
+            }
+        }
+        else if(cardIdx == 1)
+        {
+            List<int> tmp = new List<int>();
+            tmp.Add(playerData.potentialCommonHero); tmp.Add(playerData.potentialRareHero); tmp.Add(playerData.potentialLegHero);
+            currentPage.informationPanelList[0].SetMultiCounter(tmp, "Total Hero Chances");
+
+            List<int> tmp1 = new List<int>();
+            tmp1.Add(playerData.potentialGoodsMerchant); tmp1.Add(playerData.potentialEquipsMerchant); tmp1.Add(playerData.potentialExoticMerchant);
+            currentPage.informationPanelList[1].SetMultiCounter(tmp1, "Total Merchant Chances");
+
+            List<int> tmp2 = new List<int>();
+            tmp2.Add(playerData.potentialCommonHero); tmp2.Add(playerData.potentialRareHero); tmp2.Add(playerData.potentialLegHero);
+            currentPage.informationPanelList[2].SetMultiCounter(tmp, "Total Mercenary Chances");
+        }
+        else if(cardIdx == 2)
+        {
+            List<int> tmp = new List<int>();
+            tmp.Add(playerData.swordsmenMercAvail); tmp.Add(10); tmp.Add(4); tmp.Add(2);
+            currentPage.informationPanelList[0].SetMultiCounter(tmp, "Swordsman Available");
+
+            List<int> tmp1 = new List<int>();
+            tmp1.Add(playerData.spearmenMercAvail); tmp1.Add(6); tmp1.Add(2); tmp1.Add(3);
+            currentPage.informationPanelList[1].SetMultiCounter(tmp1, "Spearman Available");
+
+            List<int> tmp2 = new List<int>();
+            tmp2.Add(playerData.archerMercAvail); tmp2.Add(4); tmp2.Add(1); tmp2.Add(3);
+            currentPage.informationPanelList[2].SetMultiCounter(tmp2, "Archer Available");
+        }
+    }
+
+    public void UpdateShop()
+    {
+        if (playerData.currentShopMerchants.Count <= 0)
+        {
+            Debug.Log("No merchant Available!");
+            myController.ShowInfoBlocker("No Merchant in Stall.");
+            currentPage.informationPanelList[0].ResetCounter();
+            currentPage.informationPanelList[1].ResetCounter();
+            currentPage.informationPanelList[2].ResetCounter();
+        }
+        else
+        {
+            Debug.Log("Merchant Available!");
+            for (int i = 0; i < currentPage.informationPanelList.Count; i++)
+            {
+                currentPage.informationPanelList[i].SetFlexibleCounter(playerData.currentShopMerchants[cardIdx].itemsSold[i], playerData.currentShopMerchants[cardIdx].merchantName);
+            }
+        }
+    
     }
 }

@@ -10,9 +10,11 @@ public class BasePanelBehavior : MonoBehaviour
     public Animation myAnim;
     public string openAnimationName;
     public string closeAnimationName;
+    public bool closeOnExit = false;
 
     public bool playOpeningOnAwake = false;
     public bool isPlaying = false;
+
     public void Awake()
     {
         myAnim = this.GetComponent<Animation>();
@@ -90,7 +92,7 @@ public class BasePanelBehavior : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    public IEnumerator WaitAnimationForAction(string animName, Action callBack = null)
+    public IEnumerator WaitAnimationForAction(string animName, Action callBack = null, bool enableSwitching = false)
     {
         if(!this.gameObject.activeInHierarchy)
         {
@@ -112,6 +114,11 @@ public class BasePanelBehavior : MonoBehaviour
         if (callBack != null)
         {
             callBack();
+        }
+
+        if(closeOnExit && animName == closeAnimationName)
+        {
+            this.gameObject.SetActive(false);
         }
     }
 }

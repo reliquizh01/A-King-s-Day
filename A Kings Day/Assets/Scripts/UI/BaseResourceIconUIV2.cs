@@ -47,7 +47,6 @@ namespace ResourceUI
                         {
                             resourceFill.fillAmount = latestFill;
                             isFilling = false;
-                            myController.UpdatePanel();
                         }
                     }
                     else if (latestFill < resourceFill.fillAmount)
@@ -57,7 +56,6 @@ namespace ResourceUI
                         {
                             resourceFill.fillAmount = latestFill;
                             isFilling = false;
-                            myController.UpdatePanel();
                         }
                     }
                 }
@@ -71,7 +69,6 @@ namespace ResourceUI
                             resourceFill.fillAmount = latestFill;
                             isFilling = false;
                             fastFill = false;
-                            myController.UpdatePanel();
                         }
                     }
                     else if (latestFill < resourceFill.fillAmount)
@@ -82,7 +79,6 @@ namespace ResourceUI
                             resourceFill.fillAmount = latestFill;
                             isFilling = false;
                             fastFill = false;
-                            myController.UpdatePanel();
                         }
                     }
                 }

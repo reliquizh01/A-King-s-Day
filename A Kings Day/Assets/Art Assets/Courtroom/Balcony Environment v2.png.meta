@@ -140,6 +140,33 @@ TextureImporter:
   - first:
       213: 6248479988254061087
     second: Kingdom Land
+  - first:
+      213: 6034138412942636939
+    second: Roads Beyond
+  - first:
+      213: -7793988070625715602
+    second: Yellow Sun
+  - first:
+      213: -8366566498773520324
+    second: Cold Sun
+  - first:
+      213: -860295101623299149
+    second: Balcony Environment v2_49
+  - first:
+      213: -8864202687965924351
+    second: Balcony Environment v2_50
+  - first:
+      213: 4217902704761444832
+    second: Utland Mountain
+  - first:
+      213: 6265400569936219281
+    second: Utland Forest
+  - first:
+      213: 7756667144588304068
+    second: Roads Further
+  - first:
+      213: 3016919294260542534
+    second: Sky
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -201,7 +228,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -213,7 +240,7 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -225,7 +252,7 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -851,7 +878,7 @@ TextureImporter:
         serializedVersion: 2
         x: 43
         y: 9
-        width: 883
+        width: 888
         height: 117
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1198,6 +1225,195 @@ TextureImporter:
       bones: []
       spriteID: f123506817f07b650800000000000000
       internalID: 6248479988254061087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roads Beyond
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 604
+        width: 881
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b873cf49ae09db350800000000000000
+      internalID: 6034138412942636939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow Sun
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 541
+        width: 59
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ad8b2e42136d390800000000000000
+      internalID: -7793988070625715602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cold Sun
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 500
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c30bbeae81cf3eb80800000000000000
+      internalID: -8366566498773520324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Balcony Environment v2_49
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 431
+        width: 14
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b31cb1c92e9f04f0800000000000000
+      internalID: -860295101623299149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Balcony Environment v2_50
+      rect:
+        serializedVersion: 2
+        x: 1639
+        y: 431
+        width: 14
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1047abeae960cf480800000000000000
+      internalID: -8864202687965924351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Utland Mountain
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 19
+        width: 439
+        height: 174
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e9177e9920098a30800000000000000
+      internalID: 4217902704761444832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Utland Forest
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 21
+        width: 380
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19c04927f9c23f650800000000000000
+      internalID: 6265400569936219281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roads Further
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 755
+        width: 881
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ce1122eba735ab60800000000000000
+      internalID: 7756667144588304068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sky
+      rect:
+        serializedVersion: 2
+        x: 1613
+        y: 120
+        width: 157
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64cfb622d104ed920800000000000000
+      internalID: 3016919294260542534
       vertices: []
       indices: 
       edges: []

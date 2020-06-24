@@ -18,10 +18,21 @@ namespace Buildings
         Functioning
     }
     [Serializable]
+    public class BuildingSavedData
+    {
+        public string buildingName;
+        public BuildingType buildingType;
+        public BuildingCondition buildingCondition;
+        public int buildingLevel;
+
+    }
+    [Serializable]
     public class BuildingInformationData
     {
         public string BuildingName;
         public BuildingType buildingType;
+        public BuildingCondition buildingCondition;
+        public int buildingLevel;
 
         public List<BuildingCardData> buildingCard;
         

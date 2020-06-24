@@ -9,6 +9,13 @@ namespace GameResource
 {
     public class PopulationResourceBehavior : BaseResourceBehavior
     {
+        public int uncleanWeeks = 0;
+        public int baseDeathChance = 4;
+        public int GetDeathRate
+        {
+            get { return baseDeathChance + uncleanWeeks; }
+        }
+
         public int baseBirthrate = 20;
         public int techBirthrate = 0;
         public int GetBirthRate
@@ -22,12 +29,25 @@ namespace GameResource
         {
             get { return settlerChance + techSettlerChance; }
         }
+
         public int PopPerFood = 4;
         public int techPopPerFood = 0;
+
+        public int GetPopPerFood
+        {
+            get
+            {
+                return PopPerFood + techPopPerFood;
+            }
+        }
 
         public int maxPopulation = 50;
         public int techMaxPopulation = 0;
 
+        public int GetMaxPopulation
+        {
+            get { return techMaxPopulation + maxPopulation; }
+        }
         public int coinPerPop = 1;
         public int techCoinPerPop = 0;
         public int GetTaxPerPop
@@ -53,7 +73,7 @@ namespace GameResource
         {
             base.ImplementTechnology();
 
-            List<BaseTechnology> relatedTech = curPlayer.currentTechanologies.FindAll(x => x.improvedType== ResourceType.Population);
+            List<BaseTechnology> relatedTech = curPlayer.currentTechnologies.FindAll(x => x.improvedType== ResourceType.Population);
 
             foreach (BaseTechnology technology in relatedTech)
             {

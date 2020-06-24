@@ -83,14 +83,14 @@ namespace ResourceUI
                 currentPanel.myPanel.PlayCloseAnimation();
             }
         }
-        public void ShowResourcePanel(ResourcePanelType panelType)
+        public void ShowResourcePanel(ResourcePanelType panelType, Action extraCallBack = null)
         {
 
             if (currentPanel != null)
             {
                 if (currentPanel == sidePanel)
                 {
-                    StartCoroutine(currentPanel.myPanel.WaitAnimationForAction(currentPanel.myPanel.closeAnimationName, () => SwapDelay(panelType)));
+                    StartCoroutine(currentPanel.myPanel.WaitAnimationForAction(currentPanel.myPanel.closeAnimationName, () => SwapDelay(panelType, extraCallBack)));
                 }
                 else
                 {
@@ -123,6 +123,7 @@ namespace ResourceUI
                         overheadPanel.InitializeData();
                         overheadPanel.myPanel.PlayOpenAnimation();
                         currentPanel = overheadPanel;
+                        currentPanel.weekController.UpdateWeekCountText();
                         break;
                     case ResourcePanelType.side:
                         sidePanel.gameObject.SetActive(true);
@@ -137,7 +138,7 @@ namespace ResourceUI
 
         }
 
-        public void SwapDelay(ResourcePanelType panelType)
+        public void SwapDelay(ResourcePanelType panelType, Action extraCallBack = null)
         {
             switch (panelType)
             {
@@ -156,7 +157,10 @@ namespace ResourceUI
                 default:
                     break;
             }
-
+            if(extraCallBack != null)
+            {
+                extraCallBack();
+            }
         }
         public void ShowWeekendPanel()
         {

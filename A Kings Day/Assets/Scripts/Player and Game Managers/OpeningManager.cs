@@ -6,6 +6,9 @@ using Managers;
 using Utilities;
 using TMPro;
 using Kingdoms;
+using UnityEngine.UI;
+using SaveData;
+using System.Linq;
 
 public class OpeningManager : BaseManager
 {
@@ -25,7 +28,6 @@ public class OpeningManager : BaseManager
     }
     #endregion
 
-
     public InteractiveText startBtn;
     public bool appFirstStart = true;
     public override void Start()
@@ -33,17 +35,18 @@ public class OpeningManager : BaseManager
         base.Start();
         if(appFirstStart && TransitionManager.GetInstance.previousScene == SceneType.Courtroom)
         {
-            startBtn.ResetText();
-            startBtn.AddTransition(TransitionToKingdomCreation);
             TransitionManager.GetInstance.SetAsCurrentManager(gameView);
-            startBtn.gameObject.SetActive(true);
             appFirstStart = false;
         }
-        else
-        {
-            startBtn.gameObject.SetActive(false);
-        }
     }
+    public void QuitGame()
+    {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+        Application.Quit();
+    }
+
     public void TransitionToKingdomCreation()
     {
         Debug.Log("Transitioning to Kingdom Creation");

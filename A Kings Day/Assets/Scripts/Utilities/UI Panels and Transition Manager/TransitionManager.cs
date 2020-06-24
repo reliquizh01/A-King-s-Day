@@ -79,7 +79,17 @@ namespace Managers
             EventBroadcaster.Instance.RemoveActionAtObserver(EventNames.ENABLE_TAB_COVER, ShowTabCover);
         }
 
+        public void SetAsNewSceneManager(BaseSceneManager thisManager)
+        {
+            if(currentSceneManager == thisManager)
+            {
+                return;
+            }
 
+            currentSceneManager = thisManager;
+
+            SetAsCurrentManager(thisManager.gameView, true);
+        }
         public void ShowTabCover(Parameters p = null)
         {
             tabCover.gameObject.SetActive(true);
@@ -91,13 +101,21 @@ namespace Managers
         }
         public void ShowLoading(Action callback = null)
         {
-            StartCoroutine(loadingScreen.WaitAnimationForAction(loadingScreen.openAnimationName, callback));
-            isLoading = true;
+            if(!loadingScreen.gameObject.activeInHierarchy)
+            {
+                loadingScreen.gameObject.SetActive(true);
+                StartCoroutine(loadingScreen.WaitAnimationForAction(loadingScreen.openAnimationName, callback));
+                isLoading = true;
+            }
+            else
+            {
+                callback();
+            }
         }
         public void RemoveLoading(Action callback = null)
         {
-            
             StartCoroutine(loadingScreen.WaitAnimationForAction(loadingScreen.closeAnimationName, callback));
+
         }
 
         public void LoadScene(SceneType thisScene)
@@ -105,11 +123,18 @@ namespace Managers
             EventBroadcaster.Instance.PostEvent(EventNames.SAVE_KINGDOM_DATA);
             EventBroadcaster.Instance.PostEvent(EventNames.HIDE_TOOLTIP_MESG);
             previousScene = currentSceneManager.sceneType;
-            ShowLoading(LoadScene);
             preLoadThisScene = thisScene;
+
+            ShowLoading(LoadScene);
+
             Debug.Log("----------Loading a Scene----------");
             isLoadingNewScene = true;
         }
+        public void LoadScene()
+        {
+            SceneManager.LoadScene((int)preLoadThisScene);
+        }
+
         IEnumerator DelayRemoveLoading()
         {
             yield return new WaitForSeconds(1);
@@ -125,7 +150,7 @@ namespace Managers
                     // Call Balcony Manager Here!
                     isLoadingNewScene = false;
                     isLoading = false;
-
+                    RemoveLoading();
                 }
             }
         }
@@ -147,11 +172,7 @@ namespace Managers
             managerList.RemoveAll(x => x.thisManager == null);
             currentMgr = null;
         }
-        public void LoadScene()
-        {
-            SceneManager.LoadScene((int)preLoadThisScene);
-          
-        }
+
         public void AddManager(BaseManager thisManager)
         {
             ViewManager newMgr = new ViewManager();
@@ -170,6 +191,7 @@ namespace Managers
                 if(currentMgr.thisManager != null)
                 {
                     currentMgr.thisManager.PreCloseManager();
+                    currentMgr = null;
                 }
             }
 
@@ -182,18 +204,23 @@ namespace Managers
             {
                 //Debug.Log("View is Loading and new Scene!");
                 isLoading = false;
-                RemoveLoading(() => SetAsCurrentManager(thisView, isGameView));
+                RemoveLoading();
             }
         }
         public void SetAsCurrentManager(GameViews thisView,bool isGameView = false)
         {
-           // Debug.Log("Setting New Manager View : " + thisView);
-            ViewManager thisMgr = managerList.Find(x => x.gameView == thisView);
+           Debug.Log("Setting New Manager View : " + thisView);
+           ViewManager thisMgr = managerList.Find(x => x.gameView == thisView);
+
+            if(currentMgr != null)
+            {
+                if (currentMgr == thisMgr) return;
+            }
 
             if (thisMgr != null)
             {
                 currentMgr = thisMgr;
-               // Debug.Log("Current Mgr: " + currentMgr);
+                Debug.Log("Current Mgr: " + currentMgr);
                 if(currentMgr.gameView == GameViews.KingdomCreationView)
                 {
                     isNewGame = true;
