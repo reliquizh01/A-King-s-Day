@@ -99,7 +99,6 @@ namespace ResourceUI
             int textTotal = currentCount - toBeReduced;
             currentAmount.text = currentCount.ToString() + "[-" + toBeReduced.ToString() + "]";
 
-            Debug.Log("Storage Name: " + storageFill.gameObject.name);
             storageFill.reduceFill.fillAmount = (float)potentialTotal / (float)storageCapacity;
         }
 

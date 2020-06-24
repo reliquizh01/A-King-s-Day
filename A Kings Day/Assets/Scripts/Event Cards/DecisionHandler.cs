@@ -80,12 +80,12 @@ namespace KingEvents
         }
         public void RespondToExit(int idx)
         {
-            ResourceInformationController.GetInstance.currentPanel.HidePotentialResourceChanges();
+            ResourceInformationController.GetInstance.HideCurrentPanelPotentialResourceChanges();
         }
         public void RespondToClick(int idx)
         {
             // Call Animation here
-            ResourceInformationController.GetInstance.currentPanel.HidePotentialResourceChanges();
+            ResourceInformationController.GetInstance.HideCurrentPanelPotentialResourceChanges();
             // Call Controllers Reward Option 
             Debug.Log("--- Responding to Click ---");
             myController.HideCurrentEvent(idx);

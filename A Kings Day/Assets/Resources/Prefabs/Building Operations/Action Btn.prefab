@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 673681133}
   - component: {fileID: 673681135}
   - component: {fileID: 673681134}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Icon Only
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 799530938}
   - component: {fileID: 799530940}
   - component: {fileID: 799530939}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: First Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 1078619351}
   - component: {fileID: 1078619353}
   - component: {fileID: 1078619352}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1408315669}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Cost Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1621352658}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Logo With Mesg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 1675897885}
   - component: {fileID: 1675897887}
   - component: {fileID: 1675897886}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 2026597500}
   - component: {fileID: 2026597502}
   - component: {fileID: 2026597501}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: First Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -627,7 +627,7 @@ GameObject:
   - component: {fileID: 7831616165698146318}
   - component: {fileID: 7591847063502723639}
   - component: {fileID: 5335792288045953191}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Action Btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -737,7 +737,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7831616165698146319}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7591847063502723639}
+        m_MethodName: OnMouseClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7591847063502723639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -750,6 +761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3413a40865801247995dfa406e9fbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myController: {fileID: 0}
   myBtn: {fileID: 7831616165698146318}
   curCardActionType: 0
   iconOnly: {fileID: 673681134}
@@ -759,6 +771,7 @@ MonoBehaviour:
   iconMessage: {fileID: 1078619352}
   coinCostPanel: {fileID: 799530937}
   coinCostMesg: {fileID: 1675897886}
+  actionIdx: 0
 --- !u!114 &5335792288045953191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -813,7 +826,7 @@ GameObject:
   - component: {fileID: 7831616166188574026}
   - component: {fileID: 7831616166188574024}
   - component: {fileID: 7831616166188574027}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}

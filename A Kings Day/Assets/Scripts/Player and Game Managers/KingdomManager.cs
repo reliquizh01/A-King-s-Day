@@ -101,24 +101,32 @@ namespace Managers
             currentStory = prevStoryData;
             eventFinished = PlayerGameManager.GetInstance.playerData.eventFinished;
             savedDataLoaded = true;
+
+            weeklyEvents = ((int)playerData.level + 1) * 3;
+
+            ResourceInformationController.GetInstance.currentPanel.weekController.UpdateEndButton(eventFinished, weeklyEvents);
         }
 
         public void SaveData(Parameters p = null)
         {
-            PlayerGameManager.GetInstance.SaveCurDataEvent(currentEvent);
+            if(currentEvent != null)
+            {
+                PlayerGameManager.GetInstance.SaveCurDataEvent(currentEvent);
+            }
             PlayerGameManager.GetInstance.SaveQueuedData(queuedEventsList, eventFinished);
             PlayerGameManager.GetInstance.SaveCurStory(currentStory);
 
             SaveLoadManager.GetInstance.SaveCurrentData();
         }
+
         public void ProceedToNextWeek()
         {
+            Debug.Log("Where are you coming from!");
             eventFinished = 0;
             //Debug.Log("Last Week Count: " + PlayerGameManager.GetInstance.playerData.weekCount);
             PlayerGameManager.GetInstance.playerData.weekCount += 1;
-            //Debug.Log("Adding New Week, Current Count : " + PlayerGameManager.GetInstance.playerData.weekCount);
-
             PlayerGameManager.GetInstance.WeeklyResourceProductionUpdate();
+            //Debug.Log("Adding New Week, Current Count : " + PlayerGameManager.GetInstance.playerData.weekCount);
             StartWeekEvents();
         }
 
@@ -281,6 +289,7 @@ namespace Managers
         public void StartCards()
         {
             cardEventController.ReceiveEvent(currentEvent);
+            SaveData();
         }
         public void EndCards()
         {

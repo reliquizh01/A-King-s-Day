@@ -15,6 +15,7 @@ namespace ResourceUI
     public class ResourceInformationHandler : MonoBehaviour
     {
         public BasePanelBehavior myPanel;
+
         [Header("Kingdom Information")]
         public BaseResourceUIControllerV2 foodControl;
         public BaseResourceUIControllerV2 troopControl;

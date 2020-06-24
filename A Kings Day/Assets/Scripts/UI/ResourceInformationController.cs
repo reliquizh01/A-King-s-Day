@@ -76,6 +76,10 @@ namespace ResourceUI
         {
             currentPanel.ShowPotentialResourceChanges(rewardList);
         }
+        public void HideCurrentPanelPotentialResourceChanges()
+        {
+            currentPanel.HidePotentialResourceChanges();
+        }
         public void HideCurrentPanel(Parameters p = null)
         {
             if (currentPanel != null)

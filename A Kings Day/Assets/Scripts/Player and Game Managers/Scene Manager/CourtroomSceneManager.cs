@@ -49,6 +49,12 @@ namespace Managers
             base.PreOpenManager();
         }
 
+        public override void StartManager()
+        {
+            base.StartManager();
+
+        }
+
         public void MakeGuardLeave(Action callback = null)
         {
             leftGuard.OrderMovement(scenePointHandler.scenePoints[5]);

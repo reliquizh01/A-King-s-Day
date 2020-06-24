@@ -7,7 +7,7 @@ public class BaseManager : MonoBehaviour
 {
     public BasePanelBehavior panelBehaviour;
     public GameViews gameView;
-    public static bool Loaded = false;
+    public bool Loaded = false;
     public bool isViewManager = true;
     public virtual void Start()
     {
@@ -47,7 +47,7 @@ public class BaseManager : MonoBehaviour
         Loaded = true;
     }
 
-    public static void CallBackTransitionOff()
+    public void CallBackTransitionOff()
     {
         TransitionManager.GetInstance.inTransition = false;
         Loaded = true;

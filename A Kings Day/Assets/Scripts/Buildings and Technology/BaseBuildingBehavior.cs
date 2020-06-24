@@ -59,7 +59,7 @@ namespace Buildings
                 && playerData.buildingInformationData.Count > 0 && 
                 playerData.buildingInformationData.Find( x=> x.buildingName == this.buildingInformation.BuildingName) != null)
             {
-                BuildingSavedData tmp = playerData.buildingInformationData.Find(x => x.buildingType == buildingType);
+                BuildingSavedData tmp = playerData.buildingInformationData.Find(x => x.buildingName == buildingInformation.BuildingName);
 
                 buildingInformation = TransitionManager.GetInstance.currentSceneManager.buildingInformationStorage.ObtainBuildingOperation(informationName);
 
@@ -75,6 +75,7 @@ namespace Buildings
             {
                 buildingInformation = BalconySceneManager.GetInstance.buildingInformationStorage.ObtainBuildingOperation(buildingType);
             }
+
             UpdateBuildingState();
 
         }
@@ -123,12 +124,23 @@ namespace Buildings
         public void UpdateBuildingState()
         {
             optionHandler.UpdateRuinState();
-            ruinEmpty.gameObject.SetActive(false);
-            fixFilled.gameObject.SetActive(true);
+            switch (buildingInformation.buildingCondition)
+            {
+                case BuildingCondition.Ruins:
+                    ruinEmpty.gameObject.SetActive(true);
+                    fixFilled.gameObject.SetActive(false);
+                    break;
+                case BuildingCondition.Functioning:
+                ruinEmpty.gameObject.SetActive(false);
+                fixFilled.gameObject.SetActive(true);
+                    break;
+                default:
+                    break;
+            }
         }
         public void UpgradeBuilding()
         {
-            if (!PlayerGameManager.GetInstance.CheckResourceEnough(repairPrice, ResourceType.Coin))
+            if (!PlayerGameManager.GetInstance.CheckResourceEnough(buildingInformation.repairPrice, ResourceType.Coin))
             {
                 optionHandler.ShowOptionInsufficient(OptionType.Upgrade);
                 return;
@@ -137,8 +149,8 @@ namespace Buildings
 
             if (buildingInformation.buildingCondition == BuildingCondition.Ruins)
             {
-                PlayerGameManager.GetInstance.RemoveResource(repairPrice, ResourceType.Coin);
-                ResourceInformationController.GetInstance.currentPanel.UpdateResourceData(ResourceType.Coin, repairPrice, false);
+                PlayerGameManager.GetInstance.RemoveResource(buildingInformation.repairPrice, ResourceType.Coin);
+                ResourceInformationController.GetInstance.currentPanel.UpdateResourceData(ResourceType.Coin, buildingInformation.repairPrice, false);
                 PlayerGameManager.GetInstance.playerData.buildingInformationData.Find(x => x.buildingName == this.buildingInformation.BuildingName).buildingCondition = BuildingCondition.Functioning;
                 buildingInformation.buildingCondition = BuildingCondition.Functioning;
 

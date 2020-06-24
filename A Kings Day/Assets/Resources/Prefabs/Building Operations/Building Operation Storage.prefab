@@ -46,6 +46,9 @@ MonoBehaviour:
   buildingOperationList:
   - BuildingName: Barracks
     buildingType: 1
+    buildingCondition: 0
+    buildingLevel: 0
+    repairPrice: -5
     buildingCard:
     - cardName: Recruit
       cardIcon: {fileID: 3097286565735694711, guid: e831a7aa9fdf9944eb2bb71f8270a962,
@@ -55,6 +58,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Soldier
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 1
           rewardAmount: 1
@@ -73,6 +78,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Townsfolk
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 1
           rewardAmount: -1
@@ -87,6 +94,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Sell Soldier
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 1
           rewardAmount: -1
@@ -111,8 +120,10 @@ MonoBehaviour:
         logoIcon: {fileID: 791580562967185319, guid: e831a7aa9fdf9944eb2bb71f8270a962,
           type: 3}
         message: 
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
-        - resourceType: 11
+        - resourceType: 6
           rewardAmount: 1
         - resourceType: 1
           rewardAmount: -1
@@ -128,8 +139,10 @@ MonoBehaviour:
         logoIcon: {fileID: 9029295832776591723, guid: e831a7aa9fdf9944eb2bb71f8270a962,
           type: 3}
         message: 
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
-        - resourceType: 12
+        - resourceType: 7
           rewardAmount: 1
         - resourceType: 1
           rewardAmount: -1
@@ -145,12 +158,14 @@ MonoBehaviour:
         logoIcon: {fileID: 87444261590327566, guid: e831a7aa9fdf9944eb2bb71f8270a962,
           type: 3}
         message: 
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 1
           rewardAmount: -1
         - resourceType: 3
           rewardAmount: -10
-        - resourceType: 10
+        - resourceType: 5
           rewardAmount: 1
         AcceptMesg:
         - A shot to the head without getting harmed, is a kill.
@@ -172,6 +187,8 @@ MonoBehaviour:
         logoIcon: {fileID: 8819155330738142235, guid: e831a7aa9fdf9944eb2bb71f8270a962,
           type: 3}
         message: Health
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -5
@@ -187,6 +204,8 @@ MonoBehaviour:
         logoIcon: {fileID: -7621245386961359428, guid: e831a7aa9fdf9944eb2bb71f8270a962,
           type: 3}
         message: Damage
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -10
@@ -202,6 +221,8 @@ MonoBehaviour:
         logoIcon: {fileID: -6866828706736253922, guid: e831a7aa9fdf9944eb2bb71f8270a962,
           type: 3}
         message: Speed
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -5
@@ -223,6 +244,9 @@ MonoBehaviour:
     - Everyone! March! Your king is here!
   - BuildingName: Market
     buildingType: 6
+    buildingCondition: 1
+    buildingLevel: 0
+    repairPrice: -3
     buildingCard:
     - cardName: Sponsor Festival
       cardIcon: {fileID: 3403175251718106097, guid: e831a7aa9fdf9944eb2bb71f8270a962,
@@ -232,6 +256,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Traditional
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -10
@@ -247,6 +273,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Feast
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -20
@@ -262,6 +290,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Grand Celebration
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -100
@@ -285,6 +315,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Item 1
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg:
         - Thats a great buy my king!
@@ -297,6 +329,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Item 2
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg:
         - Thats a great buy my king!
@@ -309,6 +343,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Item 3
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg:
         - Thats a great buy my king!
@@ -330,6 +366,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Goods Merchant
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -30
@@ -343,6 +381,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Heroes Merchant
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -50
@@ -355,6 +395,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Exotic Merchant
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -100
@@ -373,6 +415,9 @@ MonoBehaviour:
     - Are you here to buy something, or maybe you want to feast?
   - BuildingName: Tavern
     buildingType: 2
+    buildingCondition: 0
+    buildingLevel: 0
+    repairPrice: -15
     buildingCard:
     - cardName: Recruit Hero
       cardIcon: {fileID: 5047891255180530619, guid: e831a7aa9fdf9944eb2bb71f8270a962,
@@ -382,6 +427,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Hire
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg:
         - Okay, I'll talk to him and send him to the courtroom
@@ -392,6 +439,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Ask to Stay More
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg:
         - I can provide him free stay for 2 more weeks, for the king.
@@ -404,6 +453,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Not Interested
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg:
         - Okay, I'll make sure a transport will be done by next week.
@@ -423,6 +474,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: For Merchants!
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -10
@@ -437,6 +490,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: For Heroes!
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -5
@@ -452,6 +507,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: For Mercenaries
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -5
@@ -476,6 +533,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Swordsmen
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg:
         - A swordsmen is available and ready to serve.
@@ -487,6 +546,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Spearmen
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg:
         - See how he flungs that stick, he'll pack a punch.
@@ -498,6 +559,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Archer
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg:
         - He can aim alright, now to test him while drunk.
@@ -515,6 +578,9 @@ MonoBehaviour:
     - A few of those men can use a drink or two my king...
   - BuildingName: Shop
     buildingType: 0
+    buildingCondition: 0
+    buildingLevel: 0
+    repairPrice: -5
     buildingCard:
     - cardName: First Stall
       cardIcon: {fileID: 4029706435026645084, guid: e831a7aa9fdf9944eb2bb71f8270a962,
@@ -524,6 +590,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Buy Item 1
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg:
         - That's a great purchase my king!
@@ -534,6 +602,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Buy Item 2
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg:
         - Let me tell you this, you're the only one who bought it cheap.
@@ -545,6 +615,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Buy Item 3
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg:
         - I guess its a price you can pay! deal!
@@ -566,6 +638,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Buy Item 1
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg:
         - Not bad, you have a great taste.
@@ -577,6 +651,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Buy Item 2
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg: []
         DenyMesg: []
@@ -584,6 +660,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Buy Item 3
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg: []
         DenyMesg: []
@@ -601,6 +679,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Buy Item 1
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg:
         - Ah! Ah! that one is nice! you see! here good too!
@@ -612,6 +692,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Buy Item 2
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg: []
         DenyMesg: []
@@ -619,6 +701,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Buy Item 3
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg: []
         DenyMesg: []
@@ -632,6 +716,9 @@ MonoBehaviour:
     - Handling this stallls is good! they ensure flow of trade..
   - BuildingName: Smithery
     buildingType: 3
+    buildingCondition: 0
+    buildingLevel: 0
+    repairPrice: -10
     buildingCard:
     - cardName: Craft Item
       cardIcon: {fileID: -1503813222287230182, guid: e831a7aa9fdf9944eb2bb71f8270a962,
@@ -641,6 +728,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Increase
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg:
         - A magnanimous king indeed!
@@ -654,6 +743,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Craft
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg:
         - And the Hammering Starts!
@@ -665,6 +756,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Decrease
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg:
         - Wha-! okay we'll cross this material out of the list then!
@@ -686,6 +779,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Equip
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg:
         - Let's make sure thats well fitted, there!
@@ -697,6 +792,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Unequip
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg:
         - Now lets remove that for a minute.
@@ -708,6 +805,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Upgrade
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList: []
         AcceptMesg:
         - A few stitch and hammering here and there
@@ -724,6 +823,9 @@ MonoBehaviour:
     - Give us enough gold, and we'll craft it for you!
   - BuildingName: Houses
     buildingType: 4
+    buildingCondition: 0
+    buildingLevel: 0
+    repairPrice: -5
     buildingCard:
     - cardName: Provide Food
       cardIcon: {fileID: -6406115455207733383, guid: e831a7aa9fdf9944eb2bb71f8270a962,
@@ -733,6 +835,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: 5
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -5
@@ -746,6 +850,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: 10
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -10
@@ -759,6 +865,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: 15
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -15
@@ -783,6 +891,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Small Houses
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -20
@@ -797,6 +907,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Two Floor House
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -20
@@ -812,6 +924,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Protective Shelters
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -30
@@ -838,6 +952,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: 10 Coins
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -10
@@ -851,6 +967,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: 50 Coins
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -50
@@ -864,6 +982,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: 100 Coins
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -100
@@ -882,6 +1002,9 @@ MonoBehaviour:
     - The castles of your population lies here, in the community.
   - BuildingName: Farm
     buildingType: 5
+    buildingCondition: 1
+    buildingLevel: 0
+    repairPrice: -3
     buildingCard:
     - cardName: Add Farmers
       cardIcon: {fileID: -1579297797110594810, guid: e831a7aa9fdf9944eb2bb71f8270a962,
@@ -891,8 +1014,10 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Increase
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
-        - resourceType: 13
+        - resourceType: 8
           rewardAmount: 1
         - resourceType: 2
           rewardAmount: -1
@@ -905,10 +1030,12 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Decrease
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 2
           rewardAmount: 1
-        - resourceType: 13
+        - resourceType: 8
           rewardAmount: -1
         AcceptMesg:
         - You, You're a free man now!
@@ -919,6 +1046,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Sell Food
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -5
@@ -942,8 +1071,10 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Increase
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
-        - resourceType: 14
+        - resourceType: 9
           rewardAmount: 1
         - resourceType: 2
           rewardAmount: -1
@@ -956,8 +1087,10 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Decrease
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
-        - resourceType: 14
+        - resourceType: 9
           rewardAmount: -1
         - resourceType: 2
           rewardAmount: 1
@@ -970,6 +1103,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Cow To Food
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 9
           rewardAmount: -1
@@ -993,10 +1128,12 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Increase
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 2
           rewardAmount: -1
-        - resourceType: 15
+        - resourceType: 10
           rewardAmount: 1
         AcceptMesg:
         - You run the errands and ill list you down, welcome.
@@ -1007,8 +1144,10 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Decrease
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
-        - resourceType: 15
+        - resourceType: 10
           rewardAmount: -1
         - resourceType: 2
           rewardAmount: 1
@@ -1021,13 +1160,16 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Expand Barn
+        hasCooldown: 0
+        cooldownCount: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -10
         AcceptMesg:
         - More houses for the dairy queens.
         - Ah, another haystack storage.
-        DenyMesg: []
+        DenyMesg:
+        - Nah, it wont work without coins.
       cardPosMesg:
       - Put the haystack over there, and place the meat-- my king.
       - With what we have right now, my estimate is we -- my king.

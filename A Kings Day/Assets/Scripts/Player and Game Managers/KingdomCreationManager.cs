@@ -42,7 +42,15 @@ public class KingdomCreationManager : BaseManager
             creationView.gameObject.SetActive(true);
         }
     }
+    public override void PreCloseManager()
+    {
+        StartCoroutine(saveSlots.WaitAnimationForAction(saveSlots.closeAnimationName, () => TransitionManager.GetInstance.RemoveLoading()));        
+        base.PreCloseManager();
+    }
+    public void UpdateSlotHandler()
+    {
 
+    }
     public void GoToCreationView()
     {
         saveSlots.gameObject.SetActive(false);
@@ -56,7 +64,10 @@ public class KingdomCreationManager : BaseManager
 
     public void LoadThisData()
     {
-
+        if(saveSlotHandler.currentPanel == null)
+        {
+            return;
+        }
         if (PlayerGameManager.GetInstance != null)
         {
             PlayerGameManager.GetInstance.ReceiveData(SaveData.SaveLoadManager.GetInstance.saveDataList[saveSlotHandler.selectedIndex]);
@@ -64,7 +75,14 @@ public class KingdomCreationManager : BaseManager
         StartCoroutine(saveSlots.WaitAnimationForAction(saveSlots.closeAnimationName, LoadDataToGame));
         TransitionManager.GetInstance.isNewGame = false;
     }
-
+    public void DeleteThisData()
+    {
+        if(SaveData.SaveLoadManager.GetInstance != null)
+        {
+            SaveData.SaveLoadManager.GetInstance.DeleteData();
+        }
+        saveSlotHandler.UpdatePanels(SaveData.SaveLoadManager.GetInstance.saveDataList);
+    }
     public void LoadDataToGame()
     {
 

@@ -9,6 +9,6 @@ namespace Buildings
 {
     public class OperationCardActionHandler : MonoBehaviour
     {
-        public List<OperationCardAction> actionList;
+        public List<OperationCardDecision> actionList;
     }
 }

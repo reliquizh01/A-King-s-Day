@@ -142,12 +142,12 @@ namespace Buildings
 
                     if(isClicked)
                     {
-                        if(curBuildingStorageData.buildingOperationList[i] != null)
+                        if (curBuildingStorageData.buildingOperationList[i] != null)
                         {
                             selectedBuildingData = curBuildingStorageData.buildingOperationList[i];
                             selectedBuildingIdx = i;
                             curBuildingData = selectedBuildingData;
-                            if(selectedBuildingData.buildingCard != null && selectedBuildingData.buildingCard.Count > 0)
+                            if (selectedBuildingData.buildingCard != null && selectedBuildingData.buildingCard.Count > 0)
                             {
                                 curSelectedCard = selectedBuildingData.buildingCard[0];
                             }
@@ -157,8 +157,10 @@ namespace Buildings
                             }
 
                             selectedCardIdx = 0;
+
+                            GUI.FocusControl(null);
+                            isClicked = false;
                         }
-                        isClicked = false;
                     }
                 }
             }
@@ -237,12 +239,16 @@ namespace Buildings
             EditorGUIUtility.labelWidth = 34;
             EditorGUILayout.LabelField("Building Name:", EditorStyles.boldLabel, GUILayout.Width(100));
             curBuildingData.BuildingName = EditorGUILayout.TextField(curBuildingData.BuildingName, GUILayout.MaxWidth(300));
+            EditorGUILayout.LabelField("Start Condition: ", EditorStyles.boldLabel, GUILayout.Width(100));
+            curBuildingData.buildingCondition = (BuildingCondition)EditorGUILayout.EnumPopup(curBuildingData.buildingCondition, GUILayout.MaxWidth(100));
             GUILayout.EndHorizontal();
 
             // Building Information
             GUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("Type: ", EditorStyles.boldLabel, GUILayout.Width(100));
             curBuildingData.buildingType = (BuildingType)EditorGUILayout.EnumPopup(curBuildingData.buildingType, GUILayout.MaxWidth(100));
+            EditorGUILayout.LabelField("Repair Price: ", EditorStyles.boldLabel, GUILayout.Width(100));
+            curBuildingData.repairPrice = EditorGUILayout.IntField(curBuildingData.repairPrice, GUILayout.MaxWidth(100));
             GUILayout.EndHorizontal();
             GUILayout.EndArea();
 

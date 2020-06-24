@@ -69,7 +69,7 @@ namespace Managers
                 currentCourtGuest = CreateCourtGuest(guestType);
             }
 
-            InstantiateCourtGuest(guestType);
+            InstantiateCourtGuest(currentCourtGuest.reporterType);
         }
 
         public void InstantiateCourtGuest(ReporterType thisType)

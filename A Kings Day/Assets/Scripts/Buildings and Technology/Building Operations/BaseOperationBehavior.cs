@@ -148,6 +148,24 @@ namespace Buildings
                 flavorText.text = currentBuildingClicked.buildingInformation.buildingCard[cardClickedIdx].cardNegMesg[flavorRandIdx];
             }
         }
+
+        public void CardDecisionFlavorText(int decisionIdx, bool isPositive)
+        {
+            int flavorRandIdx = 0;
+
+            // Positive Feedback (Successful Click)
+            if (isPositive)
+            {
+                flavorRandIdx = Random.Range(0, currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].actionTypes[decisionIdx].AcceptMesg.Count);
+                flavorText.text = currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].actionTypes[decisionIdx].AcceptMesg[flavorRandIdx];
+            }
+            // Negative Feedback
+            else
+            {
+                flavorRandIdx = Random.Range(0, currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].actionTypes[decisionIdx].DenyMesg.Count);
+                flavorText.text = currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].actionTypes[decisionIdx].DenyMesg[flavorRandIdx];
+            }
+        }
     }
 
 }

@@ -1635,7 +1635,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.22600001}
   m_AnchorMax: {x: 1, y: 0.7783889}
-  m_AnchoredPosition: {x: -0.5, y: -3.1600342}
+  m_AnchoredPosition: {x: -0.5, y: -3.1601562}
   m_SizeDelta: {x: -1.0004883, y: -0.000061035156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &77745854
@@ -1697,8 +1697,11 @@ MonoBehaviour:
   - {fileID: 2035460589}
   - {fileID: 1597946886}
   - {fileID: 976426920}
+  currentPanel: {fileID: 0}
   nokingdomText: {fileID: 1658099888}
   scrollBar: {fileID: 1709872265}
+  loadBtn: {fileID: 2056036041}
+  deleteBtn: {fileID: 1029041815}
   selectedIndex: 0
 --- !u!1001 &80479299
 PrefabInstance:
@@ -3831,6 +3834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelBehaviour: {fileID: 235933627}
   gameView: 0
+  Loaded: 0
   isViewManager: 1
   startBtn: {fileID: 0}
   appFirstStart: 1
@@ -7428,6 +7432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelBehaviour: {fileID: 0}
   gameView: 0
+  Loaded: 0
   isViewManager: 1
   sceneType: 0
   buildingInformationStorage: {fileID: 0}
@@ -9346,41 +9351,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86bf1960776183049833e159ff3d8218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &680888673
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 680888674}
-  m_Layer: 5
-  m_Name: Back
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &680888674
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680888673}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2138404012}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.9473514, y: 0.7783889}
-  m_AnchorMax: {x: 1, y: 0.8661668}
-  m_AnchoredPosition: {x: -0.0048828125, y: 0.00048828125}
-  m_SizeDelta: {x: -0.010253906, y: -0.0010910034}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &682453269
 GameObject:
   m_ObjectHideFlags: 0
@@ -14781,11 +14751,22 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1029041816}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1724956413}
+        m_MethodName: DeleteThisData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1029041816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24301,6 +24282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelBehaviour: {fileID: 1724956414}
   gameView: 1
+  Loaded: 0
   isViewManager: 1
   creationView: {fileID: 2145839407}
   saveSlots: {fileID: 2138404015}
@@ -28942,7 +28924,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2056036042}
   m_OnClick:
     m_PersistentCalls:
@@ -29787,7 +29769,6 @@ RectTransform:
   m_Children:
   - {fileID: 77745853}
   - {fileID: 1073612869}
-  - {fileID: 680888674}
   m_Father: {fileID: 1724956412}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -29848,7 +29829,7 @@ MonoBehaviour:
   myAnim: {fileID: 2138404016}
   openAnimationName: Show Save Panel Anim
   closeAnimationName: Hide Save Panel Anim
-  closeOnExit: 0
+  closeOnExit: 1
   playOpeningOnAwake: 0
   isPlaying: 0
 --- !u!111 &2138404016
@@ -30415,6 +30396,21 @@ PrefabInstance:
       propertyPath: parentCanvas
       value: 
       objectReference: {fileID: 190028090}
+    - target: {fileID: 3452612688326397411, guid: 1fdd5f1f983e61547bf8c2620ac06f63,
+        type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3452612688742802438, guid: 1fdd5f1f983e61547bf8c2620ac06f63,
+        type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3452612689970093025, guid: 1fdd5f1f983e61547bf8c2620ac06f63,
+        type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5061995814525637329, guid: 1fdd5f1f983e61547bf8c2620ac06f63,
         type: 3}
       propertyPath: m_IsActive
@@ -30564,6 +30560,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131364086030334528, guid: 1fdd5f1f983e61547bf8c2620ac06f63,
+        type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7418161115161032838, guid: 1fdd5f1f983e61547bf8c2620ac06f63,
         type: 3}
@@ -30999,6 +31000,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077456720103278165, guid: 8af48a15077f1fd49bccb826a95efe5d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6077456720348539302, guid: 8af48a15077f1fd49bccb826a95efe5d,
         type: 3}

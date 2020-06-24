@@ -33,9 +33,11 @@ namespace Buildings
         public BuildingType buildingType;
         public BuildingCondition buildingCondition;
         public int buildingLevel;
+        public int repairPrice;
 
         public List<BuildingCardData> buildingCard;
         
+
         [Header("Flavor Messages")]
         public List<string> introductionMessages;
 
@@ -54,6 +56,26 @@ namespace Buildings
         public List<string> ObtainActionNegativeFlavorText(int cardIdx, int actionIdx)
         {
             return buildingCard[cardIdx].actionTypes[actionIdx].DenyMesg;
+        }
+
+        public List<ResourceReward> ObtainUpgradeRewards()
+        {
+            List<ResourceReward> tmp = new List<ResourceReward>();
+            ResourceReward coinCost = new ResourceReward();
+            coinCost.resourceType = Kingdoms.ResourceType.Coin;
+
+            if(buildingCondition == BuildingCondition.Ruins)
+            {
+                coinCost.rewardAmount = repairPrice;
+            }
+            else
+            {
+                coinCost.rewardAmount = repairPrice * (buildingLevel+1);
+            }
+
+            tmp.Add(coinCost);
+
+            return tmp;
         }
     }
 

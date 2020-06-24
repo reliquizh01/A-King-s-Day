@@ -47,6 +47,7 @@ namespace ResourceUI
                 Debug.LogWarning("Attempted to Call Weekly Result but failed, check event count!");
                 return;
             }
+
             // Then Proceed to Week 2
             KingdomManager.GetInstance.ProceedToNextWeek();
 

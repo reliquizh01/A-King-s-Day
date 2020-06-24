@@ -89,8 +89,8 @@ namespace GameResource
 
         public override void UpdateWeeklyProgress()
         {
-            CheckCowCounter();
-            CheckGrainCounter();
+            UpdateCowCounter();
+            UpdateGrainsCounter();
         }
 
         public override void ImplementTechnology()
@@ -127,9 +127,16 @@ namespace GameResource
         #region GRAIN COW CHECKER AND PRODUCTION
 
         /// GRAINS - PRODUCTION DOESNT SHOW UP ALL THE TIME.
-        public void CheckGrainCounter()
+        public void UpdateGrainsCounter()
         {
             curPlayer.curGrainWeeksCounter += 1;
+            if(curPlayer.curGrainWeeksCounter >= curHarvestWeekCounter)
+            {
+                CheckGrainCounter();
+            }
+        }
+        public void CheckGrainCounter()
+        {
             // GRAINS
             if (curPlayer.curGrainWeeksCounter >= curHarvestWeekCounter)
             {
@@ -152,17 +159,27 @@ namespace GameResource
         }
         public int GetGrainProduction()
         {
-            int thisWeeksProduce = (curPlayer.farmerCount * (techHarvestProduce+1));
+            int thisWeeksProduce = (curPlayer.farmerCount * (techHarvestProduce + 1));
 
             return thisWeeksProduce;
         }
 
+        public void UpdateCowCounter()
+        {
+            if(curPlayer.cows > minimumCowsToAllowBirth)
+            {
+                curPlayer.curCowBirthCounter += 1;
+            }
+            if(curPlayer.curCowBirthCounter >= birthRollWeekInterval)
+            {
+                CheckGrainCounter();
+            }
+        }
         // COWS
         public void CheckCowCounter()
         {
             if(curPlayer.cows > minimumCowsToAllowBirth)
             {
-                curPlayer.curCowBirthCounter += 1;
                 if (curPlayer.curCowBirthCounter >= birthRollWeekInterval)
                 {
                     curPlayer.curCowBirthCounter = 0;

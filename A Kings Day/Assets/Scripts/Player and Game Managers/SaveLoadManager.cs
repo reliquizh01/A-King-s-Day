@@ -115,6 +115,11 @@ namespace SaveData
             {
                 File.Delete(savePath + "/Save" + curSaveSlotIdx + ".sav");
                 saveDataList.RemoveAt(curSaveSlotIdx);
+
+                #if UNITY_EDITOR
+                UnityEditor.AssetDatabase.Refresh();
+                #endif
+                currentData = null;
             }
         }
         public void ObtainSaves()

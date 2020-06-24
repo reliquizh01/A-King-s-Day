@@ -7,6 +7,7 @@ using Kingdoms;
 using ResourceUI;
 using KingEvents;
 using Utilities;
+using UnityEngine.UI;
 
 public class GameUIManager : BaseManager
 {
@@ -65,6 +66,7 @@ public class GameUIManager : BaseManager
     public void ShowBellButton()
     {
         eventBellBtn.gameObject.SetActive(true);
+        eventBellBtn.GetComponent<Button>().interactable = true;
         StartCoroutine(DelayBellButton());
     }
 
@@ -76,6 +78,7 @@ public class GameUIManager : BaseManager
     }
     public void HideBellButton(Parameters p = null)
     {
+        eventBellBtn.GetComponent<Button>().interactable = false;
         eventBellBtn.PlayCloseAnimation();
     }
     public void HideBellButton()

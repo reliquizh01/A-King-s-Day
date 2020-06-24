@@ -47,8 +47,6 @@ namespace Managers
         }
         public override void StartManager()
         {
-            base.StartManager();
-
             PlayerKingdomData playerData = PlayerGameManager.GetInstance.playerData;
             if(!playerData.balconyBuildingsAdded)
             {
@@ -70,6 +68,8 @@ namespace Managers
             }
 
             interactionHandler.SetupInteractablesInformation();
+
+            Loaded = true;
         }
         public override void OrderCharacterToMove(ScenePointBehavior toThisPoint)
         {

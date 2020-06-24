@@ -87,6 +87,7 @@ namespace Managers
             }
 
             currentSceneManager = thisManager;
+            currentSceneManager.PreOpenManager();
 
             SetAsCurrentManager(thisManager.gameView, true);
         }
@@ -114,8 +115,8 @@ namespace Managers
         }
         public void RemoveLoading(Action callback = null)
         {
+            Debug.Log("REMOVING LOADING ---------------------");
             StartCoroutine(loadingScreen.WaitAnimationForAction(loadingScreen.closeAnimationName, callback));
-
         }
 
         public void LoadScene(SceneType thisScene)
@@ -150,7 +151,10 @@ namespace Managers
                     // Call Balcony Manager Here!
                     isLoadingNewScene = false;
                     isLoading = false;
-                    RemoveLoading();
+                    if(currentSceneManager.Loaded)
+                    {
+                        RemoveLoading();
+                    }
                 }
             }
         }
@@ -159,10 +163,13 @@ namespace Managers
         {
             switch(sceneIdx)
             {
-                case 0: // Courtroom
+                case 0:
+                    TransitionToNextGameView(GameViews.OpeningView);
+                    break;
+                case 1: 
                     TransitionToNextGameView(GameViews.CourtroomView);
                     break;
-                case 1: // Balcony
+                case 2:
                     TransitionToNextGameView(GameViews.BalconyView);
                     break;
             }
@@ -203,8 +210,14 @@ namespace Managers
             else
             {
                 //Debug.Log("View is Loading and new Scene!");
-                isLoading = false;
-                RemoveLoading();
+                if(currentSceneManager != null)
+                {
+                    if(currentSceneManager.Loaded)
+                    {
+                        isLoading = false;
+                        RemoveLoading();
+                    }
+                }
             }
         }
         public void SetAsCurrentManager(GameViews thisView,bool isGameView = false)
@@ -232,12 +245,8 @@ namespace Managers
 
             if (isLoading && thisView != GameViews.KingdomCreationView)
             {
-               // Debug.Log("Setting Current Manager!");
-                RemoveLoading();
-            }
-            else if(thisView == GameViews.GameView)
-            {
-                KingdomManager.GetInstance.PreOpenManager();
+                // Debug.Log("Setting Current Manager!");
+                isLoading = false;
             }
         }
 

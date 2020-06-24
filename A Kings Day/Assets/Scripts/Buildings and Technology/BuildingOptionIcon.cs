@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Utilities;
+using ResourceUI;
 
 namespace Buildings
 {
@@ -29,6 +30,7 @@ namespace Buildings
             if(myController != null && type == BuildingOptionType.Upgrade && myController.myBuilding.buildingInformation.buildingCondition == BuildingCondition.Ruins)
             {
                 myController.ShowRepairAmountTooltip();
+                ResourceInformationController.GetInstance.ShowCurrentPanelPotentialResourceChanges(myController.myBuilding.buildingInformation.ObtainUpgradeRewards());
             }   
             else
             {
@@ -67,12 +69,14 @@ namespace Buildings
                 default:
                     break;
             }
+            ResourceInformationController.GetInstance.HideCurrentPanelPotentialResourceChanges();
         }
         public override void OnMouseExit()
         {
             if (!allowInteraction) return;
             base.OnMouseExit();
             EventBroadcaster.Instance.PostEvent(EventNames.HIDE_TOOLTIP_MESG);
+            ResourceInformationController.GetInstance.HideCurrentPanelPotentialResourceChanges();
         }
 
         public void SetInteraction(bool enable)

@@ -72,6 +72,7 @@ namespace Managers
         }
         public void ShowFoodNotif(int amount)
         {
+            Debug.Log("FUCUkasdkaka");
             if (amount >= 0)
             {
                 notifHandler.RevealResourceNotification(ResourceType.Food, amount);

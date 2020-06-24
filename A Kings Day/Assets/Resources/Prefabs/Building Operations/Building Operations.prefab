@@ -161,7 +161,6 @@ MonoBehaviour:
   hasInteractionOptions: 1
   isFurniture: 0
   myCol: {fileID: 0}
-  currentCondition: 0
   optionHandler: {fileID: 4468999781122985513}
   ruinEmpty: {fileID: 3915599988899612070}
   fixFilled: {fileID: 3915599988596320290}
@@ -169,6 +168,9 @@ MonoBehaviour:
   buildingInformation:
     BuildingName: 
     buildingType: 0
+    buildingCondition: 0
+    buildingLevel: 0
+    repairPrice: 0
     buildingCard: []
     introductionMessages: []
   buildingType: 0
@@ -1183,7 +1185,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3915599988591533288}
-  - component: {fileID: 3915599988591533303}
   m_Layer: 0
   m_Name: Warehouse
   m_TagString: Untagged
@@ -1207,57 +1208,6 @@ Transform:
   m_Father: {fileID: 3915599989320307630}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3915599988591533303
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3915599988591533289}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: -4653177233707702714, guid: 30b7cca8887cced47852c4a8d89ccebb,
-    type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.5314286, y: 0.14571428}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &3915599988596320290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,7 +1419,6 @@ MonoBehaviour:
   hasInteractionOptions: 1
   isFurniture: 0
   myCol: {fileID: 0}
-  currentCondition: 0
   optionHandler: {fileID: 4468999781242270073}
   ruinEmpty: {fileID: 3915599988632249935}
   fixFilled: {fileID: 3915599988632249935}
@@ -1477,6 +1426,9 @@ MonoBehaviour:
   buildingInformation:
     BuildingName: 
     buildingType: 0
+    buildingCondition: 0
+    buildingLevel: 0
+    repairPrice: 0
     buildingCard: []
     introductionMessages: []
   buildingType: 6
@@ -2429,7 +2381,6 @@ MonoBehaviour:
   hasInteractionOptions: 1
   isFurniture: 0
   myCol: {fileID: 0}
-  currentCondition: 0
   optionHandler: {fileID: 4468999781896440016}
   ruinEmpty: {fileID: 3915599989804100706}
   fixFilled: {fileID: 3915599989382763215}
@@ -2437,6 +2388,9 @@ MonoBehaviour:
   buildingInformation:
     BuildingName: 
     buildingType: 0
+    buildingCondition: 0
+    buildingLevel: 0
+    repairPrice: 0
     buildingCard: []
     introductionMessages: []
   buildingType: 1
@@ -3374,7 +3328,6 @@ MonoBehaviour:
   hasInteractionOptions: 1
   isFurniture: 0
   myCol: {fileID: 0}
-  currentCondition: 1
   optionHandler: {fileID: 4468999782122043571}
   ruinEmpty: {fileID: 3915599989295344487}
   fixFilled: {fileID: 3915599989295344487}
@@ -3382,6 +3335,9 @@ MonoBehaviour:
   buildingInformation:
     BuildingName: 
     buildingType: 0
+    buildingCondition: 0
+    buildingLevel: 0
+    repairPrice: 0
     buildingCard: []
     introductionMessages: []
   buildingType: 5
@@ -3780,7 +3736,6 @@ MonoBehaviour:
   hasInteractionOptions: 1
   isFurniture: 0
   myCol: {fileID: 0}
-  currentCondition: 0
   optionHandler: {fileID: 4468999781735704306}
   ruinEmpty: {fileID: 3915599988235667414}
   fixFilled: {fileID: 3915599988761912454}
@@ -3788,6 +3743,9 @@ MonoBehaviour:
   buildingInformation:
     BuildingName: 
     buildingType: 0
+    buildingCondition: 0
+    buildingLevel: 0
+    repairPrice: 0
     buildingCard: []
     introductionMessages: []
   buildingType: 4
@@ -3909,7 +3867,6 @@ MonoBehaviour:
   hasInteractionOptions: 1
   isFurniture: 0
   myCol: {fileID: 0}
-  currentCondition: 0
   optionHandler: {fileID: 4468999781415765653}
   ruinEmpty: {fileID: 3915599989161656496}
   fixFilled: {fileID: 3915599989603382818}
@@ -3917,6 +3874,9 @@ MonoBehaviour:
   buildingInformation:
     BuildingName: 
     buildingType: 0
+    buildingCondition: 0
+    buildingLevel: 0
+    repairPrice: 0
     buildingCard: []
     introductionMessages: []
   buildingType: 2
@@ -4706,7 +4666,6 @@ MonoBehaviour:
   hasInteractionOptions: 1
   isFurniture: 0
   myCol: {fileID: 0}
-  currentCondition: 0
   optionHandler: {fileID: 4468999782603859819}
   ruinEmpty: {fileID: 3915599989058936227}
   fixFilled: {fileID: 3915599990159523585}
@@ -4714,6 +4673,9 @@ MonoBehaviour:
   buildingInformation:
     BuildingName: 
     buildingType: 0
+    buildingCondition: 0
+    buildingLevel: 0
+    repairPrice: 0
     buildingCard: []
     introductionMessages: []
   buildingType: 3
@@ -5977,6 +5939,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2744739148055536286, guid: 2a8ff54122fc7b8409c6672994b147bf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2a8ff54122fc7b8409c6672994b147bf, type: 3}
+--- !u!4 &4468999782122043580 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 599562515266530151, guid: 2a8ff54122fc7b8409c6672994b147bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 3915599988376687579}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4468999782122043571 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 599562515266530152, guid: 2a8ff54122fc7b8409c6672994b147bf,
@@ -5989,12 +5957,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fcd287a8a48e3b4aa2697e55cf133b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &4468999782122043580 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 599562515266530151, guid: 2a8ff54122fc7b8409c6672994b147bf,
-    type: 3}
-  m_PrefabInstance: {fileID: 3915599988376687579}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3915599989346938365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6064,6 +6026,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8ff54122fc7b8409c6672994b147bf, type: 3}
+--- !u!4 &4468999781415765658 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 599562515266530151, guid: 2a8ff54122fc7b8409c6672994b147bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 3915599989346938365}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4468999781415765653 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 599562515266530152, guid: 2a8ff54122fc7b8409c6672994b147bf,
@@ -6076,12 +6044,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fcd287a8a48e3b4aa2697e55cf133b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &4468999781415765658 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 599562515266530151, guid: 2a8ff54122fc7b8409c6672994b147bf,
-    type: 3}
-  m_PrefabInstance: {fileID: 3915599989346938365}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3915599989358437697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6186,12 +6148,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8ff54122fc7b8409c6672994b147bf, type: 3}
---- !u!4 &4468999781122985510 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 599562515266530151, guid: 2a8ff54122fc7b8409c6672994b147bf,
-    type: 3}
-  m_PrefabInstance: {fileID: 3915599989358437697}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4468999781122985513 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 599562515266530152, guid: 2a8ff54122fc7b8409c6672994b147bf,
@@ -6204,6 +6160,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fcd287a8a48e3b4aa2697e55cf133b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &4468999781122985510 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 599562515266530151, guid: 2a8ff54122fc7b8409c6672994b147bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 3915599989358437697}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3915599989508119057
 PrefabInstance:
   m_ObjectHideFlags: 0

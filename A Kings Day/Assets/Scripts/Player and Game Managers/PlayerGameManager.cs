@@ -60,6 +60,7 @@ namespace Managers
         }
         public void WeeklyResourceProductionUpdate()
         {
+            Debug.Log("Updating ResourceProduction ----------------");
             foodBehavior.UpdateWeeklyProgress();
             troopBehavior.UpdateWeeklyProgress();   
             populationBehavior.UpdateWeeklyProgress();
@@ -79,6 +80,7 @@ namespace Managers
             playerData.curDataEvent = newData.curDataEvent;
             playerData.curDataStory = newData.curDataStory;
             playerData.eventFinished = newData.eventFinished;
+
 
             playerData.recruits = newData.recruits;
             playerData.barracksCapacity = newData.barracksCapacity;
@@ -224,19 +226,36 @@ namespace Managers
                     playerData.coins += amount;
                     break;
                 case ResourceType.Cows:
+                    playerData.cows += amount;
                     break;
                 case ResourceType.Archer:
+                    playerData.archerCount += amount;
                     break;
                 case ResourceType.Swordsmen:
+                    playerData.swordsmenCount += amount;
                     break;
                 case ResourceType.Spearmen:
+                    playerData.spearmenCount += amount;
                     break;
                 case ResourceType.farmer:
+                    playerData.farmerCount += amount;
                     break;
                 case ResourceType.herdsmen:
+                    playerData.herdsmanCount += amount;
                     break;
                 case ResourceType.storageKeeper:
+                    playerData.storageKeeperCount += amount;
                     break;
+                case ResourceType.ArcherMerc:
+                    playerData.archerMercCount += amount;
+                    break;
+                case ResourceType.SwordsmenMerc:
+                    playerData.swordsmenMercCount += amount;
+                    break;
+                case ResourceType.SpearmenMerc:
+                    playerData.spearmenMercCount += amount;
+                    break;
+
                 default:
                     break;
             }
@@ -251,14 +270,47 @@ namespace Managers
                 case ResourceType.Food:
                     playerData.foods -= amount;
                     break;
+                case ResourceType.Troops:
+                    playerData.recruits -= amount;
+                    break;
+                case ResourceType.Population:
+                    playerData.SetPopulation(amount);
+                    break;
                 case ResourceType.Coin:
                     playerData.coins -= amount;
                     break;
-                case ResourceType.Population:
-                    playerData.SetPopulation(-amount);
+                case ResourceType.Cows:
+                    playerData.cows -= amount;
                     break;
-                case ResourceType.Troops:
-                    playerData.recruits -= amount;
+                case ResourceType.Archer:
+                    playerData.archerCount -= amount;
+                    break;
+                case ResourceType.Swordsmen:
+                    playerData.swordsmenCount -= amount;
+                    break;
+                case ResourceType.Spearmen:
+                    playerData.spearmenCount -= amount;
+                    break;
+                case ResourceType.farmer:
+                    playerData.farmerCount -= amount;
+                    break;
+                case ResourceType.herdsmen:
+                    playerData.herdsmanCount -= amount;
+                    break;
+                case ResourceType.storageKeeper:
+                    playerData.storageKeeperCount -= amount;
+                    break;
+                case ResourceType.ArcherMerc:
+                    playerData.archerMercCount -= amount;
+                    break;
+                case ResourceType.SwordsmenMerc:
+                    playerData.swordsmenMercCount -= amount;
+                    break;
+                case ResourceType.SpearmenMerc:
+                    playerData.spearmenMercCount -= amount;
+                    break;
+
+                default:
                     break;
             }
 
@@ -278,7 +330,7 @@ namespace Managers
         {
             playerData.curDataEvent = new EventDecisionData();
 
-            if(eventData.title != null && !string.IsNullOrEmpty(eventData.title))
+            if(eventData != null && !string.IsNullOrEmpty(eventData.title))
             {
                 playerData.curDataEvent.title = eventData.title;
             }

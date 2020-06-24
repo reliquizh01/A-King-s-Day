@@ -24,6 +24,9 @@ namespace Kingdoms
         farmer,
         herdsmen,
         storageKeeper,
+        ArcherMerc,
+        SwordsmenMerc,
+        SpearmenMerc,
     }
     /// <summary>
     /// Player Kingdom represents all information the player has

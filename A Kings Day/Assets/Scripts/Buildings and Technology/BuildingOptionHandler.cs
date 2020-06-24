@@ -6,6 +6,8 @@ using Buildings;
 using Technology;
 using Utilities;
 using Managers;
+using ResourceUI;
+using KingEvents;
 
 namespace Buildings
 {
@@ -91,7 +93,7 @@ namespace Buildings
 
         public void ShowRepairAmountTooltip()
         {
-            string mesg = "Repair Cost " + myBuilding.repairPrice.ToString() + ".";
+            string mesg = "Repair Cost " + myBuilding.buildingInformation.repairPrice.ToString() + ".";
             Parameters p = new Parameters();
             p.AddParameter<string>("Mesg", mesg);
 
@@ -127,6 +129,10 @@ namespace Buildings
             myBuilding.UpgradeBuilding();
         }
 
+        public void UpgradeHover()
+        {
+
+        }
         public void TechClicked()
         {
             // Show Tech Tab
