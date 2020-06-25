@@ -75,7 +75,7 @@ public class BuildingInformationPanel : MonoBehaviour
         {
             // Placeholders, need proper Unit Storage later on
             int hp = 4, dmg = 1, spd = 1;
-            List<int> tmp = new List<int>();tmp.Add(playerData.GetTotalTroops);; tmp.Add(hp); tmp.Add(dmg); tmp.Add(spd);
+            List<int> tmp = new List<int>();tmp.Add(playerData.recruits);; tmp.Add(hp); tmp.Add(dmg); tmp.Add(spd);
             currentPage.informationPanelList[0].SetMultiCounter(tmp, "Recruits"); // HP DAMAGE SPEED
 
             string secondDescription = "Maximum units the barracks can support [" + playerData.recruits +"," 

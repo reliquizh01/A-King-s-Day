@@ -20,10 +20,10 @@ namespace Buildings
     public class OperationCardDecision : MonoBehaviour
     {
         public InformationActionHandler myController;
-
+        
         public Button myBtn;
         public CardActionType curCardActionType;
-
+        public bool openSubOption;
 
         public Image iconOnly;
         public TextMeshProUGUI messageOnly;
@@ -45,10 +45,14 @@ namespace Buildings
         public void OnMouseClick()
         {
             myController.ImplementDecisionChanges(actionIdx);
+            myController.UpdateCurrentPanel();
         }
         public void OnMouseHover()
         {
-            myController.ShowOperationDecisionChanges(actionIdx);
+            if(!openSubOption)
+            {
+                myController.ShowOperationDecisionChanges(actionIdx);
+            }
         }
 
         public void OnMouseLeave()

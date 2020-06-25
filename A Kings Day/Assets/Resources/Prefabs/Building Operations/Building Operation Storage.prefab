@@ -60,6 +60,7 @@ MonoBehaviour:
         message: Soldier
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 1
           rewardAmount: 1
@@ -80,6 +81,7 @@ MonoBehaviour:
         message: Townsfolk
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 1
           rewardAmount: -1
@@ -96,6 +98,7 @@ MonoBehaviour:
         message: Sell Soldier
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 1
         rewardList:
         - resourceType: 1
           rewardAmount: -1
@@ -122,6 +125,7 @@ MonoBehaviour:
         message: 
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 6
           rewardAmount: 1
@@ -141,6 +145,7 @@ MonoBehaviour:
         message: 
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 7
           rewardAmount: 1
@@ -160,6 +165,7 @@ MonoBehaviour:
         message: 
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 1
           rewardAmount: -1
@@ -189,6 +195,7 @@ MonoBehaviour:
         message: Health
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -5
@@ -206,6 +213,7 @@ MonoBehaviour:
         message: Damage
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -10
@@ -223,6 +231,7 @@ MonoBehaviour:
         message: Speed
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -5
@@ -258,6 +267,7 @@ MonoBehaviour:
         message: Traditional
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -10
@@ -275,6 +285,7 @@ MonoBehaviour:
         message: Feast
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -20
@@ -292,6 +303,7 @@ MonoBehaviour:
         message: Grand Celebration
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -100
@@ -317,6 +329,7 @@ MonoBehaviour:
         message: Item 1
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg:
         - Thats a great buy my king!
@@ -331,6 +344,7 @@ MonoBehaviour:
         message: Item 2
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg:
         - Thats a great buy my king!
@@ -345,6 +359,7 @@ MonoBehaviour:
         message: Item 3
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg:
         - Thats a great buy my king!
@@ -368,6 +383,7 @@ MonoBehaviour:
         message: Goods Merchant
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -30
@@ -383,6 +399,7 @@ MonoBehaviour:
         message: Heroes Merchant
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -50
@@ -397,6 +414,7 @@ MonoBehaviour:
         message: Exotic Merchant
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -100
@@ -429,6 +447,7 @@ MonoBehaviour:
         message: Hire
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg:
         - Okay, I'll talk to him and send him to the courtroom
@@ -441,6 +460,7 @@ MonoBehaviour:
         message: Ask to Stay More
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg:
         - I can provide him free stay for 2 more weeks, for the king.
@@ -455,6 +475,7 @@ MonoBehaviour:
         message: Not Interested
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg:
         - Okay, I'll make sure a transport will be done by next week.
@@ -476,6 +497,7 @@ MonoBehaviour:
         message: For Merchants!
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -10
@@ -492,6 +514,7 @@ MonoBehaviour:
         message: For Heroes!
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -5
@@ -509,6 +532,7 @@ MonoBehaviour:
         message: For Mercenaries
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -5
@@ -535,6 +559,7 @@ MonoBehaviour:
         message: Swordsmen
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg:
         - A swordsmen is available and ready to serve.
@@ -548,6 +573,7 @@ MonoBehaviour:
         message: Spearmen
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg:
         - See how he flungs that stick, he'll pack a punch.
@@ -561,6 +587,7 @@ MonoBehaviour:
         message: Archer
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg:
         - He can aim alright, now to test him while drunk.
@@ -592,6 +619,7 @@ MonoBehaviour:
         message: Buy Item 1
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg:
         - That's a great purchase my king!
@@ -604,6 +632,7 @@ MonoBehaviour:
         message: Buy Item 2
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg:
         - Let me tell you this, you're the only one who bought it cheap.
@@ -617,6 +646,7 @@ MonoBehaviour:
         message: Buy Item 3
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg:
         - I guess its a price you can pay! deal!
@@ -640,6 +670,7 @@ MonoBehaviour:
         message: Buy Item 1
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg:
         - Not bad, you have a great taste.
@@ -653,6 +684,7 @@ MonoBehaviour:
         message: Buy Item 2
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg: []
         DenyMesg: []
@@ -662,6 +694,7 @@ MonoBehaviour:
         message: Buy Item 3
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg: []
         DenyMesg: []
@@ -681,6 +714,7 @@ MonoBehaviour:
         message: Buy Item 1
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg:
         - Ah! Ah! that one is nice! you see! here good too!
@@ -694,6 +728,7 @@ MonoBehaviour:
         message: Buy Item 2
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg: []
         DenyMesg: []
@@ -703,6 +738,7 @@ MonoBehaviour:
         message: Buy Item 3
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg: []
         DenyMesg: []
@@ -730,6 +766,7 @@ MonoBehaviour:
         message: Increase
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg:
         - A magnanimous king indeed!
@@ -745,6 +782,7 @@ MonoBehaviour:
         message: Craft
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg:
         - And the Hammering Starts!
@@ -758,6 +796,7 @@ MonoBehaviour:
         message: Decrease
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg:
         - Wha-! okay we'll cross this material out of the list then!
@@ -781,6 +820,7 @@ MonoBehaviour:
         message: Equip
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg:
         - Let's make sure thats well fitted, there!
@@ -794,6 +834,7 @@ MonoBehaviour:
         message: Unequip
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg:
         - Now lets remove that for a minute.
@@ -807,6 +848,7 @@ MonoBehaviour:
         message: Upgrade
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList: []
         AcceptMesg:
         - A few stitch and hammering here and there
@@ -837,6 +879,7 @@ MonoBehaviour:
         message: 5
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -5
@@ -852,6 +895,7 @@ MonoBehaviour:
         message: 10
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -10
@@ -867,6 +911,7 @@ MonoBehaviour:
         message: 15
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -15
@@ -893,6 +938,7 @@ MonoBehaviour:
         message: Small Houses
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -20
@@ -909,6 +955,7 @@ MonoBehaviour:
         message: Two Floor House
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -20
@@ -926,6 +973,7 @@ MonoBehaviour:
         message: Protective Shelters
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -30
@@ -954,6 +1002,7 @@ MonoBehaviour:
         message: 10 Coins
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -10
@@ -969,6 +1018,7 @@ MonoBehaviour:
         message: 50 Coins
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -50
@@ -984,6 +1034,7 @@ MonoBehaviour:
         message: 100 Coins
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -100
@@ -1016,6 +1067,7 @@ MonoBehaviour:
         message: Increase
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 8
           rewardAmount: 1
@@ -1032,6 +1084,7 @@ MonoBehaviour:
         message: Decrease
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 2
           rewardAmount: 1
@@ -1048,6 +1101,7 @@ MonoBehaviour:
         message: Sell Food
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 0
           rewardAmount: -5
@@ -1073,6 +1127,7 @@ MonoBehaviour:
         message: Increase
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 9
           rewardAmount: 1
@@ -1089,6 +1144,7 @@ MonoBehaviour:
         message: Decrease
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 9
           rewardAmount: -1
@@ -1105,6 +1161,7 @@ MonoBehaviour:
         message: Cow To Food
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 9
           rewardAmount: -1
@@ -1130,6 +1187,7 @@ MonoBehaviour:
         message: Increase
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 2
           rewardAmount: -1
@@ -1146,6 +1204,7 @@ MonoBehaviour:
         message: Decrease
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 10
           rewardAmount: -1
@@ -1162,6 +1221,7 @@ MonoBehaviour:
         message: Expand Barn
         hasCooldown: 0
         cooldownCount: 0
+        openSubOption: 0
         rewardList:
         - resourceType: 3
           rewardAmount: -10

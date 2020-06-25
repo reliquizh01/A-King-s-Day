@@ -316,6 +316,33 @@ namespace Managers
 
             SaveData.SaveLoadManager.GetInstance.SaveCurrentData();
         }
+
+        public int ObtainRemainingTroopResource()
+        {
+
+            if(playerData.recruits > 0)
+            {
+                return playerData.recruits;
+            }
+            else if(playerData.swordsmenCount > 0)
+            {
+                return playerData.swordsmenCount;
+            }
+            else if(playerData.spearmenCount > 0)
+            {
+                return playerData.spearmenCount;
+            }
+            else if(playerData.archerCount > 0)
+            {
+                return playerData.archerCount;
+            }
+            else
+            {
+                return playerData.recruits;
+            }
+
+
+        }
         public void SaveQueuedData(List<EventDecisionData> queuedDataList, int finishCount)
         {
             playerData.queuedDataEventsList = queuedDataList;
@@ -353,7 +380,7 @@ namespace Managers
                 case ResourceType.Food:
                     return (playerData.foods >= amount);
                 case ResourceType.Troops:
-                    return (playerData.recruits >= amount);
+                    
                 case ResourceType.Population:
                     return (playerData.population >= amount);
                 case ResourceType.Coin:

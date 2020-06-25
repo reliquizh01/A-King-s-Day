@@ -17,7 +17,7 @@ public class InformationActionHandler : MonoBehaviour
     public List<OperationCardDecision> operationDecisionList;
     public List<BuildingInformationPanel> buildingPanels;
     public BuildingInformationPanel currentBuildingPanel;
-
+    public SubOptionHandler subOptionHandler;
 
     // Index of the Card clicked from the bottom
     public int selectedCardIdx;
@@ -85,12 +85,14 @@ public class InformationActionHandler : MonoBehaviour
                     operationDecisionList[i].coinCostPanel.SetActive(false);
                     operationDecisionList[i].iconOnly.gameObject.SetActive(true);
                     operationDecisionList[i].messageOnly.gameObject.SetActive(false);
-
                     operationDecisionList[i].iconOnly.sprite = actionDataList[i].logoIcon;
                     break;
+
                 default:
                     break;
             }
+
+            operationDecisionList[i].openSubOption = actionDataList[i].openSubOption;
             operationDecisionList[i].actionIdx = i;
         }
     }
@@ -102,48 +104,56 @@ public class InformationActionHandler : MonoBehaviour
     }
     public void ImplementDecisionChanges(int idx)
     {
-        if(PlayerGameManager.GetInstance != null)
+        if(operationDecisionList[idx].openSubOption)
         {
-            // CHECK IF PLAYER RESOURCES IS ENOUGH
-
-            List<ResourceReward> tmp = myController.currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].actionTypes[idx].rewardList;
-            bool isResourcesEnough = true;
-
-            for (int i = 0; i < tmp.Count; i++)
+            subOptionHandler.gameObject.SetActive(true);
+            subOptionHandler.OpenSubOption(myController.currentBuildingClicked.buildingType, selectedCardIdx, idx);
+        }
+        else
+        {
+            if (PlayerGameManager.GetInstance != null)
             {
-                if(tmp[i].rewardAmount < 0)
-                {
-                    isResourcesEnough = PlayerGameManager.GetInstance.CheckResourceEnough(tmp[i].rewardAmount, tmp[i].resourceType);
-                }
-                if(!isResourcesEnough)
-                {
-                    break;
-                }
-            }
+                List<ResourceReward> tmp = myController.currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].actionTypes[idx].rewardList;
+                bool isResourcesEnough = true;
 
-            if(isResourcesEnough)
-            {
+                // CHECK IF PLAYER RESOURCES IS ENOUGH
                 for (int i = 0; i < tmp.Count; i++)
                 {
-                    PlayerGameManager.GetInstance.ReceiveResource(tmp[i].rewardAmount, tmp[i].resourceType);
-
-                    if(tmp[i].rewardAmount < 0)
+                    if (tmp[i].rewardAmount < 0)
                     {
-                        ResourceInformationController.GetInstance.currentPanel.UpdateResourceData(tmp[i].resourceType, tmp[i].rewardAmount, false);
+                        isResourcesEnough = PlayerGameManager.GetInstance.CheckResourceEnough(tmp[i].rewardAmount, tmp[i].resourceType);
                     }
-                    else
+                    if (!isResourcesEnough)
                     {
-                        ResourceInformationController.GetInstance.currentPanel.UpdateResourceData(tmp[i].resourceType, tmp[i].rewardAmount);
+                        break;
                     }
                 }
-                myController.CardDecisionFlavorText(idx, true);
-                HideOperationDecisionChanges();
-                ResourceInformationController.GetInstance.currentPanel.ShowPotentialResourceChanges(tmp);
+
+                if (isResourcesEnough)
+                {
+                    for (int i = 0; i < tmp.Count; i++)
+                    {
+                        PlayerGameManager.GetInstance.ReceiveResource(tmp[i].rewardAmount, tmp[i].resourceType);
+
+                        if (tmp[i].rewardAmount < 0)
+                        {
+                            ResourceInformationController.GetInstance.currentPanel.UpdateResourceData(tmp[i].resourceType, tmp[i].rewardAmount, false);
+                        }
+                        else
+                        {
+                            ResourceInformationController.GetInstance.currentPanel.UpdateResourceData(tmp[i].resourceType, tmp[i].rewardAmount);
+                        }
+                    }
+                    myController.CardDecisionFlavorText(idx, true);
+                    HideOperationDecisionChanges();
+                    ResourceInformationController.GetInstance.currentPanel.ShowPotentialResourceChanges(tmp);
+                }
+                else
+                {
+                    myController.CardDecisionFlavorText(idx, false);
+                }
             }
-            else
-            {
-                myController.CardDecisionFlavorText(idx, false);
-            }
+
         }
     }
     public void HideOperationDecisionChanges()

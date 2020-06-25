@@ -599,8 +599,10 @@ namespace Buildings
             bool removeReward = false;
 
             GUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("[COST AND REWARD] [ACTION " + (selectedActionIdx+1) + "]" ,EditorStyles.boldLabel, GUILayout.MaxWidth(225));
-            addReward = GUILayout.Button("+", GUILayout.MaxWidth(50));
+            EditorGUILayout.LabelField("[COST AND REWARD] [ACTION " + (selectedActionIdx+1) + "]" ,EditorStyles.boldLabel, GUILayout.MaxWidth(200));
+            GUILayout.Label("Open Sub Option", GUILayout.MaxWidth(100));
+            curSelectedAction.openSubOption = EditorGUILayout.Toggle(curSelectedAction.openSubOption, GUILayout.MaxWidth(30));
+            addReward = GUILayout.Button("+", GUILayout.MaxWidth(25));
             GUILayout.EndHorizontal();
 
             if (curSelectedAction.rewardList != null)

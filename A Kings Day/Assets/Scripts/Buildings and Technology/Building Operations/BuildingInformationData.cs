@@ -101,6 +101,7 @@ namespace Buildings
         [Header("Action Information")]
         public bool hasCooldown;
         public int cooldownCount;
+        public bool openSubOption;
 
         [Header("Reward List")]
         public List<ResourceReward> rewardList;
