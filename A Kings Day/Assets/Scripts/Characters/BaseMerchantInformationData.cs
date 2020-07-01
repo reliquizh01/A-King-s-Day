@@ -10,12 +10,16 @@ namespace Characters
     {
         Goods,
         Equipments,
+        Exotic,
     }
 
     [Serializable]
     public class BaseMerchantInformationData
     {
         public string merchantName;
+        public MerchantType merchantType;
+        public bool isRandomGenerated;
+        public UnitInformationData unitInformation;
         public List<ItemInformationData> itemsSold;
     }
 }

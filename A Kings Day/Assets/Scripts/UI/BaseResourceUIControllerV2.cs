@@ -87,7 +87,7 @@ namespace ResourceUI
             int potentialTotal = toBeAdded + storageFill.currentCount;
             currentAmount.color = increaseColor;
             currentAmount.text = currentCount.ToString() + "[+" + toBeAdded.ToString() + "]";
-            Debug.Log("Storage Name: " + storageFill.gameObject.name);
+
             storageFill.potentialFill.fillAmount = (float)potentialTotal / (float)storageCapacity;
         }
         public void ShowReduction(int toBeReduced)

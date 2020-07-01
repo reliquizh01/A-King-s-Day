@@ -6,12 +6,20 @@ using Managers;
 using Utilities;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+
+public enum ScenePointStatus
+{
+    Pathfinding,
+    BattlePathfinding,
+}
+
 public class ScenePointBehavior : BaseInteractableBehavior
 {
     [Header("Scene Information")]
+    public ScenePointStatus currentPointStatus = ScenePointStatus.Pathfinding;
     public int sceneIndex = 0;
+    public TileConversionHandler battleTile;
     public List<ScenePointBehavior> neighborPoints;
-
     [Header("Scene Offsets")]
     public bool straightToOffset;
     public GameObject sceneOffset;
@@ -34,7 +42,11 @@ public class ScenePointBehavior : BaseInteractableBehavior
         {
             return;
         }
-        if (!string.IsNullOrEmpty(mesg) && !isInteractingWith)
+        if(currentPointStatus == ScenePointStatus.BattlePathfinding)
+        {
+            battleTile.ShowHoverTite();
+        }
+        else if (!string.IsNullOrEmpty(mesg) && !isInteractingWith)
         {
             Parameters p = new Parameters();
             p.AddParameter<string>("Mesg", mesg);
@@ -48,27 +60,39 @@ public class ScenePointBehavior : BaseInteractableBehavior
         {
             return;
         }
-        if (!string.IsNullOrEmpty(mesg))
+        if (currentPointStatus == ScenePointStatus.BattlePathfinding)
+        {
+            battleTile.HideHoverTile();
+        }
+        else if (!string.IsNullOrEmpty(mesg))
         {
             EventBroadcaster.Instance.PostEvent(EventNames.HIDE_TOOLTIP_MESG);
         }        
     }
     public void OnMouseDown()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
+        if(currentPointStatus == ScenePointStatus.BattlePathfinding)
         {
-            return;
-        }
 
-        if (TransitionManager.GetInstance.currentSceneManager.king.myMovements.isMoving)
-        {
-            return;
         }
-
-        if(TransitionManager.GetInstance != null)
+        else
         {
-            EventBroadcaster.Instance.PostEvent(EventNames.HIDE_TOOLTIP_MESG);
-            TransitionManager.GetInstance.currentSceneManager.OrderCharacterToMove(this);
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
+
+            if (TransitionManager.GetInstance.currentSceneManager.king.myMovements.isMoving)
+            {
+                return;
+            }
+
+            if(TransitionManager.GetInstance != null)
+            {
+                EventBroadcaster.Instance.PostEvent(EventNames.HIDE_TOOLTIP_MESG);
+                TransitionManager.GetInstance.currentSceneManager.OrderCharacterToMove(this);
+            }
+
         }
     }
 

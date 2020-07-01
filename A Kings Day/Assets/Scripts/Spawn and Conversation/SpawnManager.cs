@@ -92,9 +92,8 @@ namespace Managers
 
             if (currentCourtGuest.characterSpawned != null)
             {
-                currentCourtGuest.characterSpawned.SetGuestInformation(currentCourtGuest.reporterType);
-                currentCourtGuest.characterSpawned.myMovements.SetPosition(spawnPoint);
-                currentCourtGuest.characterSpawned.myMovements.SetTarget(spawnPoint.neighborPoints[0]);
+                currentCourtGuest.characterSpawned.SpawnInThisPosition(spawnPoint);
+                currentCourtGuest.characterSpawned.OrderMovement(spawnPoint.neighborPoints[0], PreStartCourt);
             }
             else
             {
@@ -127,10 +126,11 @@ namespace Managers
         }
         public void LeaveCourt()
         {
-            currentCourtGuest.characterSpawned.myMovements.MoveTowards(spawnPoint);
+            currentCourtGuest.characterSpawned.OrderMovement(spawnPoint, CheckCourtUse);
             currentCourtGuest.characterSpawned.isLeaving = true;
         }
 
+        //Gets called when a unit leaves the court room, checks if there's another unit.
         public void CheckCourtUse()
         {
             KingdomManager.GetInstance.CheckNextEvent();

@@ -19,5 +19,6 @@ namespace GameItems
         public int damage, health, durability, speed;
         public int itemCount;
         public string itemDescription;
+        public int itemPrice;
     }
 }

@@ -138,7 +138,7 @@ namespace Kingdoms
         public int curMonthTaxCounter;
         public bool canReceiveMonthlyTax;
         // Technology
-        public List<BaseTechnology> currentTechnologies;
+        public List<BaseTechnologyData> currentTechnologies;
 
         public bool IsStoryArcFinished(string storyTitle)
         {

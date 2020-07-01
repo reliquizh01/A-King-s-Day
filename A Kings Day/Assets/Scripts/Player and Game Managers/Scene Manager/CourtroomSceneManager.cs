@@ -47,6 +47,15 @@ namespace Managers
         public override void PreOpenManager()
         {
             base.PreOpenManager();
+
+            if(PlayerGameManager.GetInstance != null)
+            {
+                if (PlayerGameManager.GetInstance.playerData.queuedDataEventsList.Count <= 0 &&
+                    string.IsNullOrEmpty(PlayerGameManager.GetInstance.playerData.curDataEvent.title))
+                {
+                    PlaceGuardOutside();
+                }
+            }
         }
 
         public override void StartManager()
@@ -66,6 +75,12 @@ namespace Managers
         {
             yield return new WaitForSeconds(0.5f);
             rightGuard.OrderMovement(scenePointHandler.scenePoints[5], callback);
+        }
+        public void PlaceGuardOutside()
+        {
+            leftGuard.SpawnInThisPosition(scenePointHandler.scenePoints[5]);
+            rightGuard.SpawnInThisPosition(scenePointHandler.scenePoints[5]);
+            guardsOutside = true;
         }
 
         public void MakeGuardShow(Action callBack = null)
@@ -112,7 +127,7 @@ namespace Managers
                     if(prevScene != SceneType.Opening)
                     {
                         Debug.Log("Previous Scene : " + prevScene);
-                        king.myMovements.SetPosition(prevGate, true);
+                        king.SpawnInThisPosition(prevGate);
                     }
 
                     if (GameUIManager.GetInstance != null)

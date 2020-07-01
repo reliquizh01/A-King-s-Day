@@ -74,12 +74,25 @@ namespace Managers
 
             // FOR TESTING ONLY
             // ADD ONBOARDING HERE ONCE BALANCING IS DONE
-            if(PlayerGameManager.GetInstance != null && !TransitionManager.GetInstance.isNewGame)
+            if(PlayerGameManager.GetInstance != null)
             {
-                PlayerGameManager mgr = PlayerGameManager.GetInstance;
-                Debug.Log("Player Queued Events : " + mgr.playerData.queuedDataEventsList.Count);
-                LoadSavedData(mgr.playerData.queuedDataEventsList, mgr.playerData.curDataEvent, mgr.playerData.curDataStory);
-                AllowStartEvent();
+                if(TransitionManager.GetInstance.isNewGame)
+                {
+                    StartWeekEvents();
+                    TransitionManager.GetInstance.isNewGame = false;
+                }
+                else
+                {
+                    PlayerGameManager mgr = PlayerGameManager.GetInstance;
+                    Debug.Log("Player Queued Events : " + mgr.playerData.queuedDataEventsList.Count);
+                    LoadSavedData(mgr.playerData.queuedDataEventsList, mgr.playerData.curDataEvent, mgr.playerData.curDataStory);
+
+                    // CHECKS IF LOADED DATA STILL HAS QUEUED EVENTS
+                    if (mgr.playerData.queuedDataEventsList.Count > 0 || !string.IsNullOrEmpty(mgr.playerData.curDataEvent.title))
+                    {
+                        AllowStartEvent();
+                    }
+                }
             }
             else
             {
@@ -109,13 +122,9 @@ namespace Managers
 
         public void SaveData(Parameters p = null)
         {
-            if(currentEvent != null)
-            {
-                PlayerGameManager.GetInstance.SaveCurDataEvent(currentEvent);
-            }
+            PlayerGameManager.GetInstance.SaveCurDataEvent(currentEvent);
             PlayerGameManager.GetInstance.SaveQueuedData(queuedEventsList, eventFinished);
             PlayerGameManager.GetInstance.SaveCurStory(currentStory);
-
             SaveLoadManager.GetInstance.SaveCurrentData();
         }
 
@@ -295,6 +304,11 @@ namespace Managers
         {
             SpawnManager.GetInstance.PreLeaveCourt();
             eventFinished += 1;
+            if(PlayerGameManager.GetInstance != null)
+            {
+                SaveData();
+            }
+
             if(eventFinished < weeklyEvents)
             {
                 ResourceInformationController.GetInstance.currentPanel.weekController.UpdateEndButton(eventFinished, weeklyEvents);
@@ -426,6 +440,7 @@ namespace Managers
             {
                 currentEvent = null;
             }
+            SaveData();
         }
 
         public void SetStoryArc()

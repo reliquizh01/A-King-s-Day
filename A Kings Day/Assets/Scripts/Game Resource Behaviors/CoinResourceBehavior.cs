@@ -76,9 +76,9 @@ namespace GameResource
         {
             base.ImplementTechnology();
 
-            List<BaseTechnology> relatedTech = curPlayer.currentTechnologies.FindAll(x=> x.improvedType == ResourceType.Coin);
+            List<BaseTechnologyData> relatedTech = curPlayer.currentTechnologies.FindAll(x=> x.improvedType == ResourceType.Coin);
 
-            foreach (BaseTechnology technology in relatedTech)
+            foreach (BaseTechnologyData technology in relatedTech)
             {
                 switch(technology.coinTechType)
                 {

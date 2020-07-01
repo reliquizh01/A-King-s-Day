@@ -1,0 +1,1508 @@
+fileFormatVersion: 2
+guid: 96df1abfc54b245438eed422ef83e8d6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7049444068534854545
+    second: 1_Red_To_Blue
+  - first:
+      213: 6819091182402748296
+    second: 2_Red_To_Blue
+  - first:
+      213: 3568354689956585058
+    second: 3_Red_To_Blue
+  - first:
+      213: 5254077325743919904
+    second: 4_Red_To_Blue
+  - first:
+      213: -1251625083677498162
+    second: 5_Red_To_Blue
+  - first:
+      213: -6773999309006633461
+    second: 6_Red_To_Blue
+  - first:
+      213: 2536111998932229377
+    second: 7_Red_To_Blue
+  - first:
+      213: -5302515053278685558
+    second: 8_Red_To_Blue
+  - first:
+      213: 1617245853101210463
+    second: Moral_Bar
+  - first:
+      213: -3724642300960469723
+    second: Moral_Border
+  - first:
+      213: 2660521196292981125
+    second: 1_Neut_To_Blue
+  - first:
+      213: -326712693420146862
+    second: 2_Neut_To_Blue
+  - first:
+      213: 6147421414516400588
+    second: 3_Neut_To_Blue
+  - first:
+      213: -1486281279851934194
+    second: 4_Neut_To_Blue
+  - first:
+      213: -4165097064621315733
+    second: 5_Neut_To_Blue
+  - first:
+      213: 3514547881568227675
+    second: 6_Neut_To_Blue
+  - first:
+      213: 6964696185076389654
+    second: 7_Neut_To_Blue
+  - first:
+      213: -8567734646971673528
+    second: 8_Neut_To_Blue
+  - first:
+      213: 7498884473827596630
+    second: Battle_Unit_Panel
+  - first:
+      213: -6135750627069230171
+    second: Battle_Selected_Unit_Panel
+  - first:
+      213: 2967786606803443384
+    second: 1_Neutral_To_Red
+  - first:
+      213: -9100174664768574051
+    second: 2_Neutral_To_Red
+  - first:
+      213: 125626067590671536
+    second: 3_Neutral_To_Red
+  - first:
+      213: -4795161208253669040
+    second: 4_Neutral_To_Red
+  - first:
+      213: 7955064617347489696
+    second: 5_Neutral_To_Red
+  - first:
+      213: -4100211344670839817
+    second: 6_Neutral_To_Red
+  - first:
+      213: -8702385399420372193
+    second: 7_Neutral_To_Red
+  - first:
+      213: -685204831640978727
+    second: 8_Neutral_To_Red
+  - first:
+      213: -3901146399403981917
+    second: Selected_Field
+  - first:
+      213: 4370063640917119756
+    second: 1_Blue_To_Red
+  - first:
+      213: 4028624033274884455
+    second: 2_Blue_To_Red
+  - first:
+      213: 6265280941483172545
+    second: 3_Blue_To_Red
+  - first:
+      213: -2075921108831743278
+    second: 4_Blue_To_Red
+  - first:
+      213: -7956653953882353796
+    second: 5_Blue_To_Red
+  - first:
+      213: -1088604894464782143
+    second: 6_Blue_To_Red
+  - first:
+      213: 5243806460652860056
+    second: 7_Blue_To_Red
+  - first:
+      213: 6884681911776360108
+    second: 8_Blue_To_Red
+  - first:
+      213: 8295060459842128129
+    second: 7_Slow_Tile
+  - first:
+      213: 6860624953488847560
+    second: 8_Slow_Tile
+  - first:
+      213: -8604181277545168157
+    second: 1_Damage_Tile
+  - first:
+      213: 4145111275614543819
+    second: 2_Damage_Tile
+  - first:
+      213: -824990190859774344
+    second: 3_Damage_Tile
+  - first:
+      213: 8182845067005568285
+    second: 4_Damage_Tile
+  - first:
+      213: 1743603369870122535
+    second: 5_Damage_Tile
+  - first:
+      213: 4740610726313767286
+    second: 6_Damage_Tile
+  - first:
+      213: -2543727835838038414
+    second: 7_Damage_Tile
+  - first:
+      213: -4871484812503660308
+    second: 8_Damage_Tile
+  - first:
+      213: 5548829653387963948
+    second: Unit_Count_Panel
+  - first:
+      213: 2401194500636181852
+    second: Health_Bar_Panel
+  - first:
+      213: -555889277869081026
+    second: Health_Bar_Fill
+  - first:
+      213: -5836282967818827619
+    second: 5_Slow_Tile
+  - first:
+      213: 1839162131990778491
+    second: Neutral_Tile
+  - first:
+      213: 1626479560239014660
+    second: 3_Slow_Tile
+  - first:
+      213: -1582899331494857199
+    second: 1_Slow_Tile
+  - first:
+      213: -3827376690851263354
+    second: 2_Slow_Tile
+  - first:
+      213: 5346003640340444510
+    second: 4_Slow_Tile
+  - first:
+      213: 3052642939534746269
+    second: 6_Slow_Tile
+  - first:
+      213: -7793848695657737567
+    second: Road_Battlefield
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 350
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 1_Red_To_Blue
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 432
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1932101e708a4d160800000000000000
+      internalID: 7049444068534854545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Red_To_Blue
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 432
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88f3d122d4742ae50800000000000000
+      internalID: 6819091182402748296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Red_To_Blue
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 432
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e167f3fa7558130800000000000000
+      internalID: 3568354689956585058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Red_To_Blue
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 432
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 023966f8d7b3ae840800000000000000
+      internalID: 5254077325743919904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 5_Red_To_Blue
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 432
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec42f672e9551aee0800000000000000
+      internalID: -1251625083677498162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 6_Red_To_Blue
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 432
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b060be5c48bedf1a0800000000000000
+      internalID: -6773999309006633461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Red_To_Blue
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 432
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10d16f61d64123320800000000000000
+      internalID: 2536111998932229377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8_Red_To_Blue
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 432
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86992927aea966b0800000000000000
+      internalID: -5302515053278685558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moral_Bar
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 436
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b329ce88c917610800000000000000
+      internalID: 1617245853101210463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moral_Border
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 442
+        width: 73
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52d8bdfaf896f4cc0800000000000000
+      internalID: -3724642300960469723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_Neut_To_Blue
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 416
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 581c0769ee11ce420800000000000000
+      internalID: 2660521196292981125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Neut_To_Blue
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 416
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25fb41d4988477bf0800000000000000
+      internalID: -326712693420146862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Neut_To_Blue
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 416
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc121e0c437005550800000000000000
+      internalID: 6147421414516400588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Neut_To_Blue
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 416
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0ecc16fc0baf5be0800000000000000
+      internalID: -1486281279851934194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 5_Neut_To_Blue
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 416
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b696930994a9236c0800000000000000
+      internalID: -4165097064621315733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 6_Neut_To_Blue
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 416
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b51d9fa6dae26c030800000000000000
+      internalID: 3514547881568227675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Neut_To_Blue
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 416
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6171fff974297a060800000000000000
+      internalID: 6964696185076389654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8_Neut_To_Blue
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 416
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 844527d7bba491980800000000000000
+      internalID: -8567734646971673528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Battle_Unit_Panel
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 413
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6599f2ab2b3611860800000000000000
+      internalID: 7498884473827596630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Battle_Selected_Unit_Panel
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 413
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a38823305f69daa0800000000000000
+      internalID: -6135750627069230171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_Neutral_To_Red
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 401
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be5ea3e132bf2920800000000000000
+      internalID: 2967786606803443384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Neutral_To_Red
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 401
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9da5707b5fa5b180800000000000000
+      internalID: -9100174664768574051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Neutral_To_Red
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 401
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bc654d2e305eb100800000000000000
+      internalID: 125626067590671536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Neutral_To_Red
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 401
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 051ae45794a247db0800000000000000
+      internalID: -4795161208253669040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 5_Neutral_To_Red
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 401
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0af964a2f11166e60800000000000000
+      internalID: 7955064617347489696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 6_Neutral_To_Red
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 401
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fb2ed0818f1917c0800000000000000
+      internalID: -4100211344670839817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Neutral_To_Red
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 401
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1bb001269aea3780800000000000000
+      internalID: -8702385399420372193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8_Neutral_To_Red
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 401
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9da78a306d9ad76f0800000000000000
+      internalID: -685204831640978727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Selected_Field
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 394
+        width: 25
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a34bb6d4085cd9c0800000000000000
+      internalID: -3901146399403981917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_Blue_To_Red
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 386
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0317b25ab595ac30800000000000000
+      internalID: 4370063640917119756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Blue_To_Red
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 386
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76173f4b63c88e730800000000000000
+      internalID: 4028624033274884455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Blue_To_Red
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 386
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c2212742dfb2f650800000000000000
+      internalID: 6265280941483172545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Blue_To_Red
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 386
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d2595e00c8d033e0800000000000000
+      internalID: -2075921108831743278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 5_Blue_To_Red
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 386
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f82269269449190800000000000000
+      internalID: -7956653953882353796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 6_Blue_To_Red
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 386
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c0dcacbd9f74e0f0800000000000000
+      internalID: -1088604894464782143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Blue_To_Red
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 386
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 892bc1e613eb5c840800000000000000
+      internalID: 5243806460652860056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8_Blue_To_Red
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 386
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca6bcfed8bd4b8f50800000000000000
+      internalID: 6884681911776360108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Slow_Tile
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 369
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10947430a89fd1370800000000000000
+      internalID: 8295060459842128129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8_Slow_Tile
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 369
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c232e9cb06d53f50800000000000000
+      internalID: 6860624953488847560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_Damage_Tile
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 335
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e28ad807bec79880800000000000000
+      internalID: -8604181277545168157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Damage_Tile
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 335
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcf98715eb4668930800000000000000
+      internalID: 4145111275614543819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Damage_Tile
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 335
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8761f9adacb0d84f0800000000000000
+      internalID: -824990190859774344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Damage_Tile
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 335
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d15aceedb3e4f8170800000000000000
+      internalID: 8182845067005568285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 5_Damage_Tile
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 335
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72e5842e606823810800000000000000
+      internalID: 1743603369870122535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 6_Damage_Tile
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 335
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 671b658b6580ac140800000000000000
+      internalID: 4740610726313767286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Damage_Tile
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 335
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27eb993b20dd2bcd0800000000000000
+      internalID: -2543727835838038414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8_Damage_Tile
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 335
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce8420e8f52056cb0800000000000000
+      internalID: -4871484812503660308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unit_Count_Panel
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 435
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2ee759bb27610d40800000000000000
+      internalID: 5548829653387963948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health_Bar_Panel
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 437
+        width: 14
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c558a0f1da1c25120800000000000000
+      internalID: 2401194500636181852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health_Bar_Fill
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 438
+        width: 12
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e3a22a5a51948f0800000000000000
+      internalID: -555889277869081026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 5_Slow_Tile
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 369
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d980f7e009b510fa0800000000000000
+      internalID: -5836282967818827619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neutral_Tile
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 369
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7219a9f634068910800000000000000
+      internalID: 1839162131990778491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Slow_Tile
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 369
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 403ea76ea8a629610800000000000000
+      internalID: 1626479560239014660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_Slow_Tile
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 369
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 116bb0fc179680ae0800000000000000
+      internalID: -1582899331494857199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Slow_Tile
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 369
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c43309d2d62eac0800000000000000
+      internalID: -3827376690851263354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Slow_Tile
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 369
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e55ff6e8cf1d03a40800000000000000
+      internalID: 5346003640340444510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 6_Slow_Tile
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 369
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d92a215749a2d5a20800000000000000
+      internalID: 3052642939534746269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Road_Battlefield
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 165
+        width: 450
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2dd26a7efa6d390800000000000000
+      internalID: -7793848695657737567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

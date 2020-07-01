@@ -59,6 +59,8 @@ namespace Managers
 
         public List<ViewManager> managerList;
         public bool inTransition = false;
+
+        // USE THIS TO REMOVE ONBOARDING
         public bool isNewGame = false;
         public ViewManager currentMgr;
 

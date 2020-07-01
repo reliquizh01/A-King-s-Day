@@ -22,6 +22,7 @@ namespace Technology
 
         [SerializeField]private List<BaseTechnology> currentTechs;
         private int selectedIdx;
+        public ResourceType currentType;
 
         public void OpenPageTech(ResourceType type)
         {
@@ -55,7 +56,27 @@ namespace Technology
         }
         public void SetType(ResourceType thisType)
         {
-            currentTechs = PlayerGameManager.GetInstance.playerData.currentTechnologies.FindAll(x => x.improvedType == thisType);
+            PlayerKingdomData playerData = PlayerGameManager.GetInstance.playerData;
+
+            currentTechs.Clear();
+
+            currentType = thisType;
+
+            for (int i = 0; i < playerData.currentTechnologies.Count; i++)
+            {
+                Debug.Log("Current Tech:" + playerData.currentTechnologies[i].improvedType + " Compared To : " + thisType);
+
+                if (playerData.currentTechnologies[i].improvedType == thisType)
+                {
+                    Debug.Log("ADDING TECH INDEX : " + i + " TECH NAME : " + playerData.currentTechnologies[i].technologyName);
+
+                    BaseTechnology tmp = new BaseTechnology().ConverToData(playerData.currentTechnologies[i]);
+                    tmp.techIcon = TechnologyManager.GetInstance.techStorage.technologies.Find(x => x.technologyName == tmp.technologyName).techIcon;
+
+                    currentTechs.Add(tmp);
+                }
+            }
+
             for (int i = 0; i < currentTechs.Count; i++)
             {
                 techOptions[i].techIcon.sprite = currentTechs[i].techIcon;
@@ -65,6 +86,8 @@ namespace Technology
 
         public void SetTechPanelInformation()
         {
+            SetType(currentType);
+
             titleText.text = currentTechs[selectedIdx].technologyName;
             wittyText.text = currentTechs[selectedIdx].wittyMesg;
             curEffectText.text = currentTechs[selectedIdx].effectMesg;

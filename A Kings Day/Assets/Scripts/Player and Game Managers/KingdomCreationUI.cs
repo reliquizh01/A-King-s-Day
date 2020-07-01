@@ -199,16 +199,16 @@ public class KingdomCreationUI : MonoBehaviour
         temporaryKingdom.safeCows = 10;
         temporaryKingdom.fileData = true;
         temporaryKingdom.myItems = new List<GameItems.ItemInformationData>();
-
+        temporaryKingdom.currentTechnologies = TechnologyManager.GetInstance.InitializePlayerTech();
+        
         PlayerGameManager.GetInstance.ReceiveData(temporaryKingdom);
+
         SaveData.SaveLoadManager.GetInstance.SetNewSaveData(PlayerGameManager.GetInstance.playerData);
-        SaveData.SaveLoadManager.GetInstance.SaveData();
         temporaryKingdom = null;
         TransitionManager.GetInstance.LoadScene(SceneType.Courtroom);
         TransitionManager.GetInstance.TransitionToNextGameView(GameViews.CourtroomView);
-        if(TechnologyManager.GetInstance != null)
-        {
-            TechnologyManager.GetInstance.InitializePlayerTech();
-        }
+
+
+        SaveData.SaveLoadManager.GetInstance.SaveData();
     }
 }

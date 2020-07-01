@@ -72,8 +72,8 @@ public class KingdomCreationManager : BaseManager
         {
             PlayerGameManager.GetInstance.ReceiveData(SaveData.SaveLoadManager.GetInstance.saveDataList[saveSlotHandler.selectedIndex]);
         }
-        StartCoroutine(saveSlots.WaitAnimationForAction(saveSlots.closeAnimationName, LoadDataToGame));
         TransitionManager.GetInstance.isNewGame = false;
+        StartCoroutine(saveSlots.WaitAnimationForAction(saveSlots.closeAnimationName, LoadDataToGame));
     }
     public void DeleteThisData()
     {

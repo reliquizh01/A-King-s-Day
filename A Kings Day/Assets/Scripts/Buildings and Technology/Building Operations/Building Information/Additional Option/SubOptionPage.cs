@@ -51,6 +51,33 @@ namespace Buildings
 
             rewardTmp.Add(reward);
 
+
+            ResourceReward troop = new ResourceReward();
+            int recruitsSold = optionPanelList[0].amountToSell;
+            troop.resourceType = ResourceType.Troops;
+            troop.rewardAmount = -recruitsSold;
+            rewardTmp.Add(troop);
+
+            ResourceReward swordsman = new ResourceReward();
+            int swrdManSold = optionPanelList[1].amountToSell;
+            swordsman.resourceType = ResourceType.Swordsmen;
+            swordsman.rewardAmount = -swrdManSold;
+            rewardTmp.Add(swordsman);
+
+            ResourceReward spearman = new ResourceReward();
+            int sprmanSold = optionPanelList[2].amountToSell;
+            spearman.resourceType = ResourceType.Spearmen;
+            spearman.rewardAmount = -sprmanSold;
+            rewardTmp.Add(spearman);
+
+            ResourceReward archer = new ResourceReward();
+            int archerSold = optionPanelList[3].amountToSell;
+            archer.resourceType = ResourceType.Archer;
+            archer.rewardAmount = -archerSold;
+            rewardTmp.Add(archer);
+
+
+
             ResourceInformationController.GetInstance.ShowCurrentPanelPotentialResourceChanges(rewardTmp);
         }
         public void SellTroops()

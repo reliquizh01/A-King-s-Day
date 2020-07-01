@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Characters;
 using Managers;
+using System;
+
 public class CharacterMovement : MonoBehaviour
 {
     public bool isMoving = false;
@@ -14,6 +16,8 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private Vector2 targetPos;
     private BaseCharacter myCharacter;
     public List<ScenePointBehavior> queuePoints;
+
+    Action reachLastTargetCallback = null;
     public void Start()
     {
         if(GetComponent<BaseCharacter>() != null)
@@ -113,18 +117,29 @@ public class CharacterMovement : MonoBehaviour
 
     public void PointReachedCallback()
     {
-        if(myCharacter.isGuest)
+        if(reachLastTargetCallback != null)
         {
-            myCharacter.GuestReached();
+            reachLastTargetCallback();
+            reachLastTargetCallback = null;
+        }
+
+        /*if(myCharacter.isGuest)
+        {
+            myCharacter.TargetReached();
         }
         else
         {
             myCharacter.OrderMovementCallback();
-        }
+        } */
     }
+    /// <summary>
+    /// Used to move to the next point in the current Path
+    /// </summary>
+    /// <param name="thisPoint">next Point in the current path</param>
     public void MoveTowards(ScenePointBehavior thisPoint)
     {
         float dist = 0;
+
         if(thisPoint.sceneOffset == null)
         {
             dist = Vector2.Distance(transform.position, thisPoint.transform.position);
@@ -166,9 +181,17 @@ public class CharacterMovement : MonoBehaviour
         currentTargetPoint.isInteractingWith = true;
     }
 
-    public void SetTarget(ScenePointBehavior thisPoint)
+    /// <summary>
+    /// Creates a Path towards the said location
+    /// </summary>
+    /// <param name="thisPoint"> the target of the path</param>
+    public void SetTarget(ScenePointBehavior thisPoint, Action targetCallBack = null)
     {
         SetNewTargetPoint(thisPoint);
+        if(reachLastTargetCallback == null)
+        {
+            reachLastTargetCallback = targetCallBack;
+        }
 
         if (currentTargetPoint == currentPoint)
         {

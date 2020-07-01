@@ -54,7 +54,7 @@ namespace Managers
             // APPLY DISCOUNTS
             price = thisTech.goldLevelRequirements[thisTech.currentLevel];
 
-            BaseTechnology discountTech = PlayerGameManager.GetInstance.playerData.currentTechnologies.Find(x => x.improvedType == ResourceType.Coin && x.coinTechType == CoinTechType.IncreaseDiscount);
+            BaseTechnologyData discountTech = PlayerGameManager.GetInstance.playerData.currentTechnologies.Find(x => x.improvedType == ResourceType.Coin && x.coinTechType == CoinTechType.IncreaseDiscount);
 
             int discountAmount = discountTech.bonusIncrement * discountTech.currentLevel;
 
@@ -64,18 +64,25 @@ namespace Managers
         public void UpgradeThisTech(BaseTechnology thisTech)
         {
             curPlayer.currentTechnologies.Find(x => x.technologyName == thisTech.technologyName).currentLevel += 1;
+
+            if(SaveData.SaveLoadManager.GetInstance != null)
+            {
+                SaveData.SaveLoadManager.GetInstance.SaveData();
+            }
         }
-        public void InitializePlayerTech()
+
+        public List<BaseTechnologyData> InitializePlayerTech()
         {
-            if(playerInitialized)
+
+            List<BaseTechnologyData> techData = new List<BaseTechnologyData>();
+            for (int i = 0; i < techStorage.technologies.Count; i++)
             {
-                return;
+                Debug.Log("CURRENT COUNT DATA :"+ techStorage.technologies[i].improvedType);
+                BaseTechnologyData tmp = new BaseTechnologyData().ConverToData(techStorage.technologies[i]);
+                techData.Add(tmp);
             }
-            playerInitialized = true;
-            if (PlayerGameManager.GetInstance != null)
-            {
-                PlayerGameManager.GetInstance.playerData.currentTechnologies.AddRange(techStorage.technologies);
-            }
+
+            return techData;
         }
     }
 }

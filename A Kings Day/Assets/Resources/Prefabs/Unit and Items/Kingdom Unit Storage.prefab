@@ -1,0 +1,236 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7517564706452039434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2250713100096020538}
+  - component: {fileID: 3469188192549738366}
+  m_Layer: 0
+  m_Name: Kingdom Unit Storage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2250713100096020538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517564706452039434}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1532.7671, y: 981.19214, z: -271.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3469188192549738366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517564706452039434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eeacbde7fe2de14eba25ee7f1f1547b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroStorage:
+  - heroRarity: 2
+    isRandomGenerated: 0
+    heroLevel: 0
+    unitInformation:
+      unitName: Merlin
+      attackType: 2
+      curhealth: 0
+      maxHealth: 10
+      curSpeed: 0
+      origSpeed: 0
+      minDamage: 1
+      maxDamage: 1
+      currentState: 0
+      deathThreshold: 0
+      buffList: []
+    healthGrowthRate: 2
+    speedGrowthRate: 3
+    damageGrowthRate: 5
+    baseHeroCoinPrice: 0
+    skillsList:
+    - skillName: Holy Heal
+      skillType: 2
+      targetType: 0
+      skillLevel: 1
+      statenhanced: 0
+      affectedArea: 0
+      maxRange: 0
+      targetStats: 0
+      targetInflictedCount: 5
+      buffList: []
+    equipments: []
+  - heroRarity: 2
+    isRandomGenerated: 0
+    heroLevel: 0
+    unitInformation:
+      unitName: Alexander
+      attackType: 0
+      curhealth: 0
+      maxHealth: 15
+      curSpeed: 0
+      origSpeed: 0
+      minDamage: 2
+      maxDamage: 5
+      currentState: 0
+      deathThreshold: 0
+      buffList: []
+    healthGrowthRate: 5
+    speedGrowthRate: 2
+    damageGrowthRate: 3
+    baseHeroCoinPrice: 0
+    skillsList:
+    - skillName: March Forward
+      skillType: 3
+      targetType: 0
+      skillLevel: 1
+      statenhanced: 0
+      affectedArea: 1
+      maxRange: 5
+      targetStats: 2
+      targetInflictedCount: 0
+      buffList:
+      - buffName: Weak SPD Boost
+        duration: 30
+        targetStats: 2
+        effectAmount: 3
+      - buffName: Weak HP Boost
+        duration: 30
+        targetStats: 0
+        effectAmount: 3
+    equipments: []
+  - heroRarity: 2
+    isRandomGenerated: 0
+    heroLevel: 0
+    unitInformation:
+      unitName: Archie
+      attackType: 1
+      curhealth: 0
+      maxHealth: 10
+      curSpeed: 0
+      origSpeed: 0
+      minDamage: 2
+      maxDamage: 3
+      currentState: 0
+      deathThreshold: 0
+      buffList: []
+    healthGrowthRate: 3
+    speedGrowthRate: 3
+    damageGrowthRate: 4
+    baseHeroCoinPrice: 0
+    skillsList: []
+    equipments: []
+  merchantStorage:
+  - merchantName: 
+    merchantType: 0
+    isRandomGenerated: 0
+    unitInformation:
+      unitName: Nene
+      attackType: 1
+      curhealth: 0
+      maxHealth: 20
+      curSpeed: 0
+      origSpeed: 0
+      minDamage: 8
+      maxDamage: 8
+      currentState: 0
+      deathThreshold: -5
+      buffList: []
+    itemsSold: []
+  - merchantName: 
+    merchantType: 0
+    isRandomGenerated: 1
+    unitInformation:
+      unitName: Tanza
+      attackType: 2
+      curhealth: 0
+      maxHealth: 30
+      curSpeed: 0
+      origSpeed: 0
+      minDamage: 5
+      maxDamage: 5
+      currentState: 0
+      deathThreshold: -5
+      buffList: []
+    itemsSold: []
+  skillStorage:
+  - skillName: Holy Heal
+    skillType: 2
+    targetType: 0
+    skillLevel: 1
+    statenhanced: 0
+    affectedArea: 0
+    maxRange: 0
+    targetStats: 0
+    targetInflictedCount: 5
+    buffList: []
+  - skillName: March Forward
+    skillType: 3
+    targetType: 0
+    skillLevel: 1
+    statenhanced: 0
+    affectedArea: 1
+    maxRange: 5
+    targetStats: 2
+    targetInflictedCount: 0
+    buffList:
+    - buffName: Weak SPD Boost
+      duration: 30
+      targetStats: 2
+      effectAmount: 3
+    - buffName: Weak HP Boost
+      duration: 30
+      targetStats: 0
+      effectAmount: 3
+  buffStorage:
+  - buffName: Minor HP Buff
+    duration: 800
+    targetStats: 0
+    effectAmount: 3
+  - buffName: Minor SPD Buff
+    duration: 800
+    targetStats: 2
+    effectAmount: 3
+  - buffName: Minor DMG Buff
+    duration: 800
+    targetStats: 1
+    effectAmount: 1
+  - buffName: HP Buff
+    duration: 800
+    targetStats: 0
+    effectAmount: 5
+  - buffName: SPD Buff
+    duration: 800
+    targetStats: 2
+    effectAmount: 5
+  - buffName: DMG Buff
+    duration: 800
+    targetStats: 1
+    effectAmount: 3
+  - buffName: Weak HP Boost
+    duration: 30
+    targetStats: 0
+    effectAmount: 3
+  - buffName: Weak SPD Boost
+    duration: 30
+    targetStats: 2
+    effectAmount: 3
+  - buffName: Weak DMG Boost
+    duration: 30
+    targetStats: 1
+    effectAmount: 1

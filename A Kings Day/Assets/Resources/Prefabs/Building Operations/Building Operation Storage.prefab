@@ -87,6 +87,8 @@ MonoBehaviour:
           rewardAmount: -1
         - resourceType: 2
           rewardAmount: 1
+        - resourceType: 3
+          rewardAmount: 7
         AcceptMesg:
         - De-listing one person, again.
         - When I remove them in the list sometimes the reason is death.
@@ -177,7 +179,7 @@ MonoBehaviour:
         - A shot to the head without getting harmed, is a kill.
         - No honor? who can say that when they're dead.
         DenyMesg:
-        - should we train them to throw stones? Get the gold my king.
+        - Maybe one day we can just pull a lever and bows start firing.
       cardPosMesg:
       - Choke the dummies,Check,Choke me da- the dummy, check.
       - We need to repair those walls, these bums keep hitting them.

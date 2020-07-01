@@ -92,7 +92,7 @@ public class BuildingInformationPanel : MonoBehaviour
                 if(PlayerGameManager.GetInstance.playerData.myHeroes != null && PlayerGameManager.GetInstance.playerData.myHeroes.Count > 0)
                 {
                     BaseHeroInformationData curHero = PlayerGameManager.GetInstance.playerData.myHeroes[selectedHeroIdx];
-                    currentPage.informationPanelList[0].SetGrowthCounter((int)curHero.unitInformation.maxHealth, curHero.healthGrowthRate, "HEALTH", curHero.heroName);
+                    currentPage.informationPanelList[0].SetGrowthCounter((int)curHero.unitInformation.maxHealth, curHero.healthGrowthRate, "HEALTH", curHero.unitInformation.unitName);
                     currentPage.informationPanelList[1].SetGrowthCounter((int)curHero.unitInformation.maxDamage, curHero.damageGrowthRate, "DAMAGE");
                     currentPage.informationPanelList[2].SetGrowthCounter((int)curHero.unitInformation.origSpeed, curHero.speedGrowthRate, "SPEED");
                 }
@@ -300,7 +300,7 @@ public class BuildingInformationPanel : MonoBehaviour
                     damage.Add((int)playerData.tavernHeroes[i].damageGrowthRate);
 
                     currentPage.informationPanelList[i].SetHeroCounter(health, damage, speed, playerData.tavernHeroes[i].unitInformation.attackType,
-                        playerData.tavernHeroes[i].heroName);
+                        playerData.tavernHeroes[i].unitInformation.unitName);
                 }
             }
         }

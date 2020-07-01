@@ -80,10 +80,10 @@ namespace GameResource
 
         public override void ImplementTechnology()
         {
-            List<BaseTechnology> relatedTech = curPlayer.currentTechnologies.FindAll(x => x.improvedType == ResourceType.Food);
+            List<BaseTechnologyData> relatedTech = curPlayer.currentTechnologies.FindAll(x => x.improvedType == ResourceType.Food);
 
 
-            foreach (BaseTechnology technology in relatedTech)
+            foreach (BaseTechnologyData technology in relatedTech)
             {
                 switch(technology.troopTechType)
                 {

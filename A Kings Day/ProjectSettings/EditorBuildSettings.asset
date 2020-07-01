@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Balcony.unity
     guid: 368b2b9048500b54cad8e1b598350cc6
+  - enabled: 1
+    path: Assets/Scenes/Battlefield.unity
+    guid: 192395c94b3d9eb43b7cfc71c3dc3e32
   m_configObjects: {}

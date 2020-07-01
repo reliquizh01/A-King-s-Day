@@ -184,23 +184,25 @@ namespace Managers
             playerData.curMonthTaxCounter = newData.curMonthTaxCounter;
             playerData.canReceiveMonthlyTax = newData.canReceiveMonthlyTax;
 
-            playerData.currentTechnologies = new List<BaseTechnology>();
+            playerData.currentTechnologies = new List<BaseTechnologyData>();
             for (int i = 0; i < newData.currentTechnologies.Count; i++)
             {
-                BaseTechnology tmp = new BaseTechnology();
-                tmp.bonusIncrement = newData.currentTechnologies[i].bonusIncrement;
-                tmp.coinTechType = newData.currentTechnologies[i].coinTechType;
-                tmp.curGold = newData.currentTechnologies[i].curGold;
-                tmp.currentLevel = newData.currentTechnologies[i].currentLevel;
-                tmp.effectMesg = newData.currentTechnologies[i].effectMesg;
-                tmp.foodTechType = newData.currentTechnologies[i].foodTechType;
-                tmp.goldLevelRequirements = newData.currentTechnologies[i].goldLevelRequirements;
-                tmp.goldRequirement = newData.currentTechnologies[i].goldRequirement;
-                tmp.improvedType = newData.currentTechnologies[i].improvedType;
-                tmp.popTechType = newData.currentTechnologies[i].popTechType;
-                tmp.techIcon = newData.currentTechnologies[i].techIcon;
+                BaseTechnologyData tmp = new BaseTechnologyData();
                 tmp.technologyName = newData.currentTechnologies[i].technologyName;
+                tmp.improvedType =   newData.currentTechnologies[i].improvedType;
+                tmp.goldLevelRequirements = newData.currentTechnologies[i].goldLevelRequirements;
+
+                tmp.currentLevel = newData.currentTechnologies[i].currentLevel;
+                tmp.goldRequirement = newData.currentTechnologies[i].goldRequirement;
+                tmp.curGold = newData.currentTechnologies[i].curGold;
+                tmp.bonusIncrement = newData.currentTechnologies[i].bonusIncrement;
+
                 tmp.troopTechType = newData.currentTechnologies[i].troopTechType;
+                tmp.popTechType = newData.currentTechnologies[i].popTechType;
+                tmp.foodTechType = newData.currentTechnologies[i].foodTechType;
+                tmp.coinTechType = newData.currentTechnologies[i].coinTechType;
+
+                tmp.effectMesg = newData.currentTechnologies[i].effectMesg;
                 tmp.wittyMesg = newData.currentTechnologies[i].wittyMesg;
 
                 playerData.currentTechnologies.Add(tmp);
@@ -360,15 +362,19 @@ namespace Managers
             if(eventData != null && !string.IsNullOrEmpty(eventData.title))
             {
                 playerData.curDataEvent.title = eventData.title;
+                playerData.curDataEvent.description = eventData.description;
+                playerData.curDataEvent.difficultyType = eventData.difficultyType;
+                playerData.curDataEvent.arcEnd = eventData.arcEnd;
+                playerData.curDataEvent.eventDecision = eventData.eventDecision;
+                playerData.curDataEvent.eventType = eventData.eventType;
+                playerData.curDataEvent.isStoryArc = eventData.isStoryArc;
+                playerData.curDataEvent.storyArc = eventData.storyArc;
+                playerData.curDataEvent.reporterType = eventData.reporterType;
             }
-            playerData.curDataEvent.description = eventData.description;
-            playerData.curDataEvent.difficultyType = eventData.difficultyType;
-            playerData.curDataEvent.arcEnd = eventData.arcEnd;
-            playerData.curDataEvent.eventDecision = eventData.eventDecision;
-            playerData.curDataEvent.eventType = eventData.eventType;
-            playerData.curDataEvent.isStoryArc = eventData.isStoryArc;
-            playerData.curDataEvent.storyArc = eventData.storyArc;
-            playerData.curDataEvent.reporterType = eventData.reporterType;
+            else
+            {
+                playerData.curDataEvent = null;
+            }
         }
 
         public bool CheckResourceEnough(int amount, ResourceType type)
@@ -380,7 +386,8 @@ namespace Managers
                 case ResourceType.Food:
                     return (playerData.foods >= amount);
                 case ResourceType.Troops:
-                    
+                    return (playerData.recruits >= amount);
+                    break;
                 case ResourceType.Population:
                     return (playerData.population >= amount);
                 case ResourceType.Coin:

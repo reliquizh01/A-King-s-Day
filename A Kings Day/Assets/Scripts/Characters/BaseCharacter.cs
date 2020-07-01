@@ -22,7 +22,6 @@ namespace Characters
     [RequireComponent(typeof(Animator), typeof(CharacterMovement))]
     public class BaseCharacter : MonoBehaviour
     {
-        public CharacterData charData;
         public Animator myAnimController;
         public CharacterMovement myMovements;
         public bool isKing = false;
@@ -43,33 +42,11 @@ namespace Characters
 
         public void Update()
         {
-            if(Input.GetKeyDown(KeyCode.Q))
-            {
-                if(reachedCallback != null)
-                {
-                    Debug.Log("There's 1");
-                }
-                else
-                {
-                    Debug.Log("Callback Empty!");
-                }
-            }
+
         }
         // Use For Guests and Unique Characters
-        public void SetGuestInformation(ReporterType reporter, bool isUnique = false)
-        {
-            if(isUnique)
-            {
-                // Obtain Data From Name Storage.
-            }
-            else
-            {
-                charData.characterName = reporter.ToString();
-            }
-            isGuest = true;
-        }
 
-        public void GuestReached()
+      /*  public void TargetReached()
         {
             if(!isLeaving)
             {
@@ -80,25 +57,18 @@ namespace Characters
                 SpawnManager.GetInstance.CheckCourtUse();
                 DestroyImmediate(this.gameObject);
             }
-        }
+        } */
 
         public void OrderMovement(ScenePointBehavior thisLocation, Action callBack = null)
         {
             myMovements.isMoving = false;
-            myMovements.SetTarget(thisLocation);
-            
-            if(callBack != null)
-            {
-                reachedCallback = callBack;
-            }
+            myMovements.SetTarget(thisLocation, callBack);
         }
-        public void OrderMovementCallback()
+
+        public void SpawnInThisPosition(ScenePointBehavior thisLocation)
         {
-            if(reachedCallback != null)
-            {
-                reachedCallback();
-                reachedCallback = null;
-            }
+            myMovements.SetPosition(thisLocation, true);
         }
+
     }
 }
