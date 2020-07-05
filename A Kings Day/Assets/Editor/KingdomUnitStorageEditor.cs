@@ -11,8 +11,8 @@ public class KingdomUnitStorageEditor : EditorWindow
 {
 
     #region EDITOR_SETUP
-    private static Vector2 itemStorShowOn = new Vector2(1000, 600);
-    private static Vector2 itemStorShowOff = new Vector2(1000, 600);
+    private static Vector2 itemStorShowOn = new Vector2(1400, 600);
+    private static Vector2 itemStorShowOff = new Vector2(1400, 600);
     private static int leftPanelWidth = 800;
 
     [MenuItem("Game Storage/Kingdom Unit Storage")]
@@ -57,6 +57,13 @@ public class KingdomUnitStorageEditor : EditorWindow
     public BaseBuffInformationData currentBuffData;
     public int selectedBuffIdx;
     Vector2 buffListScrollPos = Vector2.zero;
+
+    // Unit Storage
+    public UnitInformationData selectedUnitData;
+    public UnitInformationData currentUnitData;
+    public Object currentGameObjectPrefab;
+    public int selectedUnitIdx;
+    Vector2 unitListScrollPos = Vector2.zero;
 
     public void Awake()
     {
@@ -110,6 +117,9 @@ public class KingdomUnitStorageEditor : EditorWindow
 
             ShowBuffStorageList();
             ShowCurrentBuff();
+
+            ShowUnitStorageList();
+            ShowCurrentUnit();
         }
     }
 
@@ -132,10 +142,229 @@ public class KingdomUnitStorageEditor : EditorWindow
 
         unitStorageLoaded = true;
     }
+
+    #region UNIT STORAGE
+    public void ShowUnitStorageList()
+    {
+        GUILayout.BeginArea(new Rect(1240, 12, leftPanelWidth, 300));
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Box("Basic Units", titleText, GUILayout.Width(145), GUILayout.Height(20));
+        GUILayout.EndHorizontal();
+
+        unitListScrollPos = EditorGUILayout.BeginScrollView(unitListScrollPos, new GUIStyle("RL Background"), GUILayout.Width(150), GUILayout.Height(position.height - 350));
+
+        if (curUnitStorageData.basicUnitStorage != null && curUnitStorageData.basicUnitStorage.Count > 0)
+        {
+            for (int i = 0; i < curUnitStorageData.basicUnitStorage.Count; i++)
+            {
+                GUILayout.BeginHorizontal();
+                bool isClicked = false;
+                isClicked = GUILayout.Button(curUnitStorageData.basicUnitStorage[i].unitName, (currentUnitData != null
+                  && !string.IsNullOrEmpty(currentUnitData.unitName) && curUnitStorageData.basicUnitStorage[i].unitName == currentUnitData.unitName) ? selectedText : notSelectedText);
+                GUILayout.Label("[" + curUnitStorageData.basicUnitStorage[i].attackType + "]", GUILayout.MaxWidth(100));
+                GUILayout.EndHorizontal();
+                if (isClicked)
+                {
+                    GUI.FocusControl(null);
+                    if (curUnitStorageData.basicUnitStorage[i] != null)
+                    {
+                        selectedUnitData = curUnitStorageData.basicUnitStorage[i];
+                        currentUnitData = selectedUnitData;
+                        selectedUnitIdx = i;
+                    }
+                }
+            }
+        }
+        EditorGUILayout.EndScrollView();
+        EditorGUILayout.BeginHorizontal();
+        bool saveUnit = GUILayout.Button((currentUnitData == selectedUnitData) ? "Modify" : "Save", GUILayout.MaxWidth(50));
+        bool addUnit = GUILayout.Button("New", GUILayout.MaxWidth(40));
+        if (selectedUnitData != null)
+        {
+            bool removeUnit = GUILayout.Button("-", GUILayout.MaxWidth(40));
+            if (removeUnit)
+            {
+                curUnitStorageData.basicUnitStorage.RemoveAt(selectedUnitIdx);
+                selectedUnitData = null;
+                currentUnitData = new UnitInformationData();
+                currentUnitData = new UnitInformationData();
+                Save();
+            }
+        }
+        EditorGUILayout.EndHorizontal();
+        GUILayout.EndArea();
+
+        if (addUnit)
+        {
+            currentUnitData = new UnitInformationData();
+            currentHeroData.unitInformation = new UnitInformationData();
+            selectedHeroData = null;
+        }
+
+        if (saveUnit && !string.IsNullOrEmpty(currentUnitData.unitName))
+        {
+            GUI.FocusControl(null);
+            if (curUnitStorageData.basicUnitStorage == null)
+            {
+                curUnitStorageData.basicUnitStorage = new List<UnitInformationData>();
+            }
+            if (curUnitStorageData.basicUnitStorage.Find(x => x.unitName == currentUnitData.unitName) == null)
+            {
+                curUnitStorageData.basicUnitStorage.Add(currentUnitData);
+                currentUnitData = new UnitInformationData();
+                currentUnitData = new UnitInformationData();
+            }
+            else
+            {
+                // Modify Current event
+                if (currentUnitData == selectedUnitData)
+                {
+                    SaveUnitData(currentUnitData);
+                }
+            }
+            Save();
+        }
+    }
+
+    public void ShowCurrentUnit()
+    {
+        if (currentUnitData == null)
+        {
+            currentUnitData = new UnitInformationData();
+            currentUnitData.unitName = "";
+        }
+
+        if (currentUnitData == null)
+        {
+            currentUnitData = new UnitInformationData();
+            currentUnitData.buffList = new List<BaseBuffInformationData>();
+        }
+
+        GUILayout.BeginArea(new Rect(950, 12, leftPanelWidth, 300));
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("Unit Name:", EditorStyles.boldLabel, GUILayout.Width(65));
+        currentUnitData.unitName = EditorGUILayout.TextField(currentUnitData.unitName, GUILayout.MaxWidth(80));
+        GUILayout.Label("Atk Type:", EditorStyles.boldLabel, GUILayout.Width(60));
+        currentUnitData.attackType = (UnitAttackType)EditorGUILayout.EnumPopup(currentUnitData.attackType, GUILayout.MaxWidth(60));
+        GUILayout.EndHorizontal();
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("[HP]", EditorStyles.boldLabel, GUILayout.Width(40));
+        currentUnitData.maxHealth = EditorGUILayout.IntField((int)currentUnitData.maxHealth, GUILayout.MaxWidth(50));
+        GUILayout.Label("[SPD]", EditorStyles.boldLabel, GUILayout.Width(40));
+        currentUnitData.origSpeed = EditorGUILayout.IntField((int)currentUnitData.origSpeed, GUILayout.MaxWidth(50));
+        GUILayout.Label("[DTH]", EditorStyles.boldLabel, GUILayout.Width(40));
+        currentUnitData.deathThreshold = EditorGUILayout.FloatField(currentUnitData.deathThreshold, GUILayout.MaxWidth(45));
+        GUILayout.EndHorizontal();
+
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("[Damage List]", titleText, GUILayout.Width(280));
+        GUILayout.EndHorizontal();
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("[MIN]", EditorStyles.boldLabel, GUILayout.Width(40));
+        currentUnitData.minDamage = EditorGUILayout.IntField((int)currentUnitData.minDamage, GUILayout.MaxWidth(50));
+        GUILayout.Label("[MAX]", EditorStyles.boldLabel, GUILayout.Width(40));
+        currentUnitData.maxDamage = EditorGUILayout.IntField((int)currentUnitData.maxDamage, GUILayout.MaxWidth(50));
+        GUILayout.Label("RANGE:", EditorStyles.boldLabel, GUILayout.Width(50));
+        currentUnitData.range = EditorGUILayout.IntField(currentUnitData.range, GUILayout.MaxWidth(35));
+        GUILayout.EndHorizontal();
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("[Object Prefab]", titleText, GUILayout.Width(280));
+        GUILayout.EndHorizontal();
+
+        GUILayout.BeginHorizontal();
+        if (!string.IsNullOrEmpty(currentUnitData.prefabDataPath))
+        {
+            currentGameObjectPrefab = (Object)AssetDatabase.LoadAssetAtPath(currentUnitData.prefabDataPath, typeof(Object));
+        }
+        else
+        {
+            currentGameObjectPrefab = null;
+        }
+        GUILayout.Label("Prefab:", EditorStyles.boldLabel, GUILayout.Width(50));
+        EditorGUI.BeginChangeCheck();
+        currentGameObjectPrefab = (Object)EditorGUILayout.ObjectField(currentGameObjectPrefab, typeof(Object), true, GUILayout.MaxWidth(225));
+        if (EditorGUI.EndChangeCheck())
+        {
+            if(currentGameObjectPrefab != null)
+            {
+                currentUnitData.prefabDataPath = AssetDatabase.GetAssetPath(currentGameObjectPrefab);
+                Debug.Log("Changes has been made : " + currentUnitData.prefabDataPath);
+            }
+        }
+        GUILayout.EndHorizontal();
+
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("[Buff List]", titleText, GUILayout.Width(200));
+        bool addBuff = GUILayout.Button("+", GUILayout.Width(76));
+        GUILayout.EndHorizontal();
+
+        if (addBuff)
+        {
+            if(currentUnitData.buffList == null)
+            {
+                currentUnitData.buffList = new List<BaseBuffInformationData>();
+            }
+
+            BaseBuffInformationData tmp = new BaseBuffInformationData();
+            tmp = curUnitStorageData.buffStorage[0];
+            currentUnitData.buffList.Add(tmp);
+        }
+        if(currentUnitData.buffList != null && currentUnitData.buffList.Count > 0)
+        {
+            List<string> buffNameList = new List<string>();
+            for (int i = 0; i < curUnitStorageData.buffStorage.Count; i++)
+            {
+                buffNameList.Add(curUnitStorageData.buffStorage[i].buffName);
+            }
+
+            for (int i = 0; i < currentUnitData.buffList.Count; i++)
+            {
+                GUILayout.BeginHorizontal();
+
+                int selectedItem = curUnitStorageData.buffStorage.FindIndex(x => x.buffName == currentUnitData.buffList[i].buffName);
+                selectedItem = EditorGUILayout.Popup(selectedItem, buffNameList.ToArray(), GUILayout.MaxWidth(200));
+
+                if (currentUnitData.buffList[i] != curUnitStorageData.buffStorage[selectedItem])
+                {
+                    currentUnitData.buffList[i] = curUnitStorageData.buffStorage[selectedItem];
+                }
+
+                bool removeBuff = GUILayout.Button("-", GUILayout.Width(72));
+
+                if (removeBuff)
+                {
+                    currentUnitData.buffList.RemoveAt(i);
+                }
+                GUILayout.EndHorizontal();
+            }
+        }
+        GUILayout.EndArea();
+    }
+
+    public void SaveUnitData(UnitInformationData thisUnit)
+    {
+        int idx = curUnitStorageData.basicUnitStorage.FindIndex(x => x.unitName == thisUnit.unitName);
+        
+        if(curUnitStorageData.basicUnitStorage[idx].unitName == thisUnit.unitName)
+        {
+            curUnitStorageData.basicUnitStorage[idx] = thisUnit;
+            curUnitStorageData.basicUnitStorage[idx].prefabDataPath = thisUnit.prefabDataPath;
+        }
+        GUI.FocusControl(null);
+
+    }
+    #endregion
+
     #region HERO STORAGE
     public void ShowHeroStorageList()
     {
-        GUILayout.BeginArea(new Rect(825, 12, leftPanelWidth, 300));
+        GUILayout.BeginArea(new Rect(775, 12, leftPanelWidth, 300));
 
         GUILayout.BeginHorizontal();
         GUILayout.Box("Hero Units", titleText, GUILayout.Width(145), GUILayout.Height(20));
@@ -216,7 +445,6 @@ public class KingdomUnitStorageEditor : EditorWindow
             Save();
         }
     }
-
     public void ShowCurrentHeroData()
     {
         if(currentHeroData == null)
@@ -230,7 +458,7 @@ public class KingdomUnitStorageEditor : EditorWindow
             currentHeroData.unitInformation = new UnitInformationData();
         }
 
-        GUILayout.BeginArea(new Rect(545, 12, leftPanelWidth, 300));
+        GUILayout.BeginArea(new Rect(460, 12, leftPanelWidth, 300));
 
         GUILayout.BeginHorizontal();
         GUILayout.Label("Hero Name:", EditorStyles.boldLabel, GUILayout.Width(70));
@@ -260,6 +488,14 @@ public class KingdomUnitStorageEditor : EditorWindow
         currentHeroData.unitInformation.minDamage = EditorGUILayout.IntField((int)currentHeroData.unitInformation.minDamage, GUILayout.MaxWidth(75));
         GUILayout.Label("Max:", EditorStyles.boldLabel, GUILayout.Width(32));
         currentHeroData.unitInformation.maxDamage = EditorGUILayout.IntField((int)currentHeroData.unitInformation.maxDamage, GUILayout.MaxWidth(75));
+        GUILayout.EndHorizontal();
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("[SPD]", EditorStyles.boldLabel, GUILayout.Width(40));
+        GUILayout.Label("Speed:", EditorStyles.boldLabel, GUILayout.Width(40));
+        currentHeroData.unitInformation.origSpeed = EditorGUILayout.IntField((int)currentHeroData.unitInformation.origSpeed, GUILayout.MaxWidth(75));
+        GUILayout.Label("Range:", EditorStyles.boldLabel, GUILayout.Width(42));
+        currentHeroData.unitInformation.range = EditorGUILayout.IntField((int)currentHeroData.unitInformation.range, GUILayout.MaxWidth(65));
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();

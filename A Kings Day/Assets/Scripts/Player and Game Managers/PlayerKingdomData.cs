@@ -60,7 +60,6 @@ namespace Kingdoms
         {
             get { return recruits + swordsmenCount + spearmenCount + archerCount; }
         }
-
         [Header("Population")]
         public int population;
         public int safePopulation = 50;

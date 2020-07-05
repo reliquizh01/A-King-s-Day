@@ -45,7 +45,7 @@ namespace GameResource
         public int maxTroops = 50;
         public int techMaxTroops = 0;
 
-        public int curMorale = 100;
+        public int baseMorale = 30;
         public int techMorale = 0;
 
 

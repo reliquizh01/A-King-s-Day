@@ -11,8 +11,8 @@ using UnityEngine.EventSystems;
 public enum TeamType
 {
     Neutral,
-    Enemy,
-    Player,
+    Defender,
+    Attacker,
 }
 public class TileControlledBehavior : MonoBehaviour
 {
@@ -21,7 +21,7 @@ public class TileControlledBehavior : MonoBehaviour
     public TeamType potentialOwner;
 
     public int currentControlLevel;
-    public int maxControllevel = 8;
+    public int maxControllevel = 7;
 
     [Header("Control Sprites")]
     public SpriteRenderer mySpriteRenderer;
@@ -38,6 +38,10 @@ public class TileControlledBehavior : MonoBehaviour
         {
             return true;
         }
+        else if(potentialOwner == currentOwner && currentControlLevel != 0)
+        {
+            return false;
+        }
         else
         {
             return (currentControlLevel >= maxControllevel);
@@ -47,73 +51,94 @@ public class TileControlledBehavior : MonoBehaviour
     public void ProgressControlLevel(TeamType toThisType)
     {
         potentialOwner = toThisType;
-        currentControlLevel += 1;
 
-        if (currentOwner == toThisType) return;
-
-        // Check Current Owner
-        switch (currentOwner)
+        // Tries to change current Owner to what owner is right now.
+        if (currentOwner == potentialOwner && currentControlLevel == 0) return;
+        else if(currentOwner == potentialOwner && currentControlLevel >= 0)
         {
-            case TeamType.Neutral: // Is Neutral
-                switch (toThisType)
-                {
-                    case TeamType.Enemy:
-                        NeutralToEnemy(currentControlLevel);
-                        break;
-                    case TeamType.Player:
-                        NeutralToPlayer(currentControlLevel);
-                        break;
-                    default:
-                        break;
-                }
-                break;
-            case TeamType.Enemy:
-                switch (toThisType)
-                {
-                    case TeamType.Neutral:
-                        ReturnToNeutral();
-                        break;
-                    case TeamType.Player:
-                        EnemyToPlayer(currentControlLevel);
-                        break;
-                    default:
-                        break;
-                }
-                break;
-            case TeamType.Player:
-                switch (toThisType)
-                {
-                    case TeamType.Neutral:
-                        ReturnToNeutral();
-                        break;
+            currentControlLevel = 0;
+            switch (currentOwner)
+            {
+                case TeamType.Neutral:
+                    ReturnToNeutral();
+                    break;
+                case TeamType.Defender:
+                    AttackerToDefender(7);
+                    break;
+                case TeamType.Attacker:
+                    DefenderToAttacker(7);
+                    break;
+                default:
+                    break;
+            }
+        }
+        else // GOING FORWARD
+        {
+            potentialOwner = toThisType;
+            currentControlLevel += 1;
+            // Check Current Owner
+            switch (currentOwner)
+            {
+                case TeamType.Neutral: // Is Neutral
+                    switch (potentialOwner)
+                    {
+                        case TeamType.Attacker:
+                            NeutralToAttacker(currentControlLevel);
+                            break;
+                        case TeamType.Defender:
+                            NeutralToDefender(currentControlLevel);
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case TeamType.Attacker:
+                    switch (potentialOwner)
+                    {
+                        case TeamType.Neutral:
+                            ReturnToNeutral();
+                            break;
+                        case TeamType.Defender:
+                            AttackerToDefender(currentControlLevel);
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case TeamType.Defender:
+                    switch (potentialOwner)
+                    {
+                        case TeamType.Neutral:
+                            ReturnToNeutral();
+                            break;
 
-                    case TeamType.Enemy:
-                        PlayerToEnemy(currentControlLevel);
-                        break;
+                        case TeamType.Attacker:
+                            DefenderToAttacker(currentControlLevel);
+                            break;
 
-                    default:
-                        break;
-                }
-                break;
-            default:
-                break;
+                        default:
+                            break;
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
     }
-
-    public void NeutralToEnemy(int thisLevel)
+    public void NeutralToAttacker(int thisLevel)
     {
         mySpriteRenderer.sprite = neutralToRed[thisLevel];
     }
-    public void NeutralToPlayer(int thisLevel)
+    public void NeutralToDefender(int thisLevel)
     {
         mySpriteRenderer.sprite = neutralToBlue[thisLevel];
     }
 
-    public void PlayerToEnemy(int thisLevel)
+    public void DefenderToAttacker(int thisLevel)
     {
         mySpriteRenderer.sprite = blueToRed[thisLevel];
     }
-    public void EnemyToPlayer(int thisLevel)
+    public void AttackerToDefender(int thisLevel)
     {
         mySpriteRenderer.sprite = redToBlue[thisLevel];
     }
@@ -127,12 +152,29 @@ public class TileControlledBehavior : MonoBehaviour
     {
         if(currentOwner != potentialOwner)
         {
+            previousOwner = currentOwner;
             currentOwner = potentialOwner;
-            currentControlLevel = 0;
 
+            // Update total Victory
+            if (previousOwner == TeamType.Neutral)
+            {
+                if(BattlefieldSystemsManager.GetInstance != null)
+                {
+                    BattlefieldSystemsManager.GetInstance.UpdateTileVictoryPoints();
+                }
+            }
+
+
+            currentControlLevel = 0;
+                
             if(potentialOwner == TeamType.Neutral)
             {
                 ReturnToNeutral();
+            }
+
+            if(BattlefieldSystemsManager.GetInstance != null)
+            {
+                BattlefieldSystemsManager.GetInstance.PanelConquered(currentOwner, previousOwner);
             }
         }
     }

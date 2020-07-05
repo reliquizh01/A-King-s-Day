@@ -6,6 +6,7 @@ using Managers;
 using Utilities;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using Characters;
 
 public enum ScenePointStatus
 {
@@ -27,8 +28,10 @@ public class ScenePointBehavior : BaseInteractableBehavior
     [Header("Scene Loader")]
     public bool sceneLoader = false;
     public SceneType SceneToLoad;
-    public void Start()
+
+    public override void Start()
     {
+        base.Start();
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         if(ScenePointPathfinder.GetInstance != null)
         {
@@ -44,7 +47,10 @@ public class ScenePointBehavior : BaseInteractableBehavior
         }
         if(currentPointStatus == ScenePointStatus.BattlePathfinding)
         {
-            battleTile.ShowHoverTite();
+            if (BattlefieldSceneManager.GetInstance.isCampaignMode)
+            {
+                battleTile.ShowHoverTile();
+            }
         }
         else if (!string.IsNullOrEmpty(mesg) && !isInteractingWith)
         {
@@ -62,7 +68,10 @@ public class ScenePointBehavior : BaseInteractableBehavior
         }
         if (currentPointStatus == ScenePointStatus.BattlePathfinding)
         {
-            battleTile.HideHoverTile();
+            if (BattlefieldSceneManager.GetInstance.isCampaignMode)
+            {
+                battleTile.HideHoverTile();
+            }
         }
         else if (!string.IsNullOrEmpty(mesg))
         {
@@ -96,6 +105,29 @@ public class ScenePointBehavior : BaseInteractableBehavior
         }
     }
 
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        BaseCharacter colCharacter = (collision.gameObject.GetComponent<BaseCharacter>() != null) ? collision.gameObject.GetComponent<BaseCharacter>() : null;
+
+        if(colCharacter == null)
+        {
+            return;
+        }
+
+        battleTile.AddCharacterSteppingIn(colCharacter);
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        BaseCharacter colCharacter = (collision.gameObject.GetComponent<BaseCharacter>() != null) ? collision.gameObject.GetComponent<BaseCharacter>() : null;
+
+        if (colCharacter == null)
+        {
+            return;
+        }
+
+        battleTile.RemoveChacracterSteppingIn(colCharacter);
+    }
     public void SetAsActive(bool active)
     {
         if(active)

@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Managers;
 
 public class BattlefieldPathHandler : MonoBehaviour
 {
-    [Header("Spawn Points")]
     public List<ScenePointBehavior> scenePoints;
+    public GameObject attackerSpawnArrow;
+    public GameObject defenderSpawnArrow;
+
+    [Header("Spawn Points")]
     public ScenePointBehavior attackerSpawnPoint;
     public ScenePointBehavior defenderSpawnPoint;
 
 
-    public GameObject attackerSpawnArrow;
     public void Start()
     {
         SetupScenePoints();
@@ -35,6 +38,15 @@ public class BattlefieldPathHandler : MonoBehaviour
         }
     }
 
+    public void ShowDefenderArrow()
+    {
+        defenderSpawnArrow.SetActive(true);
+    }
+    public void HideDefenderArrow()
+    {
+
+        defenderSpawnArrow.SetActive(false);
+    }
     public void ShowSpawnArrow()
     {
         attackerSpawnArrow.SetActive(true);

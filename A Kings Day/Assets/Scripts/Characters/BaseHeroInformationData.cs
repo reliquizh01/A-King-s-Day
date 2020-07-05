@@ -38,11 +38,17 @@ namespace Characters
     public class UnitInformationData
     {
         public string unitName = "";
+        public string unitGenericName;
         public UnitAttackType attackType;
         public float curhealth, maxHealth, curSpeed, origSpeed, minDamage, maxDamage;
+        public int range;
+        public int unitCooldown = 1;
 
+        public string prefabDataPath;
         public UnitState currentState;
         public float deathThreshold = -5.0f;
+
+        public int morale;
 
         public List<BaseBuffInformationData> buffList;
 
@@ -94,10 +100,12 @@ namespace Characters
         public void ReceiveDamage(float damageAmount)
         {
             float checkAmount = curhealth - damageAmount;
+            Debug.Log("[Current Health: "+curhealth+"][Potential Health: " + checkAmount + "] [Damage Amount:" + damageAmount+"]" + " RECEIVED BY:" + unitName + " ]");
 
-            if(checkAmount <= 0)
+            if (checkAmount <= 0)
             {
-                if(checkAmount <= deathThreshold)
+                curhealth -= damageAmount;
+                if (curhealth <= deathThreshold)
                 {
                     currentState = UnitState.Dead;
                 }
@@ -105,10 +113,10 @@ namespace Characters
                 {
                     currentState = UnitState.Injured;
                 }
-                curhealth = 0;
             }
             else
             {
+                Debug.Log("Normal Dmg");
                 curhealth -= damageAmount;
             }
         }

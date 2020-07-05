@@ -12,6 +12,7 @@ namespace Characters
         Defensive,
         OffensiveBuff,
         DefensiveBuff,
+        PassiveBuff,
     }
 
     public enum TargetType
@@ -25,6 +26,7 @@ namespace Characters
         health,
         damage,
         speed,
+        range,
     }
 
     public enum AreaAffected

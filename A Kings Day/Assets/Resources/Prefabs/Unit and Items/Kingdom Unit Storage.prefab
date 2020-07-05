@@ -51,13 +51,17 @@ MonoBehaviour:
       unitName: Merlin
       attackType: 2
       curhealth: 0
-      maxHealth: 10
+      maxHealth: 15
       curSpeed: 0
-      origSpeed: 0
-      minDamage: 1
-      maxDamage: 1
+      origSpeed: 2
+      minDamage: 3
+      maxDamage: 5
+      range: 10
+      unitCooldown: 5
+      prefabDataPath: 
       currentState: 0
       deathThreshold: 0
+      morale: 0
       buffList: []
     healthGrowthRate: 2
     speedGrowthRate: 3
@@ -84,11 +88,15 @@ MonoBehaviour:
       curhealth: 0
       maxHealth: 15
       curSpeed: 0
-      origSpeed: 0
-      minDamage: 2
+      origSpeed: 3
+      minDamage: 4
       maxDamage: 5
+      range: 1
+      unitCooldown: 5
+      prefabDataPath: 
       currentState: 0
       deathThreshold: 0
+      morale: 0
       buffList: []
     healthGrowthRate: 5
     speedGrowthRate: 2
@@ -123,15 +131,44 @@ MonoBehaviour:
       curhealth: 0
       maxHealth: 10
       curSpeed: 0
-      origSpeed: 0
+      origSpeed: 2
       minDamage: 2
       maxDamage: 3
+      range: 6
+      unitCooldown: 5
+      prefabDataPath: 
       currentState: 0
       deathThreshold: 0
+      morale: 0
       buffList: []
     healthGrowthRate: 3
     speedGrowthRate: 3
     damageGrowthRate: 4
+    baseHeroCoinPrice: 0
+    skillsList: []
+    equipments: []
+  - heroRarity: 1
+    isRandomGenerated: 0
+    heroLevel: 1
+    unitInformation:
+      unitName: Knight
+      attackType: 0
+      curhealth: 0
+      maxHealth: 15
+      curSpeed: 0
+      origSpeed: 2
+      minDamage: 3
+      maxDamage: 4
+      range: 1
+      unitCooldown: 5
+      prefabDataPath: 
+      currentState: 0
+      deathThreshold: -5
+      morale: 0
+      buffList: []
+    healthGrowthRate: 2
+    speedGrowthRate: 1
+    damageGrowthRate: 2
     baseHeroCoinPrice: 0
     skillsList: []
     equipments: []
@@ -148,8 +185,12 @@ MonoBehaviour:
       origSpeed: 0
       minDamage: 8
       maxDamage: 8
+      range: 0
+      unitCooldown: 5
+      prefabDataPath: 
       currentState: 0
       deathThreshold: -5
+      morale: 0
       buffList: []
     itemsSold: []
   - merchantName: 
@@ -164,10 +205,79 @@ MonoBehaviour:
       origSpeed: 0
       minDamage: 5
       maxDamage: 5
+      range: 0
+      unitCooldown: 5
+      prefabDataPath: 
       currentState: 0
       deathThreshold: -5
+      morale: 0
       buffList: []
     itemsSold: []
+  basicUnitStorage:
+  - unitName: Swordsman
+    attackType: 0
+    curhealth: 0
+    maxHealth: 10
+    curSpeed: 0
+    origSpeed: 2
+    minDamage: 3
+    maxDamage: 4
+    range: 1
+    unitCooldown: 5
+    prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+    currentState: 0
+    deathThreshold: -5
+    morale: 0
+    buffList: []
+  - unitName: Spearman
+    attackType: 0
+    curhealth: 0
+    maxHealth: 9
+    curSpeed: 0
+    origSpeed: 2
+    minDamage: 1
+    maxDamage: 3
+    range: 1
+    unitCooldown: 5
+    prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+    currentState: 0
+    deathThreshold: -5
+    morale: 0
+    buffList:
+    - buffName: First Strike
+      duration: 800
+      targetStats: 3
+      effectAmount: 1
+  - unitName: Archer
+    attackType: 1
+    curhealth: 0
+    maxHealth: 7
+    curSpeed: 0
+    origSpeed: 2
+    minDamage: 1
+    maxDamage: 2
+    range: 6
+    unitCooldown: 5
+    prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+    currentState: 0
+    deathThreshold: -5
+    morale: 0
+    buffList: []
+  - unitName: Recruit
+    attackType: 0
+    curhealth: 0
+    maxHealth: 5
+    curSpeed: 0
+    origSpeed: 3
+    minDamage: 1
+    maxDamage: 2
+    range: 1
+    unitCooldown: 1
+    prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+    currentState: 0
+    deathThreshold: -5
+    morale: 0
+    buffList: []
   skillStorage:
   - skillName: Holy Heal
     skillType: 2
@@ -233,4 +343,8 @@ MonoBehaviour:
   - buffName: Weak DMG Boost
     duration: 30
     targetStats: 1
+    effectAmount: 1
+  - buffName: First Strike
+    duration: 800
+    targetStats: 3
     effectAmount: 1

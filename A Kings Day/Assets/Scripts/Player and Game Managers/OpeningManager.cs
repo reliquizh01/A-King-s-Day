@@ -52,6 +52,11 @@ public class OpeningManager : BaseManager
         Debug.Log("Transitioning to Kingdom Creation");
         TransitionManager.GetInstance.TransitionToNextGameView(GameViews.KingdomCreationView);
     }
+
+    public void TransitionToCustomBattle()
+    {
+        TransitionManager.GetInstance.LoadScene(SceneType.Battlefield);
+    }
     public override void CloseManager()
     {
         base.CloseManager();

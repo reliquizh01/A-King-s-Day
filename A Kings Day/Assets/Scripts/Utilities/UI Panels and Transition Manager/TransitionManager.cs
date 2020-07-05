@@ -16,6 +16,7 @@ public enum GameViews
     EventView,
     ConversationView,
     BalconyView,
+    BattlefieldView,
 }
 
 namespace Managers
@@ -174,6 +175,9 @@ namespace Managers
                 case 2:
                     TransitionToNextGameView(GameViews.BalconyView);
                     break;
+                case 3:
+                    TransitionToNextGameView(GameViews.BattlefieldView);
+                    break;
             }
         }
         public void SetAsNewScene()
@@ -273,6 +277,11 @@ namespace Managers
             //    Debug.Log("CURRENT VIEW : " + currentMgr.gameView);
                 currentMgr.thisManager.PreOpenManager();
             }
+        }
+
+        public void TransitionToCustomBattleView()
+        {
+            TransitionToNextGameView(GameViews.BattlefieldView, true);
         }
     }
 }

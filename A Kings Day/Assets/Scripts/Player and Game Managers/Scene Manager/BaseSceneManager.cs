@@ -12,6 +12,7 @@ namespace Managers
         Opening,
         Courtroom,
         Balcony,
+        Battlefield,
     }
     public class BaseSceneManager : BaseManager
     {
