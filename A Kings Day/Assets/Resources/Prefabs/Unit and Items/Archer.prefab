@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6444257460225498908}
   - component: {fileID: 7482069573993764518}
-  - component: {fileID: 8268712990452197734}
   - component: {fileID: 226813075226311785}
   m_Layer: 12
   m_Name: Archer
@@ -72,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: -1856466663
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1145579145790797673, guid: 86e98230fe324a9458b0d3d3bc46f946,
+  m_Sprite: {fileID: -5562564189499104465, guid: 3af8c5aeb1ddff54b994bf0f30f47b23,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -84,25 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!95 &8268712990452197734
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2217640927926336142}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 08fe30f353261134cac5dc5442ab469c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &226813075226311785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +139,7 @@ MonoBehaviour:
   - {x: -0.012554269, y: 0.0054362155, z: 0}
   m_ShapePathHash: 2053822741
   m_Mesh: {fileID: 0}
-  m_InstanceId: 139908
+  m_InstanceId: 71842
 --- !u!1 &4068155436228673008
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,6 +155,7 @@ GameObject:
   - component: {fileID: 832775072519208600}
   - component: {fileID: 1940113220215719135}
   - component: {fileID: 6670686050027292581}
+  - component: {fileID: 4153552887913288208}
   m_Layer: 12
   m_Name: Archer
   m_TagString: Untagged
@@ -207,7 +188,7 @@ Animator:
   m_GameObject: {fileID: 4068155436228673008}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 08fe30f353261134cac5dc5442ab469c, type: 2}
+  m_Controller: {fileID: 9100000, guid: ab11c5ceca55b3849aa9ace66f48e6c9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -248,15 +229,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eef3621518afa54991f1c7eb49f2285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAnimController: {fileID: 2926462599966622689}
   myMovements: {fileID: 8299562816852321892}
   myRange: {fileID: 0}
+  myAnimation: {fileID: 0}
   isKing: 0
   isMainCharacter: 0
   isGuest: 0
   isLeaving: 0
   unitInformation:
     unitName: Archer
+    unitGenericName: 
     attackType: 1
     curhealth: 0
     maxHealth: 0
@@ -265,12 +247,15 @@ MonoBehaviour:
     minDamage: 0
     maxDamage: 0
     range: 0
+    unitCooldown: 1
+    unitCost: 5
     prefabDataPath: 
     currentState: 0
     deathThreshold: -5
     morale: 0
     buffList: []
   isFighting: 0
+  canReturnToCamp: 0
   teamType: 0
 --- !u!61 &832775072519208600
 BoxCollider2D:
@@ -334,3 +319,18 @@ MonoBehaviour:
   totalRange: 0
   distancePerRange: 0.3
   enemiesInRange: []
+--- !u!114 &4153552887913288208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4068155436228673008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457b82f503099ba4f85584b488ccf552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAnimator: {fileID: 2926462599966622689}
+  currentState: 0
+  facingDirection: 0

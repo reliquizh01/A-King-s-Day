@@ -83,5 +83,21 @@ namespace Managers
             battleUIInformation.SetUnitPanels(spawnManager.attackingCommander, spawnManager.defendingCommander);
             BattlefieldSystemsManager.GetInstance.StartDay();
         }
+
+
+        public void EndTodaysBattle()
+        {
+            // Add Cutscenes here
+            BattlefieldSystemsManager.GetInstance.unitsInCamp = true;
+
+            battleUIInformation.ShowdailyReportPanel();
+        }
+        public void CheckCommanderReadiness()
+        {
+            if(!isCampaignMode)
+            {
+                battleUIInformation.CheckReadiness();
+            }
+        }
     }
 }

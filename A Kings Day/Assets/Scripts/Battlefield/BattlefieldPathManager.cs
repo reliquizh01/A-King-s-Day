@@ -54,6 +54,13 @@ namespace Battlefield
             }
         }
 
+        public int ObtainColumnByPoint(ScenePointBehavior thisPoint)
+        {
+            int columnNumber = fieldPaths.FindIndex(x => x.attackerSpawnPoint == thisPoint || x.defenderSpawnPoint == thisPoint );
+
+            return columnNumber;
+        }
+
         public int ObtainConqueredTiles()
         {
             int totalCount = 0;
@@ -74,7 +81,60 @@ namespace Battlefield
                 }
             }
             return totalCount;
+        }
 
+        public List<TileConversionHandler> ObtainConqueredTiles(TeamType thisTeam)
+        {
+            List<TileConversionHandler> tmp = new List<TileConversionHandler>();
+
+            for (int i = 0; i < fieldPaths.Count; i++)
+            {
+                for (int x = 0; x < fieldPaths[i].scenePoints.Count; x++)
+                {
+                    if(fieldPaths[i].scenePoints[x].battleTile.convertedTile.currentOwner == thisTeam)
+                    {
+                        tmp.Add(fieldPaths[i].scenePoints[x].battleTile);
+                        Debug.Log("Adding :" + tmp.Count +" Cur Team : " + thisTeam);
+                    }
+                }
+            }
+
+            return tmp;
+        }
+        public void ConvertAllToOneTeam(TeamType thisTeam)
+        {
+            switch (thisTeam)
+            {
+                case TeamType.Neutral:
+                    for (int i = 0; i < fieldPaths.Count; i++)
+                    {
+                        for (int x = 0; x < fieldPaths[i].scenePoints.Count; x++)
+                        {
+                            fieldPaths[i].scenePoints[x].battleTile.ConvertTile(TeamType.Neutral);
+                        }
+                    }
+                    break;
+                case TeamType.Defender:
+                    for (int i = 0; i < fieldPaths.Count; i++)
+                    {
+                        for (int x = 0; x < fieldPaths[i].scenePoints.Count; x++)
+                        {
+                            fieldPaths[i].scenePoints[x].battleTile.ConvertTile(TeamType.Defender);
+                        }
+                    }
+                    break;
+                case TeamType.Attacker:
+                    for (int i = 0; i < fieldPaths.Count; i++)
+                    {
+                        for (int x = 0; x < fieldPaths[i].scenePoints.Count; x++)
+                        {
+                            fieldPaths[i].scenePoints[x].battleTile.ConvertTile(TeamType.Attacker);
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

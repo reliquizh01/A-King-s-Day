@@ -33,16 +33,19 @@ public class TileConversionHandler : MonoBehaviour
             currentChangeRate += Time.deltaTime;
             if(currentChangeRate >= tileChangeMaxRate)
             {
+                currentChangeRate = 0.0f;
                 if (convertedTile.CheckConversionIsComplete())
                 {
+                    if(isConverting)
+                    {
+                        convertedTile.CompleteControlLevel();
+                    }
                     isConverting = false;
-                    convertedTile.CompleteControlLevel();
                 }
                 else
                 {
                     UpdateTileBehavior();
                 }
-                currentChangeRate = 0;
             }
         }
 
@@ -60,7 +63,10 @@ public class TileConversionHandler : MonoBehaviour
             {
                 for (int i = 0; i < idxToRemove.Count; i++)
                 {
-                    characterStepping.RemoveAt(idxToRemove[i]);
+                    if(idxToRemove[i] < characterStepping.Count -1)
+                    {
+                        characterStepping.RemoveAt(idxToRemove[i]);
+                    }
                 }
             }
 
@@ -156,8 +162,12 @@ public class TileConversionHandler : MonoBehaviour
 
         if(convertedTile.currentControlLevel == convertedTile.maxControllevel)
         {
+            if(isConverting)
+            {
+                convertedTile.CompleteControlLevel();
+            }
+
             isConverting = false;
-            convertedTile.CompleteControlLevel();
         }
 
     }

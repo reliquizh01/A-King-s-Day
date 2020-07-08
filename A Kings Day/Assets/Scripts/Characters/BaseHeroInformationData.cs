@@ -43,6 +43,7 @@ namespace Characters
         public float curhealth, maxHealth, curSpeed, origSpeed, minDamage, maxDamage;
         public int range;
         public int unitCooldown = 1;
+        public int unitCost = 5;
 
         public string prefabDataPath;
         public UnitState currentState;
@@ -100,7 +101,7 @@ namespace Characters
         public void ReceiveDamage(float damageAmount)
         {
             float checkAmount = curhealth - damageAmount;
-            Debug.Log("[Current Health: "+curhealth+"][Potential Health: " + checkAmount + "] [Damage Amount:" + damageAmount+"]" + " RECEIVED BY:" + unitName + " ]");
+          //  Debug.Log("[Current Health: "+curhealth+"][Potential Health: " + checkAmount + "] [Damage Amount:" + damageAmount+"]" + " RECEIVED BY:" + unitName + " ]");
 
             if (checkAmount <= 0)
             {
@@ -116,7 +117,6 @@ namespace Characters
             }
             else
             {
-                Debug.Log("Normal Dmg");
                 curhealth -= damageAmount;
             }
         }

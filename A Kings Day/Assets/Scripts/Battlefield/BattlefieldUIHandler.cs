@@ -20,8 +20,22 @@ namespace Battlefield
         public BattlefieldUnitSelectionController attackerPanel;
         public BattlefieldUnitSelectionController defenderPanel;
 
+        public DailyReportPanel attackerReportPanel;
+        public DailyReportPanel defenderReportPanel;
+
+        public CountingEffectUI attackerWarChestCount;
+        public CountingEffectUI defenderWarChestCount;
+
+        public TimerUI nextDayTimer;
+
         public void SetUnitPanels(BattlefieldCommander attacker, BattlefieldCommander defender)
         {
+            attackerReportPanel.AssignCommander(attacker);
+            defenderReportPanel.AssignCommander(defender);
+
+            attackerPanel.warChestCount.targetCount = attacker.resourceAmount;
+            defenderPanel.warChestCount.targetCount = defender.resourceAmount;
+
             for (int i = 0; i < attackerPanel.unitList.Count; i++)
             {
                 attackerPanel.unitList[i].currentMaxCooldown = attacker.unitsCarried[i].unitInformation.unitCooldown;
@@ -59,20 +73,35 @@ namespace Battlefield
             StartCoroutine(myPanel.WaitAnimationForAction(myPanel.openAnimationName, StartCounting));
         }
 
+        public void ShowdailyReportPanel()
+        {
+            if(BattlefieldSpawnManager.GetInstance == null)
+            {
+                return;
+            }
+
+            attackerReportPanel.gameObject.SetActive(true);
+            attackerReportPanel.ShowDailyReport();
+            defenderReportPanel.gameObject.SetActive(true);
+            defenderReportPanel.ShowDailyReport();
+        }
         public void UpdateUIInformation()
         {
             dayCounter.text = "Day " + BattlefieldSystemsManager.GetInstance.currentDay;
-
+            StartCounting();
+            UpdateUnitPanels();
         }
         public void StartCounting()
         {
             for (int i = 0; i < attackerPanel.unitList.Count; i++)
             {
+                attackerPanel.unitList[i].currentCooldownCounter = 0;
                 attackerPanel.unitList[i].startCounting = true;
             }
 
             for (int i = 0; i < defenderPanel.unitList.Count; i++)
             {
+                defenderPanel.unitList[i].currentCooldownCounter = 0;
                 defenderPanel.unitList[i].startCounting = true;
             }
         }
@@ -85,6 +114,11 @@ namespace Battlefield
 
             BattlefieldCommander attacker = BattlefieldSpawnManager.GetInstance.attackingCommander;
             BattlefieldCommander defender = BattlefieldSpawnManager.GetInstance.defendingCommander;
+
+            attackerPanel.warChestCount.targetCount = attacker.resourceAmount;
+            attackerPanel.warChestCount.startUpdating = true;
+            defenderPanel.warChestCount.targetCount = defender.resourceAmount;
+            defenderPanel.warChestCount.startUpdating = true;
 
             for (int i = 0; i < attackerPanel.unitList.Count; i++)
             {
@@ -105,15 +139,6 @@ namespace Battlefield
             {
                 defenderPanel.unitList[i].currentMaxCooldown = defender.unitsCarried[i].unitInformation.unitCooldown;
                 defenderPanel.unitList[i].countText.text = defender.unitsCarried[i].totalUnitsAvailableForDeployment.ToString();
-
-                if (defender.unitsCarried[i].totalUnitsAvailableForDeployment <= 0)
-                {
-                    defenderPanel.unitList[i].DisablePanel();
-                }
-                else
-                {
-                    defenderPanel.unitList[i].EnablePanel();
-                }
             }
         }
 
@@ -127,6 +152,29 @@ namespace Battlefield
         public bool CheckOverLapping()
         {
             return attackerPanel.playerPlacement == defenderPanel.playerPlacement;
+        }
+
+        public void CheckReadiness()
+        {
+            if(attackerReportPanel.isReady && defenderReportPanel.isReady)
+            {
+                nextDayTimer.gameObject.SetActive(true);
+                nextDayTimer.StartTimer(0, 5, StartNextDay);
+            }
+            else
+            {
+                nextDayTimer.startTimer = false;
+                nextDayTimer.gameObject.SetActive(false);
+            }
+        }
+
+        public void StartNextDay()
+        {
+            attackerReportPanel.myPanel.PlayCloseAnimation();
+            defenderReportPanel.myPanel.PlayCloseAnimation();
+            nextDayTimer.gameObject.SetActive(false);
+
+            BattlefieldSystemsManager.GetInstance.StartDay();
         }
     }
 

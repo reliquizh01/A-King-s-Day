@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Managers;
 using Characters;
+using UnityEngine.UI;
+using Utilities;
 
 namespace Battlefield
 {
@@ -26,6 +28,9 @@ namespace Battlefield
 
         public PlayerControlType controlType;
         public ClickedMovement lastClicked;
+
+        [Header("Resource Information")]
+        public CountingEffectUI warChestCount;
 
         [Header("Selected Information")]
         public int currentSelectedIdx;
@@ -74,13 +79,16 @@ namespace Battlefield
 
         public void Update()
         {
-            if(BattlefieldSceneManager.GetInstance.isCampaignMode)
+            if(BattlefieldSystemsManager.GetInstance.dayInProgress)
             {
-                CampaignControls();
-            }
-            else
-            {
-                MultiplayerControl();
+                if(BattlefieldSceneManager.GetInstance.isCampaignMode)
+                {
+                    CampaignControls();
+                }
+                else
+                {
+                    MultiplayerControl();
+                }
             }
         }
 

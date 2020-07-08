@@ -184,7 +184,7 @@ namespace Characters
         public void SetPosition(ScenePointBehavior thisPoint, bool teleport = false)
         {
             currentPoint = thisPoint;
-            Debug.Log("Setting Position!");
+            //Debug.Log("Setting Position!");
             if (teleport)
             {
                 transform.position = thisPoint.transform.position;
@@ -215,18 +215,17 @@ namespace Characters
                 reachLastTargetCallback = targetCallBack;
             }
 
+            pathIdx = 0;
+            pathToTargetPoint.Clear();
             if (currentTargetPoint == currentPoint)
             {
-                if (currentTargetPoint.sceneLoader && myCharacter.isKing)
-                {
-                    MoveTowards(thisPoint);
-                }
+                MoveTowards(thisPoint);
             }
             else
             {
                 pathToTargetPoint = ScenePointPathfinder.GetInstance.ObtainScenePath(currentPoint, currentTargetPoint);
                 targetPos = pathToTargetPoint[0].transform.position;
-                Debug.Log("Path:" + pathToTargetPoint[0].transform.position);
+                //Debug.Log("Path:" + pathToTargetPoint[0].transform.position);
                 isMoving = true;
             }
 

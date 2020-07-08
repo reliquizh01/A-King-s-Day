@@ -15,8 +15,8 @@ namespace Characters
 
     public enum FacingDirection
     {
-        Down,
         Up,
+        Down,
         Left,
         Right,
     }
@@ -24,7 +24,7 @@ namespace Characters
     {
         public Animator myAnimator;
         public int currentState; // 0 - Idle | 1 - Walking | 2 - Damage Received | 3 - Attack State |  4 - Injured State
-        public float facingDirection = 0.0f; // 0 - Down | 1 - Up | 2 - Left | 3 - Right
+        public float facingDirection = 0.0f; // 0 - Up | 1 - Down | 2 - Left | 3 - Right
 
 
         public void ChangeState(CharacterStates newState)

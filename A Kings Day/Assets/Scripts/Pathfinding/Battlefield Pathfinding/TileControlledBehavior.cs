@@ -160,7 +160,7 @@ public class TileControlledBehavior : MonoBehaviour
             {
                 if(BattlefieldSystemsManager.GetInstance != null)
                 {
-                    BattlefieldSystemsManager.GetInstance.UpdateTileVictoryPoints();
+                    BattlefieldSystemsManager.GetInstance.UpdateTotalVictoryPoints();
                 }
             }
 

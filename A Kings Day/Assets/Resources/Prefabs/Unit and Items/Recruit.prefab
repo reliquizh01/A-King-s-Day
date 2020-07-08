@@ -98,6 +98,7 @@ MonoBehaviour:
   isLeaving: 0
   unitInformation:
     unitName: Recruit
+    unitGenericName: 
     attackType: 0
     curhealth: 0
     maxHealth: 0
@@ -107,12 +108,14 @@ MonoBehaviour:
     maxDamage: 0
     range: 0
     unitCooldown: 1
+    unitCost: 5
     prefabDataPath: 
     currentState: 0
     deathThreshold: -5
     morale: 0
     buffList: []
   isFighting: 0
+  canReturnToCamp: 0
   teamType: 0
 --- !u!114 &5546475695159125663
 MonoBehaviour:
@@ -262,7 +265,7 @@ SpriteRenderer:
   m_SortingLayerID: -1856466663
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7319031239135692439, guid: 4041f140d7da4df438d066843b28bb7a,
+  m_Sprite: {fileID: 5485572943743903372, guid: 4041f140d7da4df438d066843b28bb7a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

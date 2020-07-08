@@ -33,7 +33,7 @@ public class BattlefieldSystemsManager : MonoBehaviour
     public int maxDays = 7;
     public int minutePerDay = 2, secondsPerDay = 0;
     public bool dayInProgress;
-
+    public bool unitsInCamp = false;
     [Header("Victory Type")]
     public BattlefieldWinCondition winCondition;
     public int attackerConquered = 0;
@@ -52,18 +52,30 @@ public class BattlefieldSystemsManager : MonoBehaviour
             return;
         }
         dayInProgress = true;
+        unitsInCamp = false;
 
         SetVictoryPoints();
         BattlefieldSceneManager.GetInstance.battleUIInformation.dayTimer.StartTimer(minutePerDay, secondsPerDay, StopCurrentDayActions);
         BattlefieldSceneManager.GetInstance.battleUIInformation.InitializeBattlefieldUI();
+
     }
 
+    public void GoToNextDay()
+    {
+        dayInProgress = true;
+        unitsInCamp = false;
+
+        BattlefieldSceneManager.GetInstance.battleUIInformation.dayTimer.StartTimer(minutePerDay, secondsPerDay, StopCurrentDayActions);
+        BattlefieldSceneManager.GetInstance.battleUIInformation.UpdateUIInformation();
+    }
     public void StopCurrentDayActions()
     {
         dayInProgress = false;
         if(currentDay < maxDays)
         {
             currentDay += 1;
+
+            BattlefieldSpawnManager.GetInstance.RetreatAllUnits(true, BattlefieldSceneManager.GetInstance.EndTodaysBattle);
         }
     }
 
@@ -78,10 +90,10 @@ public class BattlefieldSystemsManager : MonoBehaviour
             case BattlefieldWinCondition.ConquerOrEliminateAll:
                 totalVictoryPoints += conquerableTiles;
 
+                attackerVictoryPoints = BattlefieldSpawnManager.GetInstance.CountCommanderTroops(true, false);
+                defenderVictoryPoints = BattlefieldSpawnManager.GetInstance.CountCommanderTroops(false, false);
                 totalVictoryPoints += BattlefieldSpawnManager.GetInstance.CountCommanderTroops(true);
                 totalVictoryPoints += BattlefieldSpawnManager.GetInstance.CountCommanderTroops(false);
-                attackerVictoryPoints = BattlefieldSpawnManager.GetInstance.CountCommanderTroops(true);
-                defenderVictoryPoints = BattlefieldSpawnManager.GetInstance.CountCommanderTroops(false);
 
                 break;
             case BattlefieldWinCondition.EliminateAll:
@@ -101,18 +113,14 @@ public class BattlefieldSystemsManager : MonoBehaviour
         UpdateCurrentVictoryPoints();
     }
 
-    public void UpdateTileVictoryPoints()
+    public void UpdateTotalVictoryPoints()
     {
-        int newTileCount = BattlefieldPathManager.GetInstance.ObtainConqueredTiles();
+        conquerableTiles = BattlefieldPathManager.GetInstance.ObtainConqueredTiles();
 
         switch (winCondition)
         {
             case BattlefieldWinCondition.ConquerOrEliminateAll:
-
-                totalVictoryPoints = newTileCount;
-                totalVictoryPoints += BattlefieldSpawnManager.GetInstance.CountCommanderTroops(true);
-                totalVictoryPoints += BattlefieldSpawnManager.GetInstance.CountCommanderTroops(false);
-
+                totalVictoryPoints = defenderVictoryPoints + attackerVictoryPoints;
                 break;
             case BattlefieldWinCondition.EliminateAll:
 
@@ -132,37 +140,41 @@ public class BattlefieldSystemsManager : MonoBehaviour
             return;
         }
 
-        switch (newOwner)
+        //Debug.Log("Panel Conquered By : " + newOwner);
+        if(previousOwner == TeamType.Neutral)
         {
-            case TeamType.Defender:
-                defenderVictoryPoints += 1;
-                break;
-            case TeamType.Attacker:
-                attackerVictoryPoints += 1;
-                break;
+            switch (newOwner)
+            {
+                case TeamType.Defender:
+                    IncreaseVictoryPoints(TeamType.Defender);
+                    break;
+                case TeamType.Attacker:
+                    IncreaseVictoryPoints(TeamType.Attacker);
+                    break;
 
-            case TeamType.Neutral:
-            default:
-                break;
+                case TeamType.Neutral:
+                default:
+                    break;
+            }
+
         }
-
-        if(previousOwner != newOwner)
+        else if (previousOwner != newOwner)
         {
             switch (previousOwner)
             {
                 case TeamType.Defender:
-                    defenderVictoryPoints -= 1;
+                    DecreaseVictoryPoints(TeamType.Defender);
+
                     if (newOwner == TeamType.Attacker)
                     {
-                        attackerVictoryPoints += 1;
+                        IncreaseVictoryPoints(TeamType.Attacker);
                     }
                     break;
                 case TeamType.Attacker:
-                    attackerVictoryPoints -= 1;
-
+                    DecreaseVictoryPoints(TeamType.Attacker);
                     if(newOwner == TeamType.Defender)
                     {
-                        defenderVictoryPoints += 1;
+                        IncreaseVictoryPoints(TeamType.Defender);
                     }
                     break;
 
@@ -176,26 +188,81 @@ public class BattlefieldSystemsManager : MonoBehaviour
 
         UpdateCurrentVictoryPoints();
     }
-    public void UnitKilled(bool fromAttackers)
+    public void UnitKilled(TeamType thisTeam)
     {
         if(winCondition == BattlefieldWinCondition.ConquerAll)
         {
             return;
         }
 
-        if(fromAttackers)
+        DecreaseVictoryPoints(thisTeam);
+
+        if(winCondition == BattlefieldWinCondition.ConquerOrEliminateAll)
         {
-            attackerVictoryPoints -= 1;
-            defenderVictoryPoints += 1;
+            UpdateConqueredState();
         }
-        else
+        UpdateTotalVictoryPoints();
+    }
+
+    public void UpdateConqueredState()
+    {
+        if (BattlefieldSpawnManager.GetInstance == null || BattlefieldPathManager.GetInstance == null)
         {
-            defenderVictoryPoints -= 1;
-            attackerVictoryPoints += 1;
+            return;
+        }
+
+        // Attackers
+        int AtkaliveCount = BattlefieldSpawnManager.GetInstance.CountCommanderTroops(true, false);
+        int DefaliveCount = BattlefieldSpawnManager.GetInstance.CountCommanderTroops(false, false);
+
+        if(AtkaliveCount <= 0 && DefaliveCount <= 0)
+        {
+            BattlefieldPathManager.GetInstance.ConvertAllToOneTeam(TeamType.Neutral);
+        }
+        else if(AtkaliveCount <= 0)
+        {
+            BattlefieldPathManager.GetInstance.ConvertAllToOneTeam(TeamType.Defender);
+        }
+        else if(DefaliveCount <= 0)
+        {
+            BattlefieldPathManager.GetInstance.ConvertAllToOneTeam(TeamType.Attacker);
+        }
+
+    }
+    public void IncreaseVictoryPoints(TeamType thisTeam)
+    {
+        switch (thisTeam)
+        {
+            case TeamType.Neutral:
+                break;
+            case TeamType.Defender:
+                defenderVictoryPoints += 1;
+                break;
+            case TeamType.Attacker:
+                attackerVictoryPoints += 1;
+                break;
+            default:
+                break;
         }
 
     }
 
+    public void DecreaseVictoryPoints(TeamType thisTeam)
+    {
+        switch (thisTeam)
+        {
+            case TeamType.Neutral:
+                break;
+            case TeamType.Defender:
+                defenderVictoryPoints -= 1;
+                break;
+            case TeamType.Attacker:
+                attackerVictoryPoints -= 1;
+                break;
+            default:
+                break;
+        }
+    }
     public void UpdateCurrentVictoryPoints()
     {
         BattlefieldSceneManager.GetInstance.battleUIInformation.UpdateVictorySlider(totalVictoryPoints, defenderVictoryPoints);

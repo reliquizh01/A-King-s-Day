@@ -222,7 +222,7 @@ namespace Characters
         {
             unitInformation.ReceiveDamage(amount);
 
-            Debug.Log("[ DAMAGE RECEIVED : " + amount + " RECEIVED BY:"+ unitInformation.unitName + " ]");
+            //Debug.Log("[ DAMAGE RECEIVED : " + amount + " RECEIVED BY:"+ unitInformation.unitName + " ]");
             if(unitInformation.currentState == UnitState.Dead || unitInformation.currentState == UnitState.Injured)
             {
                 UpdateCharacterState(CharacterStates.Injured_State);

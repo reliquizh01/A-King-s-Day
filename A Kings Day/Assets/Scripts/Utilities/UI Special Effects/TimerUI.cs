@@ -7,6 +7,7 @@ using System;
 public class TimerUI : MonoBehaviour
 {
     public bool startTimer = false;
+    public bool isClockLike = true;
     public TextMeshProUGUI timerText;
     [Header("Time Information")]
     public int minute;
@@ -40,7 +41,14 @@ public class TimerUI : MonoBehaviour
                     }
                 }
                 curSecond = 0;
-                UpdateText();
+                if(isClockLike)
+                {
+                    UpdateClockText();
+                }
+                else
+                {
+                    UpdateCountText();
+                }
             }
         }
     }
@@ -52,9 +60,31 @@ public class TimerUI : MonoBehaviour
         startTimer = true;
 
         afterTimeCallback = afterTimerCallback;
+        if(isClockLike)
+        {
+            UpdateClockText();
+        }
+        else
+        {
+            UpdateCountText();
+        }
     }
 
-    public void UpdateText()
+    public void UpdateCountText()
+    {
+        int currentCount = minute * 60;
+        currentCount += seconds;
+
+        if(currentCount < 10)
+        {
+            timerText.text = "0" + currentCount.ToString();
+        }
+        else
+        {
+            timerText.text = currentCount.ToString();
+        }
+    }
+    public void UpdateClockText()
     {
         if(seconds >= 10)
         {

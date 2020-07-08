@@ -43,12 +43,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eeacbde7fe2de14eba25ee7f1f1547b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitIconsList:
+  - thisUnit: Recruit
+    unitSprite: {fileID: -7319031239135692439, guid: 4041f140d7da4df438d066843b28bb7a,
+      type: 3}
+  - thisUnit: Swordsman
+    unitSprite: {fileID: 21300000, guid: b9b8ba819a54765488bd00c44c0f3c5c, type: 3}
+  - thisUnit: Spearman
+    unitSprite: {fileID: 3668560613155809503, guid: 5077d3efad66fd849a1448925d447e23,
+      type: 3}
+  - thisUnit: Archer
+    unitSprite: {fileID: -1145579145790797673, guid: 86e98230fe324a9458b0d3d3bc46f946,
+      type: 3}
   heroStorage:
   - heroRarity: 2
     isRandomGenerated: 0
     heroLevel: 0
     unitInformation:
       unitName: Merlin
+      unitGenericName: 
       attackType: 2
       curhealth: 0
       maxHealth: 15
@@ -84,6 +97,7 @@ MonoBehaviour:
     heroLevel: 0
     unitInformation:
       unitName: Alexander
+      unitGenericName: 
       attackType: 0
       curhealth: 0
       maxHealth: 15
@@ -127,6 +141,7 @@ MonoBehaviour:
     heroLevel: 0
     unitInformation:
       unitName: Archie
+      unitGenericName: 
       attackType: 1
       curhealth: 0
       maxHealth: 10
@@ -152,6 +167,7 @@ MonoBehaviour:
     heroLevel: 1
     unitInformation:
       unitName: Knight
+      unitGenericName: 
       attackType: 0
       curhealth: 0
       maxHealth: 15
@@ -178,6 +194,7 @@ MonoBehaviour:
     isRandomGenerated: 0
     unitInformation:
       unitName: Nene
+      unitGenericName: 
       attackType: 1
       curhealth: 0
       maxHealth: 20
@@ -198,6 +215,7 @@ MonoBehaviour:
     isRandomGenerated: 1
     unitInformation:
       unitName: Tanza
+      unitGenericName: 
       attackType: 2
       curhealth: 0
       maxHealth: 30
@@ -215,6 +233,7 @@ MonoBehaviour:
     itemsSold: []
   basicUnitStorage:
   - unitName: Swordsman
+    unitGenericName: 
     attackType: 0
     curhealth: 0
     maxHealth: 10
@@ -230,6 +249,7 @@ MonoBehaviour:
     morale: 0
     buffList: []
   - unitName: Spearman
+    unitGenericName: 
     attackType: 0
     curhealth: 0
     maxHealth: 9
@@ -249,6 +269,7 @@ MonoBehaviour:
       targetStats: 3
       effectAmount: 1
   - unitName: Archer
+    unitGenericName: 
     attackType: 1
     curhealth: 0
     maxHealth: 7
@@ -264,6 +285,7 @@ MonoBehaviour:
     morale: 0
     buffList: []
   - unitName: Recruit
+    unitGenericName: 
     attackType: 0
     curhealth: 0
     maxHealth: 5
