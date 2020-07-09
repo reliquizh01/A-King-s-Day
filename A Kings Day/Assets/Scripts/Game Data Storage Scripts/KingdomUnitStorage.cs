@@ -30,6 +30,17 @@ namespace Characters
         public List<BaseBuffInformationData> buffStorage;
 
 
+        public Sprite GetUnitIcon(string unitName)
+        {
+            Sprite icon = unitIconsList[0].unitSprite;
+
+            if(unitIconsList.Find(x => x.unitName == unitName) != null)
+            {
+                icon = unitIconsList.Find(x => x.unitName == unitName).unitSprite;
+            }
+
+            return icon;
+        }
 
     }
 

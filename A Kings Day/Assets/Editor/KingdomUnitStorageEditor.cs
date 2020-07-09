@@ -258,6 +258,12 @@ public class KingdomUnitStorageEditor : EditorWindow
         currentUnitData.deathThreshold = EditorGUILayout.FloatField(currentUnitData.deathThreshold, GUILayout.MaxWidth(45));
         GUILayout.EndHorizontal();
 
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("Cooldown:", EditorStyles.boldLabel, GUILayout.Width(65));
+        currentUnitData.unitCooldown = EditorGUILayout.IntField(currentUnitData.unitCooldown, GUILayout.MaxWidth(45));
+        GUILayout.Label("Heal Cost:", EditorStyles.boldLabel, GUILayout.Width(65));
+        currentUnitData.healcost = EditorGUILayout.IntField(currentUnitData.healcost, GUILayout.MaxWidth(45));
+        GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
         GUILayout.Label("[Damage List]", titleText, GUILayout.Width(280));

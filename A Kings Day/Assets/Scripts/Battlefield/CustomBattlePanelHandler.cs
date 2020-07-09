@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Managers;
+using Utilities;
 
 public class CustomBattlePanelHandler : MonoBehaviour
 {
@@ -23,13 +24,27 @@ public class CustomBattlePanelHandler : MonoBehaviour
 
     public void Update()
     {
-        if(Input.GetKey(KeyCode.LeftShift))
+        if(UtilitiesCommandObserver.GetInstance == null)
         {
-            increaseByTen = true;
+            if(Input.GetKey(KeyCode.LeftShift))
+            {
+                increaseByTen = true;
+            }
+            else if(Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                increaseByTen = false;
+            }
         }
-        else if(Input.GetKeyUp(KeyCode.LeftShift))
+        else
         {
-            increaseByTen = false;
+            if (Input.GetKey(UtilitiesCommandObserver.GetInstance.GetKey(UtilitiesControlActionNames.INCREASE_COUNT_INCREMENT)))
+            {
+                increaseByTen = true;
+            }
+            else if (Input.GetKeyUp(UtilitiesCommandObserver.GetInstance.GetKey(UtilitiesControlActionNames.INCREASE_COUNT_INCREMENT)))
+            {
+                increaseByTen = false;
+            }
         }
 
     }
@@ -163,6 +178,13 @@ public class CustomBattlePanelHandler : MonoBehaviour
         BattlefieldSpawnManager.GetInstance.SetupAttackingCommander(attackingCommander);
         BattlefieldSpawnManager.GetInstance.SetupDefendingCommander(defendingCommander);
         BattlefieldSceneManager.GetInstance.PreBattleStart();
+    }
 
+    public void ReturnToMenu()
+    {
+        if(TransitionManager.GetInstance != null)
+        {
+            TransitionManager.GetInstance.LoadScene(SceneType.Opening);
+        }
     }
 }

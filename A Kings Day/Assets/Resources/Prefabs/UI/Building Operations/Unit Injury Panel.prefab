@@ -799,13 +799,17 @@ MonoBehaviour:
   iconBg: {fileID: 2247851269399030829}
   titleBg: {fileID: 2247851268579057118}
   countBg: {fileID: 2247851269818329741}
-  characterIcon: {fileID: 2247851268526803026}
+  selectIcon: {fileID: 2247851268526803026}
   titleText: {fileID: 2247851268461539270}
   myController: {fileID: 0}
   unitIcon: {fileID: 2247851268026953524}
   injuredCount: {fileID: 196137781576942376}
   selectedPanel: {fileID: 2247851268526803024}
   allowClick: 0
+  panelDisabled: 0
+  disableColor: {r: 1, g: 1, b: 1, a: 0.025}
+  enableColor: {r: 1, g: 1, b: 1, a: 1}
+  unitName: 
 --- !u!114 &7325871369395443140
 MonoBehaviour:
   m_ObjectHideFlags: 0

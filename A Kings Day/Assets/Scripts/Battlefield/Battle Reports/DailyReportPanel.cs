@@ -23,7 +23,7 @@ namespace Battlefield
 
         public TeamType reportTeam;
         public PlayerControlType controlType;
-        private BattlefieldCommander currentCommander;
+        [SerializeField]private BattlefieldCommander currentCommander;
         private bool isMultiPlayerControl;
 
         public Button healBtn;
@@ -193,7 +193,7 @@ namespace Battlefield
             if(BattlefieldSpawnManager.GetInstance != null)
             {
                 BattlefieldSpawnManager.GetInstance.HealUnitForThisCommander(reportTeam, selectedInjuredIdx);
-                warChestCount.targetCount = currentCommander.resourceAmount;
+                warChestCount.SetTargetCount(currentCommander.resourceAmount);
             }
 
             SetupDailyReportUnits();
@@ -214,19 +214,24 @@ namespace Battlefield
             int conqueredTileCount = BattlefieldPathManager.GetInstance.ObtainConqueredTiles(reportTeam).Count;
 
             tileCount.startUpdating = true;
-            tileCount.targetCount = conqueredTileCount;
+            tileCount.SetTargetCount(conqueredTileCount);
         }
 
         public void RevealTotalChestCount()
         {
-            warChestCount.startUpdating = true; 
-            warChestCount.targetCount = currentCommander.resourceAmount;
 
-            BattlefieldSpawnManager.GetInstance.UpdateCommanderResources();
+            warChestCount.startUpdating = true; 
+            warChestCount.SetTargetCount(currentCommander.resourceAmount);
+
 
             if (BattlefieldSceneManager.GetInstance != null)
             {
                 BattlefieldSceneManager.GetInstance.battleUIInformation.UpdateUnitPanels();
+            }
+
+            for (int i = 0; i < injuredUnitsList.Count; i++)
+            {
+                injuredUnitsList[i].unitIcon.sprite = BattlefieldSpawnManager.GetInstance.unitStorage.GetUnitIcon(currentCommander.unitsCarried[i].unitInformation.unitName);
             }
         }
 
@@ -239,9 +244,7 @@ namespace Battlefield
                     continue;
                 }
                 int injuredCount = currentCommander.unitsCarried[i].totalInjuredCount;
-
-                injuredUnitsList[i].unitIcon.sprite = BattlefieldSpawnManager.GetInstance.unitStorage.unitIconsList.Find(x => x.unitName == currentCommander.unitsCarried[i].unitInformation.unitGenericName).unitSprite;
-                injuredUnitsList[i].injuredCount.targetCount = injuredCount;
+                injuredUnitsList[i].injuredCount.SetTargetCount(injuredCount);
                 injuredUnitsList[i].injuredCount.startUpdating = true;
             }
         }
@@ -251,7 +254,7 @@ namespace Battlefield
         {
             for (int i = 0; i < injuredUnitsList.Count; i++)
             {
-                if(injuredUnitsList[i].injuredCount.targetCount == 0)
+                if (injuredUnitsList[i].injuredCount.targetCount == 0)
                 {
                     injuredUnitsList[i].DisablePanel();
                 }
@@ -268,9 +271,9 @@ namespace Battlefield
             StartCoroutine(myPanel.WaitAnimationForAction(myPanel.openAnimationName, AdjustInjuryPanelVisual));
         }
 
-        public void HideDailyReprot()
+        public void HideDailyReport()
         {
-            myPanel.PlayCloseAnimation();
+            StartCoroutine(myPanel.WaitAnimationForAction(myPanel.closeAnimationName, SwitchReadiness));
         }
     }
 }

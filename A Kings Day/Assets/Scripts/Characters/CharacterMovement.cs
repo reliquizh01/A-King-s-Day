@@ -35,7 +35,7 @@ namespace Characters
         }
         public void Update()
         {
-            if (isMoving)
+            if (isMoving && myCharacter.unitInformation.curhealth > 0)
             {
                 // CHECK IF FINAL POINT IS ALREADY TARGET POINT - TO IDENTIFY OFFSET
                 if (pathToTargetPoint != null && pathToTargetPoint.Count > 0)
@@ -105,6 +105,10 @@ namespace Characters
                         }
                     }
                 }
+            }
+            else if (pathToTargetPoint != null && pathToTargetPoint.Count <= 0)
+            {
+                FinishPathMovement();
             }
         }
 

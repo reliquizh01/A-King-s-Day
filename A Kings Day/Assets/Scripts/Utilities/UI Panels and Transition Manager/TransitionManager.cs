@@ -283,5 +283,10 @@ namespace Managers
         {
             TransitionToNextGameView(GameViews.BattlefieldView, true);
         }
+
+        public void TransitionToSplashScreen()
+        {
+            TransitionToNextGameView(GameViews.OpeningView, true);
+        }
     }
 }

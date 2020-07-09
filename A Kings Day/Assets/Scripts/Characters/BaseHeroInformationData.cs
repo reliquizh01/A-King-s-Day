@@ -43,7 +43,7 @@ namespace Characters
         public float curhealth, maxHealth, curSpeed, origSpeed, minDamage, maxDamage;
         public int range;
         public int unitCooldown = 1;
-        public int unitCost = 5;
+        public int healcost = 5;
 
         public string prefabDataPath;
         public UnitState currentState;
@@ -68,7 +68,7 @@ namespace Characters
                         }
                     }
                 }
-                return currentRealSpeed;
+                return currentRealSpeed / 10.0F;
             }
         }
         public float RealDamage

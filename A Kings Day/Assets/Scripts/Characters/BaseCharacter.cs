@@ -62,6 +62,8 @@ namespace Characters
             int randomCode = UnityEngine.Random.Range(0, 100);
             unitInformation.unitGenericName = newUnitInformation.unitName;
             unitInformation.unitName = newUnitInformation.unitName + randomCode.ToString();
+            unitInformation.attackType = newUnitInformation.attackType;
+
             unitInformation.curhealth = newUnitInformation.maxHealth;
             unitInformation.maxHealth = newUnitInformation.maxHealth;
             unitInformation.minDamage = newUnitInformation.minDamage;
@@ -76,7 +78,7 @@ namespace Characters
             unitInformation.buffList = newUnitInformation.buffList;
             unitInformation.currentState = newUnitInformation.currentState;
 
-            myMovements.speed = unitInformation.RealSpeed / 10.0f;
+            myMovements.speed = unitInformation.RealSpeed;
         }
 
 
@@ -150,10 +152,6 @@ namespace Characters
                     myAnimation.ChangeState(newState);
                     break;
                 case CharacterStates.Walking:
-                    if(curState == CharacterStates.Damage_Received)
-                    {
-                        break;
-                    }
 
                     myAnimation.ChangeState(newState);
                     break;
@@ -163,7 +161,7 @@ namespace Characters
                     {
                         break;
                     }
-
+                    myMovements.isMoving = false;
                     myAnimation.ChangeState(newState);
                     break;
                 case CharacterStates.Attack_State:
@@ -176,6 +174,18 @@ namespace Characters
                     break;
                 default:
                     break;
+            }
+        }
+        public void ContinueActionAfterReceiveDamage()
+        {
+            if(myRange.enemiesInRange != null && myRange.enemiesInRange.Count > 0)
+            {
+                UpdateCharacterState(CharacterStates.Attack_State);
+            }
+            else if(myMovements.pathToTargetPoint != null && myMovements.pathToTargetPoint.Count > 0)
+            {
+                myMovements.isMoving = true;
+                UpdateCharacterState(CharacterStates.Walking);
             }
         }
         public void EnemyInRange()
@@ -210,7 +220,20 @@ namespace Characters
             }
             else if(unitInformation.attackType == UnitAttackType.RANGE)
             {
+                if (myRange.enemiesInRange != null && myRange.enemiesInRange.Count > 0)
+                {
+                    myRange.enemiesInRange[0].ReceiveDamage(unitInformation.RealDamage);
 
+                    if (myRange.enemiesInRange[0].unitInformation.curhealth <= 0)
+                    {
+                        myRange.enemiesInRange.RemoveAt(0);
+                        UpdateToPotentialNextState();
+                    }
+                }
+                else
+                {
+                    UpdateToPotentialNextState();
+                }
             }
             else if(unitInformation.attackType == UnitAttackType.SPELL)
             {
@@ -220,6 +243,7 @@ namespace Characters
 
         public void ReceiveDamage(float amount)
         {
+            UpdateCharacterState(CharacterStates.Damage_Received);
             unitInformation.ReceiveDamage(amount);
 
             //Debug.Log("[ DAMAGE RECEIVED : " + amount + " RECEIVED BY:"+ unitInformation.unitName + " ]");

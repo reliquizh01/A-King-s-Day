@@ -44,16 +44,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitIconsList:
-  - thisUnit: Recruit
-    unitSprite: {fileID: -7319031239135692439, guid: 4041f140d7da4df438d066843b28bb7a,
+  - unitName: Recruit
+    unitSprite: {fileID: 5485572943743903372, guid: 4041f140d7da4df438d066843b28bb7a,
       type: 3}
-  - thisUnit: Swordsman
+  - unitName: Swordsman
     unitSprite: {fileID: 21300000, guid: b9b8ba819a54765488bd00c44c0f3c5c, type: 3}
-  - thisUnit: Spearman
+  - unitName: Spearman
     unitSprite: {fileID: 3668560613155809503, guid: 5077d3efad66fd849a1448925d447e23,
       type: 3}
-  - thisUnit: Archer
-    unitSprite: {fileID: -1145579145790797673, guid: 86e98230fe324a9458b0d3d3bc46f946,
+  - unitName: Archer
+    unitSprite: {fileID: -5562564189499104465, guid: 3af8c5aeb1ddff54b994bf0f30f47b23,
       type: 3}
   heroStorage:
   - heroRarity: 2
@@ -71,6 +71,7 @@ MonoBehaviour:
       maxDamage: 5
       range: 10
       unitCooldown: 5
+      healcost: 5
       prefabDataPath: 
       currentState: 0
       deathThreshold: 0
@@ -107,6 +108,7 @@ MonoBehaviour:
       maxDamage: 5
       range: 1
       unitCooldown: 5
+      healcost: 5
       prefabDataPath: 
       currentState: 0
       deathThreshold: 0
@@ -151,6 +153,7 @@ MonoBehaviour:
       maxDamage: 3
       range: 6
       unitCooldown: 5
+      healcost: 5
       prefabDataPath: 
       currentState: 0
       deathThreshold: 0
@@ -177,6 +180,7 @@ MonoBehaviour:
       maxDamage: 4
       range: 1
       unitCooldown: 5
+      healcost: 5
       prefabDataPath: 
       currentState: 0
       deathThreshold: -5
@@ -204,6 +208,7 @@ MonoBehaviour:
       maxDamage: 8
       range: 0
       unitCooldown: 5
+      healcost: 5
       prefabDataPath: 
       currentState: 0
       deathThreshold: -5
@@ -225,6 +230,7 @@ MonoBehaviour:
       maxDamage: 5
       range: 0
       unitCooldown: 5
+      healcost: 5
       prefabDataPath: 
       currentState: 0
       deathThreshold: -5
@@ -242,10 +248,11 @@ MonoBehaviour:
     minDamage: 3
     maxDamage: 4
     range: 1
-    unitCooldown: 5
+    unitCooldown: 4
+    healcost: 4
     prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
     currentState: 0
-    deathThreshold: -5
+    deathThreshold: -1
     morale: 0
     buffList: []
   - unitName: Spearman
@@ -258,10 +265,11 @@ MonoBehaviour:
     minDamage: 1
     maxDamage: 3
     range: 1
-    unitCooldown: 5
+    unitCooldown: 4
+    healcost: 3
     prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
     currentState: 0
-    deathThreshold: -5
+    deathThreshold: -1
     morale: 0
     buffList:
     - buffName: First Strike
@@ -278,10 +286,11 @@ MonoBehaviour:
     minDamage: 1
     maxDamage: 2
     range: 6
-    unitCooldown: 5
+    unitCooldown: 3
+    healcost: 3
     prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
     currentState: 0
-    deathThreshold: -5
+    deathThreshold: -1
     morale: 0
     buffList: []
   - unitName: Recruit
@@ -295,9 +304,10 @@ MonoBehaviour:
     maxDamage: 2
     range: 1
     unitCooldown: 1
+    healcost: 2
     prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
     currentState: 0
-    deathThreshold: -5
+    deathThreshold: -1
     morale: 0
     buffList: []
   skillStorage:

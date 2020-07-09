@@ -204,7 +204,7 @@ namespace Managers
             }
 
             Debug.Log(attackerEmpty + " / " + defenderEmpty);
-            if (defenderEmpty && attackerEmpty)
+            if (defenderEmpty && attackerEmpty && !BattlefieldSystemsManager.GetInstance.dayInProgress)
             {
                 Debug.Log("ENDING ALL!");
                 endCurrentBattleCallback();
@@ -368,11 +368,11 @@ namespace Managers
                     break;
             }
 
-            if(thisCommander.resourceAmount >= thisCommander.unitsCarried[unitIdx].unitInformation.unitCost)
+            if(thisCommander.resourceAmount >= thisCommander.unitsCarried[unitIdx].unitInformation.healcost)
             {
                 if(thisCommander.unitsCarried[unitIdx].totalInjuredCount > 0)
                 {
-                    thisCommander.resourceAmount -= thisCommander.unitsCarried[unitIdx].unitInformation.unitCost;
+                    thisCommander.resourceAmount -= thisCommander.unitsCarried[unitIdx].unitInformation.healcost;
 
                     thisCommander.unitsCarried[unitIdx].totalInjuredCount -= 1;
                     thisCommander.unitsCarried[unitIdx].totalUnitCount += 1;
@@ -462,43 +462,52 @@ namespace Managers
             ScenePointBehavior returnToThisPoint;
             endCurrentBattleCallback = newRetreatAll;
 
-            for (int i = 0; i < attackerSpawnedUnits.Count; i++)
+            if(attackerSpawnedUnits.Count <= 0 && defenderSpawnedUnits.Count <= 0)
             {
-                if (attackerSpawnedUnits[i].unitInformation.curhealth <= 0)
-                {
-                    continue;
-                }
-                column = BattlefieldPathManager.GetInstance.ObtainColumnByPoint(attackerSpawnedUnits[i].myMovements.currentTargetPoint);
-                returnToThisPoint = BattlefieldPathManager.GetInstance.ObtainSpawnPoint(column, true);
-
-                attackerSpawnedUnits[i].unitInformation.curhealth = attackerSpawnedUnits[i].unitInformation.maxHealth;
-                attackerSpawnedUnits[i].unitInformation.curhealth = attackerSpawnedUnits[i].unitInformation.maxHealth;
-                attackerSpawnedUnits[i].myRange.enemiesInRange.Clear();
-                attackerSpawnedUnits[i].OrderMovement(returnToThisPoint);
-                
-                if (fullheal)
-                {
-                    attackerSpawnedUnits[i].unitInformation.currentState = UnitState.Healthy;
-                }
+                endCurrentBattleCallback();
             }
-
-            // DEFENDERS
-            for (int i = 0; i < defenderSpawnedUnits.Count; i++)
+            else
             {
-                if (defenderSpawnedUnits[i].unitInformation.curhealth <= 0)
+                for (int i = 0; i < attackerSpawnedUnits.Count; i++)
                 {
-                    continue;
+                    if (attackerSpawnedUnits[i].unitInformation.curhealth <= 0)
+                    {
+                        continue;
+                    }
+                    column = BattlefieldPathManager.GetInstance.ObtainColumnByPoint(attackerSpawnedUnits[i].myMovements.currentTargetPoint);
+                    returnToThisPoint = BattlefieldPathManager.GetInstance.ObtainSpawnPoint(column, true);
+
+                    attackerSpawnedUnits[i].unitInformation.curhealth = attackerSpawnedUnits[i].unitInformation.maxHealth;
+                    attackerSpawnedUnits[i].unitInformation.curhealth = attackerSpawnedUnits[i].unitInformation.maxHealth;
+                    attackerSpawnedUnits[i].myRange.enemiesInRange.Clear();
+                    attackerSpawnedUnits[i].myMovements.pathToTargetPoint.Clear();
+                    attackerSpawnedUnits[i].OrderMovement(returnToThisPoint);
+                    attackerSpawnedUnits[i].myMovements.speed = attackerSpawnedUnits[i].unitInformation.RealSpeed + 0.5f;
+                    if (fullheal)
+                    {
+                        attackerSpawnedUnits[i].unitInformation.currentState = UnitState.Healthy;
+                    }
                 }
-                column = BattlefieldPathManager.GetInstance.ObtainColumnByPoint(defenderSpawnedUnits[i].myMovements.currentTargetPoint);
-                returnToThisPoint = BattlefieldPathManager.GetInstance.ObtainSpawnPoint(column, false);
 
-                defenderSpawnedUnits[i].unitInformation.curhealth = defenderSpawnedUnits[i].unitInformation.maxHealth;
-                defenderSpawnedUnits[i].myRange.enemiesInRange.Clear();
-                defenderSpawnedUnits[i].OrderMovement(returnToThisPoint);
-
-                if (fullheal)
+                // DEFENDERS
+                for (int i = 0; i < defenderSpawnedUnits.Count; i++)
                 {
-                    defenderSpawnedUnits[i].unitInformation.currentState = UnitState.Healthy;
+                    if (defenderSpawnedUnits[i].unitInformation.curhealth <= 0)
+                    {
+                        continue;
+                    }
+                    column = BattlefieldPathManager.GetInstance.ObtainColumnByPoint(defenderSpawnedUnits[i].myMovements.currentTargetPoint);
+                    returnToThisPoint = BattlefieldPathManager.GetInstance.ObtainSpawnPoint(column, false);
+
+                    defenderSpawnedUnits[i].unitInformation.curhealth = defenderSpawnedUnits[i].unitInformation.maxHealth;
+                    defenderSpawnedUnits[i].myRange.enemiesInRange.Clear();
+                    defenderSpawnedUnits[i].myMovements.pathToTargetPoint.Clear();
+                    defenderSpawnedUnits[i].OrderMovement(returnToThisPoint);
+                    defenderSpawnedUnits[i].myMovements.speed = defenderSpawnedUnits[i].unitInformation.RealSpeed + 0.5f;
+                    if (fullheal)
+                    {
+                        defenderSpawnedUnits[i].unitInformation.currentState = UnitState.Healthy;
+                    }
                 }
             }
         }

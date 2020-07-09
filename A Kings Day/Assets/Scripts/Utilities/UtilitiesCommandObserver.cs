@@ -14,10 +14,12 @@ namespace Utilities
     [System.Serializable]
     public class InputCommand
     {
+        public string actionName;
         public KeyCode key;
         public bool isToggled;
         public InputType inputType;
     }
+
     public class UtilitiesCommandObserver : MonoBehaviour
     {
         #region Singleton
@@ -67,6 +69,10 @@ namespace Utilities
             }
         }
 
+        public KeyCode GetKey(string actionName)
+        {
+            return KeyInputs.Find(x => x.actionName == actionName).key;
+        }
         public bool isKeyToggled(KeyCode thisKey)
         {
             bool toggled = false;

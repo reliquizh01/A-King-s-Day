@@ -89,7 +89,7 @@ namespace Managers
         {
             // Add Cutscenes here
             BattlefieldSystemsManager.GetInstance.unitsInCamp = true;
-
+            BattlefieldSpawnManager.GetInstance.UpdateCommanderResources();
             battleUIInformation.ShowdailyReportPanel();
         }
         public void CheckCommanderReadiness()

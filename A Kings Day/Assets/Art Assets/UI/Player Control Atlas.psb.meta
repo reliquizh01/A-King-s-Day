@@ -1,0 +1,1278 @@
+fileFormatVersion: 2
+guid: 0c07995b8ec13254bb8912691f126996
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Keyboard - W Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 233
+      width: 101
+      height: 42
+    spriteID: 8c16760fe6640ac478fe4912b42acd88
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -18, y: -247}
+  - name: Keyboard - S Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 283
+      width: 101
+      height: 42
+    spriteID: 3e24a0613eb43764e860cb27e9e51c50
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -18, y: -148}
+  - name: Keyboard - A Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 333
+      width: 101
+      height: 42
+    spriteID: 0b10bafc5a50eb945a2186ecab014778
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -18, y: -52}
+  - name: Keyboard - D Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 383
+      width: 101
+      height: 42
+    spriteID: 968f5500f9881fa46816f29e0ec658a5
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -18, y: 45}
+  - name: Keyboard copy
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 167
+      width: 176
+      height: 58
+    spriteID: f3bc9916dd09bb040a9776de888d1f49
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -155, y: -174}
+  - name: Panel Head Unselected
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 385
+      y: 114
+      width: 21
+      height: 3
+    spriteID: d8ac0698766e4e147888df2d9c3b38a7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 188, y: -473}
+  - name: Panel Head Selected
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 483
+      width: 21
+      height: 3
+    spriteID: d6220ac95a95d2740acc9ee40de4d2c8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -193, y: -98}
+  - name: Controls Panel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 193
+      height: 155
+    spriteID: ba1441fa458d6864ab4652525d349b18
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -154, y: -418}
+  - name: Keyboard - Space Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 433
+      width: 101
+      height: 42
+    spriteID: e36ed69eb70f06d40b1f6f5c10e377dd
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -18, y: 142}
+  - name: Keyboard - 1 Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 205
+      y: 4
+      width: 101
+      height: 42
+    spriteID: af08c29ce3d2c2942bfddcf458035c63
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 183, y: -238}
+  - name: Keyboard - 2 Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 205
+      y: 54
+      width: 101
+      height: 42
+    spriteID: 5faec0f181cf84a4a812b3012ef3e724
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 183, y: -140}
+  - name: Keyboard - 3 Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 205
+      y: 104
+      width: 101
+      height: 42
+    spriteID: 28a1db2307a6e0c408615dfef580706e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 183, y: -42}
+  - name: Player 2-  Down Arrow
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 233
+      width: 63
+      height: 34
+    spriteID: df97aae686357da418f33a2a18c5c451
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -282, y: -280}
+  - name: Player 2-  Up Arrow
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 283
+      width: 63
+      height: 34
+    spriteID: 969901b47520b4945898e832583d73ea
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -282, y: -190}
+  - name: Player 2-  Left Arrow
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 333
+      width: 63
+      height: 34
+    spriteID: cebe04058e9e3a44ba8ef995f8067c83
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -282, y: -100}
+  - name: Player 2-  Right ARrow
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 383
+      width: 63
+      height: 34
+    spriteID: af09573496739694f87e2c889520820e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -282, y: -12}
+  - name: Player 2-  Numpad 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 421
+      y: 4
+      width: 63
+      height: 34
+    spriteID: 0e41f51725e894f4ab26b4f5a8c51e3c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 26, y: -352}
+  - name: Player 2-  Numpad 6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 433
+      width: 63
+      height: 34
+    spriteID: 14de72e620c42074088e0ed491ace813
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -282, y: 113}
+  - name: Player 2-  No Clicked copy
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 314
+      y: 88
+      width: 63
+      height: 34
+    spriteID: ada03b2e57ce0564fb5f13cee98ef4e1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -81, y: -195}
+  - name: Player 2-  No Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 314
+      y: 130
+      width: 63
+      height: 34
+    spriteID: 112df4757bb1c5e4ba117b2b7e4e2e32
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -81, y: -424}
+  - name: Player 1 - W Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 205
+      y: 254
+      width: 99
+      height: 34
+    spriteID: bbbae1b5a9e5f1a479c2a5265e70b742
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -276, y: -258}
+  - name: Player 1 - S Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 205
+      y: 296
+      width: 99
+      height: 34
+    spriteID: bc3510d23aa28bf45b37073df9209a66
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -276, y: -177}
+  - name: Player 1 - A Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 205
+      y: 338
+      width: 99
+      height: 34
+    spriteID: a2c628884a134d34998a25f6a3c46bed
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -276, y: -93}
+  - name: Player 1 - D Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 205
+      y: 380
+      width: 99
+      height: 34
+    spriteID: 8bc1970a4d5d15743b8058f192820988
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -276, y: -13}
+  - name: Player 1 - Space Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 205
+      y: 422
+      width: 99
+      height: 34
+    spriteID: 482a04e305ab54545a4167ed11b2de53
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -276, y: 66}
+  - name: Player 1 - J Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 205
+      y: 464
+      width: 99
+      height: 34
+    spriteID: 554bb94690404114896813c8f10257f0
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -276, y: 144}
+  - name: Player 1 - L Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 314
+      y: 4
+      width: 99
+      height: 34
+    spriteID: ebcc6fc368674fc4bb181ea3018f2b0d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -167, y: -279}
+  - name: Player 1 - No Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 314
+      y: 46
+      width: 99
+      height: 34
+    spriteID: a2aad1a4c879872498c05a6e96045368
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -167, y: -508}
+  - name: Keyboard Logo
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 385
+      y: 88
+      width: 25
+      height: 18
+    spriteID: 5fda83e3f3a6bfd4e86a0390aa15bf9a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 226, y: -232}
+  - name: Selected Unit
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 161
+      y: 475
+      width: 18
+      height: 11
+    spriteID: ca82c07800d6a2a42a769b295421c00d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -52, y: 69}
+  - name: 1 copy 10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 161
+      y: 494
+      width: 16
+      height: 9
+    spriteID: 62b0a61fbf33e0c42b82a3f70d68a3f9
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -72, y: 87}
+  - name: Selected Icon Left
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 184
+      y: 453
+      width: 7
+      height: 10
+    spriteID: d42deacddbb98bd4e9ae3ba830259c6a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -17, y: 47}
+  - name: Unt Selected
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 185
+      y: 494
+      width: 11
+      height: 12
+    spriteID: ae6b9c73717fa35448959208119eefdf
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 12, y: 89}
+  - name: Unit Box
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 187
+      y: 475
+      width: 9
+      height: 10
+    spriteID: 555346c0639781e40a3a30291552787c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1, y: 69}
+  - name: Mouse Icon copy
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 492
+      y: 4
+      width: 3
+      height: 3
+    spriteID: b83cf2df75d8aa34582a427c54eb497e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 332, y: -404}
+  - name: Keyboard - 4 Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 205
+      y: 154
+      width: 101
+      height: 42
+    spriteID: b815069c2ba6cdf439ac28d4fc6c33b9
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 183, y: 57}
+  - name: Keyboard - No Click
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 205
+      y: 204
+      width: 101
+      height: 42
+    spriteID: 96d23016b483a024498ff13deb2951e3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 183, y: -325}
+  - name: Box Button Blue Panel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 475
+      width: 40
+      height: 24
+    spriteID: 1fd1af8aa98c78d4287367b946880cee
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -47, y: 190}
+  - name: Volume Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 184
+      y: 433
+      width: 12
+      height: 12
+    spriteID: 212ca79f7472ee8429a835c5af06cace
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -13, y: 113}
+  platformSettings:
+  - name: Default
+    overridden: 1
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: PC, Mac & Linux Standalone
+    overridden: 1
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 512
+  importedTextureHeight: 512
+  documentSize: {x: 600, y: 600}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 512
+  textureActualHeight: 512
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 1
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Keyboard - W Clicked
+    spriteName: Keyboard - W Clicked
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8c16760fe6640ac478fe4912b42acd88
+    layerID: 3
+    mosaicPosition: {x: 4, y: 233}
+  - name: Keyboard - S Clicked
+    spriteName: Keyboard - S Clicked
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3e24a0613eb43764e860cb27e9e51c50
+    layerID: 5
+    mosaicPosition: {x: 4, y: 283}
+  - name: Keyboard - A Clicked
+    spriteName: Keyboard - A Clicked
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0b10bafc5a50eb945a2186ecab014778
+    layerID: 6
+    mosaicPosition: {x: 4, y: 333}
+  - name: Keyboard - D Clicked
+    spriteName: Keyboard - D Clicked
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 968f5500f9881fa46816f29e0ec658a5
+    layerID: 7
+    mosaicPosition: {x: 4, y: 383}
+  - name: Keyboard copy
+    spriteName: Keyboard copy
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f3bc9916dd09bb040a9776de888d1f49
+    layerID: 12
+    mosaicPosition: {x: 4, y: 167}
+  - name: Panel Head Unselected
+    spriteName: Panel Head Unselected
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d8ac0698766e4e147888df2d9c3b38a7
+    layerID: 11
+    mosaicPosition: {x: 385, y: 114}
+  - name: Panel Head Selected
+    spriteName: Panel Head Selected
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d6220ac95a95d2740acc9ee40de4d2c8
+    layerID: 10
+    mosaicPosition: {x: 4, y: 483}
+  - name: Controls Panel
+    spriteName: Controls Panel
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ba1441fa458d6864ab4652525d349b18
+    layerID: 9
+    mosaicPosition: {x: 4, y: 4}
+  - name: Keyboard - Space Clicked
+    spriteName: Keyboard - Space Clicked
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e36ed69eb70f06d40b1f6f5c10e377dd
+    layerID: 8
+    mosaicPosition: {x: 4, y: 433}
+  - name: Keyboard - 1 Clicked
+    spriteName: Keyboard - 1 Clicked
+    isGroup: 0
+    parentIndex: -1
+    spriteID: af08c29ce3d2c2942bfddcf458035c63
+    layerID: 14
+    mosaicPosition: {x: 205, y: 4}
+  - name: Keyboard - 2 Clicked
+    spriteName: Keyboard - 2 Clicked
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5faec0f181cf84a4a812b3012ef3e724
+    layerID: 15
+    mosaicPosition: {x: 205, y: 54}
+  - name: Keyboard - 3 Clicked
+    spriteName: Keyboard - 3 Clicked
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 28a1db2307a6e0c408615dfef580706e
+    layerID: 16
+    mosaicPosition: {x: 205, y: 104}
+  - name: Two Players
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 26
+    mosaicPosition: {x: 0, y: 0}
+  - name: Player 2-  Down Arrow
+    spriteName: Player 2-  Down Arrow
+    isGroup: 0
+    parentIndex: 12
+    spriteID: df97aae686357da418f33a2a18c5c451
+    layerID: 28
+    mosaicPosition: {x: 113, y: 233}
+  - name: Player 2-  Up Arrow
+    spriteName: Player 2-  Up Arrow
+    isGroup: 0
+    parentIndex: 12
+    spriteID: 969901b47520b4945898e832583d73ea
+    layerID: 30
+    mosaicPosition: {x: 113, y: 283}
+  - name: Player 2-  Left Arrow
+    spriteName: Player 2-  Left Arrow
+    isGroup: 0
+    parentIndex: 12
+    spriteID: cebe04058e9e3a44ba8ef995f8067c83
+    layerID: 31
+    mosaicPosition: {x: 113, y: 333}
+  - name: Player 2-  Right ARrow
+    spriteName: Player 2-  Right ARrow
+    isGroup: 0
+    parentIndex: 12
+    spriteID: af09573496739694f87e2c889520820e
+    layerID: 33
+    mosaicPosition: {x: 113, y: 383}
+  - name: Player 2-  Numpad 4
+    spriteName: Player 2-  Numpad 4
+    isGroup: 0
+    parentIndex: 12
+    spriteID: 0e41f51725e894f4ab26b4f5a8c51e3c
+    layerID: 34
+    mosaicPosition: {x: 421, y: 4}
+  - name: Player 2-  Numpad 6
+    spriteName: Player 2-  Numpad 6
+    isGroup: 0
+    parentIndex: 12
+    spriteID: 14de72e620c42074088e0ed491ace813
+    layerID: 36
+    mosaicPosition: {x: 113, y: 433}
+  - name: Player 2-  No Clicked copy
+    spriteName: Player 2-  No Clicked copy
+    isGroup: 0
+    parentIndex: 12
+    spriteID: ada03b2e57ce0564fb5f13cee98ef4e1
+    layerID: 37
+    mosaicPosition: {x: 314, y: 88}
+  - name: Player 2-  No Clicked
+    spriteName: Player 2-  No Clicked
+    isGroup: 0
+    parentIndex: 12
+    spriteID: 112df4757bb1c5e4ba117b2b7e4e2e32
+    layerID: 25
+    mosaicPosition: {x: 314, y: 130}
+  - name: Player 1 - W Clicked
+    spriteName: Player 1 - W Clicked
+    isGroup: 0
+    parentIndex: 12
+    spriteID: bbbae1b5a9e5f1a479c2a5265e70b742
+    layerID: 39
+    mosaicPosition: {x: 205, y: 254}
+  - name: Player 1 - S Clicked
+    spriteName: Player 1 - S Clicked
+    isGroup: 0
+    parentIndex: 12
+    spriteID: bc3510d23aa28bf45b37073df9209a66
+    layerID: 41
+    mosaicPosition: {x: 205, y: 296}
+  - name: Player 1 - A Clicked
+    spriteName: Player 1 - A Clicked
+    isGroup: 0
+    parentIndex: 12
+    spriteID: a2c628884a134d34998a25f6a3c46bed
+    layerID: 43
+    mosaicPosition: {x: 205, y: 338}
+  - name: Player 1 - D Clicked
+    spriteName: Player 1 - D Clicked
+    isGroup: 0
+    parentIndex: 12
+    spriteID: 8bc1970a4d5d15743b8058f192820988
+    layerID: 44
+    mosaicPosition: {x: 205, y: 380}
+  - name: Player 1 - Space Clicked
+    spriteName: Player 1 - Space Clicked
+    isGroup: 0
+    parentIndex: 12
+    spriteID: 482a04e305ab54545a4167ed11b2de53
+    layerID: 45
+    mosaicPosition: {x: 205, y: 422}
+  - name: Player 1 - J Clicked
+    spriteName: Player 1 - J Clicked
+    isGroup: 0
+    parentIndex: 12
+    spriteID: 554bb94690404114896813c8f10257f0
+    layerID: 46
+    mosaicPosition: {x: 205, y: 464}
+  - name: Player 1 - L Clicked
+    spriteName: Player 1 - L Clicked
+    isGroup: 0
+    parentIndex: 12
+    spriteID: ebcc6fc368674fc4bb181ea3018f2b0d
+    layerID: 48
+    mosaicPosition: {x: 314, y: 4}
+  - name: Player 1 - No Clicked
+    spriteName: Player 1 - No Clicked
+    isGroup: 0
+    parentIndex: 12
+    spriteID: a2aad1a4c879872498c05a6e96045368
+    layerID: 38
+    mosaicPosition: {x: 314, y: 46}
+  - name: Box Button Blue Panel
+    spriteName: Box Button Blue Panel
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1fd1af8aa98c78d4287367b946880cee
+    layerID: 51
+    mosaicPosition: {x: 113, y: 475}
+  - name: Volume Icon
+    spriteName: Volume Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 212ca79f7472ee8429a835c5af06cace
+    layerID: 50
+    mosaicPosition: {x: 184, y: 433}
+  - name: Keyboard Logo
+    spriteName: Keyboard Logo
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5fda83e3f3a6bfd4e86a0390aa15bf9a
+    layerID: 47
+    mosaicPosition: {x: 385, y: 88}
+  - name: Selected Unit
+    spriteName: Selected Unit
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ca82c07800d6a2a42a769b295421c00d
+    layerID: 24
+    mosaicPosition: {x: 161, y: 475}
+  - name: 1 copy 10
+    spriteName: 1 copy 10
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 62b0a61fbf33e0c42b82a3f70d68a3f9
+    layerID: 23
+    mosaicPosition: {x: 161, y: 494}
+  - name: Selected Icon Left
+    spriteName: Selected Icon Left
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d42deacddbb98bd4e9ae3ba830259c6a
+    layerID: 22
+    mosaicPosition: {x: 184, y: 453}
+  - name: Unt Selected
+    spriteName: Unt Selected
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ae6b9c73717fa35448959208119eefdf
+    layerID: 21
+    mosaicPosition: {x: 185, y: 494}
+  - name: Unit Box
+    spriteName: Unit Box
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 555346c0639781e40a3a30291552787c
+    layerID: 20
+    mosaicPosition: {x: 187, y: 475}
+  - name: Mouse Icon copy
+    spriteName: Mouse Icon copy
+    isGroup: 0
+    parentIndex: -1
+    spriteID: b83cf2df75d8aa34582a427c54eb497e
+    layerID: 19
+    mosaicPosition: {x: 492, y: 4}
+  - name: Keyboard - 4 Clicked
+    spriteName: Keyboard - 4 Clicked
+    isGroup: 0
+    parentIndex: -1
+    spriteID: b815069c2ba6cdf439ac28d4fc6c33b9
+    layerID: 18
+    mosaicPosition: {x: 205, y: 154}
+  - name: Keyboard - No Click
+    spriteName: Keyboard - No Click
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 96d23016b483a024498ff13deb2951e3
+    layerID: 2
+    mosaicPosition: {x: 205, y: 204}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: Player Control Atlas Texture
+  prefabAssetName: Player Control Atlas Prefab
+  spriteLibAssetName: Player Control Atlas Sprite Lib
+  secondarySpriteTextures: []

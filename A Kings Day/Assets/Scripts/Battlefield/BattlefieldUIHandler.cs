@@ -27,20 +27,22 @@ namespace Battlefield
         public CountingEffectUI defenderWarChestCount;
 
         public TimerUI nextDayTimer;
+        public GameObject nextDayCover;
 
         public void SetUnitPanels(BattlefieldCommander attacker, BattlefieldCommander defender)
         {
             attackerReportPanel.AssignCommander(attacker);
             defenderReportPanel.AssignCommander(defender);
 
-            attackerPanel.warChestCount.targetCount = attacker.resourceAmount;
-            defenderPanel.warChestCount.targetCount = defender.resourceAmount;
+            attackerPanel.warChestCount.SetTargetCount(attacker.resourceAmount);
+            defenderPanel.warChestCount.SetTargetCount(defender.resourceAmount);
 
             for (int i = 0; i < attackerPanel.unitList.Count; i++)
             {
                 attackerPanel.unitList[i].currentMaxCooldown = attacker.unitsCarried[i].unitInformation.unitCooldown;
                 attackerPanel.unitList[i].countText.text = attacker.unitsCarried[i].totalUnitCount.ToString();
-                if(attacker.unitsCarried[i].totalUnitCount <= 0)
+                attackerPanel.unitList[i].unitImage.sprite = BattlefieldSpawnManager.GetInstance.unitStorage.GetUnitIcon(attacker.unitsCarried[i].unitInformation.unitName);
+                if (attacker.unitsCarried[i].totalUnitCount <= 0)
                 {
                     attackerPanel.unitList[i].DisablePanel();
                 }
@@ -54,6 +56,7 @@ namespace Battlefield
             {
                 defenderPanel.unitList[i].currentMaxCooldown = defender.unitsCarried[i].unitInformation.unitCooldown;
                 defenderPanel.unitList[i].countText.text = defender.unitsCarried[i].totalUnitCount.ToString();
+                defenderPanel.unitList[i].unitImage.sprite = BattlefieldSpawnManager.GetInstance.unitStorage.GetUnitIcon(defender.unitsCarried[i].unitInformation.unitName);
 
                 if (defender.unitsCarried[i].totalUnitCount <= 0)
                 {
@@ -115,9 +118,9 @@ namespace Battlefield
             BattlefieldCommander attacker = BattlefieldSpawnManager.GetInstance.attackingCommander;
             BattlefieldCommander defender = BattlefieldSpawnManager.GetInstance.defendingCommander;
 
-            attackerPanel.warChestCount.targetCount = attacker.resourceAmount;
+            attackerPanel.warChestCount.SetTargetCount(attacker.resourceAmount);
             attackerPanel.warChestCount.startUpdating = true;
-            defenderPanel.warChestCount.targetCount = defender.resourceAmount;
+            defenderPanel.warChestCount.SetTargetCount(defender.resourceAmount);
             defenderPanel.warChestCount.startUpdating = true;
 
             for (int i = 0; i < attackerPanel.unitList.Count; i++)
@@ -159,22 +162,24 @@ namespace Battlefield
             if(attackerReportPanel.isReady && defenderReportPanel.isReady)
             {
                 nextDayTimer.gameObject.SetActive(true);
+                nextDayCover.gameObject.SetActive(true);
                 nextDayTimer.StartTimer(0, 5, StartNextDay);
             }
             else
             {
                 nextDayTimer.startTimer = false;
                 nextDayTimer.gameObject.SetActive(false);
+                nextDayCover.gameObject.SetActive(false);
             }
         }
 
         public void StartNextDay()
         {
-            attackerReportPanel.myPanel.PlayCloseAnimation();
-            defenderReportPanel.myPanel.PlayCloseAnimation();
+            attackerReportPanel.HideDailyReport();
+            defenderReportPanel.HideDailyReport();
             nextDayTimer.gameObject.SetActive(false);
 
-            BattlefieldSystemsManager.GetInstance.StartDay();
+            BattlefieldSystemsManager.GetInstance.GoToNextDay();
         }
     }
 

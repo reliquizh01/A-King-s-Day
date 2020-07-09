@@ -21,17 +21,6 @@ public class CountingEffectUI : MonoBehaviour
         if(curCount != targetCount && startUpdating)
         {
             curInterval += Time.deltaTime;
-            if(enableColor)
-            {
-                if(curCount < targetCount)
-                {
-                    countText.color = Color.green;
-                }
-                else
-                {
-                    countText.color = Color.red;
-                }
-            }
             if(curInterval >= intervalPerChange)
             {
                 curInterval = 0;
@@ -51,6 +40,27 @@ public class CountingEffectUI : MonoBehaviour
         }
     }
 
+    public void SetTargetCount(int newTarget)
+    {
+        targetCount = newTarget;
+
+        if (enableColor)
+        {
+            if (curCount < targetCount)
+            {
+                countText.color = Color.green;
+            }
+            else if(curCount == targetCount)
+            {
+                countText.color = Color.white;
+            }
+            else
+            {
+                countText.color = Color.red;
+            }
+        }
+        startUpdating = true;
+    }
     public void AdjustIncrement(int difference)
     {
         if(difference > 500)

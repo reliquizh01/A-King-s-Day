@@ -28,7 +28,6 @@ namespace Characters
             if (myCharacter.isFighting)
             {
                 CheckAttackRange();
-
             }
         }
 
@@ -50,11 +49,22 @@ namespace Characters
 
             Gizmos.DrawLine(transform.position, endLine);
         }
+
+        public void UniqueAttackTypeBehavior()
+        {
+            // Prioritize Nearest
+            if (myCharacter.unitInformation.attackType == UnitAttackType.RANGE)
+            {
+                enemiesInRange.Clear();
+            }
+        }
         public void CheckAttackRange()
         {
             Vector2 direction = myCharacter.myMovements.CheckDirection();
-            RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, direction, 0.3f);
 
+            UniqueAttackTypeBehavior();
+
+            RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, direction, totalRange);
             if(enemiesInRange == null)
             {
                 enemiesInRange = new List<BaseCharacter>();
@@ -67,7 +77,6 @@ namespace Characters
                 {
                     if (unitHit == myCharacter)
                         continue;
-
                     if(unitHit.teamType != TeamType.Neutral && unitHit.teamType != myCharacter.teamType)
                     {
                         if(!enemiesInRange.Contains(unitHit))

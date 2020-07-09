@@ -133,22 +133,22 @@ ScriptedImporter:
     second: Archer_Attack_Right_5
   - first:
       213: -8527400246501108250
-    second: Archer_Attack_Right_6
+    second: Archer_Attack_Right_5
   - first:
       213: 5976352119909177213
-    second: Archer_Attack_Right_7
+    second: Archer_Attack_Right_4
   - first:
       213: 5734197942727204983
-    second: Archer_Attack_Right_8
+    second: Archer_Attack_Right_3
   - first:
       213: 9014101148884708186
-    second: Archer_Attack_Right_9
+    second: Archer_Attack_Right_2
   - first:
       213: -7812240835253214468
-    second: Archer_Attack_Right_10
+    second: Archer_Attack_Right_1
   - first:
       213: 150243435334831433
-    second: Archer_Attack_Right_11
+    second: Archer_Attack_Right_0
   - first:
       213: 3396988697390262241
     second: Archer_dead_Left_0
@@ -223,214 +223,214 @@ ScriptedImporter:
     second: Archer_Standing
   - first:
       213: -3188712077140385229
-    second: King Archer Atlas_0
+    second: Archer_Walking_Left_0
   - first:
       213: 6797233440756147794
-    second: King Archer Atlas_2
+    second: Archer_Walking_Left_1
   - first:
       213: 9166666603769748513
-    second: King Archer Atlas_3
+    second: Archer_Walk_Left_0
   - first:
       213: -1784555901700187020
-    second: King Archer Atlas_4
+    second: Archer_Walk_Left_1
   - first:
       213: 5490655873814082192
-    second: King Archer Atlas_5
+    second: Archer_Walk_Left_2
   - first:
       213: 5185792396581541088
-    second: King Archer Atlas_6
+    second: Archer_Walk_Left_3
   - first:
       213: -438362677640023048
-    second: King Archer Atlas_7
+    second: Archer_Walk_Left_4
   - first:
       213: -9147225639875417925
-    second: King Archer Atlas_8
+    second: Archer_Walk_Left_5
   - first:
       213: -8679183795051624697
-    second: King Archer Atlas_9
+    second: Archer_Walk_Left_6
   - first:
       213: -2026688979588646462
-    second: King Archer Atlas_10
+    second: Archer_Walk_Left_7
   - first:
       213: -9113766603666892927
-    second: King Archer Atlas_11
+    second: Archer_Walk_Left_8
   - first:
       213: 8010808775665006119
-    second: King Archer Atlas_12
+    second: Archer_Walk_Left_9
   - first:
       213: -3341320600377782200
-    second: King Archer Atlas_13
+    second: Archer_Walk_Left_10
   - first:
       213: 6417030493729691199
-    second: King Archer Atlas_14
+    second: Archer_Walk_Left_11
   - first:
       213: 4837342839660262831
-    second: King Archer Atlas_15
+    second: Archer_Walk_Right_0
   - first:
       213: 5796205669049922668
-    second: King Archer Atlas_16
+    second: Archer_Walk_Right_1
   - first:
       213: 2486149492587697977
-    second: King Archer Atlas_17
+    second: Archer_Walk_Right_2
   - first:
       213: 4309037515789178856
-    second: King Archer Atlas_18
+    second: Archer_Walk_Right_3
   - first:
       213: 2275484829968809507
-    second: King Archer Atlas_19
+    second: Archer_Walk_Right_4
   - first:
       213: -8081021548676454331
-    second: King Archer Atlas_20
+    second: Archer_Walk_Right_5
   - first:
       213: 7626547818164358172
-    second: King Archer Atlas_21
+    second: Archer_Walk_Right_5
   - first:
       213: -6720419259124794203
-    second: King Archer Atlas_22
+    second: Archer_Walk_Right_4
   - first:
       213: 7674329819295056144
-    second: King Archer Atlas_23
+    second: Archer_Walk_Right_3
   - first:
       213: 4113311995580084010
-    second: King Archer Atlas_24
+    second: Archer_Walk_Right_2
   - first:
       213: -5382856562442298780
-    second: King Archer Atlas_25
+    second: Archer_Walk_Right_1
   - first:
       213: -9000139900670458985
-    second: King Archer Atlas_26
+    second: Archer_Walk_Right_0
   - first:
       213: -7076548941998940048
-    second: King Archer Atlas_27
+    second: Archer_Attack_Left_0
   - first:
       213: -2358994801353565306
-    second: King Archer Atlas_28
+    second: Archer_Attack_Left_1
   - first:
       213: 5749615509407639947
-    second: King Archer Atlas_29
+    second: Archer_Attack_Left_2
   - first:
       213: 1564544142151406721
-    second: King Archer Atlas_30
+    second: Archer_Attack_Left_3
   - first:
       213: -5122679693716291825
-    second: King Archer Atlas_31
+    second: Archer_Attack_Left_4
   - first:
       213: -2553338509207975217
-    second: King Archer Atlas_32
+    second: Archer_Attack_Left_5
   - first:
       213: -5540121974033348844
-    second: King Archer Atlas_33
+    second: Archer_Attack_Left_6
   - first:
       213: 3075325902569302768
-    second: King Archer Atlas_34
+    second: Archer_Attack_Left_7
   - first:
       213: -8612681864609718843
-    second: King Archer Atlas_35
+    second: Archer_Attack_Left_8
   - first:
       213: -646017352587551511
-    second: King Archer Atlas_36
+    second: Archer_Attack_Left_9
   - first:
       213: -2485286290465522579
-    second: King Archer Atlas_37
+    second: Archer_Attack_Left_10
   - first:
       213: -1999091382546724367
-    second: King Archer Atlas_38
+    second: Archer_Attack_Left_11
   - first:
       213: 1732135971382358636
-    second: King Archer Atlas_39
+    second: Archer_Attack_Right_0
   - first:
       213: 3322148103485284000
-    second: King Archer Atlas_40
+    second: Archer_Attack_Right_1
   - first:
       213: -4376641946936952088
-    second: King Archer Atlas_41
+    second: Archer_Attack_Right_2
   - first:
       213: 2393948024432357770
-    second: King Archer Atlas_42
+    second: Archer_Attack_Right_3
   - first:
       213: -8527400246501108250
-    second: King Archer Atlas_43
+    second: Archer_Attack_Right_4
   - first:
       213: 5976352119909177213
-    second: King Archer Atlas_44
+    second: Archer_Attack_Right_5
   - first:
       213: 5734197942727204983
-    second: King Archer Atlas_45
+    second: Archer_Attack_Right_5
   - first:
       213: 9014101148884708186
-    second: King Archer Atlas_46
+    second: Archer_Attack_Right_4
   - first:
       213: -7812240835253214468
-    second: King Archer Atlas_47
+    second: Archer_Attack_Right_3
   - first:
       213: 150243435334831433
-    second: King Archer Atlas_48
+    second: Archer_Attack_Right_2
   - first:
       213: 3396988697390262241
-    second: King Archer Atlas_49
+    second: Archer_Attack_Right_1
   - first:
       213: 4927069135595050012
-    second: King Archer Atlas_50
+    second: Archer_Attack_Right_0
   - first:
       213: -3613573650928718638
-    second: King Archer Atlas_51
+    second: Archer_Dead_Left_0
   - first:
       213: 7450126830082896088
-    second: King Archer Atlas_52
+    second: Archer_Dead_Left_1
   - first:
       213: -8862111426623641528
-    second: King Archer Atlas_53
+    second: Archer_Dead_Left_2
   - first:
       213: 2324697278867517841
-    second: King Archer Atlas_54
+    second: Archer_Dead_Left_3
   - first:
       213: 4421220511554136949
-    second: King Archer Atlas_55
+    second: Archer_Dead_Left_4
   - first:
       213: 8323169081425529840
-    second: King Archer Atlas_56
+    second: Archer_Dead_Left_5
   - first:
       213: -653243838337311373
-    second: King Archer Atlas_57
+    second: Archer_Dead_Left_6
   - first:
       213: -123296775402952149
-    second: King Archer Atlas_58
+    second: Archer_Dead_Left_7
   - first:
       213: 4058292335245001632
-    second: King Archer Atlas_59
+    second: Archer_Dead_Left_8
   - first:
       213: -6138347979049984570
-    second: King Archer Atlas_60
+    second: Archer_Dead_Left_9
   - first:
       213: -3598515391649679625
-    second: King Archer Atlas_61
+    second: Archer_Dead_Right_9
   - first:
       213: 24365366002043138
-    second: King Archer Atlas_62
+    second: Archer_Dead_Right_8
   - first:
       213: -4543480392344335023
-    second: King Archer Atlas_63
+    second: Archer_Dead_Right_7
   - first:
       213: -7430367499650617851
-    second: King Archer Atlas_64
+    second: Archer_Dead_Right_6
   - first:
       213: 4024393374202389506
-    second: King Archer Atlas_65
+    second: Archer_Dead_Right_5
   - first:
       213: -1362129759609450736
-    second: King Archer Atlas_66
+    second: Archer_Dead_Right_4
   - first:
       213: -2825694050002361615
-    second: King Archer Atlas_67
+    second: Archer_Dead_Right_3
   - first:
       213: 7956983616158479112
-    second: King Archer Atlas_68
+    second: Archer_Dead_Right_2
   - first:
       213: 6617796154494224552
-    second: King Archer Atlas_69
+    second: Archer_Dead_Right_1
   - first:
       213: 6008289185449769295
-    second: King Archer Atlas_70
+    second: Archer_Dead_Right_0
   - first:
       213: 6143115165024941365
     second: King Archer Atlas_71
@@ -476,6 +476,21 @@ ScriptedImporter:
   - first:
       213: 622403285062128564
     second: King Archer Atlas_85
+  - first:
+      213: -8779624704692601033
+    second: Archer_Standing
+  - first:
+      213: -3188712077140385229
+    second: Archer_Walking_Left_0
+  - first:
+      213: -8779624704692601033
+    second: Archer_Breath_In
+  - first:
+      213: -3188712077140385229
+    second: Archer_Standing
+  - first:
+      213: 6797233440756147794
+    second: Archer_Breath_Out
   externalObjects: {}
   serializedVersion: 2
   userData: 
@@ -485,7 +500,7 @@ ScriptedImporter:
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     fadeOut: 0
     borderMipMap: 0
     mipMapsPreserveCoverage: 0
@@ -495,13 +510,13 @@ ScriptedImporter:
     convertToNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    isReadable: 0
+    isReadable: 1
     streamingMipmaps: 1
     streamingMipmapsPriority: 0
     nPOTScale: 1
     sRGBTexture: 1
     spriteMode: 2
-    spriteExtrude: 1
+    spriteExtrude: 0
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
@@ -581,15 +596,15 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Left_0
+  - name: Archer_Breath_In
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1
-      y: 283
+      x: 35
+      y: 317
       width: 32
       height: 32
     spriteID: 73fbd87f8d1882680800000000000000
@@ -603,15 +618,15 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Left_1
+  - name: Archer_Breath_Out
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 35
-      y: 283
+      x: 69
+      y: 317
       width: 32
       height: 32
     spriteID: 2562da31dcf945e50800000000000000
@@ -625,14 +640,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Left_2
+  - name: Archer_Walk_Left_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 69
+      x: 1
       y: 283
       width: 32
       height: 32
@@ -647,14 +662,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Left_3
+  - name: Archer_Walk_Left_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 103
+      x: 35
       y: 283
       width: 32
       height: 32
@@ -669,14 +684,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Left_4
+  - name: Archer_Walk_Left_2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 137
+      x: 69
       y: 283
       width: 32
       height: 32
@@ -691,14 +706,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Left_5
+  - name: Archer_Walk_Left_3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 171
+      x: 103
       y: 283
       width: 32
       height: 32
@@ -713,14 +728,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Left_6
+  - name: Archer_Walk_Left_4
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 205
+      x: 137
       y: 283
       width: 32
       height: 32
@@ -735,14 +750,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Left_7
+  - name: Archer_Walk_Left_5
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 239
+      x: 171
       y: 283
       width: 32
       height: 32
@@ -757,14 +772,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Left_8
+  - name: Archer_Walk_Left_6
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 273
+      x: 205
       y: 283
       width: 32
       height: 32
@@ -779,14 +794,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Left_9
+  - name: Archer_Walk_Left_7
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 307
+      x: 239
       y: 283
       width: 32
       height: 32
@@ -801,14 +816,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Left_10
+  - name: Archer_Walk_Left_8
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 341
+      x: 273
       y: 283
       width: 32
       height: 32
@@ -823,14 +838,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Left_11
+  - name: Archer_Walk_Left_9
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 375
+      x: 307
       y: 283
       width: 32
       height: 32
@@ -845,15 +860,15 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Right_0
+  - name: Archer_Walk_Left_10
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1
-      y: 249
+      x: 341
+      y: 283
       width: 32
       height: 32
     spriteID: 84099c5fd9e31a1d0800000000000000
@@ -867,15 +882,15 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Right_1
+  - name: Archer_Walk_Left_11
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 35
-      y: 249
+      x: 375
+      y: 283
       width: 32
       height: 32
     spriteID: f369b933c3fdd0950800000000000000
@@ -889,14 +904,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Right_2
+  - name: Archer_Walk_Right_11
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 69
+      x: 1
       y: 249
       width: 32
       height: 32
@@ -911,14 +926,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Right_3
+  - name: Archer_Walk_Right_10
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 103
+      x: 35
       y: 249
       width: 32
       height: 32
@@ -933,14 +948,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Right_4
+  - name: Archer_Walk_Right_9
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 137
+      x: 69
       y: 249
       width: 32
       height: 32
@@ -955,14 +970,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Right_5
+  - name: Archer_Walk_Right_8
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 171
+      x: 103
       y: 249
       width: 32
       height: 32
@@ -977,14 +992,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Right_6
+  - name: Archer_Walk_Right_7
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 205
+      x: 137
       y: 249
       width: 32
       height: 32
@@ -999,14 +1014,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Right_7
+  - name: Archer_Walk_Right_6
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 239
+      x: 171
       y: 249
       width: 32
       height: 32
@@ -1021,14 +1036,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Right_8
+  - name: Archer_Walk_Right_5
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 273
+      x: 205
       y: 249
       width: 32
       height: 32
@@ -1043,14 +1058,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Right_9
+  - name: Archer_Walk_Right_4
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 307
+      x: 239
       y: 249
       width: 32
       height: 32
@@ -1065,14 +1080,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Right_10
+  - name: Archer_Walk_Right_3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 341
+      x: 273
       y: 249
       width: 32
       height: 32
@@ -1087,7 +1102,51 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_Walking_Right_11
+  - name: Archer_Walk_Right_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 307
+      y: 249
+      width: 32
+      height: 32
+    spriteID: a2f67ea777b651930800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Archer_Walk_Right_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 341
+      y: 249
+      width: 32
+      height: 32
+    spriteID: 46a1fbed9704c45b0800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Archer_Walk_Right_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1098,7 +1157,7 @@ ScriptedImporter:
       y: 249
       width: 32
       height: 32
-    spriteID: a2f67ea777b651930800000000000000
+    spriteID: 793c7b3f174191380800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -1120,7 +1179,7 @@ ScriptedImporter:
       y: 215
       width: 32
       height: 32
-    spriteID: 46a1fbed9704c45b0800000000000000
+    spriteID: 070ac7cfa3c0bcd90800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -1142,7 +1201,7 @@ ScriptedImporter:
       y: 215
       width: 32
       height: 32
-    spriteID: 793c7b3f174191380800000000000000
+    spriteID: 68bd3560aba234fd0800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -1164,7 +1223,7 @@ ScriptedImporter:
       y: 215
       width: 32
       height: 32
-    spriteID: 070ac7cfa3c0bcd90800000000000000
+    spriteID: b89a151d7dcbacf40800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -1186,7 +1245,7 @@ ScriptedImporter:
       y: 215
       width: 32
       height: 32
-    spriteID: 68bd3560aba234fd0800000000000000
+    spriteID: 1845a54ab9066b510800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -1208,7 +1267,7 @@ ScriptedImporter:
       y: 215
       width: 32
       height: 32
-    spriteID: b89a151d7dcbacf40800000000000000
+    spriteID: f0ffeeda5f598e8b0800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -1230,7 +1289,7 @@ ScriptedImporter:
       y: 215
       width: 32
       height: 32
-    spriteID: 1845a54ab9066b510800000000000000
+    spriteID: fca455f6728b09cd0800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -1252,7 +1311,7 @@ ScriptedImporter:
       y: 215
       width: 32
       height: 32
-    spriteID: f0ffeeda5f598e8b0800000000000000
+    spriteID: 417086dda688d13b0800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -1274,7 +1333,7 @@ ScriptedImporter:
       y: 215
       width: 32
       height: 32
-    spriteID: fca455f6728b09cd0800000000000000
+    spriteID: 0fa63375d90cdaa20800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -1296,7 +1355,7 @@ ScriptedImporter:
       y: 215
       width: 32
       height: 32
-    spriteID: 417086dda688d13b0800000000000000
+    spriteID: 5cd1d70e97b997880800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -1318,7 +1377,7 @@ ScriptedImporter:
       y: 215
       width: 32
       height: 32
-    spriteID: 0fa63375d90cdaa20800000000000000
+    spriteID: 9ecd74cf3a2e807f0800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -1340,7 +1399,7 @@ ScriptedImporter:
       y: 215
       width: 32
       height: 32
-    spriteID: 5cd1d70e97b997880800000000000000
+    spriteID: d6c77a3594d728dd0800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -1362,249 +1421,7 @@ ScriptedImporter:
       y: 215
       width: 32
       height: 32
-    spriteID: 9ecd74cf3a2e807f0800000000000000
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 0, y: 0}
-  - name: Archer_Attack_Right_0
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 1
-      y: 181
-      width: 32
-      height: 32
-    spriteID: d6c77a3594d728dd0800000000000000
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 0, y: 0}
-  - name: Archer_Attack_Right_1
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 35
-      y: 181
-      width: 32
-      height: 32
     spriteID: 1f902cdaafcc144e0800000000000000
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 0, y: 0}
-  - name: Archer_Attack_Right_2
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 69
-      y: 181
-      width: 32
-      height: 32
-    spriteID: c62fbec1d78c90810800000000000000
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 0, y: 0}
-  - name: Archer_Attack_Right_3
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 103
-      y: 181
-      width: 32
-      height: 32
-    spriteID: 0ae5a7f3914aa1e20800000000000000
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 0, y: 0}
-  - name: Archer_Attack_Right_4
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 137
-      y: 181
-      width: 32
-      height: 32
-    spriteID: 8eabfb3765b0343c0800000000000000
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 0, y: 0}
-  - name: Archer_Attack_Right_5
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 171
-      y: 181
-      width: 32
-      height: 32
-    spriteID: a81f9076b03093120800000000000000
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 0, y: 0}
-  - name: Archer_Attack_Right_6
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 205
-      y: 181
-      width: 32
-      height: 32
-    spriteID: 6e519b9e7a698a980800000000000000
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 0, y: 0}
-  - name: Archer_Attack_Right_7
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 239
-      y: 181
-      width: 32
-      height: 32
-    spriteID: d77d6d7c69440f250800000000000000
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 0, y: 0}
-  - name: Archer_Attack_Right_8
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 273
-      y: 181
-      width: 32
-      height: 32
-    spriteID: 770e708d5a6f39f40800000000000000
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 0, y: 0}
-  - name: Archer_Attack_Right_9
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 307
-      y: 181
-      width: 32
-      height: 32
-    spriteID: a5ba6b47c35881d70800000000000000
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 0, y: 0}
-  - name: Archer_Attack_Right_10
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 341
-      y: 181
-      width: 32
-      height: 32
-    spriteID: cf26ee2f958559390800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -1622,7 +1439,205 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 375
+      x: 1
+      y: 181
+      width: 32
+      height: 32
+    spriteID: c62fbec1d78c90810800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Archer_Attack_Right_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 35
+      y: 181
+      width: 32
+      height: 32
+    spriteID: 0ae5a7f3914aa1e20800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Archer_Attack_Right_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 69
+      y: 181
+      width: 32
+      height: 32
+    spriteID: 8eabfb3765b0343c0800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Archer_Attack_Right_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 103
+      y: 181
+      width: 32
+      height: 32
+    spriteID: a81f9076b03093120800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Archer_Attack_Right_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 137
+      y: 181
+      width: 32
+      height: 32
+    spriteID: 6e519b9e7a698a980800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Archer_Attack_Right_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 171
+      y: 181
+      width: 32
+      height: 32
+    spriteID: d77d6d7c69440f250800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Archer_Attack_Right_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 205
+      y: 181
+      width: 32
+      height: 32
+    spriteID: 770e708d5a6f39f40800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Archer_Attack_Right_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 239
+      y: 181
+      width: 32
+      height: 32
+    spriteID: a5ba6b47c35881d70800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Archer_Attack_Right_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 273
+      y: 181
+      width: 32
+      height: 32
+    spriteID: cf26ee2f958559390800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Archer_Attack_Right_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 307
       y: 181
       width: 32
       height: 32
@@ -1637,15 +1652,15 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_dead_Left_0
+  - name: Archer_Attack_Right_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1
-      y: 147
+      x: 341
+      y: 181
       width: 32
       height: 32
     spriteID: 1e7a6f5e837842f20800000000000000
@@ -1659,15 +1674,15 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_dead_Left_1
+  - name: Archer_Attack_Right_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 35
-      y: 147
+      x: 375
+      y: 181
       width: 32
       height: 32
     spriteID: c141fea2647706440800000000000000
@@ -1681,14 +1696,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_dead_Left_2
+  - name: Archer_Dead_Left_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 69
+      x: 1
       y: 147
       width: 32
       height: 32
@@ -1703,14 +1718,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_dead_Left_3
+  - name: Archer_Dead_Left_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 103
+      x: 35
       y: 147
       width: 32
       height: 32
@@ -1725,14 +1740,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_dead_Left_4
+  - name: Archer_Dead_Left_2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 137
+      x: 69
       y: 147
       width: 32
       height: 32
@@ -1747,14 +1762,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_dead_Left_5
+  - name: Archer_Dead_Left_3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 171
+      x: 103
       y: 147
       width: 32
       height: 32
@@ -1769,14 +1784,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_dead_Left_6
+  - name: Archer_Dead_Left_4
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 205
+      x: 137
       y: 147
       width: 32
       height: 32
@@ -1791,14 +1806,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_dead_Left_7
+  - name: Archer_Dead_Left_5
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 239
+      x: 171
       y: 147
       width: 32
       height: 32
@@ -1813,14 +1828,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_dead_Left_8
+  - name: Archer_Dead_Left_6
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 273
+      x: 205
       y: 147
       width: 32
       height: 32
@@ -1835,14 +1850,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_dead_Left_9
+  - name: Archer_Dead_Left_7
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 307
+      x: 239
       y: 147
       width: 32
       height: 32
@@ -1857,15 +1872,15 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_dead_Right_9
+  - name: Archer_Dead_Left_8
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1
-      y: 113
+      x: 273
+      y: 147
       width: 32
       height: 32
     spriteID: 0a308fc8063f15830800000000000000
@@ -1879,15 +1894,15 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_dead_Right_8
+  - name: Archer_Dead_Left_9
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 35
-      y: 113
+      x: 307
+      y: 147
       width: 32
       height: 32
     spriteID: 6cd1df0190530daa0800000000000000
@@ -1901,14 +1916,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_dead_Right_7
+  - name: Archer_Dead_Right_9
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 69
+      x: 1
       y: 113
       width: 32
       height: 32
@@ -1923,14 +1938,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_dead_Right_6
+  - name: Archer_Dead_Right_8
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 103
+      x: 35
       y: 113
       width: 32
       height: 32
@@ -1945,14 +1960,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_dead_Right_5
+  - name: Archer_Dead_Right_7
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 137
+      x: 69
       y: 113
       width: 32
       height: 32
@@ -1967,14 +1982,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_dead_Right_4
+  - name: Archer_Dead_Right_6
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 171
+      x: 103
       y: 113
       width: 32
       height: 32
@@ -1989,14 +2004,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_dead_Right_3
+  - name: Archer_Dead_Right_5
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 205
+      x: 137
       y: 113
       width: 32
       height: 32
@@ -2011,14 +2026,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_dead_Right_2
+  - name: Archer_Dead_Right_4
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 239
+      x: 171
       y: 113
       width: 32
       height: 32
@@ -2033,14 +2048,14 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_dead_Right_1
+  - name: Archer_Dead_Right_3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 273
+      x: 205
       y: 113
       width: 32
       height: 32
@@ -2055,7 +2070,51 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  - name: Archer_dead_Right_0
+  - name: Archer_Dead_Right_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 239
+      y: 113
+      width: 32
+      height: 32
+    spriteID: 803bab4e072ec6e60800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Archer_Dead_Right_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 273
+      y: 113
+      width: 32
+      height: 32
+    spriteID: 8a803983a8227db50800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Archer_Dead_Right_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -2066,7 +2125,7 @@ ScriptedImporter:
       y: 113
       width: 32
       height: 32
-    spriteID: 803bab4e072ec6e60800000000000000
+    spriteID: f49fd8e4e2bb16350800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -5121,10 +5180,10 @@ ScriptedImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
+    textureCompression: 2
+    compressionQuality: 100
     forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
   - name: PC, Mac & Linux Standalone

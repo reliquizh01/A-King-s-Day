@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Characters;
+using Managers;
 
 namespace Battlefield
 {
     public class InjuredUnitCounter : MonoBehaviour
     {
-        public Image iconBg, titleBg, countBg, characterIcon;
+        public Image iconBg, titleBg, countBg, selectIcon;
         public TextMeshProUGUI titleText;
         public DailyReportPanel myController;
         public Image unitIcon;
@@ -19,6 +21,8 @@ namespace Battlefield
 
         public Color disableColor = new Color(1, 1, 1, 0.025f);
         public Color enableColor = new Color(1, 1, 1, 1f);
+
+        public string unitName;
         public void OnClickSelect()
         {
             if(!allowClick && panelDisabled)
@@ -43,7 +47,8 @@ namespace Battlefield
             iconBg.color = enableColor;
             titleBg.color = enableColor;
             countBg.color = enableColor;
-            characterIcon.color = enableColor;
+            unitIcon.color = enableColor;
+            selectIcon.color = enableColor;
 
             titleText.color = new Color(titleText.color.r, titleText.color.g, titleText.color.b, enableColor.a);
             injuredCount.countText.color = new Color(injuredCount.countText.color.r, injuredCount.countText.color.g, injuredCount.countText.color.b, enableColor.a);
@@ -57,7 +62,8 @@ namespace Battlefield
             Debug.Log("Icon BG: " + iconBg.color + " COLOR : " + disableColor);
             titleBg.color = disableColor;
             countBg.color = disableColor;
-            characterIcon.color = disableColor;
+            unitIcon.color = disableColor;
+            selectIcon.color = disableColor;
 
             titleText.color = new Color(titleText.color.r, titleText.color.g, titleText.color.b, disableColor.a);
             injuredCount.countText.color = new Color(injuredCount.countText.color.r, injuredCount.countText.color.g, injuredCount.countText.color.b, disableColor.a);

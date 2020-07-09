@@ -53,6 +53,7 @@ public class BattlefieldSystemsManager : MonoBehaviour
         }
         dayInProgress = true;
         unitsInCamp = false;
+        currentDay += 1;
 
         SetVictoryPoints();
         BattlefieldSceneManager.GetInstance.battleUIInformation.dayTimer.StartTimer(minutePerDay, secondsPerDay, StopCurrentDayActions);
