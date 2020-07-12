@@ -39,6 +39,14 @@ public class OpeningManager : BaseManager
             appFirstStart = false;
         }
     }
+
+    public void OpenOptions()
+    {
+        if(TransitionManager.GetInstance != null)
+        {
+            TransitionManager.GetInstance.ShowOptions(true);
+        }
+    }
     public void QuitGame()
     {
         #if UNITY_EDITOR
@@ -56,10 +64,25 @@ public class OpeningManager : BaseManager
     public void TransitionToCustomBattle()
     {
         TransitionManager.GetInstance.LoadScene(SceneType.Battlefield);
+        PlayThisBackGroundMusic(BackgroundMusicType.battlefieldPreparation1);
     }
     public override void CloseManager()
     {
         base.CloseManager();
         startBtn.gameObject.SetActive(false);
     }
+
+    public void MouseHoverOnOptions(GameObject thisOption)
+    {
+        if(AudioManager.GetInstance != null)
+        {
+            AudioManager.GetInstance.PlayDecisionHover();
+        }
+        thisOption.transform.localScale = new Vector3(1.15f, 1.15f, 1.0f);
+    }
+    public void MouseExitOnOptions(GameObject thisOption)
+    {
+        thisOption.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+    }
+
 }

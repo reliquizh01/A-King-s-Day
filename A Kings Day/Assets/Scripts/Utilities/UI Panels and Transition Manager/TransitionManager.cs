@@ -64,6 +64,7 @@ namespace Managers
         // USE THIS TO REMOVE ONBOARDING
         public bool isNewGame = false;
         public ViewManager currentMgr;
+        public OptionsController optionController;
 
         public BaseSceneManager currentSceneManager;
         public ResourceInformationController resourceInformationController;
@@ -137,6 +138,19 @@ namespace Managers
         public void LoadScene()
         {
             SceneManager.LoadScene((int)preLoadThisScene);
+        }
+
+        public void ShowOptions(bool directOption)
+        {
+            ShowTabCover();
+            if(directOption)
+            {
+                optionController.OpenOptionPanel();
+            }
+            else
+            {
+                optionController.OpenInGameOptions();
+            }
         }
 
         IEnumerator DelayRemoveLoading()

@@ -14,6 +14,7 @@ public class TileConversionHandler : MonoBehaviour
     private Vector3 overlapSize = new Vector3(1.075f, 1.15f, 1);
     private Vector3 normalSize = new Vector3(1, 1, 1);
     public List<BaseCharacter> characterStepping;
+    public BaseCharacter lastCharacterToStepIn;
 
     public TeamType convertingTo;
 
@@ -98,8 +99,9 @@ public class TileConversionHandler : MonoBehaviour
         }
 
         characterStepping.Add(thisCharacter);
+        lastCharacterToStepIn = thisCharacter;
 
-        if(characterStepping.Count > 0)
+        if (characterStepping.Count > 0)
         {
             CheckCharactersSteppedIn();
         }
@@ -143,8 +145,21 @@ public class TileConversionHandler : MonoBehaviour
         }
         else if(attacker == null && defender == null)
         {
-            ConvertTile(convertedTile.currentOwner);
-            isConverting = false;
+            BaseCharacter lastCharacter = null;
+            if(lastCharacterToStepIn.unitInformation.curhealth > 0)
+            {
+                lastCharacter = lastCharacterToStepIn;
+            }
+
+            if(lastCharacter != null)
+            {
+                ConvertTile(lastCharacter.teamType);
+            }
+            else
+            {
+                ConvertTile(convertedTile.currentOwner);
+                isConverting = false;
+            }
         }
     }
 

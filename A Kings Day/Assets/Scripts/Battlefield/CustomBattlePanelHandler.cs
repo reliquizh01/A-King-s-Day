@@ -24,13 +24,13 @@ public class CustomBattlePanelHandler : MonoBehaviour
 
     public void Update()
     {
-        if(UtilitiesCommandObserver.GetInstance == null)
+        if (UtilitiesCommandObserver.GetInstance == null)
         {
-            if(Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift))
             {
                 increaseByTen = true;
             }
-            else if(Input.GetKeyUp(KeyCode.LeftShift))
+            else if (Input.GetKeyUp(KeyCode.LeftShift))
             {
                 increaseByTen = false;
             }
@@ -53,45 +53,26 @@ public class CustomBattlePanelHandler : MonoBehaviour
         for (int i = 0; i < attackersPanel.Count; i++)
         {
             List<int> tmp = new List<int>();
-            if(i != (attackersPanel.Count-1))
-            {
-                tmp.Add((int)attackingCommander.unitsCarried[i].unitInformation.maxHealth);
-                tmp.Add((int)attackingCommander.unitsCarried[i].unitInformation.maxDamage);
-                tmp.Add((int)attackingCommander.unitsCarried[i].unitInformation.origSpeed);
-                tmp.Add(0);
+            tmp.Add((int)attackingCommander.unitsCarried[i].unitInformation.maxHealth);
+            tmp.Add((int)attackingCommander.unitsCarried[i].unitInformation.maxDamage);
+            tmp.Add((int)attackingCommander.unitsCarried[i].unitInformation.origSpeed);
+            tmp.Add(0);
 
-                attackersPanel[i].SetMultiCounter(tmp, attackingCommander.unitsCarried[i].unitInformation.unitName);
-            }
-            else
-            {
-                tmp.Add((int)attackingCommander.heroesCarried[0].unitInformation.maxHealth);
-                tmp.Add((int)attackingCommander.heroesCarried[0].unitInformation.maxDamage);
-                tmp.Add((int)attackingCommander.heroesCarried[0].unitInformation.origSpeed);
+            attackersPanel[i].SetMultiCounter(tmp, attackingCommander.unitsCarried[i].unitInformation.unitName);
+            attackersPanel[i].panelIcon.sprite = BattlefieldSpawnManager.GetInstance.unitStorage.GetUnitIcon(attackingCommander.unitsCarried[i].unitInformation.unitName);
 
-                attackersPanel[i].SetMultiCounter(tmp, attackingCommander.heroesCarried[0].unitInformation.unitName);
-            } 
         }
 
         for (int i = 0; i < defendersPanel.Count; i++)
         {
             List<int> tmp = new List<int>();
-            if (i != (attackersPanel.Count - 1))
-            {
-                tmp.Add((int)defendingCommander.unitsCarried[i].unitInformation.maxHealth);
-                tmp.Add((int)defendingCommander.unitsCarried[i].unitInformation.maxDamage);
-                tmp.Add((int)defendingCommander.unitsCarried[i].unitInformation.origSpeed);
-                tmp.Add(0);
+            tmp.Add((int)defendingCommander.unitsCarried[i].unitInformation.maxHealth);
+            tmp.Add((int)defendingCommander.unitsCarried[i].unitInformation.maxDamage);
+            tmp.Add((int)defendingCommander.unitsCarried[i].unitInformation.origSpeed);
+            tmp.Add(0);
 
-                defendersPanel[i].SetMultiCounter(tmp, defendingCommander.unitsCarried[i].unitInformation.unitName);
-            }
-            else
-            {
-                tmp.Add((int)defendingCommander.heroesCarried[0].unitInformation.maxHealth);
-                tmp.Add((int)defendingCommander.heroesCarried[0].unitInformation.maxDamage);
-                tmp.Add((int)defendingCommander.heroesCarried[0].unitInformation.origSpeed);
-
-                defendersPanel[i].SetMultiCounter(tmp, defendingCommander.heroesCarried[0].unitInformation.unitName);
-            }
+            defendersPanel[i].SetMultiCounter(tmp, defendingCommander.unitsCarried[i].unitInformation.unitName);
+            defendersPanel[i].panelIcon.sprite = BattlefieldSpawnManager.GetInstance.unitStorage.GetUnitIcon(defendingCommander.unitsCarried[i].unitInformation.unitName);
         }
 
     }
@@ -99,7 +80,7 @@ public class CustomBattlePanelHandler : MonoBehaviour
     public void IncreaseUnitIndexAttack(int idx)
     {
         int increase = 1;
-        if(increaseByTen)
+        if (increaseByTen)
         {
             increase = 10;
         }
@@ -111,7 +92,7 @@ public class CustomBattlePanelHandler : MonoBehaviour
     }
     public void DecreaseUnitIndexAttack(int idx)
     {
-        if(attackingCommander.unitsCarried[idx].totalUnitCount == 0)
+        if (attackingCommander.unitsCarried[idx].totalUnitCount == 0)
         {
             return;
         }
@@ -121,7 +102,7 @@ public class CustomBattlePanelHandler : MonoBehaviour
         {
             decrease = 10;
 
-            if((attackingCommander.unitsCarried[idx].totalUnitCount - 10) < 0)
+            if ((attackingCommander.unitsCarried[idx].totalUnitCount - 10) < 0)
             {
                 decrease = attackingCommander.unitsCarried[idx].totalUnitCount;
             }
@@ -157,7 +138,7 @@ public class CustomBattlePanelHandler : MonoBehaviour
         int decrease = 1;
         if (increaseByTen)
         {
-            decrease = 10;  
+            decrease = 10;
 
             if ((defendingCommander.unitsCarried[idx].totalUnitCount - 10) < 0)
             {
@@ -182,9 +163,19 @@ public class CustomBattlePanelHandler : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        if(TransitionManager.GetInstance != null)
+        if (TransitionManager.GetInstance != null)
         {
+            TransitionManager.GetInstance.currentSceneManager.PlayThisBackGroundMusic(BackgroundMusicType.openingTheme);
             TransitionManager.GetInstance.LoadScene(SceneType.Opening);
+
+        }
+    }
+
+    public void ShowControls()
+    {
+        if (TransitionManager.GetInstance != null)
+        {
+            TransitionManager.GetInstance.ShowOptions(true);
         }
     }
 }

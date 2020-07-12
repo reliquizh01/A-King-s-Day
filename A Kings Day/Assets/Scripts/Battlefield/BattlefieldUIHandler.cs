@@ -114,7 +114,7 @@ namespace Battlefield
             {
                 return;
             }
-
+            Debug.Log("Push");
             BattlefieldCommander attacker = BattlefieldSpawnManager.GetInstance.attackingCommander;
             BattlefieldCommander defender = BattlefieldSpawnManager.GetInstance.defendingCommander;
 

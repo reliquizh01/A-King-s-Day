@@ -14,6 +14,7 @@ namespace Characters
         public CharacterMovement myMovements;
         public CharacterRange myRange;
         public CharacterAnimationControl myAnimation;
+        public CharacterAudioControl mySfx;
 
         public bool isKing = false;
         public bool isMainCharacter = false;
@@ -25,7 +26,7 @@ namespace Characters
         public bool isFighting;
         public bool canReturnToCamp;
         public TeamType teamType;
-        
+        public bool canStagger;
         private Action reachedCallback;
 
         public void Start()
@@ -161,6 +162,11 @@ namespace Characters
                     {
                         break;
                     }
+                    if(!canStagger)
+                    {
+                        return;
+                    }
+
                     myMovements.isMoving = false;
                     myAnimation.ChangeState(newState);
                     break;
@@ -201,11 +207,15 @@ namespace Characters
                return;
            }
 
+           if(mySfx != null)
+            {
+                mySfx.PlaySendDamageAudio();
+            }
             if(unitInformation.attackType == UnitAttackType.MELEE)
             {
                 if (myRange.enemiesInRange != null && myRange.enemiesInRange.Count > 0)
                 {
-                    myRange.enemiesInRange[0].ReceiveDamage(unitInformation.RealDamage);
+                    myRange.enemiesInRange[0].ReceiveDamage(unitInformation.RealDamage, unitInformation.attackType);
 
                     if (myRange.enemiesInRange[0].unitInformation.curhealth <= 0)
                     {
@@ -222,7 +232,7 @@ namespace Characters
             {
                 if (myRange.enemiesInRange != null && myRange.enemiesInRange.Count > 0)
                 {
-                    myRange.enemiesInRange[0].ReceiveDamage(unitInformation.RealDamage);
+                    myRange.enemiesInRange[0].ReceiveDamage(unitInformation.RealDamage, unitInformation.attackType);
 
                     if (myRange.enemiesInRange[0].unitInformation.curhealth <= 0)
                     {
@@ -241,9 +251,23 @@ namespace Characters
             }
         }
 
-        public void ReceiveDamage(float amount)
+        public void ReceiveDamage(float amount, UnitAttackType attackType)
         {
             UpdateCharacterState(CharacterStates.Damage_Received);
+
+            switch (attackType)
+            {
+                case UnitAttackType.MELEE:
+                    mySfx.PlayReceiveMelee();
+                    break;
+                case UnitAttackType.RANGE:
+                    mySfx.PlayReceiveProjectile();
+                    break;
+                case UnitAttackType.SPELL:
+                    break;
+                default:
+                    break;
+            }
             unitInformation.ReceiveDamage(amount);
 
             //Debug.Log("[ DAMAGE RECEIVED : " + amount + " RECEIVED BY:"+ unitInformation.unitName + " ]");

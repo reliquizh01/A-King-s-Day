@@ -125,28 +125,24 @@ namespace Battlefield
         }
         public void PlayerOneControls()
         {
-            if (Input.GetKeyDown(KeyCode.J))
+            if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                if (currentSelectedIdx <= 0)
-                {
-                    currentSelectedIdx = 3;
-                }
-                else
-                {
-                    currentSelectedIdx -= 1;
-                }
+                currentSelectedIdx = 0;
                 SetUnitPanelAsSelected(currentSelectedIdx);
             }
-            else if (Input.GetKeyDown(KeyCode.L))
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                if (currentSelectedIdx >= 3)
-                {
-                    currentSelectedIdx = 0;
-                }
-                else
-                {
-                    currentSelectedIdx += 1;
-                }
+                currentSelectedIdx = 1;
+                SetUnitPanelAsSelected(currentSelectedIdx);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                currentSelectedIdx = 2;
+                SetUnitPanelAsSelected(currentSelectedIdx);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                currentSelectedIdx = 3;
                 SetUnitPanelAsSelected(currentSelectedIdx);
             }
 
@@ -275,28 +271,24 @@ namespace Battlefield
         }
         public void PlayerTwoControls()
         {
-            if (Input.GetKeyDown(KeyCode.Keypad4))
+            if (Input.GetKeyDown(KeyCode.Keypad1))
             {
-                if (currentSelectedIdx <= 0)
-                {
-                    currentSelectedIdx = 3;
-                }
-                else
-                {
-                    currentSelectedIdx -= 1;
-                }
+                currentSelectedIdx = 0;
                 SetUnitPanelAsSelected(currentSelectedIdx);
             }
-            else if (Input.GetKeyDown(KeyCode.Keypad6))
+            else if (Input.GetKeyDown(KeyCode.Keypad2))
             {
-                if (currentSelectedIdx >= 3)
-                {
-                    currentSelectedIdx = 0;
-                }
-                else
-                {
-                    currentSelectedIdx += 1;
-                }
+                currentSelectedIdx = 1;
+                SetUnitPanelAsSelected(currentSelectedIdx);
+            }
+            else if (Input.GetKeyDown(KeyCode.Keypad3))
+            {
+                currentSelectedIdx = 2;
+                SetUnitPanelAsSelected(currentSelectedIdx);
+            }
+            else if (Input.GetKeyDown(KeyCode.Keypad4))
+            {
+                currentSelectedIdx = 3;
                 SetUnitPanelAsSelected(currentSelectedIdx);
             }
 

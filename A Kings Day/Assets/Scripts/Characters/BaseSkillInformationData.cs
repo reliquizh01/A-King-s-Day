@@ -15,6 +15,11 @@ namespace Characters
         PassiveBuff,
     }
 
+    public enum TriggeredBy
+    {
+        CommanderActivated,
+        ReceivingDamage,
+    }
     public enum TargetType
     {
         Unit,
@@ -27,6 +32,8 @@ namespace Characters
         damage,
         speed,
         range,
+        blockProjectile,
+        blockMelee,
     }
 
     public enum AreaAffected
@@ -43,6 +50,8 @@ namespace Characters
         public float duration;
         public TargetStats targetStats;
         public float effectAmount;
+        public bool permanentBuff;
+        public TriggeredBy buffTrigger;
     }
 
     [System.Serializable]

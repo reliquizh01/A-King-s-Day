@@ -120,7 +120,10 @@ namespace Characters
             pathIdx = 0;
 
             myCharacter.UpdateCharacterState(CharacterStates.Idle);
-            myCharacter.ReturnThisUnit();
+            if(myCharacter.isFighting)
+            {
+               myCharacter.ReturnThisUnit();
+            }
         }
 
         public Vector2 CheckDirection()

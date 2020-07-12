@@ -346,10 +346,10 @@ TextureImporter:
     second: Action_card_Recruit_Troops
   - first:
       213: 5455269037575013251
-    second: Technology Atlas_44
+    second: Return_Button
   - first:
       213: 4547751729935902508
-    second: Technology Atlas_45
+    second: Controls_Button
   - first:
       213: -1496275953165801253
     second: Card_Information_Panel_Highlighted
@@ -371,6 +371,12 @@ TextureImporter:
   - first:
       213: 8637753909675204096
     second: Blue_Panel_1
+  - first:
+      213: 3684515683474729306
+    second: Menu Button
+  - first:
+      213: -6299998364975391162
+    second: Technology Atlas_52
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1807,6 +1813,153 @@ TextureImporter:
       bones: []
       spriteID: 00e9e638a677fd770800000000000000
       internalID: 8637753909675204096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Button
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 5
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a59edd22e77022330800000000000000
+      internalID: 3684515683474729306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Return_Button
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 5
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38388d2594205bb40800000000000000
+      internalID: 5455269037575013251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls_Button
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 5
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c276f757a1cdc1f30800000000000000
+      internalID: 4547751729935902508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Technology Atlas_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 17
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f95772706fdc7eff0800000000000000
+      internalID: -6810417852090977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Technology Atlas_49
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 17
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea2760859351e6dc0800000000000000
+      internalID: -3643951712462015826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Technology Atlas_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79652b72f30574fe0800000000000000
+      internalID: -1204906143119157609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Technology Atlas_52
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 3
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64e991aadd8e198a0800000000000000
+      internalID: -6299998364975391162
       vertices: []
       indices: 
       edges: []

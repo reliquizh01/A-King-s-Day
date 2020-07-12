@@ -226,8 +226,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 483
+      x: 385
+      y: 172
       width: 21
       height: 3
     spriteID: d6220ac95a95d2740acc9ee40de4d2c8
@@ -240,7 +240,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -193, y: -98}
+    uvTransform: {x: 188, y: -409}
   - name: Controls Panel
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -351,182 +351,6 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 183, y: -42}
-  - name: Player 2-  Down Arrow
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 113
-      y: 233
-      width: 63
-      height: 34
-    spriteID: df97aae686357da418f33a2a18c5c451
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -282, y: -280}
-  - name: Player 2-  Up Arrow
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 113
-      y: 283
-      width: 63
-      height: 34
-    spriteID: 969901b47520b4945898e832583d73ea
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -282, y: -190}
-  - name: Player 2-  Left Arrow
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 113
-      y: 333
-      width: 63
-      height: 34
-    spriteID: cebe04058e9e3a44ba8ef995f8067c83
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -282, y: -100}
-  - name: Player 2-  Right ARrow
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 113
-      y: 383
-      width: 63
-      height: 34
-    spriteID: af09573496739694f87e2c889520820e
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -282, y: -12}
-  - name: Player 2-  Numpad 4
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 421
-      y: 4
-      width: 63
-      height: 34
-    spriteID: 0e41f51725e894f4ab26b4f5a8c51e3c
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 26, y: -352}
-  - name: Player 2-  Numpad 6
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 113
-      y: 433
-      width: 63
-      height: 34
-    spriteID: 14de72e620c42074088e0ed491ace813
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -282, y: 113}
-  - name: Player 2-  No Clicked copy
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 314
-      y: 88
-      width: 63
-      height: 34
-    spriteID: ada03b2e57ce0564fb5f13cee98ef4e1
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -81, y: -195}
-  - name: Player 2-  No Clicked
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 314
-      y: 130
-      width: 63
-      height: 34
-    spriteID: 112df4757bb1c5e4ba117b2b7e4e2e32
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -81, y: -424}
   - name: Player 1 - W Clicked
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -732,8 +556,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 161
-      y: 475
+      x: 385
+      y: 130
       width: 18
       height: 11
     spriteID: ca82c07800d6a2a42a769b295421c00d
@@ -746,7 +570,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -52, y: 69}
+    uvTransform: {x: 172, y: -276}
   - name: 1 copy 10
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -754,8 +578,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 161
-      y: 494
+      x: 492
+      y: 4
       width: 16
       height: 9
     spriteID: 62b0a61fbf33e0c42b82a3f70d68a3f9
@@ -768,7 +592,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -72, y: 87}
+    uvTransform: {x: 259, y: -403}
   - name: Selected Icon Left
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -776,8 +600,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 184
-      y: 453
+      x: 405
+      y: 149
       width: 7
       height: 10
     spriteID: d42deacddbb98bd4e9ae3ba830259c6a
@@ -790,7 +614,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -17, y: 47}
+    uvTransform: {x: 204, y: -257}
   - name: Unt Selected
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -798,8 +622,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 185
-      y: 494
+      x: 492
+      y: 21
       width: 11
       height: 12
     spriteID: ae6b9c73717fa35448959208119eefdf
@@ -812,7 +636,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 12, y: 89}
+    uvTransform: {x: 319, y: -384}
   - name: Unit Box
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -820,8 +644,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 187
-      y: 475
+      x: 184
+      y: 433
       width: 9
       height: 10
     spriteID: 555346c0639781e40a3a30291552787c
@@ -834,7 +658,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1, y: 69}
+    uvTransform: {x: -2, y: 27}
   - name: Mouse Icon copy
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -842,8 +666,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 492
-      y: 4
+      x: 184
+      y: 451
       width: 3
       height: 3
     spriteID: b83cf2df75d8aa34582a427c54eb497e
@@ -856,7 +680,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 332, y: -404}
+    uvTransform: {x: 24, y: 43}
   - name: Keyboard - 4 Clicked
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -930,8 +754,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 184
-      y: 433
+      x: 385
+      y: 149
       width: 12
       height: 12
     spriteID: 212ca79f7472ee8429a835c5af06cace
@@ -944,7 +768,227 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -13, y: 113}
+    uvTransform: {x: 188, y: -171}
+  - name: Player2- Down Arrow
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 233
+      width: 63
+      height: 34
+    spriteID: 75a9f2d79d86ede42ae2f4f6a7906389
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -272, y: -278}
+  - name: Player2- Up Arrow
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 283
+      width: 63
+      height: 34
+    spriteID: 071d654a230d91446ae77f83323c2816
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -272, y: -188}
+  - name: Player2- Left Arrow
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 333
+      width: 63
+      height: 34
+    spriteID: f948310935365a54a8c475b41cffa603
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -272, y: -98}
+  - name: Player 2- Right Arrow
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 383
+      width: 63
+      height: 34
+    spriteID: 9e3243589cae2b549a6cfc141b907169
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -272, y: -10}
+  - name: Player 2-  No Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 421
+      y: 4
+      width: 63
+      height: 34
+    spriteID: 669d198d57f3cf04e9b2363fb7643353
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 36, y: -550}
+  - name: Player 2-  Numpad 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 433
+      width: 63
+      height: 34
+    spriteID: 76f05f9f3c34cfe499c3bd4ce27d8a99
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -272, y: 79}
+  - name: Player 2-  Numpad 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 314
+      y: 88
+      width: 63
+      height: 34
+    spriteID: b41f94ffecf57f04fb23b8cb2d79f2ca
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -71, y: -230}
+  - name: Player2- Numpad 0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 314
+      y: 130
+      width: 63
+      height: 34
+    spriteID: c4ff1767e72babe4eb6d3f39c9c0eb25
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -71, y: -151}
+  - name: Player 2- Numpad 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 314
+      y: 172
+      width: 63
+      height: 34
+    spriteID: 5527546b67e6d5a4b80af990332ed056
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -71, y: -72}
+  - name: Player 2-  Numpad 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 314
+      y: 214
+      width: 63
+      height: 34
+    spriteID: 7eec2b6d909cd474ea0735fb677326b6
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -71, y: 8}
   platformSettings:
   - name: Default
     overridden: 1
@@ -1034,7 +1078,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: d6220ac95a95d2740acc9ee40de4d2c8
     layerID: 10
-    mosaicPosition: {x: 4, y: 483}
+    mosaicPosition: {x: 385, y: 172}
   - name: Controls Panel
     spriteName: Controls Panel
     isGroup: 0
@@ -1077,62 +1121,76 @@ ScriptedImporter:
     spriteID: 00000000000000000000000000000000
     layerID: 26
     mosaicPosition: {x: 0, y: 0}
-  - name: Player 2-  Down Arrow
-    spriteName: Player 2-  Down Arrow
+  - name: Player2- Down Arrow
+    spriteName: Player2- Down Arrow
     isGroup: 0
     parentIndex: 12
-    spriteID: df97aae686357da418f33a2a18c5c451
-    layerID: 28
+    spriteID: 75a9f2d79d86ede42ae2f4f6a7906389
+    layerID: 61
     mosaicPosition: {x: 113, y: 233}
-  - name: Player 2-  Up Arrow
-    spriteName: Player 2-  Up Arrow
+  - name: Player2- Up Arrow
+    spriteName: Player2- Up Arrow
     isGroup: 0
     parentIndex: 12
-    spriteID: 969901b47520b4945898e832583d73ea
-    layerID: 30
+    spriteID: 071d654a230d91446ae77f83323c2816
+    layerID: 60
     mosaicPosition: {x: 113, y: 283}
-  - name: Player 2-  Left Arrow
-    spriteName: Player 2-  Left Arrow
+  - name: Player2- Left Arrow
+    spriteName: Player2- Left Arrow
     isGroup: 0
     parentIndex: 12
-    spriteID: cebe04058e9e3a44ba8ef995f8067c83
-    layerID: 31
+    spriteID: f948310935365a54a8c475b41cffa603
+    layerID: 59
     mosaicPosition: {x: 113, y: 333}
-  - name: Player 2-  Right ARrow
-    spriteName: Player 2-  Right ARrow
+  - name: Player 2- Right Arrow
+    spriteName: Player 2- Right Arrow
     isGroup: 0
     parentIndex: 12
-    spriteID: af09573496739694f87e2c889520820e
-    layerID: 33
+    spriteID: 9e3243589cae2b549a6cfc141b907169
+    layerID: 58
     mosaicPosition: {x: 113, y: 383}
-  - name: Player 2-  Numpad 4
-    spriteName: Player 2-  Numpad 4
-    isGroup: 0
-    parentIndex: 12
-    spriteID: 0e41f51725e894f4ab26b4f5a8c51e3c
-    layerID: 34
-    mosaicPosition: {x: 421, y: 4}
-  - name: Player 2-  Numpad 6
-    spriteName: Player 2-  Numpad 6
-    isGroup: 0
-    parentIndex: 12
-    spriteID: 14de72e620c42074088e0ed491ace813
-    layerID: 36
-    mosaicPosition: {x: 113, y: 433}
-  - name: Player 2-  No Clicked copy
-    spriteName: Player 2-  No Clicked copy
-    isGroup: 0
-    parentIndex: 12
-    spriteID: ada03b2e57ce0564fb5f13cee98ef4e1
-    layerID: 37
-    mosaicPosition: {x: 314, y: 88}
   - name: Player 2-  No Clicked
     spriteName: Player 2-  No Clicked
     isGroup: 0
     parentIndex: 12
-    spriteID: 112df4757bb1c5e4ba117b2b7e4e2e32
-    layerID: 25
+    spriteID: 669d198d57f3cf04e9b2363fb7643353
+    layerID: 57
+    mosaicPosition: {x: 421, y: 4}
+  - name: Player 2-  Numpad 4
+    spriteName: Player 2-  Numpad 4
+    isGroup: 0
+    parentIndex: 12
+    spriteID: 76f05f9f3c34cfe499c3bd4ce27d8a99
+    layerID: 56
+    mosaicPosition: {x: 113, y: 433}
+  - name: Player 2-  Numpad 1
+    spriteName: Player 2-  Numpad 1
+    isGroup: 0
+    parentIndex: 12
+    spriteID: b41f94ffecf57f04fb23b8cb2d79f2ca
+    layerID: 55
+    mosaicPosition: {x: 314, y: 88}
+  - name: Player2- Numpad 0
+    spriteName: Player2- Numpad 0
+    isGroup: 0
+    parentIndex: 12
+    spriteID: c4ff1767e72babe4eb6d3f39c9c0eb25
+    layerID: 54
     mosaicPosition: {x: 314, y: 130}
+  - name: Player 2- Numpad 2
+    spriteName: Player 2- Numpad 2
+    isGroup: 0
+    parentIndex: 12
+    spriteID: 5527546b67e6d5a4b80af990332ed056
+    layerID: 53
+    mosaicPosition: {x: 314, y: 172}
+  - name: Player 2-  Numpad 3
+    spriteName: Player 2-  Numpad 3
+    isGroup: 0
+    parentIndex: 12
+    spriteID: 7eec2b6d909cd474ea0735fb677326b6
+    layerID: 52
+    mosaicPosition: {x: 314, y: 214}
   - name: Player 1 - W Clicked
     spriteName: Player 1 - W Clicked
     isGroup: 0
@@ -1202,7 +1260,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 212ca79f7472ee8429a835c5af06cace
     layerID: 50
-    mosaicPosition: {x: 184, y: 433}
+    mosaicPosition: {x: 385, y: 149}
   - name: Keyboard Logo
     spriteName: Keyboard Logo
     isGroup: 0
@@ -1216,42 +1274,42 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: ca82c07800d6a2a42a769b295421c00d
     layerID: 24
-    mosaicPosition: {x: 161, y: 475}
+    mosaicPosition: {x: 385, y: 130}
   - name: 1 copy 10
     spriteName: 1 copy 10
     isGroup: 0
     parentIndex: -1
     spriteID: 62b0a61fbf33e0c42b82a3f70d68a3f9
     layerID: 23
-    mosaicPosition: {x: 161, y: 494}
+    mosaicPosition: {x: 492, y: 4}
   - name: Selected Icon Left
     spriteName: Selected Icon Left
     isGroup: 0
     parentIndex: -1
     spriteID: d42deacddbb98bd4e9ae3ba830259c6a
     layerID: 22
-    mosaicPosition: {x: 184, y: 453}
+    mosaicPosition: {x: 405, y: 149}
   - name: Unt Selected
     spriteName: Unt Selected
     isGroup: 0
     parentIndex: -1
     spriteID: ae6b9c73717fa35448959208119eefdf
     layerID: 21
-    mosaicPosition: {x: 185, y: 494}
+    mosaicPosition: {x: 492, y: 21}
   - name: Unit Box
     spriteName: Unit Box
     isGroup: 0
     parentIndex: -1
     spriteID: 555346c0639781e40a3a30291552787c
     layerID: 20
-    mosaicPosition: {x: 187, y: 475}
+    mosaicPosition: {x: 184, y: 433}
   - name: Mouse Icon copy
     spriteName: Mouse Icon copy
     isGroup: 0
     parentIndex: -1
     spriteID: b83cf2df75d8aa34582a427c54eb497e
     layerID: 19
-    mosaicPosition: {x: 492, y: 4}
+    mosaicPosition: {x: 184, y: 451}
   - name: Keyboard - 4 Clicked
     spriteName: Keyboard - 4 Clicked
     isGroup: 0

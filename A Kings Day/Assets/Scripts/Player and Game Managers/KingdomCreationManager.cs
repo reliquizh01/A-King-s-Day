@@ -54,11 +54,19 @@ public class KingdomCreationManager : BaseManager
     public void GoToCreationView()
     {
         saveSlots.gameObject.SetActive(false);
+        if(TransitionManager.GetInstance != null)
+        {
+            TransitionManager.GetInstance.ShowTabCover();
+        }
         creationView.gameObject.SetActive(true);
     }
     public override void CloseManager()
     {
         base.CloseManager();
+        if (TransitionManager.GetInstance != null)
+        {
+            TransitionManager.GetInstance.HideTabCover();
+        }
         creationView.gameObject.SetActive(false);
     }
 

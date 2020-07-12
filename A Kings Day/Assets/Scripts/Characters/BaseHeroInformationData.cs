@@ -45,6 +45,8 @@ namespace Characters
         public int unitCooldown = 1;
         public int healcost = 5;
 
+        public float blockProjectile, blockMelee;
+
         public string prefabDataPath;
         public UnitState currentState;
         public float deathThreshold = -5.0f;
@@ -98,6 +100,10 @@ namespace Characters
             buffList.Add(thisBuff);
         }
 
+        public void RemoveBuff(BaseBuffInformationData thisBuff)
+        {
+            buffList.Remove(thisBuff);
+        }
         public void ReceiveDamage(float damageAmount)
         {
             float checkAmount = curhealth - damageAmount;

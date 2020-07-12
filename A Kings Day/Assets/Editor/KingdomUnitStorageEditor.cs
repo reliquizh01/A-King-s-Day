@@ -310,12 +310,12 @@ public class KingdomUnitStorageEditor : EditorWindow
         bool addBuff = GUILayout.Button("+", GUILayout.Width(76));
         GUILayout.EndHorizontal();
 
+        if(currentUnitData.buffList == null)
+        {
+            currentUnitData.buffList = new List<BaseBuffInformationData>();
+        }
         if (addBuff)
         {
-            if(currentUnitData.buffList == null)
-            {
-                currentUnitData.buffList = new List<BaseBuffInformationData>();
-            }
 
             BaseBuffInformationData tmp = new BaseBuffInformationData();
             tmp = curUnitStorageData.buffStorage[0];
@@ -326,7 +326,7 @@ public class KingdomUnitStorageEditor : EditorWindow
             List<string> buffNameList = new List<string>();
             for (int i = 0; i < curUnitStorageData.buffStorage.Count; i++)
             {
-                buffNameList.Add(curUnitStorageData.buffStorage[i].buffName);
+                buffNameList.Add(curUnitStorageData.buffStorage[i].buffName + " [" + curUnitStorageData.buffStorage[i].targetStats + "]");
             }
 
             for (int i = 0; i < currentUnitData.buffList.Count; i++)
@@ -351,6 +351,20 @@ public class KingdomUnitStorageEditor : EditorWindow
             }
         }
         GUILayout.EndArea();
+    }
+
+
+    public void RemoveThisBuffOnUnits(BaseBuffInformationData thisBuff)
+    {
+        List<UnitInformationData> infoData = curUnitStorageData.basicUnitStorage.FindAll(x => x.buffList.Contains(thisBuff));
+
+        if(infoData.Count > 0)
+        {
+            for (int i = 0; i < infoData.Count; i++)
+            {
+                infoData[i].RemoveBuff(thisBuff);
+            }
+        }
     }
 
     public void SaveUnitData(UnitInformationData thisUnit)
@@ -1042,6 +1056,7 @@ public class KingdomUnitStorageEditor : EditorWindow
             bool removeBuff = GUILayout.Button("-", GUILayout.MaxWidth(50));
             if (removeBuff)
             {
+                RemoveThisBuffOnUnits(curUnitStorageData.buffStorage[selectedBuffIdx]);
                 curUnitStorageData.buffStorage.RemoveAt(selectedBuffIdx);
                 selectedBuffData = null;
                 currentBuffData = new BaseBuffInformationData();
@@ -1099,14 +1114,27 @@ public class KingdomUnitStorageEditor : EditorWindow
 
         GUILayout.BeginHorizontal();
         GUILayout.Label("Aim Stat:", EditorStyles.boldLabel, GUILayout.Width(60));
-        currentBuffData.targetStats = (TargetStats)EditorGUILayout.EnumPopup(currentBuffData.targetStats, GUILayout.MaxWidth(80));
+        currentBuffData.targetStats = (TargetStats)EditorGUILayout.EnumPopup(currentBuffData.targetStats, GUILayout.MaxWidth(110));
         GUILayout.Label("Effect:", EditorStyles.boldLabel, GUILayout.Width(40));
-        currentBuffData.effectAmount = EditorGUILayout.FloatField(currentBuffData.effectAmount, GUILayout.MaxWidth(65));
+        currentBuffData.effectAmount = EditorGUILayout.FloatField(currentBuffData.effectAmount, GUILayout.MaxWidth(35));
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
-        GUILayout.Label("Duration:", EditorStyles.boldLabel, GUILayout.Width(60));
-        currentBuffData.duration = EditorGUILayout.FloatField(currentBuffData.duration, GUILayout.MaxWidth(190));
+        GUILayout.EndHorizontal();
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("Permanent:", EditorStyles.boldLabel, GUILayout.Width(70));
+        currentBuffData.permanentBuff = EditorGUILayout.Toggle(currentBuffData.permanentBuff, GUILayout.Width(15));
+        if(!currentBuffData.permanentBuff)
+        {
+            GUILayout.Label("Duration:", EditorStyles.boldLabel, GUILayout.Width(60));
+            currentBuffData.duration = EditorGUILayout.FloatField(currentBuffData.duration, GUILayout.MaxWidth(100));
+        }
+        GUILayout.EndHorizontal();
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("Triggered By:", EditorStyles.boldLabel, GUILayout.Width(90));
+        currentBuffData.buffTrigger = (TriggeredBy)EditorGUILayout.EnumPopup(currentBuffData.buffTrigger, GUILayout.MaxWidth(160));
         GUILayout.EndHorizontal();
 
         GUILayout.EndArea();

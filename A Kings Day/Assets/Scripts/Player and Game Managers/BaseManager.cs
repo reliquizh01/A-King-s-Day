@@ -76,4 +76,12 @@ public class BaseManager : MonoBehaviour
     {
 
     }
+
+    public virtual void PlayThisBackGroundMusic(BackgroundMusicType thisType)
+    {
+        if(AudioManager.GetInstance != null)
+        {
+            AudioManager.GetInstance.PlayThisBackGroundMusic(thisType);
+        }
+    }
 }

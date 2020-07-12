@@ -1,0 +1,3674 @@
+fileFormatVersion: 2
+guid: cba4e79f2b304dd419286ff04530fd89
+ScriptedImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6109232801413523887
+    second: Swordsman_Standing
+  - first:
+      213: 3630189627138075527
+    second: Swordsman_Walk_Down_0
+  - first:
+      213: -7049473990777468690
+    second: Swordsman_Walk_Down_1
+  - first:
+      213: -4729356025127753191
+    second: Swordsman_Walk_Down_2
+  - first:
+      213: 2093884249993597274
+    second: Swordsman_Walk_Down_3
+  - first:
+      213: -6626139304780562911
+    second: Swordsman_Walk_Down_4
+  - first:
+      213: 7111420124896731772
+    second: Swordsman_Walk_Down_5
+  - first:
+      213: 2262185927047234673
+    second: Swordsman_Walk_Down_6
+  - first:
+      213: 6362985040835647298
+    second: Swordsman_Walk_Down_7
+  - first:
+      213: 8876250261938545200
+    second: Swordsman_Attack_Down_0
+  - first:
+      213: 3548480052744404030
+    second: Swordsman_Attack_Down_1
+  - first:
+      213: -2795665363824497932
+    second: Swordsman_Attack_Down_2
+  - first:
+      213: 2467808872212344315
+    second: Swordsman_Attack_Down_3
+  - first:
+      213: 7823319778802929789
+    second: Swordsman_Attack_Down_4
+  - first:
+      213: -7528446897915347168
+    second: Swordsman_Attack_Down_5
+  - first:
+      213: -4769479521638842939
+    second: Swordsman_Walk_Right_0
+  - first:
+      213: 8750981316279467835
+    second: Swordsman_Walk_Right_1
+  - first:
+      213: -2062427384939869299
+    second: Swordsman_Walk_Right_2
+  - first:
+      213: 5406618154727139061
+    second: Swordsman_Walk_Right_3
+  - first:
+      213: -3845164418117658888
+    second: Swordsman_Walk_Right_4
+  - first:
+      213: 803667369414779300
+    second: Swordsman_Walk_Right_5
+  - first:
+      213: 4919412586087038650
+    second: Swordsman_Walk_Right_6
+  - first:
+      213: 4322491408601426011
+    second: Swordsman_Walk_Right_7
+  - first:
+      213: -6266125476441705725
+    second: Swordsman_Walk_Right_8
+  - first:
+      213: -7774109396434424778
+    second: Swordsman_Walk_Right_9
+  - first:
+      213: 2721831027812665683
+    second: Swordsman_Walk_Left_0
+  - first:
+      213: 1501811535171140254
+    second: Swordsman_Walk_Left_1
+  - first:
+      213: -3661599630762442679
+    second: Swordsman_Walk_Left_2
+  - first:
+      213: -1706915145515621821
+    second: Swordsman_Walk_Left_3
+  - first:
+      213: 9007266841618655373
+    second: Swordsman_Walk_Left_4
+  - first:
+      213: 8718599181291108490
+    second: Swordsman_Walk_Left_5
+  - first:
+      213: 1560610072856086630
+    second: Swordsman_Walk_Left_6
+  - first:
+      213: -6680357097955833679
+    second: Swordsman_Walk_Left_7
+  - first:
+      213: 2625126330298708978
+    second: Swordsman_Walk_Left_8
+  - first:
+      213: -7695605887300953614
+    second: Swordsman_Walk_Left_9
+  - first:
+      213: 1260445234849581868
+    second: Swordsman_Attack_Right_0
+  - first:
+      213: -6068440413732236231
+    second: Swordsman_Attack_Right_1
+  - first:
+      213: 3444577811856548292
+    second: Swordsman_Attack_Right_2
+  - first:
+      213: 3833715821970527303
+    second: Swordsman_Attack_Right_3
+  - first:
+      213: -1361924087630745234
+    second: Swordsman_Attack_Right_4
+  - first:
+      213: -1749949577856810512
+    second: Swordsman_Attack_Right_5
+  - first:
+      213: 944848995470649812
+    second: Swordsman_Attack_Right_6
+  - first:
+      213: 7030893100742668007
+    second: Swordsman_Attack_Right_7
+  - first:
+      213: -1045839600640051668
+    second: Swordsman_Attack_Right_8
+  - first:
+      213: -7096734930918067773
+    second: Swordsman_Attack_Right_9
+  - first:
+      213: 6109232801413523887
+    second: Swordsman_Standing
+  - first:
+      213: 3630189627138075527
+    second: King Swordsman Atlas_1
+  - first:
+      213: -7049473990777468690
+    second: King Swordsman Atlas_2
+  - first:
+      213: -4729356025127753191
+    second: King Swordsman Atlas_3
+  - first:
+      213: 2093884249993597274
+    second: King Swordsman Atlas_4
+  - first:
+      213: -6626139304780562911
+    second: King Swordsman Atlas_5
+  - first:
+      213: 7111420124896731772
+    second: King Swordsman Atlas_6
+  - first:
+      213: 2262185927047234673
+    second: King Swordsman Atlas_7
+  - first:
+      213: 6362985040835647298
+    second: King Swordsman Atlas_8
+  - first:
+      213: 8876250261938545200
+    second: King Swordsman Atlas_9
+  - first:
+      213: 3548480052744404030
+    second: King Swordsman Atlas_10
+  - first:
+      213: -2795665363824497932
+    second: King Swordsman Atlas_11
+  - first:
+      213: 2467808872212344315
+    second: King Swordsman Atlas_12
+  - first:
+      213: 7823319778802929789
+    second: King Swordsman Atlas_13
+  - first:
+      213: -7528446897915347168
+    second: King Swordsman Atlas_14
+  - first:
+      213: -4769479521638842939
+    second: King Swordsman Atlas_15
+  - first:
+      213: 8750981316279467835
+    second: King Swordsman Atlas_16
+  - first:
+      213: -2062427384939869299
+    second: King Swordsman Atlas_17
+  - first:
+      213: 5406618154727139061
+    second: King Swordsman Atlas_18
+  - first:
+      213: -3845164418117658888
+    second: King Swordsman Atlas_19
+  - first:
+      213: 803667369414779300
+    second: King Swordsman Atlas_20
+  - first:
+      213: 4919412586087038650
+    second: King Swordsman Atlas_21
+  - first:
+      213: 4322491408601426011
+    second: King Swordsman Atlas_22
+  - first:
+      213: -6266125476441705725
+    second: King Swordsman Atlas_23
+  - first:
+      213: -7774109396434424778
+    second: King Swordsman Atlas_24
+  - first:
+      213: 2721831027812665683
+    second: King Swordsman Atlas_25
+  - first:
+      213: 1501811535171140254
+    second: King Swordsman Atlas_26
+  - first:
+      213: -3661599630762442679
+    second: King Swordsman Atlas_27
+  - first:
+      213: -1706915145515621821
+    second: King Swordsman Atlas_28
+  - first:
+      213: 9007266841618655373
+    second: King Swordsman Atlas_29
+  - first:
+      213: 8718599181291108490
+    second: King Swordsman Atlas_30
+  - first:
+      213: 1560610072856086630
+    second: King Swordsman Atlas_31
+  - first:
+      213: -6680357097955833679
+    second: King Swordsman Atlas_32
+  - first:
+      213: 2625126330298708978
+    second: King Swordsman Atlas_33
+  - first:
+      213: -7695605887300953614
+    second: King Swordsman Atlas_34
+  - first:
+      213: 1260445234849581868
+    second: King Swordsman Atlas_35
+  - first:
+      213: -6068440413732236231
+    second: King Swordsman Atlas_36
+  - first:
+      213: 3444577811856548292
+    second: King Swordsman Atlas_37
+  - first:
+      213: 3833715821970527303
+    second: King Swordsman Atlas_38
+  - first:
+      213: -1361924087630745234
+    second: King Swordsman Atlas_39
+  - first:
+      213: -1749949577856810512
+    second: King Swordsman Atlas_40
+  - first:
+      213: 944848995470649812
+    second: King Swordsman Atlas_41
+  - first:
+      213: 7030893100742668007
+    second: King Swordsman Atlas_42
+  - first:
+      213: -1045839600640051668
+    second: King Swordsman Atlas_43
+  - first:
+      213: -7096734930918067773
+    second: King Swordsman Atlas_44
+  - first:
+      213: 3087765020526094289
+    second: King Swordsman Atlas_45
+  - first:
+      213: -8560045362084626140
+    second: King Swordsman Atlas_46
+  - first:
+      213: -762206396901816118
+    second: King Swordsman Atlas_47
+  - first:
+      213: 5170491577358640102
+    second: King Swordsman Atlas_48
+  - first:
+      213: -6381128077348948062
+    second: King Swordsman Atlas_49
+  - first:
+      213: -3349447345323870810
+    second: King Swordsman Atlas_50
+  - first:
+      213: -528934723267311324
+    second: King Swordsman Atlas_51
+  - first:
+      213: -6806149388436719800
+    second: King Swordsman Atlas_52
+  - first:
+      213: -2295264728105373139
+    second: King Swordsman Atlas_53
+  - first:
+      213: -5900980578488444437
+    second: King Swordsman Atlas_54
+  - first:
+      213: 6109232801413523887
+    second: King Swordsman Atlas_0
+  - first:
+      213: -3016446921803090864
+    second: Swordsman_Breath_In
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 0
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 350
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: King Swordsman Atlas 1_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 350
+      height: 350
+    spriteID: feaca94a4b98a104b886468d94f6256f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Standing
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1
+      y: 317
+      width: 32
+      height: 32
+    spriteID: fa9ea626dda58c450800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Down_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 35
+      y: 317
+      width: 32
+      height: 32
+    spriteID: 78b6fd87b36016230800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Down_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 69
+      y: 317
+      width: 32
+      height: 32
+    spriteID: ee88a5e41cc3b2e90800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Down_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 103
+      y: 317
+      width: 32
+      height: 32
+    spriteID: 91a28e990c3fd5eb0800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Down_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 137
+      y: 317
+      width: 32
+      height: 32
+    spriteID: a5157a9a1a8fe0d10800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Down_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 171
+      y: 317
+      width: 32
+      height: 32
+    spriteID: 12efc4ab8693b04a0800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Down_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 205
+      y: 317
+      width: 32
+      height: 32
+    spriteID: c72a809fce6d0b260800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Down_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 239
+      y: 317
+      width: 32
+      height: 32
+    spriteID: 174c9857d16e46f10800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Down_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 273
+      y: 317
+      width: 32
+      height: 32
+    spriteID: 247122e9e2ddd4850800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Attack_Down_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1
+      y: 283
+      width: 32
+      height: 32
+    spriteID: 032a058b596ce2b70800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Attack_Down_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 35
+      y: 283
+      width: 32
+      height: 32
+    spriteID: e3cb36caecbbe3130800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Attack_Down_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 69
+      y: 283
+      width: 32
+      height: 32
+    spriteID: 4faa066e92dc339d0800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Attack_Down_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 103
+      y: 283
+      width: 32
+      height: 32
+    spriteID: bfd26c1281b6f3220800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Attack_Down_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 137
+      y: 283
+      width: 32
+      height: 32
+    spriteID: d7016db93e3029c60800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Attack_Down_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 171
+      y: 283
+      width: 32
+      height: 32
+    spriteID: 02f3d5b0f65958790800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Right_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1
+      y: 249
+      width: 32
+      height: 32
+    spriteID: 5cd773515a76fcdb0800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Right_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 35
+      y: 249
+      width: 32
+      height: 32
+    spriteID: b3ffae8742bb17970800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Right_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 69
+      y: 249
+      width: 32
+      height: 32
+    spriteID: d8b0f997839c063e0800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Right_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 103
+      y: 249
+      width: 32
+      height: 32
+    spriteID: 5f660b4f09a280b40800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Right_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 137
+      y: 249
+      width: 32
+      height: 32
+    spriteID: 8f61023955b33aac0800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Right_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 171
+      y: 249
+      width: 32
+      height: 32
+    spriteID: 4a16a87e633372b00800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Right_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 205
+      y: 249
+      width: 32
+      height: 32
+    spriteID: abebd41dea3454440800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Right_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 239
+      y: 249
+      width: 32
+      height: 32
+    spriteID: b58ad5ad8039cfb30800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Right_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 273
+      y: 249
+      width: 32
+      height: 32
+    spriteID: 303baaa14104a09a0800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Right_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 307
+      y: 249
+      width: 32
+      height: 32
+    spriteID: 63cef7461b0dc1490800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Left_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1
+      y: 215
+      width: 32
+      height: 32
+    spriteID: 359096f16e2e5c520800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Left_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 35
+      y: 215
+      width: 32
+      height: 32
+    spriteID: e9ab57162a187d410800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Left_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 69
+      y: 215
+      width: 32
+      height: 32
+    spriteID: 94004ba29826f2dc0800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Left_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 103
+      y: 215
+      width: 32
+      height: 32
+    spriteID: 342aec108b1df48e0800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Left_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 137
+      y: 215
+      width: 32
+      height: 32
+    spriteID: d88a5db487d300d70800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Left_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 171
+      y: 215
+      width: 32
+      height: 32
+    spriteID: a883ed323cfaef870800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Left_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 205
+      y: 215
+      width: 32
+      height: 32
+    spriteID: 668cb71c79668a510800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Left_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 239
+      y: 215
+      width: 32
+      height: 32
+    spriteID: 1b8459b0d9a9a43a0800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Left_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 273
+      y: 215
+      width: 32
+      height: 32
+    spriteID: 2f3baf72d725e6420800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Walk_Left_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 307
+      y: 215
+      width: 32
+      height: 32
+    spriteID: 2f99504f737b33590800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Attack_Right_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1
+      y: 181
+      width: 32
+      height: 32
+    spriteID: c2b0b0253400e7110800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Attack_Right_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 35
+      y: 181
+      width: 32
+      height: 32
+    spriteID: 9349dde789198cba0800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Attack_Right_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 69
+      y: 181
+      width: 32
+      height: 32
+    spriteID: 4c1e6ec05499dcf20800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Attack_Right_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 103
+      y: 181
+      width: 32
+      height: 32
+    spriteID: 744195a6a38143530800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Attack_Right_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 137
+      y: 181
+      width: 32
+      height: 32
+    spriteID: e61b8b11249791de0800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Attack_Right_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 171
+      y: 181
+      width: 32
+      height: 32
+    spriteID: 0f1000d612ee6b7e0800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Attack_Right_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 205
+      y: 181
+      width: 32
+      height: 32
+    spriteID: 4d9a965c727cc1d00800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Attack_Right_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 239
+      y: 181
+      width: 32
+      height: 32
+    spriteID: 7eee28b1600c29160800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Attack_Right_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 273
+      y: 181
+      width: 32
+      height: 32
+    spriteID: c2630df9c6e6c71f0800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Attack_Right_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 307
+      y: 181
+      width: 32
+      height: 32
+    spriteID: 3c1b5813e25538d90800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  - name: Swordsman_Breath_In
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1
+      y: 147
+      width: 32
+      height: 32
+    spriteID: 0543b16a18d6326d0800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData:
+  - name: 10R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 318
+      y: 4
+      width: 34
+      height: 34
+    spriteID: f6791cb7ac6fd594e8fae3ed0ca84d05
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 12, y: -210}
+  - name: 9R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 360
+      y: 4
+      width: 34
+      height: 34
+    spriteID: d9ab5f85ea8669949825bec0213b34d6
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 88, y: -210}
+  - name: 8R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 402
+      y: 4
+      width: 34
+      height: 34
+    spriteID: 65d5ffb29e3c06f4e9f53f92641f0652
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 164, y: -210}
+  - name: 7R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 444
+      y: 4
+      width: 34
+      height: 34
+    spriteID: fd74580342a00b646a616bb754303b3e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 240, y: -210}
+  - name: 6R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 46
+      width: 34
+      height: 34
+    spriteID: 7a93d48f911f2e547946e9829d0fa848
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -166, y: -168}
+  - name: 5R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 46
+      width: 34
+      height: 34
+    spriteID: 629e6ddd457748d4397175e438aa28ab
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -90, y: -168}
+  - name: 4R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 46
+      width: 34
+      height: 34
+    spriteID: df8b908fa37407442a2b47e2bfaa9629
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -14, y: -168}
+  - name: 3R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 130
+      y: 46
+      width: 34
+      height: 34
+    spriteID: eca62d7f97427844faeec5c915730ee9
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 62, y: -168}
+  - name: 2R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 172
+      y: 46
+      width: 34
+      height: 34
+    spriteID: 934522837033305458e6fd080f61b777
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 138, y: -168}
+  - name: 1R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 214
+      y: 46
+      width: 34
+      height: 34
+    spriteID: 63b65596c8650f2478a3f1a492fdb329
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 214, y: -168}
+  - name: Layer 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 46
+      width: 34
+      height: 34
+    spriteID: 5eca79afa8c8c804fa0663bdb9678619
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -50, y: -202}
+  - name: 9R_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 298
+      y: 46
+      width: 34
+      height: 34
+    spriteID: d063c22fc2acc874883850754d2dc07b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 26, y: -202}
+  - name: 8R_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 340
+      y: 46
+      width: 34
+      height: 34
+    spriteID: 7c90c215536afcd46b3d5d73c07127d9
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 102, y: -202}
+  - name: 7R_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 382
+      y: 46
+      width: 34
+      height: 34
+    spriteID: f2f21d9bf9eff0348805576fd57780de
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 178, y: -202}
+  - name: 6R_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 424
+      y: 46
+      width: 34
+      height: 34
+    spriteID: a69f14f80a7f65948a242f58440e1a2d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 254, y: -202}
+  - name: 5R_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 466
+      y: 46
+      width: 34
+      height: 34
+    spriteID: 36b1203a116d39a4ca856ab8509fea4a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 330, y: -202}
+  - name: 4R_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 88
+      width: 34
+      height: 34
+    spriteID: 52397592c0454d74394af63de7023667
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -98, y: -160}
+  - name: 10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 88
+      width: 34
+      height: 34
+    spriteID: f57ebde6fcbc1d043b2a8186cfa8ec67
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -260, y: -92}
+  - name: 9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 88
+      width: 34
+      height: 34
+    spriteID: 660971c765237484e91730f9ceabcf82
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -184, y: -92}
+  - name: 8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 130
+      y: 88
+      width: 34
+      height: 34
+    spriteID: 73d34b7869498e74c818be7206d6e1cb
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -108, y: -92}
+  - name: 7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 172
+      y: 88
+      width: 34
+      height: 34
+    spriteID: 505abccbe1498af438d8c893011b5927
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -32, y: -92}
+  - name: 6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 214
+      y: 88
+      width: 34
+      height: 34
+    spriteID: 4d639a926098d404bbed182ae09b2a86
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 44, y: -92}
+  - name: 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 88
+      width: 34
+      height: 34
+    spriteID: 41e369eab3ad35c449c457db0c683526
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 120, y: -92}
+  - name: 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 298
+      y: 88
+      width: 34
+      height: 34
+    spriteID: 9da8c4a656627e44eafecb703f888e9a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 196, y: -92}
+  - name: 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 340
+      y: 88
+      width: 34
+      height: 34
+    spriteID: 3494e1e6499c2284c9fe84d5f4fad58f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 272, y: -92}
+  - name: 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 382
+      y: 88
+      width: 34
+      height: 34
+    spriteID: a4dab24a8b699774897eb4712e9945fb
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 348, y: -92}
+  - name: 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 424
+      y: 88
+      width: 34
+      height: 34
+    spriteID: fb0b1e531c23e5341bc23b07acb51ab2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 424, y: -92}
+  - name: 3R_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 466
+      y: 88
+      width: 34
+      height: 34
+    spriteID: 739a6b20b76274b4a989cc20b9c5c40e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 398, y: -160}
+  - name: 2R_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 130
+      width: 34
+      height: 34
+    spriteID: 8da9d0ebff9a4c247a1f3c707efcf428
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -30, y: -118}
+  - name: 1 R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 130
+      width: 34
+      height: 34
+    spriteID: f3fe53539cbbe394780291352422a7e8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 46, y: -118}
+  - name: 9_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 306
+      height: 34
+    spriteID: 6e2320264436608429a56167cec8d8c0
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: -312}
+  - name: 6_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 130
+      width: 34
+      height: 34
+    spriteID: fa61ba84395ce424bb53bf1360e72f6d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -82, y: -152}
+  - name: 5_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 130
+      y: 130
+      width: 34
+      height: 34
+    spriteID: 14d4c4cd0689c9c4685c3aa388565057
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -6, y: -152}
+  - name: 4_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 172
+      y: 130
+      width: 34
+      height: 34
+    spriteID: 2187a3cc2b1ada24290df360b8777410
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 70, y: -152}
+  - name: 3_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 214
+      y: 130
+      width: 34
+      height: 34
+    spriteID: d429702b41368b4409b988514c845fb4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 146, y: -152}
+  - name: 2_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 130
+      width: 34
+      height: 34
+    spriteID: c29983859d7b42c48b6fea064fc14c34
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 222, y: -152}
+  - name: 1_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 298
+      y: 130
+      width: 34
+      height: 34
+    spriteID: c5ffce00667a2cf43aa4e9015cc026ff
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 298, y: -152}
+  rigSpriteImportData:
+  - name: 10R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 318
+      y: 4
+      width: 34
+      height: 34
+    spriteID: bd8c5387e8f416942a4247f29536f330
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 12, y: -210}
+  - name: 9R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 360
+      y: 4
+      width: 34
+      height: 34
+    spriteID: 95eca11502ce46349a0f629b7dcc81fc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 88, y: -210}
+  - name: 8R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 402
+      y: 4
+      width: 34
+      height: 34
+    spriteID: 8a5b2a023f2f7b448917d4d1950ce7a6
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 164, y: -210}
+  - name: 7R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 444
+      y: 4
+      width: 34
+      height: 34
+    spriteID: d8a2f876aa2f2934796c05521af01845
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 240, y: -210}
+  - name: 6R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 46
+      width: 34
+      height: 34
+    spriteID: 3318a66caa1f4ac43bfaa951017937e8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -166, y: -168}
+  - name: 5R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 46
+      width: 34
+      height: 34
+    spriteID: 1d24bf9c8d0bb7c489c63f2fc0ed3dca
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -90, y: -168}
+  - name: 4R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 46
+      width: 34
+      height: 34
+    spriteID: 90f96594957bf034da3b3ffb277d805e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -14, y: -168}
+  - name: 3R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 130
+      y: 46
+      width: 34
+      height: 34
+    spriteID: abdab50f500052a4db9702913633c26b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 62, y: -168}
+  - name: 2R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 172
+      y: 46
+      width: 34
+      height: 34
+    spriteID: 20b583cbbae634648aaff1134a45a341
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 138, y: -168}
+  - name: 1R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 214
+      y: 46
+      width: 34
+      height: 34
+    spriteID: 8a760078bc51b4b40a418c6b932e3350
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 214, y: -168}
+  - name: Layer 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 46
+      width: 34
+      height: 34
+    spriteID: eacf694a3fcee184ea6a797aea390b05
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -50, y: -202}
+  - name: 9R_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 298
+      y: 46
+      width: 34
+      height: 34
+    spriteID: 4188b1e8cc5de054a80cb9bc69351b8c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 26, y: -202}
+  - name: 8R_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 340
+      y: 46
+      width: 34
+      height: 34
+    spriteID: 1f9a64233407f3b42bb5e1282806348e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 102, y: -202}
+  - name: 7R_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 382
+      y: 46
+      width: 34
+      height: 34
+    spriteID: c772a3962c279b34e84b9ad5ac6e6177
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 178, y: -202}
+  - name: 6R_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 424
+      y: 46
+      width: 34
+      height: 34
+    spriteID: 8da289865c9efc6498672434c775272a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 254, y: -202}
+  - name: 5R_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 466
+      y: 46
+      width: 34
+      height: 34
+    spriteID: 245836714e57c5846aa5f5e00cba0cc2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 330, y: -202}
+  - name: 4R_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 88
+      width: 34
+      height: 34
+    spriteID: 39fc5e571a1f20143b9536bcfe42f37b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -98, y: -160}
+  - name: 10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 88
+      width: 34
+      height: 34
+    spriteID: 2d3d6dbe95f8b554ea6da888650ac7a5
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -260, y: -92}
+  - name: 9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 88
+      width: 34
+      height: 34
+    spriteID: 11d9d70285132a24f9d2764aadb68337
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -184, y: -92}
+  - name: 8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 130
+      y: 88
+      width: 34
+      height: 34
+    spriteID: c24ba62858839f94ea73d907f0de66ff
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -108, y: -92}
+  - name: 7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 172
+      y: 88
+      width: 34
+      height: 34
+    spriteID: 51b0129744e342b40b0a13e0414fd36d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -32, y: -92}
+  - name: 6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 214
+      y: 88
+      width: 34
+      height: 34
+    spriteID: 31117c67c1cdc7a4ebe7859c006c9ad2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 44, y: -92}
+  - name: 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 88
+      width: 34
+      height: 34
+    spriteID: 87c5a85713054c7468bd5b407fef9669
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 120, y: -92}
+  - name: 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 298
+      y: 88
+      width: 34
+      height: 34
+    spriteID: 203e1c19a8f7df841973653759118728
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 196, y: -92}
+  - name: 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 340
+      y: 88
+      width: 34
+      height: 34
+    spriteID: 6aec11228e04da541a0b108f0d0feff9
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 272, y: -92}
+  - name: 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 382
+      y: 88
+      width: 34
+      height: 34
+    spriteID: 67703ade1e9d4604c823bed8f9aaf3fb
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 348, y: -92}
+  - name: 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 424
+      y: 88
+      width: 34
+      height: 34
+    spriteID: 1a9e39d29d3667e42a22b264799abbe6
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 424, y: -92}
+  - name: 3R_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 466
+      y: 88
+      width: 34
+      height: 34
+    spriteID: 8f9460055f5984e4a9b36c1014cbdc8a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 398, y: -160}
+  - name: 2R_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 130
+      width: 34
+      height: 34
+    spriteID: 452e0715822199648a3d64d7b98b395c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -30, y: -118}
+  - name: 1 R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 130
+      width: 34
+      height: 34
+    spriteID: 03d6f565f0c44104c8b4bce43da52e23
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 46, y: -118}
+  - name: 9_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 306
+      height: 34
+    spriteID: 0879948ebd2729d4a87847e1bd84a5cc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: -312}
+  - name: 6_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 130
+      width: 34
+      height: 34
+    spriteID: c1a5e9953e4d306439a4613717d71601
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -82, y: -152}
+  - name: 5_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 130
+      y: 130
+      width: 34
+      height: 34
+    spriteID: 7453a2a8295728849b68e830a372b4f4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -6, y: -152}
+  - name: 4_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 172
+      y: 130
+      width: 34
+      height: 34
+    spriteID: c2a11bafd9e7d1848aaa2938c17a5721
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 70, y: -152}
+  - name: 3_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 214
+      y: 130
+      width: 34
+      height: 34
+    spriteID: 2ec683ab02bb3e54b8d778973510eb2d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 146, y: -152}
+  - name: 2_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 130
+      width: 34
+      height: 34
+    spriteID: c3ee26ff77011e84dba9399def111302
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 222, y: -152}
+  - name: 1_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 298
+      y: 130
+      width: 34
+      height: 34
+    spriteID: 753133cb8c65d5849a30f5a3a495c4d7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 298, y: -152}
+  platformSettings:
+  - name: Default
+    overridden: 1
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 100
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: PC, Mac & Linux Standalone
+    overridden: 1
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 0
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 512
+  importedTextureHeight: 512
+  documentSize: {x: 350, y: 350}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 350
+  textureActualHeight: 350
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 0
+  mosaicPSDLayers:
+  - name: Reverse Walking Sideward
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 56
+    mosaicPosition: {x: 0, y: 0}
+  - name: 10R
+    spriteName: 10R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: f6791cb7ac6fd594e8fae3ed0ca84d05
+    layerID: 68
+    mosaicPosition: {x: 318, y: 4}
+  - name: 9R
+    spriteName: 9R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: d9ab5f85ea8669949825bec0213b34d6
+    layerID: 67
+    mosaicPosition: {x: 360, y: 4}
+  - name: 8R
+    spriteName: 8R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 65d5ffb29e3c06f4e9f53f92641f0652
+    layerID: 66
+    mosaicPosition: {x: 402, y: 4}
+  - name: 7R
+    spriteName: 7R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: fd74580342a00b646a616bb754303b3e
+    layerID: 65
+    mosaicPosition: {x: 444, y: 4}
+  - name: 6R
+    spriteName: 6R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 7a93d48f911f2e547946e9829d0fa848
+    layerID: 64
+    mosaicPosition: {x: 4, y: 46}
+  - name: 5R
+    spriteName: 5R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 629e6ddd457748d4397175e438aa28ab
+    layerID: 63
+    mosaicPosition: {x: 46, y: 46}
+  - name: 4R
+    spriteName: 4R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: df8b908fa37407442a2b47e2bfaa9629
+    layerID: 62
+    mosaicPosition: {x: 88, y: 46}
+  - name: 3R
+    spriteName: 3R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: eca62d7f97427844faeec5c915730ee9
+    layerID: 61
+    mosaicPosition: {x: 130, y: 46}
+  - name: 2R
+    spriteName: 2R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 934522837033305458e6fd080f61b777
+    layerID: 60
+    mosaicPosition: {x: 172, y: 46}
+  - name: 1R
+    spriteName: 1R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 63b65596c8650f2478a3f1a492fdb329
+    layerID: 59
+    mosaicPosition: {x: 214, y: 46}
+  - name: Walking sideward
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 34
+    mosaicPosition: {x: 0, y: 0}
+  - name: Layer 1
+    spriteName: Layer 1
+    isGroup: 0
+    parentIndex: 11
+    spriteID: 5eca79afa8c8c804fa0663bdb9678619
+    layerID: 80
+    mosaicPosition: {x: 256, y: 46}
+  - name: 9R
+    spriteName: 9R_1
+    isGroup: 0
+    parentIndex: 11
+    spriteID: d063c22fc2acc874883850754d2dc07b
+    layerID: 79
+    mosaicPosition: {x: 298, y: 46}
+  - name: 8R
+    spriteName: 8R_1
+    isGroup: 0
+    parentIndex: 11
+    spriteID: 7c90c215536afcd46b3d5d73c07127d9
+    layerID: 78
+    mosaicPosition: {x: 340, y: 46}
+  - name: 7R
+    spriteName: 7R_1
+    isGroup: 0
+    parentIndex: 11
+    spriteID: f2f21d9bf9eff0348805576fd57780de
+    layerID: 77
+    mosaicPosition: {x: 382, y: 46}
+  - name: 6R
+    spriteName: 6R_1
+    isGroup: 0
+    parentIndex: 11
+    spriteID: a69f14f80a7f65948a242f58440e1a2d
+    layerID: 76
+    mosaicPosition: {x: 424, y: 46}
+  - name: 5R
+    spriteName: 5R_1
+    isGroup: 0
+    parentIndex: 11
+    spriteID: 36b1203a116d39a4ca856ab8509fea4a
+    layerID: 73
+    mosaicPosition: {x: 466, y: 46}
+  - name: 4R
+    spriteName: 4R_1
+    isGroup: 0
+    parentIndex: 11
+    spriteID: 52397592c0454d74394af63de7023667
+    layerID: 72
+    mosaicPosition: {x: 4, y: 88}
+  - name: Attacking
+    spriteName: 
+    isGroup: 1
+    parentIndex: 11
+    spriteID: 
+    layerID: 92
+    mosaicPosition: {x: 0, y: 0}
+  - name: 10
+    spriteName: 10
+    isGroup: 0
+    parentIndex: 19
+    spriteID: f57ebde6fcbc1d043b2a8186cfa8ec67
+    layerID: 91
+    mosaicPosition: {x: 46, y: 88}
+  - name: 9
+    spriteName: 9
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 660971c765237484e91730f9ceabcf82
+    layerID: 90
+    mosaicPosition: {x: 88, y: 88}
+  - name: 8
+    spriteName: 8
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 73d34b7869498e74c818be7206d6e1cb
+    layerID: 89
+    mosaicPosition: {x: 130, y: 88}
+  - name: 7
+    spriteName: 7
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 505abccbe1498af438d8c893011b5927
+    layerID: 88
+    mosaicPosition: {x: 172, y: 88}
+  - name: 6
+    spriteName: 6
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 4d639a926098d404bbed182ae09b2a86
+    layerID: 87
+    mosaicPosition: {x: 214, y: 88}
+  - name: 5
+    spriteName: 5
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 41e369eab3ad35c449c457db0c683526
+    layerID: 86
+    mosaicPosition: {x: 256, y: 88}
+  - name: 4
+    spriteName: 4
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 9da8c4a656627e44eafecb703f888e9a
+    layerID: 85
+    mosaicPosition: {x: 298, y: 88}
+  - name: 3
+    spriteName: 3
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 3494e1e6499c2284c9fe84d5f4fad58f
+    layerID: 84
+    mosaicPosition: {x: 340, y: 88}
+  - name: 2
+    spriteName: 2
+    isGroup: 0
+    parentIndex: 19
+    spriteID: a4dab24a8b699774897eb4712e9945fb
+    layerID: 83
+    mosaicPosition: {x: 382, y: 88}
+  - name: 1
+    spriteName: 1
+    isGroup: 0
+    parentIndex: 19
+    spriteID: fb0b1e531c23e5341bc23b07acb51ab2
+    layerID: 82
+    mosaicPosition: {x: 424, y: 88}
+  - name: 3R
+    spriteName: 3R_1
+    isGroup: 0
+    parentIndex: 11
+    spriteID: 739a6b20b76274b4a989cc20b9c5c40e
+    layerID: 71
+    mosaicPosition: {x: 466, y: 88}
+  - name: 2R
+    spriteName: 2R_1
+    isGroup: 0
+    parentIndex: 11
+    spriteID: 8da9d0ebff9a4c247a1f3c707efcf428
+    layerID: 70
+    mosaicPosition: {x: 4, y: 130}
+  - name: 1 R
+    spriteName: 1 R
+    isGroup: 0
+    parentIndex: 11
+    spriteID: f3fe53539cbbe394780291352422a7e8
+    layerID: 24
+    mosaicPosition: {x: 46, y: 130}
+  - name: Walking Front
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 12
+    mosaicPosition: {x: 0, y: 0}
+  - name: 9
+    spriteName: 9_1
+    isGroup: 0
+    parentIndex: 33
+    spriteID: 6e2320264436608429a56167cec8d8c0
+    layerID: 11
+    mosaicPosition: {x: 4, y: 4}
+  - name: Sheathe Weapon
+    spriteName: 
+    isGroup: 1
+    parentIndex: 33
+    spriteID: 
+    layerID: 19
+    mosaicPosition: {x: 0, y: 0}
+  - name: 6
+    spriteName: 6_1
+    isGroup: 0
+    parentIndex: 35
+    spriteID: fa61ba84395ce424bb53bf1360e72f6d
+    layerID: 18
+    mosaicPosition: {x: 88, y: 130}
+  - name: 5
+    spriteName: 5_1
+    isGroup: 0
+    parentIndex: 35
+    spriteID: 14d4c4cd0689c9c4685c3aa388565057
+    layerID: 17
+    mosaicPosition: {x: 130, y: 130}
+  - name: 4
+    spriteName: 4_1
+    isGroup: 0
+    parentIndex: 35
+    spriteID: 2187a3cc2b1ada24290df360b8777410
+    layerID: 16
+    mosaicPosition: {x: 172, y: 130}
+  - name: 3
+    spriteName: 3_1
+    isGroup: 0
+    parentIndex: 35
+    spriteID: d429702b41368b4409b988514c845fb4
+    layerID: 15
+    mosaicPosition: {x: 214, y: 130}
+  - name: 2
+    spriteName: 2_1
+    isGroup: 0
+    parentIndex: 35
+    spriteID: c29983859d7b42c48b6fea064fc14c34
+    layerID: 14
+    mosaicPosition: {x: 256, y: 130}
+  - name: 1
+    spriteName: 1_1
+    isGroup: 0
+    parentIndex: 35
+    spriteID: c5ffce00667a2cf43aa4e9015cc026ff
+    layerID: 13
+    mosaicPosition: {x: 298, y: 130}
+  rigPSDLayers:
+  - name: Reverse Walking Sideward
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 56
+    mosaicPosition: {x: 0, y: 0}
+  - name: 10R
+    spriteName: 10R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: bd8c5387e8f416942a4247f29536f330
+    layerID: 68
+    mosaicPosition: {x: 318, y: 4}
+  - name: 9R
+    spriteName: 9R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 95eca11502ce46349a0f629b7dcc81fc
+    layerID: 67
+    mosaicPosition: {x: 360, y: 4}
+  - name: 8R
+    spriteName: 8R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 8a5b2a023f2f7b448917d4d1950ce7a6
+    layerID: 66
+    mosaicPosition: {x: 402, y: 4}
+  - name: 7R
+    spriteName: 7R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: d8a2f876aa2f2934796c05521af01845
+    layerID: 65
+    mosaicPosition: {x: 444, y: 4}
+  - name: 6R
+    spriteName: 6R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 3318a66caa1f4ac43bfaa951017937e8
+    layerID: 64
+    mosaicPosition: {x: 4, y: 46}
+  - name: 5R
+    spriteName: 5R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 1d24bf9c8d0bb7c489c63f2fc0ed3dca
+    layerID: 63
+    mosaicPosition: {x: 46, y: 46}
+  - name: 4R
+    spriteName: 4R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 90f96594957bf034da3b3ffb277d805e
+    layerID: 62
+    mosaicPosition: {x: 88, y: 46}
+  - name: 3R
+    spriteName: 3R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: abdab50f500052a4db9702913633c26b
+    layerID: 61
+    mosaicPosition: {x: 130, y: 46}
+  - name: 2R
+    spriteName: 2R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 20b583cbbae634648aaff1134a45a341
+    layerID: 60
+    mosaicPosition: {x: 172, y: 46}
+  - name: 1R
+    spriteName: 1R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 8a760078bc51b4b40a418c6b932e3350
+    layerID: 59
+    mosaicPosition: {x: 214, y: 46}
+  - name: Walking sideward
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 34
+    mosaicPosition: {x: 0, y: 0}
+  - name: Layer 1
+    spriteName: Layer 1
+    isGroup: 0
+    parentIndex: 11
+    spriteID: eacf694a3fcee184ea6a797aea390b05
+    layerID: 80
+    mosaicPosition: {x: 256, y: 46}
+  - name: 9R
+    spriteName: 9R_1
+    isGroup: 0
+    parentIndex: 11
+    spriteID: 4188b1e8cc5de054a80cb9bc69351b8c
+    layerID: 79
+    mosaicPosition: {x: 298, y: 46}
+  - name: 8R
+    spriteName: 8R_1
+    isGroup: 0
+    parentIndex: 11
+    spriteID: 1f9a64233407f3b42bb5e1282806348e
+    layerID: 78
+    mosaicPosition: {x: 340, y: 46}
+  - name: 7R
+    spriteName: 7R_1
+    isGroup: 0
+    parentIndex: 11
+    spriteID: c772a3962c279b34e84b9ad5ac6e6177
+    layerID: 77
+    mosaicPosition: {x: 382, y: 46}
+  - name: 6R
+    spriteName: 6R_1
+    isGroup: 0
+    parentIndex: 11
+    spriteID: 8da289865c9efc6498672434c775272a
+    layerID: 76
+    mosaicPosition: {x: 424, y: 46}
+  - name: 5R
+    spriteName: 5R_1
+    isGroup: 0
+    parentIndex: 11
+    spriteID: 245836714e57c5846aa5f5e00cba0cc2
+    layerID: 73
+    mosaicPosition: {x: 466, y: 46}
+  - name: 4R
+    spriteName: 4R_1
+    isGroup: 0
+    parentIndex: 11
+    spriteID: 39fc5e571a1f20143b9536bcfe42f37b
+    layerID: 72
+    mosaicPosition: {x: 4, y: 88}
+  - name: Attacking
+    spriteName: 
+    isGroup: 1
+    parentIndex: 11
+    spriteID: 
+    layerID: 92
+    mosaicPosition: {x: 0, y: 0}
+  - name: 10
+    spriteName: 10
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 2d3d6dbe95f8b554ea6da888650ac7a5
+    layerID: 91
+    mosaicPosition: {x: 46, y: 88}
+  - name: 9
+    spriteName: 9
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 11d9d70285132a24f9d2764aadb68337
+    layerID: 90
+    mosaicPosition: {x: 88, y: 88}
+  - name: 8
+    spriteName: 8
+    isGroup: 0
+    parentIndex: 19
+    spriteID: c24ba62858839f94ea73d907f0de66ff
+    layerID: 89
+    mosaicPosition: {x: 130, y: 88}
+  - name: 7
+    spriteName: 7
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 51b0129744e342b40b0a13e0414fd36d
+    layerID: 88
+    mosaicPosition: {x: 172, y: 88}
+  - name: 6
+    spriteName: 6
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 31117c67c1cdc7a4ebe7859c006c9ad2
+    layerID: 87
+    mosaicPosition: {x: 214, y: 88}
+  - name: 5
+    spriteName: 5
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 87c5a85713054c7468bd5b407fef9669
+    layerID: 86
+    mosaicPosition: {x: 256, y: 88}
+  - name: 4
+    spriteName: 4
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 203e1c19a8f7df841973653759118728
+    layerID: 85
+    mosaicPosition: {x: 298, y: 88}
+  - name: 3
+    spriteName: 3
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 6aec11228e04da541a0b108f0d0feff9
+    layerID: 84
+    mosaicPosition: {x: 340, y: 88}
+  - name: 2
+    spriteName: 2
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 67703ade1e9d4604c823bed8f9aaf3fb
+    layerID: 83
+    mosaicPosition: {x: 382, y: 88}
+  - name: 1
+    spriteName: 1
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 1a9e39d29d3667e42a22b264799abbe6
+    layerID: 82
+    mosaicPosition: {x: 424, y: 88}
+  - name: 3R
+    spriteName: 3R_1
+    isGroup: 0
+    parentIndex: 11
+    spriteID: 8f9460055f5984e4a9b36c1014cbdc8a
+    layerID: 71
+    mosaicPosition: {x: 466, y: 88}
+  - name: 2R
+    spriteName: 2R_1
+    isGroup: 0
+    parentIndex: 11
+    spriteID: 452e0715822199648a3d64d7b98b395c
+    layerID: 70
+    mosaicPosition: {x: 4, y: 130}
+  - name: 1 R
+    spriteName: 1 R
+    isGroup: 0
+    parentIndex: 11
+    spriteID: 03d6f565f0c44104c8b4bce43da52e23
+    layerID: 24
+    mosaicPosition: {x: 46, y: 130}
+  - name: Walking Front
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 12
+    mosaicPosition: {x: 0, y: 0}
+  - name: 9
+    spriteName: 9_1
+    isGroup: 0
+    parentIndex: 33
+    spriteID: 0879948ebd2729d4a87847e1bd84a5cc
+    layerID: 11
+    mosaicPosition: {x: 4, y: 4}
+  - name: Sheathe Weapon
+    spriteName: 
+    isGroup: 1
+    parentIndex: 33
+    spriteID: 
+    layerID: 19
+    mosaicPosition: {x: 0, y: 0}
+  - name: 6
+    spriteName: 6_1
+    isGroup: 0
+    parentIndex: 35
+    spriteID: c1a5e9953e4d306439a4613717d71601
+    layerID: 18
+    mosaicPosition: {x: 88, y: 130}
+  - name: 5
+    spriteName: 5_1
+    isGroup: 0
+    parentIndex: 35
+    spriteID: 7453a2a8295728849b68e830a372b4f4
+    layerID: 17
+    mosaicPosition: {x: 130, y: 130}
+  - name: 4
+    spriteName: 4_1
+    isGroup: 0
+    parentIndex: 35
+    spriteID: c2a11bafd9e7d1848aaa2938c17a5721
+    layerID: 16
+    mosaicPosition: {x: 172, y: 130}
+  - name: 3
+    spriteName: 3_1
+    isGroup: 0
+    parentIndex: 35
+    spriteID: 2ec683ab02bb3e54b8d778973510eb2d
+    layerID: 15
+    mosaicPosition: {x: 214, y: 130}
+  - name: 2
+    spriteName: 2_1
+    isGroup: 0
+    parentIndex: 35
+    spriteID: c3ee26ff77011e84dba9399def111302
+    layerID: 14
+    mosaicPosition: {x: 256, y: 130}
+  - name: 1
+    spriteName: 1_1
+    isGroup: 0
+    parentIndex: 35
+    spriteID: 753133cb8c65d5849a30f5a3a495c4d7
+    layerID: 13
+    mosaicPosition: {x: 298, y: 130}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: King Swordsman Atlas Texture
+  prefabAssetName: King Swordsman Atlas Prefab
+  spriteLibAssetName: King Swordsman Atlas Sprite Lib
+  secondarySpriteTextures: []
