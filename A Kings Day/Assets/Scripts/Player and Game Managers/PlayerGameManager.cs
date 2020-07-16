@@ -10,7 +10,6 @@ using ResourceUI;
 using GameItems;
 using Characters;
 using KingEvents;
-using Managers;
 
 namespace Managers
 {
@@ -387,7 +386,6 @@ namespace Managers
                     return (playerData.foods >= amount);
                 case ResourceType.Troops:
                     return (playerData.recruits >= amount);
-                    break;
                 case ResourceType.Population:
                     return (playerData.population >= amount);
                 case ResourceType.Coin:

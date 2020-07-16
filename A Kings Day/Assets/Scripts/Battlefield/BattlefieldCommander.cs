@@ -52,7 +52,20 @@ public class BattlefieldCommander
         unitsCarried.Add(tmp); unitsCarried.Add(tmp1); unitsCarried.Add(tmp2);
         unitsCarried.Add(tmp3);
 
-        heroesCarried.Add(BattlefieldSceneManager.GetInstance.spawnManager.unitStorage.heroStorage[0]);
+        //heroesCarried.Add(BattlefieldSceneManager.GetInstance.spawnManager.unitStorage.heroStorage[0]);
     }
 
+    public int CheckTotalTroopsCount()
+    {
+        int tmp = 0;
+
+        for (int i = 0; i < unitsCarried.Count; i++)
+        {
+            tmp += unitsCarried[i].totalUnitCount;
+        }
+
+        tmp += heroesCarried.Count;
+
+        return tmp;
+    }
 }

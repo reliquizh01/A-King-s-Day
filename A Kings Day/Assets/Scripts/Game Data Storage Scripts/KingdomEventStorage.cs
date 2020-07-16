@@ -382,7 +382,6 @@ namespace KingEvents
 
         public List<EventDecisionData> FilterEvents(List<EventDecisionData> thisData, int weekCount, bool removeStory = false)
         {
-            StoryArcEventsData storyBearer = null;
             PlayerKingdomData playerData = PlayerGameManager.GetInstance.playerData;
 
 

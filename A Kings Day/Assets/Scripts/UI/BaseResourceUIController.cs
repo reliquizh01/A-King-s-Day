@@ -299,7 +299,7 @@ namespace ResourceUI
             int capacity = foodIcons[lastIdx].capacity;
             // Obtain Empty Amount
             int emptyValue = capacity - initValue;
-            int difference = 0;
+
             if (initValue > tmp)
             {
                 foodIcons[lastIdx].reduceFill.fillAmount = (float)emptyValue + (float)tmp / (float)capacity;

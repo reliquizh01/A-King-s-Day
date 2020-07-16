@@ -202,15 +202,24 @@ namespace Characters
 
         public void SendDamage()
         {
-           if(unitInformation.currentState != UnitState.Healthy)
-           {
-               return;
-           }
+            if(unitInformation.currentState != UnitState.Healthy)
+            {
+                return;
+            }
 
-           if(mySfx != null)
+            if(mySfx != null)
             {
                 mySfx.PlaySendDamageAudio();
             }
+
+            if(myRange.enemiesInRange == null 
+                || myRange.enemiesInRange.Count <= 0
+                || myRange.enemiesInRange[0] == null) 
+            {
+                UpdateToPotentialNextState();
+                return;
+            }
+
             if(unitInformation.attackType == UnitAttackType.MELEE)
             {
                 if (myRange.enemiesInRange != null && myRange.enemiesInRange.Count > 0)
@@ -255,6 +264,65 @@ namespace Characters
         {
             UpdateCharacterState(CharacterStates.Damage_Received);
 
+            bool blockAttempt = false;
+
+            if(unitInformation.buffList != null && unitInformation.buffList.Count > 0)
+            {
+                List<BaseBuffInformationData> activateThisBuffs = unitInformation.buffList.FindAll(x => x.buffTrigger == TriggeredBy.ReceivingDamage);
+
+                for (int i = 0; i < activateThisBuffs.Count; i++)
+                {
+                    switch (activateThisBuffs[i].targetStats)
+                    {
+                        case TargetStats.health:
+
+                            break;
+                        case TargetStats.damage: // decrease damage increae damage
+                            amount += activateThisBuffs[i].effectAmount;
+                            break;
+                        case TargetStats.speed: 
+
+                            break;
+                        case TargetStats.range:
+
+                            break;
+                        case TargetStats.blockMelee:
+                            if (!blockAttempt && attackType == UnitAttackType.MELEE)
+                            {
+                                blockAttempt = IsBlockAttemptSuccess(activateThisBuffs[i].effectAmount);
+                            }
+                            break;
+                        case TargetStats.blockProjectile:
+                            if(!blockAttempt && attackType == UnitAttackType.RANGE)
+                            {
+                                blockAttempt = IsBlockAttemptSuccess(activateThisBuffs[i].effectAmount);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+
+            if(blockAttempt)
+            {
+                switch (attackType)
+                {
+                    case UnitAttackType.MELEE:
+                        mySfx.PlayBlockMelee();
+                        break;
+                    case UnitAttackType.RANGE:
+                        mySfx.PlayBlockProjectile();
+                        break;
+                    case UnitAttackType.SPELL:
+                        break;
+                    default:
+                        break;
+                }
+                Debug.Log("Damaged Blocked by:" + unitInformation.unitName);
+
+                return;
+            }
             switch (attackType)
             {
                 case UnitAttackType.MELEE:
@@ -274,6 +342,7 @@ namespace Characters
             if(unitInformation.currentState == UnitState.Dead || unitInformation.currentState == UnitState.Injured)
             {
                 UpdateCharacterState(CharacterStates.Injured_State);
+                mySfx.PlayInjuredOrDead();
             }
 
             if(unitInformation.currentState != UnitState.Healthy)
@@ -285,6 +354,19 @@ namespace Characters
             }
         }
 
+        public bool IsBlockAttemptSuccess(float blockChance)
+        {
+            float rand = UnityEngine.Random.Range(0, 100);
+
+            if(rand <= blockChance)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public void ReturnThisUnit()
         {
             if(canReturnToCamp)

@@ -28,13 +28,23 @@ namespace Battlefield
 
         public Button healBtn;
         public bool isReady = false;
+
+        public bool computerControlled = false;
+        public bool canComputerHeal = false;
+
         public TextMeshProUGUI readinessText;
         public TextMeshProUGUI waitingText;
+
+        public bool isAttacker = false;
         public void Update()
         {
-            if(isMultiPlayerControl)
+            if (isMultiPlayerControl && !computerControlled)
             {
                 MultiplayerControl();
+            }
+            else
+            {
+                ComputerControl();
             }
         }
         public void PanelControl()
@@ -70,6 +80,82 @@ namespace Battlefield
 
             currentSelectedInjuredUnits.SetAsSelected();
         }
+
+        public void SetControlType(PlayerControlType thisControl)
+        {
+            controlType = thisControl;
+            if(controlType == PlayerControlType.Computer)
+            {
+                computerControlled = true;
+            }
+        }
+
+        public void ComputerControl()
+        {
+            if (BattlefieldSystemsManager.GetInstance.dayInProgress)
+            {
+                return;
+            }
+
+            if(!BattlefieldSystemsManager.GetInstance.unitsInCamp)
+            {
+                return;
+            }
+
+            if(canComputerHeal)
+            {
+                List<int> selectionAmountCount = new List<int>();
+                if(injuredUnitsList != null && injuredUnitsList.Count > 0)
+                {
+                    for (int i = 0; i < injuredUnitsList.Count; i++)
+                    {
+                        selectionAmountCount.Add(currentCommander.unitsCarried[i].totalInjuredCount);
+                    }
+                    selectedInjuredIdx = 0;
+
+                    if(canComputerHeal)
+                    {
+                        canComputerHeal = false;
+                        SetAsSelectedPanel(injuredUnitsList[selectedInjuredIdx]);
+                        StartCoroutine(StartClickingPanels(selectionAmountCount));
+                    }
+                }
+            }
+        }
+
+        public IEnumerator StartClickingPanels(List<int> selectionAmountCount)
+        {
+            yield return new WaitForSeconds(0.25f);
+
+            if(selectionAmountCount[selectedInjuredIdx] > 0)
+            {
+                BaseEventData data = new BaseEventData(EventSystem.current);
+                ExecuteEvents.Execute(healBtn.gameObject, data, ExecuteEvents.submitHandler);
+
+                selectionAmountCount[selectedInjuredIdx] -= 1;
+
+                Debug.Log("Healing Panel : " + selectedInjuredIdx + " Selection Count :" + selectionAmountCount.Count);
+            }
+
+            if(selectionAmountCount[selectedInjuredIdx] == 0)
+            {
+                if(selectedInjuredIdx < 3)
+                {
+                    selectedInjuredIdx += 1;
+                    SetAsSelectedPanel(injuredUnitsList[selectedInjuredIdx]);
+                    StartCoroutine(StartClickingPanels(selectionAmountCount));
+                }
+                else
+                {
+                    SwitchReadiness();
+                }
+            }
+            else
+            {
+                StartCoroutine(StartClickingPanels(selectionAmountCount));
+            }
+        }
+
         public void MultiplayerControl()
         {
             if(BattlefieldSystemsManager.GetInstance.dayInProgress)
@@ -83,10 +169,11 @@ namespace Battlefield
 
             switch (controlType)
             {
-                case PlayerControlType.PlayerOne:
-                    if(Input.GetKeyDown(KeyCode.DownArrow))
+                case PlayerControlType.PlayerTwo:
+
+                    if (Input.GetKeyDown(KeyCode.DownArrow))
                     {
-                        if(selectedInjuredIdx < injuredUnitsList.Count-1)
+                        if (selectedInjuredIdx < injuredUnitsList.Count - 1)
                         {
                             selectedInjuredIdx += 1;
                         }
@@ -95,7 +182,7 @@ namespace Battlefield
                             selectedInjuredIdx = 0;
                         }
                     }
-                    else if(Input.GetKeyDown(KeyCode.UpArrow))
+                    else if (Input.GetKeyDown(KeyCode.UpArrow))
                     {
                         if (selectedInjuredIdx > 0)
                         {
@@ -103,24 +190,25 @@ namespace Battlefield
                         }
                         else
                         {
-                            selectedInjuredIdx = injuredUnitsList.Count-1;
+                            selectedInjuredIdx = injuredUnitsList.Count - 1;
                         }
                     }
-                    else if(Input.GetKeyDown(KeyCode.Keypad0))
+                    else if (Input.GetKeyDown(KeyCode.Keypad0))
                     {
                         BaseEventData data = new BaseEventData(EventSystem.current);
                         ExecuteEvents.Execute(healBtn.gameObject, data, ExecuteEvents.submitHandler);
                     }
-                    else if(Input.GetKeyDown(KeyCode.LeftArrow))
+                    else if (Input.GetKeyDown(KeyCode.LeftArrow))
                     {
                         SwitchReadiness();
                     }
-                    else if(Input.GetKeyDown(KeyCode.RightArrow))
+                    else if (Input.GetKeyDown(KeyCode.RightArrow))
                     {
                         SwitchReadiness();
                     }
                     break;
-                case PlayerControlType.PlayerTwo:
+                case PlayerControlType.PlayerOne:
+
                     if (Input.GetKeyDown(KeyCode.S))
                     {
                         if (selectedInjuredIdx < injuredUnitsList.Count - 1)
@@ -157,6 +245,9 @@ namespace Battlefield
                         SwitchReadiness();
                     }
                     break;
+                case PlayerControlType.Computer:
+
+                    break;
                 default:
                     break;
             }
@@ -188,6 +279,7 @@ namespace Battlefield
         {
 
         }
+
         public void HealThisUnit()
         {
             if(BattlefieldSpawnManager.GetInstance != null)
@@ -264,7 +356,11 @@ namespace Battlefield
 
                 }
             }
-            Debug.Log("Finish Preparation Speed");
+
+            if(computerControlled)
+            {
+                canComputerHeal = true;
+            }
         }
         public void ShowDailyReport()
         {

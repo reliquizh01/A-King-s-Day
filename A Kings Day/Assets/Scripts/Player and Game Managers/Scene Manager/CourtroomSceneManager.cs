@@ -50,7 +50,13 @@ namespace Managers
 
             if(PlayerGameManager.GetInstance != null)
             {
+                if(PlayerGameManager.GetInstance.playerData.queuedDataEventsList == null)
+                {
+                    PlayerGameManager.GetInstance.playerData.queuedDataEventsList = new List<KingEvents.EventDecisionData>();
+                }
+
                 if (PlayerGameManager.GetInstance.playerData.queuedDataEventsList.Count <= 0 &&
+                    PlayerGameManager.GetInstance.playerData.curDataEvent != null &&
                     string.IsNullOrEmpty(PlayerGameManager.GetInstance.playerData.curDataEvent.title))
                 {
                     PlaceGuardOutside();
@@ -62,6 +68,10 @@ namespace Managers
         {
             base.StartManager();
 
+            if(AudioManager.GetInstance != null)
+            {
+                AudioManager.GetInstance.PlayThisBackGroundMusic(BackgroundMusicType.courtroomDrama);
+            }
         }
 
         public void MakeGuardLeave(Action callback = null)

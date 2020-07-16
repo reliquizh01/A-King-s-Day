@@ -35,7 +35,10 @@ namespace Utilities
         {
             if (UtilitiesCommandObserver.GetInstance == null)
             {
-                DontDestroyOnLoad(this.gameObject);
+                if (transform.parent == null)
+                {
+                   DontDestroyOnLoad(this.gameObject);
+                }
                 instance = this;
             }
             else

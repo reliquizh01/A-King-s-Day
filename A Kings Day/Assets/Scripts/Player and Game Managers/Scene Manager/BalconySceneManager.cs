@@ -33,7 +33,10 @@ namespace Managers
             base.Start();
 
            
-            TransitionManager.GetInstance.SetAsNewSceneManager(this);
+            if(TransitionManager.GetInstance != null)
+            {
+                TransitionManager.GetInstance.SetAsNewSceneManager(this);
+            }
         }
 
         public void Update()

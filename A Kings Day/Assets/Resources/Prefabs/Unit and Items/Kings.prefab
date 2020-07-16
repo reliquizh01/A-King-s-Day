@@ -115,7 +115,7 @@ MonoBehaviour:
   - {x: -0.048518356, y: -0.010456204, z: 0}
   m_ShapePathHash: 743387178
   m_Mesh: {fileID: 0}
-  m_InstanceId: 122512
+  m_InstanceId: -8198
 --- !u!1 &576882093256800607
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,9 +125,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 576882093256800605}
-  - component: {fileID: 576882093256800604}
   - component: {fileID: 576882093256800595}
+  - component: {fileID: 4287472815274104340}
+  - component: {fileID: 576882093256800604}
   - component: {fileID: 576882093256800594}
+  - component: {fileID: 3360706655368972313}
   m_Layer: 12
   m_Name: Kings
   m_TagString: Untagged
@@ -150,6 +152,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &576882093256800595
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576882093256800607}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4287472815274104340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576882093256800607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457b82f503099ba4f85584b488ccf552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAnimator: {fileID: 576882093256800595}
+  currentState: 0
+  facingDirection: 0
 --- !u!114 &576882093256800604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,25 +206,6 @@ MonoBehaviour:
   pathIdx: 0
   targetPos: {x: 0, y: 0}
   queuePoints: []
---- !u!95 &576882093256800595
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 576882093256800607}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &576882093256800594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,15 +218,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eef3621518afa54991f1c7eb49f2285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAnimController: {fileID: 576882093256800595}
   myMovements: {fileID: 576882093256800604}
   myRange: {fileID: 0}
+  myAnimation: {fileID: 4287472815274104340}
+  mySfx: {fileID: 3360706655368972313}
   isKing: 1
   isMainCharacter: 0
   isGuest: 0
   isLeaving: 0
   unitInformation:
     unitName: 
+    unitGenericName: 
     attackType: 0
     curhealth: 0
     maxHealth: 0
@@ -218,10 +237,41 @@ MonoBehaviour:
     minDamage: 0
     maxDamage: 0
     range: 0
+    unitCooldown: 1
+    healcost: 5
+    blockProjectile: 0
+    blockMelee: 0
     prefabDataPath: 
     currentState: 0
     deathThreshold: -5
     morale: 0
     buffList: []
   isFighting: 0
+  canReturnToCamp: 0
   teamType: 0
+  canStagger: 0
+--- !u!114 &3360706655368972313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576882093256800607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d2aa72febf6a14186d09ade98577af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  sendDamageList:
+    sfxClipList: []
+  receiveProjectileList:
+    sfxClipList: []
+  receiveMeleeList:
+    sfxClipList: []
+  receiveDeathInjuredList:
+    sfxClipList: []
+  projectileBlockList:
+    sfxClipList: []
+  meleeBlockList:
+    sfxClipList: []

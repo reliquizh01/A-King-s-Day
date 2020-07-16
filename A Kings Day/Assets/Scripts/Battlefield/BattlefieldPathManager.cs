@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Characters;
 
 namespace Battlefield
 {
@@ -26,6 +27,16 @@ namespace Battlefield
         public List<BattlefieldPathHandler> fieldPaths;
 
 
+        public int ObtainPathCount()
+        {
+            int tmp = 0;
+            for (int i = 0; i < fieldPaths.Count; i++)
+            {
+                tmp += fieldPaths[i].scenePoints.Count;
+            }
+
+            return tmp;
+        }
         public ScenePointBehavior ObtainPath(int column, int row)
         {
             return fieldPaths[column].scenePoints[row];
@@ -42,6 +53,7 @@ namespace Battlefield
                 return fieldPaths[column].defenderSpawnPoint;
             }
         }
+
         public ScenePointBehavior ObtainTargetPoint(int column, bool isAttacker)
         {
             if (isAttacker)
@@ -60,7 +72,31 @@ namespace Battlefield
 
             return columnNumber;
         }
+        
+        public List<BaseCharacter> ObtainCharactersOnThisPath(int pathIdx)
+        {
+            List<BaseCharacter> tmp = new List<BaseCharacter>();
 
+            for (int i = 0; i < fieldPaths[pathIdx].scenePoints.Count; i++)
+            {
+                if(fieldPaths[pathIdx].scenePoints[i].battleTile.characterStepping.Count > 0)
+                {
+                    tmp.AddRange(fieldPaths[pathIdx].scenePoints[i].battleTile.characterStepping);
+                }
+            }
+
+            return tmp;
+        }
+        public void ResetAllPaths()
+        {
+            for (int i = 0; i < fieldPaths.Count; i++)
+            {
+                for (int x = 0; x < fieldPaths[i].scenePoints.Count; x++)
+                {
+                    fieldPaths[i].scenePoints[x].battleTile.ConvertTile(TeamType.Neutral);
+                }
+            }
+        }
         public int ObtainConqueredTiles()
         {
             int totalCount = 0;
@@ -94,7 +130,7 @@ namespace Battlefield
                     if(fieldPaths[i].scenePoints[x].battleTile.convertedTile.currentOwner == thisTeam)
                     {
                         tmp.Add(fieldPaths[i].scenePoints[x].battleTile);
-                        Debug.Log("Adding :" + tmp.Count +" Cur Team : " + thisTeam);
+                        //Debug.Log("Adding :" + tmp.Count +" Cur Team : " + thisTeam);
                     }
                 }
             }

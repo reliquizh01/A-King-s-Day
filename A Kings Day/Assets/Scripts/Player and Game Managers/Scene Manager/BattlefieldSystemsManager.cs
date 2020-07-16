@@ -37,12 +37,17 @@ public class BattlefieldSystemsManager : MonoBehaviour
     [Header("Victory Type")]
     public BattlefieldWinCondition winCondition;
     public int attackerConquered = 0;
+    public int defenderConqured = 0;
 
     [Header("Victory Condition Information")]
     public int totalVictoryPoints = 0;
     public int defenderVictoryPoints = 0;
     public int attackerVictoryPoints = 0;
     public int conquerableTiles = 0;
+
+
+    [Header("Sound Effects")]
+    public List<AudioSourceControl> startDaySfxList;
 
     public void StartDay()
     {
@@ -59,6 +64,18 @@ public class BattlefieldSystemsManager : MonoBehaviour
         BattlefieldSceneManager.GetInstance.battleUIInformation.dayTimer.StartTimer(minutePerDay, secondsPerDay, StopCurrentDayActions);
         BattlefieldSceneManager.GetInstance.battleUIInformation.InitializeBattlefieldUI();
 
+        if(startDaySfxList != null && startDaySfxList.Count > 0)
+        {
+            for (int i = 0; i < startDaySfxList.Count; i++)
+            {
+                startDaySfxList[i].PlayAudio();
+            }
+        }
+
+        if(AudioManager.GetInstance != null)
+        {
+            AudioManager.GetInstance.SetVolumeAsBackground();
+        }
     }
 
     public void GoToNextDay()
@@ -68,31 +85,135 @@ public class BattlefieldSystemsManager : MonoBehaviour
 
         BattlefieldSceneManager.GetInstance.battleUIInformation.dayTimer.StartTimer(minutePerDay, secondsPerDay, StopCurrentDayActions);
         BattlefieldSceneManager.GetInstance.battleUIInformation.UpdateUIInformation();
+
+        if (startDaySfxList != null && startDaySfxList.Count > 0)
+        {
+            for (int i = 0; i < startDaySfxList.Count; i++)
+            {
+                startDaySfxList[i].PlayAudio();
+            }
+        }
+
+        if (AudioManager.GetInstance != null)
+        {
+            AudioManager.GetInstance.SetVolumeAsBackground();
+        }
     }
     public void StopCurrentDayActions()
     {
         dayInProgress = false;
-        if(currentDay < maxDays)
+        if (currentDay < maxDays)
         {
             currentDay += 1;
-
             BattlefieldSpawnManager.GetInstance.RetreatAllUnits(true, BattlefieldSceneManager.GetInstance.EndTodaysBattle);
+        }
+        else
+        {
+            BattlefieldSpawnManager.GetInstance.RetreatAllUnits(true, CheckVictorious);
+        }
+
+        if (AudioManager.GetInstance != null)
+        {
+            AudioManager.GetInstance.NormalizeBackgroundVolume();
         }
     }
 
+    public void CheckVictorious()
+    {
+        bool someoneWon = false;
+        int atkTroops = BattlefieldSpawnManager.GetInstance.CountCommanderTroops(true, false);
+        int defTroops = BattlefieldSpawnManager.GetInstance.CountCommanderTroops(false, false);
 
+        int allTiles = BattlefieldPathManager.GetInstance.ObtainPathCount();
+
+        switch (winCondition)
+        {
+            case BattlefieldWinCondition.ConquerOrEliminateAll:
+                if(attackerConquered >= allTiles || defTroops <= 0)
+                {
+
+                    BattlefieldSceneManager.GetInstance.battleUIInformation.ShowVictorious(TeamType.Attacker, CheckPostVictorious);
+                    someoneWon = true;
+                }
+                else if(defenderConqured >= allTiles || atkTroops <= 0)
+                {
+                    BattlefieldSceneManager.GetInstance.battleUIInformation.ShowVictorious(TeamType.Defender, CheckPostVictorious);
+                    someoneWon = true;
+                }
+                break;
+            case BattlefieldWinCondition.EliminateAll:
+                Debug.Log("Checkign Eliminate All");
+                if(atkTroops <= 0)
+                {
+
+                    Debug.Log("All Attackers Down!");
+                    BattlefieldSceneManager.GetInstance.battleUIInformation.ShowVictorious(TeamType.Defender, CheckPostVictorious);
+                    someoneWon = true;
+                }
+                else if(defTroops <= 0)
+                {
+                    Debug.Log("All Defenders Down!");
+                    BattlefieldSceneManager.GetInstance.battleUIInformation.ShowVictorious(TeamType.Attacker, CheckPostVictorious);
+                    someoneWon = true;
+                }
+                break;
+            case BattlefieldWinCondition.ConquerAll:
+                if (attackerConquered >= allTiles)
+                {
+
+                    BattlefieldSceneManager.GetInstance.battleUIInformation.ShowVictorious(TeamType.Attacker, CheckPostVictorious);
+                    someoneWon = true;
+                }
+                else if (defenderConqured >= allTiles)
+                {
+                    BattlefieldSceneManager.GetInstance.battleUIInformation.ShowVictorious(TeamType.Defender, CheckPostVictorious);
+                    someoneWon = true;
+                }
+                break;
+
+            default:
+                break;
+        }
+
+        if(someoneWon)
+        {
+            dayInProgress = true;
+        }
+    }
+
+    public void CheckPostVictorious()
+    {
+        if(!BattlefieldSceneManager.GetInstance.isCampaignMode)
+        {
+            BattlefieldSceneManager.GetInstance.customBattlePanel.ResetCustomBattlePanel();
+            BattlefieldSceneManager.GetInstance.customBattlePanel.gameCustomPanel.SetActive(true);
+            BattlefieldPathManager.GetInstance.ResetAllPaths();
+            BattlefieldSpawnManager.GetInstance.RetreatAllUnits();
+            unitsInCamp = true;
+        }
+        else
+        {
+
+        }
+    }
     public void SetVictoryPoints()
     {
         conquerableTiles = BattlefieldPathManager.GetInstance.ObtainConqueredTiles();
         totalVictoryPoints = 0;
 
+        attackerConquered = BattlefieldPathManager.GetInstance.ObtainConqueredTiles(TeamType.Attacker).Count;
+        defenderConqured = BattlefieldPathManager.GetInstance.ObtainConqueredTiles(TeamType.Defender).Count;
+
         switch (winCondition)
         {
             case BattlefieldWinCondition.ConquerOrEliminateAll:
-                totalVictoryPoints += conquerableTiles;
+                // CURRENT POINTS BASED ON TOTAL UNITS + CONQUERED TILES
+                attackerVictoryPoints = BattlefieldSpawnManager.GetInstance.CountCommanderTroops(true, false) + attackerConquered;
+                defenderVictoryPoints = BattlefieldSpawnManager.GetInstance.CountCommanderTroops(false, false) + defenderConqured;
+                
 
-                attackerVictoryPoints = BattlefieldSpawnManager.GetInstance.CountCommanderTroops(true, false);
-                defenderVictoryPoints = BattlefieldSpawnManager.GetInstance.CountCommanderTroops(false, false);
+                // TOTAL VICTORY = UNITS + CONQUERABLE TILES
+                totalVictoryPoints += conquerableTiles;
                 totalVictoryPoints += BattlefieldSpawnManager.GetInstance.CountCommanderTroops(true);
                 totalVictoryPoints += BattlefieldSpawnManager.GetInstance.CountCommanderTroops(false);
 
@@ -101,6 +222,7 @@ public class BattlefieldSystemsManager : MonoBehaviour
 
                 totalVictoryPoints += BattlefieldSpawnManager.GetInstance.CountCommanderTroops(true);
                 totalVictoryPoints += BattlefieldSpawnManager.GetInstance.CountCommanderTroops(false);
+
                 attackerVictoryPoints = BattlefieldSpawnManager.GetInstance.CountCommanderTroops(true);
                 defenderVictoryPoints = BattlefieldSpawnManager.GetInstance.CountCommanderTroops(false);
 
@@ -118,6 +240,9 @@ public class BattlefieldSystemsManager : MonoBehaviour
     {
         conquerableTiles = BattlefieldPathManager.GetInstance.ObtainConqueredTiles();
 
+        attackerConquered = BattlefieldPathManager.GetInstance.ObtainConqueredTiles(TeamType.Attacker).Count;
+        defenderConqured = BattlefieldPathManager.GetInstance.ObtainConqueredTiles(TeamType.Defender).Count;
+
         switch (winCondition)
         {
             case BattlefieldWinCondition.ConquerOrEliminateAll:
@@ -125,14 +250,16 @@ public class BattlefieldSystemsManager : MonoBehaviour
                 break;
             case BattlefieldWinCondition.EliminateAll:
 
+                totalVictoryPoints = attackerVictoryPoints + defenderVictoryPoints;
                 break;
             case BattlefieldWinCondition.ConquerAll:
-                totalVictoryPoints = conquerableTiles;
+                totalVictoryPoints = attackerConquered + defenderConqured;
                 break;
 
             default:
                 break;
         }
+        UpdateCurrentVictoryPoints();
     }
     public void PanelConquered(TeamType newOwner, TeamType previousOwner)
     {
@@ -266,6 +393,7 @@ public class BattlefieldSystemsManager : MonoBehaviour
     }
     public void UpdateCurrentVictoryPoints()
     {
+
         BattlefieldSceneManager.GetInstance.battleUIInformation.UpdateVictorySlider(totalVictoryPoints, defenderVictoryPoints);
     }
 

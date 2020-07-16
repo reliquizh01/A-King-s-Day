@@ -5,6 +5,7 @@ using Managers;
 using Characters;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 namespace Battlefield
 {
@@ -29,6 +30,8 @@ namespace Battlefield
         public TimerUI nextDayTimer;
         public GameObject nextDayCover;
 
+
+        public BasePanelBehavior defenderVictoryPanel, attackerVictoryPanel;
         public void SetUnitPanels(BattlefieldCommander attacker, BattlefieldCommander defender)
         {
             attackerReportPanel.AssignCommander(attacker);
@@ -36,6 +39,9 @@ namespace Battlefield
 
             attackerPanel.warChestCount.SetTargetCount(attacker.resourceAmount);
             defenderPanel.warChestCount.SetTargetCount(defender.resourceAmount);
+
+            attackerPanel.SetCurrentCommander(attacker);
+            defenderPanel.SetCurrentCommander(defender);
 
             for (int i = 0; i < attackerPanel.unitList.Count; i++)
             {
@@ -114,7 +120,7 @@ namespace Battlefield
             {
                 return;
             }
-            Debug.Log("Push");
+
             BattlefieldCommander attacker = BattlefieldSpawnManager.GetInstance.attackingCommander;
             BattlefieldCommander defender = BattlefieldSpawnManager.GetInstance.defendingCommander;
 
@@ -142,6 +148,15 @@ namespace Battlefield
             {
                 defenderPanel.unitList[i].currentMaxCooldown = defender.unitsCarried[i].unitInformation.unitCooldown;
                 defenderPanel.unitList[i].countText.text = defender.unitsCarried[i].totalUnitsAvailableForDeployment.ToString();
+
+                if (defender.unitsCarried[i].totalUnitsAvailableForDeployment <= 0)
+                {
+                    defenderPanel.unitList[i].DisablePanel();
+                }
+                else
+                {
+                    defenderPanel.unitList[i].EnablePanel();
+                }
             }
         }
 
@@ -150,6 +165,28 @@ namespace Battlefield
         {
             victorySlider.maxValue = totalVictoryPoints;
             victorySlider.value = currentValue;
+        }
+
+        public void ShowVictorious(TeamType thisTeam, Action callBack = null)
+        {
+            switch (thisTeam)
+            {
+                case TeamType.Neutral:
+
+                    break;
+                case TeamType.Defender:
+                    defenderVictoryPanel.gameObject.SetActive(true);
+                    defenderVictoryPanel.gameObject.GetComponent<AudioSource>().Play();
+                    StartCoroutine(defenderVictoryPanel.WaitAnimationForAction(defenderVictoryPanel.openAnimationName, () => StartCoroutine(defenderVictoryPanel.WaitAnimationForAction(defenderVictoryPanel.closeAnimationName, callBack))));
+                    break;
+                case TeamType.Attacker:
+                    attackerVictoryPanel.gameObject.SetActive(true);
+                    attackerVictoryPanel.gameObject.GetComponent<AudioSource>().Play();
+                    StartCoroutine(attackerVictoryPanel.WaitAnimationForAction(attackerVictoryPanel.openAnimationName, () => StartCoroutine(attackerVictoryPanel.WaitAnimationForAction(attackerVictoryPanel.closeAnimationName, callBack))));
+                    break;
+                default:
+                    break;
+            }
         }
 
         public bool CheckOverLapping()
@@ -180,6 +217,16 @@ namespace Battlefield
             nextDayTimer.gameObject.SetActive(false);
 
             BattlefieldSystemsManager.GetInstance.GoToNextDay();
+
+            if (attackerPanel.isComputer)
+            {
+                attackerPanel.ComputerPlayerControl();
+            }
+
+            if (defenderPanel.isComputer)
+            {
+                defenderPanel.ComputerPlayerControl();
+            }
         }
     }
 

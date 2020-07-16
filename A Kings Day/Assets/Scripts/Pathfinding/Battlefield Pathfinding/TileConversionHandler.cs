@@ -84,6 +84,10 @@ public class TileConversionHandler : MonoBehaviour
         {
             return;
         }
+        if(BattlefieldSystemsManager.GetInstance.unitsInCamp)
+        {
+            return;
+        }
 
         isConverting = true;
 

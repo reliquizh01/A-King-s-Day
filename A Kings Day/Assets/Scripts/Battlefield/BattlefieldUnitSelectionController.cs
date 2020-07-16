@@ -20,6 +20,7 @@ namespace Battlefield
     {
         PlayerOne,
         PlayerTwo,
+        Computer,
     }
     public class BattlefieldUnitSelectionController : MonoBehaviour
     {
@@ -29,6 +30,11 @@ namespace Battlefield
         public PlayerControlType controlType;
         public ClickedMovement lastClicked;
 
+        private BattlefieldCommander currentCommander;
+        [Header("Computer AI")]
+        public BattlefieldCommanderComputer computerAI;
+        public bool canChangeSummon = true;
+
         [Header("Resource Information")]
         public CountingEffectUI warChestCount;
 
@@ -37,43 +43,54 @@ namespace Battlefield
         public int curColumnIdx;
         public int curRowIdx;
 
-        private int playerOneSelectedIdx = 0;
-        private int playerOneColumnIdx = 4;
-        private int playerOneRowIdx = 11;
+        private int defenderSelectedIdx = 0;
+        private int defenderColumnIdx = 4;
+        private int defenderRowIdx = 11;
 
-        private int playerTwoSelectedIdx = 0;
-        private int playerTwoColumnIdx = 0;
-        private int playerTwoRowIdx = 0;
+        private int attackerSelectedIdx = 0;
+        private int attackerColumnIdx = 0;
+        private int attackerRowIdx = 0;
         public ScenePointBehavior playerPlacement;
 
         [SerializeField] private float curCountDelaySelectMove;
         private float delaySelectMoveTime = 0.25f;
         [SerializeField]private bool startCounting = false;
         [SerializeField]private bool startContinuousShift = false;
+
+        public bool isAttacker = false;
+        public bool isComputer = false;
         public void Start()
         {
+            if(unitList != null && unitList.Count > 0)
+            {
+                for (int i = 0; i < unitList.Count; i++)
+                {
+                    unitList[i].myController = this;
+                }
+            }
+
             if(BattlefieldSceneManager.GetInstance != null && !BattlefieldSceneManager.GetInstance.isCampaignMode)
             {
+
+                if(isAttacker)
+                {
+                    curColumnIdx = attackerColumnIdx;
+                    curRowIdx = attackerRowIdx;
+
+                    SetPointBehavior(isAttacker);
+
+                }
+                else
+                {
+                    curColumnIdx = defenderColumnIdx;
+                    curRowIdx = defenderRowIdx;
+
+                    SetPointBehavior(isAttacker);
+
+                }
+
                 unitList[0].SetAsSelected();
                 selectedUnit = unitList[0];
-
-                switch (controlType)
-                {
-                    case PlayerControlType.PlayerOne:
-                        curColumnIdx = playerOneColumnIdx;
-                        curRowIdx = playerOneRowIdx;
-
-                        SetPointBehavior(PlayerControlType.PlayerOne);
-                        break;
-                    case PlayerControlType.PlayerTwo:
-                        curColumnIdx = playerTwoColumnIdx;
-                        curRowIdx = playerTwoRowIdx;
-
-                        SetPointBehavior(PlayerControlType.PlayerTwo);
-                        break;
-                    default:
-                        break;
-                }
             }
         }
 
@@ -101,6 +118,9 @@ namespace Battlefield
                         break;
                 case PlayerControlType.PlayerTwo:
                     PlayerTwoControls();
+                    break;
+                case PlayerControlType.Computer:
+
                     break;
                 default:
                     break;
@@ -243,9 +263,9 @@ namespace Battlefield
                     break;
                 case ClickedMovement.Left:
 
-                    if (curRowIdx >= BattlefieldPathManager.GetInstance.fieldPaths[playerOneColumnIdx].scenePoints.Count - 1)
+                    if (curRowIdx >= BattlefieldPathManager.GetInstance.fieldPaths[curColumnIdx].scenePoints.Count - 1)
                     {
-                        curRowIdx = BattlefieldPathManager.GetInstance.fieldPaths[playerOneColumnIdx].scenePoints.Count - 1;
+                        curRowIdx = BattlefieldPathManager.GetInstance.fieldPaths[curColumnIdx].scenePoints.Count - 1;
                     }
                     else
                     {
@@ -267,7 +287,7 @@ namespace Battlefield
                     break;
             }
             curCountDelaySelectMove = 0;
-            SetPointBehavior(controlType);
+            SetPointBehavior(isAttacker);
         }
         public void PlayerTwoControls()
         {
@@ -360,6 +380,25 @@ namespace Battlefield
                 SummonUnit();
             }
         }
+
+        public void ComputerPlayerControl()
+        {
+            curColumnIdx = computerAI.ChooseLane();
+            SetPointBehavior(isAttacker);
+
+            if(canChangeSummon)
+            {
+                int idx = computerAI.ChooseNextUnitIndex();
+
+                if(idx >= 0)
+                {
+                    SetUnitPanelAsSelected(idx);
+                }
+            }
+
+            SummonUnit();
+        }
+
         public void CampaignControls()
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -388,6 +427,10 @@ namespace Battlefield
             }
             if(!unitList[currentSelectedIdx].cooldownFinish)
             {
+                if(computerAI)
+                {
+                    canChangeSummon = false;
+                }
                 return;
             }
 
@@ -397,7 +440,6 @@ namespace Battlefield
             }
             else
             {
-                bool isAttacker = (controlType == PlayerControlType.PlayerTwo);
                 bool canSpawn = BattlefieldSpawnManager.GetInstance.CheckIfUnitsAvailable(isAttacker, currentSelectedIdx);
 
                 // Check if Can Spawn
@@ -413,63 +455,111 @@ namespace Battlefield
                     {
                         unitList[i].ResetCooldown();
                     }
+                    canChangeSummon = true;
                 }
                 else
                 {
-                    Debug.Log("Unit Can't be spawned");
+
                 }
 
             }
 
         }
-        public void SetPointBehavior(PlayerControlType forPlayer)
+
+        public void SetCurrentCommander(BattlefieldCommander thisCommander)
+        {
+            currentCommander = thisCommander;
+
+            for (int i = 0; i < unitList.Count; i++)
+            {
+                unitList[i].ResetCooldown();
+            }
+
+            if (isComputer)
+            {
+                computerAI.commanderInformation = currentCommander;
+            }
+
+        }
+        public void SetControlType(PlayerControlType curController,bool isAttacker)
+        {
+            controlType = curController;
+            if(controlType == PlayerControlType.Computer)
+            {
+                isComputer = true;
+            }
+            else
+            {
+                isComputer = false;
+            }
+            if (BattlefieldSceneManager.GetInstance != null && !BattlefieldSceneManager.GetInstance.isCampaignMode)
+            {
+                if(isAttacker)
+                {
+                    curColumnIdx = attackerColumnIdx;
+                    curRowIdx = attackerRowIdx;
+                    SetPointBehavior(isAttacker);
+                }
+                else
+                {
+                    curColumnIdx = defenderColumnIdx;
+                    curRowIdx = defenderRowIdx;
+
+                    SetPointBehavior(isAttacker);
+                }
+
+
+                unitList[0].SetAsSelected();
+                selectedUnit = unitList[0];
+            }
+        }
+        public void SetPointBehavior(bool isAttacker)
         {
             ScenePointBehavior tmp = null;
             ScenePointBehavior prev = null;
-            switch (forPlayer)
+            if (!isAttacker)
             {
-                case PlayerControlType.PlayerOne: // DEFENDER
-                    tmp = BattlefieldPathManager.GetInstance.ObtainPath(curColumnIdx, curRowIdx);
-                    if(tmp != null)
+                tmp = BattlefieldPathManager.GetInstance.ObtainPath(curColumnIdx, curRowIdx);
+                if (tmp != null)
+                {
+                    if (playerPlacement != null)
                     {
-                        if (playerPlacement != null)
-                        {
-                            playerPlacement.battleTile.HideDefenderTile();
-                            prev = playerPlacement;
-                        }
-
-                        playerPlacement = tmp;
-
-                        playerPlacement.battleTile.ShowDefenderTile();
-                        if(prev != null)
-                        {
-                            prev.battleTile.CheckOverlapping();
-                        }
+                        playerPlacement.battleTile.HideDefenderTile();
+                        prev = playerPlacement;
                     }
-                    break;
-                case PlayerControlType.PlayerTwo: // ATTACKER
-                    tmp = BattlefieldPathManager.GetInstance.ObtainPath(curColumnIdx, curRowIdx);
-                    if (tmp != null)
+
+                    playerPlacement = tmp;
+
+                    playerPlacement.battleTile.ShowDefenderTile();
+                    if (prev != null)
                     {
-                        if(playerPlacement != null)
-                        {
-                            playerPlacement.battleTile.HideHoverTile();
-                            prev = playerPlacement;
-                        }
-
-                        playerPlacement = tmp;
-
-                        playerPlacement.battleTile.ShowHoverTile();
-
-                        if (prev != null)
-                        {
-                            prev.battleTile.CheckOverlapping();
-                        }
+                        prev.battleTile.CheckOverlapping();
                     }
-                    break;
-                default:
-                    break;
+                }
             }
+            else
+            {
+                tmp = BattlefieldPathManager.GetInstance.ObtainPath(curColumnIdx, curRowIdx);
+                if (tmp != null)
+                {
+                    if(playerPlacement != null)
+                    {
+                        playerPlacement.battleTile.HideHoverTile();
+                        prev = playerPlacement;
+                    }
+
+                    playerPlacement = tmp;
+
+                    playerPlacement.battleTile.ShowHoverTile();
+
+                    if (prev != null)
+                    {
+                        prev.battleTile.CheckOverlapping();
+                    }
+                }
+
+            }
+            
         }
         public void SetUnitPanelAsSelected(int idx)
         {

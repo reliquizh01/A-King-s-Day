@@ -74,7 +74,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 5993647129643593723, guid: ba6c8f15aa4431d4197bdc25f0dbfe70,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.28, y: 0.99}
@@ -122,7 +122,7 @@ MonoBehaviour:
   - {x: -0.14515805, y: -0.14045167, z: 0}
   m_ShapePathHash: 178662722
   m_Mesh: {fileID: 0}
-  m_InstanceId: -20700
+  m_InstanceId: -277236
 --- !u!1 &1623637406106915409
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8736551619463092335
 Transform:
   m_ObjectHideFlags: 0
@@ -248,7 +248,7 @@ MonoBehaviour:
   - {x: -0.093778014, y: -0.34431025, z: 0}
   m_ShapePathHash: -1355329483
   m_Mesh: {fileID: 0}
-  m_InstanceId: -16802
+  m_InstanceId: -16826
 --- !u!1 &2202019247153429483
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2202019247153429483}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.085, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5982663137958367403}
@@ -368,7 +368,7 @@ MonoBehaviour:
   - {x: -0.11475748, y: -0.4628448, z: 0}
   m_ShapePathHash: -50714459
   m_Mesh: {fileID: 0}
-  m_InstanceId: -11088
+  m_InstanceId: -277238
 --- !u!1 &5982663137958367402
 GameObject:
   m_ObjectHideFlags: 0

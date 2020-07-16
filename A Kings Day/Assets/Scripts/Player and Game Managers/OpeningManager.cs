@@ -33,10 +33,12 @@ public class OpeningManager : BaseManager
     public override void Start()
     {
         base.Start();
-        if(appFirstStart && TransitionManager.GetInstance.previousScene == SceneType.Courtroom)
+        if(appFirstStart)
         {
             TransitionManager.GetInstance.SetAsCurrentManager(gameView);
             appFirstStart = false;
+
+            AudioManager.GetInstance.PlayThisBackGroundMusic(BackgroundMusicType.openingTheme);
         }
     }
 
@@ -57,8 +59,22 @@ public class OpeningManager : BaseManager
 
     public void TransitionToKingdomCreation()
     {
-        Debug.Log("Transitioning to Kingdom Creation");
-        TransitionManager.GetInstance.TransitionToNextGameView(GameViews.KingdomCreationView);
+        if(SaveLoadManager.GetInstance != null)
+        {
+            if(SaveLoadManager.GetInstance.saveDataList != null
+                && SaveLoadManager.GetInstance.saveDataList.Count > 0)
+            {
+                TransitionManager.GetInstance.TransitionToNextGameView(GameViews.KingdomCreationView);
+            }
+            else
+            {
+                TransitionManager.GetInstance.LoadScene(SceneType.Creation);
+            }
+        }
+        else
+        {
+            TransitionManager.GetInstance.LoadScene(SceneType.Creation);
+        }
     }
 
     public void TransitionToCustomBattle()

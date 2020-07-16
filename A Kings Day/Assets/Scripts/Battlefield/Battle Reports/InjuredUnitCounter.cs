@@ -59,7 +59,6 @@ namespace Battlefield
         public void DisablePanel()
         { 
             iconBg.color = new Color(disableColor.r, disableColor.g, disableColor.b, disableColor.a);
-            Debug.Log("Icon BG: " + iconBg.color + " COLOR : " + disableColor);
             titleBg.color = disableColor;
             countBg.color = disableColor;
             unitIcon.color = disableColor;

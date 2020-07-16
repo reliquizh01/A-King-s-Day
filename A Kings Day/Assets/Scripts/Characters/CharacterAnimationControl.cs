@@ -26,7 +26,18 @@ namespace Characters
         public int currentState; // 0 - Idle | 1 - Walking | 2 - Damage Received | 3 - Attack State |  4 - Injured State
         public float facingDirection = 0.0f; // 0 - Up | 1 - Down | 2 - Left | 3 - Right
 
+        public bool paramCurrentStateAvailable;
+        public bool paramFacingDirectionAvailable;
 
+        public void Awake()
+        {
+            paramCurrentStateAvailable = HasParameter("Current State", myAnimator);
+            paramFacingDirectionAvailable = HasParameter("Facing Direction", myAnimator);
+        }
+        public void Start()
+        {
+
+        }
         public void ChangeState(CharacterStates newState)
         {
             switch (newState)
@@ -82,8 +93,29 @@ namespace Characters
         }
         public void UpdateAnimator(int state, float direction)
         {
-            myAnimator.SetInteger("Current State", state);
-            myAnimator.SetFloat("Facing Direction", direction);
+            if(myAnimator == null)
+            {
+                return;
+            }
+            if(paramCurrentStateAvailable)
+            {
+                myAnimator.SetInteger("Current State", state);
+            }
+            if(paramFacingDirectionAvailable)
+            {
+                myAnimator.SetFloat("Facing Direction", direction);
+            }
+        }
+
+
+        public bool HasParameter(string paramName, Animator animator)
+        {
+            foreach (AnimatorControllerParameter param in animator.parameters)
+            {
+                if (param.name == paramName)
+                    return true;
+            }
+            return false;
         }
     }
 }

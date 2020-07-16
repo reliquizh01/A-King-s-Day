@@ -34,8 +34,10 @@ namespace ResourceUI
         {
             if (ResourceInformationController.GetInstance == null)
             {
-                Debug.Log(gameObject.name);
-                DontDestroyOnLoad(this.gameObject);
+                if (transform.parent == null)
+                {
+                    DontDestroyOnLoad(this.gameObject);
+                }
                 instance = this;
             }
             else

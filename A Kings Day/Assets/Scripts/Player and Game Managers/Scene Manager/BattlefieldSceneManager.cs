@@ -27,7 +27,9 @@ namespace Managers
         }
         #endregion
 
+
         [Header("Battlefield Information")]
+        public CustomBattlePanelHandler customBattlePanel;
         public BattlefieldSpawnManager spawnManager;
         public BattlefieldUIHandler battleUIInformation;
         public GameObject customizePanel;
@@ -92,6 +94,19 @@ namespace Managers
             BattlefieldSpawnManager.GetInstance.UpdateCommanderResources();
             battleUIInformation.ShowdailyReportPanel();
         }
+
+        public void SwitchAttackerControls(PlayerControlType newControlType)
+        {
+            battleUIInformation.attackerPanel.SetControlType(newControlType, true);
+            battleUIInformation.attackerReportPanel.SetControlType(newControlType);
+        }
+
+        public void SwitchDefenderControls(PlayerControlType newControlType)
+        {
+            battleUIInformation.defenderPanel.SetControlType(newControlType, false);
+            battleUIInformation.defenderReportPanel.SetControlType(newControlType);
+        }
+
         public void CheckCommanderReadiness()
         {
             if(!isCampaignMode)

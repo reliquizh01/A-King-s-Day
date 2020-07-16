@@ -139,7 +139,7 @@ MonoBehaviour:
   - {x: -0.012554269, y: 0.0054362155, z: 0}
   m_ShapePathHash: 2053822741
   m_Mesh: {fileID: 0}
-  m_InstanceId: 110332
+  m_InstanceId: 309774
 --- !u!1 &4068155436228673008
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,10 +368,24 @@ MonoBehaviour:
     - {fileID: 8300000, guid: d752f67313604e047b5d6d4ca44b5125, type: 3}
   receiveMeleeList:
     sfxClipList:
+    - {fileID: 8300000, guid: c40aac69605ca46449a47d8b43389926, type: 3}
+    - {fileID: 8300000, guid: 5dad4a20c1fc08d43a50d01f21167020, type: 3}
+    - {fileID: 8300000, guid: 4a6d287b725476e40b335ec9a95dcaef, type: 3}
+  receiveDeathInjuredList:
+    sfxClipList:
     - {fileID: 8300000, guid: 62ae65c49cdca5d4abd77020a23c55ce, type: 3}
     - {fileID: 8300000, guid: 395e4afdf74f1b54b85541dd064aa128, type: 3}
     - {fileID: 8300000, guid: 9a8f10d8e732f30439c5beedf243438f, type: 3}
     - {fileID: 8300000, guid: bd7d9cdc24ad3264d8672941bda963bb, type: 3}
+  projectileBlockList:
+    sfxClipList:
+    - {fileID: 8300000, guid: d370518c9f6609e44a548514fdee2229, type: 3}
+    - {fileID: 8300000, guid: f9d6149ae1d90ba49a8fb8e5b080a03b, type: 3}
+    - {fileID: 8300000, guid: 9185a194ecbb84946919ab64d84cd3da, type: 3}
+  meleeBlockList:
+    sfxClipList:
+    - {fileID: 8300000, guid: bb2b237245c9ade4e97f17d07c058c12, type: 3}
+    - {fileID: 8300000, guid: 9d6ae7b38fe376e4bb72ed0466812148, type: 3}
 --- !u!82 &2796690177674773012
 AudioSource:
   m_ObjectHideFlags: 0

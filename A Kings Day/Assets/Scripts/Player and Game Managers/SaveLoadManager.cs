@@ -29,7 +29,10 @@ namespace SaveData
             if (SaveLoadManager.GetInstance == null)
             {
                 Debug.Log(gameObject.name);
-                DontDestroyOnLoad(this.gameObject);
+                if(this.transform.parent == null)
+                {
+                    DontDestroyOnLoad(this.gameObject);
+                }
                 instance = this;
             }
             else
@@ -45,7 +48,7 @@ namespace SaveData
         public PlayerKingdomData currentData;
 
 
-        protected string savePath;
+        [SerializeField]protected string savePath;
 
 
         public void Start()

@@ -15,6 +15,7 @@ namespace Managers
     {
         openingTheme,
         battlefieldPreparation1,
+        courtroomDrama,
     }
 
     [System.Serializable]
@@ -46,7 +47,10 @@ namespace Managers
         {
             if (AudioManager.GetInstance == null)
             {
-                DontDestroyOnLoad(this.gameObject);
+                if (transform.parent == null)
+                {
+                   DontDestroyOnLoad(this.gameObject);
+                }
                 instance = this;
             }
             else
@@ -56,24 +60,78 @@ namespace Managers
         }
         #endregion
 
+        public AudioClip nextClip;
+        public bool fadeForNextAudio;
         public AudioSource backgroundMusic;
+        public float curBgmVol;
         public AudioSource sfx;
-
+        public float curSfxVol;
         public List<BackgroundMusicClass> bgmList;
         public List<SpecialEffectsClass> sfxList;
 
+        public void Start()
+        {
+            curBgmVol = backgroundMusic.volume;
+            curSfxVol = sfx.volume;
+        }
         public void PlayDecisionHover()
         {
             sfx.Play();
         }
 
+        public void Update()
+        {
+            if(fadeForNextAudio)
+            {
+                if(nextClip != null)
+                {
+                    backgroundMusic.volume -= 0.002f;
+                    if(backgroundMusic.volume <= 0)
+                    {
+                        backgroundMusic.clip = nextClip;
+                        backgroundMusic.Play();
+                        nextClip = null;
+                    }
+                }
+                else
+                {
+                    backgroundMusic.volume += 0.002f;
+                    if(backgroundMusic.volume >= curBgmVol)
+                    {
+                        backgroundMusic.volume = curBgmVol;
+                        fadeForNextAudio = false;
+                    }
+                }
+            }
+        }
         public override void PlayThisBackGroundMusic(BackgroundMusicType thisType)
         {
             if(bgmList.Find(x => x.bgmType == thisType) != null)
             {
-                backgroundMusic.clip = bgmList.Find(x => x.bgmType == thisType).myAudioClip;
-                backgroundMusic.Play();
+                nextClip = bgmList.Find(x => x.bgmType == thisType).myAudioClip;
+                fadeForNextAudio = true;
             }
+        }
+
+        public void SetBGMVolume(float newValue)
+        {
+            curBgmVol = newValue;
+            backgroundMusic.volume = curBgmVol;
+        }
+
+        public void SetSFXVolume(float newValue)
+        {
+            curSfxVol = newValue;
+            sfx.volume = curSfxVol;
+        }
+        public void SetVolumeAsBackground()
+        {
+            backgroundMusic.volume = 0.0005f;
+        }
+
+        public void NormalizeBackgroundVolume()
+        {
+            backgroundMusic.volume = curBgmVol;
         }
     }
 

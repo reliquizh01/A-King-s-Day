@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using Battlefield;
 
 public class ControlsInformationHandler : MonoBehaviour
 {
     public GameObject playerOne, playerTwo;
+    public Button playerOneBtn, playerTwoBtn;
     public PlayerControlType currentControlShown;
     public bool isShowingControls;
 
@@ -13,6 +15,10 @@ public class ControlsInformationHandler : MonoBehaviour
     public GameObject initialDetail;
     public GameObject unitSelection, unitSummon, tileSwap;
 
+    public void Start()
+    {
+        ShowPlayerOne();
+    }
     public void Update()
     {
 
@@ -65,6 +71,8 @@ public class ControlsInformationHandler : MonoBehaviour
     }
     public void ShowPlayerOne()
     {
+        playerOneBtn.image.color = playerOneBtn.colors.pressedColor;
+        playerTwoBtn.image.color = playerTwoBtn.colors.normalColor;
         currentControlShown = PlayerControlType.PlayerOne;
         playerOne.SetActive(true);
         playerTwo.SetActive(false);
@@ -72,6 +80,9 @@ public class ControlsInformationHandler : MonoBehaviour
 
     public void ShowPlayerTwo()
     {
+        playerOneBtn.image.color = playerOneBtn.colors.normalColor;
+        playerTwoBtn.image.color = playerTwoBtn.colors.pressedColor;
+
         currentControlShown = PlayerControlType.PlayerTwo;
         playerOne.SetActive(false);
         playerTwo.SetActive(true);

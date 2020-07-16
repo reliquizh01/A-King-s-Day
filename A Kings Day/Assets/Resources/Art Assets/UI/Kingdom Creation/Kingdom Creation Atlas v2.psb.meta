@@ -1,0 +1,995 @@
+fileFormatVersion: 2
+guid: b4c83cd7951863b40a91e03d6105a1ce
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    nPOTScale: 1
+    sRGBTexture: 0
+    spriteMode: 2
+    spriteExtrude: 0
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData:
+  - name: Wall Creation Background
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 21, z: 5, w: 18}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 225
+      height: 191
+    spriteID: 34a76e5989955fc43acdf1f93b821a29
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -253, y: -169}
+  - name: Family Crest Panel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 323
+      width: 199
+      height: 23
+    spriteID: c7c1343fccf46cc4b896439994fb2d1d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -15, y: 134}
+  - name: Arrow Button Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 211
+      y: 323
+      width: 18
+      height: 14
+    spriteID: c3a1e6a1fa81a82409fa29d2bf8d6d0d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 27, y: 91}
+  - name: Number border
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 30
+      y: 482
+      width: 16
+      height: 24
+    spriteID: a738b8929d315254d8d630d01dbe3d1b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -131, y: 256}
+  - name: Header Panel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 35, y: 0, z: 28, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3
+      y: 277
+      width: 134
+      height: 38
+    spriteID: 91901d95bedbfdb46bee69e9b880a0ae
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -10, y: 64}
+  - name: Button Unclicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 234
+      y: 203
+      width: 18
+      height: 14
+    spriteID: cbbd3e149e6bc2548bb015b5eb1a1848
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 29, y: -29}
+  - name: Family Crest Handle
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 418
+      width: 44
+      height: 43
+    spriteID: 58daf7e5001f52d40837ddf792fe845e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -143, y: 149}
+  - name: Orb_Shine_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 172
+      y: 203
+      width: 54
+      height: 56
+    spriteID: e9760ce20b38ce4438ae6ee0305ca755
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -169, y: 99}
+  - name: Orb_Shine_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 354
+      width: 54
+      height: 56
+    spriteID: de47d250cc2450245a3505f25207ce48
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -258, y: 250}
+  - name: Orb_Shine_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 354
+      width: 54
+      height: 56
+    spriteID: be320948cb07d1d4284945d7952cc06c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -110, y: 250}
+  - name: Orb_Shine_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 354
+      width: 54
+      height: 56
+    spriteID: a1136e6be1088464ea018252dc4e841f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 36, y: 250}
+  - name: Orb_Shine_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 190
+      y: 354
+      width: 54
+      height: 56
+    spriteID: dd93e973094dc0a4b92488917c73d378
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 170, y: 250}
+  - name: Circle Number
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 418
+      width: 54
+      height: 56
+    spriteID: 4b807acefff84db479773046d10e5fc4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -194, y: 85}
+  - name: Resource Card
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 203
+      width: 160
+      height: 66
+    spriteID: add057d39b8e2a744b18932a09af0cf7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -32, y: -53}
+  - name: Over_Sight_Crest
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 482
+      width: 18
+      height: 25
+    spriteID: e7538e6354378b64ba330a79ae5bbc3a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -31, y: 435}
+  rigSpriteImportData:
+  - name: Wall Creation Background
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 225
+      height: 191
+    spriteID: 44061e2b46d06a84dbc66215739cb5bf
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -253, y: -169}
+  - name: Family Crest Panel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 323
+      width: 199
+      height: 23
+    spriteID: bafc3ad26671f664299013c653c44e23
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -15, y: 134}
+  - name: Arrow Button Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 28
+      y: 482
+      width: 18
+      height: 14
+    spriteID: 24f0683da6885994090f05effb3747f8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -156, y: 250}
+  - name: Number border
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 482
+      width: 16
+      height: 24
+    spriteID: 93e936ad9595d1e4aa830c6bce47f1ae
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -157, y: 256}
+  - name: Header Panel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 277
+      width: 134
+      height: 38
+    spriteID: ad6fb80e5b8f18946b9956e7bfc83ea0
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -10, y: 64}
+  - name: Button Unclicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 211
+      y: 323
+      width: 18
+      height: 14
+    spriteID: 100656923669375408e698b9ea442e13
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 6, y: 91}
+  - name: Family Crest Handle
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 418
+      width: 44
+      height: 43
+    spriteID: d287fe8b3287ece46aeb4c7862977256
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -143, y: 149}
+  - name: Orb_Shine_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 172
+      y: 203
+      width: 54
+      height: 56
+    spriteID: 9aa1e89999e7ae24780c9c4b6d77ce48
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -169, y: 99}
+  - name: Orb_Shine_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 354
+      width: 54
+      height: 56
+    spriteID: a3fa5716f4c5ca14c90d08c613fe5fc7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -258, y: 250}
+  - name: Orb_Shine_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 354
+      width: 54
+      height: 56
+    spriteID: 6f03d4332fb047b4f9214720a8e61d10
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -110, y: 250}
+  - name: Orb_Shine_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 354
+      width: 54
+      height: 56
+    spriteID: 3e48121063ca38b499267062224200aa
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 36, y: 250}
+  - name: Orb_Shine_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 190
+      y: 354
+      width: 54
+      height: 56
+    spriteID: 010a2928128f7a7419528e47011936d4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 170, y: 250}
+  - name: Circle Number
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 418
+      width: 54
+      height: 56
+    spriteID: fcffee86aacbc9441813faec1e634e97
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -194, y: 85}
+  - name: Resource Card
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 203
+      width: 160
+      height: 66
+    spriteID: 8e8a9e4d7bf34a341b6629a4605d2e7f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -32, y: -53}
+  platformSettings:
+  - name: Default
+    overridden: 1
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: PC, Mac & Linux Standalone
+    overridden: 1
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 256
+  importedTextureHeight: 512
+  documentSize: {x: 559, y: 479}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 256
+  textureActualHeight: 512
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 0
+  mosaicPSDLayers:
+  - name: Over_Sight_Crest
+    spriteName: Over_Sight_Crest
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e7538e6354378b64ba330a79ae5bbc3a
+    layerID: 18
+    mosaicPosition: {x: 4, y: 482}
+  - name: Wall Creation Background
+    spriteName: Wall Creation Background
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 34a76e5989955fc43acdf1f93b821a29
+    layerID: 4
+    mosaicPosition: {x: 4, y: 4}
+  - name: Family Crest Panel
+    spriteName: Family Crest Panel
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c7c1343fccf46cc4b896439994fb2d1d
+    layerID: 3
+    mosaicPosition: {x: 4, y: 323}
+  - name: Arrow Button Clicked
+    spriteName: Arrow Button Clicked
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c3a1e6a1fa81a82409fa29d2bf8d6d0d
+    layerID: 5
+    mosaicPosition: {x: 211, y: 323}
+  - name: Number border
+    spriteName: Number border
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a738b8929d315254d8d630d01dbe3d1b
+    layerID: 6
+    mosaicPosition: {x: 30, y: 482}
+  - name: Header Panel
+    spriteName: Header Panel
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 91901d95bedbfdb46bee69e9b880a0ae
+    layerID: 8
+    mosaicPosition: {x: 4, y: 277}
+  - name: Button Unclicked
+    spriteName: Button Unclicked
+    isGroup: 0
+    parentIndex: -1
+    spriteID: cbbd3e149e6bc2548bb015b5eb1a1848
+    layerID: 7
+    mosaicPosition: {x: 234, y: 203}
+  - name: Family Crest Handle
+    spriteName: Family Crest Handle
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 58daf7e5001f52d40837ddf792fe845e
+    layerID: 9
+    mosaicPosition: {x: 66, y: 418}
+  - name: Orb Shining
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 17
+    mosaicPosition: {x: 0, y: 0}
+  - name: Orb_Shine_5
+    spriteName: Orb_Shine_5
+    isGroup: 0
+    parentIndex: 8
+    spriteID: e9760ce20b38ce4438ae6ee0305ca755
+    layerID: 16
+    mosaicPosition: {x: 172, y: 203}
+  - name: Orb_Shine_4
+    spriteName: Orb_Shine_4
+    isGroup: 0
+    parentIndex: 8
+    spriteID: de47d250cc2450245a3505f25207ce48
+    layerID: 15
+    mosaicPosition: {x: 4, y: 354}
+  - name: Orb_Shine_3
+    spriteName: Orb_Shine_3
+    isGroup: 0
+    parentIndex: 8
+    spriteID: be320948cb07d1d4284945d7952cc06c
+    layerID: 14
+    mosaicPosition: {x: 66, y: 354}
+  - name: Orb_Shine_2
+    spriteName: Orb_Shine_2
+    isGroup: 0
+    parentIndex: 8
+    spriteID: a1136e6be1088464ea018252dc4e841f
+    layerID: 13
+    mosaicPosition: {x: 128, y: 354}
+  - name: Orb_Shine_1
+    spriteName: Orb_Shine_1
+    isGroup: 0
+    parentIndex: 8
+    spriteID: dd93e973094dc0a4b92488917c73d378
+    layerID: 12
+    mosaicPosition: {x: 190, y: 354}
+  - name: Circle Number
+    spriteName: Circle Number
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 4b807acefff84db479773046d10e5fc4
+    layerID: 10
+    mosaicPosition: {x: 4, y: 418}
+  - name: Resource Card
+    spriteName: Resource Card
+    isGroup: 0
+    parentIndex: -1
+    spriteID: add057d39b8e2a744b18932a09af0cf7
+    layerID: 2
+    mosaicPosition: {x: 4, y: 203}
+  rigPSDLayers:
+  - name: Wall Creation Background
+    spriteName: Wall Creation Background
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 44061e2b46d06a84dbc66215739cb5bf
+    layerID: 4
+    mosaicPosition: {x: 4, y: 4}
+  - name: Family Crest Panel
+    spriteName: Family Crest Panel
+    isGroup: 0
+    parentIndex: -1
+    spriteID: bafc3ad26671f664299013c653c44e23
+    layerID: 3
+    mosaicPosition: {x: 4, y: 323}
+  - name: Arrow Button Clicked
+    spriteName: Arrow Button Clicked
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 24f0683da6885994090f05effb3747f8
+    layerID: 5
+    mosaicPosition: {x: 28, y: 482}
+  - name: Number border
+    spriteName: Number border
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 93e936ad9595d1e4aa830c6bce47f1ae
+    layerID: 6
+    mosaicPosition: {x: 4, y: 482}
+  - name: Header Panel
+    spriteName: Header Panel
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ad6fb80e5b8f18946b9956e7bfc83ea0
+    layerID: 8
+    mosaicPosition: {x: 4, y: 277}
+  - name: Button Unclicked
+    spriteName: Button Unclicked
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 100656923669375408e698b9ea442e13
+    layerID: 7
+    mosaicPosition: {x: 211, y: 323}
+  - name: Family Crest Handle
+    spriteName: Family Crest Handle
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d287fe8b3287ece46aeb4c7862977256
+    layerID: 9
+    mosaicPosition: {x: 66, y: 418}
+  - name: Orb Shining
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 17
+    mosaicPosition: {x: 0, y: 0}
+  - name: Orb_Shine_5
+    spriteName: Orb_Shine_5
+    isGroup: 0
+    parentIndex: 7
+    spriteID: 9aa1e89999e7ae24780c9c4b6d77ce48
+    layerID: 16
+    mosaicPosition: {x: 172, y: 203}
+  - name: Orb_Shine_4
+    spriteName: Orb_Shine_4
+    isGroup: 0
+    parentIndex: 7
+    spriteID: a3fa5716f4c5ca14c90d08c613fe5fc7
+    layerID: 15
+    mosaicPosition: {x: 4, y: 354}
+  - name: Orb_Shine_3
+    spriteName: Orb_Shine_3
+    isGroup: 0
+    parentIndex: 7
+    spriteID: 6f03d4332fb047b4f9214720a8e61d10
+    layerID: 14
+    mosaicPosition: {x: 66, y: 354}
+  - name: Orb_Shine_2
+    spriteName: Orb_Shine_2
+    isGroup: 0
+    parentIndex: 7
+    spriteID: 3e48121063ca38b499267062224200aa
+    layerID: 13
+    mosaicPosition: {x: 128, y: 354}
+  - name: Orb_Shine_1
+    spriteName: Orb_Shine_1
+    isGroup: 0
+    parentIndex: 7
+    spriteID: 010a2928128f7a7419528e47011936d4
+    layerID: 12
+    mosaicPosition: {x: 190, y: 354}
+  - name: Circle Number
+    spriteName: Circle Number
+    isGroup: 0
+    parentIndex: -1
+    spriteID: fcffee86aacbc9441813faec1e634e97
+    layerID: 10
+    mosaicPosition: {x: 4, y: 418}
+  - name: Resource Card
+    spriteName: Resource Card
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8e8a9e4d7bf34a341b6629a4605d2e7f
+    layerID: 2
+    mosaicPosition: {x: 4, y: 203}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: Kingdom Creation Atlas v2 Texture
+  prefabAssetName: Kingdom Creation Atlas v2 Prefab
+  spriteLibAssetName: Kingdom Creation Atlas v2 Sprite Lib
+  secondarySpriteTextures: []

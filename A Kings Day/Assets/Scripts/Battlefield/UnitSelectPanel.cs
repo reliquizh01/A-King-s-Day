@@ -11,6 +11,7 @@ namespace Battlefield
 {
     public class UnitSelectPanel : MonoBehaviour
     {
+        public BattlefieldUnitSelectionController myController;
         public Image selectedImage;
 
         [Header("Unit Panel")]
@@ -38,6 +39,13 @@ namespace Battlefield
                 if (currentCooldownCounter >= currentMaxCooldown)
                 {
                     cooldownFinish = true;
+                    if(myController.controlType == PlayerControlType.Computer)
+                    {
+                        if(BattlefieldSystemsManager.GetInstance.dayInProgress)
+                        {
+                            myController.ComputerPlayerControl();
+                        }
+                    }
                 }
             }
         }

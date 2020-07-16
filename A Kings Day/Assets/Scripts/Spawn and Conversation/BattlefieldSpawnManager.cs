@@ -133,6 +133,10 @@ namespace Managers
                             attackingCommander.unitsCarried[idx].totalUnitsAvailableForDeployment += 1;
                             attackerSpawnedUnits.Remove(thisUnit);
                             DestroyImmediate(thisUnit.gameObject);
+                            if(BattlefieldSceneManager.GetInstance.battleUIInformation.attackerPanel.isComputer)
+                            {
+                                BattlefieldSceneManager.GetInstance.battleUIInformation.attackerPanel.ComputerPlayerControl();
+                            }
                             break;
 
                         case UnitState.Injured:
@@ -163,6 +167,10 @@ namespace Managers
                             defendingCommander.unitsCarried[idx].totalUnitsAvailableForDeployment += 1;
                             defenderSpawnedUnits.Remove(thisUnit);
                             DestroyImmediate(thisUnit.gameObject);
+                            if (BattlefieldSceneManager.GetInstance.battleUIInformation.defenderPanel.isComputer)
+                            {
+                                BattlefieldSceneManager.GetInstance.battleUIInformation.defenderPanel.ComputerPlayerControl();
+                            }
                             break;
 
                         case UnitState.Injured:
@@ -203,12 +211,22 @@ namespace Managers
                 }
             }
 
-            Debug.Log(attackerEmpty + " / " + defenderEmpty);
-            if (defenderEmpty && attackerEmpty && !BattlefieldSystemsManager.GetInstance.dayInProgress)
+            if(BattlefieldSystemsManager.GetInstance.dayInProgress && !BattlefieldSystemsManager.GetInstance.unitsInCamp
+                && BattlefieldSystemsManager.GetInstance.winCondition != BattlefieldWinCondition.ConquerAll)
             {
-                Debug.Log("ENDING ALL!");
-                endCurrentBattleCallback();
+                BattlefieldSystemsManager.GetInstance.CheckVictorious();
             }
+            else
+            {
+                if (defenderEmpty && attackerEmpty)
+                {
+                    if(endCurrentBattleCallback != null)
+                    {
+                        endCurrentBattleCallback();
+                    }
+                }
+            }
+
         }
         public bool CheckIfUnitsAvailable(bool isAttacker, int idx)
         {
@@ -380,7 +398,7 @@ namespace Managers
                 }
 
             }
-
+            BattlefieldSystemsManager.GetInstance.UpdateTotalVictoryPoints();
         }
         public void RetreatTeamUnits(TeamType thisTeam, bool fullheal = false, Action newRetreatCallback = null)
         {

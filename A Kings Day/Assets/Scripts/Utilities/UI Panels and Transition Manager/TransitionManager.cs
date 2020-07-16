@@ -45,7 +45,6 @@ namespace Managers
         {
             if (TransitionManager.GetInstance == null)
             {
-                Debug.Log(gameObject.name);
                 DontDestroyOnLoad(this.gameObject);
                 instance = this;
             }
@@ -68,6 +67,8 @@ namespace Managers
 
         public BaseSceneManager currentSceneManager;
         public ResourceInformationController resourceInformationController;
+        public KingdomUnitStorage unitStorage;
+
         private SceneType preLoadThisScene;
         public SceneType previousScene;
         private bool isLoading = false;
@@ -103,6 +104,7 @@ namespace Managers
         public void HideTabCover(Parameters p = null)
         {
             tabCover.gameObject.SetActive(false);
+            Time.timeScale = 1.0f;
         }
         public void ShowLoading(Action callback = null)
         {
@@ -272,7 +274,6 @@ namespace Managers
 
         public void CheckSetupResourcePanel()
         {
-            Debug.Log("SETTING UP RESOURCE PANEL!");
             if (currentMgr.gameView == GameViews.CourtroomView)
             {
                 resourceInformationController.ShowResourcePanel(ResourcePanelType.overhead);

@@ -277,7 +277,7 @@ MonoBehaviour:
     - buffName: Agile Reflex
       duration: 0
       targetStats: 5
-      effectAmount: 10
+      effectAmount: 20
       permanentBuff: 1
       buffTrigger: 1
   - unitName: Spearman
@@ -302,7 +302,7 @@ MonoBehaviour:
     - buffName: Keen Vision
       duration: 0
       targetStats: 4
-      effectAmount: 10
+      effectAmount: 20
       permanentBuff: 1
       buffTrigger: 1
   - unitName: Archer
@@ -434,12 +434,12 @@ MonoBehaviour:
   - buffName: Keen Vision
     duration: 0
     targetStats: 4
-    effectAmount: 10
+    effectAmount: 20
     permanentBuff: 1
     buffTrigger: 1
   - buffName: Agile Reflex
     duration: 0
     targetStats: 5
-    effectAmount: 10
+    effectAmount: 20
     permanentBuff: 1
     buffTrigger: 1

@@ -30,7 +30,10 @@ namespace Managers
         {
             if (KingdomManager.GetInstance == null)
             {
-                DontDestroyOnLoad(this.gameObject);
+                if (transform.parent == null)
+                {
+                    DontDestroyOnLoad(this.gameObject);
+                }
                 instance = this;
             }
             else
@@ -88,9 +91,13 @@ namespace Managers
                     LoadSavedData(mgr.playerData.queuedDataEventsList, mgr.playerData.curDataEvent, mgr.playerData.curDataStory);
 
                     // CHECKS IF LOADED DATA STILL HAS QUEUED EVENTS
-                    if (mgr.playerData.queuedDataEventsList.Count > 0 || !string.IsNullOrEmpty(mgr.playerData.curDataEvent.title))
+                    if (mgr.playerData.queuedDataEventsList.Count > 0 || mgr.playerData.curDataEvent != null && !string.IsNullOrEmpty(mgr.playerData.curDataEvent.title))
                     {
                         AllowStartEvent();
+                    }
+                    else
+                    {
+                        StartWeekEvents();
                     }
                 }
             }

@@ -114,7 +114,10 @@ public class ScenePointBehavior : BaseInteractableBehavior
             return;
         }
 
-        battleTile.AddCharacterSteppingIn(colCharacter);
+        if(battleTile != null)
+        {
+            battleTile.AddCharacterSteppingIn(colCharacter);
+        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
@@ -126,7 +129,10 @@ public class ScenePointBehavior : BaseInteractableBehavior
             return;
         }
 
-        battleTile.RemoveChacracterSteppingIn(colCharacter);
+        if(battleTile != null)
+        {
+            battleTile.RemoveChacracterSteppingIn(colCharacter);
+        }
     }
     public void SetAsActive(bool active)
     {

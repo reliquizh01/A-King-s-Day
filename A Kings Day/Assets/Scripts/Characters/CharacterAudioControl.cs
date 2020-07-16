@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Managers;
 
 
 namespace Characters
@@ -23,7 +24,18 @@ namespace Characters
         public ObjectAudioGenerator sendDamageList;
         public ObjectAudioGenerator receiveProjectileList;
         public ObjectAudioGenerator receiveMeleeList;
+        public ObjectAudioGenerator receiveDeathInjuredList;
 
+        public ObjectAudioGenerator projectileBlockList;
+        public ObjectAudioGenerator meleeBlockList;
+
+        public void Start()
+        {
+            if(AudioManager.GetInstance != null)
+            {
+                audioSource.volume = AudioManager.GetInstance.sfx.volume;
+            }
+        }
         public void PlaySendDamageAudio()
         {
             int rand = UnityEngine.Random.Range(0, sendDamageList.sfxClipList.Count - 1);
@@ -45,6 +57,30 @@ namespace Characters
             int rand = UnityEngine.Random.Range(0, receiveMeleeList.sfxClipList.Count - 1);
 
             audioSource.clip = receiveMeleeList.sfxClipList[rand];
+            audioSource.Play();
+        }
+
+        public void PlayInjuredOrDead()
+        {
+            int rand = UnityEngine.Random.Range(0, receiveDeathInjuredList.sfxClipList.Count - 1);
+
+            audioSource.clip = receiveDeathInjuredList.sfxClipList[rand];
+            audioSource.Play();
+        }
+
+        public void PlayBlockProjectile()
+        {
+            int rand = UnityEngine.Random.Range(0, projectileBlockList.sfxClipList.Count - 1);
+
+            audioSource.clip = projectileBlockList.sfxClipList[rand];
+            audioSource.Play();
+        }
+
+        public void PlayBlockMelee()
+        {
+            int rand = UnityEngine.Random.Range(0, meleeBlockList.sfxClipList.Count - 1);
+
+            audioSource.clip = meleeBlockList.sfxClipList[rand];
             audioSource.Play();
         }
     }

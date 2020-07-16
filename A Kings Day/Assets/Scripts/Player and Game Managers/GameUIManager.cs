@@ -41,8 +41,10 @@ public class GameUIManager : BaseManager
         EventBroadcaster.Instance.AddObserver(EventNames.HIDE_RESOURCES, HideBellButton);
     }
 
-    public void OnDestroy()
+    public override void OnDestroy()
     {
+        base.OnDestroy();
+
         EventBroadcaster.Instance.RemoveActionAtObserver(EventNames.HIDE_RESOURCES, HideBellButton);
     }
     public override void PreOpenManager()

@@ -2,44 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Managers;
+using UnityEngine.UI;
 
 public class OptionsController : MonoBehaviour
 {
-    public GameObject InGameOption;
-    public GameObject OptionsPanel;
+
+    public Button audioBtn, keyboardBtn;
+    public BasePanelWindow InGameOption;
+    public BasePanelWindow OptionsPanel;
 
     public GameObject volumePanel;
     public GameObject controlPanel;
 
     public VolumeSliderController volumeControl;
 
-
-    public void Update()
+    public void Start()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(TransitionManager.GetInstance.currentSceneManager.sceneType == SceneType.Opening)
-            {
-                return;
-            }
-
-            TransitionManager.GetInstance.ShowOptions(false);
-        }
+        ShowControlPanel();
     }
     public void OpenInGameOptions()
     {
-        InGameOption.SetActive(true);
+        InGameOption.gameObject.SetActive(true);
     }
 
     public void OpenOptionPanel()
     {
-        OptionsPanel.SetActive(true);
+        OptionsPanel.gameObject.SetActive(true);
         volumePanel.SetActive(false);
         controlPanel.SetActive(true);
     }
 
     public void ShowVolumePanel()
     {
+        keyboardBtn.image.color = keyboardBtn.colors.normalColor;
+        audioBtn.image.color = audioBtn.colors.pressedColor;
         volumePanel.SetActive(true);
         controlPanel.SetActive(false);
 
@@ -54,19 +50,21 @@ public class OptionsController : MonoBehaviour
 
     public void UpdateVolume()
     {
-        AudioManager.GetInstance.backgroundMusic.volume = volumeControl.bgmControl.value;
-        AudioManager.GetInstance.sfx.volume = volumeControl.sfxControl.value;
+        AudioManager.GetInstance.SetBGMVolume(volumeControl.bgmControl.value);
+        AudioManager.GetInstance.SetSFXVolume(volumeControl.sfxControl.value);
     }
     public void ShowControlPanel()
     {
+        keyboardBtn.image.color = keyboardBtn.colors.pressedColor;
+        audioBtn.image.color = audioBtn.colors.normalColor;
         volumePanel.SetActive(false);
         controlPanel.SetActive(true);
     }
 
     public void CloseOptions()
     {
-        InGameOption.SetActive(false);
-        OptionsPanel.SetActive(false);
+        InGameOption.gameObject.SetActive(false);
+        OptionsPanel.gameObject.SetActive(false);
         TransitionManager.GetInstance.HideTabCover();
     }
 
@@ -74,5 +72,6 @@ public class OptionsController : MonoBehaviour
     {
         CloseOptions();
         TransitionManager.GetInstance.LoadScene(SceneType.Opening);
+        
     }
 }

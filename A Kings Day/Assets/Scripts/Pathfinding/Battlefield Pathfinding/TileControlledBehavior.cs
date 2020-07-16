@@ -155,6 +155,10 @@ public class TileControlledBehavior : MonoBehaviour
             previousOwner = currentOwner;
             currentOwner = potentialOwner;
 
+            if (BattlefieldSystemsManager.GetInstance != null)
+            {
+                BattlefieldSystemsManager.GetInstance.PanelConquered(currentOwner, previousOwner);
+            }
             // Update total Victory
             if (previousOwner == TeamType.Neutral)
             {
@@ -164,18 +168,18 @@ public class TileControlledBehavior : MonoBehaviour
                 }
             }
 
-
             currentControlLevel = 0;
                 
             if(potentialOwner == TeamType.Neutral)
             {
                 ReturnToNeutral();
             }
+        }
 
-            if(BattlefieldSystemsManager.GetInstance != null)
-            {
-                BattlefieldSystemsManager.GetInstance.PanelConquered(currentOwner, previousOwner);
-            }
+        if (BattlefieldSystemsManager.GetInstance.dayInProgress && !BattlefieldSystemsManager.GetInstance.unitsInCamp
+            && BattlefieldSystemsManager.GetInstance.winCondition != BattlefieldWinCondition.EliminateAll)
+        {
+            BattlefieldSystemsManager.GetInstance.CheckVictorious();
         }
     }
     public void ResetControlLevel()

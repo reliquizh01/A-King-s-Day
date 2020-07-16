@@ -367,7 +367,6 @@ namespace Buildings
                 actionScrollPos = GUILayout.BeginScrollView(actionScrollPos, new GUIStyle("RL Background"), GUILayout.Width(500), GUILayout.Height(position.height - 400));
                 for (int i = 0; i < curSelectedCard.actionTypes.Count; i++)
                 {
-                    Texture2D texture;
                     GUILayout.BeginHorizontal();
                     curSelectedCard.actionTypes[i].actionType = (CardActionType)EditorGUILayout.EnumPopup(curSelectedCard.actionTypes[i].actionType, GUILayout.MaxWidth(140));
                     GUILayout.EndHorizontal();

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using SaveData;
 using Kingdoms;
-using SaveData;
 using TMPro;
 using UnityEngine.UI;
 

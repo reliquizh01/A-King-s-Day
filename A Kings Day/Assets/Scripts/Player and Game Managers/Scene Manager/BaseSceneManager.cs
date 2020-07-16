@@ -10,6 +10,7 @@ namespace Managers
     public enum SceneType
     {
         Opening,
+        Creation,
         Courtroom,
         Balcony,
         Battlefield,

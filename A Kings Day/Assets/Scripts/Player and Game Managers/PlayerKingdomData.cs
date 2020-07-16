@@ -11,6 +11,38 @@ using Buildings;
 
 namespace Kingdoms
 {
+    public enum BestTroops
+    {
+        recruits,
+        swordsman,
+        spearman,
+        archer,
+    }
+
+    public enum FamousFor
+    {
+        FaithfulMerchant,
+        CropsCultivator,
+        SeasonedAdventurer,
+        PeoplesChampion,
+    }
+
+    public enum WieldedWeapon
+    {
+        Sword,
+        Spear,
+        Bow,
+        Books,
+    }
+
+    public enum FamilySecret
+    {
+        FamilyOfHalfDemons,
+        RelicsHoarder,
+        TreasuredGalleon,
+        InstigatedRebellion,
+    }
+
     public enum ResourceType
     {
         Food,
@@ -35,12 +67,17 @@ namespace Kingdoms
     public class PlayerKingdomData
     {
         public bool fileData = false;
+
+        [Header("Kingdom Age")]
+        public int weekCount = 1;
+        [Header("Kingdom Origin")]
         public string kingdomsName;
         public string dynastyName;
         public TerritoryLevel level;
-        public int weekCount = 1;
-        public float storyRoll = 0.007f;
-        public float currentRoll = 0.007f;
+        public BestTroops bestTroops;
+        public FamousFor myFame;
+        public WieldedWeapon wieldedWeapon;
+        public FamilySecret familySecret;
 
         [Header("Events and Stories")]
         public List<StoryArcEventsData> finishedStories;
@@ -138,6 +175,10 @@ namespace Kingdoms
         public bool canReceiveMonthlyTax;
         // Technology
         public List<BaseTechnologyData> currentTechnologies;
+
+        [Header("Kingdom Roll")]
+        public float storyRoll = 0.007f;
+        public float currentRoll = 0.007f;
 
         public bool IsStoryArcFinished(string storyTitle)
         {
