@@ -20,6 +20,12 @@ namespace Buildings
         public BuildingOptionType type;
         public Animation iconAnim;
         public string mesg;
+
+        public void OnEnable()
+        {
+            mesg = "Use " + myController.myBuilding.informationName;
+        }
+
         public override void OnMouseEnter()
         {
             if (!allowInteraction) return;
@@ -27,10 +33,13 @@ namespace Buildings
             base.OnMouseEnter();
             iconAnim.Play();
 
-            if(myController != null && type == BuildingOptionType.Upgrade && myController.myBuilding.buildingInformation.buildingCondition == BuildingCondition.Ruins)
+            if (myController != null && type == BuildingOptionType.Upgrade && myController.myBuilding.buildingInformation.buildingCondition == BuildingCondition.Ruins)
             {
                 myController.ShowRepairAmountTooltip();
-                ResourceInformationController.GetInstance.ShowCurrentPanelPotentialResourceChanges(myController.myBuilding.buildingInformation.ObtainUpgradeRewards());
+                if(ResourceInformationController.GetInstance != null)
+                {
+                    ResourceInformationController.GetInstance.ShowCurrentPanelPotentialResourceChanges(myController.myBuilding.buildingInformation.ObtainUpgradeRewards());
+                }
             }   
             else
             {
@@ -69,14 +78,20 @@ namespace Buildings
                 default:
                     break;
             }
-            ResourceInformationController.GetInstance.HideCurrentPanelPotentialResourceChanges();
+            if (ResourceInformationController.GetInstance != null)
+            {
+                ResourceInformationController.GetInstance.HideCurrentPanelPotentialResourceChanges();
+            }
         }
         public override void OnMouseExit()
         {
             if (!allowInteraction) return;
             base.OnMouseExit();
             EventBroadcaster.Instance.PostEvent(EventNames.HIDE_TOOLTIP_MESG);
-            ResourceInformationController.GetInstance.HideCurrentPanelPotentialResourceChanges();
+            if (ResourceInformationController.GetInstance != null)
+            {
+                ResourceInformationController.GetInstance.HideCurrentPanelPotentialResourceChanges();
+            }
         }
 
         public void SetInteraction(bool enable)

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Characters;
+using Utilities;
 
 namespace Managers
 {
@@ -32,15 +33,20 @@ namespace Managers
         public bool guardsOutside = false;
 
         public BaseCharacter leftGuard, rightGuard;
+        public ScenePointBehavior kingsSeat;
         public override void Start()
         {
             base.Start();
-            if(TransitionManager.GetInstance.previousScene != sceneType)
+            if(TransitionManager.GetInstance != null)
             {
-                SetPositionFromTransition(TransitionManager.GetInstance.previousScene);
-            }
+                if(TransitionManager.GetInstance.previousScene != sceneType)
+                {
+                    SetPositionFromTransition(TransitionManager.GetInstance.previousScene, false);
+                }
 
-            TransitionManager.GetInstance.SetAsNewSceneManager(this);
+
+                TransitionManager.GetInstance.SetAsNewSceneManager(this);
+            }
             scenePointHandler.gameObject.SetActive(true);
         }
 
@@ -72,8 +78,23 @@ namespace Managers
             {
                 AudioManager.GetInstance.PlayThisBackGroundMusic(BackgroundMusicType.courtroomDrama);
             }
-        }
 
+            if (KingdomManager.GetInstance != null && !TransitionManager.GetInstance.isNewGame)
+            {
+                if (PlayerGameManager.GetInstance != null && PlayerGameManager.GetInstance.playerData != null)
+                {
+                    if (PlayerGameManager.GetInstance.playerData.eventFinished < 3)
+                    {
+                        KingdomManager.GetInstance.AllowStartEvent();
+                    }
+                }
+            }
+        }
+        public override void PreCloseManager()
+        {
+            EventBroadcaster.Instance.PostEvent(EventNames.HIDE_RESOURCES);
+            base.PreCloseManager();
+        }
         public void MakeGuardLeave(Action callback = null)
         {
             leftGuard.OrderMovement(scenePointHandler.scenePoints[5]);
@@ -112,39 +133,27 @@ namespace Managers
         }
 
 
-        public override void OrderCharacterToMove(ScenePointBehavior toThisPoint)
-        {
-            base.OrderCharacterToMove(toThisPoint);
-            if (toThisPoint.sceneLoader)
-            {
-                king.OrderMovement(toThisPoint, () => TransitionManager.GetInstance.LoadScene(toThisPoint.SceneToLoad));
-            }
-            else
-            {
-                king.OrderMovement(toThisPoint);
-            }
-        }
 
-        public override void SetPositionFromTransition(SceneType prevScene)
+        public override void SetPositionFromTransition(SceneType prevScene, bool directToOffset = true)
         {
-            base.SetPositionFromTransition(prevScene);
+            base.SetPositionFromTransition(prevScene, directToOffset);
             ScenePointBehavior prevGate = scenePointHandler.scenePoints.Find(x => x.sceneLoader && x.SceneToLoad == prevScene);
             
-            if(king != null)
+            if(player != null)
             {
                 if(prevGate != null)
                 {
-                    if(prevScene != SceneType.Opening)
-                    {
-                        Debug.Log("Previous Scene : " + prevScene);
-                        king.SpawnInThisPosition(prevGate);
-                    }
-
-                    if (GameUIManager.GetInstance != null)
-                    {
-                        GameUIManager.GetInstance.PreOpenManager();
-                    }
+                    player.SpawnInThisPosition(prevGate, directToOffset);
                 }
+                else
+                {
+                    player.SpawnInThisPosition(kingsSeat);
+                }
+                if (GameUIManager.GetInstance != null)
+                {
+                    GameUIManager.GetInstance.PreOpenManager();
+                }
+
             }
         }
     }

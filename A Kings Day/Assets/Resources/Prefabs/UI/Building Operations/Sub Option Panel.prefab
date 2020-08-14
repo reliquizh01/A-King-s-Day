@@ -33,10 +33,10 @@ RectTransform:
   m_Father: {fileID: 8470423490246913256}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMin: {x: 0.71300006, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -82, y: 0.000030517578}
-  m_SizeDelta: {x: 124.45093, y: -43.549072}
+  m_AnchoredPosition: {x: -10.5, y: 0.000030517578}
+  m_SizeDelta: {x: -18.549072, y: -43.549072}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8470423489254161962
 CanvasRenderer:
@@ -184,9 +184,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 74.8, y: 0.000030517578}
-  m_SizeDelta: {x: 124.45093, y: -43.549072}
+  m_AnchorMax: {x: 0.27785003, y: 1}
+  m_AnchoredPosition: {x: 5.8000183, y: 0.000030517578}
+  m_SizeDelta: {x: -13.549072, y: -43.549072}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8470423489575263988
 CanvasRenderer:
@@ -515,10 +515,10 @@ RectTransform:
   m_Father: {fileID: 8470423490246913256}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.22161047, y: 0.201}
-  m_AnchorMax: {x: 0.767221, y: 0.79300004}
-  m_AnchoredPosition: {x: -0.00012207031, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.27785003, y: 0}
+  m_AnchorMax: {x: 0.71300006, y: 1}
+  m_AnchoredPosition: {x: -0.66832, y: -0.5}
+  m_SizeDelta: {x: -1.3366394, y: -69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8470423490089271372
 GameObject:
@@ -553,7 +553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.5, y: 0}
+  m_AnchoredPosition: {x: -7.5000076, y: 0}
   m_SizeDelta: {x: -15, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8470423490246913257
@@ -647,12 +647,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78e2ac6083fefd488a8e08ea8a98cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myController: {fileID: 0}
   panelSlider: {fileID: 8470423489659021900}
   nameTitleText: {fileID: 8470423490838275152}
   currentCountText: {fileID: 8470423490504792055}
   amountToSellText: {fileID: 8470423489779583490}
+  totalCount: 0
   currentCount: 0
   amountToSell: 0
+  pricePerItem: 0
 --- !u!1 &8470423490504792053
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,7 +981,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 31.1
+  m_fontSize: 30.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1149,6 +1152,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -4.9999847, y: 0}
+  m_AnchoredPosition: {x: -4.999977, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

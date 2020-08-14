@@ -18,11 +18,18 @@ public class BuildingInformationPanel : MonoBehaviour
 
     public int cardIdx, selectedHeroIdx = 0, selectedMerchantIdx = 0;
     PlayerKingdomData playerData;
+    public BuildingInformationData currentBuildingInformation;
 
+    public void InitializeBuildingInformation(BuildingInformationData newInformation)
+    {
+        currentBuildingInformation = new BuildingInformationData();
+        currentBuildingInformation = newInformation;
+    }
     public void UpdatePages(int actionIdx)
     {
         if(PlayerGameManager.GetInstance != null)
         {
+            playerData = new PlayerKingdomData();
             playerData = PlayerGameManager.GetInstance.playerData;
         }
 
@@ -71,15 +78,34 @@ public class BuildingInformationPanel : MonoBehaviour
     public void UpdateBarracks()
     {
         TroopResourceBehavior troopsBehavior = PlayerGameManager.GetInstance.troopBehavior;
-        if(cardIdx == 0) // TRAIN NEW SOLDIER
+        KingdomUnitStorage unitStorage = myController.unitStorage;
+        if (cardIdx == 0) // TRAIN NEW SOLDIER
         {
             // Placeholders, need proper Unit Storage later on
-            int hp = 4, dmg = 1, spd = 1;
-            List<int> tmp = new List<int>();tmp.Add(playerData.recruits);; tmp.Add(hp); tmp.Add(dmg); tmp.Add(spd);
+            float hp = unitStorage.GetUnitInformation("Recruit").maxHealth;
+            float dmg = unitStorage.GetUnitInformation("Recruit").maxDamage;
+            float spd = unitStorage.GetUnitInformation("Recruit").origSpeed;
+            spd *= 10;
+
+            if(PlayerGameManager.GetInstance != null)
+            {
+                hp += PlayerGameManager.GetInstance.troopBehavior.techHealth;
+                dmg += PlayerGameManager.GetInstance.troopBehavior.techDmg;
+            }
+
+            int recruitCount = 0;
+            if(playerData.troopsList == null)
+            {
+                playerData.troopsList = new List<TroopsInformation>();
+            }
+            if(playerData.troopsList.Find(x => x.unitInformation.unitName == "Recruit") != null)
+            {
+                recruitCount = playerData.troopsList.Find(x => x.unitInformation.unitName == "Recruit").totalUnitCount;
+            }
+            List<float> tmp = new List<float>();tmp.Add(recruitCount);; tmp.Add(hp); tmp.Add(spd); tmp.Add(dmg);
             currentPage.informationPanelList[0].SetMultiCounter(tmp, "Recruits"); // HP DAMAGE SPEED
 
-            string secondDescription = "Maximum units the barracks can support [" + playerData.recruits +"," 
-                + playerData.swordsmenCount +"," + playerData.spearmenCount + "," + playerData.archerCount + "]";
+            string secondDescription = "Maximum units the barracks can support [" + playerData.ObtainTotalTroops() + "]";
             currentPage.informationPanelList[1].SetSingleCounter(playerData.barracksCapacity,secondDescription, "Barracks Capacity"); // BARRACKS CAPACITY
 
             string thirdDescription = "Training cost to arm a person.";
@@ -105,42 +131,75 @@ public class BuildingInformationPanel : MonoBehaviour
         else if(cardIdx == 1) // TRAIN SOLDIERS
         {
             // Placeholders, need proper Unit Storage later on
-            int Sprhp = 5, Sprdmg = 3, Sprspd = 1;
-            int Swdhp = 5, Swddmg = 3, Swdspd = 1;
-            int Archp = 5, Arcdmg = 3, Arcspd = 1;
-            List<int> tmp = new List<int>();
+            float Sprhp = unitStorage.GetUnitInformation("Spearman").maxHealth, Sprdmg = unitStorage.GetUnitInformation("Spearman").maxDamage, Sprspd = unitStorage.GetUnitInformation("Spearman").origSpeed;
+            float Swdhp = unitStorage.GetUnitInformation("Swordsman").maxHealth, Swddmg = unitStorage.GetUnitInformation("Swordsman").maxDamage, Swdspd = unitStorage.GetUnitInformation("Swordsman").origSpeed;
+            float Archp = unitStorage.GetUnitInformation("Archer").maxHealth, Arcdmg = unitStorage.GetUnitInformation("Archer").maxDamage, Arcspd = unitStorage.GetUnitInformation("Archer").origSpeed;
+            Sprspd *= 10; Arcspd *= 10; Swdspd *= 10;
+
+            if (PlayerGameManager.GetInstance != null)
+            {
+                Sprhp += PlayerGameManager.GetInstance.troopBehavior.techHealth;
+                Swdhp += PlayerGameManager.GetInstance.troopBehavior.techHealth;
+                Archp += PlayerGameManager.GetInstance.troopBehavior.techHealth;
+                Sprdmg += PlayerGameManager.GetInstance.troopBehavior.techDmg;
+                Swddmg += PlayerGameManager.GetInstance.troopBehavior.techDmg;
+                Arcdmg += PlayerGameManager.GetInstance.troopBehavior.techDmg;
+            }
+
+
+            List<float> tmp = new List<float>();
             for (int i = 0; i < currentPage.informationPanelList.Count; i++)
             {
                 if(i == 0) 
                 {
-                    if (PlayerGameManager.GetInstance != null)
+                    int count = 0;
+                    if (playerData.troopsList == null)
                     {
-                        tmp.Add(PlayerGameManager.GetInstance.playerData.swordsmenCount);
+                        playerData.troopsList = new List<TroopsInformation>();
                     }
-                    tmp.Add(Swdhp); tmp.Add(Swddmg); tmp.Add(Swdspd);
+                    if (playerData.troopsList.Find(x => x.unitInformation.unitName == "Swordsman") != null)
+                    {
+                        count = playerData.troopsList.Find(x => x.unitInformation.unitName == "Swordsman").totalUnitCount;
+                    }
+                    tmp.Add(count);
+                    tmp.Add(Swdhp); tmp.Add(Swdspd); tmp.Add(Swddmg);
 
                     currentPage.informationPanelList[i].SetMultiCounter(tmp, "Swordsman");
+                    currentPage.informationPanelList[i].panelIcon.sprite = TransitionManager.GetInstance.unitStorage.GetUnitIcon("Swordsman");
                 }
                 else if(i == 1)
                 {
-                    if (PlayerGameManager.GetInstance != null)
+                    int count = 0;
+                    if (playerData.troopsList == null)
                     {
-                        tmp.Add(PlayerGameManager.GetInstance.playerData.spearmenCount);
+                        playerData.troopsList = new List<TroopsInformation>();
                     }
-                    tmp.Add(Sprhp); tmp.Add(Sprdmg); tmp.Add(Sprspd);
+                    if (playerData.troopsList.Find(x => x.unitInformation.unitName == "Spearman") != null)
+                    {
+                        count = playerData.troopsList.Find(x => x.unitInformation.unitName == "Spearman").totalUnitCount;
+                    }
+                    tmp.Add(count);
+                    tmp.Add(Sprhp); tmp.Add(Sprspd); tmp.Add(Sprdmg);
 
-                    currentPage.informationPanelList[i].SetMultiCounter(tmp, "Spearmen");
-
+                    currentPage.informationPanelList[i].SetMultiCounter(tmp, "Spearman");
+                    currentPage.informationPanelList[i].panelIcon.sprite = TransitionManager.GetInstance.unitStorage.GetUnitIcon("Spearman");
                 }
                 else if(i == 2)
                 {
-                    if (PlayerGameManager.GetInstance != null)
+                    int count = 0;
+                    if (playerData.troopsList == null)
                     {
-                        tmp.Add(PlayerGameManager.GetInstance.playerData.archerCount);
+                        playerData.troopsList = new List<TroopsInformation>();
                     }
-                    tmp.Add(Archp); tmp.Add(Arcdmg); tmp.Add(Arcspd);
+                    if (playerData.troopsList.Find(x => x.unitInformation.unitName == "Archer") != null)
+                    {
+                        count = playerData.troopsList.Find(x => x.unitInformation.unitName == "Archer").totalUnitCount;
+                    }
+                    tmp.Add(count);
+                    tmp.Add(Archp); tmp.Add(Arcspd); tmp.Add(Arcdmg);
 
                     currentPage.informationPanelList[i].SetMultiCounter(tmp, "Archer");
+                    currentPage.informationPanelList[i].panelIcon.sprite = TransitionManager.GetInstance.unitStorage.GetUnitIcon("Archer");
 
                 }
                 tmp.Clear();
@@ -203,7 +262,7 @@ public class BuildingInformationPanel : MonoBehaviour
             string thirdDescription = "Harvest every <color=green>"+harvestTime +"</color> weeks";
             currentPage.informationPanelList[2].SetSingleCounter(playerData.curGrainWeeksCounter, thirdDescription, "Harvest Time");
         }
-        else if(cardIdx == 1)
+        else if(cardIdx == 1) // ADD HERDSMAN
         {
             string firstDescription = "<color=green>+1</color> Food produce for every herdsman";
             currentPage.informationPanelList[0].SetSingleCounter(playerData.herdsmanCount, firstDescription, "Herdsman");
@@ -218,10 +277,10 @@ public class BuildingInformationPanel : MonoBehaviour
             currentPage.informationPanelList[2].SetSingleCounter(playerData.cows, thirdDescription, "Number of Cows");
 
         }
-        else if(cardIdx == 2)
+        else if(cardIdx == 2) // STORAGE KEEPER
         {
             string firstDescription = "<color=green>+2</color> max safe food storage for every keeper.";
-            currentPage.informationPanelList[0].SetSingleCounter(playerData.herdsmanCount, firstDescription, "Storage Keepers");
+            currentPage.informationPanelList[0].SetSingleCounter(playerData.storageKeeperCount, firstDescription, "Storage Keepers");
 
 
             string secondDescription = "Current amount of food safe from raids.";
@@ -229,7 +288,16 @@ public class BuildingInformationPanel : MonoBehaviour
             currentPage.informationPanelList[1].SetSingleCounter(birthChance, secondDescription, "Current Safe Food");
 
 
-            string thirdDescription = "Gain <color=green>+2</color> safe cows for every expansion.";
+            string thirdDescription = "";
+            if(currentBuildingInformation != null && !string.IsNullOrEmpty(currentBuildingInformation.BuildingName))
+            {
+                thirdDescription = "Gain <color=green>+"+ currentBuildingInformation.ObtainCardDataReward(2,2, ResourceType.cowStorage) + "</color> safe cows for every expansion.";
+            }
+            else
+            {
+                thirdDescription = "Gain <color=green>+2</color> safe cows for every expansion.";
+            }
+
             currentPage.informationPanelList[2].SetSingleCounter(playerData.safeCows, thirdDescription, "Safe Cow Barn");
         }
     }
@@ -304,32 +372,48 @@ public class BuildingInformationPanel : MonoBehaviour
                 }
             }
         }
-        else if(cardIdx == 1)
+        else if(cardIdx == 1) // GIVE DRINKS
         {
-            List<int> tmp = new List<int>();
+            List<float> tmp = new List<float>();
             tmp.Add(playerData.potentialCommonHero); tmp.Add(playerData.potentialRareHero); tmp.Add(playerData.potentialLegHero);
             currentPage.informationPanelList[0].SetMultiCounter(tmp, "Total Hero Chances");
 
-            List<int> tmp1 = new List<int>();
+            List<float> tmp1 = new List<float>();
             tmp1.Add(playerData.potentialGoodsMerchant); tmp1.Add(playerData.potentialEquipsMerchant); tmp1.Add(playerData.potentialExoticMerchant);
             currentPage.informationPanelList[1].SetMultiCounter(tmp1, "Total Merchant Chances");
 
-            List<int> tmp2 = new List<int>();
+            List<float> tmp2 = new List<float>();
             tmp2.Add(playerData.potentialCommonHero); tmp2.Add(playerData.potentialRareHero); tmp2.Add(playerData.potentialLegHero);
             currentPage.informationPanelList[2].SetMultiCounter(tmp, "Total Mercenary Chances");
         }
-        else if(cardIdx == 2)
+        else if(cardIdx == 2) // HIRE MERCENARIES
         {
-            List<int> tmp = new List<int>();
-            tmp.Add(playerData.swordsmenMercAvail); tmp.Add(10); tmp.Add(4); tmp.Add(2);
+            KingdomUnitStorage unitStorage = myController.unitStorage;
+
+            float Sprhp = unitStorage.GetUnitInformation("Spearman").maxHealth, Sprdmg = unitStorage.GetUnitInformation("Spearman").maxDamage, Sprspd = unitStorage.GetUnitInformation("Spearman").origSpeed;
+            float Swdhp = unitStorage.GetUnitInformation("Swordsman").maxHealth, Swddmg = unitStorage.GetUnitInformation("Swordsman").maxDamage, Swdspd = unitStorage.GetUnitInformation("Swordsman").origSpeed;
+            float Archp = unitStorage.GetUnitInformation("Archer").maxHealth, Arcdmg = unitStorage.GetUnitInformation("Archer").maxDamage, Arcspd = unitStorage.GetUnitInformation("Archer").origSpeed;
+            Sprspd *= 10; Arcspd *= 10; Swdspd *= 10;
+            if (PlayerGameManager.GetInstance != null)
+            {
+                Sprhp += PlayerGameManager.GetInstance.troopBehavior.techHealth;
+                Swdhp += PlayerGameManager.GetInstance.troopBehavior.techHealth;
+                Archp += PlayerGameManager.GetInstance.troopBehavior.techHealth;
+                Sprdmg += PlayerGameManager.GetInstance.troopBehavior.techDmg;
+                Swddmg += PlayerGameManager.GetInstance.troopBehavior.techDmg;
+                Arcdmg += PlayerGameManager.GetInstance.troopBehavior.techDmg;
+            }
+
+            List<float> tmp = new List<float>();
+            tmp.Add(playerData.ObtainMercenaryInformation("Swordsman").totalUnitCount); tmp.Add(Swdhp); tmp.Add(Swddmg); tmp.Add(Swdspd);
             currentPage.informationPanelList[0].SetMultiCounter(tmp, "Swordsman Available");
 
-            List<int> tmp1 = new List<int>();
-            tmp1.Add(playerData.spearmenMercAvail); tmp1.Add(6); tmp1.Add(2); tmp1.Add(3);
+            List<float> tmp1 = new List<float>();
+            tmp1.Add(playerData.ObtainMercenaryInformation("Spearman").totalUnitCount); tmp1.Add(Sprhp); tmp1.Add(Sprdmg); tmp1.Add(Sprspd);
             currentPage.informationPanelList[1].SetMultiCounter(tmp1, "Spearman Available");
 
-            List<int> tmp2 = new List<int>();
-            tmp2.Add(playerData.archerMercAvail); tmp2.Add(4); tmp2.Add(1); tmp2.Add(3);
+            List<float> tmp2 = new List<float>();
+            tmp2.Add(playerData.ObtainMercenaryInformation("Archer").totalUnitCount); tmp2.Add(Archp); tmp2.Add(Arcdmg); tmp2.Add(Arcspd);
             currentPage.informationPanelList[2].SetMultiCounter(tmp2, "Archer Available");
         }
     }

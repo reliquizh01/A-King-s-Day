@@ -70,6 +70,20 @@ public class TimerUI : MonoBehaviour
         }
     }
 
+    public void PauseTimer()
+    {
+        startTimer = false;
+    }
+
+    public void ResetTimer()
+    {
+        minute = 0;
+        seconds = 0;
+
+        startTimer = false;
+
+        afterTimeCallback = null;
+    }
     public void UpdateCountText()
     {
         int currentCount = minute * 60;

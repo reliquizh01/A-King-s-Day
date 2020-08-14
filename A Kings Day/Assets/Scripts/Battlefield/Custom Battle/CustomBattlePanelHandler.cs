@@ -79,10 +79,10 @@ public class CustomBattlePanelHandler : MonoBehaviour
     {
         for (int i = 0; i < attackersPanel.Count; i++)
         {
-            List<int> tmp = new List<int>();
-            tmp.Add((int)attackingCommander.unitsCarried[i].unitInformation.maxHealth);
-            tmp.Add((int)attackingCommander.unitsCarried[i].unitInformation.maxDamage);
-            tmp.Add((int)attackingCommander.unitsCarried[i].unitInformation.origSpeed);
+            List<float> tmp = new List<float>();
+            tmp.Add((float)attackingCommander.unitsCarried[i].unitInformation.maxHealth);
+            tmp.Add((float)attackingCommander.unitsCarried[i].unitInformation.maxDamage);
+            tmp.Add((float)attackingCommander.unitsCarried[i].unitInformation.origSpeed);
             tmp.Add(0);
 
             attackersPanel[i].SetMultiCounter(tmp, attackingCommander.unitsCarried[i].unitInformation.unitName);
@@ -92,10 +92,10 @@ public class CustomBattlePanelHandler : MonoBehaviour
 
         for (int i = 0; i < defendersPanel.Count; i++)
         {
-            List<int> tmp = new List<int>();
-            tmp.Add((int)defendingCommander.unitsCarried[i].unitInformation.maxHealth);
-            tmp.Add((int)defendingCommander.unitsCarried[i].unitInformation.maxDamage);
-            tmp.Add((int)defendingCommander.unitsCarried[i].unitInformation.origSpeed);
+            List<float> tmp = new List<float>();
+            tmp.Add((float)defendingCommander.unitsCarried[i].unitInformation.maxHealth);
+            tmp.Add((float)defendingCommander.unitsCarried[i].unitInformation.maxDamage);
+            tmp.Add((float)defendingCommander.unitsCarried[i].unitInformation.origSpeed);
             tmp.Add(0);
 
             defendersPanel[i].SetMultiCounter(tmp, defendingCommander.unitsCarried[i].unitInformation.unitName);

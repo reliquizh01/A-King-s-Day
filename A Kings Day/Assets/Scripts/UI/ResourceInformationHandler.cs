@@ -14,8 +14,9 @@ namespace ResourceUI
 {
     public class ResourceInformationHandler : MonoBehaviour
     {
+        public ResourcePanelType resourcePanelType;
         public BasePanelBehavior myPanel;
-
+        public bool isShowing = false;
         [Header("Kingdom Information")]
         public BaseResourceUIControllerV2 foodControl;
         public BaseResourceUIControllerV2 troopControl;
@@ -57,6 +58,12 @@ namespace ResourceUI
             }
             travelBtn.SetActive(true);
         }
+
+        public void OpenTravelMap()
+        {
+            EventBroadcaster.Instance.PostEvent(EventNames.OPEN_MAP_TAB);
+            EventBroadcaster.Instance.PostEvent(EventNames.HIDE_RESOURCES);
+        }
         public void ShowPotentialResourceChanges(List<ResourceReward> rewardList)
         {
             HidePotentialResourceChanges();
@@ -80,7 +87,7 @@ namespace ResourceUI
                             break;
                     }
                 }
-                else
+                else if(rewardList[i].rewardAmount < 0)
                 {
                     switch (rewardList[i].resourceType)
                     {
@@ -95,6 +102,24 @@ namespace ResourceUI
                             break;
                         case ResourceType.Population:
                             villagerControl.ShowReduction(rewardList[i].rewardAmount);
+                            break;
+                    }
+                }
+                else
+                {
+                    switch (rewardList[i].resourceType)
+                    {
+                        case ResourceType.Food:
+                            foodControl.HidePotentials();
+                            break;
+                        case ResourceType.Coin:
+                            coinControl.HidePotentials();
+                            break;
+                        case ResourceType.Troops:
+                            troopControl.HidePotentials();
+                            break;
+                        case ResourceType.Population:
+                            villagerControl.HidePotentials();
                             break;
                     }
                 }

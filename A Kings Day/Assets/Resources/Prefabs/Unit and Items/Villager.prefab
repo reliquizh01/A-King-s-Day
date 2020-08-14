@@ -94,7 +94,7 @@ Animator:
   m_GameObject: {fileID: 2125776548686267319}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 08fe30f353261134cac5dc5442ab469c, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -115,8 +115,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65a7982d30cf7954eb3f5aa6601003ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distForReach: 0.0015
+  isTest: 0
   isMoving: 0
   speed: 1.5
+  spawnPoint: {fileID: 0}
   currentPoint: {fileID: 0}
   currentTargetPoint: {fileID: 0}
   pathToTargetPoint: []
@@ -135,15 +138,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eef3621518afa54991f1c7eb49f2285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAnimController: {fileID: 8180433071869792351}
   myMovements: {fileID: 1267852389777468273}
   myRange: {fileID: 0}
+  myAnimation: {fileID: 0}
+  mySfx: {fileID: 0}
   isKing: 0
   isMainCharacter: 0
   isGuest: 0
   isLeaving: 0
   unitInformation:
     unitName: 
+    unitGenericName: 
     attackType: 0
     curhealth: 0
     maxHealth: 0
@@ -152,13 +157,20 @@ MonoBehaviour:
     minDamage: 0
     maxDamage: 0
     range: 0
+    unitCooldown: 1
+    healcost: 5
+    blockProjectile: 0
+    blockMelee: 0
     prefabDataPath: 
     currentState: 0
     deathThreshold: -5
     morale: 0
     buffList: []
   isFighting: 0
+  canReturnToCamp: 0
   teamType: 0
+  canStagger: 0
+  isBanishing: 0
 --- !u!1 &4265506973113140425
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,6 +183,7 @@ GameObject:
   - component: {fileID: 3159838176522910424}
   - component: {fileID: 8100597242934746973}
   - component: {fileID: 7276402029929109672}
+  - component: {fileID: 1704684011278704112}
   m_Layer: 12
   m_Name: Villager
   m_TagString: Untagged
@@ -224,8 +237,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65a7982d30cf7954eb3f5aa6601003ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distForReach: 0.0025
+  isTest: 0
   isMoving: 0
   speed: 0.75
+  spawnPoint: {fileID: 0}
   currentPoint: {fileID: 0}
   currentTargetPoint: {fileID: 0}
   pathToTargetPoint: []
@@ -244,27 +260,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eef3621518afa54991f1c7eb49f2285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAnimController: {fileID: 3159838176522910424}
   myMovements: {fileID: 8100597242934746973}
   myRange: {fileID: 0}
+  myAnimation: {fileID: 1704684011278704112}
+  mySfx: {fileID: 0}
   isKing: 0
   isMainCharacter: 0
   isGuest: 0
   isLeaving: 0
   unitInformation:
     unitName: 
+    unitGenericName: 
     attackType: 0
-    curhealth: 0
-    maxHealth: 0
-    curSpeed: 0
-    origSpeed: 0
+    curhealth: 2
+    maxHealth: 2
+    curSpeed: 0.75
+    origSpeed: 0.75
     minDamage: 0
     maxDamage: 0
     range: 0
+    unitCooldown: 1
+    healcost: 5
+    blockProjectile: 0
+    blockMelee: 0
     prefabDataPath: 
     currentState: 0
     deathThreshold: -5
     morale: 0
     buffList: []
   isFighting: 0
+  canReturnToCamp: 0
   teamType: 0
+  canStagger: 0
+  isBanishing: 0
+--- !u!114 &1704684011278704112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4265506973113140425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457b82f503099ba4f85584b488ccf552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterSprite: {fileID: 7247211595511607199}
+  myAnimator: {fileID: 3159838176522910424}
+  currentState: 0
+  facingDirection: 0
+  paramCurrentStateAvailable: 0
+  paramFacingDirectionAvailable: 0

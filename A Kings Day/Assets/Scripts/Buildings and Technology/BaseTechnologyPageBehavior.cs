@@ -8,6 +8,8 @@ using Utilities;
 using Kingdoms;
 using Managers;
 using System;
+using ResourceUI;
+
 namespace Technology
 {
     public class BaseTechnologyPageBehavior : MonoBehaviour
@@ -64,12 +66,9 @@ namespace Technology
 
             for (int i = 0; i < playerData.currentTechnologies.Count; i++)
             {
-                Debug.Log("Current Tech:" + playerData.currentTechnologies[i].improvedType + " Compared To : " + thisType);
 
                 if (playerData.currentTechnologies[i].improvedType == thisType)
                 {
-                    Debug.Log("ADDING TECH INDEX : " + i + " TECH NAME : " + playerData.currentTechnologies[i].technologyName);
-
                     BaseTechnology tmp = new BaseTechnology().ConverToData(playerData.currentTechnologies[i]);
                     tmp.techIcon = TechnologyManager.GetInstance.techStorage.technologies.Find(x => x.technologyName == tmp.technologyName).techIcon;
 
@@ -105,6 +104,12 @@ namespace Technology
         }
         public void UpgradeTech()
         {
+            if(TransitionManager.GetInstance.isNewGame)
+            {
+                BalconyManager.GetInstance.techTab.HideTechnologyTab();
+                BalconySceneManager.GetInstance.balconyTutorial.StartInvasionTutorial();
+            }
+
             int coinCost = currentTechs[selectedIdx].goldLevelRequirements[currentTechs[selectedIdx].currentLevel];
             if(PlayerGameManager.GetInstance == null)
             {
@@ -115,6 +120,7 @@ namespace Technology
             {
                 PlayerGameManager.GetInstance.playerData.coins -= coinCost;
                 TechnologyManager.GetInstance.UpgradeThisTech(currentTechs[selectedIdx]);
+                ResourceInformationController.GetInstance.UpdateCurrentPanel();
 
                 SetTechPanelInformation();
             }

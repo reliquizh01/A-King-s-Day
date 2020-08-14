@@ -40,7 +40,7 @@ public class InformationPanel : MonoBehaviour
 
     }
 
-    public virtual void SetMultiCounter(List<int> newCounts, string newTitle = "")
+    public virtual void SetMultiCounter(List<float> newCounts, string newTitle = "")
     {
 
     }
@@ -82,6 +82,23 @@ public class InformationPanel : MonoBehaviour
         }
         return tmp;
     }
+
+    public virtual string ObtainCountText(float amount)
+    {
+        string tmp = amount.ToString();
+        switch (countType)
+        {
+            case CountType.Percentage:
+                tmp = amount.ToString() + "%";
+                break;
+
+            case CountType.Number:
+            default:
+                break;
+        }
+        return tmp;
+    }
+
     public virtual void ResetCounter()
     {
 

@@ -102,6 +102,7 @@ public class SaveSlotHandler : MonoBehaviour
                 SwitchButtonInteraction(true);
             }
         }
+        SaveData.SaveLoadManager.GetInstance.SetCurrentData(selectedIndex);
     }
     public void ResetPanels()
     {

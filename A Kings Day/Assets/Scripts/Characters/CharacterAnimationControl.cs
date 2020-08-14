@@ -22,6 +22,7 @@ namespace Characters
     }
     public class CharacterAnimationControl : MonoBehaviour
     {
+        public SpriteRenderer characterSprite;
         public Animator myAnimator;
         public int currentState; // 0 - Idle | 1 - Walking | 2 - Damage Received | 3 - Attack State |  4 - Injured State
         public float facingDirection = 0.0f; // 0 - Up | 1 - Down | 2 - Left | 3 - Right
@@ -68,15 +69,19 @@ namespace Characters
             switch (newDirection)
             {
                 case FacingDirection.Down:
+                    if (facingDirection == 0) return;
                     facingDirection = 0;
                     break;
                 case FacingDirection.Up:
+                    if (facingDirection == 1) return;
                     facingDirection = 1;
                     break;
                 case FacingDirection.Left:
+                    if (facingDirection == 2) return;
                     facingDirection = 2;
                     break;
                 case FacingDirection.Right:
+                    if (facingDirection == 3) return;
                     facingDirection = 3;
                     break;
 
@@ -107,7 +112,10 @@ namespace Characters
             }
         }
 
-
+        public void UpdateBanish(bool newBanishState)
+        {
+            myAnimator.SetBool("Banished", newBanishState);
+        }
         public bool HasParameter(string paramName, Animator animator)
         {
             foreach (AnimatorControllerParameter param in animator.parameters)

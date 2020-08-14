@@ -1,0 +1,858 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5112742868410910354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6986291625688536727}
+  - component: {fileID: 1747595355724751404}
+  m_Layer: 5
+  m_Name: Dialogue Storage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6986291625688536727
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5112742868410910354}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1747595355724751404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5112742868410910354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad3cadf887485f4686f62d6cbebd9ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversationList:
+  - conversationTitle: Prologue - My Father's Last Order...
+    characterNames:
+    - Old King
+    - Player
+    - Counsellor
+    dialoguePattern:
+    - charName: Old King
+      type: 0
+      reaction: 0
+      single: My child...||you have to understand.
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: Papa they want you Dead! ... || I'm not dumb!
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: We protected them from the demons of the frontier!
+      choiceDialogues: []
+    - charName: Old King
+      type: 0
+      reaction: 0
+      single: That's why I want you to get it back..
+      choiceDialogues: []
+    - charName: Old King
+      type: 0
+      reaction: 0
+      single: Do you remember the story of our crest?
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: Yes, and if all of those were true! I can't fathom wh-
+      choiceDialogues: []
+    - charName: Old King
+      type: 0
+      reaction: 0
+      single: '*cough* || *cough* ... .'
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: Is that getting any better?
+      choiceDialogues: []
+    - charName: Old King
+      type: 0
+      reaction: 0
+      single: It does not matter. I want you to retake what is ours
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: And what? leave you in THIS condition?!
+      choiceDialogues: []
+    - charName: Old King
+      type: 0
+      reaction: 0
+      single: You don't have a choice!
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: Let me stay! We can fend them off! let me lead--
+      choiceDialogues: []
+    - charName: Old King
+      type: 0
+      reaction: 0
+      single: Counsellor! prepare the ships, offer the highest pay.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Yes my king.
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: I don't have a choice... do I?
+      choiceDialogues: []
+    - charName: Old King
+      type: 0
+      reaction: 0
+      single: You don't, In two weeks time, I expect you aboard that ship.
+      choiceDialogues: []
+    - charName: Old King
+      type: 0
+      reaction: 0
+      single: I have a plan my child, dont you worry.
+      choiceDialogues: []
+    - charName: Old King
+      type: 0
+      reaction: 0
+      single: You have memories of that place..
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: What memories? I don't even remember HER!
+      choiceDialogues: []
+    - charName: Old King
+      type: 0
+      reaction: 0
+      single: Anyhow, while you're here, handle the troubles of the courtroom for
+        me.
+      choiceDialogues: []
+    - charName: Old King
+      type: 0
+      reaction: 0
+      single: I need to plan and rest for now...
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: Stop asking when I don't have a choice!
+      choiceDialogues: []
+  - conversationTitle: Counsellor's Conversation
+    characterNames:
+    - Counsellor
+    - Player
+    dialoguePattern:
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: My prince, I insist you sit on the throne before they get in.
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: Fine... let them in.
+      choiceDialogues: []
+  - conversationTitle: Introduce The Resources
+    characterNames:
+    - Counsellor
+    - Player
+    dialoguePattern:
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Just to remind you, we have enough food to share for everyone
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: We can still last till the next harvest season.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Our people can be tasked to plough and farm
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: We can also train them into recruits, further improvement requires
+        coins.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Our treasury relies on the taxes and trades from surplus resources
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: maybe next week I can tour you around the town.
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: That's handy, so where's these 'troubles' of the courtroom?
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: The ring should bell anytime now..
+      choiceDialogues: []
+  - conversationTitle: Prologue - Before the Week has passed.
+    characterNames:
+    - Counsellor
+    - Player
+    dialoguePattern:
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: And that was the final reports for the day..
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: I hope I answered them well, you too did a great job.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: It's always a pleasure my prince.
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: Hopefully one day, I'd have a reliable counsellor like you.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: I hope you'd remember that when I make mistakes, your grace.
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: And you never did, which is nice.
+      choiceDialogues: []
+  - conversationTitle: Prologue - Morning Argument (Part 1)
+    characterNames:
+    - Counsellor
+    - Player
+    - Old King
+    dialoguePattern:
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Food are stable, troops are ready, now we wait--
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: And I keep telling you! I can help defend this post!
+      choiceDialogues: []
+    - charName: Old King
+      type: 0
+      reaction: 0
+      single: No matter how much you want to help,|| the answer remains.
+      choiceDialogues: []
+    - charName: Old King
+      type: 0
+      reaction: 0
+      single: NO!
+      choiceDialogues: []
+  - conversationTitle: Prologue - Final Discussion Between Fathers
+    characterNames:
+    - Player
+    - Counsellor
+    - Old King
+    dialoguePattern:
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: '*you look at the king and his face is unfazed*'
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: '*beside him is his counsellor steady and straight*'
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: so is there any troubles for your majesty this week?
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: I believe there's none for this weeks council.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: But there may be urgent visitors for the preparations--
+      choiceDialogues: []
+    - charName: Old King
+      type: 0
+      reaction: 0
+      single: THAT DOES NOT CONCERN MY CHILD.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Yes my grace.
+      choiceDialogues: []
+    - charName: Old King
+      type: 0
+      reaction: 0
+      single: I believe you promised him a tour of the kingdom
+      choiceDialogues: []
+    - charName: Old King
+      type: 0
+      reaction: 0
+      single: make sure this 'little emperor' knows how they work.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Yes your grace.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: My prince, if you may follow me.
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: '*you look at your father* you''ll regret this one day'
+      choiceDialogues: []
+  - conversationTitle: Prologue - Last Reminder
+    characterNames:
+    - Old King
+    dialoguePattern:
+    - charName: Old King
+      type: 0
+      reaction: 0
+      single: I'd do it again my child, || I'd do it all over again...
+      choiceDialogues: []
+  - conversationTitle: Prologue - Week End Guide
+    characterNames:
+    - Counsellor
+    - Player
+    dialoguePattern:
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: During and after the courtroom troubles, you're free to roam
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: and check if you can still do some changes,
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: but that's a king's move, and you're not yet a king...
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: Well counsellor, is there anything I can do?
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Close the courtroom and end the week?
+      choiceDialogues: []
+  - conversationTitle: The broken Past
+    characterNames:
+    - Counsellor
+    - Player
+    dialoguePattern:
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: I'm sure you're familiar with this area..
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: Yes..|| it's the first thing I saw when I arrived
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: '||What''s so special about this place?'
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Forgive me your grace, what do you mean?
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: We're in front of 3 evil gates...|| we all know the tragedy that occurred.
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: Yet we don't know how to activate them
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: And other countries think this area is rich!
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: You see,||In the far east are the mountain of Ali
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: An Infinite source of iron, rock and rare stones.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: In the far west, the forest of Retsnom
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Endless source of monsters for wanna-be heroes.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: and in the far north, a pilgrim of mix believers..
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Praying and researching the gates we closed 20 years ago,
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: Yeah || until the day those gates open again
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: And until that day, we shall thank your father for|| these...
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: Was she...|| was mother truly great in battle?
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: 'She was..|| she''s the reason those 3 were closed. '
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: To close the gates, someone has to close it from the other side.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: the first gate were closed by men, the third by the furs
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: the middle one by your parents alone..
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: the tricky part was the first and third weren't truly closed.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: I remember the cracks reopening as minutes pass by
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: the middle one was the source of their powers, and so your parents
+        rushed towards it.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: We're around a hundred men, each boasting a very trained physique
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Hammering the bluebloods left and right!|| until she got in.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Your father protecting our side while she on the other..
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: All of them went to protect the queen, but the gate didnt last.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: The gate left them on the other side, together with a hundred of ours.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: For the past 20 years we tried all we can to open and raid the other
+        side.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Until one day||, your father just stopped the whole thing.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: The Furriest khans and the church heard the news
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: And thats the reason they're coming for this place.
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: And now after sending me away for 20 years...
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: He charts a ship to send me again!
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: What's the point of calling me here for!
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: I swear after this trip I'll get all the answers from him!
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Your coronation is almost there.
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: There's no crown if the land is occupied by furs!
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: We are prepared, you just need to come back.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: And Upon your arrival, you should know how the kingdom works.
+      choiceDialogues: []
+  - conversationTitle: Introduce the buildings
+    characterNames:
+    - Counsellor
+    - Player
+    dialoguePattern:
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Because these buildings within our walls are our strength
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: They present services that we can use to our advantage.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Near the gates is our barracks, we can train troops and improve them
+        as well.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Keep in mind that some buildings has their own unique techs
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: They either improve their usefulness or improve the units acquired
+        from them.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Next we have the Farms, within the walls are exclusively ours.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: You might see some fields outside, but they're not within our control.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Although they're being taxed, the owner has complete autonomy
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: And their outputs mostly are sold in the market or outside our reach
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Upon entry to the gates is the loudest tavern in town
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: There you can hire unique characters and mercenaries
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: They don't stay for long, some often leave after 3 to 4 weeks.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: so we make sure to inform them of our interest of their service.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: The shop above the market is a building we rent out.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Although not reflecting in our tax, we offer them to unique merchants
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Who can deliver upon request, the necessary items we wish to acquire
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Depending on rarity, they take longer OR|| wont be able to give what
+        we desire
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Beside it is the blacksmith, items can be scaled up or down
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: We just supply them enough coin to purchase the necessary materials.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: They can also craft stuff for us in exchange for coins
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: While your destiny is not yet in this continent,
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: The means of travel is always simple, just always send a scout first.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: reaching the destination is one thing, knowing its state is another.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Back within the walls are our valuable people.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: They invested by staying here and by providing sufficient workforce
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: to do labor, enlist to the army and provide tax.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: They move the kingdom, you just have to feed them sufficiently.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: And at the center is the market, there's so much stuff to do here
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: we can announce festivities, attract merchants selling goods and rare
+        items.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: sometimes we even get slavers where we can purchase people to work
+        for us.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: We dont allow slavery, but they need to pay their 'debts' so they often
+        do hard labor.
+      choiceDialogues: []
+  - conversationTitle: Prologue - Upgrades
+    characterNames:
+    - Counsellor
+    - Player
+    dialoguePattern:
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Outside the walls are still our responsibility..
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: They all lead towards our kingdom
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: They enable lives here to move forward,
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: So we protect them at all cost.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: 'And fortunately, our walls are manned '
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: To the point that we can protect those just outside our walls,
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: We can't say the same further out..
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: but we can send our own towards them.
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: I'm seeing one near the forest,  who's staying there?
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: A group of bandits had started encampment last night.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: We can send our troops there, but first let's check the barracks.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: We might be able to upgrade some stuff there...
+      choiceDialogues: []
+  - conversationTitle: Prologue - Engage Enemy
+    characterNames:
+    - Counsellor
+    - Player
+    dialoguePattern:
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: That upgrade would help our troops later on.
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: Alright, shall I take them on?
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Very well, You may bring all our deployable troops.
+      choiceDialogues: []
+    - charName: Counsellor
+      type: 0
+      reaction: 0
+      single: Remember to check the scouting reports.
+      choiceDialogues: []

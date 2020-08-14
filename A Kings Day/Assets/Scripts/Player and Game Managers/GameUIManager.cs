@@ -38,14 +38,11 @@ public class GameUIManager : BaseManager
     public override void Start()
     {
         base.Start();
-        EventBroadcaster.Instance.AddObserver(EventNames.HIDE_RESOURCES, HideBellButton);
     }
 
     public override void OnDestroy()
     {
         base.OnDestroy();
-
-        EventBroadcaster.Instance.RemoveActionAtObserver(EventNames.HIDE_RESOURCES, HideBellButton);
     }
     public override void PreOpenManager()
     {
@@ -58,47 +55,6 @@ public class GameUIManager : BaseManager
         inGameView.gameObject.SetActive(true);
 
         //KingdomManager.GetInstance.PreOpenManager();
-    }
-
-    public void InitializeData()
-    {
-        PlayerKingdomData data = PlayerGameManager.GetInstance.playerData;
-
-    }
-    public void ShowBellButton()
-    {
-        eventBellBtn.gameObject.SetActive(true);
-        eventBellBtn.GetComponent<Button>().interactable = true;
-        StartCoroutine(DelayBellButton());
-    }
-
-    public IEnumerator DelayBellButton()
-    {
-        yield return new WaitForSeconds(1);
-
-        eventBellBtn.PlayOpenAnimation();
-    }
-    public void HideBellButton(Parameters p = null)
-    {
-        eventBellBtn.GetComponent<Button>().interactable = false;
-        eventBellBtn.PlayCloseAnimation();
-    }
-    public void HideBellButton()
-    {
-        eventBellBtn.PlayCloseAnimation();
-        StartCoroutine(DelayStartNextEvent());
-    }
-
-    IEnumerator DelayStartNextEvent()
-    {
-        yield return new WaitForSeconds(1);
-
-        StartNextEvent();
-
-    }
-    public void StartNextEvent()
-    {
-        KingdomManager.GetInstance.StartEvent();
     }
 
 }

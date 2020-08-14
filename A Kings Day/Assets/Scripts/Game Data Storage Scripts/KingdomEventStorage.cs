@@ -280,6 +280,11 @@ namespace KingEvents
             return filteredResult;
         }
 
+        public EventDecisionData GetEventByTitle(string eventTitle)
+        {
+            EventDecisionData tmp = kingdomEvents.Find(x => x.title == eventTitle);
+            return tmp;
+        }
         #endregion
 
         #region DIFFICULTY COMPUTATIONS

@@ -1,18 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Characters;
 
 public class CreationIntroductionHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public BaseCharacter oldKing;
+    public BaseCharacter playerPrince;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

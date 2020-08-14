@@ -261,7 +261,7 @@ MonoBehaviour:
     curhealth: 0
     maxHealth: 10
     curSpeed: 0
-    origSpeed: 2
+    origSpeed: 0.2
     minDamage: 3
     maxDamage: 4
     range: 1
@@ -280,13 +280,25 @@ MonoBehaviour:
       effectAmount: 20
       permanentBuff: 1
       buffTrigger: 1
+    - buffName: Agile Reflex
+      duration: 0
+      targetStats: 5
+      effectAmount: 20
+      permanentBuff: 1
+      buffTrigger: 1
+    - buffName: Keen Vision
+      duration: 0
+      targetStats: 4
+      effectAmount: 20
+      permanentBuff: 1
+      buffTrigger: 1
   - unitName: Spearman
     unitGenericName: 
     attackType: 0
     curhealth: 0
     maxHealth: 9
     curSpeed: 0
-    origSpeed: 4
+    origSpeed: 0.4
     minDamage: 2
     maxDamage: 3
     range: 2
@@ -305,13 +317,19 @@ MonoBehaviour:
       effectAmount: 20
       permanentBuff: 1
       buffTrigger: 1
+    - buffName: Keen Vision
+      duration: 0
+      targetStats: 4
+      effectAmount: 20
+      permanentBuff: 1
+      buffTrigger: 1
   - unitName: Archer
     unitGenericName: 
     attackType: 1
     curhealth: 0
     maxHealth: 7
     curSpeed: 0
-    origSpeed: 2
+    origSpeed: 0.2
     minDamage: 1
     maxDamage: 2
     range: 6
@@ -330,7 +348,7 @@ MonoBehaviour:
     curhealth: 0
     maxHealth: 5
     curSpeed: 0
-    origSpeed: 3
+    origSpeed: 0.3
     minDamage: 1
     maxDamage: 2
     range: 1

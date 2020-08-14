@@ -159,14 +159,6 @@ public class TileControlledBehavior : MonoBehaviour
             {
                 BattlefieldSystemsManager.GetInstance.PanelConquered(currentOwner, previousOwner);
             }
-            // Update total Victory
-            if (previousOwner == TeamType.Neutral)
-            {
-                if(BattlefieldSystemsManager.GetInstance != null)
-                {
-                    BattlefieldSystemsManager.GetInstance.UpdateTotalVictoryPoints();
-                }
-            }
 
             currentControlLevel = 0;
                 

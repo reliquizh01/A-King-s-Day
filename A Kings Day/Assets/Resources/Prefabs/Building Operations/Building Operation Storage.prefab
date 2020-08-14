@@ -57,17 +57,28 @@ MonoBehaviour:
       - actionType: 0
         costResource: 0
         logoIcon: {fileID: 0}
-        message: Soldier
+        message: Train Recruit
+        AdditionalInformationMessage: Converts <color=yellow>1</color> Townsfolk
+          to <color=green>1 Recruit</color>.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 1
+        - resourceTitle: 
+          resourceType: 1
+          unitName: Recruit
           rewardAmount: 1
-        - resourceType: 2
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 2
+          unitName: 
           rewardAmount: -1
-        - resourceType: 3
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -10
+          potentialTraveller: 0
         AcceptMesg:
         - I'd love to take them in!
         - I hope this one's not as teary as that previous guy
@@ -78,17 +89,28 @@ MonoBehaviour:
       - actionType: 0
         costResource: 0
         logoIcon: {fileID: 0}
-        message: Townsfolk
+        message: Remove Recruit
+        AdditionalInformationMessage: Converts <color=yellow>1</color> Recruit back
+          to <color=green>1 Townsman</color>.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 1
+        - resourceTitle: 
+          resourceType: 1
+          unitName: Recruit
           rewardAmount: -1
-        - resourceType: 2
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 2
+          unitName: 
           rewardAmount: 1
-        - resourceType: 3
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: 7
+          potentialTraveller: 0
         AcceptMesg:
         - De-listing one person, again.
         - When I remove them in the list sometimes the reason is death.
@@ -98,14 +120,21 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Sell Soldier
+        AdditionalInformationMessage: Sell <color=yellow>Any Units</color> to <color=green>Coins</color>.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 1
         rewardList:
-        - resourceType: 1
+        - resourceTitle: 
+          resourceType: 1
+          unitName: Recruit
           rewardAmount: -1
-        - resourceType: 3
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: 15
+          potentialTraveller: 0
         AcceptMesg:
         - Selling them is like them winning a battle without dying. gold.
         - So we train them and sell them, atleast they're cold hearted.
@@ -125,16 +154,27 @@ MonoBehaviour:
         logoIcon: {fileID: 791580562967185319, guid: e831a7aa9fdf9944eb2bb71f8270a962,
           type: 3}
         message: 
+        AdditionalInformationMessage: Converts <color=yellow>1</color> Recruit to
+          <color=green>1 Swordsman</color>.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 6
+        - resourceTitle: 
+          resourceType: 1
+          unitName: Swordsman
           rewardAmount: 1
-        - resourceType: 1
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 1
+          unitName: Recruit
           rewardAmount: -1
-        - resourceType: 3
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -5
+          potentialTraveller: 0
         AcceptMesg:
         - Ah the swordmens, the hand that slits the throat where it sits.
         - The most basic of them all, but the most balanced.
@@ -145,16 +185,27 @@ MonoBehaviour:
         logoIcon: {fileID: 9029295832776591723, guid: e831a7aa9fdf9944eb2bb71f8270a962,
           type: 3}
         message: 
+        AdditionalInformationMessage: Converts <color=yellow>1</color> Recruit to
+          <color=green>1 Spearman</color>.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 7
+        - resourceTitle: 
+          resourceType: 1
+          unitName: Spearman
           rewardAmount: 1
-        - resourceType: 1
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 1
+          unitName: Recruit
           rewardAmount: -1
-        - resourceType: 3
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -5
+          potentialTraveller: 0
         AcceptMesg:
         - The spear bearers, pierce makers, how shall i train them..
         - Spear is speed's enemy, the best pace-stopper in town.
@@ -165,16 +216,27 @@ MonoBehaviour:
         logoIcon: {fileID: 87444261590327566, guid: e831a7aa9fdf9944eb2bb71f8270a962,
           type: 3}
         message: 
+        AdditionalInformationMessage: Converts <color=yellow>1</color> Recruit to
+          <color=green>1 Archer</color>.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 1
-          rewardAmount: -1
-        - resourceType: 3
-          rewardAmount: -10
-        - resourceType: 5
+        - resourceTitle: 
+          resourceType: 1
+          unitName: Archer
           rewardAmount: 1
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 1
+          unitName: Recruit
+          rewardAmount: -1
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
+          rewardAmount: -10
+          potentialTraveller: 0
         AcceptMesg:
         - A shot to the head without getting harmed, is a kill.
         - No honor? who can say that when they're dead.
@@ -195,14 +257,21 @@ MonoBehaviour:
         logoIcon: {fileID: 8819155330738142235, guid: e831a7aa9fdf9944eb2bb71f8270a962,
           type: 3}
         message: Health
+        AdditionalInformationMessage: Increases <color=yellow>HP</color> by <color=green>1</color>.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 3
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -5
-        - resourceType: 0
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: -10
+          potentialTraveller: 0
         AcceptMesg:
         - Push up, Running and muscle grinding, i think he's ready.
         - 100, 101, 102 and now for 15 miles of running and repeat!
@@ -213,14 +282,21 @@ MonoBehaviour:
         logoIcon: {fileID: -7621245386961359428, guid: e831a7aa9fdf9944eb2bb71f8270a962,
           type: 3}
         message: Damage
+        AdditionalInformationMessage: Increases <color=yellow>Damage</color> by <color=green>1</color>.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: -10
-        - resourceType: 3
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -5
+          potentialTraveller: 0
         AcceptMesg:
         - Focus! Aim your hits! and remember to breathe in and out!
         - Understand that it is kill or be killed.
@@ -231,14 +307,21 @@ MonoBehaviour:
         logoIcon: {fileID: -6866828706736253922, guid: e831a7aa9fdf9944eb2bb71f8270a962,
           type: 3}
         message: Speed
+        AdditionalInformationMessage: Increases <color=yellow>Speed</color> by <color=green>1</color>.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 3
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -5
-        - resourceType: 0
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: -10
+          potentialTraveller: 0
         AcceptMesg:
         - Speed is your enemy, timing with speed is your friend.
         - Speed is not about the fastest, but the one who's first.
@@ -266,15 +349,43 @@ MonoBehaviour:
       - actionType: 0
         costResource: 0
         logoIcon: {fileID: 0}
-        message: Traditional
+        message: Small Festival
+        AdditionalInformationMessage: For the next <color=green>5 Weeks</color>,
+          the kingdom will attract more people in.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: -10
-        - resourceType: 3
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -10
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 13
+          unitName: 
+          rewardAmount: 10
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 13
+          unitName: 
+          rewardAmount: 15
+          potentialTraveller: 1
+        - resourceTitle: 
+          resourceType: 13
+          unitName: 
+          rewardAmount: 30
+          potentialTraveller: 3
+        - resourceTitle: 
+          resourceType: 12
+          unitName: 
+          rewardAmount: 5
+          potentialTraveller: 0
         AcceptMesg:
         - Good of you to remember that ol' Hero and celebrate his day!
         - Oh it's that heroine we'll be feasting about, this will remind us!
@@ -284,15 +395,43 @@ MonoBehaviour:
       - actionType: 0
         costResource: 0
         logoIcon: {fileID: 0}
-        message: Feast
+        message: Long Festivities
+        AdditionalInformationMessage: For the next <color=green>10 Weeks</color>,
+          the kingdom will attract more people in.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: -20
-        - resourceType: 3
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -20
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 13
+          unitName: 
+          rewardAmount: 12
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 13
+          unitName: 
+          rewardAmount: 20
+          potentialTraveller: 1
+        - resourceTitle: 
+          resourceType: 13
+          unitName: 
+          rewardAmount: 35
+          potentialTraveller: 3
+        - resourceTitle: 
+          resourceType: 12
+          unitName: 
+          rewardAmount: 10
+          potentialTraveller: 0
         AcceptMesg:
         - A celebration for our One of our many victories in the past!
         - To us and the future victories of this great kingdom!
@@ -303,14 +442,42 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Grand Celebration
+        AdditionalInformationMessage: For the next <color=green>15 Weeks</color>,
+          the kingdom will attract more people in.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 3
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -100
-        - resourceType: 0
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: -50
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 13
+          unitName: 
+          rewardAmount: 15
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 13
+          unitName: 
+          rewardAmount: 20
+          potentialTraveller: 1
+        - resourceTitle: 
+          resourceType: 13
+          unitName: 
+          rewardAmount: 35
+          potentialTraveller: 3
+        - resourceTitle: 
+          resourceType: 12
+          unitName: 
+          rewardAmount: 15
+          potentialTraveller: 0
         AcceptMesg:
         - Behold! as we celebrate the feast of the Winterbeast!
         - We will celebrate that defeat for today! we are victors!
@@ -329,6 +496,7 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Item 1
+        AdditionalInformationMessage: Buy the Item sold on the first slot.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -344,6 +512,7 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Item 2
+        AdditionalInformationMessage: Buy the Item sold on the second slot.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -359,6 +528,7 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Item 3
+        AdditionalInformationMessage: Buy the Item sold on the third slot.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -383,12 +553,23 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Goods Merchant
+        AdditionalInformationMessage: Increases chance of a <color=yellow>goods merchant</color>
+          arriving by <color=green>30%</color>, upon ones arrival, it will return
+          to 0%.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 3
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -30
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 13
+          unitName: 
+          rewardAmount: 30
+          potentialTraveller: 4
         AcceptMesg:
         - A Goods merchant is nice.
         - Goods it is!
@@ -398,13 +579,24 @@ MonoBehaviour:
       - actionType: 0
         costResource: 0
         logoIcon: {fileID: 0}
-        message: Heroes Merchant
+        message: Items Merchant
+        AdditionalInformationMessage: Increases chance of a <color=yellow>items merchant</color>
+          arriving by <color=green>20%</color>, upon ones arrival, it will return
+          to 0%.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 3
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -50
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 13
+          unitName: 
+          rewardAmount: 20
+          potentialTraveller: 6
         AcceptMesg:
         - Someone for our champions? very well.
         - That's so nice! to fight and clothed for the kingdom.
@@ -414,12 +606,23 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Exotic Merchant
+        AdditionalInformationMessage: Increases chance of a <color=yellow>exotic
+          merchant</color> arriving by <color=green>5%</color>, upon ones arrival,
+          it will return to 0%.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 3
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -100
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 13
+          unitName: 
+          rewardAmount: 5
+          potentialTraveller: 5
         AcceptMesg:
         - The rarest of them all? I wonder if one would come.
         - To buy their stuff, you need ALOT of money, as IN ALOT.
@@ -447,6 +650,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Hire
+        AdditionalInformationMessage: Pays all initial contract wage, enlisting the
+          adventurer as our official Hero.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -460,6 +665,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Ask to Stay More
+        AdditionalInformationMessage: The adventurer will stay for 1 more week (price
+          varies)
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -475,6 +682,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Not Interested
+        AdditionalInformationMessage: The adventurer will leave the following week,
+          making room for a potential new one.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -497,14 +706,28 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: For Merchants!
+        AdditionalInformationMessage: Increases chance of <color=yellow> 1 merchant
+          type</color> arriving by <color=green>1%</color>, upon ones arrival, it
+          will return to 0%.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 3
-          rewardAmount: -10
-        - resourceType: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -5
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
+          rewardAmount: -5
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 13
+          unitName: 
+          rewardAmount: 1
+          potentialTraveller: 3
         AcceptMesg:
         - Cheers to those who trade with us!
         - For the merchants who bring goods! d'is for you!
@@ -514,14 +737,28 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: For Heroes!
+        AdditionalInformationMessage: Increases chance of a <color=yellow>1 random
+          hero type</color> arriving by <color=green>1%</color>, upon ones arrival,
+          it will return to 0%.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: -5
-        - resourceType: 3
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -10
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 13
+          unitName: 
+          rewardAmount: 1
+          potentialTraveller: 7
         AcceptMesg:
         - For the champions and wanna-be.
         - The king is with you heroes all throughout!
@@ -532,14 +769,28 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: For Mercenaries
+        AdditionalInformationMessage: Increases chance of a <color=yellow>random
+          mercenary group</color> arriving by <color=green>10%</color>, upon ones
+          arrival, it will return to 0%.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: -5
-        - resourceType: 3
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -10
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 13
+          unitName: 
+          rewardAmount: 10
+          potentialTraveller: 2
         AcceptMesg:
         - For those who wanna get paid! Prepare yourselves!
         - Bounties are real admit it! the king gives it all!
@@ -559,44 +810,97 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Swordsmen
+        AdditionalInformationMessage: Will hire <color=yellow>1 Swordsman</color>
+          available.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
-        rewardList: []
+        rewardList:
+        - resourceTitle: 
+          resourceType: 8
+          unitName: Swordsman
+          rewardAmount: -1
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 1
+          unitName: Swordsman
+          rewardAmount: 1
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
+          rewardAmount: -20
+          potentialTraveller: 0
         AcceptMesg:
         - A swordsmen is available and ready to serve.
         - He has his own sword, included in the charge.
         - I dont think he'll use a bow, nope, he cant, a sword barely.
         DenyMesg:
-        - We dont have enough to hire someone to fight for us.
+        - There's nobody in here who can wield swords at the moment
+        - Maybe that kid can hold a sword somewhere...
       - actionType: 0
         costResource: 0
         logoIcon: {fileID: 0}
         message: Spearmen
+        AdditionalInformationMessage: Will hire <color=yellow>1 Spearman</color>
+          available.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
-        rewardList: []
+        rewardList:
+        - resourceTitle: 
+          resourceType: 8
+          unitName: Spearman
+          rewardAmount: -1
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 1
+          unitName: Spearman
+          rewardAmount: 1
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
+          rewardAmount: -15
+          potentialTraveller: 0
         AcceptMesg:
         - See how he flungs that stick, he'll pack a punch.
         - I wonder if that spear is his....we'll see in battle.
         - I dont think that spear will last 2 clashes, I wonder...
         DenyMesg:
-        - We dont have enough to hire someone to fight for us.
+        - Spearman are tough to find these days..
+        - If you're looking for another stick that needs holding...
       - actionType: 0
         costResource: 0
         logoIcon: {fileID: 0}
         message: Archer
+        AdditionalInformationMessage: Will hire <color=yellow>1 Archer</color> available.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
-        rewardList: []
+        rewardList:
+        - resourceTitle: 
+          resourceType: 8
+          unitName: Archer
+          rewardAmount: -1
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 1
+          unitName: Archer
+          rewardAmount: 1
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
+          rewardAmount: -15
+          potentialTraveller: 0
         AcceptMesg:
         - He can aim alright, now to test him while drunk.
         - I throwed a pot last night, i think he's the one who broke it.
         - I saw him hunting last week, i wonder what he caught.
         DenyMesg:
         - We dont have enough to hire someone to fight for us.
+        - A strong arm to pull a bow is rare, and no one here can.
       cardPosMesg:
       - Some might take the coins, but they run away faster.
       - As long as we use them first, they wont run.
@@ -619,6 +923,7 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Buy Item 1
+        AdditionalInformationMessage: Buy the First Item
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -632,6 +937,7 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Buy Item 2
+        AdditionalInformationMessage: Buy the Second Item
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -646,6 +952,7 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Buy Item 3
+        AdditionalInformationMessage: Buy the Third Item
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -670,6 +977,7 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Buy Item 1
+        AdditionalInformationMessage: Buy the First Item
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -684,6 +992,7 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Buy Item 2
+        AdditionalInformationMessage: Buy the Second Item
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -694,6 +1003,7 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Buy Item 3
+        AdditionalInformationMessage: Buy the Third Item
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -714,6 +1024,7 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Buy Item 1
+        AdditionalInformationMessage: Buy the First Item
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -728,6 +1039,7 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Buy Item 2
+        AdditionalInformationMessage: Buy the Second Item
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -738,6 +1050,7 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Buy Item 3
+        AdditionalInformationMessage: Buy the Third Item
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -766,6 +1079,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Increase
+        AdditionalInformationMessage: Increase Amount of coins for higher chance
+          of better stats
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -782,6 +1097,7 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Craft
+        AdditionalInformationMessage: Start crafting the item
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -796,6 +1112,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Decrease
+        AdditionalInformationMessage: Decreasing the Amount of coins for will lower
+          chance of better stats.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -820,6 +1138,7 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Equip
+        AdditionalInformationMessage: Equip selected Item.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -834,6 +1153,7 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Unequip
+        AdditionalInformationMessage: Unequip selected Item.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -848,6 +1168,8 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Upgrade
+        AdditionalInformationMessage: Upgrade selected Item, with a chance for it
+          to get destroyed.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
@@ -879,12 +1201,16 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: 5
+        AdditionalInformationMessage: Providing <color=yellow>5 Food</color>
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: -5
+          potentialTraveller: 0
         AcceptMesg:
         - This is more than enough to calm their minds.
         - Atleast they've felt your presence
@@ -895,12 +1221,16 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: 10
+        AdditionalInformationMessage: Providing <color=yellow>10 Food</color>
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: -10
+          potentialTraveller: 0
         AcceptMesg:
         - This is alot, this might encourage our people to procreate.
         - Ah, they'll feel better with this, Thank you my king.
@@ -911,12 +1241,16 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: 15
+        AdditionalInformationMessage: Providing <color=yellow>15 Food</color>
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: -15
+          potentialTraveller: 0
         AcceptMesg:
         - My King! this is alot! you dont have to prove yourself.
         - We're already thankful for the protection, but this?! Thanks your grace,
@@ -938,14 +1272,27 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Small Houses
+        AdditionalInformationMessage: Providing resources to build a house will allow
+          <color=yellow>2 safe population</color>
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 3
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -20
-        - resourceType: 0
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: -10
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 11
+          unitName: 
+          rewardAmount: 2
+          potentialTraveller: 0
         AcceptMesg:
         - Maybe a family of 5 can adjust to this
         - So another family will grow here... that is nice of you my king.
@@ -955,14 +1302,27 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Two Floor House
+        AdditionalInformationMessage: Providing resources to build a house will allow
+          <color=yellow>5 safe population</color>
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: -20
-        - resourceType: 3
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -50
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 11
+          unitName: 
+          rewardAmount: 5
+          potentialTraveller: 0
         AcceptMesg:
         - Goodnesss, 10 kins of the future generation, in this house.
         - I wonder how would they grow up to be, will they enrich the kingdom? I
@@ -973,14 +1333,27 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Protective Shelters
+        AdditionalInformationMessage: Providing resources to build a house will allow
+          <color=yellow>12 safe population</color>
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: -30
-        - resourceType: 3
-          rewardAmount: -30
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
+          rewardAmount: -80
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 11
+          unitName: 
+          rewardAmount: 12
+          potentialTraveller: 0
         AcceptMesg:
         - A house this large would take time to get filled, around 15 maybe? but
           that is quite a huge family.
@@ -1002,12 +1375,21 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: 10 Coins
+        AdditionalInformationMessage: Reduces chances of plague by 1.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 3
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -10
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 13
+          unitName: 
+          rewardAmount: -1
+          potentialTraveller: 11
         AcceptMesg:
         - This would improve our smell a little, specilaly that house.
         - I can't believe we've waited so long to clean this place.
@@ -1018,12 +1400,21 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: 50 Coins
+        AdditionalInformationMessage: Reduces chances of plague by 5.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 3
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -50
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 13
+          unitName: 
+          rewardAmount: -5
+          potentialTraveller: 11
         AcceptMesg:
         - Now we wash all corners, this cleansing will last longer.
         - Definitely the best time to clean is always.
@@ -1034,12 +1425,21 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: 100 Coins
+        AdditionalInformationMessage: Reduces chances of plague by 10.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 3
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -100
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 13
+          unitName: 
+          rewardAmount: -10
+          potentialTraveller: 11
         AcceptMesg:
         - I dont think even the blood plague could withstand this cleaning
         - We even hired priests and shamans for other worldly cleansing... oh my.
@@ -1067,14 +1467,22 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Increase
+        AdditionalInformationMessage: Converts <color=yellow>1 Townsman</color> to
+          <color=green>1 Farmer</color>.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 8
+        - resourceTitle: 
+          resourceType: 5
+          unitName: 
           rewardAmount: 1
-        - resourceType: 2
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 2
+          unitName: 
           rewardAmount: -1
+          potentialTraveller: 0
         AcceptMesg:
         - Step right up, pick a hoe and get going!
         - So who will be the next hoe handler?
@@ -1084,14 +1492,22 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Decrease
+        AdditionalInformationMessage: Converts <color=yellow>1 Farmer</color> to
+          <color=green>1 Townsman</color>.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 2
+        - resourceTitle: 
+          resourceType: 2
+          unitName: 
           rewardAmount: 1
-        - resourceType: 8
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 5
+          unitName: 
           rewardAmount: -1
+          potentialTraveller: 0
         AcceptMesg:
         - You, You're a free man now!
         - Hey! yeah you! the king needs you somewhere else!
@@ -1101,14 +1517,22 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Sell Food
+        AdditionalInformationMessage: Sell <color=yellow>5 Food</color> to <color=green>3
+          coins</color>.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: -5
-        - resourceType: 3
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: 3
+          potentialTraveller: 0
         AcceptMesg:
         - Balance the need for coins and food my king.
         DenyMesg:
@@ -1127,14 +1551,22 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Increase
+        AdditionalInformationMessage: Converts <color=yellow>1 Townsman</color> to
+          <color=green>1 Herdsman</color>.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 9
+        - resourceTitle: 
+          resourceType: 6
+          unitName: 
           rewardAmount: 1
-        - resourceType: 2
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 2
+          unitName: 
           rewardAmount: -1
+          potentialTraveller: 0
         AcceptMesg:
         - The cattle there is yours, and that too, take care of them.
         - That's my favorite right there, take good care of it.
@@ -1144,14 +1576,22 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Decrease
+        AdditionalInformationMessage: Converts <color=yellow>1 Herdsman</color> to
+          <color=green>1 Townsman-</color>.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 9
+        - resourceTitle: 
+          resourceType: 6
+          unitName: 
           rewardAmount: -1
-        - resourceType: 2
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 2
+          unitName: 
           rewardAmount: 1
+          potentialTraveller: 0
         AcceptMesg:
         - Step out! you're king needs you somewhere else!
         - Kinda hard to leave that cow behind, but its for the best.
@@ -1161,14 +1601,22 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Cow To Food
+        AdditionalInformationMessage: Convert the cows to meat for <color=green>5
+          Food</color>
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 9
+        - resourceTitle: 
+          resourceType: 4
+          unitName: 
           rewardAmount: -1
-        - resourceType: 0
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: 5
+          potentialTraveller: 0
         AcceptMesg:
         - Farewell to you my cow, please make yourself tasty.
         - Shh now my friend, shh..
@@ -1187,14 +1635,22 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Increase
+        AdditionalInformationMessage: Converts <color=yellow>1 Townsman</color> to
+          <color=green>1 Storage Keeper</color>.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 2
+        - resourceTitle: 
+          resourceType: 2
+          unitName: 
           rewardAmount: -1
-        - resourceType: 10
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 7
+          unitName: 
           rewardAmount: 1
+          potentialTraveller: 0
         AcceptMesg:
         - You run the errands and ill list you down, welcome.
         - Fit the gloves and fit the shoes, good, you're in.
@@ -1204,14 +1660,22 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Decrease
+        AdditionalInformationMessage: Converts <color=yellow>1 Storage Keeper</color>
+          to <color=green>1 Townsman</color>.
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 10
+        - resourceTitle: 
+          resourceType: 7
+          unitName: 
           rewardAmount: -1
-        - resourceType: 2
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 2
+          unitName: 
           rewardAmount: 1
+          potentialTraveller: 0
         AcceptMesg:
         - Leave the shoes behind, and the gloves is yours, too.
         - Ah, your muscles are such a waste, oh well.
@@ -1221,12 +1685,21 @@ MonoBehaviour:
         costResource: 0
         logoIcon: {fileID: 0}
         message: Expand Barn
+        AdditionalInformationMessage: 'Increases cow capacity by <color=green>2</color>. '
         hasCooldown: 0
         cooldownCount: 0
         openSubOption: 0
         rewardList:
-        - resourceType: 3
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -10
+          potentialTraveller: 0
+        - resourceTitle: 
+          resourceType: 10
+          unitName: 
+          rewardAmount: 2
+          potentialTraveller: 0
         AcceptMesg:
         - More houses for the dairy queens.
         - Ah, another haystack storage.

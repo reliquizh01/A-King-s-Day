@@ -68,9 +68,9 @@ namespace Managers
         {
             curPlayer.currentTechnologies.Find(x => x.technologyName == thisTech.technologyName).currentLevel += 1;
 
-            if(SaveData.SaveLoadManager.GetInstance != null)
+            if(TransitionManager.GetInstance != null && !TransitionManager.GetInstance.isNewGame && SaveData.SaveLoadManager.GetInstance != null)
             {
-                SaveData.SaveLoadManager.GetInstance.SaveData();
+                SaveData.SaveLoadManager.GetInstance.SaveCurrentData();
             }
         }
 
@@ -80,7 +80,6 @@ namespace Managers
             List<BaseTechnologyData> techData = new List<BaseTechnologyData>();
             for (int i = 0; i < techStorage.technologies.Count; i++)
             {
-                Debug.Log("CURRENT COUNT DATA :"+ techStorage.technologies[i].improvedType);
                 BaseTechnologyData tmp = new BaseTechnologyData().ConverToData(techStorage.technologies[i]);
                 techData.Add(tmp);
             }

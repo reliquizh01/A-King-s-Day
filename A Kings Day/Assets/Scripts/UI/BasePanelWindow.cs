@@ -1,11 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 public class BasePanelWindow : MonoBehaviour
 {
+    public Transform origParent;
     public bool enabledBased = false;
+    public bool transferEnabled = true;
 
+    public Action parentOpenCallback;
+    public Action parentCloseCallback;
+    public void Awake()
+    {
+        if(transform.parent != null)
+        {
+            origParent = transform.parent;
+        }
+    }
     public void OnEnable()
     {
         if(enabledBased)
@@ -19,6 +32,11 @@ public class BasePanelWindow : MonoBehaviour
         {
             PanelWindowManager.GetInstance.AddWindow(this);
         }
+
+        if(parentOpenCallback != null)
+        {
+            parentOpenCallback();
+        }
     }
 
 
@@ -27,10 +45,16 @@ public class BasePanelWindow : MonoBehaviour
         if(PanelWindowManager.GetInstance != null)
         {
             PanelWindowManager.GetInstance.CloseWindow(this);
-            if(enabledBased)
-            {
-                this.gameObject.SetActive(false);
-            }
+        }
+
+        if (enabledBased)
+        {
+            this.gameObject.SetActive(false);
+        }
+
+        if(parentCloseCallback != null)
+        {
+            parentCloseCallback();
         }
     }
 }

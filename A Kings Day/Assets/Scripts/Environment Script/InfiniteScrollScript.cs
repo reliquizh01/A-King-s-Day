@@ -9,7 +9,7 @@ public class InfiniteScrollScript : MonoBehaviour
     private float btmLocalPos = -2.4f;
 
     Vector2 startPos;
-    public bool starmoving = true;
+    public bool startmoving = true;
     private void Start()
     {
         startPos = transform.position;
@@ -18,7 +18,7 @@ public class InfiniteScrollScript : MonoBehaviour
 
     public void Update()
     {
-        if(starmoving)
+        if(startmoving)
         {
             transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y + (Time.deltaTime *scrollSpeed));
         

@@ -17,27 +17,31 @@ namespace Managers
     }
     public class BaseSceneManager : BaseManager
     {
+        public bool testRun;
         public SceneType sceneType;
         public BuildingOperationStorage buildingInformationStorage;
 
         public ScenePathfindingHandler scenePointHandler;
-        public BaseCharacter king;
+        public BaseCharacter player;
         public InGameInteractionHandler interactionHandler;
         public override void Start()
         {
             base.Start();
         }
-        public virtual void OrderCharacterToMove(ScenePointBehavior toThisPoint)
+
+        public override void StartManager()
         {
-            if(toThisPoint.sceneLoader)
-            {
-                EventBroadcaster.Instance.PostEvent(EventNames.HIDE_RESOURCES);
-            }
+            base.StartManager();
+        }
+        public virtual void SetPositionFromTransition(SceneType prevScene, bool directToOffset = true)
+        {
+
         }
 
-        public virtual void SetPositionFromTransition(SceneType prevScene)
+        public ScenePointBehavior ObtainScenePoint(string pointName)
         {
-
+            Debug.Log("Current Point Count:" + scenePointHandler.scenePoints.Count);
+            return scenePointHandler.scenePoints.Find(x => x.gameObject.name == pointName);
         }
     }
 

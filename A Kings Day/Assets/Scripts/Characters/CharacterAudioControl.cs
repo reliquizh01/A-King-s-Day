@@ -33,7 +33,10 @@ namespace Characters
         {
             if(AudioManager.GetInstance != null)
             {
-                audioSource.volume = AudioManager.GetInstance.sfx.volume;
+                if(audioSource != null)
+                {
+                    audioSource.volume = AudioManager.GetInstance.sfx.volume;
+                }
             }
         }
         public void PlaySendDamageAudio()

@@ -10,8 +10,11 @@ namespace Characters
 
     public class CharacterMovement : MonoBehaviour
     {
+        public float distForReach = 0.0025f;
+        public bool isTest = false;
         public bool isMoving = false;
         public float speed = 1.25f;
+        public ScenePointBehavior spawnPoint;
         public ScenePointBehavior currentPoint;
         public ScenePointBehavior currentTargetPoint;
         public List<ScenePointBehavior> pathToTargetPoint = new List<ScenePointBehavior>();
@@ -20,12 +23,13 @@ namespace Characters
         private BaseCharacter myCharacter;
         public List<ScenePointBehavior> queuePoints;
 
-        Action reachLastTargetCallback = null;
+        List<Action> reachLastTargetCallback = null;
         public void Start()
         {
             if (GetComponent<BaseCharacter>() != null)
             {
                 myCharacter = GetComponent<BaseCharacter>();
+                speed = myCharacter.unitInformation.curSpeed;
             }
 
             if (pathToTargetPoint == null && currentTargetPoint != null)
@@ -35,7 +39,115 @@ namespace Characters
         }
         public void Update()
         {
-            if (isMoving && myCharacter.unitInformation.curhealth > 0)
+            if(isTest)
+            {
+                Debug.Log(CheckDistance(currentTargetPoint.transform.position));
+            }
+
+            if(isMoving)
+            {
+                if (myCharacter != null)
+                {
+                    MovementWithMyCharacter();
+                }
+                else
+                {
+                    MovementWithoutMyCharacter();
+                }
+            }
+        }
+
+        public void MovementWithMyCharacter()
+        {
+            if (myCharacter.unitInformation.curhealth > 0)
+            {
+                // CHECK IF FINAL POINT IS ALREADY TARGET POINT - TO IDENTIFY OFFSET
+                if (pathToTargetPoint != null && pathToTargetPoint.Count > 0)
+                {
+                    if(pathIdx < pathToTargetPoint.Count)
+                    {
+                        if (pathToTargetPoint[pathIdx] == currentTargetPoint)
+                        {
+                            if (pathToTargetPoint[pathIdx].straightToOffset)
+                            {
+                                targetPos = currentTargetPoint.sceneOffset.transform.position;
+                            }
+                        }
+                    }
+                }
+                transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+                float dist = Vector2.Distance(transform.position, targetPos);
+
+                if (dist <= distForReach)
+                {
+                    if (pathToTargetPoint != null && pathToTargetPoint.Count > 0)
+                    {
+                        if (pathIdx < pathToTargetPoint.Count)
+                        {
+                            if (pathToTargetPoint[pathIdx].sceneOffset != null)
+                            {
+                                if (pathToTargetPoint[pathIdx] == currentTargetPoint)
+                                {
+                                    FinishPathMovement();
+                                }
+                            }
+                        }
+                        if (pathToTargetPoint == null || pathToTargetPoint.Count <= 0)
+                        {
+                            FinishPathMovement();
+                            return;
+                        }
+                        if(pathIdx < pathToTargetPoint.Count)
+                        {
+                            currentPoint = pathToTargetPoint[pathIdx];
+                        }
+                        if (currentPoint == currentTargetPoint)
+                        {
+                            if (currentTargetPoint.sceneOffset != null)
+                            {
+                                targetPos = currentTargetPoint.sceneOffset.transform.position;
+                                FinishPathMovement();
+                            }
+                            else
+                            {
+                                FinishPathMovement();
+                            }
+                        }
+                        else
+                        {
+                            pathIdx += 1;
+                            if (pathIdx < pathToTargetPoint.Count)
+                            {
+                                if(pathToTargetPoint[pathIdx] != null)
+                                {
+                                    targetPos = pathToTargetPoint[pathIdx].transform.position;
+
+                                    myCharacter.UpdateMovementFacingDirection();
+                                }
+                                else
+                                {
+                                    FinishPathMovement();
+                                }
+                            }
+                            else
+                            {
+                                FinishPathMovement();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (currentPoint == currentTargetPoint)
+                        {
+                            FinishPathMovement();
+                        }
+                    }
+                }
+            }
+        }
+        public void MovementWithoutMyCharacter()
+        {
+            if (isMoving)
             {
                 // CHECK IF FINAL POINT IS ALREADY TARGET POINT - TO IDENTIFY OFFSET
                 if (pathToTargetPoint != null && pathToTargetPoint.Count > 0)
@@ -51,7 +163,7 @@ namespace Characters
                 transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
                 float dist = Vector2.Distance(transform.position, targetPos);
 
-                if (dist < 0.0015f)
+                if (dist < distForReach)
                 {
                     if (pathToTargetPoint != null && pathToTargetPoint.Count > 0)
                     {
@@ -89,7 +201,6 @@ namespace Characters
                             if (pathToTargetPoint.Count > pathIdx && pathToTargetPoint[pathIdx] != null)
                             {
                                 targetPos = pathToTargetPoint[pathIdx].transform.position;
-                                myCharacter.UpdateMovementFacingDirection();
                             }
                             else
                             {
@@ -106,23 +217,34 @@ namespace Characters
                     }
                 }
             }
-            else if (pathToTargetPoint != null && pathToTargetPoint.Count <= 0)
-            {
-                FinishPathMovement();
-            }
         }
 
         public void FinishPathMovement()
         {
+            if(!isMoving)
+            {
+                return;
+            }
+
             isMoving = false;
             pathToTargetPoint.Clear();
-            PointReachedCallback();
+            if (reachLastTargetCallback != null && reachLastTargetCallback.Count > 0)
+            {
+                for (int i = 0; i < reachLastTargetCallback.Count; i++)
+                {
+                    reachLastTargetCallback[i]();
+                }
+                reachLastTargetCallback.Clear();
+            }
             pathIdx = 0;
 
-            myCharacter.UpdateCharacterState(CharacterStates.Idle);
-            if(myCharacter.isFighting)
+            if (myCharacter != null)
             {
-               myCharacter.ReturnThisUnit();
+                myCharacter.UpdateCharacterState(CharacterStates.Idle);
+                if (myCharacter.isFighting)
+                {
+                    myCharacter.ReturnThisUnit();
+                }
             }
         }
 
@@ -144,40 +266,32 @@ namespace Characters
                 }
             }
         }
-        public void PointReachedCallback()
-        {
-            if (reachLastTargetCallback != null)
-            {
-                reachLastTargetCallback();
-                reachLastTargetCallback = null;
-            }
 
-            /*if(myCharacter.isGuest)
-            {
-                myCharacter.TargetReached();
-            }
-            else
-            {
-                myCharacter.OrderMovementCallback();
-            } */
-        }
         /// <summary>
         /// Used to move to the next point in the current Path
         /// </summary>
         /// <param name="thisPoint">next Point in the current path</param>
-        public void MoveTowards(ScenePointBehavior thisPoint)
+        public void MoveTowards(ScenePointBehavior thisPoint, bool onOffset = true)
         {
             float dist = 0;
 
-            if (thisPoint.sceneOffset == null)
+            if (!onOffset)
             {
                 dist = Vector2.Distance(transform.position, thisPoint.transform.position);
                 targetPos = thisPoint.gameObject.transform.position;
             }
             else
             {
-                dist = Vector2.Distance(transform.position, thisPoint.sceneOffset.transform.position);
-                targetPos = thisPoint.sceneOffset.transform.position;
+                if(thisPoint.sceneOffset == null)
+                {
+                    dist = Vector2.Distance(transform.position, thisPoint.transform.position);
+                    targetPos = thisPoint.gameObject.transform.position;
+                }
+                else
+                {
+                    dist = Vector2.Distance(transform.position, thisPoint.sceneOffset.transform.position);
+                    targetPos = thisPoint.sceneOffset.transform.position;
+                }
             }
 
             if (dist < 0.015f)
@@ -194,7 +308,17 @@ namespace Characters
             //Debug.Log("Setting Position!");
             if (teleport)
             {
-                transform.position = thisPoint.transform.position;
+                spawnPoint = currentPoint;
+                if(spawnPoint.sceneOffset == null)
+                {
+                    transform.position = spawnPoint.transform.position;
+                }
+                else
+                {
+                    transform.position = spawnPoint.sceneOffset.transform.position;
+                }
+
+
                 SetNewTargetPoint(thisPoint);
             }
         }
@@ -207,7 +331,11 @@ namespace Characters
                 currentTargetPoint.isInteractingWith = false;
             }
             currentTargetPoint = newPoint;
-            currentTargetPoint.isInteractingWith = true;
+
+            if(currentTargetPoint.hasInteractionOptions)
+            {
+                currentTargetPoint.isInteractingWith = true;
+            }
         }
 
         /// <summary>
@@ -216,12 +344,34 @@ namespace Characters
         /// <param name="thisPoint"> the target of the path</param>
         public void SetTarget(ScenePointBehavior thisPoint, Action targetCallBack = null)
         {
-            SetNewTargetPoint(thisPoint);
             if (reachLastTargetCallback == null)
             {
-                reachLastTargetCallback = targetCallBack;
+                reachLastTargetCallback = new List<Action>();
             }
 
+            if(targetCallBack != null)
+            {
+                reachLastTargetCallback.Add(targetCallBack);
+            }
+
+            float targetDist = 0;
+
+            if (thisPoint.straightToOffset)
+            {
+                targetDist = Vector2.Distance(transform.position, thisPoint.sceneOffset.transform.position);
+            }
+            else
+            {
+                targetDist = Vector2.Distance(transform.position, thisPoint.transform.position);
+            }
+            if (targetDist <= distForReach)
+            {
+                FinishPathMovement();
+                return;
+            }
+
+
+            SetNewTargetPoint(thisPoint);
             pathIdx = 0;
             pathToTargetPoint.Clear();
             if (currentTargetPoint == currentPoint)
@@ -247,6 +397,13 @@ namespace Characters
             {
                 currentTargetPoint = thisGameObject.GetComponent<ScenePointBehavior>();
             }
+        }
+
+        public float CheckDistance(Vector2 FromThisPosition)
+        {
+            float dist = Vector2.Distance(transform.position, FromThisPosition);
+
+            return dist;
         }
     }
 }

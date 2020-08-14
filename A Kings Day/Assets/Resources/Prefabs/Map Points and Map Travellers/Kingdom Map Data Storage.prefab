@@ -1,0 +1,5502 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8171476689826254891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6317764360472115067}
+  - component: {fileID: 4552146127977723679}
+  m_Layer: 0
+  m_Name: Kingdom Map Data Storage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6317764360472115067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8171476689826254891}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4552146127977723679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8171476689826254891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f174ca53014e8b949a40f68136b48bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapPointsStorage:
+  - pointName: Felor Village
+    population: 30
+    coinTax: 20
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 0
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 1
+      totalUnitCount: 1
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 4
+      totalUnitCount: 4
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 8
+      totalUnitCount: 8
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0100000002000000
+    latestWeekUpdate: 0
+  - pointName: Retsnom North
+    population: 30
+    coinTax: 10
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 0
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 3
+      totalUnitCount: 3
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 2
+      totalUnitCount: 2
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 1
+      totalUnitCount: 1
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 4
+      totalUnitCount: 4
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0400000000000000
+    latestWeekUpdate: 0
+  - pointName: Retsnom East
+    population: 30
+    coinTax: 10
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 0
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 1
+      totalUnitCount: 1
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 2
+      totalUnitCount: 2
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 3
+      totalUnitCount: 3
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 4
+      totalUnitCount: 4
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0400000002000000
+    latestWeekUpdate: 0
+  - pointName: Forest Fronts
+    population: 30
+    coinTax: 20
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 0
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 4
+      totalUnitCount: 4
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 3
+      totalUnitCount: 3
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 7
+      totalUnitCount: 7
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 2
+      totalUnitCount: 2
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0100000003000000
+    latestWeekUpdate: 0
+  - pointName: Retsnom South
+    population: 30
+    coinTax: 10
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 0
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 3
+      totalUnitCount: 3
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 2
+      totalUnitCount: 2
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 2
+      totalUnitCount: 2
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 3
+      totalUnitCount: 3
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0400000002000000
+    latestWeekUpdate: 0
+  - pointName: Fisher Villager
+    population: 30
+    coinTax: 20
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 0
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 8
+      totalUnitCount: 8
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 6
+      totalUnitCount: 6
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0100000003000000
+    latestWeekUpdate: 0
+  - pointName: Retsnom West
+    population: 30
+    coinTax: 10
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 0
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 3
+      totalUnitCount: 3
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 2
+      totalUnitCount: 2
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 1
+      totalUnitCount: 1
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 4
+      totalUnitCount: 4
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0100000004000000
+    latestWeekUpdate: 0
+  - pointName: Kaspian
+    population: 30
+    coinTax: 30
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 0
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 7
+      totalUnitCount: 7
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 8
+      totalUnitCount: 8
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 8
+      totalUnitCount: 8
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0000000003000000
+    latestWeekUpdate: 0
+  - pointName: Merinda
+    population: 30
+    coinTax: 30
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 0
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 7
+      totalUnitCount: 7
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 10
+      totalUnitCount: 10
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 9
+      totalUnitCount: 9
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0100000002000000
+    latestWeekUpdate: 0
+  - pointName: Merinda's Front
+    population: 30
+    coinTax: 20
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 0
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 6
+      totalUnitCount: 6
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 3
+      totalUnitCount: 3
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 8
+      totalUnitCount: 8
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 3
+      totalUnitCount: 3
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0100000003000000
+    latestWeekUpdate: 0
+  - pointName: Wizard's Tower
+    population: 30
+    coinTax: 20
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 0
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 2
+      totalUnitCount: 2
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 3
+      totalUnitCount: 3
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 9
+      totalUnitCount: 9
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0200000001000000
+    latestWeekUpdate: 0
+  - pointName: Third Pilgrim
+    population: 0
+    coinTax: 30
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 1
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 6
+      totalUnitCount: 6
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 8
+      totalUnitCount: 8
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 9
+      totalUnitCount: 9
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0100000003000000
+    latestWeekUpdate: 0
+  - pointName: Second Pilgrim
+    population: 0
+    coinTax: 30
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 1
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 8
+      totalUnitCount: 8
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 6
+      totalUnitCount: 6
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 10
+      totalUnitCount: 10
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 9
+      totalUnitCount: 9
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0100000003000000
+    latestWeekUpdate: 0
+  - pointName: Kiyo
+    population: 0
+    coinTax: 10
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 1
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 0
+      totalUnitCount: 0
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 1
+      totalUnitCount: 1
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 4
+      totalUnitCount: 4
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0000000003000000
+    latestWeekUpdate: 0
+  - pointName: Riverside
+    population: 0
+    coinTax: 20
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 1
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 4
+      totalUnitCount: 4
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 6
+      totalUnitCount: 6
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 4
+      totalUnitCount: 4
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0100000003000000
+    latestWeekUpdate: 0
+  - pointName: Middleground
+    population: 0
+    coinTax: 20
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 1
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 3
+      totalUnitCount: 3
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 1
+      totalUnitCount: 1
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 7
+      totalUnitCount: 7
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0000000003000000
+    latestWeekUpdate: 0
+  - pointName: Grassland
+    population: 0
+    coinTax: 20
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 1
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 6
+      totalUnitCount: 6
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 3
+      totalUnitCount: 3
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 4
+      totalUnitCount: 4
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 8
+      totalUnitCount: 8
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0100000003000000
+    latestWeekUpdate: 0
+  - pointName: Green March
+    population: 0
+    coinTax: 20
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 1
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 4
+      totalUnitCount: 4
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 3
+      totalUnitCount: 3
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 8
+      totalUnitCount: 8
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 6
+      totalUnitCount: 6
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0000000003000000
+    latestWeekUpdate: 0
+  - pointName: First Pilgrim
+    population: 0
+    coinTax: 30
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 1
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 4
+      totalUnitCount: 4
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 6
+      totalUnitCount: 6
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 6
+      totalUnitCount: 6
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 10
+      totalUnitCount: 10
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0100000003000000
+    latestWeekUpdate: 0
+  - pointName: Beast Path
+    population: 0
+    coinTax: 20
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 2
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 3
+      totalUnitCount: 3
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 7
+      totalUnitCount: 7
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 10
+      totalUnitCount: 10
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 1
+      totalUnitCount: 1
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0400000003000000
+    latestWeekUpdate: 0
+  - pointName: Ali's Foot
+    population: 0
+    coinTax: 30
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 2
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 10
+      totalUnitCount: 10
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 6
+      totalUnitCount: 6
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 12
+      totalUnitCount: 12
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0200000000000000
+    latestWeekUpdate: 0
+  - pointName: Desert Breeze
+    population: 0
+    coinTax: 30
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 2
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 7
+      totalUnitCount: 7
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 9
+      totalUnitCount: 9
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 10
+      totalUnitCount: 10
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 8
+      totalUnitCount: 8
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0000000001000000
+    latestWeekUpdate: 0
+  - pointName: Ali's Toe
+    population: 0
+    coinTax: 30
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 2
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 9
+      totalUnitCount: 9
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 8
+      totalUnitCount: 8
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 8
+      totalUnitCount: 8
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 6
+      totalUnitCount: 6
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0000000002000000
+    latestWeekUpdate: 0
+  - pointName: Shallow Wind
+    population: 0
+    coinTax: 10
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 2
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 0
+      totalUnitCount: 0
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 0
+      totalUnitCount: 0
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0400000003000000
+    latestWeekUpdate: 0
+  - pointName: Ali's Rest
+    population: 0
+    coinTax: 20
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 2
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 6
+      totalUnitCount: 6
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 1
+      totalUnitCount: 1
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0400000001000000
+    latestWeekUpdate: 0
+  - pointName: Breeze Wind
+    population: 0
+    coinTax: 10
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 2
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 3
+      totalUnitCount: 3
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 3
+      totalUnitCount: 3
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 0
+      totalUnitCount: 0
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 4
+      totalUnitCount: 4
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0400000003000000
+    latestWeekUpdate: 0
+  - pointName: Frozen Stairs
+    population: 0
+    coinTax: 10
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 2
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 3
+      totalUnitCount: 3
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 0
+      totalUnitCount: 0
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 2
+      totalUnitCount: 2
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0400000003000000
+    latestWeekUpdate: 0
+  - pointName: Before Peak
+    population: 0
+    coinTax: 10
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 2
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 3
+      totalUnitCount: 3
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 1
+      totalUnitCount: 1
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 1
+      totalUnitCount: 1
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0400000003000000
+    latestWeekUpdate: 0
+  - pointName: Ali's Head
+    population: 0
+    coinTax: 20
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 2
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 7
+      totalUnitCount: 7
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0200000001000000
+    latestWeekUpdate: 0
+  - pointName: Maiden's Rest
+    population: 0
+    coinTax: 20
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 2
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 4
+      totalUnitCount: 4
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 5
+      totalUnitCount: 5
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 3
+      totalUnitCount: 3
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 4
+      totalUnitCount: 4
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0100000003000000
+    latestWeekUpdate: 0
+  - pointName: Ice Palace
+    population: 0
+    coinTax: 10
+    ownedBy: 0
+    aiMindset: 0
+    mapType: 2
+    leaderUnit:
+      heroRarity: 0
+      isRandomGenerated: 0
+      heroLevel: 1
+      unitInformation:
+        unitName: 
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 0
+        curSpeed: 0
+        origSpeed: 0
+        minDamage: 0
+        maxDamage: 0
+        range: 0
+        unitCooldown: 1
+        healcost: 5
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: 
+        currentState: 0
+        deathThreshold: -5
+        morale: 0
+        buffList: []
+      healthGrowthRate: 0
+      speedGrowthRate: 0
+      damageGrowthRate: 0
+      baseHeroCoinPrice: 0
+      skillsList: []
+      equipments: []
+    visibleToPlayer: 0
+    travellersOnPoint: []
+    troopsCarried:
+    - unitInformation:
+        unitName: Recruit
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 5
+        curSpeed: 0
+        origSpeed: 0.3
+        minDamage: 1
+        maxDamage: 2
+        range: 1
+        unitCooldown: 1
+        healcost: 2
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 2
+      totalUnitCount: 2
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Swordsman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 10
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 3
+        maxDamage: 4
+        range: 1
+        unitCooldown: 5
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Agile Reflex
+          duration: 0
+          targetStats: 5
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 2
+      totalUnitCount: 2
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Spearman
+        unitGenericName: 
+        attackType: 0
+        curhealth: 0
+        maxHealth: 9
+        curSpeed: 0
+        origSpeed: 0.4
+        minDamage: 2
+        maxDamage: 3
+        range: 2
+        unitCooldown: 3
+        healcost: 4
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList:
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+        - buffName: Keen Vision
+          duration: 0
+          targetStats: 4
+          effectAmount: 20
+          permanentBuff: 1
+          buffTrigger: 1
+      totalUnitsAvailableForDeployment: 3
+      totalUnitCount: 3
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    - unitInformation:
+        unitName: Archer
+        unitGenericName: 
+        attackType: 1
+        curhealth: 0
+        maxHealth: 7
+        curSpeed: 0
+        origSpeed: 0.2
+        minDamage: 1
+        maxDamage: 2
+        range: 6
+        unitCooldown: 3
+        healcost: 3
+        unitPrice: 5
+        blockProjectile: 0
+        blockMelee: 0
+        prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
+        currentState: 0
+        deathThreshold: -1
+        morale: 0
+        buffList: []
+      totalUnitsAvailableForDeployment: 3
+      totalUnitCount: 3
+      totalInjuredCount: 0
+      totalReturningUnitCount: 0
+      totalDeathCount: 0
+    spawnableTravellers: 0000000003000000
+    latestWeekUpdate: 0

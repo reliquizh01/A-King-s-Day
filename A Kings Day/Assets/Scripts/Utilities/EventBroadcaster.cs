@@ -231,9 +231,7 @@ namespace Utilities
             {
                 param = new Parameters();
             }
-
             param.AddParameter<string>("__event_name__", eventName);
-
             this.eventListeners[eventName].NotifyObserver(param);
         }
         #endregion

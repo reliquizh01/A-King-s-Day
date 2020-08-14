@@ -164,4 +164,34 @@ public class ScenePointPathfinder : MonoBehaviour
         }
         yield return null;
     }
+
+    public ScenePointBehavior ObtainNearestScenePoint(Vector2 thisPoint)
+    {
+        ScenePointBehavior tmp = new ScenePointBehavior();
+        float distToBeat = 0;
+        int pointIdx = -1;
+
+        for (int i = 0; i < currentScenePoints.Count; i++)
+        {
+            float curDist = Vector2.Distance(thisPoint, currentScenePoints[i].transform.position);
+            if(i == 0)
+            {
+                distToBeat = curDist;
+                pointIdx = i;
+            }
+            else if (curDist < distToBeat)
+            {
+                distToBeat = curDist;
+                pointIdx = i;
+            }
+        }
+        tmp = currentScenePoints[pointIdx];
+        return tmp;
+    }
+
+    public ScenePointBehavior ObtainNearestScenePoint(string pointName)
+    {
+        Debug.Log("Current Point Count:" + currentScenePoints.Count);
+        return currentScenePoints.Find(x => x.gameObject.name == pointName);
+    }
 }

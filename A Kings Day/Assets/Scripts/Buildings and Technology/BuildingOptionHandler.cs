@@ -38,6 +38,11 @@ namespace Buildings
         {
             for (int i = 0; i < buildingOptions.Count; i++)
             {
+                if(myBuilding.buildingInformation == null)
+                {
+                    continue;
+                }
+
                 if (myBuilding.buildingInformation.buildingCondition == BuildingCondition.Ruins)
                 {
                     if (buildingOptions[i].type != BuildingOptionType.Upgrade)

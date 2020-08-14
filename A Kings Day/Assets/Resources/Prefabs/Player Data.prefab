@@ -45,30 +45,97 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceType: 2
   curPlayer:
+    fileData: 0
+    weekCount: 1
     kingdomsName: 
     dynastyName: 
     level: 0
-    weekCount: 1
-    storyRoll: 0.007
-    currentRoll: 0.007
+    bestTroops: 0
+    myFame: 0
+    wieldedWeapon: 0
+    familySecret: 0
     finishedStories: []
-    troops: 0
+    queuedDataEventsList: []
+    curDataStory:
+      startingWeek: 0
+      repetitionType: 0
+      storyTitle: 
+      description: 
+      isLinear: 0
+      curEventIdx: 0
+      storyEventTitlesList: []
+      storyEvents: []
+      eventIntervals: 
+      eventBoosts: []
+      nextEventWeek: 0
+    curDataEvent:
+      title: 
+      eventType: 0
+      reporterType: 0
+      levelRequired: 0
+      difficultyType: 0
+      description: 
+      isStoryArc: 0
+      storyArc: 
+      arcEnd: 0
+      eventDecision: []
+    eventFinished: 0
+    recruits: 0
+    barracksCapacity: 0
     troopsLoyalty: 0
+    swordsmenCount: 0
+    spearmenCount: 0
+    archerCount: 0
+    swordsmenMercCount: 0
+    spearmenMercCount: 0
+    archerMercCount: 0
     population: 0
+    safePopulation: 50
     pouplationLoyalty: 0
     curTaxWeeksCounter: 0
     canReceiveTax: 0
     farmerCount: 0
+    herdsmanCount: 0
+    storageKeeperCount: 0
+    populationBurst: 0
+    potentialRefugee: 0
+    potentialMerchantArrival: 0
+    balconyBuildingsAdded: 0
+    buildingInformationData: []
+    potentialGoodsMerchant: 0
+    potentialEquipsMerchant: 0
+    potentialExoticMerchant: 0
+    potentialCommonHero: 20
+    potentialRareHero: 10
+    potentialLegHero: 5
+    potentialMercSwords: 5
+    potentialMercSpear: 5
+    potentialMercArcher: 5
+    swordsmenMercAvail: 0
+    spearmenMercAvail: 0
+    archerMercAvail: 0
+    myHeroes: []
+    tavernHeroes: []
+    myItems: []
+    currentShopMerchants: []
+    currentFestivalMerchants: []
     foods: 0
+    safeFood: 0
     cows: 0
+    safeCows: 0
     curGrainWeeksCounter: 0
     canReceiveGrainProduce: 0
     curCowBirthCounter: 0
     canReceiveNewCows: 0
     coins: 0
+    coinsCapacity: 0
     curMonthTaxCounter: 0
     canReceiveMonthlyTax: 0
-    currentTechanologies: []
+    currentTechnologies: []
+    storyRoll: 0.007
+    currentRoll: 0.007
+  uncleanWeeks: 0
+  baseDeathChance: 4
   baseBirthrate: 20
   techBirthrate: 0
   settlerChance: 10
@@ -125,30 +192,95 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceType: 3
   curPlayer:
+    fileData: 0
+    weekCount: 1
     kingdomsName: 
     dynastyName: 
     level: 0
-    weekCount: 1
-    storyRoll: 0.007
-    currentRoll: 0.007
+    bestTroops: 0
+    myFame: 0
+    wieldedWeapon: 0
+    familySecret: 0
     finishedStories: []
-    troops: 0
+    queuedDataEventsList: []
+    curDataStory:
+      startingWeek: 0
+      repetitionType: 0
+      storyTitle: 
+      description: 
+      isLinear: 0
+      curEventIdx: 0
+      storyEventTitlesList: []
+      storyEvents: []
+      eventIntervals: 
+      eventBoosts: []
+      nextEventWeek: 0
+    curDataEvent:
+      title: 
+      eventType: 0
+      reporterType: 0
+      levelRequired: 0
+      difficultyType: 0
+      description: 
+      isStoryArc: 0
+      storyArc: 
+      arcEnd: 0
+      eventDecision: []
+    eventFinished: 0
+    recruits: 0
+    barracksCapacity: 0
     troopsLoyalty: 0
+    swordsmenCount: 0
+    spearmenCount: 0
+    archerCount: 0
+    swordsmenMercCount: 0
+    spearmenMercCount: 0
+    archerMercCount: 0
     population: 0
+    safePopulation: 50
     pouplationLoyalty: 0
     curTaxWeeksCounter: 0
     canReceiveTax: 0
     farmerCount: 0
+    herdsmanCount: 0
+    storageKeeperCount: 0
+    populationBurst: 0
+    potentialRefugee: 0
+    potentialMerchantArrival: 0
+    balconyBuildingsAdded: 0
+    buildingInformationData: []
+    potentialGoodsMerchant: 0
+    potentialEquipsMerchant: 0
+    potentialExoticMerchant: 0
+    potentialCommonHero: 20
+    potentialRareHero: 10
+    potentialLegHero: 5
+    potentialMercSwords: 5
+    potentialMercSpear: 5
+    potentialMercArcher: 5
+    swordsmenMercAvail: 0
+    spearmenMercAvail: 0
+    archerMercAvail: 0
+    myHeroes: []
+    tavernHeroes: []
+    myItems: []
+    currentShopMerchants: []
+    currentFestivalMerchants: []
     foods: 0
+    safeFood: 0
     cows: 0
+    safeCows: 0
     curGrainWeeksCounter: 0
     canReceiveGrainProduce: 0
     curCowBirthCounter: 0
     canReceiveNewCows: 0
     coins: 0
+    coinsCapacity: 0
     curMonthTaxCounter: 0
     canReceiveMonthlyTax: 0
-    currentTechanologies: []
+    currentTechnologies: []
+    storyRoll: 0.007
+    currentRoll: 0.007
   techTechDiscount: 0
   techDiscountCoinPenalty: 0
   baseMerchantArrival: 20
@@ -201,30 +333,95 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceType: 1
   curPlayer:
+    fileData: 0
+    weekCount: 1
     kingdomsName: 
     dynastyName: 
     level: 0
-    weekCount: 1
-    storyRoll: 0.007
-    currentRoll: 0.007
+    bestTroops: 0
+    myFame: 0
+    wieldedWeapon: 0
+    familySecret: 0
     finishedStories: []
-    troops: 0
+    queuedDataEventsList: []
+    curDataStory:
+      startingWeek: 0
+      repetitionType: 0
+      storyTitle: 
+      description: 
+      isLinear: 0
+      curEventIdx: 0
+      storyEventTitlesList: []
+      storyEvents: []
+      eventIntervals: 
+      eventBoosts: []
+      nextEventWeek: 0
+    curDataEvent:
+      title: 
+      eventType: 0
+      reporterType: 0
+      levelRequired: 0
+      difficultyType: 0
+      description: 
+      isStoryArc: 0
+      storyArc: 
+      arcEnd: 0
+      eventDecision: []
+    eventFinished: 0
+    recruits: 0
+    barracksCapacity: 0
     troopsLoyalty: 0
+    swordsmenCount: 0
+    spearmenCount: 0
+    archerCount: 0
+    swordsmenMercCount: 0
+    spearmenMercCount: 0
+    archerMercCount: 0
     population: 0
+    safePopulation: 50
     pouplationLoyalty: 0
     curTaxWeeksCounter: 0
     canReceiveTax: 0
     farmerCount: 0
+    herdsmanCount: 0
+    storageKeeperCount: 0
+    populationBurst: 0
+    potentialRefugee: 0
+    potentialMerchantArrival: 0
+    balconyBuildingsAdded: 0
+    buildingInformationData: []
+    potentialGoodsMerchant: 0
+    potentialEquipsMerchant: 0
+    potentialExoticMerchant: 0
+    potentialCommonHero: 20
+    potentialRareHero: 10
+    potentialLegHero: 5
+    potentialMercSwords: 5
+    potentialMercSpear: 5
+    potentialMercArcher: 5
+    swordsmenMercAvail: 0
+    spearmenMercAvail: 0
+    archerMercAvail: 0
+    myHeroes: []
+    tavernHeroes: []
+    myItems: []
+    currentShopMerchants: []
+    currentFestivalMerchants: []
     foods: 0
+    safeFood: 0
     cows: 0
+    safeCows: 0
     curGrainWeeksCounter: 0
     canReceiveGrainProduce: 0
     curCowBirthCounter: 0
     canReceiveNewCows: 0
     coins: 0
+    coinsCapacity: 0
     curMonthTaxCounter: 0
     canReceiveMonthlyTax: 0
-    currentTechanologies: []
+    currentTechnologies: []
+    storyRoll: 0.007
+    currentRoll: 0.007
   troopHealth: 10
   techHealth: 0
   troopDmg: 1
@@ -233,7 +430,7 @@ MonoBehaviour:
   techCoin: 0
   maxTroops: 50
   techMaxTroops: 0
-  curMorale: 100
+  baseMorale: 30
   techMorale: 0
 --- !u!1 &3862405520960112764
 GameObject:
@@ -287,30 +484,95 @@ MonoBehaviour:
   populationBehavior: {fileID: 8093035889446869702}
   coinBehavior: {fileID: 8728936477097277812}
   playerData:
+    fileData: 0
+    weekCount: 1
     kingdomsName: 
     dynastyName: 
     level: 0
-    weekCount: 1
-    storyRoll: 0.007
-    currentRoll: 0.007
+    bestTroops: 0
+    myFame: 0
+    wieldedWeapon: 0
+    familySecret: 0
     finishedStories: []
-    troops: 30
+    queuedDataEventsList: []
+    curDataStory:
+      startingWeek: 0
+      repetitionType: 0
+      storyTitle: 
+      description: 
+      isLinear: 0
+      curEventIdx: 0
+      storyEventTitlesList: []
+      storyEvents: []
+      eventIntervals: 
+      eventBoosts: []
+      nextEventWeek: 0
+    curDataEvent:
+      title: 
+      eventType: 0
+      reporterType: 0
+      levelRequired: 0
+      difficultyType: 0
+      description: 
+      isStoryArc: 0
+      storyArc: 
+      arcEnd: 0
+      eventDecision: []
+    eventFinished: 0
+    recruits: 95
+    barracksCapacity: 0
     troopsLoyalty: 0
-    population: 30
+    swordsmenCount: 20
+    spearmenCount: 35
+    archerCount: 40
+    swordsmenMercCount: 0
+    spearmenMercCount: 0
+    archerMercCount: 0
+    population: 180
+    safePopulation: 50
     pouplationLoyalty: 0
     curTaxWeeksCounter: 0
     canReceiveTax: 0
     farmerCount: 0
-    foods: 30
+    herdsmanCount: 0
+    storageKeeperCount: 0
+    populationBurst: 0
+    potentialRefugee: 0
+    potentialMerchantArrival: 0
+    balconyBuildingsAdded: 0
+    buildingInformationData: []
+    potentialGoodsMerchant: 0
+    potentialEquipsMerchant: 0
+    potentialExoticMerchant: 0
+    potentialCommonHero: 20
+    potentialRareHero: 10
+    potentialLegHero: 5
+    potentialMercSwords: 5
+    potentialMercSpear: 5
+    potentialMercArcher: 5
+    swordsmenMercAvail: 0
+    spearmenMercAvail: 0
+    archerMercAvail: 0
+    myHeroes: []
+    tavernHeroes: []
+    myItems: []
+    currentShopMerchants: []
+    currentFestivalMerchants: []
+    foods: 400
+    safeFood: 0
     cows: 0
+    safeCows: 0
     curGrainWeeksCounter: 0
     canReceiveGrainProduce: 0
     curCowBirthCounter: 0
     canReceiveNewCows: 0
-    coins: 30
+    coins: 270
+    coinsCapacity: 0
     curMonthTaxCounter: 0
     canReceiveMonthlyTax: 0
-    currentTechanologies: []
+    currentTechnologies: []
+    storyRoll: 0.007
+    currentRoll: 0.007
 --- !u!1 &7414676175570051930
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,30 +618,95 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceType: 0
   curPlayer:
+    fileData: 0
+    weekCount: 1
     kingdomsName: 
     dynastyName: 
     level: 0
-    weekCount: 1
-    storyRoll: 0.007
-    currentRoll: 0.007
+    bestTroops: 0
+    myFame: 0
+    wieldedWeapon: 0
+    familySecret: 0
     finishedStories: []
-    troops: 0
+    queuedDataEventsList: []
+    curDataStory:
+      startingWeek: 0
+      repetitionType: 0
+      storyTitle: 
+      description: 
+      isLinear: 0
+      curEventIdx: 0
+      storyEventTitlesList: []
+      storyEvents: []
+      eventIntervals: 
+      eventBoosts: []
+      nextEventWeek: 0
+    curDataEvent:
+      title: 
+      eventType: 0
+      reporterType: 0
+      levelRequired: 0
+      difficultyType: 0
+      description: 
+      isStoryArc: 0
+      storyArc: 
+      arcEnd: 0
+      eventDecision: []
+    eventFinished: 0
+    recruits: 0
+    barracksCapacity: 0
     troopsLoyalty: 0
+    swordsmenCount: 0
+    spearmenCount: 0
+    archerCount: 0
+    swordsmenMercCount: 0
+    spearmenMercCount: 0
+    archerMercCount: 0
     population: 0
+    safePopulation: 50
     pouplationLoyalty: 0
     curTaxWeeksCounter: 0
     canReceiveTax: 0
     farmerCount: 0
+    herdsmanCount: 0
+    storageKeeperCount: 0
+    populationBurst: 0
+    potentialRefugee: 0
+    potentialMerchantArrival: 0
+    balconyBuildingsAdded: 0
+    buildingInformationData: []
+    potentialGoodsMerchant: 0
+    potentialEquipsMerchant: 0
+    potentialExoticMerchant: 0
+    potentialCommonHero: 20
+    potentialRareHero: 10
+    potentialLegHero: 5
+    potentialMercSwords: 5
+    potentialMercSpear: 5
+    potentialMercArcher: 5
+    swordsmenMercAvail: 0
+    spearmenMercAvail: 0
+    archerMercAvail: 0
+    myHeroes: []
+    tavernHeroes: []
+    myItems: []
+    currentShopMerchants: []
+    currentFestivalMerchants: []
     foods: 0
+    safeFood: 0
     cows: 0
+    safeCows: 0
     curGrainWeeksCounter: 0
     canReceiveGrainProduce: 0
     curCowBirthCounter: 0
     canReceiveNewCows: 0
     coins: 0
+    coinsCapacity: 0
     curMonthTaxCounter: 0
     canReceiveMonthlyTax: 0
-    currentTechanologies: []
+    currentTechnologies: []
+    storyRoll: 0.007
+    currentRoll: 0.007
   curWeeksCounter: 0
   curHarvestWeekCounter: 10
   foodStorageCounter: 50

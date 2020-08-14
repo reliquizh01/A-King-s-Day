@@ -42,6 +42,11 @@ public class OpeningManager : BaseManager
         }
     }
 
+    public override void PreOpenManager()
+    {
+        base.PreOpenManager();
+        panelBehaviour.PlayOpenAnimation();
+    }
     public void OpenOptions()
     {
         if(TransitionManager.GetInstance != null)
@@ -64,7 +69,7 @@ public class OpeningManager : BaseManager
             if(SaveLoadManager.GetInstance.saveDataList != null
                 && SaveLoadManager.GetInstance.saveDataList.Count > 0)
             {
-                TransitionManager.GetInstance.TransitionToNextGameView(GameViews.KingdomCreationView);
+                TransitionManager.GetInstance.TransitionToNextGameView(SceneType.Creation);
             }
             else
             {
@@ -75,21 +80,31 @@ public class OpeningManager : BaseManager
         {
             TransitionManager.GetInstance.LoadScene(SceneType.Creation);
         }
+        panelBehaviour.PlayCloseAnimation();
+
     }
 
     public void TransitionToCustomBattle()
     {
+        panelBehaviour.PlayCloseAnimation();
         TransitionManager.GetInstance.LoadScene(SceneType.Battlefield);
         PlayThisBackGroundMusic(BackgroundMusicType.battlefieldPreparation1);
+    }
+    public override void PreCloseManager()
+    {
+        base.PreCloseManager();
     }
     public override void CloseManager()
     {
         base.CloseManager();
-        startBtn.gameObject.SetActive(false);
     }
 
     public void MouseHoverOnOptions(GameObject thisOption)
     {
+        if(!thisOption.GetComponent<Button>().interactable)
+        {
+            return;
+        }
         if(AudioManager.GetInstance != null)
         {
             AudioManager.GetInstance.PlayDecisionHover();

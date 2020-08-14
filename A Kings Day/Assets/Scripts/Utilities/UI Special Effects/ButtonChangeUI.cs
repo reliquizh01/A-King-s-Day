@@ -117,14 +117,11 @@ public class ButtonChangeUI : MonoBehaviour, IPointerDownHandler, IPointerEnterH
 
     public void ButtonIsClicked()
     {
-        Debug.Log("Going Smoll");
         buttonIcon.transform.localScale = new Vector3(clickedSize, clickedSize, clickedSize);
     }
 
     public void ButtonIsNormal()
     {
-
-        Debug.Log("Going Big");
         buttonIcon.transform.localScale = new Vector3(normalSize, normalSize, normalSize);
     }
     public void OnPointerUp(PointerEventData eventData)

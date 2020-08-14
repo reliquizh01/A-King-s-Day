@@ -45,11 +45,16 @@ namespace Managers
         public CoinResourceBehavior coinBehavior;
 
         public PlayerKingdomData playerData = new PlayerKingdomData();
+        public PlayerCampaignData campaignData = new PlayerCampaignData();
         public void Start()
         {
-
+            EventBroadcaster.Instance.AddObserver(EventNames.WEEKLY_UPDATE, WeeklyResourceProductionUpdate);
         }
 
+        public void OnDestroy()
+        {
+            EventBroadcaster.Instance.RemoveActionAtObserver(EventNames.WEEKLY_UPDATE, WeeklyResourceProductionUpdate);
+        }
         public void SetupResourceProductionUpdate()
         {
             foodBehavior.SetupResourceBehavior();
@@ -57,7 +62,7 @@ namespace Managers
             populationBehavior.SetupResourceBehavior();
             coinBehavior.SetupResourceBehavior();
         }
-        public void WeeklyResourceProductionUpdate()
+        public void WeeklyResourceProductionUpdate(Parameters p = null)
         {
             Debug.Log("Updating ResourceProduction ----------------");
             foodBehavior.UpdateWeeklyProgress();
@@ -65,9 +70,23 @@ namespace Managers
             populationBehavior.UpdateWeeklyProgress();
             coinBehavior.UpdateWeeklyProgress();
         }
+        public void ReceiveCampaignData(PlayerCampaignData newData)
+        {
+            Debug.Log("Receiving Data From : " + newData._fileName + " Count:" + newData.travellerList.Count);
+            campaignData = new PlayerCampaignData();
+            campaignData = newData;
+
+
+            List<BaseTravellerData> newTemp = new List<BaseTravellerData>();
+            Debug.Log("Traveller Count:" + campaignData.travellerList.Count);
+
+            Debug.Log("Loading Campaign Finish");
+        }
         public void ReceiveData(PlayerKingdomData newData)
         {
+            playerData._fileName = newData._fileName;
             playerData.fileData = newData.fileData;
+
             playerData.kingdomsName = newData.kingdomsName;
             playerData.dynastyName = newData.dynastyName;
             playerData.level = newData.level;
@@ -75,21 +94,39 @@ namespace Managers
 
             playerData.finishedStories = newData.finishedStories;
 
-            playerData.queuedDataEventsList.AddRange(newData.queuedDataEventsList);
+            if(newData.queuedDataEventsList != null && newData.queuedDataEventsList.Count > 0)
+            {
+                if(playerData.queuedDataEventsList ==null)
+                {
+                    playerData.queuedDataEventsList = new List<EventDecisionData>();
+                }
+                playerData.queuedDataEventsList.AddRange(newData.queuedDataEventsList);
+            }
             playerData.curDataEvent = newData.curDataEvent;
             playerData.curDataStory = newData.curDataStory;
             playerData.eventFinished = newData.eventFinished;
 
-
-            playerData.recruits = newData.recruits;
+            Debug.Log("-------[Events Finished: " + playerData.eventFinished + " NewData Finish : " + newData.eventFinished + "]-------");
             playerData.barracksCapacity = newData.barracksCapacity;
             playerData.troopsLoyalty = newData.troopsLoyalty;
-            playerData.swordsmenCount = newData.swordsmenCount;
-            playerData.spearmenCount = newData.spearmenCount;
-            playerData.archerCount= newData.archerCount;
-            playerData.swordsmenMercCount = newData.swordsmenMercCount;
-            playerData.spearmenMercCount = newData.spearmenMercCount;
-            playerData.archerMercCount = newData.archerMercCount;
+
+            playerData.troopsList = new List<TroopsInformation>();
+            if(newData.troopsList != null && newData.troopsList.Count > 0)
+            {
+                for (int i = 0; i < newData.troopsList.Count; i++)
+                {
+                    playerData.troopsList.Add(newData.troopsList[i]);
+                }
+            }
+
+            playerData.troopsMercList = new List<TroopsInformation>();
+            if(newData.troopsMercList != null && newData.troopsMercList.Count > 0)
+            {
+                for (int i = 0; i < newData.troopsMercList.Count; i++)
+                {
+                    playerData.troopsMercList.Add(newData.troopsMercList[i]);
+                }
+            }
 
             playerData.population = newData.population;
             playerData.safePopulation = newData.safePopulation;
@@ -119,59 +156,69 @@ namespace Managers
             playerData.potentialMercSpear = newData.potentialMercSpear;
             playerData.potentialMercArcher = newData.potentialMercArcher;
 
-            playerData.swordsmenMercAvail = newData.swordsmenMercAvail;
-            playerData.spearmenMercAvail = newData.spearmenMercAvail;
-            playerData.archerMercAvail = newData.archerMercAvail;
-
             playerData.myHeroes = new List<BaseHeroInformationData>();
-            for (int i = 0; i < newData.myHeroes.Count; i++)
+            if(newData.myHeroes != null)
             {
-                BaseHeroInformationData tmp = new BaseHeroInformationData();
+                for (int i = 0; i < newData.myHeroes.Count; i++)
+                {
+                    BaseHeroInformationData tmp = new BaseHeroInformationData();
 
-                tmp.damageGrowthRate = newData.myHeroes[i].damageGrowthRate;
-                tmp.healthGrowthRate = newData.myHeroes[i].healthGrowthRate;
-                tmp.speedGrowthRate = newData.myHeroes[i].speedGrowthRate;
-                tmp.unitInformation = newData.myHeroes[i].unitInformation;
-                tmp.equipments = newData.myHeroes[i].equipments;
+                    tmp.damageGrowthRate = newData.myHeroes[i].damageGrowthRate;
+                    tmp.healthGrowthRate = newData.myHeroes[i].healthGrowthRate;
+                    tmp.speedGrowthRate = newData.myHeroes[i].speedGrowthRate;
+                    tmp.unitInformation = newData.myHeroes[i].unitInformation;
+                    tmp.equipments = newData.myHeroes[i].equipments;
 
-                playerData.myHeroes.Add(tmp);
+                    playerData.myHeroes.Add(tmp);
+                }
             }
 
             playerData.tavernHeroes = new List<BaseHeroInformationData>();
-            for (int i = 0; i < newData.tavernHeroes.Count; i++)
+            if(newData.tavernHeroes != null)
             {
-                BaseHeroInformationData tmp = new BaseHeroInformationData();
+                for (int i = 0; i < newData.tavernHeroes.Count; i++)
+                {
+                    BaseHeroInformationData tmp = new BaseHeroInformationData();
 
-                tmp.damageGrowthRate = newData.tavernHeroes[i].damageGrowthRate;
-                tmp.healthGrowthRate = newData.tavernHeroes[i].healthGrowthRate;
-                tmp.speedGrowthRate = newData.tavernHeroes[i].speedGrowthRate;
-                tmp.unitInformation = newData.tavernHeroes[i].unitInformation;
-                tmp.equipments = newData.tavernHeroes[i].equipments;
+                    tmp.damageGrowthRate = newData.tavernHeroes[i].damageGrowthRate;
+                    tmp.healthGrowthRate = newData.tavernHeroes[i].healthGrowthRate;
+                    tmp.speedGrowthRate = newData.tavernHeroes[i].speedGrowthRate;
+                    tmp.unitInformation = newData.tavernHeroes[i].unitInformation;
+                    tmp.equipments = newData.tavernHeroes[i].equipments;
 
-                playerData.tavernHeroes.Add(tmp);
+                    playerData.tavernHeroes.Add(tmp);
+                }
             }
 
             playerData.myItems = new List<ItemInformationData>();
-            for (int i = 0; i < newData.myItems.Count; i++)
+            if(newData.myItems != null)
             {
-                GameItems.ItemInformationData tmp = newData.myItems[i];
-                playerData.myItems.Add(tmp);
+                for (int i = 0; i < newData.myItems.Count; i++)
+                {
+                    GameItems.ItemInformationData tmp = newData.myItems[i];
+                    playerData.myItems.Add(tmp);
+                }
             }
 
             playerData.currentShopMerchants = new List<BaseMerchantInformationData>();
-            for (int i = 0; i < newData.currentShopMerchants.Count; i++)
+            if(newData.currentShopMerchants != null)
             {
-                BaseMerchantInformationData tmp = new BaseMerchantInformationData();
-                tmp.merchantName = newData.currentShopMerchants[i].merchantName;
-                tmp.itemsSold = newData.currentShopMerchants[i].itemsSold;
+                for (int i = 0; i < newData.currentShopMerchants.Count; i++)
+                {
+                    BaseMerchantInformationData tmp = new BaseMerchantInformationData();
+                    tmp.merchantName = newData.currentShopMerchants[i].merchantName;
+                    tmp.itemsSold = newData.currentShopMerchants[i].itemsSold;
 
-                playerData.currentShopMerchants.Add(tmp);
+                    playerData.currentShopMerchants.Add(tmp);
+                }
             }
 
             playerData.foods = newData.foods;
             playerData.safeFood = newData.safeFood;
             playerData.cows = newData.cows;
             playerData.safeCows = newData.safeCows;
+            playerData.barnExpansion = newData.barnExpansion;
+
             playerData.curGrainWeeksCounter = newData.curGrainWeeksCounter;
             playerData.canReceiveGrainProduce = newData.canReceiveGrainProduce;
 
@@ -184,41 +231,90 @@ namespace Managers
             playerData.canReceiveMonthlyTax = newData.canReceiveMonthlyTax;
 
             playerData.currentTechnologies = new List<BaseTechnologyData>();
-            for (int i = 0; i < newData.currentTechnologies.Count; i++)
+            if (newData.currentTechnologies != null)
             {
-                BaseTechnologyData tmp = new BaseTechnologyData();
-                tmp.technologyName = newData.currentTechnologies[i].technologyName;
-                tmp.improvedType =   newData.currentTechnologies[i].improvedType;
-                tmp.goldLevelRequirements = newData.currentTechnologies[i].goldLevelRequirements;
+                for (int i = 0; i < newData.currentTechnologies.Count; i++)
+                {
+                    BaseTechnologyData tmp = new BaseTechnologyData();
+                    tmp.technologyName = newData.currentTechnologies[i].technologyName;
+                    tmp.improvedType =   newData.currentTechnologies[i].improvedType;
+                    tmp.goldLevelRequirements = newData.currentTechnologies[i].goldLevelRequirements;
 
-                tmp.currentLevel = newData.currentTechnologies[i].currentLevel;
-                tmp.goldRequirement = newData.currentTechnologies[i].goldRequirement;
-                tmp.curGold = newData.currentTechnologies[i].curGold;
-                tmp.bonusIncrement = newData.currentTechnologies[i].bonusIncrement;
+                    tmp.currentLevel = newData.currentTechnologies[i].currentLevel;
+                    tmp.goldRequirement = newData.currentTechnologies[i].goldRequirement;
+                    tmp.curGold = newData.currentTechnologies[i].curGold;
+                    tmp.bonusIncrement = newData.currentTechnologies[i].bonusIncrement;
 
-                tmp.troopTechType = newData.currentTechnologies[i].troopTechType;
-                tmp.popTechType = newData.currentTechnologies[i].popTechType;
-                tmp.foodTechType = newData.currentTechnologies[i].foodTechType;
-                tmp.coinTechType = newData.currentTechnologies[i].coinTechType;
+                    tmp.troopTechType = newData.currentTechnologies[i].troopTechType;
+                    tmp.popTechType = newData.currentTechnologies[i].popTechType;
+                    tmp.foodTechType = newData.currentTechnologies[i].foodTechType;
+                    tmp.coinTechType = newData.currentTechnologies[i].coinTechType;
 
-                tmp.effectMesg = newData.currentTechnologies[i].effectMesg;
-                tmp.wittyMesg = newData.currentTechnologies[i].wittyMesg;
+                    tmp.effectMesg = newData.currentTechnologies[i].effectMesg;
+                    tmp.wittyMesg = newData.currentTechnologies[i].wittyMesg;
 
-                playerData.currentTechnologies.Add(tmp);
+                    playerData.currentTechnologies.Add(tmp);
+                }
             }
 
             SetupResourceProductionUpdate();
         }
+        public void ReceiveTroops(int amount, string unitName)
+        {
+            int idx = playerData.troopsList.FindIndex(x => x.unitInformation.unitName == unitName);
+            Debug.Log(idx + " Receiving Unit : " + unitName);
+            if (idx != -1)
+            {
+                playerData.troopsList[idx].totalUnitCount += amount;
+            }
+            else
+            {
+                if(TransitionManager.GetInstance != null)
+                {
+                    TroopsInformation tmp = new TroopsInformation();
+                    tmp.unitInformation = new UnitInformationData();
+                    tmp.unitInformation = TransitionManager.GetInstance.unitStorage.GetUnitInformation(unitName);
+                    tmp.totalUnitCount += amount;
 
-        public void ReceiveResource(int amount, ResourceType type)
+                    if(tmp.unitInformation != null && !string.IsNullOrEmpty(tmp.unitInformation.unitName))
+                    {
+                        playerData.troopsList.Add(tmp);
+                    }
+                }
+            }
+        }
+
+        public void ReceiveMercenary(int amount, string unitName)
+        {
+            int idx = playerData.troopsMercList.FindIndex(x => x.unitInformation.unitName == unitName);
+
+            if (idx != -1)
+            {
+                playerData.troopsMercList[idx].totalUnitCount += amount;
+            }
+            else
+            {
+                if (TransitionManager.GetInstance != null)
+                {
+                    TroopsInformation tmp = new TroopsInformation();
+                    tmp.unitInformation = new UnitInformationData();
+                    tmp.unitInformation = TransitionManager.GetInstance.unitStorage.GetUnitInformation(unitName);
+                    tmp.totalUnitCount += amount;
+
+                    if (tmp.unitInformation != null && !string.IsNullOrEmpty(tmp.unitInformation.unitName))
+                    {
+                        playerData.troopsMercList.Add(tmp);
+                    }
+                }
+            }
+        }
+
+        public void ReceiveResource(int amount, ResourceType type, string troopName = "")
         {
             switch (type)
             {
                 case ResourceType.Food:
                     playerData.foods += amount;
-                    break;
-                case ResourceType.Troops:
-                    playerData.recruits += amount;
                     break;
                 case ResourceType.Population:
                     playerData.SetPopulation(amount);
@@ -229,50 +325,54 @@ namespace Managers
                 case ResourceType.Cows:
                     playerData.cows += amount;
                     break;
-                case ResourceType.Archer:
-                    playerData.archerCount += amount;
-                    break;
-                case ResourceType.Swordsmen:
-                    playerData.swordsmenCount += amount;
-                    break;
-                case ResourceType.Spearmen:
-                    playerData.spearmenCount += amount;
-                    break;
                 case ResourceType.farmer:
                     playerData.farmerCount += amount;
                     break;
                 case ResourceType.herdsmen:
                     playerData.herdsmanCount += amount;
+                    playerData.UpdateCowStorage();
                     break;
                 case ResourceType.storageKeeper:
                     playerData.storageKeeperCount += amount;
+                    playerData.UpdateFoodStorage();
                     break;
-                case ResourceType.ArcherMerc:
-                    playerData.archerMercCount += amount;
+                case ResourceType.Troops:
+                    ReceiveTroops(amount, troopName);
                     break;
-                case ResourceType.SwordsmenMerc:
-                    playerData.swordsmenMercCount += amount;
+                case ResourceType.Mercenary:
+                    ReceiveMercenary(amount, troopName);
                     break;
-                case ResourceType.SpearmenMerc:
-                    playerData.spearmenMercCount += amount;
+                case ResourceType.cowStorage:
+                    playerData.barnExpansion += amount;
+                    playerData.UpdateCowStorage();
+                    break;
+                case ResourceType.foodStorage:
+                    playerData.safeFood += amount;
                     break;
 
                 default:
                     break;
             }
 
-            SaveData.SaveLoadManager.GetInstance.SaveCurrentData();
+            if(TransitionManager.GetInstance != null)
+            {
+                if(!TransitionManager.GetInstance.isNewGame)
+                {
+                    SaveData.SaveLoadManager.GetInstance.SaveCurrentData();
+                }
+            }
+            else
+            {
+                SaveData.SaveLoadManager.GetInstance.SaveCurrentData();
+            }
         }
-        public void RemoveResource(int amount, ResourceType type)
+        public void RemoveResource(int amount, ResourceType type, string troopName = "")
         {
             amount = Mathf.Abs(amount);
             switch (type)
             {
                 case ResourceType.Food:
                     playerData.foods -= amount;
-                    break;
-                case ResourceType.Troops:
-                    playerData.recruits -= amount;
                     break;
                 case ResourceType.Population:
                     playerData.SetPopulation(amount);
@@ -283,69 +383,69 @@ namespace Managers
                 case ResourceType.Cows:
                     playerData.cows -= amount;
                     break;
-                case ResourceType.Archer:
-                    playerData.archerCount -= amount;
-                    break;
-                case ResourceType.Swordsmen:
-                    playerData.swordsmenCount -= amount;
-                    break;
-                case ResourceType.Spearmen:
-                    playerData.spearmenCount -= amount;
-                    break;
                 case ResourceType.farmer:
                     playerData.farmerCount -= amount;
                     break;
                 case ResourceType.herdsmen:
                     playerData.herdsmanCount -= amount;
+                    playerData.UpdateCowStorage();
                     break;
                 case ResourceType.storageKeeper:
                     playerData.storageKeeperCount -= amount;
+                    playerData.UpdateFoodStorage();
                     break;
-                case ResourceType.ArcherMerc:
-                    playerData.archerMercCount -= amount;
+                case ResourceType.Troops:
+                    RemoveTroops(amount, troopName);
                     break;
-                case ResourceType.SwordsmenMerc:
-                    playerData.swordsmenMercCount -= amount;
+                case ResourceType.Mercenary:
+                    RemoveMercenary(amount, troopName);
                     break;
-                case ResourceType.SpearmenMerc:
-                    playerData.spearmenMercCount -= amount;
-                    break;
-
                 default:
                     break;
             }
 
-            SaveData.SaveLoadManager.GetInstance.SaveCurrentData();
+            if(TransitionManager.GetInstance != null && !TransitionManager.GetInstance.isNewGame)
+            {
+                SaveData.SaveLoadManager.GetInstance.SaveCurrentData();
+            }
         }
-
-        public int ObtainRemainingTroopResource()
+        public void RemoveTroops(int amount, string unitName)
         {
-
-            if(playerData.recruits > 0)
+            if(string.IsNullOrEmpty(unitName))
             {
-                return playerData.recruits;
-            }
-            else if(playerData.swordsmenCount > 0)
-            {
-                return playerData.swordsmenCount;
-            }
-            else if(playerData.spearmenCount > 0)
-            {
-                return playerData.spearmenCount;
-            }
-            else if(playerData.archerCount > 0)
-            {
-                return playerData.archerCount;
+                unitName = playerData.troopsList[0].unitInformation.unitName;
+                RemoveResource(amount, ResourceType.Troops, unitName);
             }
             else
             {
-                return playerData.recruits;
+                int idx = playerData.troopsList.FindIndex(x => x.unitInformation.unitName == unitName);
+                if (idx != -1)
+                {
+                    playerData.troopsList[idx].totalUnitCount -= amount;
+                }
+
+                if (playerData.troopsList[idx].totalUnitCount <= 0)
+                {
+                    playerData.troopsList.RemoveAt(idx);
+                }
+            }
+        }
+        public void RemoveMercenary(int amount, string unitName)
+        {
+            int idx = playerData.troopsMercList.FindIndex(x => x.unitInformation.unitName == unitName);
+            if (idx != -1)
+            {
+                playerData.troopsMercList[idx].totalUnitCount -= amount;
             }
 
-
+            if (playerData.troopsMercList[idx].totalUnitCount <= 0)
+            {
+                playerData.troopsMercList.RemoveAt(idx);
+            }
         }
         public void SaveQueuedData(List<EventDecisionData> queuedDataList, int finishCount)
         {
+            Debug.Log("Saving Data For Queued Events: " + finishCount);
             playerData.queuedDataEventsList = queuedDataList;
             playerData.eventFinished = finishCount;
         }
@@ -376,7 +476,7 @@ namespace Managers
             }
         }
 
-        public bool CheckResourceEnough(int amount, ResourceType type)
+        public bool CheckResourceEnough(int amount, ResourceType type, string troopName = "")
         {
             amount = Mathf.Abs(amount);
             
@@ -385,16 +485,65 @@ namespace Managers
                 case ResourceType.Food:
                     return (playerData.foods >= amount);
                 case ResourceType.Troops:
-                    return (playerData.recruits >= amount);
+                    int totalTroops = 0;
+                    if(playerData.troopsList != null && playerData.troopsList.Count > 0)
+                    {
+                        for (int i = 0; i < playerData.troopsList.Count; i++)
+                        {
+                            totalTroops += playerData.troopsList[i].totalUnitCount;
+                        }
+                    }
+                    return (totalTroops >= amount);
                 case ResourceType.Population:
                     return (playerData.population >= amount);
                 case ResourceType.Coin:
                     return (playerData.coins >= amount);
                 case ResourceType.Cows:
                     return (playerData.cows >= amount);
+                case ResourceType.Mercenary:
+                    int totalMerc = 0;
+                    if (playerData.troopsMercList != null && playerData.troopsMercList.Count > 0)
+                    {
+                        totalMerc = playerData.troopsMercList.Find(x => x.unitInformation.unitName == troopName).totalUnitCount;
+                    }
+                    return (totalMerc >= amount);
+                case ResourceType.herdsmen:
+                    return (playerData.herdsmanCount >= amount);
                 default:
                     return false;
             }
+        }
+
+        public BaseTravellerData ObtainTraveller(BaseHeroInformationData thisTraveller)
+        {
+            BaseTravellerData tmp = campaignData.travellerList.Find(x => x.leaderUnit == thisTraveller);
+            
+            return tmp;
+        }
+
+        public void SaveTraveller(BaseTravellerData thisTraveller)
+        {
+            int idx = -1;
+            if(campaignData.travellerList == null)
+            {
+                campaignData.travellerList = new List<BaseTravellerData>();
+            }
+
+            if(campaignData.travellerList != null && campaignData.travellerList.Count > 0)
+            {
+                idx = campaignData.travellerList.FindIndex(x => x.travellersName == thisTraveller.travellersName);
+            }
+
+            if (idx != -1)
+            {
+                campaignData.travellerList[idx] = thisTraveller;
+            }
+            else
+            {
+                campaignData.travellerList.Add(thisTraveller);
+            }
+
+           
         }
     }
 }

@@ -6,9 +6,10 @@ using Managers;
 public class BaseManager : MonoBehaviour
 {
     public BasePanelBehavior panelBehaviour;
-    public GameViews gameView;
+    public SceneType gameView;
     public bool Loaded = false;
     public bool isViewManager = true;
+    public bool isPlayManager = false;
     public virtual void Start()
     {
         if(TransitionManager.GetInstance != null)
@@ -50,12 +51,12 @@ public class BaseManager : MonoBehaviour
     public void CallBackTransitionOff()
     {
         TransitionManager.GetInstance.inTransition = false;
-        Loaded = true;
     }
 
     // CLOSING
     public virtual void PreCloseManager()
     {
+        Loaded = false;
         if (panelBehaviour != null && !string.IsNullOrEmpty(panelBehaviour.closeAnimationName))
         {
             StartCoroutine(panelBehaviour.WaitAnimationForAction(panelBehaviour.closeAnimationName, CloseManager));
@@ -68,7 +69,6 @@ public class BaseManager : MonoBehaviour
     }
     public virtual void CloseManager()
     {
-        //Debug.Log("Closing Manager View : " + gameView);
         CallBackTransitionOff();
     }
 

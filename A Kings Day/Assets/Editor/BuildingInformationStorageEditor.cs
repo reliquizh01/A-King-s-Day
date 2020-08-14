@@ -327,7 +327,7 @@ namespace Buildings
             }
             GUILayout.EndArea();
             // ACTION
-            GUILayout.BeginArea(new Rect(310, 50, 350, 300));
+            GUILayout.BeginArea(new Rect(310, 80, 450, 300));
             bool addAction = false;
             bool removeButton = false;
             float spritePosY = 0;
@@ -364,7 +364,7 @@ namespace Buildings
                     }
                 }
                 GUILayout.EndHorizontal();
-                actionScrollPos = GUILayout.BeginScrollView(actionScrollPos, new GUIStyle("RL Background"), GUILayout.Width(500), GUILayout.Height(position.height - 400));
+                actionScrollPos = GUILayout.BeginScrollView(actionScrollPos, new GUIStyle("RL Background"), GUILayout.Width(350), GUILayout.Height(position.height - 550));
                 for (int i = 0; i < curSelectedCard.actionTypes.Count; i++)
                 {
                     GUILayout.BeginHorizontal();
@@ -412,12 +412,15 @@ namespace Buildings
                         case CardActionType.LogoOnly:
                             GUILayout.BeginHorizontal();
                             curSelectedCard.actionTypes[i].logoIcon = (Sprite)EditorGUILayout.ObjectField(curSelectedCard.actionTypes[i].logoIcon, typeof(Sprite), false, GUILayout.Width(100));
-
                             GUILayout.EndHorizontal();
                             break;
                         default:
                             break;
                     }
+                    GUILayout.BeginHorizontal();
+                    GUILayout.Label("Hover Info:", GUILayout.Width(70));
+                    curSelectedCard.actionTypes[i].AdditionalInformationMessage = GUILayout.TextField(curSelectedCard.actionTypes[i].AdditionalInformationMessage, GUILayout.Width(250), GUILayout.Height(60));
+                    GUILayout.EndHorizontal();
                     GUILayout.Space(10);
                 }
                 GUILayout.EndScrollView();
@@ -617,14 +620,26 @@ namespace Buildings
                     {
                         GUILayout.BeginHorizontal();
                         curSelectedAction.rewardList[i].resourceType = (ResourceType)EditorGUILayout.EnumPopup("Type:", curSelectedAction.rewardList[i].resourceType, GUILayout.MaxWidth(150));
-                        GUILayout.Label("Amount:", GUILayout.MaxWidth(100));
-                        curSelectedAction.rewardList[i].rewardAmount = EditorGUILayout.IntField(curSelectedAction.rewardList[i].rewardAmount, GUILayout.MaxWidth(150));
+                        GUILayout.Label("Amount:", GUILayout.MaxWidth(60));
+                        curSelectedAction.rewardList[i].rewardAmount = EditorGUILayout.IntField(curSelectedAction.rewardList[i].rewardAmount, GUILayout.MaxWidth(80));
                         removeReward = GUILayout.Button("-", GUILayout.MaxWidth(50));
 
                         if(removeReward)
                         {
                             curSelectedAction.rewardList.RemoveAt(i);
                             removeReward = false;
+                        }
+
+                        if(curSelectedAction.rewardList[i].resourceType == ResourceType.Troops || curSelectedAction.rewardList[i].resourceType == ResourceType.Mercenary)
+                        {
+                            GUILayout.Label("Unit Name:", GUILayout.MaxWidth(65));
+                            curSelectedAction.rewardList[i].unitName = GUILayout.TextField(curSelectedAction.rewardList[i].unitName, GUILayout.MaxWidth(110));
+                        }
+                        else if (curSelectedAction.rewardList[i].resourceType == ResourceType.PotentialChances)
+                        {
+                            GUILayout.Label("Traveller:", GUILayout.MaxWidth(65));
+                            curSelectedAction.rewardList[i].potentialTraveller = (PotentialTravellers)EditorGUILayout.EnumPopup(curSelectedAction.rewardList[i].potentialTraveller, GUILayout.MaxWidth(150));
+
                         }
                         GUILayout.EndHorizontal();
                     }

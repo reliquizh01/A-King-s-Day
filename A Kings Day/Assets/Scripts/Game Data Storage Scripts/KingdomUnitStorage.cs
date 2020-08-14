@@ -42,6 +42,40 @@ namespace Characters
             return icon;
         }
 
+        public UnitInformationData GetUnitInformation(string genericName)
+        {
+            return basicUnitStorage.Find(x => x.unitName == genericName);
+        }
+
+        public List<TroopsInformation> GenerateBasicWarband(int unitCount)
+        {
+            List<int> troopTypes = new List<int>();
+            troopTypes.Add(0);
+            troopTypes.Add(0);
+            troopTypes.Add(0);
+            troopTypes.Add(0);
+
+            for (int i = 0; i < unitCount; i++)
+            {
+                int rand = UnityEngine.Random.Range(0, troopTypes.Count);
+                troopTypes[rand] += 1;
+            }
+            Debug.Log("[" + troopTypes[0] + "]" + "[" + troopTypes[1] + "]" + "[" + troopTypes[2] + "]" + "[" + troopTypes[3] + "]");
+
+            TroopsInformation recruit = TroopsInformation.ConvertToTroopsInformation(GetUnitInformation("Recruit"), troopTypes[0]);
+            TroopsInformation swordsman = TroopsInformation.ConvertToTroopsInformation(GetUnitInformation("Swordsman"), troopTypes[1]);
+            TroopsInformation spearman = TroopsInformation.ConvertToTroopsInformation(GetUnitInformation("Spearman"), troopTypes[2]);
+            TroopsInformation archer = TroopsInformation.ConvertToTroopsInformation(GetUnitInformation("Archer"), troopTypes[3]);
+
+            List<TroopsInformation> tmp = new List<TroopsInformation>();
+            tmp.Add(recruit);
+            tmp.Add(swordsman);
+            tmp.Add(spearman);
+            tmp.Add(archer);
+
+            return tmp;
+        }
+
     }
 
 }

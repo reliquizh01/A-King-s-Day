@@ -66,7 +66,7 @@ namespace GameResource
 
         private int birthRollWeekInterval = 5; // Every 5 weeks roll dice for cowbirth.
 
-        public int cowMeatPerKill = 3;
+        public int cowMeatPerKill = 10;
         public int techMeatPerKill = 0;
 
         public override void SetupResourceBehavior()
@@ -252,7 +252,7 @@ namespace GameResource
 
         public int GetCowMeat(int cowsKilled)
         {
-            int totalMeat = cowsKilled * (techMeatPerKill + cowMeatPerKill);
+            int totalMeat = cowsKilled * (techMeatPerKill + cowMeatPerKill + (curPlayer.herdsmanCount * 1));
             return totalMeat;
         }
 

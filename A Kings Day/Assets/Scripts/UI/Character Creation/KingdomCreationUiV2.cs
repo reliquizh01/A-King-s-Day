@@ -7,11 +7,13 @@ using Kingdoms;
 using Managers;
 using ResourceUI;
 using Utilities;
+using SaveData;
 
 public class KingdomCreationUiV2 : MonoBehaviour
 {
+    public BasePanelBehavior myPanel;
     public PlayerKingdomData temporaryKingdom;
-
+    public int recruitIdx;
     [Header("Resource Information")]
     public int distributeAmount = 20;
     public int initialFood, initialTroops, initialPopulation, initialCoins;
@@ -21,9 +23,13 @@ public class KingdomCreationUiV2 : MonoBehaviour
     [Header("Family Origin Information")]
     public List<KingdomDescriptionDropdown> kingdomDescriptionList;
 
+    [Header("Warning Tabs")]
+    public BasePanelWindow warningDistributionTab;
+    public BasePanelWindow playPrologueTab;
     public void Start()
     {
         temporaryKingdom = new PlayerKingdomData();
+
         for (int i = 0; i < resourcePagesList.Count; i++)
         {
             resourcePagesList[i].myController = this;
@@ -40,9 +46,22 @@ public class KingdomCreationUiV2 : MonoBehaviour
     public void SetupInitialData()
     {
         temporaryKingdom.foods = initialFood;
+        temporaryKingdom.safeFood = 50;
         temporaryKingdom.population = initialPopulation;
-        temporaryKingdom.recruits = initialTroops;
+        temporaryKingdom.safePopulation = 20;
+
+        TroopsInformation tmp = new TroopsInformation();
+        tmp.unitInformation = new Characters.UnitInformationData();
+        tmp.unitInformation = TransitionManager.GetInstance.unitStorage.GetUnitInformation("Recruit");
+        tmp.totalUnitCount = initialTroops;
+        temporaryKingdom.troopsList = new List<TroopsInformation>();
+        temporaryKingdom.troopsList.Add(tmp);
+        recruitIdx = temporaryKingdom.troopsList.Count - 1;
+
+        temporaryKingdom.barracksCapacity = 20;
         temporaryKingdom.coins = initialCoins;
+        temporaryKingdom.coinsCapacity = 30;
+
 
         for (int i = 0; i < resourcePagesList.Count; i++)
         {
@@ -50,7 +69,7 @@ public class KingdomCreationUiV2 : MonoBehaviour
         }
     }
 
-    #region RESOURCE INFORMATIOn
+    #region RESOURCE INFORMATION
     public void IncreaseResource(ResourceType thisResource)
     {
         int amountToAdd = 1;
@@ -62,7 +81,7 @@ public class KingdomCreationUiV2 : MonoBehaviour
 
         if(UtilitiesCommandObserver.GetInstance != null)
         {
-            if (UtilitiesCommandObserver.GetInstance.isKeyToggled(KeyCode.LeftShift))
+            if (UtilitiesCommandObserver.GetInstance.isKeyToggled(UtilitiesCommandObserver.GetInstance.GetKey("INCREASE_COUNT_INCREMENT")))
             {
                 if (distributeAmount >= 5)
                 {
@@ -81,7 +100,7 @@ public class KingdomCreationUiV2 : MonoBehaviour
                 temporaryKingdom.foods += amountToAdd;
                 break;
             case ResourceType.Troops:
-                temporaryKingdom.recruits += amountToAdd;
+                temporaryKingdom.troopsList[recruitIdx].totalUnitCount += amountToAdd;
                 break;
             case ResourceType.Population:
                 temporaryKingdom.population += amountToAdd;
@@ -92,15 +111,6 @@ public class KingdomCreationUiV2 : MonoBehaviour
             case ResourceType.Cows:
                 temporaryKingdom.cows += amountToAdd;
                 break;
-            case ResourceType.Archer:
-                temporaryKingdom.archerCount += amountToAdd;
-                break;
-            case ResourceType.Swordsmen:
-                temporaryKingdom.swordsmenCount += amountToAdd;
-                break;
-            case ResourceType.Spearmen:
-                temporaryKingdom.spearmenCount += amountToAdd;
-                break;
             case ResourceType.farmer:
                 temporaryKingdom.farmerCount += amountToAdd;
                 break;
@@ -109,15 +119,6 @@ public class KingdomCreationUiV2 : MonoBehaviour
                 break;
             case ResourceType.storageKeeper:
                 temporaryKingdom.storageKeeperCount += amountToAdd;
-                break;
-            case ResourceType.ArcherMerc:
-                temporaryKingdom.archerMercCount += amountToAdd;
-                break;
-            case ResourceType.SwordsmenMerc:
-                temporaryKingdom.swordsmenMercCount += amountToAdd;
-                break;
-            case ResourceType.SpearmenMerc:
-                temporaryKingdom.spearmenMercCount += amountToAdd;
                 break;
             default:
                 break;
@@ -137,7 +138,7 @@ public class KingdomCreationUiV2 : MonoBehaviour
                 thisCount = temporaryKingdom.foods;
                 break;
             case ResourceType.Troops:
-                thisCount = temporaryKingdom.recruits;
+                thisCount = temporaryKingdom.troopsList[recruitIdx].totalUnitCount;
                 break;
             case ResourceType.Population:
                 thisCount = temporaryKingdom.population;
@@ -148,15 +149,6 @@ public class KingdomCreationUiV2 : MonoBehaviour
             case ResourceType.Cows:
                 thisCount = temporaryKingdom.cows;
                 break;
-            case ResourceType.Archer:
-                thisCount = temporaryKingdom.archerCount;
-                break;
-            case ResourceType.Swordsmen:
-                thisCount = temporaryKingdom.swordsmenCount;
-                break;
-            case ResourceType.Spearmen:
-                thisCount = temporaryKingdom.spearmenCount;
-                break;
             case ResourceType.farmer:
                 thisCount = temporaryKingdom.farmerCount;
                 break;
@@ -165,15 +157,6 @@ public class KingdomCreationUiV2 : MonoBehaviour
                 break;
             case ResourceType.storageKeeper:
                 thisCount = temporaryKingdom.storageKeeperCount;
-                break;
-            case ResourceType.ArcherMerc:
-                thisCount = temporaryKingdom.archerMercCount;
-                break;
-            case ResourceType.SwordsmenMerc:
-                thisCount = temporaryKingdom.swordsmenMercCount;
-                break;
-            case ResourceType.SpearmenMerc:
-                thisCount = temporaryKingdom.spearmenMercCount;
                 break;
             default:
                 break;
@@ -207,15 +190,15 @@ public class KingdomCreationUiV2 : MonoBehaviour
                 temporaryKingdom.foods -= amountToAdd;
                 break;
             case ResourceType.Troops:
-                if (temporaryKingdom.recruits <= 0)
+                if (temporaryKingdom.troopsList[recruitIdx].totalUnitCount <= 0)
                 {
                     return;
                 }
                 if (decreaseIncrement)
                 {
-                    amountToAdd = (temporaryKingdom.recruits >= 10) ? 10 : temporaryKingdom.recruits;
+                    amountToAdd = (temporaryKingdom.troopsList[recruitIdx].totalUnitCount >= 10) ? 10 : temporaryKingdom.troopsList[recruitIdx].totalUnitCount;
                 }
-                temporaryKingdom.recruits -= amountToAdd;
+                temporaryKingdom.troopsList[recruitIdx].totalUnitCount -= amountToAdd;
                 break;
             case ResourceType.Population:
                 if (temporaryKingdom.population <= 0)
@@ -250,39 +233,6 @@ public class KingdomCreationUiV2 : MonoBehaviour
                 }
                 temporaryKingdom.cows -= amountToAdd;
                 break;
-            case ResourceType.Archer:
-                if (temporaryKingdom.archerCount <= 0)
-                {
-                    return;
-                }
-                if (decreaseIncrement)
-                {
-                    amountToAdd = (temporaryKingdom.archerCount >= 10) ? 10 : temporaryKingdom.archerCount;
-                }
-                temporaryKingdom.archerCount -= amountToAdd;
-                break;
-            case ResourceType.Swordsmen:
-                if (temporaryKingdom.swordsmenCount <= 0)
-                {
-                    return;
-                }
-                if (decreaseIncrement)
-                {
-                    amountToAdd = (temporaryKingdom.swordsmenCount >= 10) ? 10 : temporaryKingdom.swordsmenCount;
-                }
-                temporaryKingdom.swordsmenCount -= amountToAdd;
-                break;
-            case ResourceType.Spearmen:
-                if (temporaryKingdom.spearmenCount <= 0)
-                {
-                    return;
-                }
-                if (decreaseIncrement)
-                {
-                    amountToAdd = (temporaryKingdom.spearmenCount >= 10) ? 10 : temporaryKingdom.spearmenCount;
-                }
-                temporaryKingdom.spearmenCount -= amountToAdd;
-                break;
             case ResourceType.farmer:
                 if (temporaryKingdom.farmerCount <= 0)
                 {
@@ -315,39 +265,6 @@ public class KingdomCreationUiV2 : MonoBehaviour
                     amountToAdd = (temporaryKingdom.storageKeeperCount >= 10) ? 10 : temporaryKingdom.storageKeeperCount;
                 }
                 temporaryKingdom.storageKeeperCount -= amountToAdd;
-                break;
-            case ResourceType.ArcherMerc:
-                if (temporaryKingdom.archerMercCount <= 0)
-                {
-                    return;
-                }
-                if (decreaseIncrement)
-                {
-                    amountToAdd = (temporaryKingdom.archerMercCount >= 10) ? 10 : temporaryKingdom.archerMercCount;
-                }
-                temporaryKingdom.archerMercCount -= amountToAdd;
-                break;
-            case ResourceType.SwordsmenMerc:
-                if (temporaryKingdom.swordsmenMercCount <= 0)
-                {
-                    return;
-                }
-                if (decreaseIncrement)
-                {
-                    amountToAdd = (temporaryKingdom.swordsmenMercCount >= 10) ? 10 : temporaryKingdom.swordsmenMercCount;
-                }
-                temporaryKingdom.swordsmenMercCount -= amountToAdd;
-                break;
-            case ResourceType.SpearmenMerc:
-                if (temporaryKingdom.spearmenMercCount <= 0)
-                {
-                    return;
-                }
-                if (decreaseIncrement)
-                {
-                    amountToAdd = (temporaryKingdom.spearmenMercCount >= 10) ? 10 : temporaryKingdom.spearmenMercCount;
-                }
-                temporaryKingdom.spearmenMercCount -= amountToAdd;
                 break;
             default:
                 break;
@@ -388,4 +305,51 @@ public class KingdomCreationUiV2 : MonoBehaviour
         }
     }
     #endregion
+
+    public void CheckEstablishClick()
+    {
+        if(distributeAmount > 0)
+        {
+            OpenWarning();
+        }
+        else
+        {
+            OpenPrologueAccept();
+        }
+    }
+
+    public void OpenWarning()
+    {
+        warningDistributionTab.gameObject.SetActive(true);
+    }
+
+    public void OpenPrologueAccept()
+    {
+        warningDistributionTab.CloseWindow();
+        playPrologueTab.gameObject.SetActive(true);
+    }
+
+
+    public void PlayPrologue()
+    {
+        myPanel.PlayCloseAnimation();
+        if(CreationSceneManager.GetInstance != null)
+        {
+            CreationSceneManager.GetInstance.StartPrologue();
+        }
+        playPrologueTab.CloseWindow();
+
+        SaveLoadManager.GetInstance.inheritanceData = new PlayerKingdomData();
+        SaveLoadManager.GetInstance.inheritanceData = temporaryKingdom;
+    }
+
+
+    public void StraightToCourtroom()
+    {
+        if(CreationSceneManager.GetInstance != null)
+        {
+            CreationSceneManager.GetInstance.EndPrologueScene(temporaryKingdom);
+        }
+        playPrologueTab.CloseWindow();
+    }
 }

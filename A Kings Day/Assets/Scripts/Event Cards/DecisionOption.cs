@@ -92,7 +92,7 @@ namespace KingEvents
                         if (curDecision.rewards[i].rewardAmount < 0)
                         {
                             tmpAmount = Mathf.Abs(curDecision.rewards[i].rewardAmount);
-                            tmpAmount = playerData.recruits - tmpAmount;
+                            tmpAmount = playerData.ObtainTotalTroops() - tmpAmount;
 
                             if (tmpAmount < 0)
                             {

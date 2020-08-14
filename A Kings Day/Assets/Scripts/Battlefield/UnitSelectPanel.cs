@@ -19,6 +19,7 @@ namespace Battlefield
         public Image fill;
         public Image counterPanelBG;
         public Image unitImage;
+        public Sprite noUnitAvailable;
 
         public bool panelDisable = false;
 
@@ -78,6 +79,13 @@ namespace Battlefield
             countText.color = new Color(countText.color.r, countText.color.g, countText.color.b, alphaOff );
             fill.color = new Color(fill.color.r, fill.color.g, fill.color.b, alphaOff );
             counterPanelBG.color = new Color(counterPanelBG.color.r, counterPanelBG.color.g, counterPanelBG.color.b, alphaOff );
+        }
+
+        public void SetAsUnknown()
+        {
+            unitImage.sprite = noUnitAvailable;
+            startCounting = false;
+            DisablePanel();
         }
     }
 

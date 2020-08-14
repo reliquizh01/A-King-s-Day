@@ -8,8 +8,8 @@ public class MultiCountInformationPanel : InformationPanel
     public TextMeshProUGUI titleText;
     public List<TextMeshProUGUI> multiCountPanels;
 
-    public List<int> currentCounts;
-    public override void SetMultiCounter(List<int> newCounts, string newTitle = "")
+    public List<float> currentCounts;
+    public override void SetMultiCounter(List<float> newCounts, string newTitle = "")
     {
         base.SetMultiCounter(newCounts, newTitle);
         currentCounts = newCounts;

@@ -1,0 +1,651 @@
+fileFormatVersion: 2
+guid: 1ae695a9aca342f40b98ba6c0cfe7b35
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    nPOTScale: 1
+    sRGBTexture: 0
+    spriteMode: 2
+    spriteExtrude: 0
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData:
+  - name: Enemy_Approaching_Tutorial
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 837
+      y: 4
+      width: 814
+      height: 398
+    spriteID: a25992ec0eba09045b33a1a0a3ed57c3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 837, y: -67}
+  - name: Market_Tutorial
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 825
+      height: 467
+    spriteID: 51cb9db5f9f05104c8cbadbceb83d8aa
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 2}
+  - name: Tavern_Tutorial
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 479
+      width: 825
+      height: 467
+    spriteID: 86b2d2f8348df924a858eb5902694919
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 477}
+  - name: Travel_Tutorial
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 954
+      width: 825
+      height: 467
+    spriteID: edc6139f38b1e40409c81b1b8d27da6c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 952}
+  - name: Farm_Tutorial
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1429
+      width: 825
+      height: 467
+    spriteID: e0b0ecb72676ea64a99c77cd01674013
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1427}
+  - name: Housing_Tutorial
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1904
+      width: 825
+      height: 467
+    spriteID: 3bab1ebc46cf0f24187b382feae46e76
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1902}
+  - name: Shop_Tutorial
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2379
+      width: 825
+      height: 467
+    spriteID: 93778538a2be85b4ba657e7c7c3e2145
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 2377}
+  - name: Blacksmith_Tutorial
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2854
+      width: 825
+      height: 467
+    spriteID: 21479afea4b336142ae659f54129af06
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 2852}
+  - name: Barracks_Tutorial
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3329
+      width: 825
+      height: 467
+    spriteID: d432d0d37e5fb7b4e990668196ac1768
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 3327}
+  rigSpriteImportData:
+  - name: Market
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 481
+      width: 825
+      height: 467
+    spriteID: 40c99284a21525a478fcbc66e834c8fc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 479}
+  - name: Tavern
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 956
+      width: 825
+      height: 467
+    spriteID: 2cf4c59a1fbcece4591381d618bab1a1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 954}
+  - name: Travel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1431
+      width: 825
+      height: 467
+    spriteID: b94e2f9522b2272429c687886c9b410b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1429}
+  - name: Farm
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1906
+      width: 825
+      height: 467
+    spriteID: b781e9a50d181b0468c46e24dce104cc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1904}
+  - name: Housing
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2381
+      width: 825
+      height: 467
+    spriteID: 7d3aed4bf2a62154aa9bd609b649e597
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 2379}
+  - name: Shop
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2856
+      width: 825
+      height: 467
+    spriteID: 0829845022e2a2740b624fc701daae57
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 2854}
+  - name: Blacksmith
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3331
+      width: 825
+      height: 467
+    spriteID: 248a16d1e5bdaf84eba57da6cdf794f9
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 3329}
+  - name: Barracks
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 845
+      y: 4
+      width: 825
+      height: 467
+    spriteID: b32a0b62cc0964747838e3484c28f8bf
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 845, y: 2}
+  - name: Background
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 833
+      height: 469
+    spriteID: 568709a4509fa8d459ed709512a77d3c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  platformSettings:
+  - name: Default
+    overridden: 1
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 2048
+  importedTextureHeight: 4096
+  documentSize: {x: 833, y: 469}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 2048
+  textureActualHeight: 4096
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 0
+  mosaicPSDLayers:
+  - name: Enemy_Approaching_Tutorial
+    spriteName: Enemy_Approaching_Tutorial
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a25992ec0eba09045b33a1a0a3ed57c3
+    layerID: 10
+    mosaicPosition: {x: 837, y: 4}
+  - name: Market_Tutorial
+    spriteName: Market_Tutorial
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 51cb9db5f9f05104c8cbadbceb83d8aa
+    layerID: 9
+    mosaicPosition: {x: 4, y: 4}
+  - name: Tavern_Tutorial
+    spriteName: Tavern_Tutorial
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 86b2d2f8348df924a858eb5902694919
+    layerID: 8
+    mosaicPosition: {x: 4, y: 479}
+  - name: Travel_Tutorial
+    spriteName: Travel_Tutorial
+    isGroup: 0
+    parentIndex: -1
+    spriteID: edc6139f38b1e40409c81b1b8d27da6c
+    layerID: 7
+    mosaicPosition: {x: 4, y: 954}
+  - name: Farm_Tutorial
+    spriteName: Farm_Tutorial
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e0b0ecb72676ea64a99c77cd01674013
+    layerID: 6
+    mosaicPosition: {x: 4, y: 1429}
+  - name: Housing_Tutorial
+    spriteName: Housing_Tutorial
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3bab1ebc46cf0f24187b382feae46e76
+    layerID: 5
+    mosaicPosition: {x: 4, y: 1904}
+  - name: Shop_Tutorial
+    spriteName: Shop_Tutorial
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 93778538a2be85b4ba657e7c7c3e2145
+    layerID: 4
+    mosaicPosition: {x: 4, y: 2379}
+  - name: Blacksmith_Tutorial
+    spriteName: Blacksmith_Tutorial
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 21479afea4b336142ae659f54129af06
+    layerID: 3
+    mosaicPosition: {x: 4, y: 2854}
+  - name: Barracks_Tutorial
+    spriteName: Barracks_Tutorial
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d432d0d37e5fb7b4e990668196ac1768
+    layerID: 2
+    mosaicPosition: {x: 4, y: 3329}
+  rigPSDLayers:
+  - name: Market
+    spriteName: Market
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 40c99284a21525a478fcbc66e834c8fc
+    layerID: 9
+    mosaicPosition: {x: 4, y: 481}
+  - name: Tavern
+    spriteName: Tavern
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2cf4c59a1fbcece4591381d618bab1a1
+    layerID: 8
+    mosaicPosition: {x: 4, y: 956}
+  - name: Travel
+    spriteName: Travel
+    isGroup: 0
+    parentIndex: -1
+    spriteID: b94e2f9522b2272429c687886c9b410b
+    layerID: 7
+    mosaicPosition: {x: 4, y: 1431}
+  - name: Farm
+    spriteName: Farm
+    isGroup: 0
+    parentIndex: -1
+    spriteID: b781e9a50d181b0468c46e24dce104cc
+    layerID: 6
+    mosaicPosition: {x: 4, y: 1906}
+  - name: Housing
+    spriteName: Housing
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7d3aed4bf2a62154aa9bd609b649e597
+    layerID: 5
+    mosaicPosition: {x: 4, y: 2381}
+  - name: Shop
+    spriteName: Shop
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0829845022e2a2740b624fc701daae57
+    layerID: 4
+    mosaicPosition: {x: 4, y: 2856}
+  - name: Blacksmith
+    spriteName: Blacksmith
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 248a16d1e5bdaf84eba57da6cdf794f9
+    layerID: 3
+    mosaicPosition: {x: 4, y: 3331}
+  - name: Barracks
+    spriteName: Barracks
+    isGroup: 0
+    parentIndex: -1
+    spriteID: b32a0b62cc0964747838e3484c28f8bf
+    layerID: 2
+    mosaicPosition: {x: 845, y: 4}
+  - name: Background
+    spriteName: Background
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 568709a4509fa8d459ed709512a77d3c
+    layerID: 1
+    mosaicPosition: {x: 4, y: 4}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: Balcony Tutorial Atlas Texture
+  prefabAssetName: Balcony Tutorial Atlas Prefab
+  spriteLibAssetName: Balcony Tutorial Atlas Sprite Lib
+  secondarySpriteTextures: []

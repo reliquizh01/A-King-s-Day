@@ -6,18 +6,8 @@ using Utilities;
 using Characters;
 using UnityEngine.SceneManagement;
 using ResourceUI;
-
-public enum GameViews
-{
-    OpeningView,
-    KingdomCreationView,
-    GameView,
-    CourtroomView,
-    EventView,
-    ConversationView,
-    BalconyView,
-    BattlefieldView,
-}
+using Kingdoms;
+using Maps;
 
 namespace Managers
 {
@@ -25,7 +15,7 @@ namespace Managers
     [Serializable]
     public class ViewManager
     {
-        public GameViews gameView;
+        public SceneType gameView;
         public BaseManager thisManager;
     }
 
@@ -66,18 +56,47 @@ namespace Managers
         public OptionsController optionController;
 
         public BaseSceneManager currentSceneManager;
-        public ResourceInformationController resourceInformationController;
         public KingdomUnitStorage unitStorage;
+        public KingdomMapDataStorage kingdomMapStorage;
 
-        private SceneType preLoadThisScene;
+        [Header("Loading Mechanics")]
         public SceneType previousScene;
-        private bool isLoading = false;
-        private bool isLoadingNewScene = false;
+        public bool isLoading = false;
+        public bool isLoadingNewScene = false;
+        private SceneType preLoadThisScene;
+
+        [Header("Traveller Battle Mechanics")]
+        public BaseTravellerData attackedTravellerData;
+        public bool isEngagedWithTraveller;
+        [Header("Map Point Battle Mechanics")]
+        public MapPointInformationData attackedPointInformationData;
+        public bool isEngagedWithMapPoint;
+        [Header("Did Player Attacked?")]
+        public bool isPlayerAttacker;
+        
         public void Start()
         {
             EventBroadcaster.Instance.AddObserver(EventNames.ENABLE_TAB_COVER, ShowTabCover);
             EventBroadcaster.Instance.AddObserver(EventNames.DISABLE_TAB_COVER, HideTabCover);
         }
+        public void Update()
+        {
+            if (isLoadingNewScene)
+            {
+                if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex((int)preLoadThisScene))
+                {
+                    InitialTransitionOnNewScenes((int)preLoadThisScene);
+                    // Call Balcony Manager Here!
+                    isLoading = false;
+                    if (currentSceneManager.Loaded)
+                    {
+                        RemoveLoading();
+                        isLoadingNewScene = false;
+                    }
+                }
+            }
+        }
+
         public void OnDestroy()
         {
             EventBroadcaster.Instance.RemoveActionAtObserver(EventNames.ENABLE_TAB_COVER, ShowTabCover);
@@ -95,6 +114,11 @@ namespace Managers
             currentSceneManager.PreOpenManager();
 
             SetAsCurrentManager(thisManager.gameView, true);
+
+            if(thisManager.gameView == SceneType.Creation)
+            {
+                isNewGame = true;
+            }
         }
         public void ShowTabCover(Parameters p = null)
         {
@@ -121,18 +145,31 @@ namespace Managers
         }
         public void RemoveLoading(Action callback = null)
         {
-            Debug.Log("REMOVING LOADING ---------------------");
-            StartCoroutine(loadingScreen.WaitAnimationForAction(loadingScreen.closeAnimationName, callback));
+            if(callback != null)
+            {
+                StartCoroutine(loadingScreen.WaitAnimationForAction(loadingScreen.closeAnimationName, callback));
+            }
+            else
+            {
+                loadingScreen.PlayCloseAnimation();
+            }
+            isLoading = false;
         }
 
         public void LoadScene(SceneType thisScene)
         {
-            EventBroadcaster.Instance.PostEvent(EventNames.SAVE_KINGDOM_DATA);
             EventBroadcaster.Instance.PostEvent(EventNames.HIDE_TOOLTIP_MESG);
+            EventBroadcaster.Instance.PostEvent(EventNames.HIDE_RESOURCES);
+            EventBroadcaster.Instance.PostEvent(EventNames.BEFORE_LOAD_SCENE);
+
             previousScene = currentSceneManager.sceneType;
             preLoadThisScene = thisScene;
 
             ShowLoading(LoadScene);
+            if(previousScene != SceneType.Opening)
+            {
+                EventBroadcaster.Instance.PostEvent(EventNames.SAVE_KINGDOM_DATA);
+            }
 
             Debug.Log("----------Loading a Scene----------");
             isLoadingNewScene = true;
@@ -155,51 +192,16 @@ namespace Managers
             }
         }
 
-        IEnumerator DelayRemoveLoading()
-        {
-            yield return new WaitForSeconds(1);
-            RemoveLoading(); // DELAY REMOVE
-        }
-        public void Update()
-        {
-            if(isLoadingNewScene)
-            {
-               if(SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex((int)preLoadThisScene))
-                {
-                    InitialTransitionOnNewScenes((int)preLoadThisScene);
-                    // Call Balcony Manager Here!
-                    isLoadingNewScene = false;
-                    isLoading = false;
-                    if(currentSceneManager.Loaded)
-                    {
-                        RemoveLoading();
-                    }
-                }
-            }
-        }
 
         public void InitialTransitionOnNewScenes(int sceneIdx)
         {
-            switch(sceneIdx)
-            {
-                case 0:
-                    TransitionToNextGameView(GameViews.OpeningView);
-                    break;
-                case 1: 
-                    TransitionToNextGameView(GameViews.CourtroomView);
-                    break;
-                case 2:
-                    TransitionToNextGameView(GameViews.BalconyView);
-                    break;
-                case 3:
-                    TransitionToNextGameView(GameViews.BattlefieldView);
-                    break;
-            }
+            TransitionToNextGameView((SceneType)sceneIdx);
         }
         public void SetAsNewScene()
         {
             managerList.RemoveAll(x => x.thisManager == null);
             currentMgr = null;
+            Debug.Log("Nullifying Current Manager 2");
         }
 
         public void AddManager(BaseManager thisManager)
@@ -211,13 +213,13 @@ namespace Managers
 
             managerList.Add(newMgr);
         }
-        public void TransitionToNextGameView(GameViews thisView, bool isGameView = false)
+        public void TransitionToNextGameView(SceneType thisView, bool isGameView = false)
         {
            // Debug.Log("Transitioning to This View: " + thisView);
 
             if(currentMgr != null)
             {
-                if(currentMgr.thisManager != null)
+                if(currentMgr.thisManager != null && currentMgr.gameView != thisView)
                 {
                     currentMgr.thisManager.PreCloseManager();
                     currentMgr = null;
@@ -242,30 +244,40 @@ namespace Managers
                 }
             }
         }
-        public void SetAsCurrentManager(GameViews thisView,bool isGameView = false)
+        public void SetAsCurrentManager(SceneType thisView,bool isGameView = false)
         {
-           Debug.Log("Setting New Manager View : " + thisView);
-           ViewManager thisMgr = managerList.Find(x => x.gameView == thisView);
+           //Debug.Log("Setting New Manager View : " + thisView);
+           ViewManager thisMgr = managerList.Find(x => x.gameView == thisView && x.thisManager.isPlayManager == true);
 
-            if(currentMgr != null)
+            if(currentMgr != null && currentMgr.thisManager != null)
             {
                 if (currentMgr == thisMgr) return;
+                else
+                {
+                    currentMgr.thisManager.PreCloseManager();
+                }
             }
 
-            if (thisMgr != null)
+            if (thisMgr != null && currentMgr != thisMgr)
             {
                 currentMgr = thisMgr;
-                Debug.Log("Current Mgr: " + currentMgr);
-                if(currentMgr.gameView == GameViews.KingdomCreationView)
+                currentMgr.gameView = thisMgr.gameView;
+                Debug.Log("Current Mgr: " + currentMgr.thisManager.gameObject.name);
+                if(currentMgr.gameView == SceneType.Creation)
                 {
                     isNewGame = true;
                 }
+                else
+                {
+                    isNewGame = false;
+                }
+
                 CheckSetupResourcePanel();
                 StartCurrentManager();
             }
 
 
-            if (isLoading && thisView != GameViews.KingdomCreationView)
+            if (isLoading && thisView != SceneType.Creation)
             {
                 // Debug.Log("Setting Current Manager!");
                 isLoading = false;
@@ -274,34 +286,58 @@ namespace Managers
 
         public void CheckSetupResourcePanel()
         {
-            if (currentMgr.gameView == GameViews.CourtroomView)
+            if (currentMgr.gameView == SceneType.Courtroom)
             {
-                resourceInformationController.ShowResourcePanel(ResourcePanelType.overhead);
-                resourceInformationController.ShowWeekendPanel();
+                ResourceInformationController.GetInstance.ShowResourcePanel(ResourcePanelType.overhead);
+                ResourceInformationController.GetInstance.ShowWeekendPanel();
             }
-            else if (currentMgr.gameView == GameViews.BalconyView)
+            else if (currentMgr.gameView == SceneType.Balcony)
             {
-                resourceInformationController.ShowResourcePanel(ResourcePanelType.overhead);
-                resourceInformationController.ShowTravelPanel();
+                ResourceInformationController.GetInstance.ShowResourcePanel(ResourcePanelType.overhead);
+                ResourceInformationController.GetInstance.ShowTravelPanel();
             }
         }
         public void StartCurrentManager()
         {
             if(currentMgr.thisManager != null)
             {
-            //    Debug.Log("CURRENT VIEW : " + currentMgr.gameView);
-                currentMgr.thisManager.PreOpenManager();
+                if(!currentMgr.thisManager.Loaded)
+                {
+                    currentMgr.thisManager.PreOpenManager();
+                }
             }
         }
 
+        public void FaceMapPoint(MapPointInformationData mapPointInformation, bool isAttacker = false)
+        {
+            attackedPointInformationData = new MapPointInformationData();
+            attackedPointInformationData = mapPointInformation;
+
+            isEngagedWithMapPoint = true;
+            isPlayerAttacker = isAttacker;
+
+            LoadScene(SceneType.Battlefield);
+            HideTabCover();
+        }
+        public void FaceTravellerInBattle(BaseTravellerData thisTraveller, bool isAttacker = false)
+        {
+            attackedTravellerData = new BaseTravellerData();
+            attackedTravellerData = thisTraveller;
+
+            isEngagedWithTraveller = true;
+            isPlayerAttacker = isAttacker;
+
+            LoadScene(SceneType.Battlefield);
+            HideTabCover();
+        }
         public void TransitionToCustomBattleView()
         {
-            TransitionToNextGameView(GameViews.BattlefieldView, true);
+            TransitionToNextGameView(SceneType.Battlefield, true);
         }
 
         public void TransitionToSplashScreen()
         {
-            TransitionToNextGameView(GameViews.OpeningView, true);
+            TransitionToNextGameView(SceneType.Opening, true);
         }
     }
 }

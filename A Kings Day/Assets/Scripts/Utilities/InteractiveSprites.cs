@@ -23,6 +23,8 @@ public class InteractiveSprites : MonoBehaviour
     public bool isHovered;
     public float easeSpeed;
 
+    [Header("Click State")]
+    public bool switchedOn = false;
     [Header("Local Positions")]
     public Vector2 origPoint;
     public Vector2 targetPoint;
@@ -41,7 +43,14 @@ public class InteractiveSprites : MonoBehaviour
 
     public void Update()
     {
-
+        if(isMoving)
+        {
+            transform.localPosition = Vector2.MoveTowards(transform.localPosition, curTargetPoint, easeSpeed * Time.deltaTime);
+            if((Vector2)transform.localPosition == curTargetPoint)
+            {
+                isMoving = false;
+            }
+        }
     }
     public void OnMouseEnter()
     {
@@ -77,6 +86,11 @@ public class InteractiveSprites : MonoBehaviour
         {
             sprite.sprite = pressSprite;
         }
+
+        if(CheckMouseClick())
+        {
+            StartInteraction();
+        }
     }
 
     public void OnMouseUp()
@@ -85,6 +99,11 @@ public class InteractiveSprites : MonoBehaviour
         {
             sprite.sprite = origSprite;
         }
+    }
+
+    public bool CheckMouseClick()
+    {
+        return startInteractionType == SpriteInteractionType.EaseInClick || startInteractionType == SpriteInteractionType.TeleportToClick;
     }
     public bool CheckMouseEnter()
     {
@@ -100,7 +119,7 @@ public class InteractiveSprites : MonoBehaviour
         switch (startInteractionType)
         {
             case SpriteInteractionType.EaseInHover:
-                isMoving = true;
+
                 break;
             case SpriteInteractionType.TeleportToHover:
                 sprite.transform.localPosition = targetPoint;
@@ -112,9 +131,25 @@ public class InteractiveSprites : MonoBehaviour
             case SpriteInteractionType.ChangeSprite:
                 
                 break;
+            case SpriteInteractionType.EaseInClick:
+                MoveToPosition();
+                break;
         }
     }
 
+    private void MoveToPosition()
+    {
+        if((Vector2)transform.localPosition == origPoint)
+        {
+            curTargetPoint = targetPoint;
+            switchedOn = true;
+        }
+        else
+        {
+            curTargetPoint = origPoint;
+            switchedOn = false;
+        }
+    }
     private IEnumerator SwitchPosition()
     {
         yield return new WaitForSeconds(interval);

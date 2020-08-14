@@ -4,6 +4,8 @@ using UnityEngine;
 using Technology;
 using Utilities;
 using Buildings;
+using Maps;
+using ResourceUI;
 
 namespace Managers
 {
@@ -22,22 +24,12 @@ namespace Managers
         public void Awake()
         {
             instance = this;
-        }
-        #endregion
-
-        [Header("Scene Tabs")]
-        public TechnologyTabHandler techTab;
-        public BaseOperationBehavior buildingTab;
-        public GameObject cover;
-        public override void Start()
-        {
-            base.Start();
 
             if (TransitionManager.GetInstance != null)
             {
-
                 if (TransitionManager.GetInstance.managerList.Find(x => x.gameView == gameView) == null)
                 {
+                    Debug.Log("Adding and Setting Balcony Manager to Transition Manager");
                     TransitionManager.GetInstance.AddManager(this);
                     TransitionManager.GetInstance.SetAsCurrentManager(this.gameView);
                 }
@@ -46,7 +38,24 @@ namespace Managers
             {
                 Debug.Log("CANT SEE TRANSITION MANAGER");
             }
+        }
+        #endregion
 
+        [Header("Scene Tabs")]
+        public TechnologyTabHandler techTab;
+        public BaseOperationBehavior buildingTab;
+        public TravellersReportController travellersTab;
+        public TravelMapBehavior travelTab;
+        public GameObject cover;
+        public override void Start()
+        {
+            base.Start();
+
+            EventBroadcaster.Instance.AddObserver(EventNames.OPEN_MAP_TAB, OpenTravelTab);
+        }
+        public void OnDisable()
+        {
+            EventBroadcaster.Instance.RemoveActionAtObserver(EventNames.OPEN_MAP_TAB, OpenTravelTab);
         }
         public void ShowCover(Parameters p = null)
         {
@@ -58,19 +67,29 @@ namespace Managers
         }
         public void Update()
         {
-            // Testing Purposes Only!
-            if(Input.GetKeyDown(KeyCode.Q))
-            {
-                PreOpenManager();
-            }
+
         }
         public override void PreOpenManager()
         {
             base.PreOpenManager();
-
-            BalconySceneManager.GetInstance.PreOpenManager();
         }
 
+        public override void StartManager()
+        {
+            base.StartManager();
+
+            if(TransitionManager.GetInstance != null)
+            {
+                if(TransitionManager.GetInstance.previousScene == SceneType.Battlefield)
+                {
+                    if(TransitionManager.GetInstance.isEngagedWithMapPoint)
+                    {
+                        OpenTravelTab();
+                    }
+                }
+            }
+            ResourceInformationController.GetInstance.ShowResourcePanel(ResourceUI.ResourcePanelType.overhead);
+        }
 
         public void OpenTechTab(BuildingType type)
         {
@@ -78,6 +97,7 @@ namespace Managers
             {
                 return;
             }
+            techTab.gameObject.SetActive(true);
             techTab.OpenTechnologyTab(type);
             EventBroadcaster.Instance.PostEvent(EventNames.ENABLE_TAB_COVER);
         }
@@ -85,7 +105,26 @@ namespace Managers
         public void OpenBuildingOperationTab(BaseBuildingBehavior buildingInfomation)
         {
             EventBroadcaster.Instance.PostEvent(EventNames.ENABLE_TAB_COVER);
+            buildingTab.gameObject.SetActive(true);
             buildingTab.OpenOperationTab(buildingInfomation);
+        }
+
+        public void OpenTravellersReporterTab(BaseTravellerBehavior thisTraveller)
+        {
+            if (travellersTab.isShowing)
+            {
+                return;
+            }
+
+            travellersTab.gameObject.SetActive(true);
+            travellersTab.ShowTravellerReport(thisTraveller);
+        }
+
+        public void OpenTravelTab(Parameters p = null)
+        {
+            travelTab.gameObject.SetActive(true);
+            EventBroadcaster.Instance.PostEvent(EventNames.ENABLE_TAB_COVER);
+            EventBroadcaster.Instance.PostEvent(EventNames.HIDE_RESOURCES);
         }
     }
 }

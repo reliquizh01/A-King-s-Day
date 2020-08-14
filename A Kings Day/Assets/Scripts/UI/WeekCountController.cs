@@ -8,6 +8,9 @@ using Utilities;
 using UnityEngine.EventSystems;
 using Kingdoms;
 using Managers;
+using Dialogue;
+using Drama;
+using System;
 
 namespace ResourceUI
 {
@@ -18,6 +21,7 @@ namespace ResourceUI
         public InteractiveImage endWeekBtnImage;
         public InteractiveText weekCountText;
 
+        public Action beforeEndClickCallback;
         public void Start()
         {
             weekCountText.SetHoverCallback(OnWeekCountExit);
@@ -25,12 +29,20 @@ namespace ResourceUI
             weekCountText.AddTransition(ShowWeeklyResult);
         }
 
-        public void UpdateEndButton(int cur, int target)
+        public void UpdateEndButton(int cur, int target, Action newBeforeEndClickCallback = null)
         {
-
+            if(newBeforeEndClickCallback != null)
+            {
+                beforeEndClickCallback = newBeforeEndClickCallback;
+            }
             if (cur >= target)
             {
                 endWeekBtnText.text.text = "END WEEK";
+                if(beforeEndClickCallback != null)
+                {
+                    beforeEndClickCallback();
+                    beforeEndClickCallback = null;
+                }
             }
             else
             {
@@ -48,12 +60,24 @@ namespace ResourceUI
                 return;
             }
 
-            // Then Proceed to Week 2
-            KingdomManager.GetInstance.ProceedToNextWeek();
+            if(KingdomManager.GetInstance.isPrologue)
+            {
+                KingdomManager.GetInstance.isPrologue = false;
+                KingdomManager.GetInstance.EndPrologueEvents(PrologueWeeklyResult);
+            }
+            else
+            {
+                // Then Proceed to Week 2
+                KingdomManager.GetInstance.ProceedToNextWeek();
 
-            UpdateWeekCountText();
+                UpdateWeekCountText();
+            }
         }
 
+        public void PrologueWeeklyResult()
+        {
+            DramaticActManager.GetInstance.FadeToClear(false,() => DramaticActManager.GetInstance.PlayScene("[Part 3]Prologue - The Morning Argument"));
+        }
         public void UpdateWeekCountText()
         {
             weekCountText.text.text = "Week " + PlayerGameManager.GetInstance.playerData.weekCount.ToString();

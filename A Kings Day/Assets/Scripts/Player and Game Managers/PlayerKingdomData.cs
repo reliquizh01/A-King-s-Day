@@ -50,15 +50,30 @@ namespace Kingdoms
         Population,
         Coin,
         Cows,
-        Archer,
-        Swordsmen,
-        Spearmen,
         farmer,
         herdsmen,
         storageKeeper,
-        ArcherMerc,
-        SwordsmenMerc,
-        SpearmenMerc,
+        Mercenary,
+        foodStorage,
+        cowStorage,
+        housing,
+        festivalDuration,
+        PotentialChances,
+    }
+    public enum PotentialTravellers
+    {
+        refugee,
+        newborn,
+        mercenaries,
+        randomMerchant,
+        goodsMerchant,
+        exoticMerchant,
+        itemMerchant,
+        RandomHero,
+        CommonHero,
+        RareHero,
+        LegendaryHero,
+        Plague,
     }
     /// <summary>
     /// Player Kingdom represents all information the player has
@@ -66,6 +81,7 @@ namespace Kingdoms
     [Serializable]
     public class PlayerKingdomData
     {
+        public string _fileName;
         public bool fileData = false;
 
         [Header("Kingdom Age")]
@@ -87,16 +103,37 @@ namespace Kingdoms
         public int eventFinished;
 
         [Header("Troops")]
-        public int recruits;
         public int barracksCapacity;
         public int troopsLoyalty;
-        public int swordsmenCount, spearmenCount, archerCount;
-        public int swordsmenMercCount, spearmenMercCount, archerMercCount;
+        public List<TroopsInformation> troopsList;
+        public List<TroopsInformation> troopsMercList;
 
         public int GetTotalTroops
         {
-            get { return recruits + swordsmenCount + spearmenCount + archerCount; }
+            get {
+                int tmp = 0;
+                if(troopsList != null && troopsList.Count > 0)
+                {
+                    for (int i = 0; i < troopsList.Count; i++)
+                    {
+                        tmp += troopsList[i].totalUnitCount;
+                    }
+                }
+                return tmp; }
         }
+        public string RemoveScoutTroops()
+        {
+            string troopRemoved = "1 " + troopsList[0].unitInformation.unitName;
+            troopsList[0].totalUnitCount -= 1;
+
+            if(troopsList[0].totalUnitCount <= 0)
+            {
+                troopsList.RemoveAt(0);
+            }
+
+            return troopRemoved;
+        }
+
         [Header("Population")]
         public int population;
         public int safePopulation = 50;
@@ -104,12 +141,17 @@ namespace Kingdoms
         public int curTaxWeeksCounter;
         public bool canReceiveTax;
         public int farmerCount, herdsmanCount, storageKeeperCount;
+        public int deathByDirtiness;
 
         [Header("Game Chances")]
+        /// This is a Festival Event
+        /// within the span of the festival
+        /// all chances will trigger
+        /// until the festival ends.
+        public int festivalWeeksDuration = 0;
         public int populationBurst = 0;
         public int potentialRefugee = 0;
         public int potentialMerchantArrival = 0;
-
 
         [Header("Building Information")]
         public bool balconyBuildingsAdded;
@@ -117,6 +159,9 @@ namespace Kingdoms
 
 
         [Header("Tavern Stuff")]
+        /// When the map points summons the units
+        /// this chances will affect if they will go to 
+        /// your kingdom.
         public int potentialGoodsMerchant = 0;
         public int potentialEquipsMerchant = 0;
         public int potentialExoticMerchant = 0;
@@ -126,7 +171,6 @@ namespace Kingdoms
         public int potentialMercSwords = 5;
         public int potentialMercSpear = 5;
         public int potentialMercArcher = 5;
-        public int swordsmenMercAvail, spearmenMercAvail, archerMercAvail;
 
         [Header("Heroes")]
         public List<BaseHeroInformationData> myHeroes;
@@ -159,14 +203,17 @@ namespace Kingdoms
         // Food
         public int foods;
         public int safeFood;
-        public int cows;
-        public int safeCows;
-
         public int curGrainWeeksCounter;
         public bool canReceiveGrainProduce;
 
+        [Header("Cows")]
+        public int cows;
+        public int safeCows;
+        public int barnExpansion;
         public int curCowBirthCounter;
         public bool canReceiveNewCows;
+
+
         [Header("Coins")]
         // Coins
         public int coins;
@@ -184,9 +231,59 @@ namespace Kingdoms
         {
             bool result = false;
 
-            result = finishedStories.Find(x => x.storyTitle == storyTitle) != null;
+            if(finishedStories != null)
+            {
+                result = finishedStories.Find(x => x.storyTitle == storyTitle) != null;
+            }
 
             return result;
+        }
+
+        public int ObtainTotalTroops()
+        {
+            int tmp = 0;
+
+            if(this.troopsList != null && this.troopsList.Count > 0)
+            {
+                for (int i = 0; i < this.troopsList.Count; i++)
+                {
+                    tmp += this.troopsList[i].totalUnitCount;
+                }
+            }
+
+            return tmp;
+        }
+
+        public TroopsInformation ObtainTroopInformation(string unitName)
+        {
+            if(troopsList == null)
+            {
+                return null;
+            }
+
+            return troopsList.Find(x => x.unitInformation.unitName == unitName);
+        }
+
+        public TroopsInformation ObtainMercenaryInformation(string unitName)
+        {
+            if (troopsMercList == null || troopsMercList.Count <= 0)
+            {
+                TroopsInformation tmp = new TroopsInformation();
+                tmp.totalUnitCount = 0;
+                return tmp;
+            }
+
+            return troopsMercList.Find(x => x.unitInformation.unitName == unitName);
+        }
+
+        public void UpdateFoodStorage()
+        {
+            safeFood = 50 + (10 * storageKeeperCount);
+        }
+
+        public void UpdateCowStorage()
+        {
+            safeCows = barnExpansion + (2 * herdsmanCount);
         }
     }
 

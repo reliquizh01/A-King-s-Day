@@ -35,10 +35,17 @@ namespace Battlefield
         public TextMeshProUGUI readinessText;
         public TextMeshProUGUI waitingText;
 
+
         public bool isAttacker = false;
+
+        [Header("Help Tool Mechanics")]
+        public GameObject readyTooltipObject;
+        public TextMeshProUGUI readyLeft;
+        public TextMeshProUGUI readyRight;
+
         public void Update()
         {
-            if (isMultiPlayerControl && !computerControlled)
+            if (!computerControlled)
             {
                 MultiplayerControl();
             }
@@ -87,6 +94,20 @@ namespace Battlefield
             if(controlType == PlayerControlType.Computer)
             {
                 computerControlled = true;
+                readyTooltipObject.SetActive(false);
+            }
+
+            if (controlType == PlayerControlType.PlayerTwo)
+            {
+                readyTooltipObject.SetActive(true);
+                readyLeft.text = "<-";
+                readyRight.text = "->";
+            }
+            else if(controlType == PlayerControlType.PlayerOne)
+            {
+                readyTooltipObject.SetActive(true);
+                readyLeft.text = "A";
+                readyRight.text = "D";
             }
         }
 
@@ -329,7 +350,7 @@ namespace Battlefield
 
         public void SetupDailyReportUnits()
         {
-            for (int i = 0; i < injuredUnitsList.Count; i++)
+            for (int i = 0; i < currentCommander.unitsCarried.Count; i++)
             {
                 if(currentCommander.unitsCarried[i] == null)
                 {

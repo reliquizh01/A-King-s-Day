@@ -1,0 +1,790 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4380288552861678055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4267460315731224117}
+  - component: {fileID: 7480432494435471399}
+  m_Layer: 0
+  m_Name: Drama Storage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4267460315731224117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4380288552861678055}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7480432494435471399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4380288552861678055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742606f188c9b6244893e42ab31e38a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dramaSceneStorage:
+  - scenarioName: '[Part 1]Prologue - My Father''s Last Order...'
+    sceneType: 0
+    actors:
+    - characterName: Old King
+      characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Old Kings.prefab
+      actorType: 1
+      positionActorsMethod: 0
+      currentActor: {fileID: 0}
+    - characterName: Player
+      characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Player.prefab
+      actorType: 1
+      positionActorsMethod: 0
+      currentActor: {fileID: 0}
+    - characterName: Camera
+      characterPrefabPath: 
+      actorType: 2
+      positionActorsMethod: 0
+      currentActor: {fileID: 0}
+    - characterName: Counsellor
+      characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Counsellor.prefab
+      actorType: 1
+      positionActorsMethod: 0
+      currentActor: {fileID: 0}
+    currentFrameIdx: 0
+    actionsPerFrame:
+    - frameName: Frame#1
+      description: Move Player to Middle Court and Summon Other Actors
+      actionsOnFrameList:
+      - actionType: 0
+        thisActor:
+          characterName: Player
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Player.prefab
+          actorType: 0
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 0100000001000000
+        actorsPosition:
+        - {x: 0.136, y: -1.129, z: 0.12198105}
+        - {x: 0.147, y: 2.532, z: 0.12198105}
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      - actionType: 0
+        thisActor:
+          characterName: Old King
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Old Kings.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 00000000
+        actorsPosition:
+        - {x: 0.019, y: 2.901, z: 0.12198105}
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      - actionType: 0
+        thisActor:
+          characterName: Counsellor
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Counsellor.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 01000000
+        actorsPosition:
+        - {x: -0.342, y: 2.802, z: 0.12198105}
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      - actionType: 0
+        thisActor:
+          characterName: Camera
+          characterPrefabPath: 
+          actorType: 2
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 3
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 0000000000000000
+        actorsPosition:
+        - {x: 0, y: 0.25, z: -10}
+        - {x: 0, y: 3, z: -10}
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      callNextStory: 0
+      nextDramaTitle: 
+    - frameName: Frame#2
+      description: '[Conversation Start] - Last Order'
+      actionsOnFrameList:
+      - actionType: 1
+        thisActor:
+          characterName: Player
+          characterPrefabPath: 
+          actorType: 0
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 2
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 
+        actorsPosition: []
+        conversationTitle: Prologue - My Father's Last Order...
+        hasLineActions: 0
+        indexReactionList: []
+      callNextStory: 0
+      nextDramaTitle: 
+    - frameName: Frame#3
+      description: Old King Leaves the courtroom
+      actionsOnFrameList:
+      - actionType: 0
+        thisActor:
+          characterName: Old King
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Kings.prefab
+          actorType: 0
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 010000000100000001000000
+        actorsPosition:
+        - {x: 0.019, y: 2.901, z: 1e-45}
+        - {x: -0.113, y: 2.702, z: 7.37e-43}
+        - {x: -2.3, y: 2.702, z: -1.4092664e-33}
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      - actionType: 2
+        thisActor:
+          characterName: Old King
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Old Kings.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 3
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 
+        actorsPosition: []
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      callNextStory: 0
+      nextDramaTitle: 
+    - frameName: Frame#4
+      description: '[Conversation Start] -Counsellor Guides Player to throne'
+      actionsOnFrameList:
+      - actionType: 1
+        thisActor:
+          characterName: Old King
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Kings.prefab
+          actorType: 0
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 
+        actorsPosition: []
+        conversationTitle: Counsellor's Conversation
+        hasLineActions: 0
+        indexReactionList: []
+      callNextStory: 0
+      nextDramaTitle: 
+    - frameName: Frame#5
+      description: Player moves to Throne
+      actionsOnFrameList:
+      - actionType: 0
+        thisActor:
+          characterName: Player
+          characterPrefabPath: 
+          actorType: 0
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 010000000100000001000000
+        actorsPosition:
+        - {x: 0.147, y: 2.532, z: 1e-45}
+        - {x: 0.151, y: 2.702, z: 7.37e-43}
+        - {x: 0.019, y: 2.901, z: -1.4092664e-33}
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      callNextStory: 0
+      nextDramaTitle: 
+  - scenarioName: '[Part 0.5]Prologue - Player Long Walk'
+    sceneType: 0
+    actors:
+    - characterName: Player
+      characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Player.prefab
+      actorType: 1
+      positionActorsMethod: 0
+      currentActor: {fileID: 0}
+    currentFrameIdx: 0
+    actionsPerFrame:
+    - frameName: Frame#1
+      description: Player Move towards Creation Cut
+      actionsOnFrameList:
+      - actionType: 0
+        thisActor:
+          characterName: Player
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Player.prefab
+          actorType: 0
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 0100000001000000
+        actorsPosition:
+        - {x: 0.136, y: -1.716, z: 1e-45}
+        - {x: 0.136, y: -1.129, z: 7.37e-43}
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      callNextStory: 0
+      nextDramaTitle: 
+  - scenarioName: '[Part 2]Prologue - Handling Resources'
+    sceneType: 0
+    actors:
+    - characterName: Counsellor
+      characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Counsellor.prefab
+      actorType: 1
+      positionActorsMethod: 0
+      currentActor: {fileID: 0}
+    - characterName: Player
+      characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Player.prefab
+      actorType: 1
+      positionActorsMethod: 0
+      currentActor: {fileID: 0}
+    currentFrameIdx: 0
+    actionsPerFrame:
+    - frameName: Frame#1
+      description: '[Start Conversation] Introduce Resources'
+      actionsOnFrameList:
+      - actionType: 1
+        thisActor:
+          characterName: Counsellor
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Counsellor.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 2
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 
+        actorsPosition: []
+        conversationTitle: Prologue - My Father's Last Order...
+        hasLineActions: 0
+        indexReactionList: []
+      callNextStory: 0
+      nextDramaTitle: 
+  - scenarioName: '[Part 3]Prologue - The Morning Argument'
+    sceneType: 0
+    actors:
+    - characterName: Old King
+      characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Old Kings.prefab
+      actorType: 1
+      positionActorsMethod: 0
+      currentActor: {fileID: 0}
+    - characterName: Counsellor
+      characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Counsellor.prefab
+      actorType: 1
+      positionActorsMethod: 0
+      currentActor: {fileID: 0}
+    - characterName: Player
+      characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Player.prefab
+      actorType: 1
+      positionActorsMethod: 0
+      currentActor: {fileID: 0}
+    currentFrameIdx: 0
+    actionsPerFrame:
+    - frameName: Frame#1
+      description: Counsellor Enters the room
+      actionsOnFrameList:
+      - actionType: 0
+        thisActor:
+          characterName: Counsellor
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Counsellor.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 010000000100000001000000
+        actorsPosition:
+        - {x: -0.122, y: 0.7329999, z: 0.12198105}
+        - {x: -0.113, y: 2.532, z: 0.12198105}
+        - {x: -0.342, y: 2.802, z: 0.12198105}
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      - actionType: 1
+        thisActor:
+          characterName: Old King
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Old Kings.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 2
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 
+        actorsPosition: []
+        conversationTitle: Prologue - Morning Argument (Part 1)
+        hasLineActions: 0
+        indexReactionList: []
+      - actionType: 0
+        thisActor:
+          characterName: Old King
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Old Kings.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 00000000
+        actorsPosition:
+        - {x: -2.3, y: 2.702, z: 0.12198105}
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      - actionType: 0
+        thisActor:
+          characterName: Player
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Player.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 00000000
+        actorsPosition:
+        - {x: -2.3, y: 2.702, z: 0.12198105}
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      - actionType: 5
+        thisActor:
+          characterName: Counsellor
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Counsellor.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 
+        actorsPosition: []
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      callNextStory: 0
+      nextDramaTitle: 
+    - frameName: Frame#2
+      description: King Enters
+      actionsOnFrameList:
+      - actionType: 5
+        thisActor:
+          characterName: Old King
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Old Kings.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 
+        actorsPosition: []
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      - actionType: 0
+        thisActor:
+          characterName: Old King
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Old Kings.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 0100000000000000
+        actorsPosition:
+        - {x: -2.3, y: 2.702, z: 0.12198105}
+        - {x: 0.019, y: 2.901, z: 0.12198105}
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      callNextStory: 0
+      nextDramaTitle: 
+    - frameName: Frame#3
+      description: Player Enters
+      actionsOnFrameList:
+      - actionType: 5
+        thisActor:
+          characterName: Player
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Player.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 
+        actorsPosition: []
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      - actionType: 0
+        thisActor:
+          characterName: Player
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Player.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 0000000000000000
+        actorsPosition:
+        - {x: -2.3, y: 2.702, z: 0.12198105}
+        - {x: -0.113, y: 2.702, z: 0.12198105}
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      callNextStory: 0
+      nextDramaTitle: 
+    - frameName: Frame#4
+      description: '[Start Conversation] Final Discussion Between Fathers'
+      actionsOnFrameList:
+      - actionType: 1
+        thisActor:
+          characterName: Old King
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Old Kings.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 
+        actorsPosition: []
+        conversationTitle: Prologue - Final Discussion Between Fathers
+        hasLineActions: 0
+        indexReactionList: []
+      callNextStory: 0
+      nextDramaTitle: 
+    - frameName: Frame#5
+      description: Counsellor Leaves
+      actionsOnFrameList:
+      - actionType: 0
+        thisActor:
+          characterName: Counsellor
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Counsellor.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 0000000000000000
+        actorsPosition:
+        - {x: -0.342, y: 2.802, z: 0.12198105}
+        - {x: 2.38, y: 2.702, z: 0.12198105}
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      - actionType: 2
+        thisActor:
+          characterName: Counsellor
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Counsellor.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 3.5
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 
+        actorsPosition: []
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      callNextStory: 0
+      nextDramaTitle: 
+    - frameName: Frame#6
+      description: Player Leaves
+      actionsOnFrameList:
+      - actionType: 0
+        thisActor:
+          characterName: Player
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Player.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 0000000001000000
+        actorsPosition:
+        - {x: -0.113, y: 2.702, z: 0.12198105}
+        - {x: 2.38, y: 2.702, z: 0.12198105}
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      - actionType: 2
+        thisActor:
+          characterName: Player
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Player.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 3
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 
+        actorsPosition: []
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      callNextStory: 0
+      nextDramaTitle: 
+    - frameName: Frame#7
+      description: Fade to dark then final words from father.
+      actionsOnFrameList:
+      - actionType: 6
+        thisActor:
+          characterName: Old King
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Old Kings.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 
+        actorsPosition: []
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      - actionType: 1
+        thisActor:
+          characterName: Old King
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Old Kings.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 3
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 
+        actorsPosition: []
+        conversationTitle: Prologue - Last Reminder
+        hasLineActions: 0
+        indexReactionList: []
+      callNextStory: 0
+      nextDramaTitle: 
+    - frameName: Frame#8
+      description: Load Balcony
+      actionsOnFrameList:
+      - actionType: 8
+        thisActor:
+          characterName: Old King
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Old Kings.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 3
+        actorPositionIdx: 0
+        characterStates: 
+        actorsPosition: []
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      callNextStory: 0
+      nextDramaTitle: 
+  - scenarioName: '[Part 4] Prologue - The kingdom''s View'
+    sceneType: 0
+    actors:
+    - characterName: Counsellor
+      characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Counsellor.prefab
+      actorType: 1
+      positionActorsMethod: 0
+      currentActor: {fileID: 0}
+    - characterName: Player
+      characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Player.prefab
+      actorType: 1
+      positionActorsMethod: 0
+      currentActor: {fileID: 0}
+    currentFrameIdx: 0
+    actionsPerFrame:
+    - frameName: Frame#1
+      description: Position Player and Counsellor
+      actionsOnFrameList:
+      - actionType: 7
+        thisActor:
+          characterName: Counsellor
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Counsellor.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 
+        actorsPosition: []
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      - actionType: 0
+        thisActor:
+          characterName: Counsellor
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Counsellor.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 0100000001000000
+        actorsPosition:
+        - {x: -2.398, y: 0.049, z: 0}
+        - {x: -1.795, y: 0.137, z: 0}
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      - actionType: 0
+        thisActor:
+          characterName: Player
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Player.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 0100000001000000
+        actorsPosition:
+        - {x: -2.398, y: 0.049, z: 0}
+        - {x: -1.609, y: 0.048, z: 0}
+        conversationTitle: 
+        hasLineActions: 0
+        indexReactionList: []
+      callNextStory: 0
+      nextDramaTitle: 
+    - frameName: Frame#2
+      description: '[Start Conversation] - The broken Past'
+      actionsOnFrameList:
+      - actionType: 1
+        thisActor:
+          characterName: Counsellor
+          characterPrefabPath: Assets/Resources/Prefabs/Unit and Items/Counsellor.prefab
+          actorType: 1
+          positionActorsMethod: 0
+          currentActor: {fileID: 0}
+        actionFinish: 0
+        delayBeforeStart: 0
+        loadThisScene: 0
+        actorPositionIdx: 0
+        characterStates: 
+        actorsPosition: []
+        conversationTitle: The broken Past
+        hasLineActions: 0
+        indexReactionList: []
+      callNextStory: 0
+      nextDramaTitle: 
+  actorStorage:
+  - actorName: Recruit
+    smallDescription: Generic Recruit Actor
+    actorType: 0
+    actorPrefab: {fileID: 0}
+    prefabPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
+  - actorName: Spearman
+    smallDescription: Generic Spearman Actor
+    actorType: 0
+    actorPrefab: {fileID: 0}
+    prefabPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+  - actorName: Counsellor
+    smallDescription: The royal guide to kingdom mgt.
+    actorType: 1
+    actorPrefab: {fileID: 0}
+    prefabPath: Assets/Resources/Prefabs/Unit and Items/Counsellor.prefab
+  - actorName: Camera
+    smallDescription: Player Camera View.
+    actorType: 2
+    actorPrefab: {fileID: 0}
+    prefabPath: 
+  - actorName: Old King
+    smallDescription: Father of the player's character.
+    actorType: 1
+    actorPrefab: {fileID: 0}
+    prefabPath: Assets/Resources/Prefabs/Unit and Items/Old Kings.prefab
+  - actorName: Player
+    smallDescription: The Player, Protagonist.
+    actorType: 1
+    actorPrefab: {fileID: 0}
+    prefabPath: Assets/Resources/Prefabs/Unit and Items/Player.prefab

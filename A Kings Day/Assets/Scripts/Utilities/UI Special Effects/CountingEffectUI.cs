@@ -16,6 +16,9 @@ public class CountingEffectUI : MonoBehaviour
     public bool startUpdating = false;
     public bool enableColor = false;
 
+    [Header("Before and After Count Messages")]
+    public string preCountMesg;
+    public string postCountMesg;
     public void Update()
     {
         if(curCount != targetCount && startUpdating)
@@ -36,7 +39,7 @@ public class CountingEffectUI : MonoBehaviour
                     curCount += increment;
                 }
             }
-            countText.text = curCount.ToString();
+            countText.text = preCountMesg + " " + curCount.ToString() + " " + postCountMesg;
         }
     }
 

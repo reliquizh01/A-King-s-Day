@@ -61,7 +61,7 @@ namespace Battlefield
                     switch (chooseUnitMindset)
                     {
                         case ChooseUnitMindset.AggressiveSpawning:
-                            idx = indexWithAvailableTroops[UnityEngine.Random.Range(0, indexWithAvailableTroops.Count - 1)];
+                            idx = indexWithAvailableTroops[UnityEngine.Random.Range(0, indexWithAvailableTroops.Count)];
                             break;
                         case ChooseUnitMindset.CautiousSpawning:
                             break;
@@ -78,6 +78,12 @@ namespace Battlefield
 
         public int ChooseLane()
         {
+            if (!BattlefieldSystemsManager.GetInstance.dayInProgress)
+            {
+                
+                return -1;
+            }
+
             int idx = 0;
             bool mindsetDecided = false;
 

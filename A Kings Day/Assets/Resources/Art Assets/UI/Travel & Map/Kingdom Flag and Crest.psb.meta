@@ -1,0 +1,965 @@
+fileFormatVersion: 2
+guid: 34c24e1f3d7922a48adec6a4e16162e4
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    nPOTScale: 1
+    sRGBTexture: 0
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData:
+  - name: Fur_Khan_Flag_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 26
+      height: 29
+    spriteID: fd42715f74c161a4398b61433b81e2f2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -90, y: -234}
+  - name: Fur_Khan_Flag_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 41
+      width: 26
+      height: 29
+    spriteID: 078deeab1df0e264e907f83f9df4a5af
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -47, y: -197}
+  - name: Fur_Khan_Crest
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 72
+      y: 41
+      width: 15
+      height: 15
+    spriteID: d314dabe917c9904096560b6476a1d88
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 54, y: -204}
+  - name: Player_Crest_Flag_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 78
+      width: 26
+      height: 29
+    spriteID: 21a21dad4c1a7d44eb177184a92dac97
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -90, y: -227}
+  - name: Player_Crest_Flag_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 4
+      width: 26
+      height: 29
+    spriteID: d6ee263fe0df5c1428bf0c200a17e62c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -13, y: -301}
+  - name: Player_Crest
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 72
+      y: 86
+      width: 14
+      height: 14
+    spriteID: bd3fa8d2367941d4d9aec894cee16f48
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 54, y: -226}
+  - name: HolySee_Crest_Flag_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 41
+      width: 26
+      height: 29
+    spriteID: a4234627e39981f4d9659a1a1d897877
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -56, y: -232}
+  - name: HolySee_Crest_Flag_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 78
+      width: 26
+      height: 29
+    spriteID: 593d54b094f73c34f9d4aca1eca138a1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -13, y: -195}
+  - name: HolySee_Crest
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 72
+      y: 64
+      width: 15
+      height: 14
+    spriteID: 5b81a0dce7728c24fa8bce657fdc2e2a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 54, y: -216}
+  - name: Neutral Crest
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 72
+      y: 4
+      width: 26
+      height: 29
+    spriteID: 1599d4e57455fbf4dbdb0767b788bc08
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -241, y: -277}
+  - name: Half Closed Eyes
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 72
+      y: 108
+      width: 18
+      height: 10
+    spriteID: c0e1857f8e3d6584fa05c022744fba05
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -245, y: -217}
+  - name: Complete Closed Eyes
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 106
+      y: 4
+      width: 18
+      height: 10
+    spriteID: 9d298d7a7d14d11429a2a2f5a15b5111
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -211, y: -334}
+  - name: Visible Eyes
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 106
+      y: 22
+      width: 18
+      height: 10
+    spriteID: c25eccc6a4d5e0646be895b616539cba
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -211, y: -291}
+  - name: Flag Stick
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 106
+      y: 40
+      width: 3
+      height: 21
+    spriteID: f30c8f71901f12644803a3869f0ed59e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -218, y: -231}
+  rigSpriteImportData:
+  - name: Fur_Khan_Flag_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 26
+      height: 29
+    spriteID: 1672cd47b112b8e47ad8a8097d79b77f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -90, y: -234}
+  - name: Fur_Khan_Flag_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 41
+      width: 26
+      height: 29
+    spriteID: ed9abf7df96e6ef468c5b36989dd7a05
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -47, y: -197}
+  - name: Fur_Khan_Crest
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 72
+      y: 41
+      width: 15
+      height: 15
+    spriteID: d2089bf638ced7a459597dc65c5e2cd6
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 54, y: -204}
+  - name: Player_Crest_Flag_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 78
+      width: 26
+      height: 29
+    spriteID: 41aaae339c988744d9b5870fdb0e7893
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -90, y: -227}
+  - name: Player_Crest_Flag_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 4
+      width: 26
+      height: 29
+    spriteID: 788d66eed9587af49af6b6c414ba62cb
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -13, y: -301}
+  - name: Player_Crest
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 72
+      y: 86
+      width: 14
+      height: 14
+    spriteID: 5b2f39aae2773364fbda4dc960f1e02f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 54, y: -226}
+  - name: HolySee_Crest_Flag_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 41
+      width: 26
+      height: 29
+    spriteID: cd992c98a4370e8488fb5ddf053df6b1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -56, y: -232}
+  - name: HolySee_Crest_Flag_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 78
+      width: 26
+      height: 29
+    spriteID: cc7091f084b15ee489161471089baa7c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -13, y: -195}
+  - name: HolySee_Crest
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 72
+      y: 64
+      width: 15
+      height: 14
+    spriteID: ae37fcb5c7709bb4bbf9daa74749f4f4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 54, y: -216}
+  - name: Neutral Crest
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 72
+      y: 4
+      width: 26
+      height: 29
+    spriteID: cd2b74c787e021646bf92293b2b0a9a3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -241, y: -277}
+  - name: Complete Closed Eyes copy
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 72
+      y: 108
+      width: 18
+      height: 10
+    spriteID: 244455f34441da84dbc12be8ea766e62
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -245, y: -217}
+  - name: Complete Closed Eyes
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 106
+      y: 4
+      width: 18
+      height: 10
+    spriteID: 7911a7f51a9bd944a99788231b178d95
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -211, y: -334}
+  - name: Visible Eyes
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 106
+      y: 22
+      width: 18
+      height: 10
+    spriteID: 8f44ae9fede51fc418424efe263c8765
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -211, y: -291}
+  platformSettings:
+  - name: Default
+    overridden: 1
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: PC, Mac & Linux Standalone
+    overridden: 1
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 128
+  importedTextureHeight: 128
+  documentSize: {x: 350, y: 350}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 128
+  textureActualHeight: 128
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 0
+  mosaicPSDLayers:
+  - name: Fur Khan
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 25
+    mosaicPosition: {x: 0, y: 0}
+  - name: Fur_Khan_Flag_2
+    spriteName: Fur_Khan_Flag_2
+    isGroup: 0
+    parentIndex: 0
+    spriteID: fd42715f74c161a4398b61433b81e2f2
+    layerID: 37
+    mosaicPosition: {x: 4, y: 4}
+  - name: Fur_Khan_Flag_1
+    spriteName: Fur_Khan_Flag_1
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 078deeab1df0e264e907f83f9df4a5af
+    layerID: 24
+    mosaicPosition: {x: 4, y: 41}
+  - name: Fur_Khan_Crest
+    spriteName: Fur_Khan_Crest
+    isGroup: 0
+    parentIndex: 0
+    spriteID: d314dabe917c9904096560b6476a1d88
+    layerID: 20
+    mosaicPosition: {x: 72, y: 41}
+  - name: Player
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 9
+    mosaicPosition: {x: 0, y: 0}
+  - name: Player_Crest_Flag_2
+    spriteName: Player_Crest_Flag_2
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 21a21dad4c1a7d44eb177184a92dac97
+    layerID: 34
+    mosaicPosition: {x: 4, y: 78}
+  - name: Player_Crest_Flag_1
+    spriteName: Player_Crest_Flag_1
+    isGroup: 0
+    parentIndex: 4
+    spriteID: d6ee263fe0df5c1428bf0c200a17e62c
+    layerID: 8
+    mosaicPosition: {x: 38, y: 4}
+  - name: Player_Crest
+    spriteName: Player_Crest
+    isGroup: 0
+    parentIndex: 4
+    spriteID: bd3fa8d2367941d4d9aec894cee16f48
+    layerID: 2
+    mosaicPosition: {x: 72, y: 86}
+  - name: Holy See
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 11
+    mosaicPosition: {x: 0, y: 0}
+  - name: HolySee_Crest_Flag_2
+    spriteName: HolySee_Crest_Flag_2
+    isGroup: 0
+    parentIndex: 8
+    spriteID: a4234627e39981f4d9659a1a1d897877
+    layerID: 33
+    mosaicPosition: {x: 38, y: 41}
+  - name: HolySee_Crest_Flag_1
+    spriteName: HolySee_Crest_Flag_1
+    isGroup: 0
+    parentIndex: 8
+    spriteID: 593d54b094f73c34f9d4aca1eca138a1
+    layerID: 3
+    mosaicPosition: {x: 38, y: 78}
+  - name: HolySee_Crest
+    spriteName: HolySee_Crest
+    isGroup: 0
+    parentIndex: 8
+    spriteID: 5b81a0dce7728c24fa8bce657fdc2e2a
+    layerID: 4
+    mosaicPosition: {x: 72, y: 64}
+  - name: Neutral Crest
+    spriteName: Neutral Crest
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1599d4e57455fbf4dbdb0767b788bc08
+    layerID: 13
+    mosaicPosition: {x: 72, y: 4}
+  - name: Flag Stick
+    spriteName: Flag Stick
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f30c8f71901f12644803a3869f0ed59e
+    layerID: 38
+    mosaicPosition: {x: 106, y: 40}
+  - name: Half Closed Eyes
+    spriteName: Half Closed Eyes
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c0e1857f8e3d6584fa05c022744fba05
+    layerID: 31
+    mosaicPosition: {x: 72, y: 108}
+  - name: Complete Closed Eyes
+    spriteName: Complete Closed Eyes
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9d298d7a7d14d11429a2a2f5a15b5111
+    layerID: 27
+    mosaicPosition: {x: 106, y: 4}
+  - name: Visible Eyes
+    spriteName: Visible Eyes
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c25eccc6a4d5e0646be895b616539cba
+    layerID: 5
+    mosaicPosition: {x: 106, y: 22}
+  rigPSDLayers:
+  - name: Fur Khan
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 25
+    mosaicPosition: {x: 0, y: 0}
+  - name: Fur_Khan_Flag_2
+    spriteName: Fur_Khan_Flag_2
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 1672cd47b112b8e47ad8a8097d79b77f
+    layerID: 37
+    mosaicPosition: {x: 4, y: 4}
+  - name: Fur_Khan_Flag_1
+    spriteName: Fur_Khan_Flag_1
+    isGroup: 0
+    parentIndex: 0
+    spriteID: ed9abf7df96e6ef468c5b36989dd7a05
+    layerID: 24
+    mosaicPosition: {x: 4, y: 41}
+  - name: Fur_Khan_Crest
+    spriteName: Fur_Khan_Crest
+    isGroup: 0
+    parentIndex: 0
+    spriteID: d2089bf638ced7a459597dc65c5e2cd6
+    layerID: 20
+    mosaicPosition: {x: 72, y: 41}
+  - name: Player
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 9
+    mosaicPosition: {x: 0, y: 0}
+  - name: Player_Crest_Flag_2
+    spriteName: Player_Crest_Flag_2
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 41aaae339c988744d9b5870fdb0e7893
+    layerID: 34
+    mosaicPosition: {x: 4, y: 78}
+  - name: Player_Crest_Flag_1
+    spriteName: Player_Crest_Flag_1
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 788d66eed9587af49af6b6c414ba62cb
+    layerID: 8
+    mosaicPosition: {x: 38, y: 4}
+  - name: Player_Crest
+    spriteName: Player_Crest
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 5b2f39aae2773364fbda4dc960f1e02f
+    layerID: 2
+    mosaicPosition: {x: 72, y: 86}
+  - name: Holy See
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 11
+    mosaicPosition: {x: 0, y: 0}
+  - name: HolySee_Crest_Flag_2
+    spriteName: HolySee_Crest_Flag_2
+    isGroup: 0
+    parentIndex: 8
+    spriteID: cd992c98a4370e8488fb5ddf053df6b1
+    layerID: 33
+    mosaicPosition: {x: 38, y: 41}
+  - name: HolySee_Crest_Flag_1
+    spriteName: HolySee_Crest_Flag_1
+    isGroup: 0
+    parentIndex: 8
+    spriteID: cc7091f084b15ee489161471089baa7c
+    layerID: 3
+    mosaicPosition: {x: 38, y: 78}
+  - name: HolySee_Crest
+    spriteName: HolySee_Crest
+    isGroup: 0
+    parentIndex: 8
+    spriteID: ae37fcb5c7709bb4bbf9daa74749f4f4
+    layerID: 4
+    mosaicPosition: {x: 72, y: 64}
+  - name: Neutral Crest
+    spriteName: Neutral Crest
+    isGroup: 0
+    parentIndex: -1
+    spriteID: cd2b74c787e021646bf92293b2b0a9a3
+    layerID: 13
+    mosaicPosition: {x: 72, y: 4}
+  - name: Complete Closed Eyes copy
+    spriteName: Complete Closed Eyes copy
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 244455f34441da84dbc12be8ea766e62
+    layerID: 31
+    mosaicPosition: {x: 72, y: 108}
+  - name: Complete Closed Eyes
+    spriteName: Complete Closed Eyes
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7911a7f51a9bd944a99788231b178d95
+    layerID: 27
+    mosaicPosition: {x: 106, y: 4}
+  - name: Visible Eyes
+    spriteName: Visible Eyes
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8f44ae9fede51fc418424efe263c8765
+    layerID: 5
+    mosaicPosition: {x: 106, y: 22}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: Kingdom Flag and Crest Texture
+  prefabAssetName: Kingdom Flag and Crest Prefab
+  spriteLibAssetName: Kingdom Flag and Crest Sprite Lib
+  secondarySpriteTextures: []

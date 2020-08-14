@@ -53,6 +53,10 @@ namespace Buildings
             {
                 myController.ShowOperationDecisionChanges(actionIdx);
             }
+            else
+            {
+                myController.ShowAddedInformation(actionIdx);
+            }
         }
 
         public void OnMouseLeave()

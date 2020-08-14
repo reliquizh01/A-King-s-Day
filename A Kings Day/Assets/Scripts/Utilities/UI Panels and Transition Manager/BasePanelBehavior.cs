@@ -81,7 +81,7 @@ public class BasePanelBehavior : MonoBehaviour
 
     public IEnumerator ClosePanel()
     {
-        if (string.IsNullOrEmpty(closeAnimationName))
+        if (string.IsNullOrEmpty(closeAnimationName) && closeOnExit)
         {
             this.gameObject.SetActive(false);
             yield return null;
@@ -89,7 +89,10 @@ public class BasePanelBehavior : MonoBehaviour
         yield return new WaitForSeconds(myAnim.GetClip(closeAnimationName).length);
 
         isPlaying = false;
-        this.gameObject.SetActive(false);
+        if(closeOnExit)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
     public IEnumerator WaitAnimationForAction(string animName, Action callBack = null, bool enableSwitching = false)

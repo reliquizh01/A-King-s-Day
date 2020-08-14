@@ -251,9 +251,9 @@ public class KingdomUnitStorageEditor : EditorWindow
 
         GUILayout.BeginHorizontal();
         GUILayout.Label("[HP]", EditorStyles.boldLabel, GUILayout.Width(40));
-        currentUnitData.maxHealth = EditorGUILayout.IntField((int)currentUnitData.maxHealth, GUILayout.MaxWidth(50));
+        currentUnitData.maxHealth = EditorGUILayout.FloatField(currentUnitData.maxHealth, GUILayout.MaxWidth(50));
         GUILayout.Label("[SPD]", EditorStyles.boldLabel, GUILayout.Width(40));
-        currentUnitData.origSpeed = EditorGUILayout.IntField((int)currentUnitData.origSpeed, GUILayout.MaxWidth(50));
+        currentUnitData.origSpeed = EditorGUILayout.FloatField(currentUnitData.origSpeed, GUILayout.MaxWidth(50));
         GUILayout.Label("[DTH]", EditorStyles.boldLabel, GUILayout.Width(40));
         currentUnitData.deathThreshold = EditorGUILayout.FloatField(currentUnitData.deathThreshold, GUILayout.MaxWidth(45));
         GUILayout.EndHorizontal();

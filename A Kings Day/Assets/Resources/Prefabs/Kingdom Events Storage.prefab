@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3800852427780697963
+--- !u!1 &1480743172159994273
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3223302206029159952}
-  - component: {fileID: 1685336381357493434}
+  - component: {fileID: 5535369544462109218}
+  - component: {fileID: 1698977282432924404}
   m_Layer: 0
   m_Name: Kingdom Events Storage
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3223302206029159952
+--- !u!4 &5535369544462109218
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3800852427780697963}
+  m_GameObject: {fileID: 1480743172159994273}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1256.0397, y: 547.5562, z: -23.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,13 +31,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1685336381357493434
+--- !u!114 &1698977282432924404
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3800852427780697963}
+  m_GameObject: {fileID: 1480743172159994273}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71894a6467d65f248a4b64455657ebfa, type: 3}
@@ -71,9 +71,9 @@ MonoBehaviour:
     reporterType: 0
     levelRequired: 0
     difficultyType: 0
-    description: A Trader from our homeland has come and brought news to us, it seems
-      they want to obtain rights to trade with our new found kingdom.... exclusively,
-      for a hefty price.
+    description: A Trader from another continent has come and brought news to us,
+      it seems they want to obtain rights to trade with our new found kingdom....
+      exclusively, for a hefty price.
     isStoryArc: 1
     storyArc: Rights of Trade
     arcEnd: 0
@@ -157,8 +157,8 @@ MonoBehaviour:
     levelRequired: 0
     difficultyType: 2
     description: Our scouts has seen a familiar banner flying further away and also
-      by the coast, it seems that a kingdom from our home land is also trying to
-      settle here, should we make haste, we can stop them while they're still weak.
+      by the coast, it seems that a kingdom faraway is also trying to settle here,
+      should we make haste, we can stop them while they're still weak.
     isStoryArc: 1
     storyArc: An Old Rival
     arcEnd: 0
@@ -254,7 +254,7 @@ MonoBehaviour:
     reporterType: 0
     levelRequired: 0
     difficultyType: 0
-    description: Some of our local villagers had a surplus of coins, they'd wish
+    description: Some of our local villagers has some surplus of coins, they'd wish
       to offer it to our coffers, would you like it converted to food?
     isStoryArc: 0
     storyArc: 
@@ -430,6 +430,80 @@ MonoBehaviour:
     - optionDescription: This vast lands is ours! prepare to march! this is war!
       rewards: []
       nextArcIdx: 3
+  - title: Scout of the Wilds
+    eventType: 0
+    reporterType: 1
+    levelRequired: 5
+    difficultyType: 0
+    description: Some scouts had noticed large armies near our borders, and their
+      crest comes from one of our allies, they might be passing by, but we should
+      be ready just in case.
+    isStoryArc: 0
+    storyArc: 
+    arcEnd: 0
+    eventDecision:
+    - optionDescription: Prepare the smoke signals, we should know if they trespass.
+      rewards:
+      - resourceType: 1
+        rewardAmount: -20
+      - resourceType: 3
+        rewardAmount: -10
+      - resourceType: 0
+        rewardAmount: -3
+      nextArcIdx: 0
+    - optionDescription: "The crest is a trusted ally, no need to worry [ignorant].\t"
+      rewards: []
+      nextArcIdx: 0
+  - title: Angered Fur Khan
+    eventType: 0
+    reporterType: 1
+    levelRequired: 5
+    difficultyType: 2
+    description: The Khan demands 1000 coins and 500 crates of food for this cycle
+      or face the wrath of our horsemens.
+    isStoryArc: 0
+    storyArc: 
+    arcEnd: 0
+    eventDecision:
+    - optionDescription: Give them what they want!
+      rewards:
+      - resourceType: 0
+        rewardAmount: -500
+      - resourceType: 3
+        rewardAmount: -1000
+      nextArcIdx: 0
+    - optionDescription: Their wrath is old! their ruler is dead! Let them come!
+      rewards:
+      - resourceType: 3
+        rewardAmount: 300
+      nextArcIdx: 0
+  - title: Unexpected Crusade
+    eventType: 0
+    reporterType: 1
+    levelRequired: 5
+    difficultyType: 0
+    description: These so called 'holy' crusade will be sending troops to the old
+      frontier, they've asked us if we can contribute by allowing them to stay here
+      before they march towards the old gates.
+    isStoryArc: 0
+    storyArc: 
+    arcEnd: 0
+    eventDecision:
+    - optionDescription: Another pilgrimage, the gate's were all myths! let them
+        in!
+      rewards:
+      - resourceType: 0
+        rewardAmount: -40
+      - resourceType: 3
+        rewardAmount: 300
+      - resourceType: 1
+        rewardAmount: 30
+      nextArcIdx: 0
+    - optionDescription: We dont have food for them, tell them to bring their own.
+      rewards:
+      - resourceType: 1
+        rewardAmount: 30
+      nextArcIdx: 0
   storyArcEvents:
   - startingWeek: 3
     repetitionType: 0
@@ -520,14 +594,15 @@ MonoBehaviour:
     storyEventTitlesList:
     - A Noble Merchant
     - Stolen Goods
+    - A Noble Merchant
     storyEvents:
     - title: A Noble Merchant
       eventType: 0
       reporterType: 0
       levelRequired: 0
       difficultyType: 0
-      description: A Trader from our homeland has come and brought news to us, it
-        seems they want to obtain rights to trade with our new found kingdom....
+      description: A Trader from another continent has come and brought news to us,
+        it seems they want to obtain rights to trade with our new found kingdom....
         exclusively, for a hefty price.
       isStoryArc: 1
       storyArc: Rights of Trade
@@ -541,7 +616,7 @@ MonoBehaviour:
           rewardAmount: 5
         - resourceType: 2
           rewardAmount: 10
-        nextArcIdx: 0
+        nextArcIdx: 1
     - title: Stolen Goods
       eventType: 0
       reporterType: 0
@@ -563,7 +638,7 @@ MonoBehaviour:
         - resourceType: 2
           rewardAmount: -2
         nextArcIdx: 0
-    eventIntervals: 030000000500000000000000
+    eventIntervals: 03000000050000000000000000000000
     eventBoosts:
     - 5
     - 0.5
@@ -579,6 +654,7 @@ MonoBehaviour:
     - Wavering Rival
     - New Realm, New Alliance
     - An old rival
+    - An old rival
     storyEvents:
     - title: An old rival
       eventType: 0
@@ -586,9 +662,8 @@ MonoBehaviour:
       levelRequired: 0
       difficultyType: 2
       description: Our scouts has seen a familiar banner flying further away and
-        also by the coast, it seems that a kingdom from our home land is also trying
-        to settle here, should we make haste, we can stop them while they're still
-        weak.
+        also by the coast, it seems that a kingdom faraway is also trying to settle
+        here, should we make haste, we can stop them while they're still weak.
       isStoryArc: 1
       storyArc: An Old Rival
       arcEnd: 0
@@ -681,7 +756,7 @@ MonoBehaviour:
       - optionDescription: This vast lands is ours! prepare to march! this is war!
         rewards: []
         nextArcIdx: 3
-    eventIntervals: 00000000000000000000000000000000
+    eventIntervals: 0000000000000000000000000000000000000000
     eventBoosts:
     - 0.5
     - 0.5

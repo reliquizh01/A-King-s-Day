@@ -19,8 +19,11 @@ public class ScenePointBehavior : BaseInteractableBehavior
     [Header("Scene Information")]
     public ScenePointStatus currentPointStatus = ScenePointStatus.Pathfinding;
     public int sceneIndex = 0;
+    public int visualLayoutOrder = 0;
     public TileConversionHandler battleTile;
     public List<ScenePointBehavior> neighborPoints;
+    public bool isSpawnPoint = false;
+
     [Header("Scene Offsets")]
     public bool straightToOffset;
     public GameObject sceneOffset;
@@ -29,30 +32,62 @@ public class ScenePointBehavior : BaseInteractableBehavior
     public bool sceneLoader = false;
     public SceneType SceneToLoad;
 
+    public void Awake()
+    {
+    }
     public override void Start()
     {
         base.Start();
-        sceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if(ScenePointPathfinder.GetInstance != null)
+        if (ScenePointPathfinder.GetInstance != null)
         {
             ScenePointPathfinder.GetInstance.AddCurrentScenePoints(this);
         }
+
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        SwitchTileType();
+
+        if(SpawnManager.GetInstance != null)
+        {
+            if(isSpawnPoint)
+            {
+                SpawnManager.GetInstance.AddSpawnPoint(this);
+            }
+        }
     }
 
+    public void SwitchTileType()
+    {
+        switch (currentPointStatus)
+        {
+            case ScenePointStatus.Pathfinding:
+                if (battleTile != null)
+                {
+                    battleTile.gameObject.SetActive(false);
+                }
+                break;
+            case ScenePointStatus.BattlePathfinding:
+                if (battleTile != null)
+                {
+                    battleTile.gameObject.SetActive(true);
+                }
+                break;
+            default:
+                break;
+        }
+    }
     public void OnMouseEnter()
     {
         if (EventSystem.current.IsPointerOverGameObject())
         {
             return;
         }
-        if(currentPointStatus == ScenePointStatus.BattlePathfinding)
+        if (!isClickable)
         {
-            if (BattlefieldSceneManager.GetInstance.isCampaignMode)
-            {
-                battleTile.ShowHoverTile();
-            }
+            return;
         }
-        else if (!string.IsNullOrEmpty(mesg) && !isInteractingWith)
+
+        if (!string.IsNullOrEmpty(mesg) && !isInteractingWith)
         {
             Parameters p = new Parameters();
             p.AddParameter<string>("Mesg", mesg);
@@ -66,20 +101,22 @@ public class ScenePointBehavior : BaseInteractableBehavior
         {
             return;
         }
-        if (currentPointStatus == ScenePointStatus.BattlePathfinding)
+        if (!isClickable)
         {
-            if (BattlefieldSceneManager.GetInstance.isCampaignMode)
-            {
-                battleTile.HideHoverTile();
-            }
+            return;
         }
-        else if (!string.IsNullOrEmpty(mesg))
+
+        if (!string.IsNullOrEmpty(mesg))
         {
             EventBroadcaster.Instance.PostEvent(EventNames.HIDE_TOOLTIP_MESG);
         }        
     }
     public void OnMouseDown()
     {
+        if(!isClickable)
+        {
+            return;
+        }
         if(currentPointStatus == ScenePointStatus.BattlePathfinding)
         {
 
@@ -90,23 +127,33 @@ public class ScenePointBehavior : BaseInteractableBehavior
             {
                 return;
             }
-
-            if (TransitionManager.GetInstance.currentSceneManager.king.myMovements.isMoving)
-            {
-                return;
-            }
-
             if(TransitionManager.GetInstance != null)
             {
                 EventBroadcaster.Instance.PostEvent(EventNames.HIDE_TOOLTIP_MESG);
-                TransitionManager.GetInstance.currentSceneManager.OrderCharacterToMove(this);
-            }
 
+                if(sceneLoader)
+                {
+                    TransitionManager.GetInstance.currentSceneManager.player.OrderMovement(this, SceneLoader);
+                }
+                else
+                {
+                    TransitionManager.GetInstance.currentSceneManager.player.OrderMovement(this);
+                }
+
+            }
         }
     }
 
+    public void SceneLoader()
+    {
+        EventBroadcaster.Instance.PostEvent(EventNames.HIDE_RESOURCES);
+        TransitionManager.GetInstance.LoadScene(SceneToLoad);
+    }
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        if (currentPointStatus != ScenePointStatus.BattlePathfinding)
+            return;
+
         BaseCharacter colCharacter = (collision.gameObject.GetComponent<BaseCharacter>() != null) ? collision.gameObject.GetComponent<BaseCharacter>() : null;
 
         if(colCharacter == null)
@@ -122,6 +169,10 @@ public class ScenePointBehavior : BaseInteractableBehavior
 
     public void OnTriggerExit2D(Collider2D collision)
     {
+        if (currentPointStatus != ScenePointStatus.BattlePathfinding)
+            return;
+
+
         BaseCharacter colCharacter = (collision.gameObject.GetComponent<BaseCharacter>() != null) ? collision.gameObject.GetComponent<BaseCharacter>() : null;
 
         if (colCharacter == null)

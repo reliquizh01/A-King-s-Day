@@ -44,7 +44,7 @@ namespace Characters
         public int range;
         public int unitCooldown = 1;
         public int healcost = 5;
-
+        public int unitPrice = 5;
         public float blockProjectile, blockMelee;
 
         public string prefabDataPath;

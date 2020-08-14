@@ -6,7 +6,7 @@ using TMPro;
 using ResourceUI;
 using KingEvents;
 using Managers;
-
+using Characters;
 /// <summary>
 /// Handles all Updates to the current panel shown.
 /// Handles switching of panels.
@@ -14,20 +14,32 @@ using Managers;
 public class InformationActionHandler : MonoBehaviour
 {
     public BaseOperationBehavior myController;
-    public List<OperationCardDecision> operationDecisionList;
+    public KingdomUnitStorage unitStorage;
+
+    [Header("Building Panels Mechanics")]
     public List<BuildingInformationPanel> buildingPanels;
     public BuildingInformationPanel currentBuildingPanel;
+    [Header("Sub Option Mechanics")]
     public SubOptionHandler subOptionHandler;
+    public AdditionalInformationHandler addedInformationHandler;
+    [Header("Operation Decision Mechanics")]
+    public List<OperationCardDecision> operationDecisionList;
+    public OperationCardDecision hoveredOperationDecision;
 
+    [Header("Clicked Option Card")]
     // Index of the Card clicked from the bottom
     public int selectedCardIdx;
     public void OpenPanel(BuildingType buildingType)
     {
-        if(currentBuildingPanel != null)
+
+        if (currentBuildingPanel != null)
         {
             currentBuildingPanel.transform.parent.gameObject.SetActive(false);
             currentBuildingPanel.gameObject.SetActive(false);
         }
+
+        BaseSceneManager tmp = TransitionManager.GetInstance.currentSceneManager;
+        BuildingInformationData buildingInfo = tmp.buildingInformationStorage.ObtainBuildingOperation(buildingType);
 
         currentBuildingPanel = buildingPanels.Find(x => x.buildingType == buildingType);
 
@@ -35,6 +47,8 @@ public class InformationActionHandler : MonoBehaviour
         {
             currentBuildingPanel.gameObject.SetActive(true);
             currentBuildingPanel.transform.parent.gameObject.SetActive(true);
+
+            currentBuildingPanel.InitializeBuildingInformation(buildingInfo);
             currentBuildingPanel.UpdatePages(selectedCardIdx);
         }
     }
@@ -101,16 +115,29 @@ public class InformationActionHandler : MonoBehaviour
     {
         List<ResourceReward> tmp = myController.currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].actionTypes[idx].rewardList;
         ResourceInformationController.GetInstance.currentPanel.ShowPotentialResourceChanges(tmp);
+        hoveredOperationDecision = operationDecisionList[idx];
+        ShowAddedInformation(idx);
+    }
+    public void ShowAddedInformation(int idx)
+    {
+        addedInformationHandler.gameObject.SetActive(true);
+        addedInformationHandler.ShowOnAddedInfoAction(idx, myController.currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].actionTypes[idx]);
+
     }
     public void ImplementDecisionChanges(int idx)
     {
         if(operationDecisionList[idx].openSubOption)
         {
-            subOptionHandler.gameObject.SetActive(true);
+            SwitchSubPanel(true);
             subOptionHandler.OpenSubOption(myController.currentBuildingClicked.buildingType, selectedCardIdx, idx);
         }
         else
         {
+            if(subOptionHandler.gameObject.activeSelf)
+            {
+                SwitchSubPanel(false);
+            }
+
             if (PlayerGameManager.GetInstance != null)
             {
                 List<ResourceReward> tmp = myController.currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].actionTypes[idx].rewardList;
@@ -121,7 +148,14 @@ public class InformationActionHandler : MonoBehaviour
                 {
                     if (tmp[i].rewardAmount < 0)
                     {
-                        isResourcesEnough = PlayerGameManager.GetInstance.CheckResourceEnough(tmp[i].rewardAmount, tmp[i].resourceType);
+                        if(tmp[i].resourceType == Kingdoms.ResourceType.Troops || tmp[i].resourceType == Kingdoms.ResourceType.Mercenary)
+                        {
+                            isResourcesEnough = PlayerGameManager.GetInstance.CheckResourceEnough(tmp[i].rewardAmount, tmp[i].resourceType, tmp[i].unitName);
+                        }
+                        else
+                        {
+                            isResourcesEnough = PlayerGameManager.GetInstance.CheckResourceEnough(tmp[i].rewardAmount, tmp[i].resourceType);
+                        }
                     }
                     if (!isResourcesEnough)
                     {
@@ -133,7 +167,7 @@ public class InformationActionHandler : MonoBehaviour
                 {
                     for (int i = 0; i < tmp.Count; i++)
                     {
-                        PlayerGameManager.GetInstance.ReceiveResource(tmp[i].rewardAmount, tmp[i].resourceType);
+                        PlayerGameManager.GetInstance.ReceiveResource(tmp[i].rewardAmount, tmp[i].resourceType, tmp[i].unitName);
 
                         if (tmp[i].rewardAmount < 0)
                         {
@@ -156,13 +190,24 @@ public class InformationActionHandler : MonoBehaviour
 
         }
     }
+    public void HideAddedInformation()
+    {
+        addedInformationHandler.gameObject.SetActive(false);
+        addedInformationHandler.HideOnAddedInfoAction();
+    }
     public void HideOperationDecisionChanges()
     {
+        HideAddedInformation();
+
         ResourceInformationController.GetInstance.currentPanel.HidePotentialResourceChanges();
     }
     public void ClosePanelList()
     {
         currentBuildingPanel.gameObject.SetActive(false);
+    }
+    public void SwitchSubPanel(bool switchTo)
+    {
+        subOptionHandler.gameObject.SetActive(switchTo);
     }
     public void ResetActionList()
     {

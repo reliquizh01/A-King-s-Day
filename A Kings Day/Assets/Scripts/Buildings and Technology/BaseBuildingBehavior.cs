@@ -55,17 +55,20 @@ namespace Buildings
             base.SetupInteractableInformation();
             PlayerKingdomData playerData = PlayerGameManager.GetInstance.playerData;
 
+            // IF NO DATA ABOUT THE BUILDING YET
             if(PlayerGameManager.GetInstance != null && playerData.buildingInformationData != null 
-                && playerData.buildingInformationData.Count > 0 && 
-                playerData.buildingInformationData.Find( x=> x.buildingName == this.buildingInformation.BuildingName) != null)
+                && playerData.buildingInformationData.Count > 0)
             {
-                BuildingSavedData tmp = playerData.buildingInformationData.Find(x => x.buildingName == buildingInformation.BuildingName);
-
                 buildingInformation = TransitionManager.GetInstance.currentSceneManager.buildingInformationStorage.ObtainBuildingOperation(informationName);
 
-                buildingInformation.buildingCondition = tmp.buildingCondition;
-                buildingInformation.buildingLevel = tmp.buildingLevel;
-                buildingInformation.buildingType = tmp.buildingType;
+                BuildingSavedData tmp = playerData.buildingInformationData.Find(x => x.buildingName == buildingInformation.BuildingName);
+
+                if(tmp != null)
+                {
+                    buildingInformation.buildingCondition = tmp.buildingCondition;
+                    buildingInformation.buildingLevel = tmp.buildingLevel;
+                    buildingInformation.buildingType = tmp.buildingType;
+                }
             }
             else if(TransitionManager.GetInstance != null)
             {
@@ -91,7 +94,17 @@ namespace Buildings
             {
                 Parameters p = new Parameters();
                 p.AddParameter<string>("Mesg", mesg);
-                EventBroadcaster.Instance.PostEvent(EventNames.SHOW_TOOLTIP_MESG, p);
+                if(TransitionManager.GetInstance != null)
+                {
+                    if(!TransitionManager.GetInstance.isNewGame)
+                    {
+                        EventBroadcaster.Instance.PostEvent(EventNames.SHOW_TOOLTIP_MESG, p);
+                    }
+                }
+                else
+                {
+                    EventBroadcaster.Instance.PostEvent(EventNames.SHOW_TOOLTIP_MESG, p);
+                }
             }
         }
 
@@ -123,6 +136,7 @@ namespace Buildings
 
         public void UpdateBuildingState()
         {
+            optionHandler.myBuilding = this;
             optionHandler.UpdateRuinState();
             switch (buildingInformation.buildingCondition)
             {
@@ -131,8 +145,8 @@ namespace Buildings
                     fixFilled.gameObject.SetActive(false);
                     break;
                 case BuildingCondition.Functioning:
-                ruinEmpty.gameObject.SetActive(false);
-                fixFilled.gameObject.SetActive(true);
+                    ruinEmpty.gameObject.SetActive(false);
+                    fixFilled.gameObject.SetActive(true);
                     break;
                 default:
                     break;

@@ -98,14 +98,8 @@ namespace Battlefield
         {
             if(BattlefieldSystemsManager.GetInstance.dayInProgress)
             {
-                if(BattlefieldSceneManager.GetInstance.isCampaignMode)
-                {
-                    CampaignControls();
-                }
-                else
-                {
-                    MultiplayerControl();
-                }
+                // Later on Add ON-LINE Controls (Multiplayer is only good for Campaign and Local 1v1)
+                MultiplayerControl();
             }
         }
 
@@ -383,6 +377,11 @@ namespace Battlefield
 
         public void ComputerPlayerControl()
         {
+            if(!BattlefieldSystemsManager.GetInstance.dayInProgress)
+            {
+                return;
+            }
+
             curColumnIdx = computerAI.ChooseLane();
             SetPointBehavior(isAttacker);
 
@@ -419,9 +418,15 @@ namespace Battlefield
             }
 
         }
+
         public void SummonUnit()
         {
-            if(BattlefieldSpawnManager.GetInstance == null)
+            if (!BattlefieldSystemsManager.GetInstance.dayInProgress)
+            {
+                return;
+            }
+
+            if (BattlefieldSpawnManager.GetInstance == null)
             {
                 return;
             }
@@ -434,33 +439,25 @@ namespace Battlefield
                 return;
             }
 
-            if(BattlefieldSceneManager.GetInstance.isCampaignMode)
+            bool canSpawn = BattlefieldSpawnManager.GetInstance.CheckIfUnitsAvailable(isAttacker, currentSelectedIdx);
+
+            // Check if Can Spawn
+            if(canSpawn)
             {
-                // Player Only
+                ScenePointBehavior spawn = BattlefieldPathManager.GetInstance.ObtainSpawnPoint(curColumnIdx, isAttacker);
+                ScenePointBehavior target = BattlefieldPathManager.GetInstance.ObtainTargetPoint(curColumnIdx, isAttacker);
+
+                BattlefieldSpawnManager.GetInstance.SpawnUnit(currentSelectedIdx, spawn, target, isAttacker);
+                BattlefieldSceneManager.GetInstance.battleUIInformation.UpdateUnitPanels();
+
+                for (int i = 0; i < unitList.Count; i++)
+                {
+                    unitList[i].ResetCooldown();
+                }
+                canChangeSummon = true;
             }
             else
             {
-                bool canSpawn = BattlefieldSpawnManager.GetInstance.CheckIfUnitsAvailable(isAttacker, currentSelectedIdx);
-
-                // Check if Can Spawn
-                if(canSpawn)
-                {
-                    ScenePointBehavior spawn = BattlefieldPathManager.GetInstance.ObtainSpawnPoint(curColumnIdx, isAttacker);
-                    ScenePointBehavior target = BattlefieldPathManager.GetInstance.ObtainTargetPoint(curColumnIdx, isAttacker);
-
-                    BattlefieldSpawnManager.GetInstance.SpawnUnit(currentSelectedIdx, spawn, target, isAttacker);
-                    BattlefieldSceneManager.GetInstance.battleUIInformation.UpdateUnitPanels();
-
-                    for (int i = 0; i < unitList.Count; i++)
-                    {
-                        unitList[i].ResetCooldown();
-                    }
-                    canChangeSummon = true;
-                }
-                else
-                {
-
-                }
 
             }
 

@@ -11,6 +11,12 @@ using Managers;
 
 namespace ResourceUI
 {
+    [Serializable]
+    public class WarningMessageClass
+    {
+        public ResourceType dependent;
+        public string message;
+    }
     public class BaseResourceUIControllerV2 : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
         public BaseResourceIconUIV2 storageFill;
@@ -22,6 +28,7 @@ namespace ResourceUI
 
         [Header("Warning System")]
         public ResourceWarningHandler myWarning;
+        public List<WarningMessageClass> dependentList;
 
         [Header("Storage")]
         public int storageCapacity;

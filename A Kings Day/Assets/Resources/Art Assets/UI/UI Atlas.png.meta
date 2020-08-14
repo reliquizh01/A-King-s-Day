@@ -134,6 +134,9 @@ TextureImporter:
   - first:
       213: -5464334675904927135
     second: Brown_Description_Panel
+  - first:
+      213: -1566739397185042034
+    second: Week Button Fill
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1015,6 +1018,27 @@ TextureImporter:
       bones: []
       spriteID: 16a66d44098ca24b0800000000000000
       internalID: -5464334675904927135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Week Button Fill
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 230
+        width: 57
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e890d27b1d2d14ae0800000000000000
+      internalID: -1566739397185042034
       vertices: []
       indices: 
       edges: []

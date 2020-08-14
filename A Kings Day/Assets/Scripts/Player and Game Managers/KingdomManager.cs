@@ -8,6 +8,9 @@ using Territory;
 using Kingdoms;
 using ResourceUI;
 using SaveData;
+using UnityEngine.UI;
+using Dialogue;
+using Drama;
 
 namespace Managers
 {
@@ -28,21 +31,18 @@ namespace Managers
         }
         public void Awake()
         {
-            if (KingdomManager.GetInstance == null)
+            if (KingdomManager.GetInstance != null && KingdomManager.GetInstance != this)
             {
-                if (transform.parent == null)
-                {
-                    DontDestroyOnLoad(this.gameObject);
-                }
-                instance = this;
+                DestroyImmediate(this.gameObject);
             }
             else
             {
-                Destroy(this.gameObject);
+                instance = this;
             }
         }
         #endregion
 
+        public bool isPrologue = false;
         public CardsEventController cardEventController;
         // Create an Event Database so the manager can just obtain it there.
         public KingdomEventStorage eventStorage;
@@ -60,19 +60,25 @@ namespace Managers
 
         private bool savedDataLoaded = false;
         private bool allowStartEvent = false;
+        public BasePanelBehavior eventBellBtn;
+
         public void OnEnable()
         {
             EventBroadcaster.Instance.AddObserver(EventNames.SAVE_KINGDOM_DATA, SaveData);
+            EventBroadcaster.Instance.AddObserver(EventNames.HIDE_RESOURCES, HideBellButton);
         }
 
         public void OnDisable()
         {
             EventBroadcaster.Instance.RemoveActionAtObserver(EventNames.SAVE_KINGDOM_DATA, SaveData);
+            EventBroadcaster.Instance.RemoveActionAtObserver(EventNames.HIDE_RESOURCES, HideBellButton);
         }
         public override void PreOpenManager()
         {
             base.PreOpenManager();
             Debug.Log("Starting Kingdom Events Manager");
+
+            playerData = new PlayerKingdomData();
             playerData = PlayerGameManager.GetInstance.playerData;
 
             // FOR TESTING ONLY
@@ -84,20 +90,22 @@ namespace Managers
                     StartWeekEvents();
                     TransitionManager.GetInstance.isNewGame = false;
                 }
-                else
+                else if(TransitionManager.GetInstance.currentSceneManager.sceneType == SceneType.Courtroom)
                 {
                     PlayerGameManager mgr = PlayerGameManager.GetInstance;
-                    Debug.Log("Player Queued Events : " + mgr.playerData.queuedDataEventsList.Count);
                     LoadSavedData(mgr.playerData.queuedDataEventsList, mgr.playerData.curDataEvent, mgr.playerData.curDataStory);
-
                     // CHECKS IF LOADED DATA STILL HAS QUEUED EVENTS
-                    if (mgr.playerData.queuedDataEventsList.Count > 0 || mgr.playerData.curDataEvent != null && !string.IsNullOrEmpty(mgr.playerData.curDataEvent.title))
+
+                    if (mgr.playerData.eventFinished < 3)
                     {
-                        AllowStartEvent();
-                    }
-                    else
-                    {
-                        StartWeekEvents();
+                        if (mgr.playerData.queuedDataEventsList.Count > 0 || mgr.playerData.curDataEvent != null && !string.IsNullOrEmpty(mgr.playerData.curDataEvent.title))
+                        {
+                            AllowStartEvent(); // PREOPEN
+                        }
+                        else
+                        {
+                            StartWeekEvents();
+                        }
                     }
                 }
             }
@@ -112,10 +120,49 @@ namespace Managers
 
         }
 
+        public void PrologueEvents()
+        {
+            playerData = PlayerGameManager.GetInstance.playerData;
+
+            EventDecisionData event1 = eventStorage.GetEventByTitle("Scout of the Wilds");
+            EventDecisionData event2 = eventStorage.GetEventByTitle("Angered Fur Khan");
+            EventDecisionData event3 = eventStorage.GetEventByTitle("Unexpected Crusade");
+
+            queuedEventsList.Add(event1);
+            queuedEventsList.Add(event2);
+            queuedEventsList.Add(event3);
+
+            eventFinished = PlayerGameManager.GetInstance.playerData.eventFinished;
+            weeklyEvents = 3;
+            isPrologue = true;
+
+            AllowStartEvent(); // PROLOGUE EVENTS
+
+            ResourceInformationController.GetInstance.currentPanel.weekController.UpdateEndButton(0, weeklyEvents, ShowEndWeekPrologue);
+        }
+
+        public void ShowEndWeekPrologue()
+        {
+            ResourceInformationController.GetInstance.overheadTutorialController.ShowWeekTutorial();
+
+            ConversationInformationData tmp = DialogueManager.GetInstance.dialogueStorage.ObtainConversationByTitle("Prologue - Week End Guide");
+            DialogueManager.GetInstance.StartConversation(tmp, ResourceInformationController.GetInstance.overheadTutorialController.HideAllTutorial);
+        }
+        public void EndPrologueEvents(Action endDialogueProceeding = null)
+        {
+            if (DialogueManager.GetInstance == null)
+                return;
+
+            if (DramaticActManager.GetInstance == null)
+                return;
+
+            EventBroadcaster.Instance.PostEvent(EventNames.HIDE_RESOURCES);
+            ConversationInformationData tmp = DialogueManager.GetInstance.dialogueStorage.ObtainConversationByTitle("Prologue - Before the Week has passed.");
+            DramaticActManager.GetInstance.FadeToDark(true,() => DialogueManager.GetInstance.StartConversation(tmp, endDialogueProceeding));
+        }
         public void LoadSavedData(List<EventDecisionData> prevQueuedData, EventDecisionData prevCurData, StoryArcEventsData prevStoryData)
         {
             queuedEventsList = new List<EventDecisionData>();
-            Debug.Log(prevQueuedData.Count);
             queuedEventsList.AddRange(prevQueuedData);
             currentEvent = prevCurData;
             currentStory = prevStoryData;
@@ -132,7 +179,10 @@ namespace Managers
             PlayerGameManager.GetInstance.SaveCurDataEvent(currentEvent);
             PlayerGameManager.GetInstance.SaveQueuedData(queuedEventsList, eventFinished);
             PlayerGameManager.GetInstance.SaveCurStory(currentStory);
-            SaveLoadManager.GetInstance.SaveCurrentData();
+            if(TransitionManager.GetInstance != null && !TransitionManager.GetInstance.isNewGame)
+            {
+                SaveLoadManager.GetInstance.SaveCurrentData();
+            }
         }
 
         public void ProceedToNextWeek()
@@ -141,7 +191,7 @@ namespace Managers
             eventFinished = 0;
             //Debug.Log("Last Week Count: " + PlayerGameManager.GetInstance.playerData.weekCount);
             PlayerGameManager.GetInstance.playerData.weekCount += 1;
-            PlayerGameManager.GetInstance.WeeklyResourceProductionUpdate();
+            EventBroadcaster.Instance.PostEvent(EventNames.WEEKLY_UPDATE);
             //Debug.Log("Adding New Week, Current Count : " + PlayerGameManager.GetInstance.playerData.weekCount);
             StartWeekEvents();
         }
@@ -257,13 +307,16 @@ namespace Managers
 
             if (TransitionManager.GetInstance.currentSceneManager != null)
             {
-                if (TransitionManager.GetInstance.currentSceneManager == CourtroomSceneManager.GetInstance)
+                if(CourtroomSceneManager.GetInstance != null)
                 {
-                    CourtroomSceneManager.GetInstance.MakeGuardShow(() => AllowStartEvent());
-                }
-                else
-                {
-                    Debug.Log("Item Name: " + TransitionManager.GetInstance.currentSceneManager.gameObject.name + " Manager Name: " + CourtroomSceneManager.GetInstance.gameObject.name);
+                    if (TransitionManager.GetInstance.currentSceneManager == CourtroomSceneManager.GetInstance)
+                    {
+                        CourtroomSceneManager.GetInstance.MakeGuardShow(() => AllowStartEvent());
+                    }
+                    else
+                    {
+                        Debug.Log("Item Name: " + TransitionManager.GetInstance.currentSceneManager.gameObject.name + " Manager Name: " + CourtroomSceneManager.GetInstance.gameObject.name);
+                    }
                 }
             }
 
@@ -274,8 +327,79 @@ namespace Managers
         {
             //Debug.Log("Allowing Event");
             allowStartEvent = true;
-            GameUIManager.GetInstance.ShowBellButton();
+            ShowBellButton();
         }
+
+        public void ShowBellButton()
+        {
+            if(!TransitionManager.GetInstance.isNewGame && TransitionManager.GetInstance.currentSceneManager.sceneType != SceneType.Courtroom)
+            {
+                return;
+            }
+
+            if(PlayerGameManager.GetInstance == null)
+            {
+                return;
+            }
+
+            if(queuedEventsList == null && string.IsNullOrEmpty(currentStory.description) &&queuedEventsList.Count <= 0)
+            {
+                return;
+            }
+
+            Debug.Log("Showing Bell Button!");
+            eventBellBtn.gameObject.SetActive(true);
+            eventBellBtn.GetComponent<Button>().interactable = true;
+            StartCoroutine(DelayBellButton());
+        }
+
+        public void HideBellButton(Parameters p = null)
+        {
+            if(!eventBellBtn.gameObject.activeSelf)
+            {
+                return;
+            }
+
+            if (!TransitionManager.GetInstance.isNewGame && TransitionManager.GetInstance.currentSceneManager.sceneType != SceneType.Courtroom)
+            {
+                return;
+            }
+
+            if (PlayerGameManager.GetInstance == null)
+            {
+                return;
+            }
+
+            if (queuedEventsList == null && queuedEventsList.Count <= 0)
+            {
+                if (currentStory == null)
+                {
+                    return;
+                }
+            }
+
+            eventBellBtn.PlayCloseAnimation();
+        }
+        public void ActivateNextEvent()
+        {
+            eventBellBtn.GetComponent<Button>().interactable = false;
+            eventBellBtn.PlayCloseAnimation();
+            StartCoroutine(DelayStartNextEvent());
+        }
+        IEnumerator DelayStartNextEvent()
+        {
+            yield return new WaitForSeconds(1);
+
+            StartEvent();
+        }
+
+        public IEnumerator DelayBellButton()
+        {
+            yield return new WaitForSeconds(1);
+
+            eventBellBtn.PlayOpenAnimation();
+        }
+
         public void StartEvent()
         {
             if(currentEvent == null)
@@ -296,7 +420,7 @@ namespace Managers
             }
             else if(queuedEventsList != null && queuedEventsList.Count > 0)
             {
-                AllowStartEvent();
+                AllowStartEvent(); // START EVENT
             }
             
             // RECEIVE EVENT AFTER GUEST REACHED POSITION
@@ -304,17 +428,18 @@ namespace Managers
         }
         public void StartCards()
         {
+            EventBroadcaster.Instance.PostEvent(EventNames.HIDE_TOOLTIP_MESG);
+            
             cardEventController.ReceiveEvent(currentEvent);
             SaveData();
+            
         }
         public void EndCards()
         {
+
+            EventBroadcaster.Instance.PostEvent(EventNames.HIDE_TOOLTIP_MESG);
+
             SpawnManager.GetInstance.PreLeaveCourt();
-            eventFinished += 1;
-            if(PlayerGameManager.GetInstance != null)
-            {
-                SaveData();
-            }
 
             if(eventFinished < weeklyEvents)
             {
@@ -326,12 +451,20 @@ namespace Managers
                 {
                     if(TransitionManager.GetInstance.currentSceneManager == CourtroomSceneManager.GetInstance)
                     {
-                        CourtroomSceneManager.GetInstance.MakeGuardLeave(() => ResourceInformationController.GetInstance.currentPanel.weekController.UpdateEndButton(eventFinished, weeklyEvents));
+                        CourtroomSceneManager.GetInstance.MakeGuardLeave(EndWeekCards);
+                    }
+                    else
+                    {
+                        ResourceInformationController.GetInstance.currentPanel.weekController.UpdateEndButton(eventFinished, weeklyEvents);
                     }
                 }
             }
-        }
 
+        }
+        public void EndWeekCards()
+        {
+            ResourceInformationController.GetInstance.currentPanel.weekController.UpdateEndButton(eventFinished, weeklyEvents);
+        }
         public void SummonGuest()
         {
             if(string.IsNullOrEmpty(currentEvent.title))
@@ -384,6 +517,13 @@ namespace Managers
             Debug.Log("Rewarding Event");
             currentEvent = null;
             allowStartEvent = false;
+            eventFinished += 1;
+
+            if (PlayerGameManager.GetInstance != null)
+            {
+                SaveData();
+            }
+
             EndCards();
         }
         public void ProgressStoryArc()
@@ -440,14 +580,26 @@ namespace Managers
                 }
                 else
                 {
-                    AllowStartEvent();
+                    AllowStartEvent(); // CHECKING NEXT EVENT
                 }
             }
             else
             {
                 currentEvent = null;
             }
-            SaveData();
+
+            if(TransitionManager.GetInstance != null)
+            {
+                if(!TransitionManager.GetInstance.isNewGame)
+                {
+                    SaveData();
+                }
+
+            }
+            else
+            {
+                SaveData();
+            }
         }
 
         public void SetStoryArc()

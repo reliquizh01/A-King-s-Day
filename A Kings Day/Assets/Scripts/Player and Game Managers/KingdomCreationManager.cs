@@ -4,61 +4,79 @@ using UnityEngine;
 using Utilities;
 using Managers;
 using Kingdoms;
+using Drama;
+using SaveData;
 
 public class KingdomCreationManager : BaseManager
 {
-    public GameObject creationView;
+    public KingdomCreationUiV2 creationView;
     public BasePanelBehavior saveSlots;
+    public BasePanelWindow saveSlotWindow;
     public SaveSlotHandler saveSlotHandler;
+    
+    [Header("Introduction Mechanic")]
+    public BasePanelBehavior introductionPanel;
+    public string introDrama;
 
-    public PlayerKingdomData CreateKingdom()
-    {
-        PlayerKingdomData tmpKingdom = new PlayerKingdomData();
-            
-
-        return tmpKingdom;
-    }
     public override void PreOpenManager()
     {
         base.PreOpenManager();
-
-    }
-    public override void StartManager()
-    {
-        Debug.Log("Starting Kingdom Creation Manager");
-        base.StartManager();
-
-        if (SaveData.SaveLoadManager.GetInstance.saveDataList != null &&
-           SaveData.SaveLoadManager.GetInstance.saveDataList.Count > 0)
+        if(introductionPanel != null)
         {
-            saveSlots.gameObject.SetActive(true);
-            saveSlots.PlayOpenAnimation();
-
-            saveSlotHandler.SetSavePanels(SaveData.SaveLoadManager.GetInstance.saveDataList);
+            introductionPanel.gameObject.SetActive(true);
+            StartCoroutine(introductionPanel.WaitAnimationForAction(introductionPanel.openAnimationName, GoToCreationView));
         }
         else
         {
-            saveSlotHandler.nokingdomText.gameObject.SetActive(true);
-            creationView.gameObject.SetActive(true);
+            TransitionManager.GetInstance.RemoveLoading();
+        }
+    }
+    public override void StartManager()
+    {
+        base.StartManager();
+
+        if(TransitionManager.GetInstance != null && TransitionManager.GetInstance.currentSceneManager.sceneType == SceneType.Opening)
+        {
+            if (SaveData.SaveLoadManager.GetInstance.saveDataList != null &&
+               SaveData.SaveLoadManager.GetInstance.saveDataList.Count > 0)
+            {
+                if(saveSlots.gameObject != null)
+                {
+                    saveSlots.gameObject.SetActive(true);
+                    saveSlots.PlayOpenAnimation();
+                    saveSlotWindow.parentCloseCallback = TransitionToOpenScene;
+                    saveSlotHandler.SetSavePanels(SaveData.SaveLoadManager.GetInstance.saveDataList);
+                }
+            }
+            else
+            {
+                saveSlotHandler.nokingdomText.gameObject.SetActive(true);
+                creationView.gameObject.SetActive(true);
+            }
         }
     }
     public override void PreCloseManager()
     {
+        saveSlotWindow.CloseWindow();
         StartCoroutine(saveSlots.WaitAnimationForAction(saveSlots.closeAnimationName, () => TransitionManager.GetInstance.RemoveLoading()));        
         base.PreCloseManager();
     }
-    public void UpdateSlotHandler()
-    {
 
-    }
     public void GoToCreationView()
     {
-        saveSlots.gameObject.SetActive(false);
-        if(TransitionManager.GetInstance != null)
+        if (TransitionManager.GetInstance != null) 
         {
-            TransitionManager.GetInstance.ShowTabCover();
+            if(TransitionManager.GetInstance.currentSceneManager.sceneType == SceneType.Opening)
+            {
+                saveSlots.gameObject.SetActive(false);
+            }
+        }
+        if(DramaticActManager.GetInstance != null)
+        {
+            DramaticActManager.GetInstance.PlayScene(introDrama);
         }
         creationView.gameObject.SetActive(true);
+        creationView.myPanel.PlayOpenAnimation();
     }
     public override void CloseManager()
     {
@@ -67,7 +85,10 @@ public class KingdomCreationManager : BaseManager
         {
             TransitionManager.GetInstance.HideTabCover();
         }
-        creationView.gameObject.SetActive(false);
+        if(creationView != null)
+        {
+            creationView.gameObject.SetActive(false);
+        }
     }
 
     public void LoadThisData()
@@ -79,8 +100,13 @@ public class KingdomCreationManager : BaseManager
         if (PlayerGameManager.GetInstance != null)
         {
             PlayerGameManager.GetInstance.ReceiveData(SaveData.SaveLoadManager.GetInstance.saveDataList[saveSlotHandler.selectedIndex]);
+
+            PlayerCampaignData tmp = new PlayerCampaignData();
+            tmp = SaveData.SaveLoadManager.GetInstance.saveCampaignDataList[saveSlotHandler.selectedIndex];
+            PlayerGameManager.GetInstance.ReceiveCampaignData(tmp);
         }
         TransitionManager.GetInstance.isNewGame = false;
+        saveSlotWindow.parentCloseCallback = null;
         StartCoroutine(saveSlots.WaitAnimationForAction(saveSlots.closeAnimationName, LoadDataToGame));
     }
     public void DeleteThisData()
@@ -88,18 +114,55 @@ public class KingdomCreationManager : BaseManager
         if(SaveData.SaveLoadManager.GetInstance != null)
         {
             SaveData.SaveLoadManager.GetInstance.DeleteData();
+            SaveData.SaveLoadManager.GetInstance.DeleteCampaignData();
         }
         saveSlotHandler.UpdatePanels(SaveData.SaveLoadManager.GetInstance.saveDataList);
     }
     public void LoadDataToGame()
     {
-
         TransitionManager.GetInstance.LoadScene(SceneType.Courtroom);
-        TransitionManager.GetInstance.TransitionToNextGameView(GameViews.CourtroomView);
+        TransitionManager.GetInstance.TransitionToNextGameView(SceneType.Courtroom);
     }
     public void TransitionToOpenScene()
     {
         Debug.Log("Transitioning to Open Creation");
-        TransitionManager.GetInstance.TransitionToNextGameView(GameViews.OpeningView);
+        if(TransitionManager.GetInstance.currentSceneManager.sceneType == SceneType.Opening)
+        {
+            saveSlotWindow.parentCloseCallback = null;
+            saveSlotHandler.ResetPanels();
+
+            TransitionManager.GetInstance.SetAsCurrentManager(SceneType.Opening);
+        }
+        else
+        {
+            TransitionManager.GetInstance.TransitionToNextGameView(SceneType.Opening);
+        }
+    }
+
+    public void TransitionToKingdomCreationScene()
+    {
+        if (SaveLoadManager.GetInstance != null)
+        {
+            if (SaveLoadManager.GetInstance.saveDataList != null
+                && SaveLoadManager.GetInstance.saveDataList.Count > 0)
+            {
+                TransitionManager.GetInstance.TransitionToNextGameView(SceneType.Creation);
+            }
+            else
+            {
+                TransitionManager.GetInstance.LoadScene(SceneType.Creation);
+            }
+        }
+        else
+        {
+            TransitionManager.GetInstance.LoadScene(SceneType.Creation);
+        }
+    }
+
+    public void CreateNewKingdom()
+    {
+        saveSlotWindow.parentCloseCallback = null;
+        saveSlotWindow.CloseWindow();
+        TransitionManager.GetInstance.LoadScene(SceneType.Creation);
     }
 }

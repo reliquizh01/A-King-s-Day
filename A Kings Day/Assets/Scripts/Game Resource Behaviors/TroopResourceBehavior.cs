@@ -75,7 +75,25 @@ namespace GameResource
             curPlayer.coins -= GetRecruitCoins;
             curPlayer.SetPopulation(-1);
 
-            curPlayer.recruits += 1;
+            int idx = -1;
+            if (curPlayer.troopsList == null)
+            {
+                curPlayer.troopsList = new List<TroopsInformation>();
+            }
+            if (curPlayer.troopsList.Find(x => x.unitInformation.unitName == "Recruit") != null)
+            {
+                idx = curPlayer.troopsList.FindIndex(x => x.unitInformation.unitName == "Recruit");
+            }
+
+            if(idx != -1)
+            {
+                curPlayer.troopsList[idx].totalUnitCount += 1;
+            }
+            else
+            {
+                curPlayer.troopsList.Add(TroopsInformation.ConvertToTroopsInformation(TransitionManager.GetInstance.unitStorage.GetUnitInformation("Recruit"), 0));
+                curPlayer.troopsList[curPlayer.troopsList.Count - 1].totalUnitCount += 1;
+            }
         }
 
         public override void ImplementTechnology()

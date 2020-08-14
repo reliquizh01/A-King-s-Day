@@ -4,6 +4,9 @@ using UnityEngine;
 using System;
 using Characters;
 using Managers;
+using Kingdoms;
+using Battlefield;
+using Maps;
 
 [Serializable]
 public class TroopsInformation
@@ -14,11 +17,24 @@ public class TroopsInformation
     public int totalInjuredCount; // Send units here during battle
     public int totalReturningUnitCount; // Transfer Injured units here after day falls
     public int totalDeathCount;
+
+    public static TroopsInformation ConvertToTroopsInformation(UnitInformationData unitData, int availableCount)
+    {
+        TroopsInformation tmp = new TroopsInformation();
+        tmp.unitInformation = new UnitInformationData();
+        tmp.unitInformation = unitData;
+
+        tmp.totalUnitsAvailableForDeployment = availableCount;
+        tmp.totalUnitCount = availableCount;
+
+        return tmp;
+    }
 }
 
 [Serializable]
 public class BattlefieldCommander
 {
+    public ChooseUnitMindset unitMindset = ChooseUnitMindset.AggressiveSpawning;
     public List<TroopsInformation> unitsCarried;
     public List<BaseHeroInformationData> heroesCarried;
     public int resourceAmount = 20;
@@ -55,16 +71,87 @@ public class BattlefieldCommander
         //heroesCarried.Add(BattlefieldSceneManager.GetInstance.spawnManager.unitStorage.heroStorage[0]);
     }
 
+    public static BattlefieldCommander ConvertTravellerToCommander(MapPointInformationData thisPoint)
+    {
+        BattlefieldCommander tmp = new BattlefieldCommander();
+        tmp.heroesCarried = new List<BaseHeroInformationData>();
+
+        tmp.unitsCarried = new List<TroopsInformation>();
+        tmp.unitsCarried.AddRange(thisPoint.troopsCarried);
+        tmp.unitMindset = thisPoint.aiMindset;
+
+        if (thisPoint.leaderUnit != null)
+        {
+            tmp.heroesCarried.Add(thisPoint.leaderUnit);
+        }
+
+        return tmp;
+    }
+
+    public static BattlefieldCommander ConvertTravellerToCommander(BaseTravellerData thisTraveller)
+    {
+        BattlefieldCommander tmp = new BattlefieldCommander();
+        tmp.heroesCarried = new List<BaseHeroInformationData>();
+
+        tmp.unitsCarried = new List<TroopsInformation>();
+        tmp.unitsCarried.AddRange(thisTraveller.troopsCarried);
+        tmp.unitMindset = thisTraveller.leaderMindset;
+        if(thisTraveller.leaderUnit != null)
+        {
+            tmp.heroesCarried.Add(thisTraveller.leaderUnit);
+        }
+
+        return tmp;
+    }
+
+    public int CheckUnitCount(string troopName)
+    {
+        int tmp = 0;
+
+        tmp += unitsCarried.Find(x => x.unitInformation.unitName == troopName).totalUnitCount;
+        tmp += unitsCarried.Find(x => x.unitInformation.unitName == troopName).totalInjuredCount;
+        return tmp;
+    }
+
+    public int CheckUnitDeathCount(string troopName)
+    {
+        int tmp = 0;
+
+        tmp += unitsCarried.Find(x => x.unitInformation.unitName == troopName).totalDeathCount;
+
+        return tmp;
+    }
+
+    public int CheckTotalDeadTroopsCount()
+    {
+        int tmp = 0;
+
+        if (unitsCarried != null && unitsCarried.Count > 0)
+        {
+            for (int i = 0; i < unitsCarried.Count; i++)
+            {
+                tmp += unitsCarried[i].totalDeathCount;
+            }
+        }
+
+        return tmp;
+    }
     public int CheckTotalTroopsCount()
     {
         int tmp = 0;
 
-        for (int i = 0; i < unitsCarried.Count; i++)
+        if (unitsCarried != null && unitsCarried.Count > 0)
         {
-            tmp += unitsCarried[i].totalUnitCount;
+            for (int i = 0; i < unitsCarried.Count; i++)
+            {
+                tmp += unitsCarried[i].totalUnitCount;
+            }
         }
 
-        tmp += heroesCarried.Count;
+        if(heroesCarried != null && heroesCarried.Count > 0)
+        {
+            tmp += heroesCarried.Count;
+        }
 
         return tmp;
     }

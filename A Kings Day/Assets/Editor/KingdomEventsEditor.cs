@@ -111,7 +111,9 @@ namespace KingEvents
 
             curKingdomEventData = curEventStorage.GetComponent<KingdomEventStorage>();
 
-            // INTERVALS FOR ALL EVENTS.
+            // INTERVALS FOR ALL EVENTS - STUDY IF THIS IS SOMETHING WORTH STAYING, SINCE YOU LOAD STUFF
+            // AND YOU MIGHT WANT TO CHANGE IT LATER ON TO BALANCE, I THINK THIS CAN BE REMOVED
+            // -July Self.
             for (int i = 0; i < curKingdomEventData.storyArcEvents.Count; i++)
             {
                 if(curKingdomEventData.storyArcEvents[selectedArcIdx].eventIntervals.Count <= 0)
@@ -237,11 +239,15 @@ namespace KingEvents
                 if (curKingdomEventData.kingdomEvents == null)
                 {
                     curKingdomEventData.kingdomEvents = new List<EventDecisionData>();
+                    curEvent = new EventDecisionData();
                 }
-                if (curKingdomEventData.kingdomEvents.Find(x => x.title == curEvent.title) == null)
+                else if (curKingdomEventData.kingdomEvents.Find(x => x.title == curEvent.title) == null)
                 {
                     curKingdomEventData.kingdomEvents.Add(curEvent);
-                    SaveToStoryArcs(curEvent);
+                    if(curEvent.isStoryArc)
+                    {
+                        SaveToStoryArcs(curEvent);
+                    }
                     curEvent = new EventDecisionData();
                 }
                 else

@@ -1,0 +1,992 @@
+fileFormatVersion: 2
+guid: ba6c8f15aa4431d4197bdc25f0dbfe70
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Pillar
+  - first:
+      213: 21300002
+    second: Red Carpet
+  - first:
+      213: 21300004
+    second: Floor
+  - first:
+      213: 21300006
+    second: Kings' Chair
+  - first:
+      213: 21300008
+    second: Pedestal
+  - first:
+      213: 21300010
+    second: Window
+  - first:
+      213: 21300012
+    second: Door
+  - first:
+      213: 21300014
+    second: Pillar
+  - first:
+      213: 21300016
+    second: Red Carpet
+  - first:
+      213: 21300018
+    second: Courtroom Floor
+  - first:
+      213: 21300020
+    second: Kings' Chair
+  - first:
+      213: 21300022
+    second: Pedestal
+  - first:
+      213: 21300024
+    second: Windows
+  - first:
+      213: 21300026
+    second: Door
+  - first:
+      213: 21300028
+    second: Walls
+  - first:
+      213: 8547925126133316578
+    second: Window_Frame_Only
+  - first:
+      213: 6891998688202470243
+    second: Court Room Atlas_1
+  - first:
+      213: 3849025659603637141
+    second: Red Carpet_Broken
+  - first:
+      213: 5116232592299696501
+    second: Courtroom_Broken_Wall
+  - first:
+      213: -1564390142645937827
+    second: Broken_Window_1
+  - first:
+      213: 3545747578108374670
+    second: Broken_Window_2
+  - first:
+      213: -8023950930247990634
+    second: Broken_Window_3
+  - first:
+      213: 3346293278136006532
+    second: Broken_Window_4
+  - first:
+      213: 4422028745218474395
+    second: Wall Rug
+  - first:
+      213: -729012458793942974
+    second: Broken_Window_5
+  - first:
+      213: 5993647129643593723
+    second: Broken_Foundation_2
+  - first:
+      213: 232179744987543604
+    second: Broken_Foundation_1
+  - first:
+      213: -1368635658375406471
+    second: Court Room Atlas_12
+  - first:
+      213: 4557696597140581135
+    second: Court Room Atlas_13
+  - first:
+      213: 4354288391626234845
+    second: Court Room Atlas_14
+  - first:
+      213: -1296868111199505889
+    second: Court Room Atlas_15
+  - first:
+      213: -1100620178438217858
+    second: Court Room Atlas_16
+  - first:
+      213: -8208029061045179654
+    second: Court Room Atlas_17
+  - first:
+      213: -7298398704221604760
+    second: Court Room Atlas_18
+  - first:
+      213: 2713547290205375457
+    second: Carpet_TIle_1
+  - first:
+      213: -8881153762241205238
+    second: Carpet_TIle_2
+  - first:
+      213: -3989936685236895606
+    second: Carpet_TIle_3
+  - first:
+      213: 1446562750495057988
+    second: Center_Floor_Tile
+  - first:
+      213: 1965124660401430343
+    second: Floor_Tile
+  - first:
+      213: -2460884436728067952
+    second: Vertical_Wall_Windowed_Lower
+  - first:
+      213: 870782644769275148
+    second: Vertical_Wall_Windowed_Upper
+  - first:
+      213: 7974651583616993672
+    second: Vertical_Wall_Windowed
+  - first:
+      213: -2068843704209884914
+    second: Court Room Atlas_27
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 0
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pillar
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1384
+        width: 28
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 32, z: 0, w: 29}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a77c091c5a360d643be9f4383eef655c
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Carpet
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1270
+        width: 452
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d8009df5be58d4f97ddc1481085a25
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtroom Floor
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 1347
+        width: 452
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8c5cec6c3c4d004a9a86594aafa3148
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kings' Chair
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1344
+        width: 19
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f29a5b7fb757a004fbd1ee6857dc449e
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pedestal
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 1344
+        width: 50
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d8313dde9a7c243bdde8fcf0699274
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Window
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1281
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5e2ede80b92a49459d405ce59dc5751
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 1281
+        width: 19
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301324a9664cd974cbc748869f22e96e
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walls
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 1058
+        width: 572
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d50f690ca31f7a4cb0451e72dc56821
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Window_Frame_Only
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1285
+        width: 14
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ebffc50d9450a670800000000000000
+      internalID: 8547925126133316578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Court Room Atlas_1
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1297
+        width: 112
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36334c2aa4c45af50800000000000000
+      internalID: 6891998688202470243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Carpet_Broken
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 963
+        width: 448
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 593d904c17c7a6530800000000000000
+      internalID: 3849025659603637141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtroom_Broken_Wall
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 826
+        width: 448
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 571ac4c8f62800740800000000000000
+      internalID: 5116232592299696501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken_Window_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 867
+        width: 24
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d595779247b2a4ae0800000000000000
+      internalID: -1564390142645937827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken_Window_2
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 873
+        width: 24
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8ee958d2a6053130800000000000000
+      internalID: 3545747578108374670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken_Window_3
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 873
+        width: 24
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6924763442335a090800000000000000
+      internalID: -8023950930247990634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken_Window_4
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 871
+        width: 25
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 487f29dc10c607e20800000000000000
+      internalID: 3346293278136006532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Rug
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 787
+        width: 174
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b91405107b33e5d30800000000000000
+      internalID: 4422028745218474395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken_Window_5
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 827
+        width: 51
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 240c0ccf70702e5f0800000000000000
+      internalID: -729012458793942974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken_Foundation_2
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 715
+        width: 29
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bff22770f46bd2350800000000000000
+      internalID: 5993647129643593723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken_Foundation_1
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 700
+        width: 45
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 438f5087f3ed83300800000000000000
+      internalID: 232179744987543604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Court Room Atlas_12
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 701
+        width: 9
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97cd99bbe11a10de0800000000000000
+      internalID: -1368635658375406471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Court Room Atlas_13
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 701
+        width: 9
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b229a48e0304f30800000000000000
+      internalID: 4557696597140581135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Court Room Atlas_14
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 698
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddb1d70e83a8d6c30800000000000000
+      internalID: 4354288391626234845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Court Room Atlas_15
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 695
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f12fb6fe259900ee0800000000000000
+      internalID: -1296868111199505889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Court Room Atlas_16
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 671
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7f109f67cfc9b0f0800000000000000
+      internalID: -1100620178438217858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Court Room Atlas_17
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 672
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afaa1569e09371e80800000000000000
+      internalID: -8208029061045179654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Court Room Atlas_18
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 659
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86433bd0c01e6ba90800000000000000
+      internalID: -7298398704221604760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carpet_TIle_1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 1424
+        width: 55
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 0, z: 4, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eb4ae922e478a520800000000000000
+      internalID: 2713547290205375457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carpet_TIle_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1424
+        width: 55
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0c2df525bdcfb480800000000000000
+      internalID: -8881153762241205238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carpet_TIle_3
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 1424
+        width: 55
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a80c72079b5e0a8c0800000000000000
+      internalID: -3989936685236895606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Center_Floor_Tile
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1425
+        width: 69
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 0, z: 5, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448e1984829331410800000000000000
+      internalID: 1446562750495057988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floor_Tile
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 1427
+        width: 72
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74f569a8776854b10800000000000000
+      internalID: 1965124660401430343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vertical_Wall_Windowed_Lower
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 1427
+        width: 11
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0984983a4ae29ddd0800000000000000
+      internalID: -2460884436728067952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vertical_Wall_Windowed_Upper
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 1427
+        width: 9
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d3c0aa334a51c00800000000000000
+      internalID: 870782644769275148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vertical_Wall_Windowed
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 1427
+        width: 10
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8894ff02d57abae60800000000000000
+      internalID: 7974651583616993672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: f8371f570d0777c4b8539b9566ad8fc6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

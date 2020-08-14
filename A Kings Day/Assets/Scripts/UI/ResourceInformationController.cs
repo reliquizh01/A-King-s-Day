@@ -9,6 +9,7 @@ using UnityEngine.EventSystems;
 using Kingdoms;
 using Managers;
 using KingEvents;
+using Dialogue;
 
 namespace ResourceUI
 {
@@ -16,6 +17,7 @@ namespace ResourceUI
     {
         overhead,
         side,
+        bottom,
     }
 
     public class ResourceInformationController : MonoBehaviour
@@ -51,7 +53,9 @@ namespace ResourceUI
         [Header("Resource Information Handler")]
         public ResourceInformationHandler overheadPanel;
         public ResourceInformationHandler sidePanel;
+        public ResourceInformationHandler bottomPanel;
 
+        public OverheadTutorialController overheadTutorialController;
 
         public ResourceInformationHandler currentPanel;
 
@@ -66,11 +70,69 @@ namespace ResourceUI
             EventBroadcaster.Instance.RemoveActionAtObserver(EventNames.SHOW_RESOURCES, ShowCurrentPanel);
             EventBroadcaster.Instance.RemoveActionAtObserver(EventNames.HIDE_RESOURCES, HideCurrentPanel);
         }
+
+        public void StartOverheadTutorial(bool fromCreationScene = false)
+        {
+            
+            List<DialogueIndexReaction> callBacks = new List<DialogueIndexReaction>();
+
+            DialogueIndexReaction temp1 = new DialogueIndexReaction();
+            temp1.dialogueIndex = 0;
+            temp1.potentialCallback = () => overheadTutorialController.ShowFoodTutorial();
+
+            DialogueIndexReaction temp2 = new DialogueIndexReaction();
+            temp2.dialogueIndex = 3;
+            temp2.potentialCallback = () => overheadTutorialController.ShowTroopTutorial();
+
+            DialogueIndexReaction temp3 = new DialogueIndexReaction();
+            temp3.dialogueIndex = 4;
+            temp3.potentialCallback = () => overheadTutorialController.ShowCoinTutorial();
+
+            DialogueIndexReaction temp4 = new DialogueIndexReaction();
+            temp4.dialogueIndex = 2;
+            temp4.potentialCallback = () => overheadTutorialController.ShowPopulationTutorial();
+
+            callBacks.Add(temp1);
+            callBacks.Add(temp2);
+            callBacks.Add(temp3);
+            callBacks.Add(temp4);
+
+            if (DialogueManager.GetInstance != null)
+            {
+                ConversationInformationData tmp = DialogueManager.GetInstance.dialogueStorage.ObtainConversationByTitle("Introduce The Resources");
+                
+                if(fromCreationScene)
+                {
+                   
+                }
+                else
+                {
+
+                }
+                ShowResourcePanel(ResourcePanelType.overhead, () => DialogueManager.GetInstance.StartConversation(tmp, PrologueScene, callBacks));
+            }
+        }
+
+        public void PrologueScene()
+        {
+            overheadTutorialController.HideAllTutorial();
+            if(KingdomManager.GetInstance != null)
+            {
+                KingdomManager.GetInstance.PrologueEvents();
+            }
+        }
+
+        public void UpdateCurrentPanel()
+        {
+            currentPanel.InitializeData();
+        }
         public void ShowCurrentPanel(Parameters p = null)
         {
-            if(currentPanel != null)
+            if(currentPanel != null && !currentPanel.isShowing)
             {
+                currentPanel.gameObject.SetActive(true);
                 currentPanel.myPanel.PlayOpenAnimation();
+                currentPanel.isShowing = true;
             }
         }
 
@@ -84,40 +146,50 @@ namespace ResourceUI
         }
         public void HideCurrentPanel(Parameters p = null)
         {
-            if (currentPanel != null)
+            if (currentPanel != null && currentPanel.isShowing)
             {
+                currentPanel.isShowing = false;
                 currentPanel.myPanel.PlayCloseAnimation();
+                currentPanel = null;
             }
         }
         public void ShowResourcePanel(ResourcePanelType panelType, Action extraCallBack = null)
         {
-
             if (currentPanel != null)
             {
-                if (currentPanel == sidePanel)
+                currentPanel.isShowing = false;
+                if (currentPanel.resourcePanelType != panelType)
                 {
                     StartCoroutine(currentPanel.myPanel.WaitAnimationForAction(currentPanel.myPanel.closeAnimationName, () => SwapDelay(panelType, extraCallBack)));
                 }
                 else
                 {
-                    currentPanel.myPanel.PlayCloseAnimation();
                     switch (panelType)
                     {
                         case ResourcePanelType.overhead:
                             overheadPanel.gameObject.SetActive(true);
+                            sidePanel.gameObject.SetActive(false);
                             overheadPanel.InitializeData();
-                            overheadPanel.myPanel.PlayOpenAnimation();
                             currentPanel = overheadPanel;
                             break;
                         case ResourcePanelType.side:
                             sidePanel.gameObject.SetActive(true);
+                            overheadPanel.gameObject.SetActive(false);
                             sidePanel.InitializeData();
-                            sidePanel.myPanel.PlayOpenAnimation();
                             currentPanel = sidePanel;
+                            break;
+                        case ResourcePanelType.bottom:
+                            bottomPanel.gameObject.SetActive(true);
+                            sidePanel.gameObject.SetActive(false);
+                            overheadPanel.gameObject.SetActive(false);
+                            bottomPanel.InitializeData();
+                            currentPanel = bottomPanel;
                             break;
                         default:
                             break;
                     }
+                    currentPanel.isShowing = true;
+                    StartCoroutine(currentPanel.myPanel.WaitAnimationForAction(currentPanel.myPanel.openAnimationName, extraCallBack));
                 }
             }
             else
@@ -127,21 +199,25 @@ namespace ResourceUI
                     case ResourcePanelType.overhead:
                         overheadPanel.gameObject.SetActive(true);
                         overheadPanel.InitializeData();
-                        overheadPanel.myPanel.PlayOpenAnimation();
                         currentPanel = overheadPanel;
                         currentPanel.weekController.UpdateWeekCountText();
                         break;
                     case ResourcePanelType.side:
                         sidePanel.gameObject.SetActive(true);
                         sidePanel.InitializeData();
-                        sidePanel.myPanel.PlayOpenAnimation();
                         currentPanel = sidePanel;
+                        break;
+                    case ResourcePanelType.bottom:
+                        bottomPanel.gameObject.SetActive(true);
+                        bottomPanel.InitializeData();
+                        currentPanel = bottomPanel;
                         break;
                     default:
                         break;
                 }
+                currentPanel.isShowing = true;
+                StartCoroutine(currentPanel.myPanel.WaitAnimationForAction(currentPanel.myPanel.openAnimationName, extraCallBack));
             }
-
         }
 
         public void SwapDelay(ResourcePanelType panelType, Action extraCallBack = null)
@@ -150,20 +226,35 @@ namespace ResourceUI
             {
                 case ResourcePanelType.overhead:
                     overheadPanel.gameObject.SetActive(true);
+                    sidePanel.gameObject.SetActive(false);
+                    bottomPanel.gameObject.SetActive(false);
                     overheadPanel.InitializeData();
                     overheadPanel.myPanel.PlayOpenAnimation();
                     currentPanel = overheadPanel;
                     break;
                 case ResourcePanelType.side:
                     sidePanel.gameObject.SetActive(true);
+                    overheadPanel.gameObject.SetActive(false);
+                    bottomPanel.gameObject.SetActive(false);
                     sidePanel.InitializeData();
                     sidePanel.myPanel.PlayOpenAnimation();
                     currentPanel = sidePanel;
                     break;
+                case ResourcePanelType.bottom:
+                    bottomPanel.gameObject.SetActive(true);
+                    sidePanel.gameObject.SetActive(false);
+                    overheadPanel.gameObject.SetActive(false);
+                    bottomPanel.InitializeData();
+                    bottomPanel.myPanel.PlayOpenAnimation();
+                    currentPanel = bottomPanel;
+                    break;
                 default:
                     break;
             }
-            if(extraCallBack != null)
+
+            currentPanel.isShowing = true;
+
+            if (extraCallBack != null)
             {
                 extraCallBack();
             }

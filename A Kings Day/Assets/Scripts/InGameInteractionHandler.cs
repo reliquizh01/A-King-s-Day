@@ -39,6 +39,14 @@ namespace Managers
                 interactableList[i].SetupInteractableInformation();
             }
         }
+
+        public void SwitchInteractableClickables(bool newMode)
+        {
+            for (int i = 0; i < interactableList.Count; i++)
+            {
+                interactableList[i].isClickable = newMode;
+            }
+        }
         public void EnableAllInteraction(Parameters p = null)
         {
             for (int i = 0; i < interactableList.Count; i++)

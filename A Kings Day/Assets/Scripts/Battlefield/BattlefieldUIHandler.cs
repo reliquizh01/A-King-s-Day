@@ -6,6 +6,8 @@ using Characters;
 using TMPro;
 using UnityEngine.UI;
 using System;
+using KingEvents;
+using Maps;
 
 namespace Battlefield
 {
@@ -14,6 +16,7 @@ namespace Battlefield
     public class BattlefieldUIHandler : MonoBehaviour
     {
         public TimerUI dayTimer;
+        public TimerUI endDayOverTimer;
         public TextMeshProUGUI dayCounter;
         public BasePanelBehavior myPanel;
         public Slider victorySlider;
@@ -32,6 +35,7 @@ namespace Battlefield
 
 
         public BasePanelBehavior defenderVictoryPanel, attackerVictoryPanel;
+        public CampaignRewardsPanel winRewardsPanel, defeatRewardsPanel;
         public void SetUnitPanels(BattlefieldCommander attacker, BattlefieldCommander defender)
         {
             attackerReportPanel.AssignCommander(attacker);
@@ -45,32 +49,48 @@ namespace Battlefield
 
             for (int i = 0; i < attackerPanel.unitList.Count; i++)
             {
-                attackerPanel.unitList[i].currentMaxCooldown = attacker.unitsCarried[i].unitInformation.unitCooldown;
-                attackerPanel.unitList[i].countText.text = attacker.unitsCarried[i].totalUnitCount.ToString();
-                attackerPanel.unitList[i].unitImage.sprite = BattlefieldSpawnManager.GetInstance.unitStorage.GetUnitIcon(attacker.unitsCarried[i].unitInformation.unitName);
-                if (attacker.unitsCarried[i].totalUnitCount <= 0)
+                if(i < attacker.unitsCarried.Count)
                 {
-                    attackerPanel.unitList[i].DisablePanel();
+                    attackerPanel.unitList[i].currentMaxCooldown = attacker.unitsCarried[i].unitInformation.unitCooldown;
+                    attacker.unitsCarried[i].totalUnitsAvailableForDeployment = attacker.unitsCarried[i].totalUnitCount;
+                    attackerPanel.unitList[i].countText.text = attacker.unitsCarried[i].totalUnitCount.ToString();
+                    attackerPanel.unitList[i].unitImage.sprite = BattlefieldSpawnManager.GetInstance.unitStorage.GetUnitIcon(attacker.unitsCarried[i].unitInformation.unitName);
+                    if (attacker.unitsCarried[i].totalUnitCount <= 0)
+                    {
+                        attackerPanel.unitList[i].DisablePanel();
+                    }
+                    else
+                    {
+                        attackerPanel.unitList[i].EnablePanel();
+                    }
                 }
                 else
                 {
-                    attackerPanel.unitList[i].EnablePanel();
+                    attackerPanel.unitList[i].SetAsUnknown();
                 }
             }
 
             for (int i = 0; i < defenderPanel.unitList.Count; i++)
             {
-                defenderPanel.unitList[i].currentMaxCooldown = defender.unitsCarried[i].unitInformation.unitCooldown;
-                defenderPanel.unitList[i].countText.text = defender.unitsCarried[i].totalUnitCount.ToString();
-                defenderPanel.unitList[i].unitImage.sprite = BattlefieldSpawnManager.GetInstance.unitStorage.GetUnitIcon(defender.unitsCarried[i].unitInformation.unitName);
-
-                if (defender.unitsCarried[i].totalUnitCount <= 0)
+                if (i < defender.unitsCarried.Count)
                 {
-                    defenderPanel.unitList[i].DisablePanel();
+                    defenderPanel.unitList[i].currentMaxCooldown = defender.unitsCarried[i].unitInformation.unitCooldown;
+                    defender.unitsCarried[i].totalUnitsAvailableForDeployment = defender.unitsCarried[i].totalUnitCount;
+                    defenderPanel.unitList[i].countText.text = defender.unitsCarried[i].totalUnitCount.ToString();
+                    defenderPanel.unitList[i].unitImage.sprite = BattlefieldSpawnManager.GetInstance.unitStorage.GetUnitIcon(defender.unitsCarried[i].unitInformation.unitName);
+
+                    if (defender.unitsCarried[i].totalUnitCount <= 0)
+                    {
+                        defenderPanel.unitList[i].DisablePanel();
+                    }
+                    else
+                    {
+                        defenderPanel.unitList[i].EnablePanel();
+                    }
                 }
                 else
                 {
-                    defenderPanel.unitList[i].EnablePanel();
+                    defenderPanel.unitList[i].SetAsUnknown();
                 }
             }
 
@@ -89,6 +109,7 @@ namespace Battlefield
                 return;
             }
 
+            Debug.Log("[Showing Daily Report Panel]");
             attackerReportPanel.gameObject.SetActive(true);
             attackerReportPanel.ShowDailyReport();
             defenderReportPanel.gameObject.SetActive(true);
@@ -114,6 +135,21 @@ namespace Battlefield
                 defenderPanel.unitList[i].startCounting = true;
             }
         }
+
+        public void ResetCounters()
+        {
+            for (int i = 0; i < attackerPanel.unitList.Count; i++)
+            {
+                attackerPanel.unitList[i].currentCooldownCounter = 0;
+                attackerPanel.unitList[i].startCounting = false;
+            }
+
+            for (int i = 0; i < defenderPanel.unitList.Count; i++)
+            {
+                defenderPanel.unitList[i].currentCooldownCounter = 0;
+                defenderPanel.unitList[i].startCounting = false;
+            }
+        }
         public void UpdateUnitPanels()
         {
             if (BattlefieldSpawnManager.GetInstance == null)
@@ -131,31 +167,37 @@ namespace Battlefield
 
             for (int i = 0; i < attackerPanel.unitList.Count; i++)
             {
-                attackerPanel.unitList[i].currentMaxCooldown = attacker.unitsCarried[i].unitInformation.unitCooldown;
-                attackerPanel.unitList[i].countText.text = attacker.unitsCarried[i].totalUnitsAvailableForDeployment.ToString();
+                if(i < attacker.unitsCarried.Count)
+                {
+                    attackerPanel.unitList[i].currentMaxCooldown = attacker.unitsCarried[i].unitInformation.unitCooldown;
+                    attackerPanel.unitList[i].countText.text = attacker.unitsCarried[i].totalUnitsAvailableForDeployment.ToString();
 
-                if (attacker.unitsCarried[i].totalUnitsAvailableForDeployment <= 0)
-                {
-                    attackerPanel.unitList[i].DisablePanel();
-                }
-                else
-                {
-                    attackerPanel.unitList[i].EnablePanel();
+                    if (attacker.unitsCarried[i].totalUnitsAvailableForDeployment <= 0)
+                    {
+                        attackerPanel.unitList[i].DisablePanel();
+                    }
+                    else
+                    {
+                        attackerPanel.unitList[i].EnablePanel();
+                    }
                 }
             }
 
             for (int i = 0; i < defenderPanel.unitList.Count; i++)
             {
-                defenderPanel.unitList[i].currentMaxCooldown = defender.unitsCarried[i].unitInformation.unitCooldown;
-                defenderPanel.unitList[i].countText.text = defender.unitsCarried[i].totalUnitsAvailableForDeployment.ToString();
+                if(i < defender.unitsCarried.Count)
+                {
+                    defenderPanel.unitList[i].currentMaxCooldown = defender.unitsCarried[i].unitInformation.unitCooldown;
+                    defenderPanel.unitList[i].countText.text = defender.unitsCarried[i].totalUnitsAvailableForDeployment.ToString();
 
-                if (defender.unitsCarried[i].totalUnitsAvailableForDeployment <= 0)
-                {
-                    defenderPanel.unitList[i].DisablePanel();
-                }
-                else
-                {
-                    defenderPanel.unitList[i].EnablePanel();
+                    if (defender.unitsCarried[i].totalUnitsAvailableForDeployment <= 0)
+                    {
+                        defenderPanel.unitList[i].DisablePanel();
+                    }
+                    else
+                    {
+                        defenderPanel.unitList[i].EnablePanel();
+                    }
                 }
             }
         }
@@ -189,6 +231,29 @@ namespace Battlefield
             }
         }
 
+        public void ShowCampaignRewards(bool playerHasWon, List<ResourceReward> rewards, TerritoryOwners enemyOwner, BattlefieldCommander playerCommander)
+        {
+            CampaignRewardsPanel thisPanel = (playerHasWon) ? winRewardsPanel : defeatRewardsPanel;
+
+            thisPanel.playerCommander = playerCommander;
+            if(thisPanel.playerRewards == null)
+            {
+                thisPanel.playerRewards = new List<ResourceReward>();
+            }
+            thisPanel.playerRewards = rewards;
+            thisPanel.enemyOwner = enemyOwner;
+
+            if(TransitionManager.GetInstance != null && TransitionManager.GetInstance.attackedPointInformationData != null)
+            {
+                thisPanel.territoryName.text = TransitionManager.GetInstance.attackedPointInformationData.pointName;
+            }
+
+            thisPanel.gameObject.SetActive(true);
+        }
+        public void RewardButtonLoadPreviousScene()
+        {
+            TransitionManager.GetInstance.LoadScene(TransitionManager.GetInstance.previousScene);
+        }
         public bool CheckOverLapping()
         {
             return attackerPanel.playerPlacement == defenderPanel.playerPlacement;
@@ -227,6 +292,12 @@ namespace Battlefield
             {
                 defenderPanel.ComputerPlayerControl();
             }
+        }
+
+        public void EndBattle()
+        {
+            ResetCounters();
+            nextDayTimer.ResetTimer();
         }
     }
 

@@ -28,7 +28,7 @@ namespace Characters
         public TeamType teamType;
         public bool canStagger;
         private Action reachedCallback;
-
+        public bool isBanishing = false;
         public void Start()
         {
             if(isKing)
@@ -39,7 +39,10 @@ namespace Characters
 
         public void Update()
         {
-
+            if(myMovements.isMoving)
+            {
+                UpdateMovementFacingDirection();
+            }
         }
         // Use For Guests and Unique Characters
 
@@ -92,11 +95,31 @@ namespace Characters
             UpdateCharacterState(CharacterStates.Walking);
         }
 
+        public void OrderMovement(Vector2 newPosition, Action callback = null)
+        {
+
+        }
+
         public void OrderToFace(FacingDirection newDirection)
         {
             myAnimation.ChangeFacingDireciton(newDirection);
         }
 
+        public void SetAsBanish()
+        {
+            isBanishing = true;
+            myAnimation.characterSprite.color = new Color(1, 1, 1, 0.0f);
+        }
+        public void OrderToBanish()
+        {
+            isBanishing = true;
+            myAnimation.UpdateBanish(isBanishing);
+        }
+        public void OrderToReveal()
+        {
+            isBanishing = false;
+            myAnimation.UpdateBanish(isBanishing);
+        }
         public void UpdateMovementFacingDirection()
         {
             if((Vector2)transform.position != myMovements.targetPos)
@@ -137,6 +160,10 @@ namespace Characters
             {
                 return;
             }
+            if(isBanishing)
+            {
+                return;
+            }
 
             switch (newState)
             {
@@ -153,6 +180,10 @@ namespace Characters
                     myAnimation.ChangeState(newState);
                     break;
                 case CharacterStates.Walking:
+                    if(myRange != null && myRange.enemiesInRange != null && myRange.enemiesInRange.Count > 0)
+                    {
+                        myRange.enemiesInRange.Clear();
+                    }
 
                     myAnimation.ChangeState(newState);
                     break;
@@ -319,7 +350,6 @@ namespace Characters
                     default:
                         break;
                 }
-                Debug.Log("Damaged Blocked by:" + unitInformation.unitName);
 
                 return;
             }
@@ -397,9 +427,17 @@ namespace Characters
             }
         }
 
-        public void SpawnInThisPosition(ScenePointBehavior thisLocation)
+        public void SpawnInThisPosition(ScenePointBehavior thisLocation, bool onOffset = true)
         {
-            myMovements.SetPosition(thisLocation, true);
+            if(onOffset)
+            {
+                myMovements.SetPosition(thisLocation, true);
+            }
+            else
+            {
+                myMovements.SetPosition(thisLocation, true);
+                myMovements.MoveTowards(thisLocation, false);
+            }
         }
 
     }

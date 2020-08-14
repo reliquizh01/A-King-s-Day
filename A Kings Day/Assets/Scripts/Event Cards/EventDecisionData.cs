@@ -26,8 +26,11 @@ namespace KingEvents
     [System.Serializable]
     public class ResourceReward
     {
+        public string resourceTitle;
         public ResourceType resourceType;
+        public string unitName;
         public int rewardAmount;
+        public PotentialTravellers potentialTraveller;
     }
     [System.Serializable]
     public class EventDecision

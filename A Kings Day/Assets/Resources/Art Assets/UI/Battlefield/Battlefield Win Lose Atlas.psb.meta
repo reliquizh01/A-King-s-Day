@@ -1,0 +1,748 @@
+fileFormatVersion: 2
+guid: 1148cc0f6a5355e4bb71a2be5dd2c784
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    nPOTScale: 1
+    sRGBTexture: 0
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData:
+  - name: Defeat_Blue Foreground
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 10, z: 0, w: 12}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 828
+      width: 787
+      height: 86
+    spriteID: dcff923b8311d3f44abe3e38600ce100
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -20, y: 492}
+  - name: Defeat_Light Blue Front Empty
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 26, z: 0, w: 24}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 787
+      height: 132
+    spriteID: 0a96384d8ded9754ca218f3987e7cec7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -20, y: -309}
+  - name: Defeat_Moving Shine
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 799
+      y: 564
+      width: 6
+      height: 112
+    spriteID: 9e23e194ba829ff4783be2e9454e4800
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 734, y: 241}
+  - name: Defeat_Blue Gold Filler
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 24, z: 0, w: 21}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 144
+      width: 787
+      height: 132
+    spriteID: 3b218e115fc70094abbba734d7b47b2a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -20, y: -169}
+  - name: Defeat_Darker Blue Background
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 564
+      width: 787
+      height: 124
+    spriteID: ff3c2008fbd75584e84614632df9953a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -20, y: 247}
+  - name: Victory_Blue Foreground
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 14, z: 0, w: 12}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 922
+      width: 787
+      height: 86
+    spriteID: 03a769b5d25c67248a49666dcaa0b1cc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -20, y: 308}
+  - name: Victory_Light Blue Front Empty
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 28, z: 0, w: 28}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 284
+      width: 787
+      height: 132
+    spriteID: c8e9cccadc91820408bf3a793991a9fd
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -20, y: -307}
+  - name: Victory_Moving Shine
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 813
+      y: 564
+      width: 6
+      height: 112
+    spriteID: 08c324da456afe147bad13f5af356107
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 728, y: -37}
+  - name: Victory_Blue Gold Filler
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 23, z: 0, w: 27}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 424
+      width: 787
+      height: 132
+    spriteID: f2c5ed945678f3744b632baf15f92c55
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -20, y: -167}
+  - name: Victory_Darker Blue Background
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 696
+      width: 787
+      height: 124
+    spriteID: 4cbcb0cf2de8b904291033a03d120322
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -20, y: 101}
+  rigSpriteImportData:
+  - name: Defeat_Blue Foreground
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 812
+      width: 787
+      height: 86
+    spriteID: 201dedf4162ebde459515919b477b96a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -20, y: 476}
+  - name: Defeat_Light Blue Front Empty
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 787
+      height: 132
+    spriteID: 49d02b39e09ae4c45b870954b31e60d7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -20, y: -309}
+  - name: Defeat_Moving Shine
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 799
+      y: 906
+      width: 6
+      height: 112
+    spriteID: 50622b973b5c87d44a96914e11cc4d7e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 734, y: 583}
+  - name: Defeat_Blue Gold Filler
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 284
+      width: 787
+      height: 124
+    spriteID: aed665495e0d65542aa46cfaa8e88e4d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -20, y: -33}
+  - name: Defeat_Darker Blue Background
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 416
+      width: 787
+      height: 124
+    spriteID: 4a8cb638cd3070f4da8697031d8ca59e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -20, y: 99}
+  - name: Victory_Blue Foreground
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 906
+      width: 787
+      height: 86
+    spriteID: fb9fe48e8ab9e644ca9739040b35cbff
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -20, y: 292}
+  - name: Victory_Light Blue Front Empty
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 144
+      width: 787
+      height: 132
+    spriteID: a910e0617fecde44186196f2e431fd9a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -20, y: -447}
+  - name: Victory_Moving Shine
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 813
+      y: 906
+      width: 6
+      height: 112
+    spriteID: 7f67d82efaaeb7b4bbb92c2e39cd6cb1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 728, y: 305}
+  - name: Victory_Blue Gold Filler
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 548
+      width: 787
+      height: 124
+    spriteID: e2ef3d6a07af63e4ab6cbbe63d216278
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -20, y: -47}
+  - name: Victory_Darker Blue Background
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 680
+      width: 787
+      height: 124
+    spriteID: c5683dc1509be29428977cd7ed89a598
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -20, y: 85}
+  platformSettings:
+  - name: Default
+    overridden: 1
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: PC, Mac & Linux Standalone
+    overridden: 1
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 1024
+  importedTextureHeight: 1024
+  documentSize: {x: 829, y: 733}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 1024
+  textureActualHeight: 1024
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 0
+  mosaicPSDLayers:
+  - name: Defeat
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 43
+    mosaicPosition: {x: 0, y: 0}
+  - name: Defeat_Blue Foreground
+    spriteName: Defeat_Blue Foreground
+    isGroup: 0
+    parentIndex: 0
+    spriteID: dcff923b8311d3f44abe3e38600ce100
+    layerID: 42
+    mosaicPosition: {x: 4, y: 828}
+  - name: Defeat_Light Blue Front Empty
+    spriteName: Defeat_Light Blue Front Empty
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 0a96384d8ded9754ca218f3987e7cec7
+    layerID: 41
+    mosaicPosition: {x: 4, y: 4}
+  - name: Defeat_Moving Shine
+    spriteName: Defeat_Moving Shine
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 9e23e194ba829ff4783be2e9454e4800
+    layerID: 40
+    mosaicPosition: {x: 799, y: 564}
+  - name: Defeat_Blue Gold Filler
+    spriteName: Defeat_Blue Gold Filler
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 3b218e115fc70094abbba734d7b47b2a
+    layerID: 39
+    mosaicPosition: {x: 4, y: 144}
+  - name: Defeat_Darker Blue Background
+    spriteName: Defeat_Darker Blue Background
+    isGroup: 0
+    parentIndex: 0
+    spriteID: ff3c2008fbd75584e84614632df9953a
+    layerID: 38
+    mosaicPosition: {x: 4, y: 564}
+  - name: Victory
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 35
+    mosaicPosition: {x: 0, y: 0}
+  - name: Victory_Blue Foreground
+    spriteName: Victory_Blue Foreground
+    isGroup: 0
+    parentIndex: 6
+    spriteID: 03a769b5d25c67248a49666dcaa0b1cc
+    layerID: 7
+    mosaicPosition: {x: 4, y: 922}
+  - name: Victory_Light Blue Front Empty
+    spriteName: Victory_Light Blue Front Empty
+    isGroup: 0
+    parentIndex: 6
+    spriteID: c8e9cccadc91820408bf3a793991a9fd
+    layerID: 6
+    mosaicPosition: {x: 4, y: 284}
+  - name: Victory_Moving Shine
+    spriteName: Victory_Moving Shine
+    isGroup: 0
+    parentIndex: 6
+    spriteID: 08c324da456afe147bad13f5af356107
+    layerID: 10
+    mosaicPosition: {x: 813, y: 564}
+  - name: Victory_Blue Gold Filler
+    spriteName: Victory_Blue Gold Filler
+    isGroup: 0
+    parentIndex: 6
+    spriteID: f2c5ed945678f3744b632baf15f92c55
+    layerID: 27
+    mosaicPosition: {x: 4, y: 424}
+  - name: Victory_Darker Blue Background
+    spriteName: Victory_Darker Blue Background
+    isGroup: 0
+    parentIndex: 6
+    spriteID: 4cbcb0cf2de8b904291033a03d120322
+    layerID: 3
+    mosaicPosition: {x: 4, y: 696}
+  rigPSDLayers:
+  - name: Defeat
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 43
+    mosaicPosition: {x: 0, y: 0}
+  - name: Defeat_Blue Foreground
+    spriteName: Defeat_Blue Foreground
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 201dedf4162ebde459515919b477b96a
+    layerID: 42
+    mosaicPosition: {x: 4, y: 812}
+  - name: Defeat_Light Blue Front Empty
+    spriteName: Defeat_Light Blue Front Empty
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 49d02b39e09ae4c45b870954b31e60d7
+    layerID: 41
+    mosaicPosition: {x: 4, y: 4}
+  - name: Defeat_Moving Shine
+    spriteName: Defeat_Moving Shine
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 50622b973b5c87d44a96914e11cc4d7e
+    layerID: 40
+    mosaicPosition: {x: 799, y: 906}
+  - name: Defeat_Blue Gold Filler
+    spriteName: Defeat_Blue Gold Filler
+    isGroup: 0
+    parentIndex: 0
+    spriteID: aed665495e0d65542aa46cfaa8e88e4d
+    layerID: 39
+    mosaicPosition: {x: 4, y: 284}
+  - name: Defeat_Darker Blue Background
+    spriteName: Defeat_Darker Blue Background
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 4a8cb638cd3070f4da8697031d8ca59e
+    layerID: 38
+    mosaicPosition: {x: 4, y: 416}
+  - name: Victory
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 35
+    mosaicPosition: {x: 0, y: 0}
+  - name: Victory_Blue Foreground
+    spriteName: Victory_Blue Foreground
+    isGroup: 0
+    parentIndex: 6
+    spriteID: fb9fe48e8ab9e644ca9739040b35cbff
+    layerID: 7
+    mosaicPosition: {x: 4, y: 906}
+  - name: Victory_Light Blue Front Empty
+    spriteName: Victory_Light Blue Front Empty
+    isGroup: 0
+    parentIndex: 6
+    spriteID: a910e0617fecde44186196f2e431fd9a
+    layerID: 6
+    mosaicPosition: {x: 4, y: 144}
+  - name: Victory_Moving Shine
+    spriteName: Victory_Moving Shine
+    isGroup: 0
+    parentIndex: 6
+    spriteID: 7f67d82efaaeb7b4bbb92c2e39cd6cb1
+    layerID: 10
+    mosaicPosition: {x: 813, y: 906}
+  - name: Victory_Blue Gold Filler
+    spriteName: Victory_Blue Gold Filler
+    isGroup: 0
+    parentIndex: 6
+    spriteID: e2ef3d6a07af63e4ab6cbbe63d216278
+    layerID: 27
+    mosaicPosition: {x: 4, y: 548}
+  - name: Victory_Darker Blue Background
+    spriteName: Victory_Darker Blue Background
+    isGroup: 0
+    parentIndex: 6
+    spriteID: c5683dc1509be29428977cd7ed89a598
+    layerID: 3
+    mosaicPosition: {x: 4, y: 680}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: Battlefield Win Lose Atlas Texture
+  prefabAssetName: Battlefield Win Lose Atlas Prefab
+  spriteLibAssetName: Battlefield Win Lose Atlas Sprite Lib
+  secondarySpriteTextures: []

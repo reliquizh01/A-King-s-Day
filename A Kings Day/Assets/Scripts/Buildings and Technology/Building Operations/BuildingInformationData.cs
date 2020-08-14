@@ -77,6 +77,18 @@ namespace Buildings
 
             return tmp;
         }
+
+        public int ObtainCardDataReward(int cardIdx,int actionIdx, ResourceType resourceReward)
+        {
+            if(buildingCard == null)
+            {
+                return -1;
+            }
+
+            int tmp = buildingCard[cardIdx].actionTypes[actionIdx].rewardList.Find(x => x.resourceType == resourceReward).rewardAmount;
+
+            return tmp;
+        }
     }
 
     [Serializable]
@@ -97,7 +109,7 @@ namespace Buildings
         public bool costResource;
         public Sprite logoIcon;
         public string message;
-
+        public string AdditionalInformationMessage;
         [Header("Action Information")]
         public bool hasCooldown;
         public int cooldownCount;

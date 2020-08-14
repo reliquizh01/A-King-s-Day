@@ -73,6 +73,18 @@ namespace Battlefield
             return columnNumber;
         }
         
+        public List<ScenePointBehavior> ObtainSpawnPoints()
+        {
+            List<ScenePointBehavior> tmp = new List<ScenePointBehavior>();
+
+            for (int i = 0; i < fieldPaths.Count; i++)
+            {
+                tmp.Add(fieldPaths[i].attackerSpawnPoint);
+                tmp.Add(fieldPaths[i].defenderSpawnPoint);
+            }
+
+            return tmp;
+        }
         public List<BaseCharacter> ObtainCharactersOnThisPath(int pathIdx)
         {
             List<BaseCharacter> tmp = new List<BaseCharacter>();

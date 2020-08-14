@@ -7,6 +7,7 @@ using KingEvents;
 using Utilities;
 using TMPro;
 using ResourceUI;
+using Characters;
 
 namespace Buildings
 {
@@ -17,7 +18,6 @@ namespace Buildings
         public BaseBuildingBehavior currentBuildingClicked;
 
         public OperationCardsHandler cardHandler;
-
 
         [Header("Cards Information")]
         public List<OperationCard> operationCardsList;
@@ -94,9 +94,9 @@ namespace Buildings
             if(thisCard != currentCard)
             {
                 currentCard = thisCard;
-
+                informationActionHandler.SwitchSubPanel(false);
                 // BACKGROUND ENLARGED VERSION OF THE IMAGE BUT NOT VISIBLE
-                if(!focusedCardIcon.gameObject.activeInHierarchy)
+                if (!focusedCardIcon.gameObject.activeInHierarchy)
                 {
                     focusedCardIcon.gameObject.SetActive(true);
                 }

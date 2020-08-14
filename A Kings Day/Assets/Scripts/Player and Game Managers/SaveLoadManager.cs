@@ -28,7 +28,6 @@ namespace SaveData
         {
             if (SaveLoadManager.GetInstance == null)
             {
-                Debug.Log(gameObject.name);
                 if(this.transform.parent == null)
                 {
                     DontDestroyOnLoad(this.gameObject);
@@ -41,12 +40,15 @@ namespace SaveData
             }
         }
         #endregion
-
-        [SerializeField]private int curSaveSlotIdx;
+        [Tooltip("Player File To be used after tutorial.")]
+        public PlayerKingdomData inheritanceData;
+        
 
         public List<PlayerKingdomData> saveDataList;
         public PlayerKingdomData currentData;
 
+        public List<PlayerCampaignData> saveCampaignDataList;
+        public PlayerCampaignData currentCampaignData;
 
         [SerializeField]protected string savePath;
 
@@ -54,6 +56,7 @@ namespace SaveData
         public void Start()
         {
             ObtainSaves();
+            ObtainCampaignSaves();
             EventBroadcaster.Instance.AddObserver(EventNames.SAVE_PLAYER_DATA, SaveCurrentData);
         }
 
@@ -62,46 +65,89 @@ namespace SaveData
             EventBroadcaster.Instance.RemoveActionAtObserver(EventNames.SAVE_PLAYER_DATA, SaveCurrentData);
         }
 
-        public void SetNewSaveData(PlayerKingdomData newData)
+        // ONLY GETS CALLED AFTER PROLOGUE SCENE
+        public void PostPrologueSave()
         {
+            PlayerCampaignData temp = new PlayerCampaignData();
+
+            SetNewSaveData(inheritanceData, temp);
+        }
+
+        public void SetNewSaveData(PlayerKingdomData newData, PlayerCampaignData campaignData)
+        {
+            if(saveDataList == null)
+            {
+                saveDataList = new List<PlayerKingdomData>();
+            }
             // Check last Data Index
             saveDataList.Add(newData);
             
+            if(saveCampaignDataList == null)
+            {
+                saveCampaignDataList = new List<PlayerCampaignData>();
+            }
+            saveCampaignDataList.Add(campaignData);
+
+            SavePlayerCampaignData();
+            SavePlayerData();
+
         }
 
         public void SaveCurrentData(Parameters p = null)
         {
-            saveDataList[curSaveSlotIdx] = PlayerGameManager.GetInstance.playerData;
+            if(saveDataList == null || saveDataList.Count <= 0)
+            {
+                return;
+            }
+            int idx = saveDataList.FindIndex(x => x._fileName == PlayerGameManager.GetInstance.playerData._fileName);
+            saveDataList[idx] = PlayerGameManager.GetInstance.playerData;
 
             BinaryFormatter bf = new BinaryFormatter();
 
             bf = new BinaryFormatter();
-            FileStream file = File.Create(savePath + "/Save" + curSaveSlotIdx + ".sav");
-            bf.Serialize(file, saveDataList[curSaveSlotIdx]);
+            FileStream file = File.Create(savePath + "/" + saveDataList[idx]._fileName);
+            bf.Serialize(file, saveDataList[idx]);
             file.Close();
 
-            Debug.Log("------------------------------------ DATA WAS SUCCESSFULLY SAVED! ------------");
+            Debug.Log("------------------------------------ PLAYER DATA WAS SUCCESSFULLY SAVED! ------------");
         }
 
-        public void SetCurrentSlot(int newSlotIndex)
+        public void SaveCurrentCampaignData(Parameters p = null)
         {
-            curSaveSlotIdx = newSlotIndex;
-            SaveData();
+            if (saveCampaignDataList == null || saveCampaignDataList.Count <= 0)
+            {
+                return;
+            }
+            int idx = saveCampaignDataList.FindIndex(x => x._fileName == PlayerGameManager.GetInstance.campaignData._fileName);
+            saveCampaignDataList[idx] = PlayerGameManager.GetInstance.campaignData;
+
+            BinaryFormatter bf = new BinaryFormatter();
+
+            bf = new BinaryFormatter();
+            FileStream file = File.Create(savePath + "/" + saveCampaignDataList[idx]._fileName);
+            bf.Serialize(file, saveCampaignDataList[idx]);
+            file.Close();
+
+            Debug.Log("------------------------------------ PLAYER CAMPAIGN DATA WAS SUCCESSFULLY SAVED! ------------");
         }
 
-        public void SaveData()
+        public void SavePlayerData()
         {
             Debug.Log("SAVING FILES!");
 
             BinaryFormatter bf = new BinaryFormatter();
 
             this.savePath = Application.persistentDataPath + "/Saves/";
+
             for (int i = 0; i < saveDataList.Count; i++)
             {
-                if(saveDataList[i].fileData)
+                saveDataList[i]._fileName = "Save" + i + ".sav";
+                saveDataList[i].fileData = true;
+
+                if (saveDataList[i].fileData)
                 {
                     bf = new BinaryFormatter();
-                    FileStream file = File.Create(savePath + "/Save" + i + ".sav");
+                    FileStream file = File.Create(savePath + "/" + saveDataList[i]._fileName);
                     bf.Serialize(file, saveDataList[i]);
                     file.Close();
 
@@ -110,14 +156,53 @@ namespace SaveData
             }
         }
 
+        public void SavePlayerCampaignData()
+        {
+            Debug.Log("SAVING CAMPAIGN FILES!");
+
+            BinaryFormatter bf = new BinaryFormatter();
+
+            this.savePath = Application.persistentDataPath + "/Saves/";
+
+            for (int i = 0; i < saveCampaignDataList.Count; i++)
+            {
+                saveCampaignDataList[i]._fileName = "CampaignSave" + i + ".dat";
+
+                if (saveCampaignDataList[i].fileData)
+                {
+                    bf = new BinaryFormatter();
+                    FileStream file = File.Create(savePath + "/" + saveCampaignDataList[i]._fileName);
+                    bf.Serialize(file, saveCampaignDataList[i]);
+                    file.Close();
+
+                    Debug.Log(savePath);
+                }
+            }
+        }
+
+        public void DeleteCampaignData()
+        {
+            savePath = Application.persistentDataPath + "/Saves";
+
+            if (currentCampaignData != null)
+            {
+                saveCampaignDataList.Remove(currentCampaignData);
+                File.Delete(savePath + "/"+ currentCampaignData._fileName);
+
+                #if UNITY_EDITOR
+                UnityEditor.AssetDatabase.Refresh();
+                #endif
+                currentCampaignData = null;
+            }
+        }
         public void DeleteData()
         {
             savePath = Application.persistentDataPath + "/Saves";
 
             if (currentData != null)
             {
-                File.Delete(savePath + "/Save" + curSaveSlotIdx + ".sav");
-                saveDataList.RemoveAt(curSaveSlotIdx);
+                saveDataList.Remove(currentData);
+                File.Delete(savePath + "/" + currentData._fileName);
 
                 #if UNITY_EDITOR
                 UnityEditor.AssetDatabase.Refresh();
@@ -136,7 +221,7 @@ namespace SaveData
 
             DirectoryInfo tmp = new DirectoryInfo(savePath);
 
-            List<FileInfo> saveFileList = GetSaveFiles(tmp);
+            List<FileInfo> saveFileList = GetSavePlayerFiles(tmp);
 
             BinaryFormatter bf = new BinaryFormatter();
 
@@ -148,20 +233,52 @@ namespace SaveData
                     {
                         bf = new BinaryFormatter();
                         FileStream file = File.Open(saveFileList[i].ToString(), FileMode.Open);
-                        saveDataList.Add((PlayerKingdomData)bf.Deserialize(file));
+                        PlayerKingdomData temp = new PlayerKingdomData();
+                        temp = (PlayerKingdomData)bf.Deserialize(file);
+                        saveDataList.Add(temp);
                         file.Close();
                     }
                 }
             }
         }
-        public void LoadSlot(int saveSlot)
-        {
 
+        public void ObtainCampaignSaves()
+        {
+            savePath = Application.persistentDataPath + "/Saves";
+
+            if (!Directory.Exists(savePath))
+            {
+                Directory.CreateDirectory(savePath);
+            }
+
+            DirectoryInfo tmp = new DirectoryInfo(savePath);
+
+            List<FileInfo> savecampaignFileList = GetSaveCampaignFiles(tmp);
+            Debug.Log(saveCampaignDataList.Count);
+
+            BinaryFormatter bf2 = new BinaryFormatter();
+
+            if (savecampaignFileList.Count > 0)
+            {
+                for (int i = 0; i < savecampaignFileList.Count; i++)
+                {
+                    if (File.Exists(savecampaignFileList[i].ToString()))
+                    {
+                        bf2 = new BinaryFormatter();
+                        FileStream file = File.Open(savecampaignFileList[i].ToString(), FileMode.Open);
+                        saveCampaignDataList.Add((PlayerCampaignData)bf2.Deserialize(file));
+                        file.Close();
+                    }
+                }
+            }
+        }
+        public void SetCurrentData(int saveSlot)
+        {
             currentData = saveDataList[saveSlot];
-            SetCurrentSlot(saveSlot);
+            currentCampaignData = saveCampaignDataList[saveSlot];
         }
 
-        public List<FileInfo> GetSaveFiles(DirectoryInfo d)
+        public List<FileInfo> GetSavePlayerFiles(DirectoryInfo d)
         {
             List<FileInfo> saveFiles = new List<FileInfo>();
 
@@ -179,5 +296,22 @@ namespace SaveData
             return saveFiles;
         }
 
+        public List<FileInfo> GetSaveCampaignFiles(DirectoryInfo d)
+        {
+            List<FileInfo> saveFiles = new List<FileInfo>();
+
+            // Add file sizes.
+            FileInfo[] fis = d.GetFiles();
+            foreach (FileInfo fi in fis)
+            {
+                if (fi.Extension.Contains(".dat"))
+                {
+                    saveFiles.Add(fi);
+                }
+
+            }
+
+            return saveFiles;
+        }
     }
 }

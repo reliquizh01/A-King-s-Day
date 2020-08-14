@@ -7,6 +7,7 @@ using KingEvents;
 using Managers;
 using ConversationControls;
 using Characters;
+using Utilities;
 
 
 namespace Managers
@@ -40,18 +41,81 @@ namespace Managers
 
         public void Awake()
         {
-            instance = this;
+            if(SpawnManager.GetInstance != null && SpawnManager.GetInstance != this)
+            {
+                DestroyImmediate(this.gameObject);
+            }
+            else
+            {
+                instance = this;
+            }
         }
         #endregion
 
-        public ScenePointBehavior spawnPoint;
         public ConversationController conversationController;
 
-        public List<CourtGuestPrefabs> characterPrefabsList;
 
+        [Header("Spawn Manager Mechanics")]
+        public List<BaseCharacter> spawnedCharacterUnits;
+        public List<ScenePointBehavior> spawnPointList;
+
+        [Header("Courtroom Mechanics")]
+        public List<CourtGuestPrefabs> characterPrefabsList;
         public List<CourtGuest> queuedGuestList;
         public CourtGuest currentCourtGuest;
 
+        public void OnEnable()
+        {
+            EventBroadcaster.Instance.AddObserver(EventNames.BEFORE_LOAD_SCENE, ResetSpawnManager);
+        }
+        public void OnDisable()
+        {
+            EventBroadcaster.Instance.RemoveActionAtObserver(EventNames.BEFORE_LOAD_SCENE, ResetSpawnManager);
+        }
+        public override void Start()
+        {
+            base.Start();
+            spawnedCharacterUnits = new List<BaseCharacter>();
+        }
+
+        public void ResetSpawnManager(Parameters p = null)
+        {
+            spawnedCharacterUnits.Clear();
+            spawnPointList.Clear();
+        }
+
+        public void ClearSpawnedUnits(List<BaseCharacter> exceptThis = null)
+        {
+            if(exceptThis != null)
+            {
+                List<int> removeIdexes = new List<int>();
+                for (int i = 0; i < spawnedCharacterUnits.Count; i++)
+                {
+                    if(exceptThis.Contains(spawnedCharacterUnits[i]))
+                    {
+                        continue;
+                    }
+                    removeIdexes.Add(i);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < spawnedCharacterUnits.Count; i++)
+                {
+                    DestroyImmediate(spawnedCharacterUnits[i]);
+                }
+                spawnedCharacterUnits.Clear();
+            }
+        }
+        public void AddSpawnPoint(ScenePointBehavior spawnPoint)
+        {
+            if(spawnPointList == null)
+            {
+                spawnPointList = new List<ScenePointBehavior>();
+            }
+
+            spawnPointList.Add(spawnPoint);
+        }
         public void SpawnCourtGuest(ReporterType guestType)
         {
             if (currentCourtGuest != null)
@@ -75,7 +139,12 @@ namespace Managers
         public void InstantiateCourtGuest(ReporterType thisType)
         {
             GameObject tmp = null;
-            switch(currentCourtGuest.reporterType)
+            ScenePointBehavior spawnPoint = spawnPointList.Find(x => x.gameObject.name == "Court Spawn");
+
+            if (spawnPoint == null)
+                return;
+
+            switch (currentCourtGuest.reporterType)
             {
                 case ReporterType.Soldier:
                     tmp = characterPrefabsList.Find(x => x.reporterType == ReporterType.Soldier).prefab;
@@ -126,6 +195,11 @@ namespace Managers
         }
         public void LeaveCourt()
         {
+            ScenePointBehavior spawnPoint = spawnPointList.Find(x => x.gameObject.name == "Court Spawn");
+
+            if (spawnPoint == null)
+                return;
+
             currentCourtGuest.characterSpawned.OrderMovement(spawnPoint, CheckCourtUse);
             currentCourtGuest.characterSpawned.isLeaving = true;
         }

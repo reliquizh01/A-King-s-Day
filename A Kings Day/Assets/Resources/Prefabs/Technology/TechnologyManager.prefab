@@ -46,22 +46,100 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelBehaviour: {fileID: 0}
   gameView: 0
-  isViewManager: 1
+  Loaded: 0
+  isViewManager: 0
   techStorage: {fileID: 7201147463131933514}
   curPlayer:
+    fileData: 0
+    weekCount: 1
     kingdomsName: 
     dynastyName: 
     level: 0
-    weekCount: 1
+    bestTroops: 0
+    myFame: 0
+    wieldedWeapon: 0
+    familySecret: 0
+    finishedStories: []
+    queuedDataEventsList: []
+    curDataStory:
+      startingWeek: 0
+      repetitionType: 0
+      storyTitle: 
+      description: 
+      isLinear: 0
+      curEventIdx: 0
+      storyEventTitlesList: []
+      storyEvents: []
+      eventIntervals: 
+      eventBoosts: []
+      nextEventWeek: 0
+    curDataEvent:
+      title: 
+      eventType: 0
+      reporterType: 0
+      levelRequired: 0
+      difficultyType: 0
+      description: 
+      isStoryArc: 0
+      storyArc: 
+      arcEnd: 0
+      eventDecision: []
+    eventFinished: 0
+    recruits: 0
+    barracksCapacity: 0
+    troopsLoyalty: 0
+    swordsmenCount: 0
+    spearmenCount: 0
+    archerCount: 0
+    swordsmenMercCount: 0
+    spearmenMercCount: 0
+    archerMercCount: 0
+    population: 0
+    safePopulation: 50
+    pouplationLoyalty: 0
+    curTaxWeeksCounter: 0
+    canReceiveTax: 0
+    farmerCount: 0
+    herdsmanCount: 0
+    storageKeeperCount: 0
+    populationBurst: 0
+    potentialRefugee: 0
+    potentialMerchantArrival: 0
+    balconyBuildingsAdded: 0
+    buildingInformationData: []
+    potentialGoodsMerchant: 0
+    potentialEquipsMerchant: 0
+    potentialExoticMerchant: 0
+    potentialCommonHero: 20
+    potentialRareHero: 10
+    potentialLegHero: 5
+    potentialMercSwords: 5
+    potentialMercSpear: 5
+    potentialMercArcher: 5
+    swordsmenMercAvail: 0
+    spearmenMercAvail: 0
+    archerMercAvail: 0
+    myHeroes: []
+    tavernHeroes: []
+    myItems: []
+    currentShopMerchants: []
+    currentFestivalMerchants: []
+    foods: 0
+    safeFood: 0
+    cows: 0
+    safeCows: 0
+    curGrainWeeksCounter: 0
+    canReceiveGrainProduce: 0
+    curCowBirthCounter: 0
+    canReceiveNewCows: 0
+    coins: 0
+    coinsCapacity: 0
+    curMonthTaxCounter: 0
+    canReceiveMonthlyTax: 0
+    currentTechnologies: []
     storyRoll: 0.007
     currentRoll: 0.007
-    finishedStories: []
-    troops: 0
-    troopsLoyalty: 0
-    population: 0
-    pouplationLoyalty: 0
-    foods: 0
-    coins: 0
+  playerInitialized: 0
 --- !u!1001 &4276889570671347914
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Kingdoms;
 using KingEvents;
+using Utilities;
 
 namespace Managers
 {
@@ -37,7 +38,8 @@ namespace Managers
             }
         }
         #endregion
-        private PlayerKingdomData curPlayer;
+        [SerializeField]private PlayerKingdomData curPlayer;
+        [SerializeField] private PlayerCampaignData curCampaign;
 
         public NotificationHandler notifHandler;
 
@@ -48,7 +50,20 @@ namespace Managers
             if(PlayerGameManager.GetInstance != null)
             {
                 curPlayer = PlayerGameManager.GetInstance.playerData;
+                curCampaign = PlayerGameManager.GetInstance.campaignData;
             }
+
+            EventBroadcaster.Instance.AddObserver(EventNames.WEEKLY_UPDATE, WeeklyProductionProgress);
+        }
+
+        public void OnDestroy()
+        {
+            EventBroadcaster.Instance.RemoveActionAtObserver(EventNames.WEEKLY_UPDATE, WeeklyProductionProgress);
+        }
+
+        public void WeeklyProductionProgress(Parameters p = null)
+        {
+
         }
 
         public void ShowPopNotif(int amount)
@@ -75,7 +90,6 @@ namespace Managers
         }
         public void ShowFoodNotif(int amount)
         {
-            Debug.Log("FUCUkasdkaka");
             if (amount >= 0)
             {
                 notifHandler.RevealResourceNotification(ResourceType.Food, amount);
