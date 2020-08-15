@@ -29,13 +29,18 @@ namespace Buildings
         [Header("Visual Informations")]
         public TextMeshProUGUI buildingNameText;
         public TextMeshProUGUI cardNameText;
-        public TextMeshProUGUI flavorText;
         public Image focusedCardIcon;
         public int selectedCardIdx;
 
+
+        [Header("Flavor Mechanics")]
+        public ShakingEffectUI flavorText;
+        public Color positiveColor;
+        public Color negativeColor;
+
         public void Start()
         {
-            flavorText.text = "";
+            flavorText.shakingText.text = "";
             cardNameText.text = "";
         }
         public void OpenOperationTab(BaseBuildingBehavior thisBuilding)
@@ -55,6 +60,7 @@ namespace Buildings
 
             if (ResourceInformationController.GetInstance != null)
             {
+                ResourceInformationController.GetInstance.HideCurrentPanelPotentialResourceChanges();
                 ResourceInformationController.GetInstance.ShowResourcePanel(ResourcePanelType.overhead, () => EventBroadcaster.Instance.PostEvent(EventNames.DISABLE_TAB_COVER));
             }
 
@@ -65,14 +71,14 @@ namespace Buildings
         public void ResetInformation()
         {
             focusedCardIcon.gameObject.SetActive(false);
-            flavorText.text = "";
+            flavorText.shakingText.text = "";
             cardNameText.text = "";
             informationActionHandler.ResetActionList();
         }
         public void StartIntroduction()
         {
             int rand = Random.Range(0, currentBuildingClicked.buildingInformation.introductionMessages.Count - 1);
-            flavorText.text = currentBuildingClicked.buildingInformation.introductionMessages[rand];
+            flavorText.shakingText.text = currentBuildingClicked.buildingInformation.introductionMessages[rand];
 
             SetAsCurrentCard(operationCardsList[0]);
         }
@@ -138,14 +144,14 @@ namespace Buildings
             if(thisCard == currentCard)
             {
                 flavorRandIdx = Random.Range(0, currentBuildingClicked.buildingInformation.buildingCard[cardClickedIdx].cardPosMesg.Count);
-                 flavorText.text = currentBuildingClicked.buildingInformation.buildingCard[cardClickedIdx].cardPosMesg[flavorRandIdx];
+                 flavorText.shakingText.text = currentBuildingClicked.buildingInformation.buildingCard[cardClickedIdx].cardPosMesg[flavorRandIdx];
             }
             // Negative Feedback
             else
             {
                 flavorRandIdx = Random.Range(0, currentBuildingClicked.buildingInformation.buildingCard[cardClickedIdx].cardNegMesg.Count);
 
-                flavorText.text = currentBuildingClicked.buildingInformation.buildingCard[cardClickedIdx].cardNegMesg[flavorRandIdx];
+                flavorText.shakingText.text = currentBuildingClicked.buildingInformation.buildingCard[cardClickedIdx].cardNegMesg[flavorRandIdx];
             }
         }
 
@@ -157,13 +163,16 @@ namespace Buildings
             if (isPositive)
             {
                 flavorRandIdx = Random.Range(0, currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].actionTypes[decisionIdx].AcceptMesg.Count);
-                flavorText.text = currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].actionTypes[decisionIdx].AcceptMesg[flavorRandIdx];
+                flavorText.shakingText.text = currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].actionTypes[decisionIdx].AcceptMesg[flavorRandIdx];
+                flavorText.shakingText.color = positiveColor;
             }
             // Negative Feedback
             else
             {
                 flavorRandIdx = Random.Range(0, currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].actionTypes[decisionIdx].DenyMesg.Count);
-                flavorText.text = currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].actionTypes[decisionIdx].DenyMesg[flavorRandIdx];
+                flavorText.shakingText.text = currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].actionTypes[decisionIdx].DenyMesg[flavorRandIdx];
+                flavorText.StartShaking();
+                flavorText.shakingText.color = negativeColor;
             }
         }
     }

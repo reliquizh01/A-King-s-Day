@@ -31,6 +31,7 @@ namespace KingEvents
         public string unitName;
         public int rewardAmount;
         public PotentialTravellers potentialTraveller;
+        public bool multiplied = false;
     }
     [System.Serializable]
     public class EventDecision

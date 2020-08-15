@@ -7,9 +7,11 @@ using UnityEngine.UIElements.Experimental;
 
 public class ShakingEffectUI : BaseEffectUI
 {
+    public bool startShaking = false;
     public RectTransform myRect;
     public TextMeshProUGUI shakingText;
 
+    [Header("Shaking Mechanics")]
     public float shakingSpeed = 30.5f;
     private bool goingLeft = false;
     public float targetRotZ = 15f;
@@ -48,7 +50,6 @@ public class ShakingEffectUI : BaseEffectUI
 
         if (shakingText != null)
         {
-
             originalFont = shakingText.fontSize;
             curFont = originalFont;
             targetFont = curFont + targetFont;
@@ -58,6 +59,13 @@ public class ShakingEffectUI : BaseEffectUI
         }
 
     }
+
+    public void StartShaking()
+    {
+        curDuration = 0;
+        startShaking = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -128,6 +136,7 @@ public class ShakingEffectUI : BaseEffectUI
             {
                 shakingText.fontSize = originalFont;
                 curFont = originalFont;
+                startShaking = false;
             }
         }
     }

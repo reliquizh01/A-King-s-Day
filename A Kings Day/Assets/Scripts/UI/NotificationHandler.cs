@@ -9,7 +9,7 @@ public class NotificationHandler : MonoBehaviour
     public List<BaseNotification> notifList;
 
 
-    public void RevealResourceNotification(ResourceType thisType, int thisAmount, bool isReduce = false)
+    public void RevealResourceNotification(ResourceType thisType, int thisAmount, bool isReduce = false, string fromDesc = "")
     {
         BaseNotification selectedNotif = notifList.Find(x => !x.isShowing);
 
@@ -26,10 +26,21 @@ public class NotificationHandler : MonoBehaviour
         }
 
         selectedNotif.SetShowing(true);
-        selectedNotif.text.text = thisAmount.ToString();
+
+        if(!string.IsNullOrEmpty(fromDesc))
+        {
+            selectedNotif.text.postCountMesg = fromDesc;
+        }
+        else
+        {
+            selectedNotif.text.postCountMesg = "";
+        }
+
+        selectedNotif.text.SetTargetCount(thisAmount);
 
         StartCoroutine(selectedNotif.myPanel.WaitAnimationForAction(selectedNotif.myPanel.openAnimationName, selectedNotif.PreCloseAnim));
     }
+
 
 
 }

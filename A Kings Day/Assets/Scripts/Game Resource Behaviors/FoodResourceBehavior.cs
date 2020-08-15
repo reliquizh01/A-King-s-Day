@@ -80,15 +80,19 @@ namespace GameResource
 
             curPlayer = PlayerGameManager.GetInstance.playerData;
 
+            Debug.Log("Food On Cur Player: " + curPlayer.foods);
             CheckGrainCounter();
 
             CheckCowCounter();
 
             ImplementTechnology();
+
+            UpdateWarningMechanics();
         }
 
         public override void UpdateWeeklyProgress()
         {
+            base.UpdateWeeklyProgress();
             UpdateCowCounter();
             UpdateGrainsCounter();
         }
@@ -149,10 +153,9 @@ namespace GameResource
                 int addedFood = GetGrainProduction();
                 if (ProductionManager.GetInstance != null)
                 {
-                    ProductionManager.GetInstance.ShowFoodNotif(addedFood);
+                    ProductionManager.GetInstance.ShowFoodNotif(addedFood, "Harvest");
                 }
-
-                curPlayer.foods += addedFood;
+                PlayerGameManager.GetInstance.ReceiveResource(addedFood, ResourceType.Food);
                 curPlayer.canReceiveGrainProduce = false;
             }
 
@@ -206,7 +209,7 @@ namespace GameResource
                 curPlayer.cows += cowsToAdd;
                 if(ProductionManager.GetInstance != null)
                 {
-                    ProductionManager.GetInstance.ShowCowNotif(cowsToAdd);
+                    ProductionManager.GetInstance.ShowCowNotif(cowsToAdd, "Born Cows");
                 }
 
                 curPlayer.canReceiveNewCows = false;
@@ -257,5 +260,6 @@ namespace GameResource
         }
 
         #endregion
+
     }
 }

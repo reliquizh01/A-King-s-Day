@@ -141,7 +141,7 @@ namespace Kingdoms
         public int curTaxWeeksCounter;
         public bool canReceiveTax;
         public int farmerCount, herdsmanCount, storageKeeperCount;
-        public int deathByDirtiness;
+        public int deathByPlague;
 
         [Header("Game Chances")]
         /// This is a Festival Event
@@ -162,15 +162,17 @@ namespace Kingdoms
         /// When the map points summons the units
         /// this chances will affect if they will go to 
         /// your kingdom.
+        public int potentialMerchant = 0;
         public int potentialGoodsMerchant = 0;
         public int potentialEquipsMerchant = 0;
         public int potentialExoticMerchant = 0;
+
+        public int potentialRandomHero = 0;
         public int potentialCommonHero = 20;
         public int potentialRareHero = 10;
         public int potentialLegHero = 5;
-        public int potentialMercSwords = 5;
-        public int potentialMercSpear = 5;
-        public int potentialMercArcher = 5;
+
+        public int potentialMercenary = 0;
 
         [Header("Heroes")]
         public List<BaseHeroInformationData> myHeroes;
@@ -219,6 +221,7 @@ namespace Kingdoms
         public int coins;
         public int coinsCapacity;
         public int curMonthTaxCounter;
+        public int maxMonthTaxCount = 4;
         public bool canReceiveMonthlyTax;
         // Technology
         public List<BaseTechnologyData> currentTechnologies;
@@ -276,6 +279,113 @@ namespace Kingdoms
             return troopsMercList.Find(x => x.unitInformation.unitName == unitName);
         }
 
+        public int ObtainResourceAmount(ResourceType type)
+        {
+            int amount = 0;
+            switch (type)
+            {
+                case ResourceType.Food:
+                    amount = foods;
+                    break;
+                case ResourceType.Troops:
+                    amount = GetTotalTroops;
+                    break;
+                case ResourceType.Population:
+                    amount = population;
+                    break;
+                case ResourceType.Coin:
+                    amount = coins;
+                    break;
+                case ResourceType.Cows:
+                    amount = cows;
+                    break;
+                case ResourceType.farmer:
+                    amount = farmerCount;
+                    break;
+                case ResourceType.herdsmen:
+                    amount = herdsmanCount;
+                    break;
+                case ResourceType.storageKeeper:
+                    amount = storageKeeperCount;
+                    break;
+                case ResourceType.Mercenary:
+                    if(troopsMercList == null || troopsMercList.Count <= 0)
+                    {
+                        amount = 0;
+                    }
+                    else
+                    {
+                        for (int i = 0; i < troopsMercList.Count; i++)
+                        {
+                            amount += troopsMercList[i].totalUnitCount;
+                        }
+                    }
+                    break;
+                case ResourceType.foodStorage:
+                    amount = safeFood;
+                    break;
+                case ResourceType.cowStorage:
+                    amount = safeCows;
+                    break;
+                case ResourceType.housing:
+                    amount = safePopulation;
+                    break;
+                case ResourceType.festivalDuration:
+                    amount = festivalWeeksDuration;
+                    break;
+                default:
+                    break;
+            }
+
+            return amount;
+        }
+
+        public int ObtainChances(PotentialTravellers potentialTravellers)
+        {
+            int amount = 0;
+            switch (potentialTravellers)
+            {
+                case PotentialTravellers.refugee:
+                    amount = potentialRefugee;
+                    break;
+                case PotentialTravellers.newborn:
+                    amount = populationBurst;
+                    break;
+                case PotentialTravellers.mercenaries:
+                    amount = potentialMercenary;
+                    break;
+                case PotentialTravellers.randomMerchant:
+                    amount = potentialMerchant;
+                    break;
+                case PotentialTravellers.goodsMerchant:
+                    amount = potentialGoodsMerchant;
+                    break;
+                case PotentialTravellers.exoticMerchant:
+                    amount = potentialExoticMerchant;
+                    break;
+                case PotentialTravellers.itemMerchant:
+                    amount = potentialEquipsMerchant;
+                    break;
+                case PotentialTravellers.RandomHero:
+                    amount = potentialRandomHero;
+                    break;
+                case PotentialTravellers.CommonHero:
+                    amount = potentialCommonHero;
+                    break;
+                case PotentialTravellers.RareHero:
+                    amount = potentialRareHero;
+                    break;
+                case PotentialTravellers.LegendaryHero:
+                    amount = potentialLegHero;
+                    break;
+                case PotentialTravellers.Plague:
+                    amount = deathByPlague;
+                    break;
+                default:
+                    break;
+            }
+            return amount;
+        }
         public void UpdateFoodStorage()
         {
             safeFood = 50 + (10 * storageKeeperCount);

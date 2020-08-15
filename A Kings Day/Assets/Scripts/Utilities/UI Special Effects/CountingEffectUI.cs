@@ -6,9 +6,10 @@ using TMPro;
 public class CountingEffectUI : MonoBehaviour
 {
     public TextMeshProUGUI countText;
+    public string numberColorText;
+
     public int curCount;
     public int targetCount;
-
     public int increment = 1;
 
     private float intervalPerChange = 0.05f;
@@ -39,11 +40,22 @@ public class CountingEffectUI : MonoBehaviour
                     curCount += increment;
                 }
             }
-            countText.text = preCountMesg + " " + curCount.ToString() + " " + postCountMesg;
+            if(string.IsNullOrEmpty(numberColorText))
+            {
+                countText.text = preCountMesg + " " + curCount.ToString() + " " + postCountMesg;
+            }
+            else
+            {
+                countText.text = preCountMesg + " " + numberColorText + curCount.ToString() + "</color>" + " " + postCountMesg;
+            }
         }
     }
+    public void SetNumberColor(string newColor)
+    {
+        numberColorText = newColor;
+    }
 
-    public void SetTargetCount(int newTarget)
+    public void SetTargetCount(int newTarget, bool startQuickly = true)
     {
         targetCount = newTarget;
 
@@ -62,7 +74,12 @@ public class CountingEffectUI : MonoBehaviour
                 countText.color = Color.red;
             }
         }
-        startUpdating = true;
+        if(startQuickly)
+        {
+            startUpdating = true;
+        }
+
+        Debug.Log("From: " + postCountMesg);
     }
     public void AdjustIncrement(int difference)
     {

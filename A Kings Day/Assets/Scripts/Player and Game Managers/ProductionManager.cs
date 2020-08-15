@@ -66,59 +66,59 @@ namespace Managers
 
         }
 
-        public void ShowPopNotif(int amount)
+        public void ShowPopNotif(int amount, string fromDescription)
         {
             if (amount >= 0)
             {
-                notifHandler.RevealResourceNotification(ResourceType.Population, amount);
+                notifHandler.RevealResourceNotification(ResourceType.Population, amount, false, fromDescription);
             }
             else
             {
-                notifHandler.RevealResourceNotification(ResourceType.Population, amount, true);
+                notifHandler.RevealResourceNotification(ResourceType.Population, amount, true, fromDescription);
             }
         }
-        public void ShowTroopNotif(int amount)
+        public void ShowTroopNotif(int amount, string fromDescription)
         {
             if (amount >= 0)
             {
-                notifHandler.RevealResourceNotification(ResourceType.Troops, amount);
+                notifHandler.RevealResourceNotification(ResourceType.Troops, amount, false, fromDescription);
             }
             else
             {
-                notifHandler.RevealResourceNotification(ResourceType.Troops, amount, true);
+                notifHandler.RevealResourceNotification(ResourceType.Troops, amount, true, fromDescription);
             }
         }
-        public void ShowFoodNotif(int amount)
+        public void ShowFoodNotif(int amount, string fromDescription)
         {
             if (amount >= 0)
             {
-                notifHandler.RevealResourceNotification(ResourceType.Food, amount);
+                notifHandler.RevealResourceNotification(ResourceType.Food, amount, false, fromDescription);
             }
             else
             {
-                notifHandler.RevealResourceNotification(ResourceType.Food, amount, true);
+                notifHandler.RevealResourceNotification(ResourceType.Food, amount, true, fromDescription);
             }
         }
-        public void ShowCoinNotif(int amount)
+        public void ShowCoinNotif(int amount, string fromDescription)
         {
             if (amount >= 0)
             {
-                notifHandler.RevealResourceNotification(ResourceType.Coin, amount);
+                notifHandler.RevealResourceNotification(ResourceType.Coin, amount, false, fromDescription);
             }
             else
             {
-                notifHandler.RevealResourceNotification(ResourceType.Coin, amount, true);
+                notifHandler.RevealResourceNotification(ResourceType.Coin, amount, true, fromDescription);
             }
         }
-        public void ShowCowNotif(int amount)
+        public void ShowCowNotif(int amount, string fromDescription)
         {
             if(amount >= 0)
             {
-                notifHandler.RevealResourceNotification(ResourceType.Cows, amount);
+                notifHandler.RevealResourceNotification(ResourceType.Cows, amount, false, fromDescription);
             }
             else
             {
-                notifHandler.RevealResourceNotification(ResourceType.Cows, amount, true);
+                notifHandler.RevealResourceNotification(ResourceType.Cows, amount, true, fromDescription);
             }
         }
     }

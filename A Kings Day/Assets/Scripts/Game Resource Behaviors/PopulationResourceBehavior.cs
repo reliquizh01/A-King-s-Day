@@ -67,6 +67,9 @@ namespace GameResource
             CheckTaxCounter();
 
             ImplementTechnology();
+
+            Debug.Log("Cur Player: " + curPlayer.foods);
+            UpdateWarningMechanics();
         }
 
         public override void ImplementTechnology()

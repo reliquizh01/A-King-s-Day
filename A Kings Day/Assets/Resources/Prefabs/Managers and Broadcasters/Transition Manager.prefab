@@ -141,7 +141,6 @@ MonoBehaviour:
   increaseColor: {r: 0.07787468, g: 0.6603774, b: 0.18113768, a: 1}
   decreaseColor: {r: 0.6603774, g: 0.07787468, b: 0.07787468, a: 1}
   myWarning: {fileID: 0}
-  dependentList: []
   storageCapacity: 0
   currentCount: 0
 --- !u!1 &70451519
@@ -665,7 +664,6 @@ MonoBehaviour:
   increaseColor: {r: 0.07787468, g: 0.6603774, b: 0.18113768, a: 1}
   decreaseColor: {r: 0.6603774, g: 0.07787468, b: 0.07787468, a: 1}
   myWarning: {fileID: 0}
-  dependentList: []
   storageCapacity: 0
   currentCount: 0
 --- !u!1 &127431163
@@ -1325,6 +1323,8 @@ MonoBehaviour:
   notifMesg: {fileID: 170031425}
   textMesg: {fileID: 1607114404}
   isShowing: 0
+  isMultiple: 0
+  shownWarningDatas: []
 --- !u!1 &223471583
 GameObject:
   m_ObjectHideFlags: 0
@@ -2539,6 +2539,8 @@ MonoBehaviour:
   notifMesg: {fileID: 1983716344}
   textMesg: {fileID: 2105266993}
   isShowing: 0
+  isMultiple: 0
+  shownWarningDatas: []
 --- !u!1 &627549743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2592,6 +2594,8 @@ MonoBehaviour:
   notifMesg: {fileID: 863002398}
   textMesg: {fileID: 1501199847}
   isShowing: 0
+  isMultiple: 0
+  shownWarningDatas: []
 --- !u!1 &656589541
 GameObject:
   m_ObjectHideFlags: 0
@@ -3512,7 +3516,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &744120930
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3747,7 +3751,6 @@ MonoBehaviour:
   increaseColor: {r: 0.07787468, g: 0.6603774, b: 0.18113768, a: 1}
   decreaseColor: {r: 0.6603774, g: 0.07787468, b: 0.07787468, a: 1}
   myWarning: {fileID: 0}
-  dependentList: []
   storageCapacity: 0
   currentCount: 0
 --- !u!1 &757437140
@@ -6580,7 +6583,6 @@ MonoBehaviour:
   increaseColor: {r: 0.07787468, g: 0.6603774, b: 0.18113768, a: 1}
   decreaseColor: {r: 0.6603774, g: 0.07787468, b: 0.07787468, a: 1}
   myWarning: {fileID: 0}
-  dependentList: []
   storageCapacity: 0
   currentCount: 0
 --- !u!1 &1299428922
@@ -7103,11 +7105,6 @@ MonoBehaviour:
   increaseColor: {r: 0.07787468, g: 0.6603774, b: 0.18113768, a: 1}
   decreaseColor: {r: 0.6603774, g: 0.07787468, b: 0.07787468, a: 1}
   myWarning: {fileID: 1515576538}
-  dependentList:
-  - dependent: 5
-    message: No Farmers!
-  - dependent: 7
-    message: Over Capacity!
   storageCapacity: 0
   currentCount: 0
 --- !u!1 &1346554439
@@ -8012,6 +8009,8 @@ MonoBehaviour:
   notifMesg: {fileID: 1300499366}
   textMesg: {fileID: 1962383102}
   isShowing: 0
+  isMultiple: 0
+  shownWarningDatas: []
 --- !u!1 &1498798481
 GameObject:
   m_ObjectHideFlags: 0
@@ -8316,7 +8315,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1515576537
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8353,6 +8352,8 @@ MonoBehaviour:
   notifMesg: {fileID: 744120932}
   textMesg: {fileID: 1660420493}
   isShowing: 0
+  isMultiple: 0
+  shownWarningDatas: []
 --- !u!1 &1522987157
 GameObject:
   m_ObjectHideFlags: 0
@@ -8857,7 +8858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1660420492
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10847,22 +10848,22 @@ MonoBehaviour:
     farmerCount: 0
     herdsmanCount: 0
     storageKeeperCount: 0
-    deathByDirtiness: 0
+    deathByPlague: 0
     festivalWeeksDuration: 0
     populationBurst: 0
     potentialRefugee: 0
     potentialMerchantArrival: 0
     balconyBuildingsAdded: 0
     buildingInformationData: []
+    potentialMerchant: 0
     potentialGoodsMerchant: 0
     potentialEquipsMerchant: 0
     potentialExoticMerchant: 0
+    potentialRandomHero: 0
     potentialCommonHero: 20
     potentialRareHero: 10
     potentialLegHero: 5
-    potentialMercSwords: 5
-    potentialMercSpear: 5
-    potentialMercArcher: 5
+    potentialMercenary: 0
     myHeroes: []
     tavernHeroes: []
     myItems: []
@@ -10880,6 +10881,7 @@ MonoBehaviour:
     coins: 0
     coinsCapacity: 0
     curMonthTaxCounter: 0
+    maxMonthTaxCount: 4
     canReceiveMonthlyTax: 0
     currentTechnologies: []
     storyRoll: 0.007
@@ -13313,22 +13315,22 @@ MonoBehaviour:
     farmerCount: 0
     herdsmanCount: 0
     storageKeeperCount: 0
-    deathByDirtiness: 0
+    deathByPlague: 0
     festivalWeeksDuration: 0
     populationBurst: 0
     potentialRefugee: 0
     potentialMerchantArrival: 0
     balconyBuildingsAdded: 0
     buildingInformationData: []
+    potentialMerchant: 0
     potentialGoodsMerchant: 0
     potentialEquipsMerchant: 0
     potentialExoticMerchant: 0
+    potentialRandomHero: 0
     potentialCommonHero: 20
     potentialRareHero: 10
     potentialLegHero: 5
-    potentialMercSwords: 5
-    potentialMercSpear: 5
-    potentialMercArcher: 5
+    potentialMercenary: 0
     myHeroes: []
     tavernHeroes: []
     myItems: []
@@ -13346,6 +13348,7 @@ MonoBehaviour:
     coins: 0
     coinsCapacity: 0
     curMonthTaxCounter: 0
+    maxMonthTaxCount: 4
     canReceiveMonthlyTax: 0
     currentTechnologies: []
     storyRoll: 0.007
@@ -13400,22 +13403,22 @@ MonoBehaviour:
     farmerCount: 0
     herdsmanCount: 0
     storageKeeperCount: 0
-    deathByDirtiness: 0
+    deathByPlague: 0
     festivalWeeksDuration: 0
     populationBurst: 0
     potentialRefugee: 0
     potentialMerchantArrival: 0
     balconyBuildingsAdded: 0
     buildingInformationData: []
+    potentialMerchant: 0
     potentialGoodsMerchant: 0
     potentialEquipsMerchant: 0
     potentialExoticMerchant: 0
+    potentialRandomHero: 0
     potentialCommonHero: 20
     potentialRareHero: 10
     potentialLegHero: 5
-    potentialMercSwords: 5
-    potentialMercSpear: 5
-    potentialMercArcher: 5
+    potentialMercenary: 0
     myHeroes: []
     tavernHeroes: []
     myItems: []
@@ -13433,6 +13436,7 @@ MonoBehaviour:
     coins: 0
     coinsCapacity: 0
     curMonthTaxCounter: 0
+    maxMonthTaxCount: 4
     canReceiveMonthlyTax: 0
     currentTechnologies: []
     storyRoll: 0.007
@@ -13609,7 +13613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3834805355570692156
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13646,6 +13650,8 @@ MonoBehaviour:
   notifMesg: {fileID: 1652224913116218054}
   textMesg: {fileID: 79274530695991517}
   isShowing: 0
+  isMultiple: 0
+  shownWarningDatas: []
 --- !u!1 &347888837881334624
 GameObject:
   m_ObjectHideFlags: 0
@@ -14055,6 +14061,8 @@ MonoBehaviour:
   notifMesg: {fileID: 3648835965001294597}
   textMesg: {fileID: 3901760591351740719}
   isShowing: 0
+  isMultiple: 0
+  shownWarningDatas: []
 --- !u!1 &521757845573025222
 GameObject:
   m_ObjectHideFlags: 0
@@ -14072,7 +14080,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2078057667011766632
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14265,6 +14273,8 @@ MonoBehaviour:
   notifMesg: {fileID: 1610718150121778777}
   textMesg: {fileID: 1557551703275104614}
   isShowing: 0
+  isMultiple: 0
+  shownWarningDatas: []
 --- !u!1 &592469362282353191
 GameObject:
   m_ObjectHideFlags: 0
@@ -15564,7 +15574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3687643831438264320
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15995,7 +16005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1388919731956274501
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16032,6 +16042,8 @@ MonoBehaviour:
   notifMesg: {fileID: 6696676650388947593}
   textMesg: {fileID: 6006688173573732960}
   isShowing: 0
+  isMultiple: 0
+  shownWarningDatas: []
 --- !u!1 &1301306405163642828
 GameObject:
   m_ObjectHideFlags: 0
@@ -17755,7 +17767,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5350962309427994947
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18325,11 +18337,6 @@ MonoBehaviour:
   increaseColor: {r: 0.07787468, g: 0.6603774, b: 0.18113768, a: 1}
   decreaseColor: {r: 0.6603774, g: 0.07787468, b: 0.07787468, a: 1}
   myWarning: {fileID: 525492456868967001}
-  dependentList:
-  - dependent: 11
-    message: Overpopulation!
-  - dependent: 0
-    message: Starving (1 death/week)
   storageCapacity: 0
   currentCount: 0
 --- !u!1 &2961661556490545000
@@ -18790,6 +18797,8 @@ MonoBehaviour:
   notifMesg: {fileID: 4184581611928303867}
   textMesg: {fileID: 5129622138540085630}
   isShowing: 0
+  isMultiple: 0
+  shownWarningDatas: []
 --- !u!1 &3298348190391451091
 GameObject:
   m_ObjectHideFlags: 0
@@ -18933,9 +18942,6 @@ MonoBehaviour:
   increaseColor: {r: 0.07787468, g: 0.6603774, b: 0.18113768, a: 1}
   decreaseColor: {r: 0.6603774, g: 0.07787468, b: 0.07787468, a: 1}
   myWarning: {fileID: 2415232480544862532}
-  dependentList:
-  - dependent: 3
-    message: Expect Problems!
   storageCapacity: 0
   currentCount: 0
 --- !u!1 &3497529975553944821
@@ -19165,7 +19171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5165112898932313126
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21194,7 +21200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6524873642724193952
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22218,7 +22224,6 @@ MonoBehaviour:
   increaseColor: {r: 0.07787468, g: 0.6603774, b: 0.18113768, a: 1}
   decreaseColor: {r: 0.6603774, g: 0.07787468, b: 0.07787468, a: 1}
   myWarning: {fileID: 0}
-  dependentList: []
   storageCapacity: 0
   currentCount: 0
 --- !u!1 &5144291977361643923
@@ -22712,6 +22717,8 @@ MonoBehaviour:
   notifMesg: {fileID: 5419820300554435491}
   textMesg: {fileID: 5995505251627217313}
   isShowing: 0
+  isMultiple: 0
+  shownWarningDatas: []
 --- !u!1 &5313309359629267521
 GameObject:
   m_ObjectHideFlags: 0
@@ -24622,7 +24629,6 @@ MonoBehaviour:
   increaseColor: {r: 0.07787468, g: 0.6603774, b: 0.18113768, a: 1}
   decreaseColor: {r: 0.6603774, g: 0.07787468, b: 0.07787468, a: 1}
   myWarning: {fileID: 0}
-  dependentList: []
   storageCapacity: 0
   currentCount: 0
 --- !u!1 &5777582194454010361
@@ -25409,7 +25415,6 @@ MonoBehaviour:
   increaseColor: {r: 0.07787468, g: 0.6603774, b: 0.18113768, a: 1}
   decreaseColor: {r: 0.6603774, g: 0.07787468, b: 0.07787468, a: 1}
   myWarning: {fileID: 0}
-  dependentList: []
   storageCapacity: 0
   currentCount: 0
 --- !u!1 &6445513673651396748
@@ -27272,11 +27277,6 @@ MonoBehaviour:
   increaseColor: {r: 0.07787468, g: 0.6603774, b: 0.18113768, a: 1}
   decreaseColor: {r: 0.6603774, g: 0.07787468, b: 0.07787468, a: 1}
   myWarning: {fileID: 3201816958386144468}
-  dependentList:
-  - dependent: 0
-    message: Can't Eat! (-1 HP)
-  - dependent: 3
-    message: No Wage! (-1 DMG)
   storageCapacity: 0
   currentCount: 0
 --- !u!1 &7329228417053574010
@@ -29301,7 +29301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3718439446673511896
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29338,6 +29338,8 @@ MonoBehaviour:
   notifMesg: {fileID: 2420682840003279821}
   textMesg: {fileID: 6274615802153505392}
   isShowing: 0
+  isMultiple: 0
+  shownWarningDatas: []
 --- !u!1 &8482585433968597959
 GameObject:
   m_ObjectHideFlags: 0
@@ -29430,7 +29432,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6656436036184822814
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30387,7 +30389,6 @@ MonoBehaviour:
   increaseColor: {r: 0.07787468, g: 0.6603774, b: 0.18113768, a: 1}
   decreaseColor: {r: 0.6603774, g: 0.07787468, b: 0.07787468, a: 1}
   myWarning: {fileID: 0}
-  dependentList: []
   storageCapacity: 0
   currentCount: 0
 --- !u!1 &9146879129444407732

@@ -163,24 +163,14 @@ public class InformationActionHandler : MonoBehaviour
                     }
                 }
 
-                if (isResourcesEnough)
+                if (isResourcesEnough && !myController.informationActionHandler.currentBuildingPanel.currentPage.hasUniqueRequirements)
                 {
-                    for (int i = 0; i < tmp.Count; i++)
-                    {
-                        PlayerGameManager.GetInstance.ReceiveResource(tmp[i].rewardAmount, tmp[i].resourceType, tmp[i].unitName);
-
-                        if (tmp[i].rewardAmount < 0)
-                        {
-                            ResourceInformationController.GetInstance.currentPanel.UpdateResourceData(tmp[i].resourceType, tmp[i].rewardAmount, false);
-                        }
-                        else
-                        {
-                            ResourceInformationController.GetInstance.currentPanel.UpdateResourceData(tmp[i].resourceType, tmp[i].rewardAmount);
-                        }
-                    }
-                    myController.CardDecisionFlavorText(idx, true);
-                    HideOperationDecisionChanges();
-                    ResourceInformationController.GetInstance.currentPanel.ShowPotentialResourceChanges(tmp);
+                    ImplementResourceChanges(tmp, idx, 1);
+                }
+                else if(isResourcesEnough && myController.informationActionHandler.currentBuildingPanel.currentPage.hasUniqueRequirements)
+                {
+                    myController.informationActionHandler.currentBuildingPanel.currentPage.ImplementPageAction(idx);
+                    ImplementResourceChanges(tmp, idx, myController.informationActionHandler.currentBuildingPanel.currentPage.ObtainRewardMultiplier());
                 }
                 else
                 {
@@ -189,6 +179,26 @@ public class InformationActionHandler : MonoBehaviour
             }
 
         }
+    }
+
+    public void ImplementResourceChanges(List<ResourceReward> tmp, int idx, int multiplier)
+    {
+        for (int i = 0; i < tmp.Count; i++)
+        {
+            PlayerGameManager.GetInstance.ReceiveResource(tmp[i].rewardAmount, tmp[i].resourceType, tmp[i].unitName);
+
+            if (tmp[i].rewardAmount < 0)
+            {
+                ResourceInformationController.GetInstance.currentPanel.UpdateResourceData(tmp[i].resourceType, tmp[i].rewardAmount, false);
+            }
+            else
+            {
+                ResourceInformationController.GetInstance.currentPanel.UpdateResourceData(tmp[i].resourceType, tmp[i].rewardAmount);
+            }
+        }
+        myController.CardDecisionFlavorText(idx, true);
+        HideOperationDecisionChanges();
+        ResourceInformationController.GetInstance.currentPanel.ShowPotentialResourceChanges(tmp);
     }
     public void HideAddedInformation()
     {

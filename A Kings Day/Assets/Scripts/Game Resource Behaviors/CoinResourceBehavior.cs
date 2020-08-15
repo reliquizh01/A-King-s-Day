@@ -44,32 +44,35 @@ namespace GameResource
             ImplementTechnology();
 
             CheckMonthlyCounter();
+
+            UpdateWarningMechanics();
         }
         public override void UpdateWeeklyProgress()
         {
             base.UpdateWeeklyProgress();
             curPlayer.curMonthTaxCounter += 1;
             CheckMonthlyCounter();
+            if(curPlayer.canReceiveTax)
+            {
+                ProductionManager.GetInstance.ShowCoinNotif(GetTotalTax(), "Tax");
+                PlayerGameManager.GetInstance.ReceiveResource(GetTotalTax(), ResourceType.Coin);
+                curPlayer.canReceiveTax = false;
+            }
         }
 
         public void CheckMonthlyCounter()
         {
-            if(curPlayer.curMonthTaxCounter > 4)
+            if(curPlayer.curMonthTaxCounter >= curPlayer.maxMonthTaxCount)
             {
                 curPlayer.canReceiveTax = true;
+                curPlayer.curMonthTaxCounter = 0;
             }
 
-            if(curPlayer.canReceiveTax)
-            {
-                curPlayer.canReceiveTax = false;
-
-                curPlayer.coins += GetTotalTax();
-            }
         }
 
         public int GetTotalTax()
         {
-            int totalTax = GetTotalMonthlyIncome + techSecurityIncome - techDiscountCoinPenalty; 
+            int totalTax = GetTotalMonthlyIncome + (techSecurityIncome - techDiscountCoinPenalty); 
             return totalTax;
         }
         public override void ImplementTechnology()

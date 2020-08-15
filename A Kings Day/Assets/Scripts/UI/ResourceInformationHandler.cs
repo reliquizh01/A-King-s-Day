@@ -150,6 +150,8 @@ namespace ResourceUI
                     UpdateTroops(isIncrease, amount);
                     break;
             }
+
+            UpdateReliability();
         }
         private void UpdatePopulation(bool isIncrease = true, int amount = 0)
         {
@@ -194,6 +196,11 @@ namespace ResourceUI
             {
                 foodControl.DecreaseResource(amount);
             }
+        }
+
+        private void UpdateReliability()
+        {
+
         }
     }
 }

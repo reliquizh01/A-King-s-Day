@@ -8,15 +8,11 @@ using Utilities;
 using UnityEngine.EventSystems;
 using Kingdoms;
 using Managers;
+using GameResource;
 
 namespace ResourceUI
 {
-    [Serializable]
-    public class WarningMessageClass
-    {
-        public ResourceType dependent;
-        public string message;
-    }
+
     public class BaseResourceUIControllerV2 : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
         public BaseResourceIconUIV2 storageFill;
@@ -28,7 +24,6 @@ namespace ResourceUI
 
         [Header("Warning System")]
         public ResourceWarningHandler myWarning;
-        public List<WarningMessageClass> dependentList;
 
         [Header("Storage")]
         public int storageCapacity;
@@ -116,13 +111,5 @@ namespace ResourceUI
             currentAmount.text = currentCount.ToString();
         }
 
-        public void EnableWarning(string mesg)
-        {
-            myWarning.ShowWarning(mesg);
-        }
-        public void DisableWarning()
-        {
-            myWarning.HideWarning();
-        }
     }
 }

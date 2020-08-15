@@ -18,7 +18,7 @@ public class SaveSlotHandler : MonoBehaviour
     public Scrollbar scrollBar;
 
     public Button loadBtn, deleteBtn;
-
+    public bool isLoading = false;
     public int selectedIndex;
     public void Start()
     {

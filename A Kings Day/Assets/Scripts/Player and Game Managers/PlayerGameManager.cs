@@ -43,6 +43,7 @@ namespace Managers
         public TroopResourceBehavior troopBehavior;
         public PopulationResourceBehavior populationBehavior;
         public CoinResourceBehavior coinBehavior;
+        public MapWeeklyBehavior mapBehavior;
 
         public PlayerKingdomData playerData = new PlayerKingdomData();
         public PlayerCampaignData campaignData = new PlayerCampaignData();
@@ -58,17 +59,25 @@ namespace Managers
         public void SetupResourceProductionUpdate()
         {
             foodBehavior.SetupResourceBehavior();
+
             troopBehavior.SetupResourceBehavior();
+
             populationBehavior.SetupResourceBehavior();
+
             coinBehavior.SetupResourceBehavior();
         }
         public void WeeklyResourceProductionUpdate(Parameters p = null)
         {
             Debug.Log("Updating ResourceProduction ----------------");
             foodBehavior.UpdateWeeklyProgress();
-            troopBehavior.UpdateWeeklyProgress();   
+
+            troopBehavior.UpdateWeeklyProgress();
+
             populationBehavior.UpdateWeeklyProgress();
+
             coinBehavior.UpdateWeeklyProgress();
+
+            ResourceUI.ResourceInformationController.GetInstance.UpdateCurrentPanel();
         }
         public void ReceiveCampaignData(PlayerCampaignData newData)
         {
@@ -152,9 +161,7 @@ namespace Managers
             playerData.potentialRareHero = newData.potentialRareHero;
             playerData.potentialLegHero = newData.potentialLegHero;
 
-            playerData.potentialMercSwords = newData.potentialMercSwords;
-            playerData.potentialMercSpear = newData.potentialMercSpear;
-            playerData.potentialMercArcher = newData.potentialMercArcher;
+            playerData.potentialMercenary = newData.potentialMercenary;
 
             playerData.myHeroes = new List<BaseHeroInformationData>();
             if(newData.myHeroes != null)
@@ -213,7 +220,9 @@ namespace Managers
                 }
             }
 
+            Debug.Log("Food Count Before: " + newData.foods);
             playerData.foods = newData.foods;
+            Debug.Log("Food Count After: " + newData.foods);
             playerData.safeFood = newData.safeFood;
             playerData.cows = newData.cows;
             playerData.safeCows = newData.safeCows;
@@ -257,7 +266,6 @@ namespace Managers
                 }
             }
 
-            SetupResourceProductionUpdate();
         }
         public void ReceiveTroops(int amount, string unitName)
         {
@@ -365,6 +373,17 @@ namespace Managers
             {
                 SaveData.SaveLoadManager.GetInstance.SaveCurrentData();
             }
+
+
+            foodBehavior.UpdateWarningMechanics();
+            troopBehavior.UpdateWarningMechanics();
+            populationBehavior.UpdateWarningMechanics();
+            coinBehavior.UpdateWarningMechanics();
+            if (ResourceInformationController.GetInstance != null)
+            {
+                ResourceInformationController.GetInstance.UpdateCurrentPanelWarnings();
+            }
+
         }
         public void RemoveResource(int amount, ResourceType type, string troopName = "")
         {
@@ -407,6 +426,16 @@ namespace Managers
             if(TransitionManager.GetInstance != null && !TransitionManager.GetInstance.isNewGame)
             {
                 SaveData.SaveLoadManager.GetInstance.SaveCurrentData();
+            }
+
+
+            foodBehavior.UpdateWarningMechanics();
+            troopBehavior.UpdateWarningMechanics();
+            populationBehavior.UpdateWarningMechanics();
+            coinBehavior.UpdateWarningMechanics();
+            if (ResourceInformationController.GetInstance != null)
+            {
+                ResourceInformationController.GetInstance.UpdateCurrentPanelWarnings();
             }
         }
         public void RemoveTroops(int amount, string unitName)

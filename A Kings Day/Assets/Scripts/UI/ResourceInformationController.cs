@@ -10,6 +10,7 @@ using Kingdoms;
 using Managers;
 using KingEvents;
 using Dialogue;
+using GameResource;
 
 namespace ResourceUI
 {
@@ -124,7 +125,91 @@ namespace ResourceUI
 
         public void UpdateCurrentPanel()
         {
-            currentPanel.InitializeData();
+            if(currentPanel != null)
+            {
+                currentPanel.InitializeData();
+            }
+            PlayerGameManager.GetInstance.SetupResourceProductionUpdate();
+            UpdateCurrentPanelWarnings();
+        }
+
+        public void UpdateCurrentPanelWarnings()
+        {
+            if(PlayerGameManager.GetInstance == null)
+            {
+                return;
+            }
+            if(currentPanel == null)
+            {
+                Debug.Log("[No Current Panel Available]");
+                return;
+            }
+
+            PlayerGameManager manager = PlayerGameManager.GetInstance;
+            
+            // COIN WARNING
+            if(currentPanel.coinControl.myWarning != null)
+            {
+                if(manager.coinBehavior.warningDependentList.Find(x => x.showWarning) != null)
+                {
+                    List<WarningMessageClass> shownUpWarnings = new List<WarningMessageClass>();
+                    shownUpWarnings.AddRange(manager.coinBehavior.warningDependentList.FindAll(x => x.showWarning));
+
+                    currentPanel.coinControl.myWarning.SetupWarningDatas(shownUpWarnings);
+                }
+                else
+                {
+                    currentPanel.coinControl.myWarning.HideWarning();
+                }
+            }
+
+            if (currentPanel.troopControl.myWarning != null)
+            {
+                // TROOPS WARNING
+                if (manager.troopBehavior.warningDependentList.Find(x => x.showWarning) != null)
+                {
+                    List<WarningMessageClass> shownUpWarnings = new List<WarningMessageClass>();
+                    shownUpWarnings.AddRange(manager.troopBehavior.warningDependentList.FindAll(x => x.showWarning));
+
+                    currentPanel.troopControl.myWarning.SetupWarningDatas(shownUpWarnings);
+                }
+                else
+                {
+                    currentPanel.troopControl.myWarning.HideWarning();
+                }
+            }
+
+            if (currentPanel.villagerControl.myWarning != null)
+            {
+                // POPULATION WARNING
+                if (manager.populationBehavior.warningDependentList.Find(x => x.showWarning) != null)
+                {
+                    List<WarningMessageClass> shownUpWarnings = new List<WarningMessageClass>();
+                    shownUpWarnings.AddRange(manager.populationBehavior.warningDependentList.FindAll(x => x.showWarning));
+
+                    currentPanel.villagerControl.myWarning.SetupWarningDatas(shownUpWarnings);
+                }
+                else
+                {
+                    currentPanel.villagerControl.myWarning.HideWarning();
+                }
+            }
+
+            if (currentPanel.foodControl.myWarning != null)
+            {
+                // FOOD WARNING
+                if (manager.foodBehavior.warningDependentList.Find(x => x.showWarning) != null)
+                {
+                    List<WarningMessageClass> shownUpWarnings = new List<WarningMessageClass>();
+                    shownUpWarnings.AddRange(manager.foodBehavior.warningDependentList.FindAll(x => x.showWarning));
+
+                    currentPanel.foodControl.myWarning.SetupWarningDatas(shownUpWarnings);
+                }
+                else
+                {
+                    currentPanel.foodControl.myWarning.HideWarning();
+                }
+            }
         }
         public void ShowCurrentPanel(Parameters p = null)
         {
@@ -133,12 +218,14 @@ namespace ResourceUI
                 currentPanel.gameObject.SetActive(true);
                 currentPanel.myPanel.PlayOpenAnimation();
                 currentPanel.isShowing = true;
+                UpdateCurrentPanel();
             }
         }
 
         public void ShowCurrentPanelPotentialResourceChanges(List<ResourceReward> rewardList)
         {
             currentPanel.ShowPotentialResourceChanges(rewardList);
+            UpdateCurrentPanel();
         }
         public void HideCurrentPanelPotentialResourceChanges()
         {
@@ -218,6 +305,8 @@ namespace ResourceUI
                 currentPanel.isShowing = true;
                 StartCoroutine(currentPanel.myPanel.WaitAnimationForAction(currentPanel.myPanel.openAnimationName, extraCallBack));
             }
+
+            UpdateCurrentPanel();
         }
 
         public void SwapDelay(ResourcePanelType panelType, Action extraCallBack = null)

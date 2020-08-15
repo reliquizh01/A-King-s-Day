@@ -69,16 +69,19 @@ MonoBehaviour:
           unitName: Recruit
           rewardAmount: 1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 2
           unitName: 
           rewardAmount: -1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 3
           unitName: 
           rewardAmount: -10
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - I'd love to take them in!
         - I hope this one's not as teary as that previous guy
@@ -101,16 +104,19 @@ MonoBehaviour:
           unitName: Recruit
           rewardAmount: -1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 2
           unitName: 
           rewardAmount: 1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 3
           unitName: 
           rewardAmount: 7
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - De-listing one person, again.
         - When I remove them in the list sometimes the reason is death.
@@ -130,11 +136,13 @@ MonoBehaviour:
           unitName: Recruit
           rewardAmount: -1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 3
           unitName: 
           rewardAmount: 15
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - Selling them is like them winning a battle without dying. gold.
         - So we train them and sell them, atleast they're cold hearted.
@@ -165,16 +173,19 @@ MonoBehaviour:
           unitName: Swordsman
           rewardAmount: 1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 1
           unitName: Recruit
           rewardAmount: -1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 3
           unitName: 
           rewardAmount: -5
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - Ah the swordmens, the hand that slits the throat where it sits.
         - The most basic of them all, but the most balanced.
@@ -196,16 +207,19 @@ MonoBehaviour:
           unitName: Spearman
           rewardAmount: 1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 1
           unitName: Recruit
           rewardAmount: -1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 3
           unitName: 
           rewardAmount: -5
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - The spear bearers, pierce makers, how shall i train them..
         - Spear is speed's enemy, the best pace-stopper in town.
@@ -227,16 +241,19 @@ MonoBehaviour:
           unitName: Archer
           rewardAmount: 1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 1
           unitName: Recruit
           rewardAmount: -1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 3
           unitName: 
           rewardAmount: -10
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - A shot to the head without getting harmed, is a kill.
         - No honor? who can say that when they're dead.
@@ -267,11 +284,13 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -5
           potentialTraveller: 0
+          multiplied: 1
         - resourceTitle: 
           resourceType: 0
           unitName: 
           rewardAmount: -10
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - Push up, Running and muscle grinding, i think he's ready.
         - 100, 101, 102 and now for 15 miles of running and repeat!
@@ -288,15 +307,17 @@ MonoBehaviour:
         openSubOption: 0
         rewardList:
         - resourceTitle: 
-          resourceType: 0
-          unitName: 
-          rewardAmount: -10
-          potentialTraveller: 0
-        - resourceTitle: 
           resourceType: 3
           unitName: 
           rewardAmount: -5
           potentialTraveller: 0
+          multiplied: 1
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
+          rewardAmount: -10
+          potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - Focus! Aim your hits! and remember to breathe in and out!
         - Understand that it is kill or be killed.
@@ -317,11 +338,13 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -5
           potentialTraveller: 0
+          multiplied: 1
         - resourceTitle: 
           resourceType: 0
           unitName: 
           rewardAmount: -10
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - Speed is your enemy, timing with speed is your friend.
         - Speed is not about the fastest, but the one who's first.
@@ -361,31 +384,37 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -10
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 3
           unitName: 
           rewardAmount: -10
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 13
           unitName: 
           rewardAmount: 10
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 13
           unitName: 
           rewardAmount: 15
           potentialTraveller: 1
+          multiplied: 0
         - resourceTitle: 
           resourceType: 13
           unitName: 
           rewardAmount: 30
           potentialTraveller: 3
+          multiplied: 0
         - resourceTitle: 
           resourceType: 12
           unitName: 
           rewardAmount: 5
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - Good of you to remember that ol' Hero and celebrate his day!
         - Oh it's that heroine we'll be feasting about, this will remind us!
@@ -407,31 +436,37 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -20
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 3
           unitName: 
           rewardAmount: -20
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 13
           unitName: 
           rewardAmount: 12
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 13
           unitName: 
           rewardAmount: 20
           potentialTraveller: 1
+          multiplied: 0
         - resourceTitle: 
           resourceType: 13
           unitName: 
           rewardAmount: 35
           potentialTraveller: 3
+          multiplied: 0
         - resourceTitle: 
           resourceType: 12
           unitName: 
           rewardAmount: 10
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - A celebration for our One of our many victories in the past!
         - To us and the future victories of this great kingdom!
@@ -453,31 +488,37 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -100
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 0
           unitName: 
           rewardAmount: -50
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 13
           unitName: 
           rewardAmount: 15
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 13
           unitName: 
           rewardAmount: 20
           potentialTraveller: 1
+          multiplied: 0
         - resourceTitle: 
           resourceType: 13
           unitName: 
           rewardAmount: 35
           potentialTraveller: 3
+          multiplied: 0
         - resourceTitle: 
           resourceType: 12
           unitName: 
           rewardAmount: 15
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - Behold! as we celebrate the feast of the Winterbeast!
         - We will celebrate that defeat for today! we are victors!
@@ -565,11 +606,13 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -30
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 13
           unitName: 
           rewardAmount: 30
           potentialTraveller: 4
+          multiplied: 0
         AcceptMesg:
         - A Goods merchant is nice.
         - Goods it is!
@@ -592,11 +635,13 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -50
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 13
           unitName: 
           rewardAmount: 20
           potentialTraveller: 6
+          multiplied: 0
         AcceptMesg:
         - Someone for our champions? very well.
         - That's so nice! to fight and clothed for the kingdom.
@@ -618,11 +663,13 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -100
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 13
           unitName: 
           rewardAmount: 5
           potentialTraveller: 5
+          multiplied: 0
         AcceptMesg:
         - The rarest of them all? I wonder if one would come.
         - To buy their stuff, you need ALOT of money, as IN ALOT.
@@ -718,16 +765,19 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -5
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 0
           unitName: 
           rewardAmount: -5
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 13
           unitName: 
           rewardAmount: 1
           potentialTraveller: 3
+          multiplied: 0
         AcceptMesg:
         - Cheers to those who trade with us!
         - For the merchants who bring goods! d'is for you!
@@ -749,16 +799,19 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -5
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 3
           unitName: 
           rewardAmount: -10
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 13
           unitName: 
           rewardAmount: 1
           potentialTraveller: 7
+          multiplied: 0
         AcceptMesg:
         - For the champions and wanna-be.
         - The king is with you heroes all throughout!
@@ -781,16 +834,19 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -5
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 3
           unitName: 
           rewardAmount: -10
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 13
           unitName: 
           rewardAmount: 10
           potentialTraveller: 2
+          multiplied: 0
         AcceptMesg:
         - For those who wanna get paid! Prepare yourselves!
         - Bounties are real admit it! the king gives it all!
@@ -821,16 +877,19 @@ MonoBehaviour:
           unitName: Swordsman
           rewardAmount: -1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 1
           unitName: Swordsman
           rewardAmount: 1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 3
           unitName: 
           rewardAmount: -20
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - A swordsmen is available and ready to serve.
         - He has his own sword, included in the charge.
@@ -853,16 +912,19 @@ MonoBehaviour:
           unitName: Spearman
           rewardAmount: -1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 1
           unitName: Spearman
           rewardAmount: 1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 3
           unitName: 
           rewardAmount: -15
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - See how he flungs that stick, he'll pack a punch.
         - I wonder if that spear is his....we'll see in battle.
@@ -884,16 +946,19 @@ MonoBehaviour:
           unitName: Archer
           rewardAmount: -1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 1
           unitName: Archer
           rewardAmount: 1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 3
           unitName: 
           rewardAmount: -15
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - He can aim alright, now to test him while drunk.
         - I throwed a pot last night, i think he's the one who broke it.
@@ -1211,6 +1276,7 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -5
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - This is more than enough to calm their minds.
         - Atleast they've felt your presence
@@ -1231,6 +1297,7 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -10
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - This is alot, this might encourage our people to procreate.
         - Ah, they'll feel better with this, Thank you my king.
@@ -1251,6 +1318,7 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -15
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - My King! this is alot! you dont have to prove yourself.
         - We're already thankful for the protection, but this?! Thanks your grace,
@@ -1283,16 +1351,19 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -20
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 0
           unitName: 
           rewardAmount: -10
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 11
           unitName: 
           rewardAmount: 2
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - Maybe a family of 5 can adjust to this
         - So another family will grow here... that is nice of you my king.
@@ -1313,16 +1384,19 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -20
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 3
           unitName: 
           rewardAmount: -50
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 11
           unitName: 
           rewardAmount: 5
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - Goodnesss, 10 kins of the future generation, in this house.
         - I wonder how would they grow up to be, will they enrich the kingdom? I
@@ -1344,16 +1418,19 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -30
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 3
           unitName: 
           rewardAmount: -80
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 11
           unitName: 
           rewardAmount: 12
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - A house this large would take time to get filled, around 15 maybe? but
           that is quite a huge family.
@@ -1385,11 +1462,13 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -10
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 13
           unitName: 
           rewardAmount: -1
           potentialTraveller: 11
+          multiplied: 0
         AcceptMesg:
         - This would improve our smell a little, specilaly that house.
         - I can't believe we've waited so long to clean this place.
@@ -1410,11 +1489,13 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -50
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 13
           unitName: 
           rewardAmount: -5
           potentialTraveller: 11
+          multiplied: 0
         AcceptMesg:
         - Now we wash all corners, this cleansing will last longer.
         - Definitely the best time to clean is always.
@@ -1435,11 +1516,13 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -100
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 13
           unitName: 
           rewardAmount: -10
           potentialTraveller: 11
+          multiplied: 0
         AcceptMesg:
         - I dont think even the blood plague could withstand this cleaning
         - We even hired priests and shamans for other worldly cleansing... oh my.
@@ -1478,11 +1561,13 @@ MonoBehaviour:
           unitName: 
           rewardAmount: 1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 2
           unitName: 
           rewardAmount: -1
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - Step right up, pick a hoe and get going!
         - So who will be the next hoe handler?
@@ -1503,11 +1588,13 @@ MonoBehaviour:
           unitName: 
           rewardAmount: 1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 5
           unitName: 
           rewardAmount: -1
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - You, You're a free man now!
         - Hey! yeah you! the king needs you somewhere else!
@@ -1528,11 +1615,13 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -5
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 3
           unitName: 
           rewardAmount: 3
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - Balance the need for coins and food my king.
         DenyMesg:
@@ -1562,11 +1651,13 @@ MonoBehaviour:
           unitName: 
           rewardAmount: 1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 2
           unitName: 
           rewardAmount: -1
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - The cattle there is yours, and that too, take care of them.
         - That's my favorite right there, take good care of it.
@@ -1587,11 +1678,13 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 2
           unitName: 
           rewardAmount: 1
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - Step out! you're king needs you somewhere else!
         - Kinda hard to leave that cow behind, but its for the best.
@@ -1612,11 +1705,13 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 0
           unitName: 
           rewardAmount: 5
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - Farewell to you my cow, please make yourself tasty.
         - Shh now my friend, shh..
@@ -1646,11 +1741,13 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 7
           unitName: 
           rewardAmount: 1
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - You run the errands and ill list you down, welcome.
         - Fit the gloves and fit the shoes, good, you're in.
@@ -1671,11 +1768,13 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -1
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 2
           unitName: 
           rewardAmount: 1
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - Leave the shoes behind, and the gloves is yours, too.
         - Ah, your muscles are such a waste, oh well.
@@ -1695,11 +1794,13 @@ MonoBehaviour:
           unitName: 
           rewardAmount: -10
           potentialTraveller: 0
+          multiplied: 0
         - resourceTitle: 
           resourceType: 10
           unitName: 
           rewardAmount: 2
           potentialTraveller: 0
+          multiplied: 0
         AcceptMesg:
         - More houses for the dairy queens.
         - Ah, another haystack storage.

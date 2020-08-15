@@ -62,6 +62,8 @@ namespace GameResource
             curPlayer = PlayerGameManager.GetInstance.playerData;
 
             ImplementTechnology();
+
+            UpdateWarningMechanics();
         }
 
         public void RecruitTroops()

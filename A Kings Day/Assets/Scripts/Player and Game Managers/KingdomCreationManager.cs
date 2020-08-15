@@ -6,6 +6,7 @@ using Managers;
 using Kingdoms;
 using Drama;
 using SaveData;
+using UnityEngine.UI;
 
 public class KingdomCreationManager : BaseManager
 {
@@ -97,6 +98,12 @@ public class KingdomCreationManager : BaseManager
         {
             return;
         }
+        if(saveSlotHandler.isLoading)
+        {
+            return;
+        }
+        saveSlotHandler.isLoading = true;
+
         if (PlayerGameManager.GetInstance != null)
         {
             PlayerGameManager.GetInstance.ReceiveData(SaveData.SaveLoadManager.GetInstance.saveDataList[saveSlotHandler.selectedIndex]);

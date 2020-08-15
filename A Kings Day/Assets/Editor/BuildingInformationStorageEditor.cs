@@ -621,16 +621,11 @@ namespace Buildings
                         GUILayout.BeginHorizontal();
                         curSelectedAction.rewardList[i].resourceType = (ResourceType)EditorGUILayout.EnumPopup("Type:", curSelectedAction.rewardList[i].resourceType, GUILayout.MaxWidth(150));
                         GUILayout.Label("Amount:", GUILayout.MaxWidth(60));
-                        curSelectedAction.rewardList[i].rewardAmount = EditorGUILayout.IntField(curSelectedAction.rewardList[i].rewardAmount, GUILayout.MaxWidth(80));
-                        removeReward = GUILayout.Button("-", GUILayout.MaxWidth(50));
+                        curSelectedAction.rewardList[i].rewardAmount = EditorGUILayout.IntField(curSelectedAction.rewardList[i].rewardAmount, GUILayout.MaxWidth(40));
+                        GUILayout.Label("Multiplied:", GUILayout.MaxWidth(65));
+                        curSelectedAction.rewardList[i].multiplied = EditorGUILayout.Toggle(curSelectedAction.rewardList[i].multiplied, GUILayout.MaxWidth(30));
 
-                        if(removeReward)
-                        {
-                            curSelectedAction.rewardList.RemoveAt(i);
-                            removeReward = false;
-                        }
-
-                        if(curSelectedAction.rewardList[i].resourceType == ResourceType.Troops || curSelectedAction.rewardList[i].resourceType == ResourceType.Mercenary)
+                        if (curSelectedAction.rewardList[i].resourceType == ResourceType.Troops || curSelectedAction.rewardList[i].resourceType == ResourceType.Mercenary)
                         {
                             GUILayout.Label("Unit Name:", GUILayout.MaxWidth(65));
                             curSelectedAction.rewardList[i].unitName = GUILayout.TextField(curSelectedAction.rewardList[i].unitName, GUILayout.MaxWidth(110));
@@ -640,6 +635,12 @@ namespace Buildings
                             GUILayout.Label("Traveller:", GUILayout.MaxWidth(65));
                             curSelectedAction.rewardList[i].potentialTraveller = (PotentialTravellers)EditorGUILayout.EnumPopup(curSelectedAction.rewardList[i].potentialTraveller, GUILayout.MaxWidth(150));
 
+                        }
+                        removeReward = GUILayout.Button("-", GUILayout.MaxWidth(50));
+                        if(removeReward)
+                        {
+                            curSelectedAction.rewardList.RemoveAt(i);
+                            removeReward = false;
                         }
                         GUILayout.EndHorizontal();
                     }

@@ -154,7 +154,7 @@ namespace Kingdoms
         public string _fileName;
         public bool fileData = false;
 
-        public List<BaseTravellerData> travellerList;
-        public List<MapPointInformationData> mapPointList;
+        public List<BaseTravellerData> travellerList; // Travellers Visible from the kingdom
+        public List<MapPointInformationData> mapPointList; // points seen in the map
     }
 }

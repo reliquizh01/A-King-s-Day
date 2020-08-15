@@ -152,6 +152,7 @@ namespace Characters
         public int heroLevel = 1;
         public UnitInformationData unitInformation;
         public int healthGrowthRate, speedGrowthRate, damageGrowthRate;
+        public int upgradesAdded;
 
         public int baseHeroCoinPrice;
         public List<BaseSkillInformationData> skillsList;

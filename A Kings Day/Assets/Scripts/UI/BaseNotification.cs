@@ -11,18 +11,18 @@ public class BaseNotification : MonoBehaviour
 {
     public bool isShowing = false;
     public BasePanelBehavior myPanel;
-    public TextMeshProUGUI text;
+    public CountingEffectUI text;
     public GameObject foodGo, troopGo, popGo, coinGo, cowGo;
 
 
     public void SetAsReduce()
     {
-        text.color = Color.red;
+        text.numberColorText = "<color=red>";
     }
 
     public void SetAsAdd()
     {
-        text.color = Color.green;
+        text.numberColorText = "<color=green>";
     }
 
 
