@@ -145,6 +145,11 @@ namespace ResourceUI
                 return;
             }
 
+            currentPanel.foodControl.ShowWarning();
+            currentPanel.coinControl.ShowWarning();
+            currentPanel.troopControl.ShowWarning();
+            currentPanel.villagerControl.ShowWarning();
+
             PlayerGameManager manager = PlayerGameManager.GetInstance;
             
             // COIN WARNING
@@ -235,9 +240,15 @@ namespace ResourceUI
         {
             if (currentPanel != null && currentPanel.isShowing)
             {
+                currentPanel.foodControl.HideWarning();
+                currentPanel.coinControl.HideWarning();
+                currentPanel.troopControl.HideWarning();
+                currentPanel.villagerControl.HideWarning();
+
                 currentPanel.isShowing = false;
                 currentPanel.myPanel.PlayCloseAnimation();
                 currentPanel = null;
+
             }
         }
         public void ShowResourcePanel(ResourcePanelType panelType, Action extraCallBack = null)
@@ -343,10 +354,17 @@ namespace ResourceUI
 
             currentPanel.isShowing = true;
 
+            currentPanel.foodControl.ShowWarning();
+            currentPanel.coinControl.ShowWarning();
+            currentPanel.troopControl.ShowWarning();
+            currentPanel.villagerControl.ShowWarning();
+            currentPanel.HidePotentialResourceChanges();
             if (extraCallBack != null)
             {
                 extraCallBack();
             }
+
+            UpdateCurrentPanel();
         }
         public void ShowWeekendPanel()
         {

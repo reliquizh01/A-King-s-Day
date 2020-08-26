@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GameItems;
+using Kingdoms;
 
 namespace Characters
 {
@@ -40,8 +41,9 @@ namespace Characters
         public string unitName = "";
         public string unitGenericName;
         public UnitAttackType attackType;
+        public WieldedWeapon wieldedWeapon;
         public float curhealth, maxHealth, curSpeed, origSpeed, minDamage, maxDamage;
-        public int range;
+        public float range;
         public int unitCooldown = 1;
         public int healcost = 5;
         public int unitPrice = 5;
@@ -70,7 +72,7 @@ namespace Characters
                         }
                     }
                 }
-                return currentRealSpeed / 10.0F;
+                return currentRealSpeed;
             }
         }
         public float RealDamage
@@ -103,41 +105,123 @@ namespace Characters
         public void RemoveBuff(BaseBuffInformationData thisBuff)
         {
             buffList.Remove(thisBuff);
+
+            ReceiveDamage(thisBuff.effectAmount, thisBuff.targetStats);
         }
-        public void ReceiveDamage(float damageAmount)
+        public void ReceiveDamage(float damageAmount, TargetStats targetStats)
         {
-            float checkAmount = curhealth - damageAmount;
-          //  Debug.Log("[Current Health: "+curhealth+"][Potential Health: " + checkAmount + "] [Damage Amount:" + damageAmount+"]" + " RECEIVED BY:" + unitName + " ]");
+            float checkAmount = 0;
+            switch (targetStats)
+            {
+                case TargetStats.health:
+                        checkAmount = curhealth - damageAmount;
+                        if (checkAmount <= 0)
+                        {
+                            curhealth -= damageAmount;
+                            if (curhealth <= deathThreshold)
+                            {
+                                currentState = UnitState.Dead;
+                            }
+                            else
+                            {
+                                currentState = UnitState.Injured;
+                            }
+                        }
+                        else
+                        {
+                            curhealth -= damageAmount;
+                        }
+                    break;
+                case TargetStats.damage:
+                    checkAmount = minDamage - damageAmount;
+                    if (checkAmount <= 0)
+                    {
+                        minDamage = 0.1f;
+                    }
+                    else
+                    {
+                        minDamage -= damageAmount;
+                    }
 
-            if (checkAmount <= 0)
-            {
-                curhealth -= damageAmount;
-                if (curhealth <= deathThreshold)
-                {
-                    currentState = UnitState.Dead;
-                }
-                else
-                {
-                    currentState = UnitState.Injured;
-                }
+                    checkAmount = maxDamage - damageAmount;
+                    if(checkAmount <= 0)
+                    {
+                        maxDamage = 0.2f;
+                    }
+                    else
+                    {
+                        maxDamage -= damageAmount;
+                    }
+                    break;
+                case TargetStats.speed:
+                    checkAmount = origSpeed - damageAmount;
+                    if (checkAmount <= 0)
+                    {
+                        origSpeed = 0.1f;
+                    }
+                    else
+                    {
+                        origSpeed -= damageAmount;
+                    }
+                    break;
+                case TargetStats.range:
+                    checkAmount = range - damageAmount;
+                    if (checkAmount <= 0)
+                    {
+                        range = 0.1f;
+                    }
+                    else
+                    {
+                        range -= damageAmount;
+                    }
+                    break;
+                case TargetStats.blockProjectile:
+                    blockProjectile -= damageAmount;
+                    break;
+                case TargetStats.blockMelee:
+                    blockMelee -= damageAmount;
+                    break;
+                default:
+                    break;
             }
-            else
-            {
-                curhealth -= damageAmount;
-            }
+ 
         }
 
-        public void ReceiveHealing(float healAmount)
+        public void ReceiveHealing(float healAmount, TargetStats targetStats)
         {
-            float checkAmount = curhealth + healAmount;
-
-            if (checkAmount > maxHealth)
+            Debug.Log("We've Received a Healing for : " + targetStats + " Amount: " + healAmount);
+            float checkAmount = 0;
+            switch (targetStats)
             {
-                curhealth = maxHealth;
-            }
-            else
-            {
-                curhealth += healAmount;
+                case TargetStats.health:
+                    checkAmount = curhealth + healAmount;
+                    if (checkAmount >= maxHealth)
+                    {
+                        curhealth = maxHealth;
+                    }
+                    else
+                    {
+                        curhealth += healAmount;
+                    }
+                    break;
+                case TargetStats.damage:
+                    minDamage += healAmount;
+                    maxDamage += healAmount;
+                    break;
+                case TargetStats.speed:
+                    origSpeed += healAmount;
+                    break;
+                case TargetStats.range:
+                    range += healAmount;
+                    break;
+                case TargetStats.blockProjectile:
+                    blockProjectile += healAmount;
+                    break;
+                case TargetStats.blockMelee:
+                    blockMelee += healAmount;
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -148,6 +232,7 @@ namespace Characters
     public class BaseHeroInformationData
     {
         public HeroRarity heroRarity;
+        public bool isHeroBaseState;
         public bool isRandomGenerated;
         public int heroLevel = 1;
         public UnitInformationData unitInformation;

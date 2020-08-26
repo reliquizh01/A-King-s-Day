@@ -92,6 +92,11 @@ namespace Managers
                     {
                         RemoveLoading();
                         isLoadingNewScene = false;
+                        EventBroadcaster.Instance.PostEvent(EventNames.ENABLE_TOOLTIP_MESG);
+                        if(!isNewGame)
+                        {
+                            EventBroadcaster.Instance.PostEvent(EventNames.ENABLE_IN_GAME_INTERACTION);
+                        }
                     }
                 }
             }
@@ -158,7 +163,7 @@ namespace Managers
 
         public void LoadScene(SceneType thisScene)
         {
-            EventBroadcaster.Instance.PostEvent(EventNames.HIDE_TOOLTIP_MESG);
+            EventBroadcaster.Instance.PostEvent(EventNames.DISABLE_TOOLTIP_MESG);
             EventBroadcaster.Instance.PostEvent(EventNames.HIDE_RESOURCES);
             EventBroadcaster.Instance.PostEvent(EventNames.BEFORE_LOAD_SCENE);
 
@@ -315,7 +320,7 @@ namespace Managers
 
             isEngagedWithMapPoint = true;
             isPlayerAttacker = isAttacker;
-
+            
             LoadScene(SceneType.Battlefield);
             HideTabCover();
         }

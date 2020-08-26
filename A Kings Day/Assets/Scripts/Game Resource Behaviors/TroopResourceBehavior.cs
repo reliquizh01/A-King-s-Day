@@ -98,6 +98,36 @@ namespace GameResource
             }
         }
 
+        public override void UpdateWeeklyProgress()
+        {
+            base.UpdateWeeklyProgress();
+
+            ReturnTroopsNextWeek();
+        }
+
+        public void ReturnTroopsNextWeek()
+        {
+            if(PlayerGameManager.GetInstance.playerData.troopsList == null)
+            {
+                return;
+            }
+
+            int totalReturningUnits = 0;
+            for (int i = 0; i < PlayerGameManager.GetInstance.playerData.troopsList.Count; i++)
+            {
+                if(PlayerGameManager.GetInstance.playerData.troopsList[i].totalReturningUnitCount > 0)
+                {
+                    totalReturningUnits += PlayerGameManager.GetInstance.playerData.troopsList[i].totalReturningUnitCount;
+                    PlayerGameManager.GetInstance.playerData.troopsList[i].totalUnitCount += PlayerGameManager.GetInstance.playerData.troopsList[i].totalReturningUnitCount;
+                    PlayerGameManager.GetInstance.playerData.troopsList[i].totalReturningUnitCount = 0;
+                }
+            }
+
+            if(totalReturningUnits > 0)
+            {
+                ProductionManager.GetInstance.ShowTroopNotif(totalReturningUnits, "Units Returned");
+            }
+        }
         public override void ImplementTechnology()
         {
             List<BaseTechnologyData> relatedTech = curPlayer.currentTechnologies.FindAll(x => x.improvedType == ResourceType.Food);

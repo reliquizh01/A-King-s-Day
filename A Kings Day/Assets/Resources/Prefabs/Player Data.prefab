@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1775503360}
+  - component: {fileID: 3862405520284253207}
+  - component: {fileID: 1385034549248726220}
   m_Layer: 0
   m_Name: MapBehavior
   m_TagString: Untagged
@@ -30,6 +32,129 @@ Transform:
   m_Father: {fileID: 3862405520960112767}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3862405520284253207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775503359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e826ab70279aa848b3114640f20e843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  travellerGenerator: {fileID: 1385034549248726220}
+  playerCampaignData:
+    _fileName: 
+    fileData: 0
+    travellerList: []
+    mapPointList: []
+  playerKingdomData:
+    _fileName: 
+    fileData: 0
+    weekCount: 1
+    kingdomsName: 
+    dynastyName: 
+    level: 0
+    bestTroops: 0
+    myFame: 0
+    wieldedWeapon: 0
+    familySecret: 0
+    finishedStories: []
+    queuedDataEventsList: []
+    curDataStory:
+      startingWeek: 0
+      repetitionType: 0
+      storyTitle: 
+      description: 
+      isLinear: 0
+      curEventIdx: 0
+      storyEventTitlesList: []
+      storyEvents: []
+      eventIntervals: 
+      eventBoosts: []
+      nextEventWeek: 0
+    curDataEvent:
+      title: 
+      eventType: 0
+      reporterType: 0
+      levelRequired: 0
+      difficultyType: 0
+      description: 
+      isStoryArc: 0
+      storyArc: 
+      arcEnd: 0
+      eventDecision: []
+    eventFinished: 0
+    barracksCapacity: 0
+    troopsLoyalty: 0
+    troopsList: []
+    troopsMercList: []
+    population: 0
+    safePopulation: 50
+    pouplationLoyalty: 0
+    curTaxWeeksCounter: 0
+    canReceiveTax: 0
+    farmerCount: 0
+    herdsmanCount: 0
+    storageKeeperCount: 0
+    deathByPlague: 0
+    festivalWeeksDuration: 0
+    populationBurst: 0
+    potentialRefugee: 0
+    potentialMerchantArrival: 0
+    balconyBuildingsAdded: 0
+    buildingInformationData: []
+    potentialMerchant: 0
+    potentialGoodsMerchant: 0
+    potentialEquipsMerchant: 0
+    potentialExoticMerchant: 0
+    potentialRandomHero: 0
+    potentialCommonHero: 20
+    potentialRareHero: 10
+    potentialLegHero: 5
+    potentialMercenary: 0
+    myHeroes: []
+    tavernHeroes: []
+    myItems: []
+    currentShopMerchants: []
+    currentFestivalMerchants: []
+    foods: 0
+    safeFood: 0
+    curGrainWeeksCounter: 0
+    canReceiveGrainProduce: 0
+    cows: 0
+    safeCows: 0
+    barnExpansion: 0
+    curCowBirthCounter: 0
+    canReceiveNewCows: 0
+    coins: 0
+    coinsCapacity: 0
+    curMonthTaxCounter: 0
+    maxMonthTaxCount: 4
+    canReceiveMonthlyTax: 0
+    currentTechnologies: []
+    storyRoll: 0.007
+    currentRoll: 0.007
+  invaderFlatChance: 20
+  merchantFlatChance: 10
+  heroFlatChance: 10
+  mercenaryFlatChance: 10
+  creaturesFlatChance: 0
+--- !u!114 &1385034549248726220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775503359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278948e9be46d664f856bc751f973550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitStorage: {fileID: 6460517693080523990}
 --- !u!1 &476620222638388977
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +644,7 @@ Transform:
   - {fileID: 2301102186471367042}
   - {fileID: 6136754647877889182}
   - {fileID: 1775503360}
+  - {fileID: 8552746328903541650}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -538,6 +664,7 @@ MonoBehaviour:
   troopBehavior: {fileID: 7462824223398964572}
   populationBehavior: {fileID: 8093035889446869702}
   coinBehavior: {fileID: 8728936477097277812}
+  mapBehavior: {fileID: 3862405520284253207}
   playerData:
     _fileName: 
     fileData: 0
@@ -782,3 +909,90 @@ MonoBehaviour:
   techBirthChance: 0
   cowMeatPerKill: 10
   techMeatPerKill: 0
+--- !u!1001 &7605830844344222632
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3862405520960112767}
+    m_Modifications:
+    - target: {fileID: 2250713100096020538, guid: 62b3c214843951b48aa0395dc7b6c56e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 870.7261
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250713100096020538, guid: 62b3c214843951b48aa0395dc7b6c56e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 617.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250713100096020538, guid: 62b3c214843951b48aa0395dc7b6c56e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -267.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250713100096020538, guid: 62b3c214843951b48aa0395dc7b6c56e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250713100096020538, guid: 62b3c214843951b48aa0395dc7b6c56e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250713100096020538, guid: 62b3c214843951b48aa0395dc7b6c56e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250713100096020538, guid: 62b3c214843951b48aa0395dc7b6c56e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250713100096020538, guid: 62b3c214843951b48aa0395dc7b6c56e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250713100096020538, guid: 62b3c214843951b48aa0395dc7b6c56e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250713100096020538, guid: 62b3c214843951b48aa0395dc7b6c56e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250713100096020538, guid: 62b3c214843951b48aa0395dc7b6c56e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517564706452039434, guid: 62b3c214843951b48aa0395dc7b6c56e,
+        type: 3}
+      propertyPath: m_Name
+      value: Kingdom Unit Storage (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 62b3c214843951b48aa0395dc7b6c56e, type: 3}
+--- !u!4 &8552746328903541650 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2250713100096020538, guid: 62b3c214843951b48aa0395dc7b6c56e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7605830844344222632}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6460517693080523990 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3469188192549738366, guid: 62b3c214843951b48aa0395dc7b6c56e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7605830844344222632}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eeacbde7fe2de14eba25ee7f1f1547b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

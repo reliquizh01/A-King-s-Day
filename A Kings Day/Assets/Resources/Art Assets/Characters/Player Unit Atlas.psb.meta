@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: 0149bbc7bc9cbd34d98f124de47bfce3
 ScriptedImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -483046158534991164
+    second: Player Unit Atlas_0
   externalObjects: {}
   serializedVersion: 2
   userData: 
@@ -93,8 +96,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 5
-      y: 5
+      x: 341
+      y: 383
       width: 32
       height: 32
     spriteID: 9ed2785f91ac0aa4d89ec0019c8484d0
@@ -107,7 +110,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -30, y: -460}
+    uvTransform: {x: 306, y: -82}
   - name: Crowned_Player_Standing_Left
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -115,8 +118,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 5
-      y: 47
+      x: 341
+      y: 425
       width: 32
       height: 32
     spriteID: 309339b3b485b704d8894d93e79e0bf6
@@ -129,7 +132,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -30, y: -486}
+    uvTransform: {x: 306, y: -108}
   - name: Crowned_Player_Standing_Up
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -137,8 +140,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 5
-      y: 89
+      x: 341
+      y: 467
       width: 32
       height: 32
     spriteID: 833a6300229ca42449196c4b23ba05bb
@@ -151,7 +154,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -30, y: -410}
+    uvTransform: {x: 306, y: -32}
   - name: Crowned_Player_Standing_Down
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -159,7 +162,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 47
+      x: 383
       y: 5
       width: 32
       height: 32
@@ -173,7 +176,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 12, y: -562}
+    uvTransform: {x: 348, y: -562}
   - name: Player_Standing_Up
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -181,7 +184,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 47
+      x: 383
       y: 47
       width: 32
       height: 32
@@ -195,7 +198,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 46, y: -452}
+    uvTransform: {x: 382, y: -452}
   - name: Player_Standing_Down
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -203,7 +206,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 47
+      x: 383
       y: 89
       width: 32
       height: 32
@@ -217,7 +220,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 46, y: -478}
+    uvTransform: {x: 382, y: -478}
   - name: Player_Standing_Left
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -225,8 +228,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 89
-      y: 5
+      x: 383
+      y: 131
       width: 32
       height: 32
     spriteID: 8b679fa33ea8d504ca2bc77b5e401454
@@ -239,7 +242,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 88, y: -528}
+    uvTransform: {x: 382, y: -402}
   - name: Player_Standing_Right
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -247,8 +250,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 89
-      y: 47
+      x: 383
+      y: 173
       width: 32
       height: 32
     spriteID: dfd55b4711cfb3441a86b240b847fbb7
@@ -261,7 +264,2317 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 88, y: -418}
+    uvTransform: {x: 382, y: -292}
+  - name: Crowned_Player_Book_Attack_Left 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5
+      y: 5
+      width: 32
+      height: 32
+    spriteID: 8a71d3ae8f725834a99c618101a96183
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -64, y: -528}
+  - name: Crowned_Player_Book_Attack_Left 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5
+      y: 47
+      width: 32
+      height: 32
+    spriteID: 301c9d56c86474348bf2d1342fa26bba
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -98, y: -486}
+  - name: Crowned_Player_Book_Attack_Left 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5
+      y: 89
+      width: 32
+      height: 32
+    spriteID: 1176fed6d7d4f294192035ccf2488e4c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -132, y: -444}
+  - name: Crowned_Player_Book_Attack_Left 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5
+      y: 131
+      width: 32
+      height: 32
+    spriteID: 1301b5b2695bcbd419479dba102ecd9d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -166, y: -402}
+  - name: Crowned_Player_Book_Attack_Left 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5
+      y: 173
+      width: 32
+      height: 32
+    spriteID: 54873dec8c061a14580f9dcd1ee929a3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -200, y: -360}
+  - name: Crowned_Player_Book_Attack_Right 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5
+      y: 215
+      width: 32
+      height: 32
+    spriteID: c22faef4fa1668a4cadb0c17a8be8474
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -200, y: -352}
+  - name: Crowned_Player_Book_Attack_Right 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5
+      y: 257
+      width: 32
+      height: 32
+    spriteID: 779893960e6b0eb4eb62341196285d6d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -166, y: -310}
+  - name: Crowned_Player_Book_Attack_Right 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5
+      y: 299
+      width: 32
+      height: 32
+    spriteID: 2ebea77613bcfb745a1fa5386cf8ab4a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -132, y: -268}
+  - name: Crowned_Player_Book_Attack_Right 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5
+      y: 341
+      width: 32
+      height: 32
+    spriteID: 5bc61fbd155f81341a5255c446c4de42
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -98, y: -226}
+  - name: Crowned_Player_Book_Attack_Right 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5
+      y: 383
+      width: 32
+      height: 32
+    spriteID: cc0bb8ffc76ed1a468714a21e11ffe6d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -64, y: -184}
+  - name: Crowned_Player_Book_Cast_Left 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5
+      y: 425
+      width: 32
+      height: 32
+    spriteID: e721aab0b5fa1304f98489ac46ca4527
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -166, y: 300}
+  - name: Crowned_Player_Book_Cast_Left 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5
+      y: 467
+      width: 32
+      height: 32
+    spriteID: ae7407a549b5c0f42acdb2381820a309
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -200, y: 342}
+  - name: Crowned_Player_Book_Cast_Left 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 47
+      y: 5
+      width: 32
+      height: 32
+    spriteID: 32f15bb45b0d6d84bb93864a8aab861a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -192, y: -120}
+  - name: Crowned_Player_Book_Cast_Left 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 47
+      y: 47
+      width: 32
+      height: 32
+    spriteID: 6cb06f4909c652842ad6dbe56700922f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -226, y: -78}
+  - name: Crowned_Player_Book_Cast_Left 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 47
+      y: 89
+      width: 32
+      height: 32
+    spriteID: dee2fa95908b1604cabd82b0c2a93909
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -260, y: -36}
+  - name: Crowned_Player_Spear_Cast_Left 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 47
+      y: 131
+      width: 32
+      height: 32
+    spriteID: f9fc4add0a85b154a860f937ea09f514
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -124, y: 40}
+  - name: Crowned_Player_Spear_Cast_Left 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 47
+      y: 173
+      width: 32
+      height: 32
+    spriteID: 2b944a6b72eaa324fa6319dd6bbd7c13
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -158, y: 82}
+  - name: Crowned_Player_Spear_Cast_Left 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 47
+      y: 215
+      width: 32
+      height: 32
+    spriteID: f0f60f96d17046e43a45441f2a2edda3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -192, y: 124}
+  - name: Crowned_Player_Spear_Cast_Left 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 47
+      y: 257
+      width: 32
+      height: 32
+    spriteID: 07f3ae0ca344ca44d8fdfa03dcf77f26
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -226, y: 166}
+  - name: Crowned_Player_Spear_Cast_Left 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 47
+      y: 299
+      width: 32
+      height: 32
+    spriteID: 51e743a330fdc194a9baa3aac667a398
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -260, y: 208}
+  - name: Crowned_Player_Sword_Cast_Left 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 47
+      y: 341
+      width: 32
+      height: 32
+    spriteID: 4e2239b61ccb2194c81df51f0419284a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -124, y: 284}
+  - name: Crowned_Player_Sword_Cast_Left 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 47
+      y: 383
+      width: 32
+      height: 32
+    spriteID: 76f500c2b6881784f8bee95eb037a036
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -158, y: 326}
+  - name: Crowned_Player_Sword_Cast_Left 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 47
+      y: 425
+      width: 32
+      height: 32
+    spriteID: 0613e9366440b8444a5c077d11d42bf3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -192, y: 368}
+  - name: Crowned_Player_Sword_Cast_Left 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 47
+      y: 467
+      width: 32
+      height: 32
+    spriteID: ddf287e2f45e213458d7063fc26eac2a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -226, y: 410}
+  - name: Crowned_Player_Sword_Cast_Left 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 89
+      y: 5
+      width: 32
+      height: 32
+    spriteID: 8f53f521f1c682e4492b4f3462407ba1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -218, y: -52}
+  - name: Crowned_Player_Bow_Cast_Left 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 89
+      y: 47
+      width: 32
+      height: 32
+    spriteID: f3ba1e6465ccbe6429c93a0aa3952822
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -82, y: 24}
+  - name: Crowned_Player_Bow_Cast_Left 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 89
+      y: 89
+      width: 32
+      height: 32
+    spriteID: 87ee113e01afbea4680dfcfb6a7ebeac
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -116, y: 66}
+  - name: Crowned_Player_Bow_Cast_Left 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 89
+      y: 131
+      width: 32
+      height: 32
+    spriteID: 6958d7fdc49707a4db58c4523d728ddd
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -150, y: 108}
+  - name: Crowned_Player_Bow_Cast_Left 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 89
+      y: 173
+      width: 32
+      height: 32
+    spriteID: c7b04073f1a225d42898f25ce68d168d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -184, y: 150}
+  - name: Crowned_Player_Bow_Cast_Left 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 89
+      y: 215
+      width: 32
+      height: 32
+    spriteID: b8ff7d210753f48439ce3ce1eb25eb83
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -218, y: 192}
+  - name: Crowned_Player_Book_Cast_Right 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 89
+      y: 257
+      width: 32
+      height: 32
+    spriteID: 9301bf14b222b2a4fa969ee94b8c3c0a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -48, y: 132}
+  - name: Crowned_Player_Book_Cast_Right 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 89
+      y: 299
+      width: 32
+      height: 32
+    spriteID: 5161377bd3c2bc3498e053c085d52057
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -14, y: 174}
+  - name: Crowned_Player_Book_Cast_Right 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 89
+      y: 341
+      width: 32
+      height: 32
+    spriteID: e0df1152e7a4e5e439195cd7e78ac9bf
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 20, y: 216}
+  - name: Crowned_Player_Book_Cast_Right 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 89
+      y: 383
+      width: 32
+      height: 32
+    spriteID: ada5ef28454329146ad00d4b5bec9dd4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 54, y: 258}
+  - name: Crowned_Player_Book_Cast_Right 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 89
+      y: 425
+      width: 32
+      height: 32
+    spriteID: 568b7e5c69366d14b9b4aa943a1d9bca
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 88, y: 300}
+  - name: Crowned_Player_Spear_Cast_Right 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 89
+      y: 467
+      width: 32
+      height: 32
+    spriteID: a31583f1bad874541b10595a4b2a2047
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -48, y: 376}
+  - name: Crowned_Player_Spear_Cast_Right 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 131
+      y: 5
+      width: 32
+      height: 32
+    spriteID: 9e59ed82319dc7941bb6e428e97f58d3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 28, y: -86}
+  - name: Crowned_Player_Spear_Cast_Right 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 131
+      y: 47
+      width: 32
+      height: 32
+    spriteID: 4454c9627cdd92f49ac10de32f0749f8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 62, y: -44}
+  - name: Crowned_Player_Spear_Cast_Right 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 131
+      y: 89
+      width: 32
+      height: 32
+    spriteID: 20448c498d56d9b4184708e476a36829
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 96, y: -2}
+  - name: Crowned_Player_Spear_Cast_Right 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 131
+      y: 131
+      width: 32
+      height: 32
+    spriteID: ef576038d64c2354d9ea75c0000872a1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 130, y: 40}
+  - name: Crowned_Player_Sword_Cast_Right 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 131
+      y: 173
+      width: 32
+      height: 32
+    spriteID: 9c704a229aa7dd647a8e7ccab1826db8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -6, y: 116}
+  - name: Crowned_Player_Sword_Cast_Right 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 131
+      y: 215
+      width: 32
+      height: 32
+    spriteID: 448924b8fffdea842af0e7125c788610
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 28, y: 158}
+  - name: Crowned_Player_Sword_Cast_Right 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 131
+      y: 257
+      width: 32
+      height: 32
+    spriteID: 3c9115597c85cbb4c8bb60d2ab940fb3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 62, y: 200}
+  - name: Crowned_Player_Sword_Cast_Right 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 131
+      y: 299
+      width: 32
+      height: 32
+    spriteID: 031143f7dbd334e4ca7bd097dc9eaf33
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 96, y: 242}
+  - name: Crowned_Player_Sword_Cast_Right 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 131
+      y: 341
+      width: 32
+      height: 32
+    spriteID: ca00185582018f749849370c7a7d36d5
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 130, y: 284}
+  - name: Crowned_Player_Bow_Cast_Right 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 131
+      y: 383
+      width: 32
+      height: 32
+    spriteID: 0d025b8b22629464c9145efaee28f677
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -6, y: 360}
+  - name: Crowned_Player_Bow_Cast_Right 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 131
+      y: 425
+      width: 32
+      height: 32
+    spriteID: 9f91925a1b8800f40a6b6bd0cde2fa83
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 28, y: 402}
+  - name: Crowned_Player_Bow_Cast_Right 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 131
+      y: 467
+      width: 32
+      height: 32
+    spriteID: cff600ced1c14aa40b5c99ab3358baeb
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 62, y: 444}
+  - name: Crowned_Player_Bow_Cast_Right 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 173
+      y: 5
+      width: 32
+      height: 32
+    spriteID: 2f3c4a578cba2994cb02db71a6ea7560
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 138, y: -18}
+  - name: Crowned_Player_Bow_Cast_Right 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 173
+      y: 47
+      width: 32
+      height: 32
+    spriteID: 7f13d4e68ab66ff4db4e80ae438f13fe
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 172, y: 24}
+  - name: Crowned_Player_Spear_Attack_Right 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 173
+      y: 89
+      width: 32
+      height: 32
+    spriteID: f8275b6566035864797ca4d93ef87995
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 70, y: -240}
+  - name: Crowned_Player_Spear_Attack_Right 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 173
+      y: 131
+      width: 32
+      height: 32
+    spriteID: 6a58d94a7ae1488469cf11cfdbbe62a9
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 104, y: -198}
+  - name: Crowned_Player_Spear_Attack_Right 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 173
+      y: 173
+      width: 32
+      height: 32
+    spriteID: b1246421343dbf643bf3b0dd7c1322d3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 138, y: -156}
+  - name: Crowned_Player_Spear_Attack_Right 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 173
+      y: 215
+      width: 32
+      height: 32
+    spriteID: 41f67adf532752248894541c9ef056b0
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 172, y: -114}
+  - name: Crowned_Player_Spear_Attack_Left 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 173
+      y: 257
+      width: 32
+      height: 32
+    spriteID: 62c9c12cebb5f764fb6b0305498937f8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 70, y: -38}
+  - name: Crowned_Player_Spear_Attack_Left 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 173
+      y: 299
+      width: 32
+      height: 32
+    spriteID: c27652ba34aee8f4fa35d9426fa3c7a4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 104, y: 4}
+  - name: Crowned_Player_Spear_Attack_Left 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 173
+      y: 341
+      width: 32
+      height: 32
+    spriteID: c2f5e9bdad6a86144b9c724698f2aaa2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 138, y: 46}
+  - name: Crowned_Player_Spear_Attack_Left 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 173
+      y: 383
+      width: 32
+      height: 32
+    spriteID: 2da1236cbda34184e8be7308d9fa2c84
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 172, y: 88}
+  - name: Crowned_Player_Bow_Attack_Right 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 173
+      y: 425
+      width: 32
+      height: 32
+    spriteID: 665cb21baa4507044b28a7baa913c4d4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 36, y: 164}
+  - name: Crowned_Player_Bow_Attack_Right 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 173
+      y: 467
+      width: 32
+      height: 32
+    spriteID: 7d92d7efeab795f47b96592d78f5eec2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 70, y: 206}
+  - name: Crowned_Player_Bow_Attack_Right 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 215
+      y: 5
+      width: 32
+      height: 32
+    spriteID: 5ff433eefb6bee44c8bd12a259eed9d9
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 146, y: -256}
+  - name: Crowned_Player_Bow_Attack_Right 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 215
+      y: 47
+      width: 32
+      height: 32
+    spriteID: f83075d1020c9a2408c08304cf072718
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 180, y: -214}
+  - name: Crowned_Player_Bow_Attack_Right 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 215
+      y: 89
+      width: 32
+      height: 32
+    spriteID: 383b4a07183f8934fa8ddc90417a1958
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 214, y: -172}
+  - name: Crowned_Player_Bow_Attack_Left 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 215
+      y: 131
+      width: 32
+      height: 32
+    spriteID: 3958e3ac30324ba4eab532ed70a13aa7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 78, y: -96}
+  - name: Crowned_Player_Bow_Attack_Left 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 215
+      y: 173
+      width: 32
+      height: 32
+    spriteID: c1a2a7812837fa54682a171719e3a130
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 112, y: -54}
+  - name: Crowned_Player_Bow_Attack_Left 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 215
+      y: 215
+      width: 32
+      height: 32
+    spriteID: 42f6458523dc5e447bfbb3065c814de9
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 146, y: -12}
+  - name: Crowned_Player_Bow_Attack_Left 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 215
+      y: 257
+      width: 32
+      height: 32
+    spriteID: 4e20a116adb4e8946963309cfc16b7ad
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 180, y: 30}
+  - name: Crowned_Player_Bow_Attack_Left 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 215
+      y: 299
+      width: 32
+      height: 32
+    spriteID: 37745e67db5af0641aea6af1dcf35c3a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 214, y: 72}
+  - name: Crowned_Player_Sword_Attack_Right 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 215
+      y: 341
+      width: 32
+      height: 32
+    spriteID: 8f396194ba069704d9bacdf932baeed2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 112, y: 148}
+  - name: Crowned_Player_Sword_Attack_Right 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 215
+      y: 383
+      width: 32
+      height: 32
+    spriteID: 0860d2dd56fe4534d82558ead57d4288
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 146, y: 190}
+  - name: Crowned_Player_Sword_Attack_Right 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 215
+      y: 425
+      width: 32
+      height: 32
+    spriteID: 72248e8dd615b794a9dbef6811db6ce2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 180, y: 232}
+  - name: Crowned_Player_Sword_Attack_Right 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 215
+      y: 467
+      width: 32
+      height: 32
+    spriteID: def52fef17e44b74981ffd64e06d61c0
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 214, y: 274}
+  - name: Crowned_Player_Sword_Attack_Left 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 257
+      y: 5
+      width: 32
+      height: 32
+    spriteID: aaf5b0ff341f25e479794441378646f4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 154, y: -154}
+  - name: Crowned_Player_Sword_Attack_Left 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 257
+      y: 47
+      width: 32
+      height: 32
+    spriteID: 46a6a6d49fac1dd4ca170c9e1bce03fe
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 188, y: -112}
+  - name: Crowned_Player_Sword_Attack_Left 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 257
+      y: 89
+      width: 32
+      height: 32
+    spriteID: 3065fcbdcf1bae149ab18d2aec5517f0
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 222, y: -70}
+  - name: Crowned_Player_Sword_Attack_Left 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 257
+      y: 131
+      width: 32
+      height: 32
+    spriteID: 964c36635ef53444785d0ff7b607da46
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 256, y: -28}
+  - name: Player_Walking_Up 7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 257
+      y: 173
+      width: 32
+      height: 32
+    spriteID: 8d69c5336511dab4b8c778339e1a084d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 52, y: -190}
+  - name: Player_Walking_Up 6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 257
+      y: 215
+      width: 32
+      height: 32
+    spriteID: a0c199c012210604191dd7dd34d8ebb8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 86, y: -148}
+  - name: Player_Walking_Up 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 257
+      y: 257
+      width: 32
+      height: 32
+    spriteID: e9a2d71350014354cbe967ef8548b5e7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 120, y: -106}
+  - name: Player_Walking_Up 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 257
+      y: 299
+      width: 32
+      height: 32
+    spriteID: ff407ffead5e12646a502df3d8290659
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 154, y: -64}
+  - name: Player_Walking_Up 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 257
+      y: 341
+      width: 32
+      height: 32
+    spriteID: 32117583ba9f09147a1de5050b120138
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 188, y: -22}
+  - name: Player_Walking_Up 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 257
+      y: 383
+      width: 32
+      height: 32
+    spriteID: ff833962bc294ef41b1e18bb7ec005fe
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 222, y: 20}
+  - name: Player_Walking_Up 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 257
+      y: 425
+      width: 32
+      height: 32
+    spriteID: 387995aa6c2f1cb4c82a6549e09d7c51
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 256, y: 62}
+  - name: Crowned_Player_Walking_Left 11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 257
+      y: 467
+      width: 32
+      height: 32
+    spriteID: 87cf55d3e698fe043a0018f0cdb33f22
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -84, y: 70}
+  - name: Crowned_Player_Walking_Left 10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 299
+      y: 5
+      width: 32
+      height: 32
+    spriteID: ca857c9bb91eb6e4c8d241a672a7ef44
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -8, y: -392}
+  - name: Crowned_Player_Walking_Left 9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 299
+      y: 47
+      width: 32
+      height: 32
+    spriteID: 50286755b3a12454397bead06d60836c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 26, y: -350}
+  - name: Crowned_Player_Walking_Left 8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 299
+      y: 89
+      width: 32
+      height: 32
+    spriteID: 2f161783a7854f040a33d18e72fb48a6
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 60, y: -308}
+  - name: Crowned_Player_Walking_Left 7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 299
+      y: 131
+      width: 32
+      height: 32
+    spriteID: 251b881787f6032469ce2beecba01464
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 94, y: -266}
+  - name: Crowned_Player_Walking_Left 6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 299
+      y: 173
+      width: 32
+      height: 32
+    spriteID: f110594180c523c4b8ab2d5609dce400
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 128, y: -224}
+  - name: Crowned_Player_Walking_Left 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 299
+      y: 215
+      width: 32
+      height: 32
+    spriteID: db23ed3248469124d905cddb0f4ea21f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 162, y: -182}
+  - name: Crowned_Player_Walking_Left 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 299
+      y: 257
+      width: 32
+      height: 32
+    spriteID: 22770c64ec5080b47a4552c83083afe5
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 196, y: -140}
+  - name: Crowned_Player_Walking_Left 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 299
+      y: 299
+      width: 32
+      height: 32
+    spriteID: c12da8d93bfab0048b2c69fad23e21bc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 230, y: -98}
+  - name: Crowned_Player_Walking_Left 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 299
+      y: 341
+      width: 32
+      height: 32
+    spriteID: f798967f47619a742be1d8743488f095
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 264, y: -56}
+  - name: Crowned_Player_Walking_Left 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 299
+      y: 383
+      width: 32
+      height: 32
+    spriteID: 6f103e29febce5b4c8ce0848c2ded929
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 298, y: -14}
+  - name: Crowned_Player_Walking_Right 11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 299
+      y: 425
+      width: 32
+      height: 32
+    spriteID: b077c1b16db95c048b4cf770e8f37802
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -42, y: -6}
+  - name: Crowned_Player_Walking_Right 10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 299
+      y: 467
+      width: 32
+      height: 32
+    spriteID: e11ef2b77f2185246b762fc2199deebc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -8, y: 36}
+  - name: Crowned_Player_Walking_Right 9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 341
+      y: 5
+      width: 32
+      height: 32
+    spriteID: 1b041efc550027d4892ebe0b76797746
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 68, y: -426}
+  - name: Crowned_Player_Walking_Right 8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 341
+      y: 47
+      width: 32
+      height: 32
+    spriteID: 3c67b38b23f68b640856254f944a11db
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 102, y: -384}
+  - name: Crowned_Player_Walking_Right 7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 341
+      y: 89
+      width: 32
+      height: 32
+    spriteID: 877e2b2c876605c4ebfabd743114c49f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 136, y: -342}
+  - name: Crowned_Player_Walking_Right 6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 341
+      y: 131
+      width: 32
+      height: 32
+    spriteID: aa3519c6cc02e7144bd7d4505a453201
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 170, y: -300}
+  - name: Crowned_Player_Walking_Right 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 341
+      y: 173
+      width: 32
+      height: 32
+    spriteID: 00d73f1e56ff9d946b30a65fafcbcc41
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 204, y: -258}
+  - name: Crowned_Player_Walking_Right 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 341
+      y: 215
+      width: 32
+      height: 32
+    spriteID: dd061333490198a478b9416dda249e0a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 238, y: -216}
+  - name: Crowned_Player_Walking_Right 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 341
+      y: 257
+      width: 32
+      height: 32
+    spriteID: 0f17b1f25e1e4d54ba5d1fbc19718e5b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 272, y: -174}
+  - name: Crowned_Player_Walking_Right 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 341
+      y: 299
+      width: 32
+      height: 32
+    spriteID: e66110fd8a09a3743aa896b64f57ebc9
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 306, y: -132}
+  - name: Crowned_Player_Walking_Right 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 341
+      y: 341
+      width: 32
+      height: 32
+    spriteID: abce57972a4fb8c4999bc0ce46cd8158
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 340, y: -90}
   rigSpriteImportData:
   - name: Crowned_Player_Standing_Right
     originalName: 
@@ -466,75 +2779,943 @@ ScriptedImporter:
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
-  importedTextureWidth: 128
-  importedTextureHeight: 128
+  importedTextureWidth: 512
+  importedTextureHeight: 512
   documentSize: {x: 600, y: 600}
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
     categories: []
-  textureActualWidth: 128
-  textureActualHeight: 128
+  textureActualWidth: 512
+  textureActualHeight: 512
   spritePackingTag: 
   resliceFromLayer: 0
   characterMode: 0
   mosaicPSDLayers:
+  - name: Book Attack Left
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 126
+    mosaicPosition: {x: 0, y: 0}
+  - name: Crowned_Player_Book_Attack_Left 5
+    spriteName: Crowned_Player_Book_Attack_Left 5
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 8a71d3ae8f725834a99c618101a96183
+    layerID: 125
+    mosaicPosition: {x: 4, y: 4}
+  - name: Crowned_Player_Book_Attack_Left 4
+    spriteName: Crowned_Player_Book_Attack_Left 4
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 301c9d56c86474348bf2d1342fa26bba
+    layerID: 124
+    mosaicPosition: {x: 4, y: 46}
+  - name: Crowned_Player_Book_Attack_Left 3
+    spriteName: Crowned_Player_Book_Attack_Left 3
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 1176fed6d7d4f294192035ccf2488e4c
+    layerID: 123
+    mosaicPosition: {x: 4, y: 88}
+  - name: Crowned_Player_Book_Attack_Left 2
+    spriteName: Crowned_Player_Book_Attack_Left 2
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 1301b5b2695bcbd419479dba102ecd9d
+    layerID: 122
+    mosaicPosition: {x: 4, y: 130}
+  - name: Crowned_Player_Book_Attack_Left 1
+    spriteName: Crowned_Player_Book_Attack_Left 1
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 54873dec8c061a14580f9dcd1ee929a3
+    layerID: 121
+    mosaicPosition: {x: 4, y: 172}
+  - name: Book Attack Right
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 119
+    mosaicPosition: {x: 0, y: 0}
+  - name: Crowned_Player_Book_Attack_Right 5
+    spriteName: Crowned_Player_Book_Attack_Right 5
+    isGroup: 0
+    parentIndex: 6
+    spriteID: c22faef4fa1668a4cadb0c17a8be8474
+    layerID: 118
+    mosaicPosition: {x: 4, y: 214}
+  - name: Crowned_Player_Book_Attack_Right 4
+    spriteName: Crowned_Player_Book_Attack_Right 4
+    isGroup: 0
+    parentIndex: 6
+    spriteID: 779893960e6b0eb4eb62341196285d6d
+    layerID: 117
+    mosaicPosition: {x: 4, y: 256}
+  - name: Crowned_Player_Book_Attack_Right 3
+    spriteName: Crowned_Player_Book_Attack_Right 3
+    isGroup: 0
+    parentIndex: 6
+    spriteID: 2ebea77613bcfb745a1fa5386cf8ab4a
+    layerID: 116
+    mosaicPosition: {x: 4, y: 298}
+  - name: Crowned_Player_Book_Attack_Right 2
+    spriteName: Crowned_Player_Book_Attack_Right 2
+    isGroup: 0
+    parentIndex: 6
+    spriteID: 5bc61fbd155f81341a5255c446c4de42
+    layerID: 115
+    mosaicPosition: {x: 4, y: 340}
+  - name: Crowned_Player_Book_Attack_Right 1
+    spriteName: Crowned_Player_Book_Attack_Right 1
+    isGroup: 0
+    parentIndex: 6
+    spriteID: cc0bb8ffc76ed1a468714a21e11ffe6d
+    layerID: 114
+    mosaicPosition: {x: 4, y: 382}
+  - name: Book Cast Left
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 154
+    mosaicPosition: {x: 0, y: 0}
+  - name: Crowned_Player_Book_Cast_Left 5
+    spriteName: Crowned_Player_Book_Cast_Left 5
+    isGroup: 0
+    parentIndex: 12
+    spriteID: e721aab0b5fa1304f98489ac46ca4527
+    layerID: 153
+    mosaicPosition: {x: 4, y: 424}
+  - name: Crowned_Player_Book_Cast_Left 4
+    spriteName: Crowned_Player_Book_Cast_Left 4
+    isGroup: 0
+    parentIndex: 12
+    spriteID: ae7407a549b5c0f42acdb2381820a309
+    layerID: 152
+    mosaicPosition: {x: 4, y: 466}
+  - name: Crowned_Player_Book_Cast_Left 3
+    spriteName: Crowned_Player_Book_Cast_Left 3
+    isGroup: 0
+    parentIndex: 12
+    spriteID: 32f15bb45b0d6d84bb93864a8aab861a
+    layerID: 151
+    mosaicPosition: {x: 46, y: 4}
+  - name: Crowned_Player_Book_Cast_Left 2
+    spriteName: Crowned_Player_Book_Cast_Left 2
+    isGroup: 0
+    parentIndex: 12
+    spriteID: 6cb06f4909c652842ad6dbe56700922f
+    layerID: 150
+    mosaicPosition: {x: 46, y: 46}
+  - name: Crowned_Player_Book_Cast_Left 1
+    spriteName: Crowned_Player_Book_Cast_Left 1
+    isGroup: 0
+    parentIndex: 12
+    spriteID: dee2fa95908b1604cabd82b0c2a93909
+    layerID: 149
+    mosaicPosition: {x: 46, y: 88}
+  - name: Spear Cast Left
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 147
+    mosaicPosition: {x: 0, y: 0}
+  - name: Crowned_Player_Spear_Cast_Left 5
+    spriteName: Crowned_Player_Spear_Cast_Left 5
+    isGroup: 0
+    parentIndex: 18
+    spriteID: f9fc4add0a85b154a860f937ea09f514
+    layerID: 146
+    mosaicPosition: {x: 46, y: 130}
+  - name: Crowned_Player_Spear_Cast_Left 4
+    spriteName: Crowned_Player_Spear_Cast_Left 4
+    isGroup: 0
+    parentIndex: 18
+    spriteID: 2b944a6b72eaa324fa6319dd6bbd7c13
+    layerID: 145
+    mosaicPosition: {x: 46, y: 172}
+  - name: Crowned_Player_Spear_Cast_Left 3
+    spriteName: Crowned_Player_Spear_Cast_Left 3
+    isGroup: 0
+    parentIndex: 18
+    spriteID: f0f60f96d17046e43a45441f2a2edda3
+    layerID: 144
+    mosaicPosition: {x: 46, y: 214}
+  - name: Crowned_Player_Spear_Cast_Left 2
+    spriteName: Crowned_Player_Spear_Cast_Left 2
+    isGroup: 0
+    parentIndex: 18
+    spriteID: 07f3ae0ca344ca44d8fdfa03dcf77f26
+    layerID: 143
+    mosaicPosition: {x: 46, y: 256}
+  - name: Crowned_Player_Spear_Cast_Left 1
+    spriteName: Crowned_Player_Spear_Cast_Left 1
+    isGroup: 0
+    parentIndex: 18
+    spriteID: 51e743a330fdc194a9baa3aac667a398
+    layerID: 142
+    mosaicPosition: {x: 46, y: 298}
+  - name: Sword Cast Left
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 140
+    mosaicPosition: {x: 0, y: 0}
+  - name: Crowned_Player_Sword_Cast_Left 5
+    spriteName: Crowned_Player_Sword_Cast_Left 5
+    isGroup: 0
+    parentIndex: 24
+    spriteID: 4e2239b61ccb2194c81df51f0419284a
+    layerID: 139
+    mosaicPosition: {x: 46, y: 340}
+  - name: Crowned_Player_Sword_Cast_Left 4
+    spriteName: Crowned_Player_Sword_Cast_Left 4
+    isGroup: 0
+    parentIndex: 24
+    spriteID: 76f500c2b6881784f8bee95eb037a036
+    layerID: 138
+    mosaicPosition: {x: 46, y: 382}
+  - name: Crowned_Player_Sword_Cast_Left 3
+    spriteName: Crowned_Player_Sword_Cast_Left 3
+    isGroup: 0
+    parentIndex: 24
+    spriteID: 0613e9366440b8444a5c077d11d42bf3
+    layerID: 137
+    mosaicPosition: {x: 46, y: 424}
+  - name: Crowned_Player_Sword_Cast_Left 2
+    spriteName: Crowned_Player_Sword_Cast_Left 2
+    isGroup: 0
+    parentIndex: 24
+    spriteID: ddf287e2f45e213458d7063fc26eac2a
+    layerID: 136
+    mosaicPosition: {x: 46, y: 466}
+  - name: Crowned_Player_Sword_Cast_Left 1
+    spriteName: Crowned_Player_Sword_Cast_Left 1
+    isGroup: 0
+    parentIndex: 24
+    spriteID: 8f53f521f1c682e4492b4f3462407ba1
+    layerID: 135
+    mosaicPosition: {x: 88, y: 4}
+  - name: Archer Cast Left
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 133
+    mosaicPosition: {x: 0, y: 0}
+  - name: Crowned_Player_Bow_Cast_Left 5
+    spriteName: Crowned_Player_Bow_Cast_Left 5
+    isGroup: 0
+    parentIndex: 30
+    spriteID: f3ba1e6465ccbe6429c93a0aa3952822
+    layerID: 132
+    mosaicPosition: {x: 88, y: 46}
+  - name: Crowned_Player_Bow_Cast_Left 4
+    spriteName: Crowned_Player_Bow_Cast_Left 4
+    isGroup: 0
+    parentIndex: 30
+    spriteID: 87ee113e01afbea4680dfcfb6a7ebeac
+    layerID: 131
+    mosaicPosition: {x: 88, y: 88}
+  - name: Crowned_Player_Bow_Cast_Left 3
+    spriteName: Crowned_Player_Bow_Cast_Left 3
+    isGroup: 0
+    parentIndex: 30
+    spriteID: 6958d7fdc49707a4db58c4523d728ddd
+    layerID: 130
+    mosaicPosition: {x: 88, y: 130}
+  - name: Crowned_Player_Bow_Cast_Left 2
+    spriteName: Crowned_Player_Bow_Cast_Left 2
+    isGroup: 0
+    parentIndex: 30
+    spriteID: c7b04073f1a225d42898f25ce68d168d
+    layerID: 129
+    mosaicPosition: {x: 88, y: 172}
+  - name: Crowned_Player_Bow_Cast_Left 1
+    spriteName: Crowned_Player_Bow_Cast_Left 1
+    isGroup: 0
+    parentIndex: 30
+    spriteID: b8ff7d210753f48439ce3ce1eb25eb83
+    layerID: 128
+    mosaicPosition: {x: 88, y: 214}
+  - name: Book Cast
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 112
+    mosaicPosition: {x: 0, y: 0}
+  - name: Crowned_Player_Book_Cast_Right 5
+    spriteName: Crowned_Player_Book_Cast_Right 5
+    isGroup: 0
+    parentIndex: 36
+    spriteID: 9301bf14b222b2a4fa969ee94b8c3c0a
+    layerID: 111
+    mosaicPosition: {x: 88, y: 256}
+  - name: Crowned_Player_Book_Cast_Right 4
+    spriteName: Crowned_Player_Book_Cast_Right 4
+    isGroup: 0
+    parentIndex: 36
+    spriteID: 5161377bd3c2bc3498e053c085d52057
+    layerID: 110
+    mosaicPosition: {x: 88, y: 298}
+  - name: Crowned_Player_Book_Cast_Right 3
+    spriteName: Crowned_Player_Book_Cast_Right 3
+    isGroup: 0
+    parentIndex: 36
+    spriteID: e0df1152e7a4e5e439195cd7e78ac9bf
+    layerID: 109
+    mosaicPosition: {x: 88, y: 340}
+  - name: Crowned_Player_Book_Cast_Right 2
+    spriteName: Crowned_Player_Book_Cast_Right 2
+    isGroup: 0
+    parentIndex: 36
+    spriteID: ada5ef28454329146ad00d4b5bec9dd4
+    layerID: 108
+    mosaicPosition: {x: 88, y: 382}
+  - name: Crowned_Player_Book_Cast_Right 1
+    spriteName: Crowned_Player_Book_Cast_Right 1
+    isGroup: 0
+    parentIndex: 36
+    spriteID: 568b7e5c69366d14b9b4aa943a1d9bca
+    layerID: 107
+    mosaicPosition: {x: 88, y: 424}
+  - name: Spear Cast
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 105
+    mosaicPosition: {x: 0, y: 0}
+  - name: Crowned_Player_Spear_Cast_Right 5
+    spriteName: Crowned_Player_Spear_Cast_Right 5
+    isGroup: 0
+    parentIndex: 42
+    spriteID: a31583f1bad874541b10595a4b2a2047
+    layerID: 104
+    mosaicPosition: {x: 88, y: 466}
+  - name: Crowned_Player_Spear_Cast_Right 4
+    spriteName: Crowned_Player_Spear_Cast_Right 4
+    isGroup: 0
+    parentIndex: 42
+    spriteID: 9e59ed82319dc7941bb6e428e97f58d3
+    layerID: 103
+    mosaicPosition: {x: 130, y: 4}
+  - name: Crowned_Player_Spear_Cast_Right 3
+    spriteName: Crowned_Player_Spear_Cast_Right 3
+    isGroup: 0
+    parentIndex: 42
+    spriteID: 4454c9627cdd92f49ac10de32f0749f8
+    layerID: 102
+    mosaicPosition: {x: 130, y: 46}
+  - name: Crowned_Player_Spear_Cast_Right 2
+    spriteName: Crowned_Player_Spear_Cast_Right 2
+    isGroup: 0
+    parentIndex: 42
+    spriteID: 20448c498d56d9b4184708e476a36829
+    layerID: 101
+    mosaicPosition: {x: 130, y: 88}
+  - name: Crowned_Player_Spear_Cast_Right 1
+    spriteName: Crowned_Player_Spear_Cast_Right 1
+    isGroup: 0
+    parentIndex: 42
+    spriteID: ef576038d64c2354d9ea75c0000872a1
+    layerID: 100
+    mosaicPosition: {x: 130, y: 130}
+  - name: Sword Cast
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 98
+    mosaicPosition: {x: 0, y: 0}
+  - name: Crowned_Player_Sword_Cast_Right 5
+    spriteName: Crowned_Player_Sword_Cast_Right 5
+    isGroup: 0
+    parentIndex: 48
+    spriteID: 9c704a229aa7dd647a8e7ccab1826db8
+    layerID: 97
+    mosaicPosition: {x: 130, y: 172}
+  - name: Crowned_Player_Sword_Cast_Right 4
+    spriteName: Crowned_Player_Sword_Cast_Right 4
+    isGroup: 0
+    parentIndex: 48
+    spriteID: 448924b8fffdea842af0e7125c788610
+    layerID: 96
+    mosaicPosition: {x: 130, y: 214}
+  - name: Crowned_Player_Sword_Cast_Right 3
+    spriteName: Crowned_Player_Sword_Cast_Right 3
+    isGroup: 0
+    parentIndex: 48
+    spriteID: 3c9115597c85cbb4c8bb60d2ab940fb3
+    layerID: 95
+    mosaicPosition: {x: 130, y: 256}
+  - name: Crowned_Player_Sword_Cast_Right 2
+    spriteName: Crowned_Player_Sword_Cast_Right 2
+    isGroup: 0
+    parentIndex: 48
+    spriteID: 031143f7dbd334e4ca7bd097dc9eaf33
+    layerID: 94
+    mosaicPosition: {x: 130, y: 298}
+  - name: Crowned_Player_Sword_Cast_Right 1
+    spriteName: Crowned_Player_Sword_Cast_Right 1
+    isGroup: 0
+    parentIndex: 48
+    spriteID: ca00185582018f749849370c7a7d36d5
+    layerID: 93
+    mosaicPosition: {x: 130, y: 340}
+  - name: Archer Cast
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 91
+    mosaicPosition: {x: 0, y: 0}
+  - name: Crowned_Player_Bow_Cast_Right 5
+    spriteName: Crowned_Player_Bow_Cast_Right 5
+    isGroup: 0
+    parentIndex: 54
+    spriteID: 0d025b8b22629464c9145efaee28f677
+    layerID: 90
+    mosaicPosition: {x: 130, y: 382}
+  - name: Crowned_Player_Bow_Cast_Right 4
+    spriteName: Crowned_Player_Bow_Cast_Right 4
+    isGroup: 0
+    parentIndex: 54
+    spriteID: 9f91925a1b8800f40a6b6bd0cde2fa83
+    layerID: 89
+    mosaicPosition: {x: 130, y: 424}
+  - name: Crowned_Player_Bow_Cast_Right 3
+    spriteName: Crowned_Player_Bow_Cast_Right 3
+    isGroup: 0
+    parentIndex: 54
+    spriteID: cff600ced1c14aa40b5c99ab3358baeb
+    layerID: 88
+    mosaicPosition: {x: 130, y: 466}
+  - name: Crowned_Player_Bow_Cast_Right 2
+    spriteName: Crowned_Player_Bow_Cast_Right 2
+    isGroup: 0
+    parentIndex: 54
+    spriteID: 2f3c4a578cba2994cb02db71a6ea7560
+    layerID: 87
+    mosaicPosition: {x: 172, y: 4}
+  - name: Crowned_Player_Bow_Cast_Right 1
+    spriteName: Crowned_Player_Bow_Cast_Right 1
+    isGroup: 0
+    parentIndex: 54
+    spriteID: 7f13d4e68ab66ff4db4e80ae438f13fe
+    layerID: 86
+    mosaicPosition: {x: 172, y: 46}
+  - name: Spear Attack Right
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 84
+    mosaicPosition: {x: 0, y: 0}
+  - name: Crowned_Player_Spear_Attack_Right 4
+    spriteName: Crowned_Player_Spear_Attack_Right 4
+    isGroup: 0
+    parentIndex: 60
+    spriteID: f8275b6566035864797ca4d93ef87995
+    layerID: 83
+    mosaicPosition: {x: 172, y: 88}
+  - name: Crowned_Player_Spear_Attack_Right 3
+    spriteName: Crowned_Player_Spear_Attack_Right 3
+    isGroup: 0
+    parentIndex: 60
+    spriteID: 6a58d94a7ae1488469cf11cfdbbe62a9
+    layerID: 82
+    mosaicPosition: {x: 172, y: 130}
+  - name: Crowned_Player_Spear_Attack_Right 2
+    spriteName: Crowned_Player_Spear_Attack_Right 2
+    isGroup: 0
+    parentIndex: 60
+    spriteID: b1246421343dbf643bf3b0dd7c1322d3
+    layerID: 81
+    mosaicPosition: {x: 172, y: 172}
+  - name: Crowned_Player_Spear_Attack_Right 1
+    spriteName: Crowned_Player_Spear_Attack_Right 1
+    isGroup: 0
+    parentIndex: 60
+    spriteID: 41f67adf532752248894541c9ef056b0
+    layerID: 80
+    mosaicPosition: {x: 172, y: 214}
+  - name: Spear Attack Left
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 78
+    mosaicPosition: {x: 0, y: 0}
+  - name: Crowned_Player_Spear_Attack_Left 4
+    spriteName: Crowned_Player_Spear_Attack_Left 4
+    isGroup: 0
+    parentIndex: 65
+    spriteID: 62c9c12cebb5f764fb6b0305498937f8
+    layerID: 77
+    mosaicPosition: {x: 172, y: 256}
+  - name: Crowned_Player_Spear_Attack_Left 3
+    spriteName: Crowned_Player_Spear_Attack_Left 3
+    isGroup: 0
+    parentIndex: 65
+    spriteID: c27652ba34aee8f4fa35d9426fa3c7a4
+    layerID: 76
+    mosaicPosition: {x: 172, y: 298}
+  - name: Crowned_Player_Spear_Attack_Left 2
+    spriteName: Crowned_Player_Spear_Attack_Left 2
+    isGroup: 0
+    parentIndex: 65
+    spriteID: c2f5e9bdad6a86144b9c724698f2aaa2
+    layerID: 75
+    mosaicPosition: {x: 172, y: 340}
+  - name: Crowned_Player_Spear_Attack_Left 1
+    spriteName: Crowned_Player_Spear_Attack_Left 1
+    isGroup: 0
+    parentIndex: 65
+    spriteID: 2da1236cbda34184e8be7308d9fa2c84
+    layerID: 74
+    mosaicPosition: {x: 172, y: 382}
+  - name: Bow Attack Right
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 72
+    mosaicPosition: {x: 0, y: 0}
+  - name: Crowned_Player_Bow_Attack_Right 5
+    spriteName: Crowned_Player_Bow_Attack_Right 5
+    isGroup: 0
+    parentIndex: 70
+    spriteID: 665cb21baa4507044b28a7baa913c4d4
+    layerID: 71
+    mosaicPosition: {x: 172, y: 424}
+  - name: Crowned_Player_Bow_Attack_Right 4
+    spriteName: Crowned_Player_Bow_Attack_Right 4
+    isGroup: 0
+    parentIndex: 70
+    spriteID: 7d92d7efeab795f47b96592d78f5eec2
+    layerID: 70
+    mosaicPosition: {x: 172, y: 466}
+  - name: Crowned_Player_Bow_Attack_Right 3
+    spriteName: Crowned_Player_Bow_Attack_Right 3
+    isGroup: 0
+    parentIndex: 70
+    spriteID: 5ff433eefb6bee44c8bd12a259eed9d9
+    layerID: 69
+    mosaicPosition: {x: 214, y: 4}
+  - name: Crowned_Player_Bow_Attack_Right 2
+    spriteName: Crowned_Player_Bow_Attack_Right 2
+    isGroup: 0
+    parentIndex: 70
+    spriteID: f83075d1020c9a2408c08304cf072718
+    layerID: 68
+    mosaicPosition: {x: 214, y: 46}
+  - name: Crowned_Player_Bow_Attack_Right 1
+    spriteName: Crowned_Player_Bow_Attack_Right 1
+    isGroup: 0
+    parentIndex: 70
+    spriteID: 383b4a07183f8934fa8ddc90417a1958
+    layerID: 67
+    mosaicPosition: {x: 214, y: 88}
+  - name: Bow Attack Left
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 65
+    mosaicPosition: {x: 0, y: 0}
+  - name: Crowned_Player_Bow_Attack_Left 5
+    spriteName: Crowned_Player_Bow_Attack_Left 5
+    isGroup: 0
+    parentIndex: 76
+    spriteID: 3958e3ac30324ba4eab532ed70a13aa7
+    layerID: 64
+    mosaicPosition: {x: 214, y: 130}
+  - name: Crowned_Player_Bow_Attack_Left 4
+    spriteName: Crowned_Player_Bow_Attack_Left 4
+    isGroup: 0
+    parentIndex: 76
+    spriteID: c1a2a7812837fa54682a171719e3a130
+    layerID: 63
+    mosaicPosition: {x: 214, y: 172}
+  - name: Crowned_Player_Bow_Attack_Left 3
+    spriteName: Crowned_Player_Bow_Attack_Left 3
+    isGroup: 0
+    parentIndex: 76
+    spriteID: 42f6458523dc5e447bfbb3065c814de9
+    layerID: 62
+    mosaicPosition: {x: 214, y: 214}
+  - name: Crowned_Player_Bow_Attack_Left 2
+    spriteName: Crowned_Player_Bow_Attack_Left 2
+    isGroup: 0
+    parentIndex: 76
+    spriteID: 4e20a116adb4e8946963309cfc16b7ad
+    layerID: 61
+    mosaicPosition: {x: 214, y: 256}
+  - name: Crowned_Player_Bow_Attack_Left 1
+    spriteName: Crowned_Player_Bow_Attack_Left 1
+    isGroup: 0
+    parentIndex: 76
+    spriteID: 37745e67db5af0641aea6af1dcf35c3a
+    layerID: 60
+    mosaicPosition: {x: 214, y: 298}
+  - name: Sword Attack Right
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 58
+    mosaicPosition: {x: 0, y: 0}
+  - name: Crowned_Player_Sword_Attack_Right 4
+    spriteName: Crowned_Player_Sword_Attack_Right 4
+    isGroup: 0
+    parentIndex: 82
+    spriteID: 8f396194ba069704d9bacdf932baeed2
+    layerID: 57
+    mosaicPosition: {x: 214, y: 340}
+  - name: Crowned_Player_Sword_Attack_Right 3
+    spriteName: Crowned_Player_Sword_Attack_Right 3
+    isGroup: 0
+    parentIndex: 82
+    spriteID: 0860d2dd56fe4534d82558ead57d4288
+    layerID: 56
+    mosaicPosition: {x: 214, y: 382}
+  - name: Crowned_Player_Sword_Attack_Right 2
+    spriteName: Crowned_Player_Sword_Attack_Right 2
+    isGroup: 0
+    parentIndex: 82
+    spriteID: 72248e8dd615b794a9dbef6811db6ce2
+    layerID: 55
+    mosaicPosition: {x: 214, y: 424}
+  - name: Crowned_Player_Sword_Attack_Right 1
+    spriteName: Crowned_Player_Sword_Attack_Right 1
+    isGroup: 0
+    parentIndex: 82
+    spriteID: def52fef17e44b74981ffd64e06d61c0
+    layerID: 54
+    mosaicPosition: {x: 214, y: 466}
+  - name: Sword Attack Left
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 52
+    mosaicPosition: {x: 0, y: 0}
+  - name: Crowned_Player_Sword_Attack_Left 4
+    spriteName: Crowned_Player_Sword_Attack_Left 4
+    isGroup: 0
+    parentIndex: 87
+    spriteID: aaf5b0ff341f25e479794441378646f4
+    layerID: 51
+    mosaicPosition: {x: 256, y: 4}
+  - name: Crowned_Player_Sword_Attack_Left 3
+    spriteName: Crowned_Player_Sword_Attack_Left 3
+    isGroup: 0
+    parentIndex: 87
+    spriteID: 46a6a6d49fac1dd4ca170c9e1bce03fe
+    layerID: 50
+    mosaicPosition: {x: 256, y: 46}
+  - name: Crowned_Player_Sword_Attack_Left 2
+    spriteName: Crowned_Player_Sword_Attack_Left 2
+    isGroup: 0
+    parentIndex: 87
+    spriteID: 3065fcbdcf1bae149ab18d2aec5517f0
+    layerID: 49
+    mosaicPosition: {x: 256, y: 88}
+  - name: Crowned_Player_Sword_Attack_Left 1
+    spriteName: Crowned_Player_Sword_Attack_Left 1
+    isGroup: 0
+    parentIndex: 87
+    spriteID: 964c36635ef53444785d0ff7b607da46
+    layerID: 48
+    mosaicPosition: {x: 256, y: 130}
+  - name: Walking Top
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 46
+    mosaicPosition: {x: 0, y: 0}
+  - name: Player_Walking_Up 7
+    spriteName: Player_Walking_Up 7
+    isGroup: 0
+    parentIndex: 92
+    spriteID: 8d69c5336511dab4b8c778339e1a084d
+    layerID: 45
+    mosaicPosition: {x: 256, y: 172}
+  - name: Player_Walking_Up 6
+    spriteName: Player_Walking_Up 6
+    isGroup: 0
+    parentIndex: 92
+    spriteID: a0c199c012210604191dd7dd34d8ebb8
+    layerID: 44
+    mosaicPosition: {x: 256, y: 214}
+  - name: Player_Walking_Up 5
+    spriteName: Player_Walking_Up 5
+    isGroup: 0
+    parentIndex: 92
+    spriteID: e9a2d71350014354cbe967ef8548b5e7
+    layerID: 43
+    mosaicPosition: {x: 256, y: 256}
+  - name: Player_Walking_Up 4
+    spriteName: Player_Walking_Up 4
+    isGroup: 0
+    parentIndex: 92
+    spriteID: ff407ffead5e12646a502df3d8290659
+    layerID: 42
+    mosaicPosition: {x: 256, y: 298}
+  - name: Player_Walking_Up 3
+    spriteName: Player_Walking_Up 3
+    isGroup: 0
+    parentIndex: 92
+    spriteID: 32117583ba9f09147a1de5050b120138
+    layerID: 41
+    mosaicPosition: {x: 256, y: 340}
+  - name: Player_Walking_Up 2
+    spriteName: Player_Walking_Up 2
+    isGroup: 0
+    parentIndex: 92
+    spriteID: ff833962bc294ef41b1e18bb7ec005fe
+    layerID: 40
+    mosaicPosition: {x: 256, y: 382}
+  - name: Player_Walking_Up 1
+    spriteName: Player_Walking_Up 1
+    isGroup: 0
+    parentIndex: 92
+    spriteID: 387995aa6c2f1cb4c82a6549e09d7c51
+    layerID: 39
+    mosaicPosition: {x: 256, y: 424}
+  - name: Walking Left
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 37
+    mosaicPosition: {x: 0, y: 0}
+  - name: Crowned_Player_Walking_Left 11
+    spriteName: Crowned_Player_Walking_Left 11
+    isGroup: 0
+    parentIndex: 100
+    spriteID: 87cf55d3e698fe043a0018f0cdb33f22
+    layerID: 36
+    mosaicPosition: {x: 256, y: 466}
+  - name: Crowned_Player_Walking_Left 10
+    spriteName: Crowned_Player_Walking_Left 10
+    isGroup: 0
+    parentIndex: 100
+    spriteID: ca857c9bb91eb6e4c8d241a672a7ef44
+    layerID: 35
+    mosaicPosition: {x: 298, y: 4}
+  - name: Crowned_Player_Walking_Left 9
+    spriteName: Crowned_Player_Walking_Left 9
+    isGroup: 0
+    parentIndex: 100
+    spriteID: 50286755b3a12454397bead06d60836c
+    layerID: 34
+    mosaicPosition: {x: 298, y: 46}
+  - name: Crowned_Player_Walking_Left 8
+    spriteName: Crowned_Player_Walking_Left 8
+    isGroup: 0
+    parentIndex: 100
+    spriteID: 2f161783a7854f040a33d18e72fb48a6
+    layerID: 33
+    mosaicPosition: {x: 298, y: 88}
+  - name: Crowned_Player_Walking_Left 7
+    spriteName: Crowned_Player_Walking_Left 7
+    isGroup: 0
+    parentIndex: 100
+    spriteID: 251b881787f6032469ce2beecba01464
+    layerID: 32
+    mosaicPosition: {x: 298, y: 130}
+  - name: Crowned_Player_Walking_Left 6
+    spriteName: Crowned_Player_Walking_Left 6
+    isGroup: 0
+    parentIndex: 100
+    spriteID: f110594180c523c4b8ab2d5609dce400
+    layerID: 31
+    mosaicPosition: {x: 298, y: 172}
+  - name: Crowned_Player_Walking_Left 5
+    spriteName: Crowned_Player_Walking_Left 5
+    isGroup: 0
+    parentIndex: 100
+    spriteID: db23ed3248469124d905cddb0f4ea21f
+    layerID: 30
+    mosaicPosition: {x: 298, y: 214}
+  - name: Crowned_Player_Walking_Left 4
+    spriteName: Crowned_Player_Walking_Left 4
+    isGroup: 0
+    parentIndex: 100
+    spriteID: 22770c64ec5080b47a4552c83083afe5
+    layerID: 29
+    mosaicPosition: {x: 298, y: 256}
+  - name: Crowned_Player_Walking_Left 3
+    spriteName: Crowned_Player_Walking_Left 3
+    isGroup: 0
+    parentIndex: 100
+    spriteID: c12da8d93bfab0048b2c69fad23e21bc
+    layerID: 28
+    mosaicPosition: {x: 298, y: 298}
+  - name: Crowned_Player_Walking_Left 2
+    spriteName: Crowned_Player_Walking_Left 2
+    isGroup: 0
+    parentIndex: 100
+    spriteID: f798967f47619a742be1d8743488f095
+    layerID: 27
+    mosaicPosition: {x: 298, y: 340}
+  - name: Crowned_Player_Walking_Left 1
+    spriteName: Crowned_Player_Walking_Left 1
+    isGroup: 0
+    parentIndex: 100
+    spriteID: 6f103e29febce5b4c8ce0848c2ded929
+    layerID: 26
+    mosaicPosition: {x: 298, y: 382}
+  - name: Walking Right
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 24
+    mosaicPosition: {x: 0, y: 0}
+  - name: Crowned_Player_Walking_Right 11
+    spriteName: Crowned_Player_Walking_Right 11
+    isGroup: 0
+    parentIndex: 112
+    spriteID: b077c1b16db95c048b4cf770e8f37802
+    layerID: 23
+    mosaicPosition: {x: 298, y: 424}
+  - name: Crowned_Player_Walking_Right 10
+    spriteName: Crowned_Player_Walking_Right 10
+    isGroup: 0
+    parentIndex: 112
+    spriteID: e11ef2b77f2185246b762fc2199deebc
+    layerID: 22
+    mosaicPosition: {x: 298, y: 466}
+  - name: Crowned_Player_Walking_Right 9
+    spriteName: Crowned_Player_Walking_Right 9
+    isGroup: 0
+    parentIndex: 112
+    spriteID: 1b041efc550027d4892ebe0b76797746
+    layerID: 21
+    mosaicPosition: {x: 340, y: 4}
+  - name: Crowned_Player_Walking_Right 8
+    spriteName: Crowned_Player_Walking_Right 8
+    isGroup: 0
+    parentIndex: 112
+    spriteID: 3c67b38b23f68b640856254f944a11db
+    layerID: 20
+    mosaicPosition: {x: 340, y: 46}
+  - name: Crowned_Player_Walking_Right 7
+    spriteName: Crowned_Player_Walking_Right 7
+    isGroup: 0
+    parentIndex: 112
+    spriteID: 877e2b2c876605c4ebfabd743114c49f
+    layerID: 19
+    mosaicPosition: {x: 340, y: 88}
+  - name: Crowned_Player_Walking_Right 6
+    spriteName: Crowned_Player_Walking_Right 6
+    isGroup: 0
+    parentIndex: 112
+    spriteID: aa3519c6cc02e7144bd7d4505a453201
+    layerID: 18
+    mosaicPosition: {x: 340, y: 130}
+  - name: Crowned_Player_Walking_Right 5
+    spriteName: Crowned_Player_Walking_Right 5
+    isGroup: 0
+    parentIndex: 112
+    spriteID: 00d73f1e56ff9d946b30a65fafcbcc41
+    layerID: 17
+    mosaicPosition: {x: 340, y: 172}
+  - name: Crowned_Player_Walking_Right 4
+    spriteName: Crowned_Player_Walking_Right 4
+    isGroup: 0
+    parentIndex: 112
+    spriteID: dd061333490198a478b9416dda249e0a
+    layerID: 16
+    mosaicPosition: {x: 340, y: 214}
+  - name: Crowned_Player_Walking_Right 3
+    spriteName: Crowned_Player_Walking_Right 3
+    isGroup: 0
+    parentIndex: 112
+    spriteID: 0f17b1f25e1e4d54ba5d1fbc19718e5b
+    layerID: 15
+    mosaicPosition: {x: 340, y: 256}
+  - name: Crowned_Player_Walking_Right 2
+    spriteName: Crowned_Player_Walking_Right 2
+    isGroup: 0
+    parentIndex: 112
+    spriteID: e66110fd8a09a3743aa896b64f57ebc9
+    layerID: 14
+    mosaicPosition: {x: 340, y: 298}
+  - name: Crowned_Player_Walking_Right 1
+    spriteName: Crowned_Player_Walking_Right 1
+    isGroup: 0
+    parentIndex: 112
+    spriteID: abce57972a4fb8c4999bc0ce46cd8158
+    layerID: 13
+    mosaicPosition: {x: 340, y: 340}
   - name: Crowned_Player_Standing_Right
     spriteName: Crowned_Player_Standing_Right
     isGroup: 0
     parentIndex: -1
     spriteID: 9ed2785f91ac0aa4d89ec0019c8484d0
     layerID: 11
-    mosaicPosition: {x: 4, y: 4}
+    mosaicPosition: {x: 340, y: 382}
   - name: Crowned_Player_Standing_Left
     spriteName: Crowned_Player_Standing_Left
     isGroup: 0
     parentIndex: -1
     spriteID: 309339b3b485b704d8894d93e79e0bf6
     layerID: 7
-    mosaicPosition: {x: 4, y: 46}
+    mosaicPosition: {x: 340, y: 424}
   - name: Crowned_Player_Standing_Up
     spriteName: Crowned_Player_Standing_Up
     isGroup: 0
     parentIndex: -1
     spriteID: 833a6300229ca42449196c4b23ba05bb
     layerID: 6
-    mosaicPosition: {x: 4, y: 88}
+    mosaicPosition: {x: 340, y: 466}
   - name: Crowned_Player_Standing_Down
     spriteName: Crowned_Player_Standing_Down
     isGroup: 0
     parentIndex: -1
     spriteID: 855e0067f28ba764a902c31ecdd79f93
     layerID: 5
-    mosaicPosition: {x: 46, y: 4}
+    mosaicPosition: {x: 382, y: 4}
   - name: Player_Standing_Up
     spriteName: Player_Standing_Up
     isGroup: 0
     parentIndex: -1
     spriteID: f78db70a25cfa404da44f3ea594a2db3
     layerID: 3
-    mosaicPosition: {x: 46, y: 46}
+    mosaicPosition: {x: 382, y: 46}
   - name: Player_Standing_Down
     spriteName: Player_Standing_Down
     isGroup: 0
     parentIndex: -1
     spriteID: 174059558c834d447a02e401ed4395b7
     layerID: 4
-    mosaicPosition: {x: 46, y: 88}
+    mosaicPosition: {x: 382, y: 88}
   - name: Player_Standing_Left
     spriteName: Player_Standing_Left
     isGroup: 0
     parentIndex: -1
     spriteID: 8b679fa33ea8d504ca2bc77b5e401454
     layerID: 2
-    mosaicPosition: {x: 88, y: 4}
+    mosaicPosition: {x: 382, y: 130}
   - name: Player_Standing_Right
     spriteName: Player_Standing_Right
     isGroup: 0
     parentIndex: -1
     spriteID: dfd55b4711cfb3441a86b240b847fbb7
     layerID: 10
-    mosaicPosition: {x: 88, y: 46}
+    mosaicPosition: {x: 382, y: 172}
   rigPSDLayers:
   - name: Crowned_Player_Standing_Right
     spriteName: Crowned_Player_Standing_Right

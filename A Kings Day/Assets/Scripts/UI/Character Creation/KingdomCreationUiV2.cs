@@ -8,6 +8,7 @@ using Managers;
 using ResourceUI;
 using Utilities;
 using SaveData;
+using Characters;
 
 public class KingdomCreationUiV2 : MonoBehaviour
 {
@@ -62,6 +63,8 @@ public class KingdomCreationUiV2 : MonoBehaviour
         temporaryKingdom.coins = initialCoins;
         temporaryKingdom.coinsCapacity = 30;
 
+
+        UpdatePlayerHero();
 
         for (int i = 0; i < resourcePagesList.Count; i++)
         {
@@ -285,7 +288,7 @@ public class KingdomCreationUiV2 : MonoBehaviour
     public void AdjustFamilyOrigin(KingdomDescriptionDropdown thisDropDown)
     {
         int dropDownIdx = kingdomDescriptionList.IndexOf(thisDropDown);
-
+        Debug.Log("--Adjusting Family Origin--");
         switch (dropDownIdx)
         {
             case 0:
@@ -303,6 +306,38 @@ public class KingdomCreationUiV2 : MonoBehaviour
             default:
                 break;
         }
+
+        UpdatePlayerHero();
+    }
+
+    public void UpdatePlayerHero()
+    {
+        BaseHeroInformationData playerAsHero = new BaseHeroInformationData();
+        playerAsHero = TransitionManager.GetInstance.unitStorage.ObtainHeroBaseInformation(temporaryKingdom.wieldedWeapon);
+        playerAsHero.unitInformation.unitName = "Player";
+
+        temporaryKingdom.myHeroes = new List<BaseHeroInformationData>();
+        temporaryKingdom.tavernHeroes = new List<BaseHeroInformationData>();
+
+        BaseHeroInformationData tmp = new BaseHeroInformationData();
+        tmp.unitInformation = new UnitInformationData();
+        tmp.unitInformation = playerAsHero.unitInformation;
+        tmp.heroLevel = playerAsHero.heroLevel;
+        tmp.heroRarity = playerAsHero.heroRarity;
+
+        tmp.healthGrowthRate = playerAsHero.healthGrowthRate;
+        tmp.damageGrowthRate = playerAsHero.damageGrowthRate;
+        tmp.speedGrowthRate = playerAsHero.speedGrowthRate;
+
+        tmp.skillsList = new List<BaseSkillInformationData>();
+        for (int i = 0; i < playerAsHero.skillsList.Count; i++)
+        {
+            BaseSkillInformationData tmpSkill = new BaseSkillInformationData();
+            tmpSkill = playerAsHero.skillsList[i];
+            tmp.skillsList.Add(tmpSkill);
+        }
+
+        temporaryKingdom.myHeroes.Add(tmp);
     }
     #endregion
 

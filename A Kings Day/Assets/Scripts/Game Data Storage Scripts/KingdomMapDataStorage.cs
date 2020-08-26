@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using Maps;
+using Managers;
+using Kingdoms;
 
 public class KingdomMapDataStorage : MonoBehaviour
 {

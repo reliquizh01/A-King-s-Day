@@ -386,6 +386,11 @@ namespace Kingdoms
             }
             return amount;
         }
+        public int ObtainTotalPopulation()
+        {
+            return population + ObtainTotalTroops() + farmerCount + herdsmanCount + storageKeeperCount;
+        }
+
         public void UpdateFoodStorage()
         {
             safeFood = 50 + (10 * storageKeeperCount);
@@ -395,6 +400,7 @@ namespace Kingdoms
         {
             safeCows = barnExpansion + (2 * herdsmanCount);
         }
+
     }
 
 }

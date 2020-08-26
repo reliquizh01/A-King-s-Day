@@ -58,7 +58,6 @@ public class KingdomCreationManager : BaseManager
     }
     public override void PreCloseManager()
     {
-        saveSlotWindow.CloseWindow();
         StartCoroutine(saveSlots.WaitAnimationForAction(saveSlots.closeAnimationName, () => TransitionManager.GetInstance.RemoveLoading()));        
         base.PreCloseManager();
     }
@@ -114,6 +113,7 @@ public class KingdomCreationManager : BaseManager
         }
         TransitionManager.GetInstance.isNewGame = false;
         saveSlotWindow.parentCloseCallback = null;
+        Debug.Log("Removign Save Slot Window!");
         StartCoroutine(saveSlots.WaitAnimationForAction(saveSlots.closeAnimationName, LoadDataToGame));
     }
     public void DeleteThisData()

@@ -16,11 +16,8 @@ namespace Managers
 
         public void Awake()
         {
-            if(EventBroadcaster.Instance != null)
-            {
-                EventBroadcaster.Instance.AddObserver(EventNames.ENABLE_IN_GAME_INTERACTION, EnableAllInteraction);
-                EventBroadcaster.Instance.AddObserver(EventNames.DISABLE_IN_GAME_INTERACTION, DisableAllInteraction);
-            }
+            EventBroadcaster.Instance.AddObserver(EventNames.ENABLE_IN_GAME_INTERACTION, EnableAllInteraction);
+            EventBroadcaster.Instance.AddObserver(EventNames.DISABLE_IN_GAME_INTERACTION, DisableAllInteraction);
         }
 
         public void OnDestroy()

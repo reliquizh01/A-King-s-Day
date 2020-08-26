@@ -45,17 +45,23 @@ namespace Managers
         private Action endCurrentBattleCallback;
 
         // Campaign Mode
-        public void SetupPlayerCommander(List<TroopsInformation> troopsInformations, bool isAttacker = true)
+        public void SetupPlayerCommander(BaseTravellerData troopsInformations, bool isAttacker = true)
         {
             BattlefieldCommander currentCommander = new BattlefieldCommander();
             currentCommander.unitsCarried = new List<TroopsInformation>();
 
-            for (int i = 0; i < troopsInformations.Count; i++)
+            currentCommander.heroesCarried = new List<BaseHeroInformationData>();
+            currentCommander.heroesCarried.AddRange(troopsInformations.leaderUnit);
+
+            for (int i = 0; i < troopsInformations.troopsCarried.Count; i++)
             {
-                currentCommander.unitsCarried.Add(troopsInformations[i]);
+                currentCommander.unitsCarried.Add(troopsInformations.troopsCarried[i]);
             }
 
             currentCommander = ImplementTechnology(currentCommander);
+
+            currentCommander.spawnBuffsList = new List<BaseBuffInformationData>();
+            currentCommander.spawnBuffsList.AddRange(CheckCampaignPlayerBuffPenalties());
 
             if(isAttacker)
             {
@@ -67,6 +73,7 @@ namespace Managers
                 defendingCommander = new BattlefieldCommander();
                 defendingCommander = currentCommander;
             }
+
         }
 
         public BattlefieldCommander ImplementTechnology(BattlefieldCommander commander)
@@ -89,6 +96,22 @@ namespace Managers
             return commander;
         }
 
+        public List<BaseBuffInformationData> CheckCampaignPlayerBuffPenalties()
+        {
+            List<BaseBuffInformationData> penaltyBuffs = new List<BaseBuffInformationData>();
+            if(PlayerGameManager.GetInstance.playerData.foods <= 0)
+            {
+                BaseBuffInformationData tmp = new BaseBuffInformationData();
+                tmp.targetStats = TargetStats.health;
+                tmp.effectAmount = -1;
+                tmp.permanentBuff = true;
+                tmp.buffName = "Hunger";
+
+                penaltyBuffs.Add(tmp);
+            }
+
+            return penaltyBuffs;
+        }
         public void SetupAttackingCommander(BattlefieldCommander thisCommander)
         {
             attackingCommander = thisCommander;
@@ -316,6 +339,13 @@ namespace Managers
                     attackerSpawnedUnits[attackerSpawnedUnits.Count - 1].isFighting = true;
                     attackerSpawnedUnits[attackerSpawnedUnits.Count - 1].canReturnToCamp = true;
                     attackerSpawnedUnits[attackerSpawnedUnits.Count - 1].teamType = TeamType.Attacker;
+                    if(attackingCommander.spawnBuffsList != null && attackingCommander.spawnBuffsList.Count > 0)
+                    {
+                        for (int i = 0; i < attackingCommander.spawnBuffsList.Count; i++)
+                        {
+                            attackerSpawnedUnits[attackerSpawnedUnits.Count - 1].AddBuff(attackingCommander.spawnBuffsList[i]);
+                        }
+                    }
 
                 }
                 else
@@ -346,6 +376,15 @@ namespace Managers
                     defenderSpawnedUnits[defenderSpawnedUnits.Count - 1].isFighting = true;
                     defenderSpawnedUnits[defenderSpawnedUnits.Count - 1].canReturnToCamp = true;
                     defenderSpawnedUnits[defenderSpawnedUnits.Count - 1].teamType = TeamType.Defender;
+
+                    if (defendingCommander.spawnBuffsList != null && defendingCommander.spawnBuffsList.Count > 0)
+                    {
+                        for (int i = 0; i < attackingCommander.spawnBuffsList.Count; i++)
+                        {
+                            defenderSpawnedUnits[defenderSpawnedUnits.Count - 1].AddBuff(defendingCommander.spawnBuffsList[i]);
+                        }
+                    }
+
                 }
                 else
                 {

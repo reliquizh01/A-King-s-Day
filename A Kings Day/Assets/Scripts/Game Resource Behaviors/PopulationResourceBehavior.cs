@@ -4,6 +4,7 @@ using UnityEngine;
 using Kingdoms;
 using Managers;
 using Technology;
+using ResourceUI;
 
 namespace GameResource
 {
@@ -30,7 +31,7 @@ namespace GameResource
             get { return settlerChance + techSettlerChance; }
         }
 
-        public int PopPerFood = 4;
+        public int PopPerFood = 5;
         public int techPopPerFood = 0;
 
         public int GetPopPerFood
@@ -56,6 +57,7 @@ namespace GameResource
         }
         public int taxInterval = 4;
 
+        public bool startStarvation = false;
         public override void SetupResourceBehavior()
         {
             base.SetupResourceBehavior();
@@ -68,8 +70,12 @@ namespace GameResource
 
             ImplementTechnology();
 
-            Debug.Log("Cur Player: " + curPlayer.foods);
             UpdateWarningMechanics();
+
+            if(warningDependentList.Find(x => x.dependent == ResourceType.Food && x.showWarning) != null)
+            {
+                startStarvation = true;
+            }
         }
 
         public override void ImplementTechnology()
@@ -100,7 +106,42 @@ namespace GameResource
                 }
             }
         }
+        public override void UpdateWeeklyProgress()
+        {
+            base.UpdateWeeklyProgress();
 
+            ObtainWeeklyConsumedFood();
+        }
+        public void ObtainWeeklyConsumedFood()
+        {
+            int currentTotalPopulation = PlayerGameManager.GetInstance.playerData.ObtainTotalPopulation();
+
+            int foodConsumed = currentTotalPopulation / GetPopPerFood;
+
+            PlayerGameManager.GetInstance.RemoveResource(foodConsumed, ResourceType.Food);
+
+            if(PlayerGameManager.GetInstance.playerData.foods <= 0)
+            {
+                PlayerGameManager.GetInstance.playerData.foods = 0;
+                if(startStarvation)
+                {
+                    PlayerGameManager.GetInstance.RemoveResource(-1, ResourceType.Population);
+                    ProductionManager.GetInstance.ShowPopNotif(-1, "Starved");
+                }
+                else
+                {
+                    startStarvation = true;
+                }
+            }
+            else
+            {
+                startStarvation = false;
+            }
+            ProductionManager.GetInstance.ShowFoodNotif(-foodConsumed, "Consumed");
+
+            ResourceInformationController.GetInstance.HideCurrentPanelPotentialResourceChanges();
+            ResourceInformationController.GetInstance.UpdateCurrentPanel();
+        }
         public void CheckTaxCounter()
         {
             if(curPlayer.curTaxWeeksCounter < taxInterval)

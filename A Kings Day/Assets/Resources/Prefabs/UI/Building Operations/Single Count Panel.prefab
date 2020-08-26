@@ -514,6 +514,7 @@ GameObject:
   - component: {fileID: 3068379662072376380}
   - component: {fileID: 1172371644812499559}
   - component: {fileID: 4733818885644267420}
+  - component: {fileID: -4064222327819417797}
   m_Layer: 9
   m_Name: Single Count Panel
   m_TagString: Untagged
@@ -592,12 +593,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3cddaef54815342bb2868dd029a314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventTrigger: {fileID: -4064222327819417797}
   panelType: 0
   countType: 1
   panelIcon: {fileID: 0}
   titleText: {fileID: 898213497883720655}
   countText: {fileID: 898213496793417953}
   descriptionText: {fileID: 898213496422126162}
+--- !u!114 &-4064222327819417797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898213496905443184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &898213497516494860
 GameObject:
   m_ObjectHideFlags: 0

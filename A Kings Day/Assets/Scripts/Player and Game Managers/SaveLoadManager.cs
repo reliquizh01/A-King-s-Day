@@ -174,8 +174,6 @@ namespace SaveData
                     FileStream file = File.Create(savePath + "/" + saveCampaignDataList[i]._fileName);
                     bf.Serialize(file, saveCampaignDataList[i]);
                     file.Close();
-
-                    Debug.Log(savePath);
                 }
             }
         }

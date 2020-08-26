@@ -24,6 +24,21 @@ public class BuildingInformationPanel : MonoBehaviour
     {
         currentBuildingInformation = new BuildingInformationData();
         currentBuildingInformation = newInformation;
+
+        SetupInformationPages();
+    }
+
+    public void SetupInformationPages()
+    {
+        if(informationPageList == null || informationPageList.Count <= 0)
+        {
+            return;
+        }
+
+        for (int i = 0; i < informationPageList.Count; i++)
+        {
+            informationPageList[i].InitializeInformationPanels(myController);
+        }
     }
     public void UpdatePages(int actionIdx)
     {
@@ -105,7 +120,7 @@ public class BuildingInformationPanel : MonoBehaviour
             List<float> tmp = new List<float>();tmp.Add(recruitCount);; tmp.Add(hp); tmp.Add(spd); tmp.Add(dmg);
             currentPage.informationPanelList[0].SetMultiCounter(tmp, "Recruits"); // HP DAMAGE SPEED
 
-            string secondDescription = "Maximum units the barracks can support [" + playerData.ObtainTotalTroops() + "]";
+            string secondDescription = "Max trained units the barracks can support [" + playerData.barracksCapacity + "]";
             currentPage.informationPanelList[1].SetSingleCounter(playerData.barracksCapacity,secondDescription, "Barracks Capacity"); // BARRACKS CAPACITY
 
             string thirdDescription = "Training cost to arm a person.";
@@ -212,7 +227,7 @@ public class BuildingInformationPanel : MonoBehaviour
         if(cardIdx == 0) // Prepare Festival
         {
             currentPage.informationPanelList[0].SetSingleCounter(playerData.populationBurst, "Chance of Instant Population", "Population Burst");
-            currentPage.informationPanelList[1].SetSingleCounter(playerData.potentialRefugee, "New Refugee from the utlands", "Seeking Refuge");
+            currentPage.informationPanelList[1].SetSingleCounter(playerData.potentialRefugee, "New Refugee from the outlands", "Seeking Refuge");
             currentPage.informationPanelList[2].SetSingleCounter(playerData.potentialMerchantArrival, "Merchants arriving on Festival", "Merchant Arrival");
         }
         else if(cardIdx == 1) //Check Items Sold
@@ -279,7 +294,7 @@ public class BuildingInformationPanel : MonoBehaviour
         }
         else if(cardIdx == 2) // STORAGE KEEPER
         {
-            string firstDescription = "<color=green>+2</color> max safe food storage for every keeper.";
+            string firstDescription = "<color=green>+2</color> max safe food storage and an item for every keeper.";
             currentPage.informationPanelList[0].SetSingleCounter(playerData.storageKeeperCount, firstDescription, "Storage Keepers");
 
 

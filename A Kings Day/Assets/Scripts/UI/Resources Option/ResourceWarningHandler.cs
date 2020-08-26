@@ -25,7 +25,7 @@ public class ResourceWarningHandler : MonoBehaviour
             if(curSwitchCounter >= curMesgDuration)
             {
                 curSwitchCounter = 0;
-                if(warningIdx < shownWarningDatas.Count)
+                if(warningIdx < shownWarningDatas.Count-1)
                 {
                     warningIdx += 1;
                 }

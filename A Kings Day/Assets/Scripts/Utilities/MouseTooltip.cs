@@ -8,6 +8,7 @@ public class MouseTooltip : MonoBehaviour
 {
     public Canvas parentCanvas;
     public bool isShowing = false;
+    public bool allowShowing = true;
     public TextMeshProUGUI mesgText;
     public Image bg;
 
@@ -19,8 +20,30 @@ public class MouseTooltip : MonoBehaviour
         {
             EventBroadcaster.Instance.AddObserver(EventNames.SHOW_TOOLTIP_MESG, ShowToolTip);
             EventBroadcaster.Instance.AddObserver(EventNames.HIDE_TOOLTIP_MESG, HideToolTip);
+            EventBroadcaster.Instance.AddObserver(EventNames.ENABLE_TOOLTIP_MESG, EnableTooltip);
+            EventBroadcaster.Instance.AddObserver(EventNames.DISABLE_TOOLTIP_MESG, DisableTooltip);
         }
     }
+
+    public void OnDestroy()
+    {
+        EventBroadcaster.Instance.RemoveActionAtObserver(EventNames.SHOW_TOOLTIP_MESG, ShowToolTip);
+        EventBroadcaster.Instance.RemoveActionAtObserver(EventNames.HIDE_TOOLTIP_MESG, HideToolTip);
+        EventBroadcaster.Instance.RemoveActionAtObserver(EventNames.ENABLE_TOOLTIP_MESG, EnableTooltip);
+        EventBroadcaster.Instance.RemoveActionAtObserver(EventNames.DISABLE_TOOLTIP_MESG, DisableTooltip);
+    }
+
+    public void DisableTooltip(Parameters p = null)
+    {
+        allowShowing = false;
+        HideToolTip();
+    }
+
+    public void EnableTooltip(Parameters p = null)
+    {
+        allowShowing = true;
+    }
+
     public void Start()
     {
         Vector2 pos;
@@ -49,17 +72,21 @@ public class MouseTooltip : MonoBehaviour
         }
         transform.position = parentCanvas.transform.TransformPoint(movePos);
     }
-    public void ShowToolTip(Parameters param)
+    public void ShowToolTip(Parameters p = null)
     {
+        if(!allowShowing)
+        {
+            return;
+        }
         isShowing = true;
-        string mesg = param.GetWithKeyParameterValue("Mesg", "");
+        string mesg = p.GetWithKeyParameterValue("Mesg", "");
 
         mesgText.gameObject.SetActive(true);
         bg.gameObject.SetActive(true);
 
         mesgText.text = mesg;
     }
-    public void HideToolTip(Parameters param)
+    public void HideToolTip(Parameters p = null)
     {
         mesgText.gameObject.SetActive(false);
         bg.gameObject.SetActive(false);

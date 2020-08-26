@@ -409,12 +409,12 @@ public class BattlefieldSystemsManager : MonoBehaviour
             if(!playerWon)
             {
                 Debug.Log("[Map Point Still Has Troops Around: " + enemyUnits.CheckTotalTroopsCount() + "]");
-                TransitionManager.GetInstance.attackedPointInformationData.troopsCarried = new List<TroopsInformation>();
-                TransitionManager.GetInstance.attackedPointInformationData.troopsCarried.AddRange(enemyUnits.unitsCarried);
+                TransitionManager.GetInstance.attackedPointInformationData.troopsStationed = new List<TroopsInformation>();
+                TransitionManager.GetInstance.attackedPointInformationData.troopsStationed.AddRange(enemyUnits.unitsCarried);
             }
             else
             {
-                TransitionManager.GetInstance.attackedPointInformationData.troopsCarried = new List<TroopsInformation>();
+                TransitionManager.GetInstance.attackedPointInformationData.troopsStationed = new List<TroopsInformation>();
                 TransitionManager.GetInstance.attackedPointInformationData.ownedBy = Maps.TerritoryOwners.Player;
             }
         }
@@ -438,7 +438,8 @@ public class BattlefieldSystemsManager : MonoBehaviour
         for (int i = 0; i < playerUnits.unitsCarried.Count; i++)
         {
             TroopsInformation tmp = PlayerGameManager.GetInstance.playerData.troopsList.Find(x => x.unitInformation.unitName == playerUnits.unitsCarried[i].unitInformation.unitName);
-            tmp.totalUnitCount = playerUnits.CheckUnitCount(playerUnits.unitsCarried[i].unitInformation.unitName);
+            tmp.totalReturningUnitCount = playerUnits.CheckUnitCount(playerUnits.unitsCarried[i].unitInformation.unitName);
+            tmp.totalUnitCount -= (tmp.totalReturningUnitCount + playerUnits.CheckUnitDeathCount(playerUnits.unitsCarried[i].unitInformation.unitName));
         }
 
         SaveLoadManager.GetInstance.SaveCurrentData();
@@ -501,16 +502,21 @@ public class BattlefieldSystemsManager : MonoBehaviour
 
     public void ObtainTerritoryRewards()
     {
+        int taxMoney = TransitionManager.GetInstance.attackedPointInformationData.coinTax;
         // Tax Money
-        if(playerWon)
+        if (playerWon)
         {
-            int taxMoney = TransitionManager.GetInstance.attackedPointInformationData.coinTax;
 
             ResourceReward taxPrize = new ResourceReward();
             taxPrize.resourceTitle = "Tax Prize";
             taxPrize.resourceType = ResourceType.Coin;
             taxPrize.rewardAmount = taxMoney;
             coinRewards.Add(taxPrize);
+            PlayerGameManager.GetInstance.campaignData.totalWeeklyTax += taxMoney;
+        }
+        else
+        {
+            PlayerGameManager.GetInstance.campaignData.totalWeeklyTax -= taxMoney;
         }
 
 

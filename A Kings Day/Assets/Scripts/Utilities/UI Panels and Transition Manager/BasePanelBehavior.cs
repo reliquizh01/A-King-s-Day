@@ -87,17 +87,19 @@ public class BasePanelBehavior : MonoBehaviour
             yield return null;
         }
         yield return new WaitForSeconds(myAnim.GetClip(closeAnimationName).length);
+        CheckPanelWindow(closeAnimationName);
 
         isPlaying = false;
         if(closeOnExit)
         {
             this.gameObject.SetActive(false);
         }
+
     }
 
     public IEnumerator WaitAnimationForAction(string animName, Action callBack = null, bool enableSwitching = false)
     {
-        if(!this.gameObject.activeInHierarchy)
+        if(!this.gameObject.activeInHierarchy && animName != closeAnimationName)
         {
             this.gameObject.SetActive(true);
         }
@@ -119,9 +121,22 @@ public class BasePanelBehavior : MonoBehaviour
             callBack();
         }
 
-        if(closeOnExit && animName == closeAnimationName)
+        CheckPanelWindow(animName);
+    }
+
+    public void CheckPanelWindow(string animName)
+    {
+        BasePanelWindow window = gameObject.GetComponent<BasePanelWindow>();
+        if (window == null)
         {
-            this.gameObject.SetActive(false);
+            if (closeOnExit && animName == closeAnimationName)
+            {
+                this.gameObject.SetActive(false);
+            }
+        }
+        else if (closeOnExit && animName == closeAnimationName)
+        {
+            window.CloseWindow();
         }
     }
 }

@@ -130,9 +130,11 @@ public class ScenePointBehavior : BaseInteractableBehavior
             if(TransitionManager.GetInstance != null)
             {
                 EventBroadcaster.Instance.PostEvent(EventNames.HIDE_TOOLTIP_MESG);
-
                 if(sceneLoader)
                 {
+                    Debug.Log("Is SceneLoader!");
+                    EventBroadcaster.Instance.PostEvent(EventNames.HIDE_RESOURCES);
+                    EventBroadcaster.Instance.PostEvent(EventNames.DISABLE_IN_GAME_INTERACTION);
                     TransitionManager.GetInstance.currentSceneManager.player.OrderMovement(this, SceneLoader);
                 }
                 else
@@ -146,7 +148,6 @@ public class ScenePointBehavior : BaseInteractableBehavior
 
     public void SceneLoader()
     {
-        EventBroadcaster.Instance.PostEvent(EventNames.HIDE_RESOURCES);
         TransitionManager.GetInstance.LoadScene(SceneToLoad);
     }
     public void OnTriggerEnter2D(Collider2D collision)

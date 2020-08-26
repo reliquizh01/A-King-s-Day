@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using Kingdoms;
+using Managers;
 
 namespace Maps
 {
@@ -13,7 +14,9 @@ namespace Maps
         public bool isClicked;
         public BasePanelBehavior myAnim;
 
+
         [Header("Point Mechanics")]
+        public bool pointTowardsKingdom;
         public CurrentMapBehavior myController;
         public MapPointInformationData myPointInformation;
 
@@ -24,6 +27,10 @@ namespace Maps
         [Header("Path System")]
         public List<MapPointBehavior> neighborPoints;
 
+        public void Start()
+        {
+
+        }
         public void SetAsClicked()
         {
             if(myController.selectedMapPoint == this)
@@ -52,6 +59,56 @@ namespace Maps
             myPointInformation = mapPointInformationData;
             myPointInformation.mapType = myController.mapType;
             UpdateFlagCrest();
+
+            if(myPointInformation.travellersOnPoint != null && myPointInformation.travellersOnPoint.Count > 0 && !pointTowardsKingdom)
+            {
+                RandomizeTravellerMovement();
+            }
+            else if(pointTowardsKingdom && myPointInformation.travellersOnPoint != null && myPointInformation.travellersOnPoint.Count > 0)
+            {
+                if(myPointInformation.latestWeekUpdated != PlayerGameManager.GetInstance.playerData.weekCount)
+                {
+                    SpawnThisTravelerUnitToVisibleMap(myPointInformation.travellersOnPoint[0], myPointInformation.mapType);
+                    myPointInformation.travellersOnPoint.RemoveAt(0);
+                }
+            }
+
+            if(myPointInformation.travellersOnPoint.Find(x => x.numberOfMovesNextWeek > 0) != null)
+            {
+                StartCoroutine(DelayWeekTravel());
+            }
+
+            myPointInformation.latestWeekUpdated = PlayerGameManager.GetInstance.playerData.weekCount;
+        }
+        public void SpawnThisTravelerUnitToVisibleMap(BaseTravellerData thisTraveller, MapType startingLocation)
+        {
+            switch (startingLocation)
+            {
+                case MapType.ForestOfRetsnom:
+                    thisTraveller.currentScenePoint = BalconySceneManager.GetInstance.travelSystem.forestSpawn.gameObject.name;
+                    break;
+                case MapType.Gates:
+                    thisTraveller.currentScenePoint = BalconySceneManager.GetInstance.travelSystem.pilgrimSpawn.gameObject.name;
+                    break;
+                case MapType.MountAli:
+                    thisTraveller.currentScenePoint = BalconySceneManager.GetInstance.travelSystem.mountainSpawn.gameObject.name;
+                    break;
+                default:
+                    break;
+            }
+
+            BalconySceneManager.GetInstance.travelSystem.SummonSpecificTraveller(thisTraveller, true);
+        }
+        IEnumerator DelayWeekTravel()
+        {
+            yield return 0;
+
+            RandomizeTravellerMovement();
+
+            if (myPointInformation.travellersOnPoint.Find(x => x.numberOfMovesNextWeek > 0) != null)
+            {
+                StartCoroutine(DelayWeekTravel());
+            }
         }
         public void RandomizeTravellerMovement()
         {
@@ -60,23 +117,24 @@ namespace Maps
                 return;
             }
 
-            List<int> removedTravellers = new List<int>();
+            List<BaseTravellerData> removedTravellers = new List<BaseTravellerData>();
             for (int i = 0; i < myPointInformation.travellersOnPoint.Count; i++)
             {
-                int moveChance = UnityEngine.Random.Range(0, 100);
-                if (moveChance > 50)
+                if(myPointInformation.travellersOnPoint[i].isGoingToMoveNextWeek)
                 {
-                    MoveThisTravellerToNeighbor(myPointInformation.travellersOnPoint[i]);
-                    removedTravellers.Add(i);
+                    int moveChance = UnityEngine.Random.Range(0, 100);
+                    if (moveChance > 50)
+                    {
+                        myPointInformation.travellersOnPoint[i].numberOfMovesNextWeek -= 1;
+                        MoveThisTravellerToNeighbor(myPointInformation.travellersOnPoint[i]);
+                        removedTravellers.Add(myPointInformation.travellersOnPoint[i]);
+                    }
                 }
             }
 
-            if (removedTravellers.Count > 0)
+            if (myPointInformation.travellersOnPoint != null && removedTravellers.Count > 0)
             {
-                for (int i = 0; i < removedTravellers.Count; i++)
-                {
-                    myPointInformation.travellersOnPoint.RemoveAt(removedTravellers[i]);
-                }
+                 myPointInformation.travellersOnPoint.RemoveAll(x => removedTravellers.Contains(x));
             }
         }
 

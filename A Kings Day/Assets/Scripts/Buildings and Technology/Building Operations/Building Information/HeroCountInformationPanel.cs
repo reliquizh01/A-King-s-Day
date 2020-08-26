@@ -4,7 +4,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Characters;
+using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(EventTrigger))]
 public class HeroCountInformationPanel : InformationPanel
 {
     public Image firstSkill, secondSkill;

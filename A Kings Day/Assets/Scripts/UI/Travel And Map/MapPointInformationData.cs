@@ -20,26 +20,61 @@ namespace Maps
     public class MapPointInformationData
     {
         public string pointName;
+        public int latestWeekUpdated;
+        [Header("Map Information")]
+        public List<MapPointInformationData> mapNeighborsList;
         public int population;
         public int coinTax;
         public TerritoryOwners ownedBy;
-        public ChooseUnitMindset aiMindset;
         public MapType mapType;
-        public BaseHeroInformationData leaderUnit;
         public bool visibleToPlayer;
+        public bool isBeingAttacked;
+
+        [Header("Travellers Temporarily In the Place")]
         public List<BaseTravellerData> travellersOnPoint;
-        public List<TroopsInformation> troopsCarried;
+
+        [Header("Troops Staying In Base")]
+        public ChooseUnitMindset aiMindset;
+        public BaseHeroInformationData leaderUnit;
+        public List<TroopsInformation> troopsStationed;
         public List<TravellerType> spawnableTravellers;
         public int latestWeekUpdate;
 
+
+        public void ReceiveReinforcementUnits(List<TroopsInformation> reinforcements)
+        {
+            if(troopsStationed != null && troopsStationed.Count > 0)
+            {
+                for (int i = 0; i < reinforcements.Count; i++)
+                {
+                    TroopsInformation tmp = null;
+                    tmp = troopsStationed.Find(x => x.unitInformation.unitName == reinforcements[i].unitInformation.unitName);
+                    if (tmp != null)
+                    {
+                        tmp.totalUnitCount += reinforcements[i].totalUnitCount;
+                    }
+                    else
+                    {
+                        tmp = new TroopsInformation();
+                        tmp = reinforcements[i];
+                        troopsStationed.Add(tmp);
+                    }
+                }
+            }
+            else
+            {
+                troopsStationed = new List<TroopsInformation>();
+                troopsStationed.AddRange(reinforcements);
+            }
+        }
         public int ObtainTotalUnitCount()
         {
             int total = 0;
-            if (troopsCarried != null && troopsCarried.Count > 0)
+            if (troopsStationed != null && troopsStationed.Count > 0)
             {
-                for (int i = 0; i < troopsCarried.Count; i++)
+                for (int i = 0; i < troopsStationed.Count; i++)
                 {
-                    total += troopsCarried[i].totalUnitCount;
+                    total += troopsStationed[i].totalUnitCount;
                 }
             }
             return total;

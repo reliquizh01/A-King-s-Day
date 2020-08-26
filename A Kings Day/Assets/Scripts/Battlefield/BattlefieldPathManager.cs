@@ -25,7 +25,76 @@ namespace Battlefield
 
 
         public List<BattlefieldPathHandler> fieldPaths;
+        public List<ScenePointBehavior> pathsWithAttacker;
+        public List<ScenePointBehavior> pathsWithDefender;
 
+        public void AddPathWithAttacker(ScenePointBehavior thisPoint)
+        {
+            if(pathsWithAttacker == null)
+            {
+                pathsWithAttacker = new List<ScenePointBehavior>();
+            }
+            if (pathsWithAttacker.Find(x => x == thisPoint) != null)
+            {
+                return;
+            }
+            pathsWithAttacker.Add(thisPoint);
+        }
+        public void RemovePathWithAttacker(ScenePointBehavior thisPoint)
+        {
+            if(pathsWithAttacker == null)
+            {
+                pathsWithAttacker = new List<ScenePointBehavior>();
+                return;
+            }
+
+            if (pathsWithAttacker.Count <= 0)
+            {
+                return;
+            }
+            int idx = -1;
+                idx = pathsWithAttacker.FindIndex(x => x.gameObject.name == thisPoint.gameObject.name);
+            if(idx != -1)
+            {
+                pathsWithAttacker.RemoveAt(idx);
+            }
+        }
+
+
+        public void AddPathWithDefender(ScenePointBehavior thisPoint)
+        {
+            if (pathsWithDefender == null)
+            {
+                pathsWithDefender = new List<ScenePointBehavior>();
+            }
+
+            if (pathsWithDefender.Find(x => x == thisPoint) != null)
+            {
+                return;
+            }
+
+            pathsWithDefender.Add(thisPoint);
+        }
+        public void RemovePathWithDefender(ScenePointBehavior thisPoint)
+        {
+            if (pathsWithDefender == null)
+            {
+                pathsWithDefender = new List<ScenePointBehavior>();
+                return;
+            }
+
+            if(pathsWithDefender.Count <= 0)
+            {
+                return;
+            }
+
+            int idx = -1;
+                idx = pathsWithDefender.FindIndex(x => x.gameObject.name == thisPoint.gameObject.name);
+            if(idx != -1)
+            {
+                pathsWithDefender.RemoveAt(idx);
+            }
+        }
 
         public int ObtainPathCount()
         {
@@ -42,6 +111,112 @@ namespace Battlefield
             return fieldPaths[column].scenePoints[row];
         }
 
+        public List<ScenePointBehavior> ObtainWholeRowPath(int column)
+        {
+            return fieldPaths[column].scenePoints;
+        }
+
+        public List<ScenePointBehavior> ObtainWholeColumnPath(int row)
+        {
+            List<ScenePointBehavior> allInOneColumn = new List<ScenePointBehavior>();
+
+            for (int i = 0; i < fieldPaths.Count; i++)
+            {
+                allInOneColumn.Add(fieldPaths[i].scenePoints[row]);
+            }
+
+            return allInOneColumn;
+        }
+
+        public List<ScenePointBehavior> ObtainTilesWithThisUnits(int tileCount, TeamType thisTeam)
+        {
+            List<ScenePointBehavior> thisPoints = new List<ScenePointBehavior>();
+            switch (thisTeam)
+            {
+                case TeamType.Defender:
+                    if (pathsWithDefender == null && pathsWithDefender.Count <= 0)
+                    {
+                        thisPoints.AddRange(ObtainWholeColumnPath(1));
+                    }
+                    else
+                    {
+                        for (int i = 0; i < tileCount; i++)
+                        {
+                            if(i < (pathsWithDefender.Count-1) && thisPoints.Count < tileCount)
+                            {
+                                thisPoints.Add(pathsWithDefender[i]);
+                            }
+                        }
+                    }
+                    break;
+                case TeamType.Attacker:
+                    if(pathsWithAttacker == null && pathsWithAttacker.Count < 0)
+                    {
+                        thisPoints.AddRange(ObtainWholeColumnPath((fieldPaths[0].scenePoints.Count - 1)));
+                    }
+                    else
+                    {
+                        for (int i = 0; i < tileCount; i++)
+                        {
+                            if (i < (pathsWithAttacker.Count - 1) && thisPoints.Count < tileCount)
+                            {
+                                thisPoints.Add(pathsWithAttacker[i]);
+                            }
+                        }
+                    }
+                    break;
+                case TeamType.Neutral:
+                default:
+                    break;
+            }
+
+            return thisPoints;
+        }
+        public List<ScenePointBehavior> ObtainNearbyTiles(int column, int row, int range)
+        {
+            List<ScenePointBehavior> allNearbyTiles = new List<ScenePointBehavior>();
+
+            int startingHeight = column - range;
+            int lowestHeight = column + range;
+            if(startingHeight < 0)
+            {
+                startingHeight = 0;
+            }
+
+            if (lowestHeight > (fieldPaths.Count-1))
+            {
+                lowestHeight = fieldPaths.Count - 1;
+            }
+
+            int startingLeft = row - range;
+            int lowestRight = row + range;
+            if (row < 0)
+            {
+                row = 0;
+            }
+
+            for (int i = 0; i < fieldPaths.Count; i++)
+            {
+                if(i >= startingHeight && i <= lowestHeight)
+                {
+                    for (int x = 0; x < fieldPaths[i].scenePoints.Count; x++)
+                    {
+                        int trueLowestRight = lowestRight;
+                        if (lowestRight > (fieldPaths[i].scenePoints.Count - 1))
+                        {
+                            trueLowestRight = fieldPaths[i].scenePoints.Count - 1;
+                        }
+
+                        if(x >= startingLeft && x <= trueLowestRight)
+                        {
+                            allNearbyTiles.Add(fieldPaths[i].scenePoints[x]);
+                        }
+                    }
+                }
+            }
+            
+            return allNearbyTiles;
+        }
         public ScenePointBehavior ObtainSpawnPoint(int column, bool isAttacker)
         {
             if(isAttacker)

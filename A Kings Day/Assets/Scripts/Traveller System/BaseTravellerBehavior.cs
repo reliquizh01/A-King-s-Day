@@ -19,7 +19,7 @@ public class BaseTravellerBehavior : MonoBehaviour
     public ScenePointBehavior spawnPoint;
     public ScenePointBehavior targetPoint;
     [Header("Army Mechanics")]
-    public BaseHeroInformationData leaderUnit;
+    public List<BaseHeroInformationData> leaderUnit;
     [Header("Army Information")]
     public float armySpeed;
 

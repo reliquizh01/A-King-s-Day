@@ -26,6 +26,11 @@ public class BasePanelWindow : MonoBehaviour
             OpenWindow();
         }
     }
+
+    public void OnDisable()
+    {
+        CloseWindow();
+    }
     public virtual void OpenWindow()
     {
         if(PanelWindowManager.GetInstance != null)

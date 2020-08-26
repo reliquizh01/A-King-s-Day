@@ -55,7 +55,7 @@ namespace Buildings
             }
             else
             {
-                myController.ShowAddedInformation(actionIdx);
+                myController.ShowActionAddedInformation(actionIdx);
             }
         }
 

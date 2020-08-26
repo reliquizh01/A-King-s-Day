@@ -25,18 +25,31 @@ namespace Kingdoms
     public class BaseTravellerData
     {
         public string travellersName;
+        [Header("Basic Traveller Information")]
         public TravellerType travellerType;
+        public bool playerSentTraveller;
+        public string targetDestinationMapPoint;
+
+        [Header("Automated Map Movement Mechanics")]
+        public bool isGoingToMoveNextWeek;
+        public int numberOfMovesNextWeek;
+
+        [Header("Duration Travelled Mechanics")]
         public int weekSpawned;
         public int lastWeekTravelled;
+
+        [Header("Near Kingdom Travel Mechanics")]
         public string originalSpawnPoint;
         public string currentScenePoint;
         public string currentSceneTargetPoint;
 
+        [Header("Units Travelling Mechanics")]
         public List<TroopsInformation> troopsCarried;
         public float travellerSpeed;
-        public BaseHeroInformationData leaderUnit;
+        public List<BaseHeroInformationData> leaderUnit;
         public ChooseUnitMindset leaderMindset;
 
+        [Header("Player Reaction and Relation Mechanics")]
         public float relationship = 0;
         public List<string> actionsDealt;
         public bool scoutSentSuccessfully;
@@ -156,5 +169,6 @@ namespace Kingdoms
 
         public List<BaseTravellerData> travellerList; // Travellers Visible from the kingdom
         public List<MapPointInformationData> mapPointList; // points seen in the map
+        public int totalWeeklyTax;
     }
 }

@@ -9,7 +9,7 @@ namespace Kingdoms
 {
     public class TravellerGenerator : MonoBehaviour
     {
-        public TravellingSystem myParent;
+        public KingdomUnitStorage unitStorage;
 
         public BaseTravellerData GenerateRandomMerchantTraveller(int unitCount, float newRelationship)
         {
@@ -20,17 +20,21 @@ namespace Kingdoms
             tmp.troopsCarried = new List<TroopsInformation>();
 
             // LEADER INFORMATION
-            int randLdrIdx = UnityEngine.Random.Range(0, myParent.unitStorage.merchantStorage.Count);
-            tmp.leaderUnit = new BaseHeroInformationData();
-            tmp.leaderUnit.unitInformation = new UnitInformationData();
-            tmp.leaderUnit.unitInformation = myParent.unitStorage.merchantStorage[randLdrIdx].unitInformation;
+            int randLdrIdx = UnityEngine.Random.Range(0, unitStorage.merchantStorage.Count);
+            tmp.leaderUnit = new List<BaseHeroInformationData>();
+
+            BaseHeroInformationData newLeader = new BaseHeroInformationData();
+            newLeader.unitInformation = new UnitInformationData();
+            newLeader.unitInformation = unitStorage.merchantStorage[randLdrIdx].unitInformation;
+            tmp.leaderUnit.Add(newLeader);
+
             tmp.UpdateRelationship(newRelationship);
             // TRAVELLER SPEED
             tmp.travellerSpeed = 0.025f;
 
 
             // TROOPS CARRIED
-            tmp.troopsCarried.AddRange(myParent.unitStorage.GenerateBasicWarband(unitCount));
+            tmp.troopsCarried.AddRange(unitStorage.GenerateBasicWarband(unitCount));
 
             TravellerFlavourPhrase flavourTmp = new TravellerFlavourPhrase();
             flavourTmp.relationshipGauge = 0;
@@ -50,10 +54,12 @@ namespace Kingdoms
             tmp.weekSpawned = ObtainPlayerWeeklyCount();
             tmp.troopsCarried = new List<TroopsInformation>();
 
-            int randLdrIdx = UnityEngine.Random.Range(0, myParent.unitStorage.heroStorage.Count);
-            tmp.leaderUnit = new BaseHeroInformationData();
-            tmp.leaderUnit.unitInformation = new UnitInformationData();
-            tmp.leaderUnit.unitInformation = myParent.unitStorage.heroStorage[randLdrIdx].unitInformation;
+            int randLdrIdx = UnityEngine.Random.Range(0, unitStorage.heroStorage.Count);
+            tmp.leaderUnit = new List<BaseHeroInformationData>();
+            BaseHeroInformationData newLeader = new BaseHeroInformationData();
+            newLeader.unitInformation = new UnitInformationData();
+            newLeader.unitInformation = unitStorage.heroStorage[randLdrIdx].unitInformation;
+            tmp.leaderUnit.Add(newLeader);
             tmp.UpdateRelationship(newRelationship);
 
             // TroopTypes
@@ -70,18 +76,10 @@ namespace Kingdoms
             }
 
 
-            TroopsInformation recruit = TroopsInformation.ConvertToTroopsInformation(myParent.unitStorage.GetUnitInformation("Recruit"), troopTypes[0]);
-            if (myParent.unitStorage.GetUnitInformation("Recruit") == null)
-            {
-                Debug.Log("It's Empty");
-            }
-            else
-            {
-                Debug.Log("Max Health: " + recruit.unitInformation.maxHealth + " Unit Name: " + recruit.unitInformation.unitGenericName);
-            }
-            TroopsInformation swordsman = TroopsInformation.ConvertToTroopsInformation(myParent.unitStorage.GetUnitInformation("Swordsman"), troopTypes[1]);
-            TroopsInformation spearman = TroopsInformation.ConvertToTroopsInformation(myParent.unitStorage.GetUnitInformation("Spearman"), troopTypes[2]);
-            TroopsInformation archer = TroopsInformation.ConvertToTroopsInformation(myParent.unitStorage.GetUnitInformation("Archer"), troopTypes[3]);
+            TroopsInformation recruit = TroopsInformation.ConvertToTroopsInformation(unitStorage.GetUnitInformation("Recruit"), troopTypes[0]);
+            TroopsInformation swordsman = TroopsInformation.ConvertToTroopsInformation(unitStorage.GetUnitInformation("Swordsman"), troopTypes[1]);
+            TroopsInformation spearman = TroopsInformation.ConvertToTroopsInformation(unitStorage.GetUnitInformation("Spearman"), troopTypes[2]);
+            TroopsInformation archer = TroopsInformation.ConvertToTroopsInformation(unitStorage.GetUnitInformation("Archer"), troopTypes[3]);
 
             tmp.troopsCarried.Add(recruit);
             tmp.troopsCarried.Add(swordsman);

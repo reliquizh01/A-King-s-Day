@@ -51,6 +51,7 @@ public class KingdomUnitStorageEditor : EditorWindow
     public BaseSkillInformationData currentSkillData;
     public int selectedSkillIdx;
     Vector2 skillListScrollPos = Vector2.zero;
+    public Object currentSkillPrefab;
 
     // BUFF
     public BaseBuffInformationData selectedBuffData;
@@ -90,6 +91,20 @@ public class KingdomUnitStorageEditor : EditorWindow
         DestroyImmediate(curUnitStorage);
     }
 
+    public void UpdateUnitsWithSkill(BaseSkillInformationData thisSkill)
+    {
+        for (int i = 0; i < curUnitStorageData.heroStorage.Count; i++)
+        {
+            if(curUnitStorageData.heroStorage[i].skillsList != null && curUnitStorageData.heroStorage[i].skillsList.Count > 0)
+            {
+                if(curUnitStorageData.heroStorage[i].skillsList.Find(x => x.skillName == thisSkill.skillName) != null)
+                {
+                    int idx = curUnitStorageData.heroStorage[i].skillsList.FindIndex(x => x.skillName == thisSkill.skillName);
+                    curUnitStorageData.heroStorage[i].skillsList[idx] = thisSkill;
+                }
+            }
+        }
+    }
     public void Save()
     {
         PrefabUtility.SaveAsPrefabAsset(curUnitStorage, "Assets/Resources/Prefabs/Unit and Items/Kingdom Unit Storage.prefab");
@@ -259,10 +274,13 @@ public class KingdomUnitStorageEditor : EditorWindow
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
-        GUILayout.Label("Cooldown:", EditorStyles.boldLabel, GUILayout.Width(65));
-        currentUnitData.unitCooldown = EditorGUILayout.IntField(currentUnitData.unitCooldown, GUILayout.MaxWidth(45));
-        GUILayout.Label("Heal Cost:", EditorStyles.boldLabel, GUILayout.Width(65));
-        currentUnitData.healcost = EditorGUILayout.IntField(currentUnitData.healcost, GUILayout.MaxWidth(45));
+        GUILayout.Label("CD:", EditorStyles.boldLabel, GUILayout.Width(25));
+        currentUnitData.unitCooldown = EditorGUILayout.IntField(currentUnitData.unitCooldown, GUILayout.MaxWidth(35));
+        GUILayout.Label("Cost:", EditorStyles.boldLabel, GUILayout.Width(35));
+        currentUnitData.healcost = EditorGUILayout.IntField(currentUnitData.healcost, GUILayout.MaxWidth(35));
+        GUILayout.Label("Weapon:", EditorStyles.boldLabel, GUILayout.Width(50));
+        currentUnitData.wieldedWeapon = (WieldedWeapon)EditorGUILayout.EnumPopup(currentUnitData.wieldedWeapon, GUILayout.MaxWidth(85));
+
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
@@ -275,7 +293,7 @@ public class KingdomUnitStorageEditor : EditorWindow
         GUILayout.Label("[MAX]", EditorStyles.boldLabel, GUILayout.Width(40));
         currentUnitData.maxDamage = EditorGUILayout.IntField((int)currentUnitData.maxDamage, GUILayout.MaxWidth(50));
         GUILayout.Label("RANGE:", EditorStyles.boldLabel, GUILayout.Width(50));
-        currentUnitData.range = EditorGUILayout.IntField(currentUnitData.range, GUILayout.MaxWidth(35));
+        currentUnitData.range = EditorGUILayout.FloatField(currentUnitData.range, GUILayout.MaxWidth(35));
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
@@ -481,41 +499,48 @@ public class KingdomUnitStorageEditor : EditorWindow
         GUILayout.BeginArea(new Rect(460, 12, leftPanelWidth, 300));
 
         GUILayout.BeginHorizontal();
-        GUILayout.Label("Hero Name:", EditorStyles.boldLabel, GUILayout.Width(70));
-        currentHeroData.unitInformation.unitName = EditorGUILayout.TextField(currentHeroData.unitInformation.unitName, GUILayout.MaxWidth(100));
-        GUILayout.Label("Price:", EditorStyles.boldLabel, GUILayout.Width(40));
-        currentHeroData.baseHeroCoinPrice = EditorGUILayout.IntField(currentHeroData.baseHeroCoinPrice, GUILayout.MaxWidth(55));
+        GUILayout.Label("Base(?)", EditorStyles.boldLabel, GUILayout.Width(47));
+        currentHeroData.isHeroBaseState = EditorGUILayout.Toggle(currentHeroData.isHeroBaseState, GUILayout.MaxWidth(20));
+        GUILayout.Label("Name:", EditorStyles.boldLabel, GUILayout.Width(40));
+        currentHeroData.unitInformation.unitName = EditorGUILayout.TextField(currentHeroData.unitInformation.unitName, GUILayout.MaxWidth(150));
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
         GUILayout.Label("Atk Type:", EditorStyles.boldLabel, GUILayout.Width(60));
-        currentHeroData.unitInformation.attackType = (UnitAttackType)EditorGUILayout.EnumPopup(currentHeroData.unitInformation.attackType, GUILayout.MaxWidth(80));
+        currentHeroData.unitInformation.attackType = (UnitAttackType)EditorGUILayout.EnumPopup(currentHeroData.unitInformation.attackType, GUILayout.MaxWidth(70));
+        GUILayout.Label("Weapon:", EditorStyles.boldLabel, GUILayout.Width(50));
+        currentHeroData.unitInformation.wieldedWeapon = (WieldedWeapon)EditorGUILayout.EnumPopup(currentHeroData.unitInformation.wieldedWeapon, GUILayout.MaxWidth(80));
+        GUILayout.EndHorizontal();
+
+        GUILayout.BeginHorizontal();
         GUILayout.Label("Rarity:", EditorStyles.boldLabel, GUILayout.Width(45));
         currentHeroData.heroRarity = (HeroRarity)EditorGUILayout.EnumPopup(currentHeroData.heroRarity, GUILayout.MaxWidth(80));
+        GUILayout.Label("Random Stats:", EditorStyles.boldLabel, GUILayout.Width(90));
+        currentHeroData.isRandomGenerated = EditorGUILayout.Toggle(currentHeroData.isRandomGenerated, GUILayout.MaxWidth(20));
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();    
         GUILayout.Label("[HP]", EditorStyles.boldLabel, GUILayout.Width(40));
         GUILayout.Label("HP:", EditorStyles.boldLabel, GUILayout.Width(40));
         currentHeroData.unitInformation.maxHealth= EditorGUILayout.IntField((int)currentHeroData.unitInformation.maxHealth, GUILayout.MaxWidth(75));
-        GUILayout.Label("Random Stats:", EditorStyles.boldLabel, GUILayout.Width(90));
-        currentHeroData.isRandomGenerated = EditorGUILayout.Toggle(currentHeroData.isRandomGenerated, GUILayout.MaxWidth(20));
+        GUILayout.Label("Price:", EditorStyles.boldLabel, GUILayout.Width(40));
+        currentHeroData.baseHeroCoinPrice = EditorGUILayout.IntField(currentHeroData.baseHeroCoinPrice, GUILayout.MaxWidth(66));
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
         GUILayout.Label("[DMG]", EditorStyles.boldLabel, GUILayout.Width(40));
         GUILayout.Label("Min:", EditorStyles.boldLabel, GUILayout.Width(40));
         currentHeroData.unitInformation.minDamage = EditorGUILayout.IntField((int)currentHeroData.unitInformation.minDamage, GUILayout.MaxWidth(75));
-        GUILayout.Label("Max:", EditorStyles.boldLabel, GUILayout.Width(32));
-        currentHeroData.unitInformation.maxDamage = EditorGUILayout.IntField((int)currentHeroData.unitInformation.maxDamage, GUILayout.MaxWidth(75));
+        GUILayout.Label("Max:", EditorStyles.boldLabel, GUILayout.Width(40));
+        currentHeroData.unitInformation.maxDamage = EditorGUILayout.IntField((int)currentHeroData.unitInformation.maxDamage, GUILayout.MaxWidth(65));
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
-        GUILayout.Label("[SPD]", EditorStyles.boldLabel, GUILayout.Width(40));
-        GUILayout.Label("Speed:", EditorStyles.boldLabel, GUILayout.Width(40));
-        currentHeroData.unitInformation.origSpeed = EditorGUILayout.IntField((int)currentHeroData.unitInformation.origSpeed, GUILayout.MaxWidth(75));
+        GUILayout.Label("[SPD]", EditorStyles.boldLabel, GUILayout.Width(35));
+        GUILayout.Label("Speed:", EditorStyles.boldLabel, GUILayout.Width(45));
+        currentHeroData.unitInformation.origSpeed = EditorGUILayout.FloatField(currentHeroData.unitInformation.origSpeed, GUILayout.MaxWidth(75));
         GUILayout.Label("Range:", EditorStyles.boldLabel, GUILayout.Width(42));
-        currentHeroData.unitInformation.range = EditorGUILayout.IntField((int)currentHeroData.unitInformation.range, GUILayout.MaxWidth(65));
+        currentHeroData.unitInformation.range = EditorGUILayout.IntField((int)currentHeroData.unitInformation.range, GUILayout.MaxWidth(63));
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
@@ -868,6 +893,7 @@ public class KingdomUnitStorageEditor : EditorWindow
             }
             else
             {
+                UpdateUnitsWithSkill(currentSkillData);
                 // Modify Current event
                 if (selectedSkillData != null && currentSkillData == selectedSkillData)
                 {
@@ -928,6 +954,46 @@ public class KingdomUnitStorageEditor : EditorWindow
         currentSkillData.affectedArea = (AreaAffected)EditorGUILayout.EnumPopup(currentSkillData.affectedArea, GUILayout.MaxWidth(85));
         GUILayout.Label("Range:", EditorStyles.boldLabel, GUILayout.Width(45));
         currentSkillData.maxRange = EditorGUILayout.IntField(currentSkillData.maxRange, GUILayout.MaxWidth(65));
+        GUILayout.EndHorizontal();
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("Cooldown:", EditorStyles.boldLabel, GUILayout.Width(50));
+        currentSkillData.cooldown = EditorGUILayout.IntField((int)currentSkillData.cooldown, GUILayout.MaxWidth(65));
+        GUILayout.Label("Level Growth:", EditorStyles.boldLabel, GUILayout.Width(90));
+        currentSkillData.effectgrowth = EditorGUILayout.FloatField(currentSkillData.effectgrowth, GUILayout.MaxWidth(60));
+        GUILayout.EndHorizontal();
+
+
+        GUILayout.BeginHorizontal();
+        if (currentSkillData.skillType != SkillType.DefensiveBuff && currentSkillData.skillType != SkillType.OffensiveBuff)
+        {
+            if (!string.IsNullOrEmpty(currentSkillData.prefabStringPath))
+            {
+                currentSkillPrefab = (Object)AssetDatabase.LoadAssetAtPath(currentSkillData.prefabStringPath, typeof(Object));
+            }
+            else
+            {
+                currentSkillPrefab = null;
+            }
+
+            GUILayout.Label("Prefab:", EditorStyles.boldLabel, GUILayout.Width(50));
+            EditorGUI.BeginChangeCheck();
+            currentSkillPrefab = (Object)EditorGUILayout.ObjectField(currentSkillPrefab, typeof(Object), true, GUILayout.MaxWidth(225));
+            if (EditorGUI.EndChangeCheck())
+            {
+                if (currentSkillPrefab != null)
+                {
+                    currentSkillData.prefabStringPath = AssetDatabase.GetAssetPath(currentSkillPrefab);
+                    currentSkillData.spawnPrefab = true;
+                    Debug.Log("Changes has been made : " + currentUnitData.prefabDataPath);
+                }
+                else
+                {
+                    currentSkillData.prefabStringPath = "";
+                    currentSkillData.spawnPrefab = false;
+                }
+            }
+        }
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();

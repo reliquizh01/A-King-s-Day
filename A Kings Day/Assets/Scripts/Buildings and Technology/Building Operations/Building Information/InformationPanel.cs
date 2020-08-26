@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine.UI;
 using GameItems;
 using Characters;
+using UnityEngine.EventSystems;
 
 public enum PanelType
 {
@@ -15,12 +16,23 @@ public enum PanelType
     FlexibleCounter,
     HeroCounter,
 }
-public class InformationPanel : MonoBehaviour
+[RequireComponent(typeof(EventTrigger))]
+public class InformationPanel : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    public InformationActionHandler myController;
+    public int localIdx;
+    [Header("Additonal Information Mechanics")]
+    public EventTrigger eventTrigger;
+    public string addedInfoMessage;
+    [Header("Panel Information")]
     public PanelType panelType;
     public CountType countType;
     public Image panelIcon;
 
+    public void Awake()
+    {
+        eventTrigger = GetComponent<EventTrigger>();
+    }
     public virtual void SetPanelIcon(Sprite newSprite)
     {
         panelIcon.sprite = newSprite;
@@ -67,6 +79,10 @@ public class InformationPanel : MonoBehaviour
 
     }
 
+    public virtual void SetupEventTriggerCallbacks()
+    {
+
+    }
     public virtual string ObtainCountText(int amount)
     {
         string tmp = amount.ToString();
@@ -99,6 +115,15 @@ public class InformationPanel : MonoBehaviour
         return tmp;
     }
 
+    public virtual void OnPointerEnter(PointerEventData eventData)
+    {
+        myController.ShowPanelAddedInformation(localIdx, addedInfoMessage);
+    }
+
+    public virtual void OnPointerExit(PointerEventData eventData)
+    {
+        myController.HideAddedInformation();
+    }
     public virtual void ResetCounter()
     {
 

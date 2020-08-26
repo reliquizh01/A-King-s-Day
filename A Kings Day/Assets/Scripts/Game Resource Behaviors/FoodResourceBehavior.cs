@@ -80,7 +80,6 @@ namespace GameResource
 
             curPlayer = PlayerGameManager.GetInstance.playerData;
 
-            Debug.Log("Food On Cur Player: " + curPlayer.foods);
             CheckGrainCounter();
 
             CheckCowCounter();

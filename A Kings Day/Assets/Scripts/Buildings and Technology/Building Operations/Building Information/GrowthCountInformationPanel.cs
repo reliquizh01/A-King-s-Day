@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.EventSystems;
 
 public enum CountType
 {
     Number,
     Percentage,
 }
+[RequireComponent(typeof(EventTrigger))]
 public class GrowthCountInformationPanel : InformationPanel
 {
     public TextMeshProUGUI titleText;

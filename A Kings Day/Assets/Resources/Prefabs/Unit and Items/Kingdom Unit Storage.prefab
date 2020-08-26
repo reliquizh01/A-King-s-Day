@@ -56,142 +56,36 @@ MonoBehaviour:
   - unitName: Archer
     unitSprite: {fileID: -3589207286553114380, guid: 882e759f8ab033e4fa88bcd4f51d2fb3,
       type: 3}
+  - unitName: Player
+    unitSprite: {fileID: 4666018043052453735, guid: 0149bbc7bc9cbd34d98f124de47bfce3,
+      type: 3}
+  skillIconList:
+  - skillName: Archer Barrage
+    skillSprite: {fileID: 493196322569752812, guid: 592c18cfaabad6c468db0b3e1269d659,
+      type: 3}
+  - skillName: March Forward
+    skillSprite: {fileID: -2236705860152388731, guid: 592c18cfaabad6c468db0b3e1269d659,
+      type: 3}
   heroStorage:
-  - heroRarity: 2
-    isRandomGenerated: 0
-    heroLevel: 0
-    unitInformation:
-      unitName: Merlin
-      unitGenericName: 
-      attackType: 2
-      curhealth: 0
-      maxHealth: 15
-      curSpeed: 0
-      origSpeed: 2
-      minDamage: 3
-      maxDamage: 5
-      range: 10
-      unitCooldown: 5
-      healcost: 5
-      blockProjectile: 0
-      blockMelee: 0
-      prefabDataPath: 
-      currentState: 0
-      deathThreshold: 0
-      morale: 0
-      buffList: []
-    healthGrowthRate: 2
-    speedGrowthRate: 3
-    damageGrowthRate: 5
-    baseHeroCoinPrice: 0
-    skillsList:
-    - skillName: Holy Heal
-      skillType: 2
-      targetType: 0
-      skillLevel: 1
-      statenhanced: 0
-      affectedArea: 0
-      maxRange: 0
-      targetStats: 0
-      targetInflictedCount: 5
-      buffList: []
-    equipments: []
-  - heroRarity: 2
-    isRandomGenerated: 0
-    heroLevel: 0
-    unitInformation:
-      unitName: Alexander
-      unitGenericName: 
-      attackType: 0
-      curhealth: 0
-      maxHealth: 15
-      curSpeed: 0
-      origSpeed: 3
-      minDamage: 4
-      maxDamage: 5
-      range: 1
-      unitCooldown: 5
-      healcost: 5
-      blockProjectile: 0
-      blockMelee: 0
-      prefabDataPath: 
-      currentState: 0
-      deathThreshold: 0
-      morale: 0
-      buffList: []
-    healthGrowthRate: 5
-    speedGrowthRate: 2
-    damageGrowthRate: 3
-    baseHeroCoinPrice: 0
-    skillsList:
-    - skillName: March Forward
-      skillType: 3
-      targetType: 0
-      skillLevel: 1
-      statenhanced: 0
-      affectedArea: 1
-      maxRange: 5
-      targetStats: 2
-      targetInflictedCount: 0
-      buffList:
-      - buffName: Weak SPD Boost
-        duration: 30
-        targetStats: 2
-        effectAmount: 3
-        permanentBuff: 0
-        buffTrigger: 0
-      - buffName: Weak HP Boost
-        duration: 30
-        targetStats: 0
-        effectAmount: 3
-        permanentBuff: 0
-        buffTrigger: 0
-    equipments: []
-  - heroRarity: 2
-    isRandomGenerated: 0
-    heroLevel: 0
-    unitInformation:
-      unitName: Archie
-      unitGenericName: 
-      attackType: 1
-      curhealth: 0
-      maxHealth: 10
-      curSpeed: 0
-      origSpeed: 2
-      minDamage: 2
-      maxDamage: 3
-      range: 6
-      unitCooldown: 5
-      healcost: 5
-      blockProjectile: 0
-      blockMelee: 0
-      prefabDataPath: 
-      currentState: 0
-      deathThreshold: 0
-      morale: 0
-      buffList: []
-    healthGrowthRate: 3
-    speedGrowthRate: 3
-    damageGrowthRate: 4
-    baseHeroCoinPrice: 0
-    skillsList: []
-    equipments: []
-  - heroRarity: 1
+  - heroRarity: 0
+    isHeroBaseState: 1
     isRandomGenerated: 0
     heroLevel: 1
     unitInformation:
-      unitName: Knight
+      unitName: Common Spear Hero
       unitGenericName: 
       attackType: 0
+      wieldedWeapon: 1
       curhealth: 0
-      maxHealth: 15
+      maxHealth: 10
       curSpeed: 0
-      origSpeed: 2
-      minDamage: 3
-      maxDamage: 4
-      range: 1
-      unitCooldown: 5
+      origSpeed: 0.4
+      minDamage: 2
+      maxDamage: 3
+      range: 2
+      unitCooldown: 1
       healcost: 5
+      unitPrice: 5
       blockProjectile: 0
       blockMelee: 0
       prefabDataPath: 
@@ -199,9 +93,161 @@ MonoBehaviour:
       deathThreshold: -5
       morale: 0
       buffList: []
-    healthGrowthRate: 2
-    speedGrowthRate: 1
+    healthGrowthRate: 3
+    speedGrowthRate: 2
+    damageGrowthRate: 3
+    upgradesAdded: 0
+    baseHeroCoinPrice: 0
+    skillsList: []
+    equipments: []
+  - heroRarity: 0
+    isHeroBaseState: 1
+    isRandomGenerated: 0
+    heroLevel: 1
+    unitInformation:
+      unitName: Common Sword Hero
+      unitGenericName: 
+      attackType: 0
+      wieldedWeapon: 0
+      curhealth: 0
+      maxHealth: 18
+      curSpeed: 0
+      origSpeed: 0.2
+      minDamage: 3
+      maxDamage: 4
+      range: 1
+      unitCooldown: 1
+      healcost: 5
+      unitPrice: 5
+      blockProjectile: 0
+      blockMelee: 0
+      prefabDataPath: 
+      currentState: 0
+      deathThreshold: -5
+      morale: 0
+      buffList: []
+    healthGrowthRate: 3
+    speedGrowthRate: 2
+    damageGrowthRate: 4
+    upgradesAdded: 0
+    baseHeroCoinPrice: 0
+    skillsList:
+    - skillName: March Forward
+      skillType: 3
+      targetType: 0
+      skillLevel: 1
+      targetAlive: 1
+      statEnhanced: 0
+      spawnPrefab: 0
+      prefabStringPath: 
+      affectedArea: 5
+      maxRange: 20
+      skillDurationOnTile: 0
+      isOnCooldown: 0
+      curCooldown: 0
+      cooldown: 20
+      effectgrowth: 0
+      targetStats: 2
+      targetInflictedCount: 0
+      buffList:
+      - buffName: Weak SPD Boost
+        duration: 30
+        targetStats: 2
+        effectAmount: 0.3
+        permanentBuff: 1
+        buffTrigger: 0
+        tickingBuff: 0
+        tickerCounter: 0
+      - buffName: Weak HP Boost
+        duration: 30
+        targetStats: 0
+        effectAmount: 3
+        permanentBuff: 1
+        buffTrigger: 0
+        tickingBuff: 0
+        tickerCounter: 0
+    equipments: []
+  - heroRarity: 0
+    isHeroBaseState: 1
+    isRandomGenerated: 0
+    heroLevel: 1
+    unitInformation:
+      unitName: Common Bow Hero
+      unitGenericName: 
+      attackType: 1
+      wieldedWeapon: 2
+      curhealth: 0
+      maxHealth: 7
+      curSpeed: 0
+      origSpeed: 0.2
+      minDamage: 1
+      maxDamage: 2
+      range: 6
+      unitCooldown: 1
+      healcost: 5
+      unitPrice: 5
+      blockProjectile: 0
+      blockMelee: 0
+      prefabDataPath: 
+      currentState: 0
+      deathThreshold: -5
+      morale: 0
+      buffList: []
+    healthGrowthRate: 10
+    speedGrowthRate: 2
     damageGrowthRate: 2
+    upgradesAdded: 0
+    baseHeroCoinPrice: 0
+    skillsList:
+    - skillName: Archer Barrage
+      skillType: 0
+      targetType: 0
+      skillLevel: 1
+      targetAlive: 1
+      statEnhanced: 0
+      spawnPrefab: 1
+      prefabStringPath: Assets/Resources/Prefabs/Visual Skills/SkillArrowBarrageVisual.prefab
+      affectedArea: 5
+      maxRange: 3
+      skillDurationOnTile: 0
+      isOnCooldown: 0
+      curCooldown: 0
+      cooldown: 5
+      effectgrowth: 2
+      targetStats: 0
+      targetInflictedCount: 2
+      buffList: []
+    equipments: []
+  - heroRarity: 0
+    isHeroBaseState: 1
+    isRandomGenerated: 0
+    heroLevel: 1
+    unitInformation:
+      unitName: Common Spell Hero
+      unitGenericName: 
+      attackType: 2
+      wieldedWeapon: 3
+      curhealth: 0
+      maxHealth: 8
+      curSpeed: 0
+      origSpeed: 0.1
+      minDamage: 7
+      maxDamage: 9
+      range: 4
+      unitCooldown: 1
+      healcost: 5
+      unitPrice: 5
+      blockProjectile: 0
+      blockMelee: 0
+      prefabDataPath: 
+      currentState: 0
+      deathThreshold: -5
+      morale: 0
+      buffList: []
+    healthGrowthRate: 4
+    speedGrowthRate: 1
+    damageGrowthRate: 5
+    upgradesAdded: 0
     baseHeroCoinPrice: 0
     skillsList: []
     equipments: []
@@ -213,6 +259,7 @@ MonoBehaviour:
       unitName: Nene
       unitGenericName: 
       attackType: 1
+      wieldedWeapon: 0
       curhealth: 0
       maxHealth: 20
       curSpeed: 0
@@ -222,6 +269,7 @@ MonoBehaviour:
       range: 0
       unitCooldown: 5
       healcost: 5
+      unitPrice: 5
       blockProjectile: 0
       blockMelee: 0
       prefabDataPath: 
@@ -237,6 +285,7 @@ MonoBehaviour:
       unitName: Tanza
       unitGenericName: 
       attackType: 2
+      wieldedWeapon: 0
       curhealth: 0
       maxHealth: 30
       curSpeed: 0
@@ -246,6 +295,7 @@ MonoBehaviour:
       range: 0
       unitCooldown: 5
       healcost: 5
+      unitPrice: 5
       blockProjectile: 0
       blockMelee: 0
       prefabDataPath: 
@@ -258,6 +308,7 @@ MonoBehaviour:
   - unitName: Swordsman
     unitGenericName: 
     attackType: 0
+    wieldedWeapon: 0
     curhealth: 0
     maxHealth: 10
     curSpeed: 0
@@ -267,6 +318,7 @@ MonoBehaviour:
     range: 1
     unitCooldown: 5
     healcost: 4
+    unitPrice: 5
     blockProjectile: 0
     blockMelee: 0
     prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Swordsman.prefab
@@ -280,21 +332,28 @@ MonoBehaviour:
       effectAmount: 20
       permanentBuff: 1
       buffTrigger: 1
+      tickingBuff: 0
+      tickerCounter: 0
     - buffName: Agile Reflex
       duration: 0
       targetStats: 5
       effectAmount: 20
       permanentBuff: 1
       buffTrigger: 1
+      tickingBuff: 0
+      tickerCounter: 0
     - buffName: Keen Vision
       duration: 0
       targetStats: 4
       effectAmount: 20
       permanentBuff: 1
       buffTrigger: 1
+      tickingBuff: 0
+      tickerCounter: 0
   - unitName: Spearman
     unitGenericName: 
     attackType: 0
+    wieldedWeapon: 1
     curhealth: 0
     maxHealth: 9
     curSpeed: 0
@@ -304,6 +363,7 @@ MonoBehaviour:
     range: 2
     unitCooldown: 3
     healcost: 4
+    unitPrice: 5
     blockProjectile: 0
     blockMelee: 0
     prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
@@ -317,15 +377,20 @@ MonoBehaviour:
       effectAmount: 20
       permanentBuff: 1
       buffTrigger: 1
+      tickingBuff: 0
+      tickerCounter: 0
     - buffName: Keen Vision
       duration: 0
       targetStats: 4
       effectAmount: 20
       permanentBuff: 1
       buffTrigger: 1
+      tickingBuff: 0
+      tickerCounter: 0
   - unitName: Archer
     unitGenericName: 
     attackType: 1
+    wieldedWeapon: 2
     curhealth: 0
     maxHealth: 7
     curSpeed: 0
@@ -335,6 +400,7 @@ MonoBehaviour:
     range: 6
     unitCooldown: 3
     healcost: 3
+    unitPrice: 5
     blockProjectile: 0
     blockMelee: 0
     prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Archer.prefab
@@ -345,6 +411,7 @@ MonoBehaviour:
   - unitName: Recruit
     unitGenericName: 
     attackType: 0
+    wieldedWeapon: 1
     curhealth: 0
     maxHealth: 5
     curSpeed: 0
@@ -354,6 +421,7 @@ MonoBehaviour:
     range: 1
     unitCooldown: 1
     healcost: 2
+    unitPrice: 5
     blockProjectile: 0
     blockMelee: 0
     prefabDataPath: Assets/Resources/Prefabs/Unit and Items/Recruit.prefab
@@ -362,38 +430,58 @@ MonoBehaviour:
     morale: 0
     buffList: []
   skillStorage:
-  - skillName: Holy Heal
-    skillType: 2
-    targetType: 0
-    skillLevel: 1
-    statenhanced: 0
-    affectedArea: 0
-    maxRange: 0
-    targetStats: 0
-    targetInflictedCount: 5
-    buffList: []
   - skillName: March Forward
     skillType: 3
     targetType: 0
     skillLevel: 1
-    statenhanced: 0
-    affectedArea: 1
-    maxRange: 5
+    targetAlive: 1
+    statEnhanced: 0
+    spawnPrefab: 0
+    prefabStringPath: 
+    affectedArea: 5
+    maxRange: 20
+    skillDurationOnTile: 0
+    isOnCooldown: 0
+    curCooldown: 0
+    cooldown: 20
+    effectgrowth: 0
     targetStats: 2
     targetInflictedCount: 0
     buffList:
     - buffName: Weak SPD Boost
       duration: 30
       targetStats: 2
-      effectAmount: 3
-      permanentBuff: 0
+      effectAmount: 0.3
+      permanentBuff: 1
       buffTrigger: 0
+      tickingBuff: 0
+      tickerCounter: 0
     - buffName: Weak HP Boost
       duration: 30
       targetStats: 0
       effectAmount: 3
-      permanentBuff: 0
+      permanentBuff: 1
       buffTrigger: 0
+      tickingBuff: 0
+      tickerCounter: 0
+  - skillName: Archer Barrage
+    skillType: 0
+    targetType: 0
+    skillLevel: 1
+    targetAlive: 1
+    statEnhanced: 0
+    spawnPrefab: 1
+    prefabStringPath: Assets/Resources/Prefabs/Visual Skills/SkillArrowBarrageVisual.prefab
+    affectedArea: 5
+    maxRange: 3
+    skillDurationOnTile: 0
+    isOnCooldown: 0
+    curCooldown: 0
+    cooldown: 5
+    effectgrowth: 2
+    targetStats: 0
+    targetInflictedCount: 2
+    buffList: []
   buffStorage:
   - buffName: Minor HP Buff
     duration: 800
@@ -401,63 +489,85 @@ MonoBehaviour:
     effectAmount: 3
     permanentBuff: 1
     buffTrigger: 0
+    tickingBuff: 0
+    tickerCounter: 0
   - buffName: Minor SPD Buff
     duration: 800
     targetStats: 2
     effectAmount: 3
     permanentBuff: 1
     buffTrigger: 0
+    tickingBuff: 0
+    tickerCounter: 0
   - buffName: Minor DMG Buff
     duration: 800
     targetStats: 1
     effectAmount: 1
     permanentBuff: 1
     buffTrigger: 0
+    tickingBuff: 0
+    tickerCounter: 0
   - buffName: HP Buff
     duration: 800
     targetStats: 0
     effectAmount: 5
     permanentBuff: 1
     buffTrigger: 0
+    tickingBuff: 0
+    tickerCounter: 0
   - buffName: SPD Buff
     duration: 800
     targetStats: 2
     effectAmount: 5
     permanentBuff: 1
     buffTrigger: 0
+    tickingBuff: 0
+    tickerCounter: 0
   - buffName: DMG Buff
     duration: 800
     targetStats: 1
     effectAmount: 3
     permanentBuff: 1
     buffTrigger: 0
+    tickingBuff: 0
+    tickerCounter: 0
   - buffName: Weak HP Boost
     duration: 30
     targetStats: 0
     effectAmount: 3
     permanentBuff: 1
     buffTrigger: 0
+    tickingBuff: 0
+    tickerCounter: 0
   - buffName: Weak SPD Boost
     duration: 30
     targetStats: 2
-    effectAmount: 3
+    effectAmount: 0.3
     permanentBuff: 1
     buffTrigger: 0
+    tickingBuff: 0
+    tickerCounter: 0
   - buffName: Weak DMG Boost
     duration: 30
     targetStats: 1
     effectAmount: 1
     permanentBuff: 1
     buffTrigger: 0
+    tickingBuff: 0
+    tickerCounter: 0
   - buffName: Keen Vision
     duration: 0
     targetStats: 4
     effectAmount: 20
     permanentBuff: 1
     buffTrigger: 1
+    tickingBuff: 0
+    tickerCounter: 0
   - buffName: Agile Reflex
     duration: 0
     targetStats: 5
     effectAmount: 20
     permanentBuff: 1
     buffTrigger: 1
+    tickingBuff: 0
+    tickerCounter: 0

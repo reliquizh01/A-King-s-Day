@@ -116,13 +116,20 @@ public class InformationActionHandler : MonoBehaviour
         List<ResourceReward> tmp = myController.currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].actionTypes[idx].rewardList;
         ResourceInformationController.GetInstance.currentPanel.ShowPotentialResourceChanges(tmp);
         hoveredOperationDecision = operationDecisionList[idx];
-        ShowAddedInformation(idx);
+        ShowActionAddedInformation(idx);
     }
-    public void ShowAddedInformation(int idx)
+    public void ShowActionAddedInformation(int idx)
     {
         addedInformationHandler.gameObject.SetActive(true);
         addedInformationHandler.ShowOnAddedInfoAction(idx, myController.currentBuildingClicked.buildingInformation.buildingCard[selectedCardIdx].actionTypes[idx]);
+    }
 
+    public void ShowPanelAddedInformation(int idx, string mesg)
+    {
+        Debug.Log("Index: " + idx);
+        
+        addedInformationHandler.gameObject.SetActive(true);
+        addedInformationHandler.ShowOnAddedInfoPanels(idx, currentBuildingPanel.currentPage.informationPanelList[idx].addedInfoMessage);
     }
     public void ImplementDecisionChanges(int idx)
     {

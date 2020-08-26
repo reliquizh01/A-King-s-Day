@@ -5,7 +5,9 @@ using Buildings;
 using TMPro;
 using UnityEngine.UI;
 using GameItems;
+using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(EventTrigger))]
 public class ItemCountInformationPanel : InformationPanel
 {
     public TextMeshProUGUI merchantNameText;

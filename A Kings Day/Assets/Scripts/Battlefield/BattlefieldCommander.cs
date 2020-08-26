@@ -38,6 +38,7 @@ public class BattlefieldCommander
     public List<TroopsInformation> unitsCarried;
     public List<BaseHeroInformationData> heroesCarried;
     public int resourceAmount = 20;
+    public List<BaseBuffInformationData> spawnBuffsList;
 
     public void SetupBasicCommander()
     {
@@ -77,7 +78,7 @@ public class BattlefieldCommander
         tmp.heroesCarried = new List<BaseHeroInformationData>();
 
         tmp.unitsCarried = new List<TroopsInformation>();
-        tmp.unitsCarried.AddRange(thisPoint.troopsCarried);
+        tmp.unitsCarried.AddRange(thisPoint.troopsStationed);
         tmp.unitMindset = thisPoint.aiMindset;
 
         if (thisPoint.leaderUnit != null)
@@ -98,7 +99,7 @@ public class BattlefieldCommander
         tmp.unitMindset = thisTraveller.leaderMindset;
         if(thisTraveller.leaderUnit != null)
         {
-            tmp.heroesCarried.Add(thisTraveller.leaderUnit);
+            tmp.heroesCarried.AddRange(thisTraveller.leaderUnit);
         }
 
         return tmp;

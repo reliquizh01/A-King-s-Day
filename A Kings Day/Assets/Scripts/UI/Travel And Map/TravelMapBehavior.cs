@@ -37,12 +37,18 @@ namespace Maps
                     PlayerGameManager.GetInstance.campaignData.mapPointList = new List<MapPointInformationData>();
                 }
 
-                if(PlayerGameManager.GetInstance.campaignData.mapPointList.Count <= 0)
+                MapPointInformationData checkIfTheresEmptyLand = PlayerGameManager.GetInstance.campaignData.mapPointList.Find(x => x.ownedBy == TerritoryOwners.Neutral);
+                if (PlayerGameManager.GetInstance.campaignData.mapPointList.Count <= 0
+                  || checkIfTheresEmptyLand != null && (checkIfTheresEmptyLand.troopsStationed == null || checkIfTheresEmptyLand.troopsStationed.Count <= 0))
                 {
                     for (int i = 0; i < mapSelectionList.Count; i++)
                     {
                         currentMap = mapSelectionList[i];
-                        GenerateMapUnits();
+                        if(currentMap.myMap.myMapPoints.Find(x => x.myPointInformation.ownedBy == TerritoryOwners.Neutral && 
+                        (x.myPointInformation.troopsStationed == null || x.myPointInformation.troopsStationed.Count <= 0)))
+                        {
+                            GenerateMapUnits();
+                        }
                     }
                     SaveMapUnits();
                 }
@@ -100,6 +106,7 @@ namespace Maps
                 {
                     tmp.myPointInformation = new MapPointInformationData();
                     tmp.myPointInformation = campaignData.mapPointList[i];
+                    tmp.myPointInformation.mapNeighborsList = new List<MapPointInformationData>();
                 }
             }
 
@@ -141,9 +148,9 @@ namespace Maps
         {
             for (int i = 0; i < currentMap.myMap.myMapPoints.Count; i++)
             {
-                if (currentMap.myMap.myMapPoints[i].myPointInformation.troopsCarried == null)
+                if (currentMap.myMap.myMapPoints[i].myPointInformation.troopsStationed == null)
                 {
-                    currentMap.myMap.myMapPoints[i].myPointInformation.troopsCarried = new List<TroopsInformation>();
+                    currentMap.myMap.myMapPoints[i].myPointInformation.troopsStationed = new List<TroopsInformation>();
                 }
 
                 int unitCount = 10;
@@ -157,7 +164,7 @@ namespace Maps
                 }
 
                 // Base this stuff depending on what the spawnable of the place is.
-                currentMap.myMap.myMapPoints[i].myPointInformation.troopsCarried.AddRange(unitStorage.GenerateBasicWarband(unitCount));
+                currentMap.myMap.myMapPoints[i].myPointInformation.troopsStationed.AddRange(unitStorage.GenerateBasicWarband(unitCount));
             }
         }
 

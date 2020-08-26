@@ -43,6 +43,42 @@ namespace Characters
             {
                 UpdateMovementFacingDirection();
             }
+            if(unitInformation.curhealth > 0)
+            {
+                if(unitInformation.buffList != null && unitInformation.buffList.Count > 0 
+                    && unitInformation.buffList.Find(x => !x.permanentBuff) != null)
+                {
+                    for (int i = 0; i < unitInformation.buffList.Count; i++)
+                    {
+                        if(!unitInformation.buffList[i].permanentBuff)
+                        {
+                            unitInformation.buffList[i].duration -= Time.deltaTime;
+                        }
+                        if(unitInformation.buffList[i].tickingBuff)
+                        {
+                            unitInformation.buffList[i].tickerCounter += Time.deltaTime;
+                            if(unitInformation.buffList[i].tickerCounter >= 1)
+                            {
+                                if (unitInformation.buffList[i].effectAmount < 0)
+                                {
+                                    ReceiveDamage(unitInformation.buffList[i].effectAmount, UnitAttackType.SPELL, unitInformation.buffList[i].targetStats);
+                                }
+                                else if(unitInformation.buffList[i].effectAmount > 0)
+                                {
+                                    ReceiveHealing(unitInformation.buffList[i].effectAmount, UnitAttackType.SPELL, unitInformation.buffList[i].targetStats);
+                                }
+                                unitInformation.buffList[i].tickerCounter = 0;
+                            }
+                        }
+                    }
+
+                    List<BaseBuffInformationData> removeThisBuffs = unitInformation.buffList.FindAll(x => x.duration <= 0 && !x.permanentBuff);
+                    for (int i = 0; i < removeThisBuffs.Count; i++)
+                    {
+                        unitInformation.RemoveBuff(removeThisBuffs[i]);
+                    }
+                }
+            }
         }
         // Use For Guests and Unique Characters
 
@@ -79,13 +115,31 @@ namespace Characters
             unitInformation.prefabDataPath = newUnitInformation.prefabDataPath;
             unitInformation.deathThreshold = newUnitInformation.deathThreshold;
             unitInformation.morale = newUnitInformation.morale;
-            unitInformation.buffList = newUnitInformation.buffList;
             unitInformation.currentState = newUnitInformation.currentState;
 
-            myMovements.speed = unitInformation.RealSpeed;
+            unitInformation.buffList = new List<BaseBuffInformationData>();
+            if(newUnitInformation.buffList != null && newUnitInformation.buffList.Count > 0)
+            {
+                for (int i = 0; i < newUnitInformation.buffList.Count; i++)
+                {
+                    BaseBuffInformationData tmp = new BaseBuffInformationData();
+                    unitInformation.buffList.Add(tmp);
+                }
+            }
+
+            UpdateStats();
         }
 
+        public void AddBuff(BaseBuffInformationData thisBuff)
+        {
+            unitInformation.AddBuff(thisBuff);
+            UpdateStats();
+        }
 
+        public void UpdateStats()
+        {
+            myMovements.speed = unitInformation.RealSpeed;
+        }
         public void OrderMovement(ScenePointBehavior thisLocation, Action callBack = null)
         {
             myMovements.isMoving = false;
@@ -255,7 +309,7 @@ namespace Characters
             {
                 if (myRange.enemiesInRange != null && myRange.enemiesInRange.Count > 0)
                 {
-                    myRange.enemiesInRange[0].ReceiveDamage(unitInformation.RealDamage, unitInformation.attackType);
+                    myRange.enemiesInRange[0].ReceiveDamage(unitInformation.RealDamage, unitInformation.attackType, TargetStats.health);
 
                     if (myRange.enemiesInRange[0].unitInformation.curhealth <= 0)
                     {
@@ -272,7 +326,7 @@ namespace Characters
             {
                 if (myRange.enemiesInRange != null && myRange.enemiesInRange.Count > 0)
                 {
-                    myRange.enemiesInRange[0].ReceiveDamage(unitInformation.RealDamage, unitInformation.attackType);
+                    myRange.enemiesInRange[0].ReceiveDamage(unitInformation.RealDamage, unitInformation.attackType, TargetStats.health);
 
                     if (myRange.enemiesInRange[0].unitInformation.curhealth <= 0)
                     {
@@ -291,7 +345,11 @@ namespace Characters
             }
         }
 
-        public void ReceiveDamage(float amount, UnitAttackType attackType)
+        public void ReceiveHealing(float amount, UnitAttackType attackType, TargetStats targetStats)
+        {
+            unitInformation.ReceiveHealing(amount, targetStats);
+        }
+        public void ReceiveDamage(float amount, UnitAttackType attackType, TargetStats targetStats)
         {
             UpdateCharacterState(CharacterStates.Damage_Received);
 
@@ -366,7 +424,7 @@ namespace Characters
                 default:
                     break;
             }
-            unitInformation.ReceiveDamage(amount);
+            unitInformation.ReceiveDamage(amount, targetStats);
 
             //Debug.Log("[ DAMAGE RECEIVED : " + amount + " RECEIVED BY:"+ unitInformation.unitName + " ]");
             if(unitInformation.currentState == UnitState.Dead || unitInformation.currentState == UnitState.Injured)

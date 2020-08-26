@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: 882e759f8ab033e4fa88bcd4f51d2fb3
 ScriptedImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -4702581273912403073
+    second: Unit Icon Atlas_0
   externalObjects: {}
   serializedVersion: 2
   userData: 
@@ -94,7 +97,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 30
+      y: 97
       width: 13
       height: 18
     spriteID: f4d370c0c5402384a9df2b5785e1abbf
@@ -107,7 +110,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -38, y: -350}
+    uvTransform: {x: -38, y: -283}
   - name: Archer Icon
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -116,7 +119,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 25
-      y: 30
+      y: 97
       width: 13
       height: 18
     spriteID: aa132bfee914b3344b3ca34685eb842a
@@ -129,7 +132,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 2, y: -350}
+    uvTransform: {x: 2, y: -283}
   - name: Recruit Icon
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -137,8 +140,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 26
-      y: 4
+      x: 4
+      y: 72
       width: 14
       height: 17
     spriteID: 792a38ebcce4b3f4fa7f08880b8f9661
@@ -151,7 +154,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -33, y: -376}
+    uvTransform: {x: -55, y: -308}
   - name: Swordsman Icon
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -159,8 +162,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 48
-      y: 4
+      x: 26
+      y: 46
       width: 12
       height: 18
     spriteID: 64b92e76cb2485446ac45cdad511dc85
@@ -173,7 +176,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 45, y: -376}
+    uvTransform: {x: 23, y: -334}
   - name: Unknown Human Icon
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -182,7 +185,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
+      y: 46
       width: 14
       height: 18
     spriteID: 2674f2621633370478ca5b7ae4896b6b
@@ -195,7 +198,29 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -77, y: -376}
+    uvTransform: {x: -77, y: -334}
+  - name: Unknown Hero Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5
+      y: 5
+      width: 32
+      height: 32
+    spriteID: fac18adccc8429b48a6edfb7f7bba88f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2, y: -336}
   rigSpriteImportData:
   - name: Spearman Icon
     originalName: 
@@ -313,14 +338,14 @@ ScriptedImporter:
   documentAlignment: 7
   importHiddenLayers: 0
   importedTextureWidth: 64
-  importedTextureHeight: 64
+  importedTextureHeight: 128
   documentSize: {x: 400, y: 400}
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
     categories: []
   textureActualWidth: 64
-  textureActualHeight: 64
+  textureActualHeight: 128
   spritePackingTag: 
   resliceFromLayer: 0
   characterMode: 0
@@ -331,35 +356,42 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: f4d370c0c5402384a9df2b5785e1abbf
     layerID: 6
-    mosaicPosition: {x: 4, y: 30}
+    mosaicPosition: {x: 4, y: 97}
   - name: Archer Icon
     spriteName: Archer Icon
     isGroup: 0
     parentIndex: -1
     spriteID: aa132bfee914b3344b3ca34685eb842a
     layerID: 4
-    mosaicPosition: {x: 25, y: 30}
+    mosaicPosition: {x: 25, y: 97}
+  - name: Unknown Hero Icon
+    spriteName: Unknown Hero Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: fac18adccc8429b48a6edfb7f7bba88f
+    layerID: 11
+    mosaicPosition: {x: 4, y: 4}
   - name: Unknown Human Icon
     spriteName: Unknown Human Icon
     isGroup: 0
     parentIndex: -1
     spriteID: 2674f2621633370478ca5b7ae4896b6b
     layerID: 10
-    mosaicPosition: {x: 4, y: 4}
+    mosaicPosition: {x: 4, y: 46}
   - name: Recruit Icon
     spriteName: Recruit Icon
     isGroup: 0
     parentIndex: -1
     spriteID: 792a38ebcce4b3f4fa7f08880b8f9661
     layerID: 7
-    mosaicPosition: {x: 26, y: 4}
+    mosaicPosition: {x: 4, y: 72}
   - name: Swordsman Icon
     spriteName: Swordsman Icon
     isGroup: 0
     parentIndex: -1
     spriteID: 64b92e76cb2485446ac45cdad511dc85
     layerID: 2
-    mosaicPosition: {x: 48, y: 4}
+    mosaicPosition: {x: 26, y: 46}
   rigPSDLayers:
   - name: Spearman Icon
     spriteName: Spearman Icon

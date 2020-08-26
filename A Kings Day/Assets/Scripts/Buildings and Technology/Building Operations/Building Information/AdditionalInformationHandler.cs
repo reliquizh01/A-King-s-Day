@@ -18,13 +18,22 @@ public class AdditionalInformationHandler : MonoBehaviour
         actionButtons[idx].SetActive(true);
     }
 
-    public void HideOnAddedInfoAction()
+    public void ShowOnAddedInfoPanels(int idx, string additionalInformation)
+    {
+        HideOnAddedInfoAction(false);
+        addedInfoText.text = additionalInformation;
+
+    }
+    public void HideOnAddedInfoAction(bool hideWhole = true)
     {
         for (int i = 0; i < actionButtons.Count; i++)
         {
             actionButtons[i].SetActive(false);
         }
 
-        this.gameObject.SetActive(false);
+        if(hideWhole)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 }

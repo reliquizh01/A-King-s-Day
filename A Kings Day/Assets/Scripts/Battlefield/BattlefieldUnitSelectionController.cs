@@ -29,11 +29,14 @@ namespace Battlefield
 
         public PlayerControlType controlType;
         public ClickedMovement lastClicked;
+        public TeamType teamType;
 
         private BattlefieldCommander currentCommander;
         [Header("Computer AI")]
         public BattlefieldCommanderComputer computerAI;
         public bool canChangeSummon = true;
+        [Header("Skill Slot Mechanics")]
+        public BattlefieldSkillsHandler skillSlotHandler;
 
         [Header("Resource Information")]
         public CountingEffectUI warChestCount;
@@ -68,8 +71,9 @@ namespace Battlefield
                     unitList[i].myController = this;
                 }
             }
+            skillSlotHandler.myController = this;
 
-            if(BattlefieldSceneManager.GetInstance != null && !BattlefieldSceneManager.GetInstance.isCampaignMode)
+            if (BattlefieldSceneManager.GetInstance != null && !BattlefieldSceneManager.GetInstance.isCampaignMode)
             {
 
                 if(isAttacker)

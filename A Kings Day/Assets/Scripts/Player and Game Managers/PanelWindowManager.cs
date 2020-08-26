@@ -40,7 +40,7 @@ public class PanelWindowManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(openedWindowsList != null)
+            if(openedWindowsList != null && openedWindowsList.Count > 0)
             {
                 if(openedWindowsList.Count > 0)
                 {
@@ -64,6 +64,8 @@ public class PanelWindowManager : MonoBehaviour
 
     public void AddWindow(BasePanelWindow thisWindow)
     {
+        Debug.Log("Adding A Window Cuz Why Not : " + thisWindow.gameObject.name);
+
         if(openedWindowsList == null)
         {
             openedWindowsList = new List<BasePanelWindow>();
@@ -91,7 +93,13 @@ public class PanelWindowManager : MonoBehaviour
     {
         if(openedWindowsList != null && openedWindowsList.Count > 0)
         {
-            openedWindowsList.Remove(thisWindow);
+            int idx = -1;
+            idx = openedWindowsList.FindIndex(x => x == thisWindow);
+            if(idx != -1)
+            {
+                openedWindowsList.RemoveAt(idx);
+            }
+
             if (thisWindow.transferEnabled)
             {
                 thisWindow.transform.parent = thisWindow.origParent;

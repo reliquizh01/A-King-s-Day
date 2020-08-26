@@ -184,15 +184,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a84e4888d28a443af94f1796e60b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myParent: {fileID: 8776932739690542243}
   myController: {fileID: 0}
   convertedTile: {fileID: 1584324181}
   blueHoverTile: {fileID: 6100741029255804117}
   redHoverTile: {fileID: 5728050394649530953}
-  characterStepping: []
   convertingTo: 0
   currentChangeRate: 0
   tileChangeMaxRate: 0.15
   isConverting: 0
+  returnToCurrent: 0
+  tileConquerable: 1
+  characterStepping: []
+  lastCharacterToStepIn: {fileID: 0}
+  skillsOnTile: []
 --- !u!1 &5728050394649530953
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,8 +416,10 @@ MonoBehaviour:
   myCol: {fileID: 8643815254556043751}
   currentPointStatus: 1
   sceneIndex: 0
+  visualLayoutOrder: 0
   battleTile: {fileID: 8776932740524988692}
   neighborPoints: []
+  isSpawnPoint: 0
   straightToOffset: 0
   sceneOffset: {fileID: 0}
   sceneLoader: 0

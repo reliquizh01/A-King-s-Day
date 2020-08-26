@@ -97,6 +97,15 @@ namespace Battlefield
             UpdateUnitPanels();
         }
 
+        public void SetAttackerLeaderSkills(BaseHeroInformationData attackerHero)
+        {
+            Debug.Log("Setting up Hero Skills for Attacker!");
+            attackerPanel.skillSlotHandler.SetupHeroSkillset(attackerHero);
+        }
+        public void SetDefenderLeaderSkill(BaseHeroInformationData defenderHero)
+        {
+            defenderPanel.skillSlotHandler.SetupHeroSkillset(defenderHero);
+        }
         public void InitializeBattlefieldUI()
         {
             StartCoroutine(myPanel.WaitAnimationForAction(myPanel.openAnimationName, StartCounting));

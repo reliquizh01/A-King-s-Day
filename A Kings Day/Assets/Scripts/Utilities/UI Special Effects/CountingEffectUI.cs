@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class CountingEffectUI : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class CountingEffectUI : MonoBehaviour
     [Header("Before and After Count Messages")]
     public string preCountMesg;
     public string postCountMesg;
+
+    public Action afterCountCallback;
     public void Update()
     {
         if(curCount != targetCount && startUpdating)
@@ -49,15 +52,23 @@ public class CountingEffectUI : MonoBehaviour
                 countText.text = preCountMesg + " " + numberColorText + curCount.ToString() + "</color>" + " " + postCountMesg;
             }
         }
+        else if(afterCountCallback != null)
+        {
+            afterCountCallback();
+            afterCountCallback = null;
+        }
     }
     public void SetNumberColor(string newColor)
     {
         numberColorText = newColor;
     }
 
-    public void SetTargetCount(int newTarget, bool startQuickly = true)
+    public void SetTargetCount(int newTarget, bool startQuickly = true, Action callback = null)
     {
         targetCount = newTarget;
+        curCount = 0;
+
+        afterCountCallback = callback;
 
         if (enableColor)
         {
@@ -78,8 +89,6 @@ public class CountingEffectUI : MonoBehaviour
         {
             startUpdating = true;
         }
-
-        Debug.Log("From: " + postCountMesg);
     }
     public void AdjustIncrement(int difference)
     {

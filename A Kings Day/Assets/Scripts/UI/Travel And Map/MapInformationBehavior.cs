@@ -15,23 +15,27 @@ namespace Maps
         public CurrentMapBehavior myMap;
 
         [Header("Map Point Mechanics")]
+        public MapPointBehavior currentMapPoint;
         public GameObject mapPoint;
         public TextMeshProUGUI pointName;
         public TextMeshProUGUI TroopCount;
         public TextMeshProUGUI CoinTax;
         public List<TextMeshProUGUI> knownForList;
+        public GameObject closeEyes, openEyes;
         [Header("Map Point Actions")]
+        public ChooseLeadHeroHandler leaderHeroHandler;
+        public SendTroopsSubOptionPage sendTroopsPage;
         public Button attackButton;
         public Button scoutButton;
-        public Button sendRecruit, sendSwordsman, sendSpearman, sendArcher;
 
         [Header("Map Controlled Mechanics")]
         public GameObject mapControlledAction;
-        public GameObject mapUncontrolledActions;
         [Header("Overall Information")]
+        public BasePanelBehavior overallPanel;
         public TextMeshProUGUI potentialCoins;
         public TextMeshProUGUI visiblePlaces;
         public TextMeshProUGUI territoryCount;
+        public bool overallInfoShown = false;
 
         public void Start()
         {
@@ -39,14 +43,22 @@ namespace Maps
             {
                 List<MapPointInformationData> mapData = PlayerGameManager.GetInstance.campaignData.mapPointList.FindAll(x => x.mapType == myMap.mapType);
                 Debug.Log("Map Count:" + mapData.Count);
-                for (int i = 0; i < mapData.Count; i++)
+                if(mapData != null && mapData.Count > 0)
                 {
-                    if(myMap.myMapPoints.Find(x => x.myPointInformation.pointName == mapData[i].pointName) != null)
+                    for (int i = 0; i < mapData.Count; i++)
                     {
-                        myMap.myMapPoints.Find(x => x.myPointInformation.pointName == mapData[i].pointName).LoadMapPointInformation(mapData[i]);
+                        if(myMap.myMapPoints.Find(x => x.myPointInformation.pointName == mapData[i].pointName) != null)
+                        {
+                            myMap.myMapPoints.Find(x => x.myPointInformation.pointName == mapData[i].pointName).LoadMapPointInformation(mapData[i]);
+                        }
                     }
                 }
             }
+            if(PlayerGameManager.GetInstance != null)
+            {
+                leaderHeroHandler.SetupAvailableHeroes(PlayerGameManager.GetInstance.playerData.myHeroes);
+            }
+
             SetupOverallInformation();
         }
 
@@ -54,26 +66,29 @@ namespace Maps
         {
             SetupOverallInformation();
             mapPoint.SetActive(false);
+            overallPanel.PlayOpenAnimation();
+            overallInfoShown = true;
+            
         }
 
         public void OnDisable()
         {
             mapPoint.SetActive(false);
+            if (myMap.selectedMapPoint != null)
+            {
+                myMap.selectedMapPoint.RemoveClicked();
+                myMap.selectedMapPoint = null;
+            }
+
         }
         public void OnPointSelected()
         {
             mapPoint.SetActive(true);
             UpdateShownPointInformation(myMap.selectedMapPoint);
-
-            if (myMap.selectedMapPoint.myPointInformation.ownedBy == TerritoryOwners.Player)
+            if(overallInfoShown)
             {
-                mapUncontrolledActions.SetActive(false);
-                mapControlledAction.SetActive(true);
-            }
-            else
-            {
-                mapUncontrolledActions.SetActive(true);
-                mapControlledAction.SetActive(false);
+                overallPanel.PlayCloseAnimation();
+                overallInfoShown = false;
             }
         }
         public void SetupOverallInformation()
@@ -102,7 +117,7 @@ namespace Maps
             int totalCount = myMap.myMapPoints.Count;
             int controlledCount = myMap.myMapPoints.FindAll(x => x.myPointInformation.ownedBy == TerritoryOwners.Player).Count;
 
-            territoryCount.text = controlledCount + "/" + totalCount;
+            territoryCount.text = controlledCount + "/" + (totalCount-1);
         }
         public void UpdateEarnedCoins()
         {
@@ -125,14 +140,18 @@ namespace Maps
         public void UpdateShownPointInformation(MapPointBehavior thisPoint)
         {
             pointName.text = thisPoint.myPointInformation.pointName;
+            currentMapPoint = thisPoint;
 
-            if(thisPoint.myPointInformation.visibleToPlayer)
+            if (thisPoint.myPointInformation.visibleToPlayer || thisPoint.myPointInformation.ownedBy == TerritoryOwners.Player)
             {
                 scoutButton.interactable = false;
+                SwitchScoutEyes(true);
+                thisPoint.myPointInformation.visibleToPlayer = true;
                 TroopCount.text = "Troops: "+ thisPoint.myPointInformation.ObtainTotalUnitCount().ToString();
             }
             else
             {
+                SwitchScoutEyes(false);
                 scoutButton.interactable = true;
                 TroopCount.text = "Troops: " + thisPoint.myPointInformation.ObtainVagueUnitCount(true).ToString() + " - "
                     + thisPoint.myPointInformation.ObtainVagueUnitCount(false).ToString();
@@ -144,28 +163,22 @@ namespace Maps
             {
                 knownForList[i].text = thisPoint.myPointInformation.spawnableTravellers[i].ToString();
             }
+        }
 
-            if(thisPoint.myPointInformation.ownedBy == TerritoryOwners.Player)
+        public void SwitchScoutEyes(bool switchTo)
+        {
+            if (switchTo)
             {
-                ShowControlledActions();
+                openEyes.SetActive(true);
+                closeEyes.SetActive(false);
             }
             else
             {
-                ShowUnControlledAction();
+                closeEyes.SetActive(true);
+                openEyes.SetActive(false);
             }
         }
 
-        public void ShowControlledActions()
-        {
-            mapControlledAction.SetActive(true);
-            mapUncontrolledActions.SetActive(false);
-        }
-
-        public void ShowUnControlledAction()
-        {
-            mapUncontrolledActions.SetActive(true);
-            mapControlledAction.SetActive(false);
-        }
 
         public void SendScoutOnMapPoint()
         {
@@ -187,15 +200,82 @@ namespace Maps
                     }
                 }
             }
-
-            UpdateShownPointInformation(myMap.selectedMapPoint);
-        }
-        public void PlayerAttackMapPoint()
-        {
-            if(TransitionManager.GetInstance != null)
+            else
             {
-                TransitionManager.GetInstance.FaceMapPoint(myMap.selectedMapPoint.myPointInformation, true);
-                myController.myWindow.CloseWindow();
+                UpdateShownPointInformation(myMap.selectedMapPoint);
+            }
+
+            if (SaveData.SaveLoadManager.GetInstance != null)
+            {
+                SaveData.SaveLoadManager.GetInstance.SaveCurrentCampaignData();
+            }
+        }
+
+        public void ShowSendTroopsWindow()
+        {
+            sendTroopsPage.gameObject.SetActive(true);
+            StartCoroutine(sendTroopsPage.myPanel.WaitAnimationForAction(sendTroopsPage.myPanel.openAnimationName, () => sendTroopsPage.SetUnitList(PlayerGameManager.GetInstance.playerData.troopsList)));
+        }
+        public void HideTroopsWindow()
+        {
+            if(!this.gameObject.activeInHierarchy)
+            {
+                return;
+            }
+            StartCoroutine(sendTroopsPage.myPanel.WaitAnimationForAction(sendTroopsPage.myPanel.closeAnimationName, () => sendTroopsPage.gameObject.SetActive(false)));            
+        }
+        public void SendTroopsToBattle()
+        {
+            if(myMap.selectedMapPoint.myPointInformation.ownedBy == TerritoryOwners.Player)
+            {
+                // REINFORCE LOCATION
+                if (!myMap.selectedMapPoint.myPointInformation.isBeingAttacked)
+                {
+                    List<TroopsInformation> tmp = new List<TroopsInformation>();
+                    tmp.AddRange(myMap.selectedMapPoint.myPointInformation.troopsStationed);
+
+                    if (PlayerGameManager.GetInstance != null)
+                    {
+                        List<TroopsInformation> tmpUnitsSent = PlayerGameManager.GetInstance.unitsToSend.troopsCarried;
+                        for (int i = 0; i < tmpUnitsSent.Count; i++)
+                        {
+                            TroopsInformation tempTroop = tmp.Find(x => x.unitInformation.unitName == tmpUnitsSent[i].unitInformation.unitName);
+                            if (tempTroop != null)
+                            {
+                                tempTroop.totalUnitCount += tmpUnitsSent[i].totalUnitCount;
+                            }
+                            // New Type of Troop Sent
+                            else
+                            {
+                                tempTroop = new TroopsInformation();
+                                tempTroop = tmpUnitsSent[i];
+
+                                tmp.Add(tempTroop);
+                            }
+                        }
+                    }
+
+                    myMap.selectedMapPoint.myPointInformation.troopsStationed = new List<TroopsInformation>();
+                    myMap.selectedMapPoint.myPointInformation.troopsStationed = tmp;
+                }
+                else
+                {
+                    // SEND TROOPS TO BATTLE WITH THE SAID UNITS TO BE ADDED TO THE MAPS CURRENT STATIONED UNITS.
+                    if (TransitionManager.GetInstance != null)
+                    {
+                        TransitionManager.GetInstance.FaceMapPoint(myMap.selectedMapPoint.myPointInformation, false);
+                        myController.myWindow.CloseWindow();
+                    }
+                }
+            }
+            // JUST ATTACK WITH THE SAID UNITS THE ONLY UNITS ON PLAYER MANAGER
+            else if(myMap.selectedMapPoint.myPointInformation.ownedBy != TerritoryOwners.Player)
+            {
+                if (TransitionManager.GetInstance != null)
+                {
+                    TransitionManager.GetInstance.FaceMapPoint(myMap.selectedMapPoint.myPointInformation, true);
+                    myController.myWindow.CloseWindow();
+                }
             }
         }
     }

@@ -111,5 +111,25 @@ namespace ResourceUI
             currentAmount.text = currentCount.ToString();
         }
 
+        public void ShowWarning()
+        {
+            if(myWarning == null)
+            {
+                return;
+            }
+
+            myWarning.gameObject.SetActive(true);
+        }
+
+        public void HideWarning()
+        {
+            if(myWarning == null)
+            {
+                return;
+            }
+
+            myWarning.gameObject.SetActive(false);
+        }
+
     }
 }

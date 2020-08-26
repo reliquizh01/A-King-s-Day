@@ -15,6 +15,8 @@ namespace Utilities
         // TOOLTIP
         public const string SHOW_TOOLTIP_MESG = "SHOW_TOOLTIP_MESG";
         public const string HIDE_TOOLTIP_MESG = "HIDE_TOOLTIP_MESG";
+        public const string DISABLE_TOOLTIP_MESG = "DISABLE_TOOLTIP_MESG";
+        public const string ENABLE_TOOLTIP_MESG = "ENABLE_TOOLTIP_MESG";
 
         // IN GAME INTERACTION
         public const string DISABLE_IN_GAME_INTERACTION = "DISABLE_IN_GAME_INTERACTION";

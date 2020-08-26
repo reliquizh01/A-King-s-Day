@@ -6,6 +6,7 @@ using TMPro;
 using Kingdoms;
 using KingEvents;
 using ResourceUI;
+using System;
 
 namespace Buildings
 {
@@ -22,11 +23,13 @@ namespace Buildings
         public int amountToSell;
 
         public int pricePerItem;
+
+        public Action changeCallback;
         public void Start()
         {
             panelSlider.maxValue = currentCount;
         }
-        public void SetupOptionPanel(int currentAmount,int itemPrice, string titleText)
+        public void SetupOptionPanel(int currentAmount,int itemPrice, string titleText, Action slideChangeCallback = null)
         {
             nameTitleText.text = titleText;
 
@@ -37,9 +40,21 @@ namespace Buildings
             amountToSell = 0;
             pricePerItem = itemPrice;
 
+            if(slideChangeCallback != null)
+            {
+                panelSlider.onValueChanged.AddListener(VolumeCallbackAdjusted);
+            }
             AdjustAmountToSell();
         }
 
+        public void VolumeCallbackAdjusted(float value)
+        {
+            if(changeCallback != null)
+            {
+                changeCallback();
+            }
+            AdjustAmountToSell();
+        }
         public void AdjustAmountToSell()
         {
             amountToSell = (int)panelSlider.value;
@@ -48,7 +63,10 @@ namespace Buildings
             currentCount = totalCount - amountToSell;
             currentCountText.text = currentCount.ToString();
 
-            myController.ShowPotentialChanges();
+            if(myController != null)
+            {
+                myController.ShowPotentialChanges();
+            }
         }
     }
 

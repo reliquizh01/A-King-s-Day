@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Characters;
 using GameItems;
+using Kingdoms;
 
 namespace Characters
 {
@@ -12,12 +13,24 @@ namespace Characters
         public string unitName;
         public Sprite unitSprite;
     }
+
+    [System.Serializable]
+    public class SkillData
+    {
+        public string skillName;
+        public Sprite skillSprite;
+    }
+
     [System.Serializable]
     public class KingdomUnitStorage : MonoBehaviour
     {
         [Header("UNIT ICONS")]
         // MANUALLY ADDED 
         public List<UnitIconData> unitIconsList;
+
+        [Header("Skill Icons")]
+        public List<SkillData> skillIconList;
+
         [Header("UNIT INFORMATIONS")]
         // CHARACTERS
         public List<BaseHeroInformationData> heroStorage;
@@ -42,6 +55,18 @@ namespace Characters
             return icon;
         }
 
+        public Sprite GetSkillIcon(string skillName)
+        {
+            Sprite icon = skillIconList[0].skillSprite;
+
+            if (skillIconList.Find(x => x.skillName == skillName) != null)
+            {
+                icon = skillIconList.Find(x => x.skillName == skillName).skillSprite;
+            }
+
+            return icon;
+        }
+
         public UnitInformationData GetUnitInformation(string genericName)
         {
             return basicUnitStorage.Find(x => x.unitName == genericName);
@@ -60,7 +85,6 @@ namespace Characters
                 int rand = UnityEngine.Random.Range(0, troopTypes.Count);
                 troopTypes[rand] += 1;
             }
-            Debug.Log("[" + troopTypes[0] + "]" + "[" + troopTypes[1] + "]" + "[" + troopTypes[2] + "]" + "[" + troopTypes[3] + "]");
 
             TroopsInformation recruit = TroopsInformation.ConvertToTroopsInformation(GetUnitInformation("Recruit"), troopTypes[0]);
             TroopsInformation swordsman = TroopsInformation.ConvertToTroopsInformation(GetUnitInformation("Swordsman"), troopTypes[1]);
@@ -76,6 +100,15 @@ namespace Characters
             return tmp;
         }
 
+        public BaseHeroInformationData ObtainHeroInformation(string HeroName)
+        {
+            return heroStorage.Find(x => x.unitInformation.unitName == HeroName);
+        }
+
+        public BaseHeroInformationData ObtainHeroBaseInformation(WieldedWeapon weaponType)
+        {
+            return heroStorage.Find(x => x.isHeroBaseState && x.unitInformation.wieldedWeapon == weaponType);
+        }
     }
 
 }

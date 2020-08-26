@@ -47,6 +47,9 @@ namespace Managers
 
         public PlayerKingdomData playerData = new PlayerKingdomData();
         public PlayerCampaignData campaignData = new PlayerCampaignData();
+
+        [Header("Temporary Data")]
+        public BaseTravellerData unitsToSend;
         public void Start()
         {
             EventBroadcaster.Instance.AddObserver(EventNames.WEEKLY_UPDATE, WeeklyResourceProductionUpdate);
@@ -55,6 +58,17 @@ namespace Managers
         public void OnDestroy()
         {
             EventBroadcaster.Instance.RemoveActionAtObserver(EventNames.WEEKLY_UPDATE, WeeklyResourceProductionUpdate);
+        }
+
+        public void SendThisUnits(List<TroopsInformation> thisUnits, List<BaseHeroInformationData> heroesLeading, bool isAttack = true)
+        {
+            if(isAttack)
+            {
+                unitsToSend.troopsCarried = new List<TroopsInformation>();
+                unitsToSend.troopsCarried.AddRange(thisUnits);
+                unitsToSend.leaderUnit = new List<BaseHeroInformationData>();
+                unitsToSend.leaderUnit.AddRange(heroesLeading);
+            }
         }
         public void SetupResourceProductionUpdate()
         {
@@ -65,6 +79,8 @@ namespace Managers
             populationBehavior.SetupResourceBehavior();
 
             coinBehavior.SetupResourceBehavior();
+
+            mapBehavior.SetupMapBehavior();
         }
         public void WeeklyResourceProductionUpdate(Parameters p = null)
         {
@@ -77,6 +93,9 @@ namespace Managers
 
             coinBehavior.UpdateWeeklyProgress();
 
+            mapBehavior.UpdateWeeklyProgress();
+
+
             ResourceUI.ResourceInformationController.GetInstance.UpdateCurrentPanel();
         }
         public void ReceiveCampaignData(PlayerCampaignData newData)
@@ -87,9 +106,7 @@ namespace Managers
 
 
             List<BaseTravellerData> newTemp = new List<BaseTravellerData>();
-            Debug.Log("Traveller Count:" + campaignData.travellerList.Count);
 
-            Debug.Log("Loading Campaign Finish");
         }
         public void ReceiveData(PlayerKingdomData newData)
         {
@@ -166,6 +183,8 @@ namespace Managers
             playerData.myHeroes = new List<BaseHeroInformationData>();
             if(newData.myHeroes != null)
             {
+                Debug.Log("Temporary Kingdom Heroes Count: " + newData.myHeroes.Count + " And Skill Count: " + newData.myHeroes[0].skillsList.Count);
+
                 for (int i = 0; i < newData.myHeroes.Count; i++)
                 {
                     BaseHeroInformationData tmp = new BaseHeroInformationData();
@@ -175,6 +194,9 @@ namespace Managers
                     tmp.speedGrowthRate = newData.myHeroes[i].speedGrowthRate;
                     tmp.unitInformation = newData.myHeroes[i].unitInformation;
                     tmp.equipments = newData.myHeroes[i].equipments;
+
+                    tmp.skillsList = new List<BaseSkillInformationData>();
+                    tmp.skillsList.AddRange(newData.myHeroes[i].skillsList);
 
                     playerData.myHeroes.Add(tmp);
                 }
@@ -388,13 +410,20 @@ namespace Managers
         public void RemoveResource(int amount, ResourceType type, string troopName = "")
         {
             amount = Mathf.Abs(amount);
+
+            int totalCheck = playerData.ObtainResourceAmount(type) - amount;
+            if(totalCheck < 0)
+            {
+                amount = playerData.ObtainResourceAmount(type);
+            }
+
             switch (type)
             {
                 case ResourceType.Food:
                     playerData.foods -= amount;
                     break;
                 case ResourceType.Population:
-                    playerData.SetPopulation(amount);
+                    playerData.population -= amount;
                     break;
                 case ResourceType.Coin:
                     playerData.coins -= amount;
@@ -458,6 +487,11 @@ namespace Managers
                     playerData.troopsList.RemoveAt(idx);
                 }
             }
+
+            if(SaveData.SaveLoadManager.GetInstance != null)
+            {
+                SaveData.SaveLoadManager.GetInstance.SaveCurrentData();
+            }
         }
         public void RemoveMercenary(int amount, string unitName)
         {
@@ -474,7 +508,6 @@ namespace Managers
         }
         public void SaveQueuedData(List<EventDecisionData> queuedDataList, int finishCount)
         {
-            Debug.Log("Saving Data For Queued Events: " + finishCount);
             playerData.queuedDataEventsList = queuedDataList;
             playerData.eventFinished = finishCount;
         }
@@ -538,6 +571,8 @@ namespace Managers
                     return (totalMerc >= amount);
                 case ResourceType.herdsmen:
                     return (playerData.herdsmanCount >= amount);
+                case ResourceType.farmer:
+                    return (playerData.farmerCount >= amount);
                 default:
                     return false;
             }
@@ -545,7 +580,7 @@ namespace Managers
 
         public BaseTravellerData ObtainTraveller(BaseHeroInformationData thisTraveller)
         {
-            BaseTravellerData tmp = campaignData.travellerList.Find(x => x.leaderUnit == thisTraveller);
+            BaseTravellerData tmp = campaignData.travellerList.Find(x => x.leaderUnit.Contains(thisTraveller));
             
             return tmp;
         }

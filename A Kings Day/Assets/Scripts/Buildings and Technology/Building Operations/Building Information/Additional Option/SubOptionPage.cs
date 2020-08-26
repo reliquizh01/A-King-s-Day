@@ -7,7 +7,7 @@ using Kingdoms;
 using KingEvents;
 using Managers;
 using ResourceUI;
-
+using Maps;
 namespace Buildings
 {
     public class SubOptionPage : MonoBehaviour
@@ -84,6 +84,7 @@ namespace Buildings
 
             ResourceInformationController.GetInstance.ShowCurrentPanelPotentialResourceChanges(rewardTmp);
         }
+
         public void SellTroops()
         {
             PlayerKingdomData playerData = PlayerGameManager.GetInstance.playerData;

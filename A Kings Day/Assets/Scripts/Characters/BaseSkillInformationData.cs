@@ -8,22 +8,24 @@ namespace Characters
 {
     public enum SkillType
     {
-        Offensive,
-        Defensive,
-        OffensiveBuff,
-        DefensiveBuff,
-        PassiveBuff,
+        Offensive, // Skills that hurts the enemy (spawnable skills)
+        Defensive, // Skills that helps the allies (spawnable skills)
+        OffensiveBuff,  // Skills that hurts the enemies (passive addition)
+        DefensiveBuff, // Skills that helps the allies (passive addition)
     }
 
     public enum TriggeredBy
     {
         CommanderActivated,
         ReceivingDamage,
+        ActivateNow,
+        EverySecond,
     }
     public enum TargetType
     {
-        Unit,
-        Tiles,
+        UnitOnly,
+        UnitOnTiles,
+        TilesOnly,
     }
 
     public enum TargetStats
@@ -42,6 +44,8 @@ namespace Characters
         Row,
         Column,
         Nearby,
+        All,
+        Aimed,
     }
     [System.Serializable]
     public class BaseBuffInformationData
@@ -52,6 +56,9 @@ namespace Characters
         public float effectAmount;
         public bool permanentBuff;
         public TriggeredBy buffTrigger;
+
+        public bool tickingBuff;
+        public float tickerCounter;
     }
 
     [System.Serializable]
@@ -59,14 +66,23 @@ namespace Characters
     {
         public string skillName;
         public SkillType skillType;
-
         public TargetType targetType;
-
         public int skillLevel = 1;
-        public bool statenhanced;
+        public bool targetAlive = true;
+
+        public bool statEnhanced;
+        public bool spawnPrefab;
+        public string prefabStringPath;
 
         public AreaAffected affectedArea;
         public int maxRange;
+
+        public float skillDurationOnTile;
+
+        public bool isOnCooldown;
+        public float curCooldown;
+        public float cooldown;
+        public float effectgrowth;
 
         // Target Inflicted means its a direct hit.
         public TargetStats targetStats;

@@ -347,7 +347,6 @@ namespace Managers
                 return;
             }
 
-            Debug.Log("Showing Bell Button!");
             eventBellBtn.gameObject.SetActive(true);
             eventBellBtn.GetComponent<Button>().interactable = true;
             StartCoroutine(DelayBellButton());

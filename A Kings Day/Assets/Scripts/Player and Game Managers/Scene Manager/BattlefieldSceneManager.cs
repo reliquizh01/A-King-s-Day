@@ -6,6 +6,7 @@ using Buildings;
 using Utilities;
 using Battlefield;
 using System;
+using Kingdoms;
 
 namespace Managers
 {
@@ -49,10 +50,9 @@ namespace Managers
         {
             base.PreOpenManager();
 
-            Debug.Log("Checkmate");
             if(TransitionManager.GetInstance != null && TransitionManager.GetInstance.previousScene != SceneType.Opening)
             {
-                Debug.Log("Dolce");
+
                 isCampaignMode = true;
 
                 if (TransitionManager.GetInstance != null)
@@ -77,25 +77,65 @@ namespace Managers
                 return;
             }
 
-            List<TroopsInformation> tmp = new List<TroopsInformation>();
-            for (int i = 0; i < PlayerGameManager.GetInstance.playerData.troopsList.Count; i++)
-            {
-                tmp.Add(PlayerGameManager.GetInstance.playerData.troopsList[i]);
-            }
-            spawnManager.SetupPlayerCommander(tmp, TransitionManager.GetInstance.isPlayerAttacker);
-
             BattlefieldCommander enemyCommander = new BattlefieldCommander();
 
-            if(!string.IsNullOrEmpty(TransitionManager.GetInstance.attackedTravellerData.travellersName))
+            BaseTravellerData tmp = new BaseTravellerData();
+            tmp = PlayerGameManager.GetInstance.unitsToSend;
+            
+
+            // If He's the defender
+            if (!TransitionManager.GetInstance.isPlayerAttacker)
             {
-                Debug.Log("Initializing Battle Thru Traveller");
-                enemyCommander = BattlefieldCommander.ConvertTravellerToCommander(TransitionManager.GetInstance.attackedTravellerData);
+                // MAP NODE
+                if(TransitionManager.GetInstance.isEngagedWithMapPoint)
+                {
+                    if(!string.IsNullOrEmpty(TransitionManager.GetInstance.attackedPointInformationData.pointName))
+                    {
+                        tmp.troopsCarried.AddRange(TransitionManager.GetInstance.attackedPointInformationData.troopsStationed);
+                        tmp.leaderUnit.Add(TransitionManager.GetInstance.attackedPointInformationData.leaderUnit);
+                    }
+
+                    if (TransitionManager.GetInstance.attackedPointInformationData.travellersOnPoint != null &&
+                       TransitionManager.GetInstance.attackedPointInformationData.travellersOnPoint.Count > 0)
+                    {
+                        enemyCommander = ObtainCampaignMapPointEnemyCommander();
+                    }
+                }
+                // TRAVELLER
+                else
+                {
+                    if(!string.IsNullOrEmpty(TransitionManager.GetInstance.attackedTravellerData.travellersName))
+                    {
+                        Debug.Log("Initializing Battle Thru Traveller");
+                        enemyCommander = BattlefieldCommander.ConvertTravellerToCommander(TransitionManager.GetInstance.attackedTravellerData);
+                    }
+                }
             }
-            else if(!string.IsNullOrEmpty(TransitionManager.GetInstance.attackedPointInformationData.pointName))
+            else //  If He's the attacker
             {
-                Debug.Log("Initializing Battle Thru Map Point");
-                enemyCommander = BattlefieldCommander.ConvertTravellerToCommander(TransitionManager.GetInstance.attackedPointInformationData);
+                // MAP NODE
+                if(TransitionManager.GetInstance.isEngagedWithMapPoint)
+                {
+                    if (!string.IsNullOrEmpty(TransitionManager.GetInstance.attackedPointInformationData.pointName))
+                    {
+                        Debug.Log("Initializing Battle Thru Map Point");
+                        enemyCommander = BattlefieldCommander.ConvertTravellerToCommander(TransitionManager.GetInstance.attackedPointInformationData);
+                    }
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(TransitionManager.GetInstance.attackedTravellerData.travellersName))
+                    {
+                        Debug.Log("Initializing Battle Thru Traveller");
+                        enemyCommander = BattlefieldCommander.ConvertTravellerToCommander(TransitionManager.GetInstance.attackedTravellerData);
+                    }
+                }
             }
+
+            spawnManager.SetupPlayerCommander(tmp, TransitionManager.GetInstance.isPlayerAttacker);
+
+
+
 
             if(TransitionManager.GetInstance.isPlayerAttacker)
             {
@@ -120,10 +160,52 @@ namespace Managers
 
             InitializeArea();
         }
+
+        public BattlefieldCommander ObtainCampaignMapPointEnemyCommander()
+        {
+            BattlefieldCommander enemyCommander = new BattlefieldCommander();
+            List<BaseTravellerData> enemyOnPointTravellerList = new List<BaseTravellerData>();
+            enemyOnPointTravellerList.AddRange(TransitionManager.GetInstance.attackedPointInformationData.travellersOnPoint.FindAll(x => x.relationship < 0));
+
+            // CONVERT ALL HATEFUL UNITS IN THE POINT TO 1 TRAVELLER
+            BaseTravellerData enemyTravellers = new BaseTravellerData();
+            enemyTravellers.troopsCarried = new List<TroopsInformation>();
+            enemyTravellers.leaderUnit = new List<BaseHeroInformationData>();
+            if (enemyOnPointTravellerList.Count > 0)
+            {
+                for (int i = 0; i < enemyOnPointTravellerList.Count; i++)
+                {
+                    enemyTravellers.leaderUnit.AddRange(enemyOnPointTravellerList[i].leaderUnit);
+
+                    for (int x = 0; x < enemyOnPointTravellerList[i].troopsCarried.Count; x++)
+                    {
+                        if (enemyTravellers.troopsCarried.Count > 0)
+                        {
+                            int idx = -1;
+                            idx = enemyTravellers.troopsCarried.FindIndex(y => y.unitInformation.unitName == enemyOnPointTravellerList[i].troopsCarried[i].unitInformation.unitName);
+                            if (idx != -1)
+                            {
+                                enemyTravellers.troopsCarried[idx].totalUnitCount += enemyOnPointTravellerList[i].troopsCarried[i].totalUnitCount;
+                            }
+                            else
+                            {
+                                enemyTravellers.troopsCarried.Add(enemyOnPointTravellerList[i].troopsCarried[i]);
+                            }
+                        }
+                        else
+                        {
+                            enemyTravellers.troopsCarried.Add(enemyOnPointTravellerList[i].troopsCarried[i]);
+                        }
+                    }
+                }
+            }
+            enemyCommander = BattlefieldCommander.ConvertTravellerToCommander(enemyTravellers);
+
+            return enemyCommander;
+        }
         public void ShowCustomBattlePanel()
         {
             customizePanel.gameObject.SetActive(true);
-
         }
         public void HideCustomBattlePanel()
         {
@@ -141,6 +223,17 @@ namespace Managers
         public void InitializeArea()
         {
             battleUIInformation.SetUnitPanels(spawnManager.attackingCommander, spawnManager.defendingCommander);
+
+            if(spawnManager.attackingCommander.heroesCarried != null && spawnManager.attackingCommander.heroesCarried.Count > 0)
+            {
+                battleUIInformation.SetAttackerLeaderSkills(spawnManager.attackingCommander.heroesCarried[0]);
+            }
+
+            if (spawnManager.defendingCommander.heroesCarried != null && spawnManager.defendingCommander.heroesCarried.Count > 0)
+            {
+                battleUIInformation.SetDefenderLeaderSkill(spawnManager.defendingCommander.heroesCarried[0]);
+            }
+
             BattlefieldSystemsManager.GetInstance.StartDay();
         }
 

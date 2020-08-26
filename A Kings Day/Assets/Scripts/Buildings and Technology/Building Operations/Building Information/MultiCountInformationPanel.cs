@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(EventTrigger))]
 public class MultiCountInformationPanel : InformationPanel
 {
     public TextMeshProUGUI titleText;

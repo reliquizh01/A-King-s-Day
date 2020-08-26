@@ -3,26 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using Characters;
 using Managers;
+using Battlefield;
 
 public class TileConversionHandler : MonoBehaviour
 {
+    public ScenePointBehavior myParent;
     public BattlefieldPathHandler myController;
-
     public TileControlledBehavior convertedTile;
     public GameObject blueHoverTile, redHoverTile;
 
     private Vector3 overlapSize = new Vector3(1.075f, 1.15f, 1);
     private Vector3 normalSize = new Vector3(1, 1, 1);
-    public List<BaseCharacter> characterStepping;
-    public BaseCharacter lastCharacterToStepIn;
 
+    [Header("Tile Conversaion Mechanics")]
     public TeamType convertingTo;
-
     public float currentChangeRate;
     public float tileChangeMaxRate = 1;
     public bool isConverting = false;
     public bool returnToCurrent = false;
     public bool tileConquerable = true;
+
+    [Header("Characters In Tile")]
+    public List<BaseCharacter> characterStepping;
+    public BaseCharacter lastCharacterToStepIn;
+    [Header("Skills on Tile")]
+    public List<BaseVisualSkillBehavior> skillsOnTile;
+
     public void Update()
     {
         if(isConverting)
@@ -70,8 +76,18 @@ public class TileConversionHandler : MonoBehaviour
                     }
                 }
             }
-
         }
+
+    }
+
+    public void AddSkillOnTile(BaseVisualSkillBehavior thisSkill)
+    {
+        if(skillsOnTile == null)
+        {
+            skillsOnTile = new List<BaseVisualSkillBehavior>();
+        }
+
+        skillsOnTile.Add(thisSkill);
     }
 
     public void ConvertTile(TeamType thisNewOwner)
@@ -109,8 +125,44 @@ public class TileConversionHandler : MonoBehaviour
         {
             CheckCharactersSteppedIn();
         }
+
+        UpdatePathManager();
     }
 
+    public void UpdatePathManager()
+    {
+        if(BattlefieldPathManager.GetInstance == null || myParent.isSpawnPoint)
+        {
+            return;
+        }
+
+        if(characterStepping == null || characterStepping.Count <= 0)
+        {
+            BattlefieldPathManager.GetInstance.RemovePathWithAttacker(myParent);
+            BattlefieldPathManager.GetInstance.RemovePathWithDefender(myParent);
+        }
+        else
+        {
+            if(characterStepping.Find(x => x.teamType == TeamType.Defender))
+            {
+                BattlefieldPathManager.GetInstance.AddPathWithDefender(myParent);    
+            }
+            else
+            {
+                BattlefieldPathManager.GetInstance.RemovePathWithDefender(myParent);
+            }
+
+            if (characterStepping.Find(x => x.teamType == TeamType.Attacker))
+            {
+                BattlefieldPathManager.GetInstance.AddPathWithAttacker(myParent);
+            }
+            else
+            {
+                BattlefieldPathManager.GetInstance.RemovePathWithAttacker(myParent);
+            }
+        }
+
+    }
     public void CheckCharactersSteppedIn()
     {
         BaseCharacter attacker = null;
@@ -174,6 +226,7 @@ public class TileConversionHandler : MonoBehaviour
             characterStepping.Remove(thisCharacter);
         }
         CheckCharactersSteppedIn();
+        UpdatePathManager();
     }
     public void UpdateTileBehavior()
     {

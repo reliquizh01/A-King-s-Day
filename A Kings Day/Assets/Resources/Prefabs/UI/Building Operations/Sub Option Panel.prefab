@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.71300006, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10.5, y: 0.000030517578}
+  m_AnchoredPosition: {x: -10.5, y: 0}
   m_SizeDelta: {x: -18.549072, y: -43.549072}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8470423489254161962
@@ -185,7 +185,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.27785003, y: 1}
-  m_AnchoredPosition: {x: 5.8000183, y: 0.000030517578}
+  m_AnchoredPosition: {x: 5.800049, y: 0}
   m_SizeDelta: {x: -13.549072, y: -43.549072}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8470423489575263988
@@ -360,7 +360,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1.5400085}
+  m_AnchoredPosition: {x: 0, y: -1.5400391}
   m_SizeDelta: {x: -0.000091552734, y: 3.0754318}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8470423489779583549
@@ -517,7 +517,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.27785003, y: 0}
   m_AnchorMax: {x: 0.71300006, y: 1}
-  m_AnchoredPosition: {x: -0.66832, y: -0.5}
+  m_AnchoredPosition: {x: -0.66833496, y: -0.5}
   m_SizeDelta: {x: -1.3366394, y: -69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8470423490089271372
@@ -553,7 +553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.5000076, y: 0}
+  m_AnchoredPosition: {x: -7.5, y: 0}
   m_SizeDelta: {x: -15, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8470423490246913257
@@ -690,7 +690,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1.5400085}
+  m_AnchoredPosition: {x: 0, y: -1.5400391}
   m_SizeDelta: {x: -0.000091552734, y: 3.0754318}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8470423490504792054
@@ -981,7 +981,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 30.85
+  m_fontSize: 56.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1152,6 +1152,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -4.999977, y: 0}
+  m_AnchoredPosition: {x: -4.9999695, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

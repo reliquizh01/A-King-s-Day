@@ -54,8 +54,8 @@ namespace GameResource
                 // if its shown only if surpassing
                 if (warningDependentList[i].showOnSurpassing)
                 {
-                    int curAmount = curPlayer.ObtainResourceAmount(resourceType);
-                    warningAmount = curPlayer.ObtainResourceAmount(warningDependentList[i].dependent);
+                    int curAmount = PlayerGameManager.GetInstance.playerData.ObtainResourceAmount(resourceType);
+                    warningAmount = PlayerGameManager.GetInstance.playerData.ObtainResourceAmount(warningDependentList[i].dependent);
                     warningDependentList[i].showWarning = (curAmount > warningAmount);
                 }
                 else if (warningDependentList[i].showOnZero)

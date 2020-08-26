@@ -1,0 +1,430 @@
+fileFormatVersion: 2
+guid: 592c18cfaabad6c468db0b3e1269d659
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    nPOTScale: 1
+    sRGBTexture: 0
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData:
+  - name: Speed Up Skill_Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 130
+      width: 52
+      height: 54
+    spriteID: 2993f32f661b7bb40a87d17835afb226
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -88, y: -307}
+  - name: Rally Troops Skill_Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 192
+      width: 52
+      height: 54
+    spriteID: 9ade5c867add9c447a3107e4626cbda5
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -173, y: -245}
+  - name: Arrow Barrage Skill_Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 64
+      width: 50
+      height: 52
+    spriteID: 9791a66ca7f58004ab1e5c15287ddbcc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -189, y: -374}
+  - name: Skill Slot
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 54
+      height: 56
+    spriteID: 6877fb317ce3e8b4195e4068c7f25db3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -8, y: -432}
+  - name: Empty Skill_Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 4
+      width: 50
+      height: 52
+    spriteID: 1800a17207c599d4583f5d8221391ab7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -277, y: -434}
+  - name: March Forward Skill_Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 68
+      width: 52
+      height: 54
+    spriteID: 3bfeb714739c59345a40ec4598c9d7d0
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -88, y: -304}
+  rigSpriteImportData:
+  - name: Speed Up Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 4
+      width: 52
+      height: 54
+    spriteID: 3126cf2568be4ff46a8c4ee1615dff3a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -26, y: -433}
+  - name: Rally Troops Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 68
+      width: 52
+      height: 54
+    spriteID: 6c7a9bb71da72e44a861c373e465730d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -173, y: -369}
+  - name: Arrow Barrage Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 68
+      width: 50
+      height: 52
+    spriteID: 100dfd1678b303948afd679620014107
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -191, y: -370}
+  - name: Skill Slot
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 54
+      height: 56
+    spriteID: 07214876423351844ace7132ca8b3d49
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -8, y: -432}
+  platformSettings:
+  - name: Default
+    overridden: 1
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: PC, Mac & Linux Standalone
+    overridden: 1
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 128
+  importedTextureHeight: 256
+  documentSize: {x: 500, y: 500}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 128
+  textureActualHeight: 256
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 0
+  mosaicPSDLayers:
+  - name: March Forward Skill_Icon
+    spriteName: March Forward Skill_Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3bfeb714739c59345a40ec4598c9d7d0
+    layerID: 18
+    mosaicPosition: {x: 4, y: 68}
+  - name: Speed Up Skill_Icon
+    spriteName: Speed Up Skill_Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2993f32f661b7bb40a87d17835afb226
+    layerID: 8
+    mosaicPosition: {x: 4, y: 130}
+  - name: Rally Troops Skill_Icon
+    spriteName: Rally Troops Skill_Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9ade5c867add9c447a3107e4626cbda5
+    layerID: 9
+    mosaicPosition: {x: 4, y: 192}
+  - name: Empty Skill_Icon
+    spriteName: Empty Skill_Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1800a17207c599d4583f5d8221391ab7
+    layerID: 12
+    mosaicPosition: {x: 66, y: 4}
+  - name: Arrow Barrage Skill_Icon
+    spriteName: Arrow Barrage Skill_Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9791a66ca7f58004ab1e5c15287ddbcc
+    layerID: 11
+    mosaicPosition: {x: 66, y: 64}
+  - name: Skill Slot
+    spriteName: Skill Slot
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 6877fb317ce3e8b4195e4068c7f25db3
+    layerID: 4
+    mosaicPosition: {x: 4, y: 4}
+  rigPSDLayers:
+  - name: Speed Up Icon
+    spriteName: Speed Up Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3126cf2568be4ff46a8c4ee1615dff3a
+    layerID: 8
+    mosaicPosition: {x: 66, y: 4}
+  - name: Rally Troops Icon
+    spriteName: Rally Troops Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 6c7a9bb71da72e44a861c373e465730d
+    layerID: 9
+    mosaicPosition: {x: 4, y: 68}
+  - name: Arrow Barrage Icon
+    spriteName: Arrow Barrage Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 100dfd1678b303948afd679620014107
+    layerID: 11
+    mosaicPosition: {x: 64, y: 68}
+  - name: Skill Slot
+    spriteName: Skill Slot
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 07214876423351844ace7132ca8b3d49
+    layerID: 4
+    mosaicPosition: {x: 4, y: 4}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: Hero Skill Icons Texture
+  prefabAssetName: Hero Skill Icons Prefab
+  spriteLibAssetName: Hero Skill Icons Sprite Lib
+  secondarySpriteTextures: []
