@@ -123,6 +123,17 @@ namespace Battlefield
             attackerReportPanel.ShowDailyReport();
             defenderReportPanel.gameObject.SetActive(true);
             defenderReportPanel.ShowDailyReport();
+
+            attackerPanel.skillSlotHandler.myPanel.PlayCloseAnimation();
+            defenderPanel.skillSlotHandler.myPanel.PlayCloseAnimation();
+
+            attackerPanel.leaderSlotHandler.myPanel.PlayCloseAnimation();
+            defenderPanel.leaderSlotHandler.myPanel.PlayCloseAnimation();
+
+            attackerPanel.leaderSlotHandler.startCounting = false;
+            defenderPanel.leaderSlotHandler.startCounting = false;
+            attackerPanel.skillSlotHandler.SwitchSkillTimer(false);
+            defenderPanel.skillSlotHandler.SwitchSkillTimer(false);
         }
         public void UpdateUIInformation()
         {
@@ -301,6 +312,15 @@ namespace Battlefield
             {
                 defenderPanel.ComputerPlayerControl();
             }
+
+            attackerPanel.skillSlotHandler.myPanel.PlayOpenAnimation();
+            defenderPanel.skillSlotHandler.myPanel.PlayOpenAnimation();
+
+            attackerPanel.leaderSlotHandler.myPanel.PlayOpenAnimation();
+            defenderPanel.leaderSlotHandler.myPanel.PlayOpenAnimation();
+
+            attackerPanel.skillSlotHandler.SwitchSkillTimer(true);
+            defenderPanel.skillSlotHandler.SwitchSkillTimer(true);
         }
 
         public void EndBattle()

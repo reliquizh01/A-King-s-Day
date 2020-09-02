@@ -27,6 +27,7 @@ namespace Kingdoms
         public string travellersName;
         [Header("Basic Traveller Information")]
         public TravellerType travellerType;
+        public TerritoryOwners affiliatedTeam;
         public bool playerSentTraveller;
         public string targetDestinationMapPoint;
 

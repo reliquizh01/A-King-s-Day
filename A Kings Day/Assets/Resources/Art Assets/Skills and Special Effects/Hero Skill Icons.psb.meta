@@ -138,7 +138,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 66
-      y: 64
+      y: 124
       width: 50
       height: 52
     spriteID: 9791a66ca7f58004ab1e5c15287ddbcc
@@ -151,7 +151,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -189, y: -374}
+    uvTransform: {x: -189, y: -314}
   - name: Skill Slot
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -182,7 +182,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 66
-      y: 4
+      y: 64
       width: 50
       height: 52
     spriteID: 1800a17207c599d4583f5d8221391ab7
@@ -195,7 +195,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -277, y: -434}
+    uvTransform: {x: -277, y: -374}
   - name: March Forward Skill_Icon
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -218,6 +218,28 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -88, y: -304}
+  - name: Summon Self Skill_Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 4
+      width: 50
+      height: 52
+    spriteID: 299facee55b149f4fa0d62019b98aa82
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -111, y: -373}
   rigSpriteImportData:
   - name: Speed Up Icon
     originalName: 
@@ -368,20 +390,27 @@ ScriptedImporter:
     spriteID: 9ade5c867add9c447a3107e4626cbda5
     layerID: 9
     mosaicPosition: {x: 4, y: 192}
+  - name: Summon Self Skill_Icon
+    spriteName: Summon Self Skill_Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 299facee55b149f4fa0d62019b98aa82
+    layerID: 21
+    mosaicPosition: {x: 66, y: 4}
   - name: Empty Skill_Icon
     spriteName: Empty Skill_Icon
     isGroup: 0
     parentIndex: -1
     spriteID: 1800a17207c599d4583f5d8221391ab7
     layerID: 12
-    mosaicPosition: {x: 66, y: 4}
+    mosaicPosition: {x: 66, y: 64}
   - name: Arrow Barrage Skill_Icon
     spriteName: Arrow Barrage Skill_Icon
     isGroup: 0
     parentIndex: -1
     spriteID: 9791a66ca7f58004ab1e5c15287ddbcc
     layerID: 11
-    mosaicPosition: {x: 66, y: 64}
+    mosaicPosition: {x: 66, y: 124}
   - name: Skill Slot
     spriteName: Skill Slot
     isGroup: 0

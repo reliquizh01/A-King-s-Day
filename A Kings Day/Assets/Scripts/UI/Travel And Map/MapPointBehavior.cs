@@ -147,6 +147,7 @@ namespace Maps
             }
 
             neighborPoints[moveToIdx].ReceiveTraveller(thisTraveller);
+            thisTraveller.currentScenePoint = neighborPoints[moveToIdx].myPointInformation.pointName;
         }
 
         public void ReceiveTraveller(BaseTravellerData thisTraveller)

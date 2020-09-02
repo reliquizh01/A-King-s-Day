@@ -61,11 +61,17 @@ namespace Managers
 
         public void StartPrologue()
         {
+            PlayerGameManager.GetInstance.ReceiveTroops(25, "Recruit");
+            PlayerGameManager.GetInstance.ReceiveTroops(15, "Archer");
+            PlayerGameManager.GetInstance.ReceiveTroops(20, "Swordsman");
+            PlayerGameManager.GetInstance.ReceiveTroops(20, "Spearman");
+
             kingdomCreationManager.creationView.myPanel.PlayCloseAnimation();
             kingdomCreationManager.creationView.playPrologueTab.CloseWindow();
             StopPathScrolling();
             if (DramaticActManager.GetInstance != null)
             {
+                TransitionManager.GetInstance.playingPrologue = true;
                 DramaticActManager.GetInstance.PlayScene(prologueSceneTitle, IntroduceResources);
             }
         }

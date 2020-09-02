@@ -107,6 +107,7 @@ namespace Maps
                     tmp.myPointInformation = new MapPointInformationData();
                     tmp.myPointInformation = campaignData.mapPointList[i];
                     tmp.myPointInformation.mapNeighborsList = new List<MapPointInformationData>();
+                    tmp.myPointInformation.isKingdomPoint = tmp.pointTowardsKingdom;
                 }
             }
 
@@ -165,6 +166,7 @@ namespace Maps
 
                 // Base this stuff depending on what the spawnable of the place is.
                 currentMap.myMap.myMapPoints[i].myPointInformation.troopsStationed.AddRange(unitStorage.GenerateBasicWarband(unitCount));
+                currentMap.myMap.myMapPoints[i].myPointInformation.isKingdomPoint = currentMap.myMap.myMapPoints[i].pointTowardsKingdom;
             }
         }
 
@@ -174,7 +176,6 @@ namespace Maps
             if(!selectedMapShowing)
             {
                 currentMap = thisMap;
-                currentMap.myBtn.interactable = false;
                 StartCoroutine(selectionAnim.WaitAnimationForAction("Map Selected", UpdateMapShown));
 
 
@@ -199,13 +200,12 @@ namespace Maps
                 UpdateMapShown();
             }
         }
-
         public void MapSelected(MapType type)
         {
             if (!selectedMapShowing)
             {
                 currentMap = mapSelectionList.Find(x => x.mapType == type);
-                currentMap.myBtn.interactable = false;
+                currentMap.SwitchMapSelectedButton(false);
                 StartCoroutine(selectionAnim.WaitAnimationForAction("Map Selected", UpdateMapShown));
 
 

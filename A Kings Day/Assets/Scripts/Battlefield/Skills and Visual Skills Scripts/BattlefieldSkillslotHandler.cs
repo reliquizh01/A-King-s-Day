@@ -10,6 +10,7 @@ namespace Battlefield
 {
     public class BattlefieldSkillslotHandler : MonoBehaviour
     {
+        public BattlefieldSkillsHandler myController;
         [Header("Current Skill")]
         public BaseSkillInformationData currentSkill;
 
@@ -22,18 +23,16 @@ namespace Battlefield
         [Header("Skill Counter")]
         public TimerUI cdCounter;
         public bool startCounting;
-        public float currentCount;
-        public float maxCount;
 
         public void SetAsSkill(BaseSkillInformationData newSkill)
         {
             currentSkill = new BaseSkillInformationData();
             currentSkill = newSkill;
-
-            currentCount = 0;
-            maxCount = newSkill.cooldown;
-
-            startCounting = true;
+            
+            if(currentSkill.isOnCooldown)
+            {
+                SetOnCooldown();
+            }
 
             if(BattlefieldSpawnManager.GetInstance != null)
             {
@@ -67,6 +66,11 @@ namespace Battlefield
         {
             currentSkill.isOnCooldown = false;
             cdCounter.gameObject.SetActive(false);
+            
+            if(myController.myController.controlType == PlayerControlType.Computer)
+            {
+                myController.myController.ComputerPlayerSkillControl();
+            }
         }
     }
 }

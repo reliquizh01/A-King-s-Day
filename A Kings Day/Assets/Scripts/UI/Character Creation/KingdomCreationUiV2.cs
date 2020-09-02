@@ -315,12 +315,12 @@ public class KingdomCreationUiV2 : MonoBehaviour
         BaseHeroInformationData playerAsHero = new BaseHeroInformationData();
         playerAsHero = TransitionManager.GetInstance.unitStorage.ObtainHeroBaseInformation(temporaryKingdom.wieldedWeapon);
         playerAsHero.unitInformation.unitName = "Player";
+        playerAsHero.unitInformation.prefabDataPath = "Assets/Resources/Prefabs/Unit and Items/Player.prefab";
 
         temporaryKingdom.myHeroes = new List<BaseHeroInformationData>();
         temporaryKingdom.tavernHeroes = new List<BaseHeroInformationData>();
 
         BaseHeroInformationData tmp = new BaseHeroInformationData();
-        tmp.unitInformation = new UnitInformationData();
         tmp.unitInformation = playerAsHero.unitInformation;
         tmp.heroLevel = playerAsHero.heroLevel;
         tmp.heroRarity = playerAsHero.heroRarity;
@@ -328,6 +328,7 @@ public class KingdomCreationUiV2 : MonoBehaviour
         tmp.healthGrowthRate = playerAsHero.healthGrowthRate;
         tmp.damageGrowthRate = playerAsHero.damageGrowthRate;
         tmp.speedGrowthRate = playerAsHero.speedGrowthRate;
+
 
         tmp.skillsList = new List<BaseSkillInformationData>();
         for (int i = 0; i < playerAsHero.skillsList.Count; i++)
@@ -337,7 +338,16 @@ public class KingdomCreationUiV2 : MonoBehaviour
             tmp.skillsList.Add(tmpSkill);
         }
 
-        temporaryKingdom.myHeroes.Add(tmp);
+        if(!TransitionManager.GetInstance.isNewGame)
+        {
+            temporaryKingdom.myHeroes.Add(tmp);
+        }
+        else
+        {
+            temporaryKingdom.myHeroes.Add(tmp);
+            PlayerGameManager.GetInstance.playerData.myHeroes = new List<BaseHeroInformationData>();
+            PlayerGameManager.GetInstance.playerData.myHeroes.Add(tmp);
+        }
     }
     #endregion
 
@@ -371,11 +381,14 @@ public class KingdomCreationUiV2 : MonoBehaviour
         if(CreationSceneManager.GetInstance != null)
         {
             CreationSceneManager.GetInstance.StartPrologue();
+            UpdatePlayerHero();
         }
         playPrologueTab.CloseWindow();
 
         SaveLoadManager.GetInstance.inheritanceData = new PlayerKingdomData();
         SaveLoadManager.GetInstance.inheritanceData = temporaryKingdom;
+
+
     }
 
 

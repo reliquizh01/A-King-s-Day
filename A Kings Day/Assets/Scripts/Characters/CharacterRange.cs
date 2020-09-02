@@ -9,7 +9,7 @@ namespace Characters
 {
     public class CharacterRange : MonoBehaviour
     {
-        private BaseCharacter myCharacter;
+        public BaseCharacter myCharacter;
         public float totalRange;
         public float distancePerRange = 0.3f;
         public List<BaseCharacter> enemiesInRange;
@@ -18,10 +18,15 @@ namespace Characters
             if (GetComponent<BaseCharacter>() != null)
             {
                 myCharacter = GetComponent<BaseCharacter>();
-                totalRange = myCharacter.unitInformation.range * distancePerRange;
+                UpdateTotalRange();
             }
         }
 
+
+        public void UpdateTotalRange()
+        {
+            totalRange = myCharacter.unitInformation.range * distancePerRange;
+        }
         // Update is called once per frame
         void Update()
         {

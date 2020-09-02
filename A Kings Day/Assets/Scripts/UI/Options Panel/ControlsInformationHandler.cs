@@ -13,7 +13,7 @@ public class ControlsInformationHandler : MonoBehaviour
 
 
     public GameObject initialDetail;
-    public GameObject unitSelection, unitSummon, tileSwap;
+    public GameObject unitSelection, unitSummon, tileSwap, skillSelect, leaderSpawn;
 
     public void Start()
     {
@@ -34,21 +34,44 @@ public class ControlsInformationHandler : MonoBehaviour
         initialDetail.gameObject.SetActive(false);
         if (idx <= 3)
         {
-            tileSwap.gameObject.SetActive(true);
-            unitSummon.gameObject.SetActive(false);
-            unitSelection.gameObject.SetActive(false);
+            tileSwap.SetActive(true);
+            unitSummon.SetActive(false);
+            unitSelection.SetActive(false);
+            skillSelect.SetActive(false);
+            leaderSpawn.SetActive(false);
         }
         else if (idx == 4)
         {
-            tileSwap.gameObject.SetActive(false);
-            unitSummon.gameObject.SetActive(true);
-            unitSelection.gameObject.SetActive(false);
+            tileSwap.SetActive(false);
+            unitSummon.SetActive(true);
+            unitSelection.SetActive(false);
+            skillSelect.SetActive(false);
+            leaderSpawn.SetActive(false);
         }
         else if(idx > 4 && idx <= 8)
         {
-            tileSwap.gameObject.SetActive(false);
-            unitSummon.gameObject.SetActive(false);
-            unitSelection.gameObject.SetActive(true);
+            tileSwap.SetActive(false);
+            unitSummon.SetActive(false);
+            unitSelection.SetActive(true);
+            skillSelect.SetActive(false);
+            leaderSpawn.SetActive(false);
+        }
+        else if(idx == 9)
+        {
+            tileSwap.SetActive(false);
+            unitSummon.SetActive(false);
+            unitSelection.SetActive(false);
+            skillSelect.SetActive(false);
+            leaderSpawn.SetActive(true);
+        }
+        else if(idx >= 10 && idx <= 12)
+        {
+            tileSwap.SetActive(false);
+            unitSummon.SetActive(false);
+            unitSelection.SetActive(false);
+            skillSelect.SetActive(true);
+            leaderSpawn.SetActive(false);
+
         }
     }
 

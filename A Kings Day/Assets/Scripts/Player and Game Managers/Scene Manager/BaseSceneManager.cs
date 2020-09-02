@@ -43,6 +43,7 @@ namespace Managers
             Debug.Log("Current Point Count:" + scenePointHandler.scenePoints.Count);
             return scenePointHandler.scenePoints.Find(x => x.gameObject.name == pointName);
         }
+
     }
 
 }

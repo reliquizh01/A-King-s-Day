@@ -181,7 +181,7 @@ namespace Managers
             playerData.potentialMercenary = newData.potentialMercenary;
 
             playerData.myHeroes = new List<BaseHeroInformationData>();
-            if(newData.myHeroes != null)
+            if(newData.myHeroes != null && newData.myHeroes.Count > 0)
             {
                 Debug.Log("Temporary Kingdom Heroes Count: " + newData.myHeroes.Count + " And Skill Count: " + newData.myHeroes[0].skillsList.Count);
 
@@ -203,7 +203,7 @@ namespace Managers
             }
 
             playerData.tavernHeroes = new List<BaseHeroInformationData>();
-            if(newData.tavernHeroes != null)
+            if(newData.tavernHeroes != null && newData.tavernHeroes.Count > 0)
             {
                 for (int i = 0; i < newData.tavernHeroes.Count; i++)
                 {
@@ -220,7 +220,7 @@ namespace Managers
             }
 
             playerData.myItems = new List<ItemInformationData>();
-            if(newData.myItems != null)
+            if(newData.myItems != null && newData.myItems.Count > 0)
             {
                 for (int i = 0; i < newData.myItems.Count; i++)
                 {
@@ -262,7 +262,7 @@ namespace Managers
             playerData.canReceiveMonthlyTax = newData.canReceiveMonthlyTax;
 
             playerData.currentTechnologies = new List<BaseTechnologyData>();
-            if (newData.currentTechnologies != null)
+            if (newData.currentTechnologies != null && newData.currentTechnologies.Count > 0)
             {
                 for (int i = 0; i < newData.currentTechnologies.Count; i++)
                 {
@@ -292,7 +292,6 @@ namespace Managers
         public void ReceiveTroops(int amount, string unitName)
         {
             int idx = playerData.troopsList.FindIndex(x => x.unitInformation.unitName == unitName);
-            Debug.Log(idx + " Receiving Unit : " + unitName);
             if (idx != -1)
             {
                 playerData.troopsList[idx].totalUnitCount += amount;
@@ -412,7 +411,7 @@ namespace Managers
             amount = Mathf.Abs(amount);
 
             int totalCheck = playerData.ObtainResourceAmount(type) - amount;
-            if(totalCheck < 0)
+            if(totalCheck <= 0)
             {
                 amount = playerData.ObtainResourceAmount(type);
             }
@@ -421,25 +420,32 @@ namespace Managers
             {
                 case ResourceType.Food:
                     playerData.foods -= amount;
+                    if (playerData.foods < 0) playerData.foods = 0;
                     break;
                 case ResourceType.Population:
                     playerData.population -= amount;
+                    if (playerData.population < 0) playerData.population = 0;
                     break;
                 case ResourceType.Coin:
                     playerData.coins -= amount;
+                    if (playerData.coins < 0) playerData.coins = 0;
                     break;
                 case ResourceType.Cows:
                     playerData.cows -= amount;
+                    if (playerData.cows < 0) playerData.cows = 0;
                     break;
                 case ResourceType.farmer:
                     playerData.farmerCount -= amount;
+                    if (playerData.farmerCount < 0) playerData.farmerCount = 0;
                     break;
                 case ResourceType.herdsmen:
                     playerData.herdsmanCount -= amount;
+                    if (playerData.herdsmanCount < 0) playerData.herdsmanCount = 0;
                     playerData.UpdateCowStorage();
                     break;
                 case ResourceType.storageKeeper:
                     playerData.storageKeeperCount -= amount;
+                    if (playerData.storageKeeperCount < 0) playerData.storageKeeperCount = 0;
                     playerData.UpdateFoodStorage();
                     break;
                 case ResourceType.Troops:
@@ -578,6 +584,24 @@ namespace Managers
             }
         }
 
+        public BaseTravellerData ConvertWholeGarrisonAsTraveller()
+        {
+            BaseTravellerData wholeKingdom = new BaseTravellerData();
+            wholeKingdom.troopsCarried = new List<TroopsInformation>();
+
+            if(playerData.troopsList != null && playerData.troopsList.Count > 0)
+            {
+                for (int i = 0; i < playerData.troopsList.Count; i++)
+                {
+                    wholeKingdom.troopsCarried.Add(playerData.troopsList[i]);
+                }
+            }
+
+            wholeKingdom.leaderUnit = new List<BaseHeroInformationData>();
+            wholeKingdom.leaderUnit.Add(playerData.myHeroes.Find(x => x.unitInformation.unitName == "Player"));
+
+            return wholeKingdom;
+        }
         public BaseTravellerData ObtainTraveller(BaseHeroInformationData thisTraveller)
         {
             BaseTravellerData tmp = campaignData.travellerList.Find(x => x.leaderUnit.Contains(thisTraveller));

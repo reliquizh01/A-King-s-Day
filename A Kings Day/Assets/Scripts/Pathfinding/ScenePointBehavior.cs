@@ -32,6 +32,9 @@ public class ScenePointBehavior : BaseInteractableBehavior
     public bool sceneLoader = false;
     public SceneType SceneToLoad;
 
+    [Header("Scene Force Face Direction")]
+    public bool forceFacing = false;
+    public FacingDirection directionToFace;
     public void Awake()
     {
     }
@@ -123,6 +126,7 @@ public class ScenePointBehavior : BaseInteractableBehavior
         }
         else
         {
+            BaseCharacter player = TransitionManager.GetInstance.currentSceneManager.player;
             if (EventSystem.current.IsPointerOverGameObject())
             {
                 return;
@@ -135,11 +139,18 @@ public class ScenePointBehavior : BaseInteractableBehavior
                     Debug.Log("Is SceneLoader!");
                     EventBroadcaster.Instance.PostEvent(EventNames.HIDE_RESOURCES);
                     EventBroadcaster.Instance.PostEvent(EventNames.DISABLE_IN_GAME_INTERACTION);
-                    TransitionManager.GetInstance.currentSceneManager.player.OrderMovement(this, SceneLoader);
+                    player.OrderMovement(this, SceneLoader);
                 }
                 else
                 {
-                    TransitionManager.GetInstance.currentSceneManager.player.OrderMovement(this);
+                    if (forceFacing)
+                    {
+                        player.OrderMovement(this, ()=> player.OrderToFace(directionToFace));
+                    }
+                    else
+                    {
+                        player.OrderMovement(this);
+                    }
                 }
 
             }

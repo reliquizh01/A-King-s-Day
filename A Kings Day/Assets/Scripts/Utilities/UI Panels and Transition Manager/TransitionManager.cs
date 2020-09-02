@@ -51,7 +51,9 @@ namespace Managers
         public bool inTransition = false;
 
         // USE THIS TO REMOVE ONBOARDING
+        public bool shortCutTestDebug;
         public bool isNewGame = false;
+        public bool playingPrologue = false;
         public ViewManager currentMgr;
         public OptionsController optionController;
 
@@ -60,10 +62,11 @@ namespace Managers
         public KingdomMapDataStorage kingdomMapStorage;
 
         [Header("Loading Mechanics")]
+        public Action afterLoadcallback;
         public SceneType previousScene;
         public bool isLoading = false;
         public bool isLoadingNewScene = false;
-        private SceneType preLoadThisScene;
+        public SceneType preLoadThisScene;
 
         [Header("Traveller Battle Mechanics")]
         public BaseTravellerData attackedTravellerData;
@@ -73,7 +76,7 @@ namespace Managers
         public bool isEngagedWithMapPoint;
         [Header("Did Player Attacked?")]
         public bool isPlayerAttacker;
-        
+
         public void Start()
         {
             EventBroadcaster.Instance.AddObserver(EventNames.ENABLE_TAB_COVER, ShowTabCover);
@@ -92,6 +95,11 @@ namespace Managers
                     {
                         RemoveLoading();
                         isLoadingNewScene = false;
+                        if(afterLoadcallback != null)
+                        {
+                            afterLoadcallback();
+                            afterLoadcallback = null;
+                        }
                         EventBroadcaster.Instance.PostEvent(EventNames.ENABLE_TOOLTIP_MESG);
                         if(!isNewGame)
                         {
@@ -161,14 +169,19 @@ namespace Managers
             isLoading = false;
         }
 
-        public void LoadScene(SceneType thisScene)
+        public void LoadScene(SceneType thisScene, Action newAfterLoadCallback = null)
         {
             EventBroadcaster.Instance.PostEvent(EventNames.DISABLE_TOOLTIP_MESG);
             EventBroadcaster.Instance.PostEvent(EventNames.HIDE_RESOURCES);
             EventBroadcaster.Instance.PostEvent(EventNames.BEFORE_LOAD_SCENE);
 
-            previousScene = currentSceneManager.sceneType;
+            if(currentSceneManager.sceneType != thisScene)
+            {
+                previousScene = currentSceneManager.sceneType;
+            }
+
             preLoadThisScene = thisScene;
+            afterLoadcallback = newAfterLoadCallback;
 
             ShowLoading(LoadScene);
             if(previousScene != SceneType.Opening)
@@ -267,8 +280,7 @@ namespace Managers
             {
                 currentMgr = thisMgr;
                 currentMgr.gameView = thisMgr.gameView;
-                Debug.Log("Current Mgr: " + currentMgr.thisManager.gameObject.name);
-                if(currentMgr.gameView == SceneType.Creation)
+                if(currentMgr.gameView == SceneType.Creation || playingPrologue)
                 {
                     isNewGame = true;
                 }
@@ -291,7 +303,7 @@ namespace Managers
 
         public void CheckSetupResourcePanel()
         {
-            if (currentMgr.gameView == SceneType.Courtroom)
+            if (currentMgr.gameView == SceneType.Courtroom && !isNewGame)
             {
                 ResourceInformationController.GetInstance.ShowResourcePanel(ResourcePanelType.overhead);
                 ResourceInformationController.GetInstance.ShowWeekendPanel();
@@ -300,6 +312,10 @@ namespace Managers
             {
                 ResourceInformationController.GetInstance.ShowResourcePanel(ResourcePanelType.overhead);
                 ResourceInformationController.GetInstance.ShowTravelPanel();
+            }
+            else
+            {
+                EventBroadcaster.Instance.PostEvent(EventNames.HIDE_RESOURCES);
             }
         }
         public void StartCurrentManager()
@@ -326,6 +342,7 @@ namespace Managers
         }
         public void FaceTravellerInBattle(BaseTravellerData thisTraveller, bool isAttacker = false)
         {
+
             attackedTravellerData = new BaseTravellerData();
             attackedTravellerData = thisTraveller;
 

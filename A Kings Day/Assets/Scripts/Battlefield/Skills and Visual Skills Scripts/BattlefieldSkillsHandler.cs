@@ -10,6 +10,7 @@ namespace Battlefield
 {
     public class BattlefieldSkillsHandler : MonoBehaviour
     {
+        public BasePanelBehavior myPanel;
         public BattlefieldUnitSelectionController myController;
         public Sprite iconEmpty;
         [Header("Current Hero")]
@@ -21,25 +22,35 @@ namespace Battlefield
 
         public void Start()
         {
-            currentSkillSlot = skillSlotList[0];
-            currentSkillSlot.SetAsCurrentSkillSlot();
+            if(skillSlotList != null && skillSlotList.Count > 0)
+            {
+                currentSkillSlot = skillSlotList[0];
+                currentSkillSlot.SetAsCurrentSkillSlot();
+                for (int i = 0; i < skillSlotList.Count; i++)
+                {
+                    skillSlotList[i].myController = this;
+                }
+            }
+            
         }
         public void Update()
         {
             SkillControl();
         }
 
+        public void SwitchSkillTimer(bool switchTo)
+        {
+            for (int i = 0; i < skillSlotList.Count; i++)
+            {
+                skillSlotList[i].startCounting = switchTo;
+            }
+        }
         public void SkillControl()
         {
             if(myController.controlType == PlayerControlType.PlayerOne)
             {
                 if(Input.GetKeyDown(KeyCode.Q))
                 {
-                    if(currentSkillSlot != null)
-                    {
-                        currentSkillSlot.SetAsUnselectedSkillSlot();
-                    }
-
                     if(curSkillIdx <= 0)
                     {
                         curSkillIdx = skillSlotList.Count - 1;
@@ -48,16 +59,9 @@ namespace Battlefield
                     {
                         curSkillIdx -= 1;
                     }
-                    currentSkillSlot = skillSlotList[curSkillIdx];
-                    skillSlotList[curSkillIdx].SetAsCurrentSkillSlot();
                 }
                 else if(Input.GetKeyDown(KeyCode.E))
                 {
-                    if (currentSkillSlot != null)
-                    {
-                        currentSkillSlot.SetAsUnselectedSkillSlot();
-                    }
-
                     if (curSkillIdx >= skillSlotList.Count - 1)
                     {
                         curSkillIdx = 0;
@@ -66,8 +70,7 @@ namespace Battlefield
                     {
                         curSkillIdx += 1;
                     }
-                    currentSkillSlot = skillSlotList[curSkillIdx];
-                    skillSlotList[curSkillIdx].SetAsCurrentSkillSlot();
+                    UpdateSelectedSkillSlot();
                 }
 
                 if(Input.GetKeyDown(KeyCode.F))
@@ -79,10 +82,6 @@ namespace Battlefield
             {
                 if (Input.GetKeyDown(KeyCode.Keypad7))
                 {
-                    if (currentSkillSlot != null)
-                    {
-                        currentSkillSlot.SetAsUnselectedSkillSlot();
-                    }
 
                     if (curSkillIdx <= 0)
                     {
@@ -92,16 +91,10 @@ namespace Battlefield
                     {
                         curSkillIdx -= 1;
                     }
-                    currentSkillSlot = skillSlotList[curSkillIdx];
-                    skillSlotList[curSkillIdx].SetAsCurrentSkillSlot();
+                    UpdateSelectedSkillSlot();
                 }
                 else if (Input.GetKeyDown(KeyCode.Keypad9))
                 {
-                    if (currentSkillSlot != null)
-                    {
-                        currentSkillSlot.SetAsUnselectedSkillSlot();
-                    }
-
                     if (curSkillIdx >= skillSlotList.Count - 1)
                     {
                         curSkillIdx = 0;
@@ -110,8 +103,7 @@ namespace Battlefield
                     {
                         curSkillIdx += 1;
                     }
-                    currentSkillSlot = skillSlotList[curSkillIdx];
-                    skillSlotList[curSkillIdx].SetAsCurrentSkillSlot();
+                    UpdateSelectedSkillSlot();
                 }
 
                 if (Input.GetKeyDown(KeyCode.Keypad6))
@@ -120,10 +112,28 @@ namespace Battlefield
                 }
             }
         }
+        public void UpdateSelectedSkillSlot()
+        {
+            if (currentSkillSlot != null)
+            {
+                currentSkillSlot.SetAsUnselectedSkillSlot();
+            }
+
+            currentSkillSlot = skillSlotList[curSkillIdx];
+            skillSlotList[curSkillIdx].SetAsCurrentSkillSlot();
+        }
         public void SetupHeroSkillset(BaseHeroInformationData thisHero)
         {
             currentHero = new BaseHeroInformationData();    
             currentHero = thisHero;
+
+            if (currentHero == null)
+                return;
+            if(currentHero.skillsList == null &&
+                currentHero.skillsList.Count <= 0)
+            {
+                return;
+            }
 
             for (int i = 0; i < skillSlotList.Count; i++)
             {
@@ -138,6 +148,34 @@ namespace Battlefield
             }
         }
 
+        public void PauseCooldown()
+        {
+            for (int i = 0; i < skillSlotList.Count; i++)
+            {
+                skillSlotList[i].cdCounter.startTimer = false;
+            }
+        }
+
+        public void ContinueCooldown()
+        {
+            for (int i = 0; i < skillSlotList.Count; i++)
+            {
+                if(!skillSlotList[i].isClickable)
+                {
+                    skillSlotList[i].cdCounter.startTimer = true;
+                }
+            }
+        }
+
+        public bool isSkillAvailable()
+        {
+            if (currentHero.skillsList == null)
+                return false;
+            if (currentHero.skillsList.Count <= 0)
+                return false;
+
+            return (currentHero.skillsList.Find(x => !x.isOnCooldown) != null);
+        }
         public void ActivateThisSkill(int idx)
         {
             if(currentHero.skillsList == null || currentHero.skillsList.Count <= 0)
@@ -359,6 +397,18 @@ namespace Battlefield
                         break;
                 }
             }
+            else if(thisSkill.skillType == SkillType.SummonUnits)
+            {
+                int pathCount = BattlefieldPathManager.GetInstance.fieldPaths.Count;
+
+                string unitPath = thisSkill.prefabStringPath.Split('.')[0];
+                unitPath = unitPath.Replace("Assets/Resources/", "");
+
+                for (int i = 0; i < pathCount; i++)
+                {
+                    BattlefieldSpawnManager.GetInstance.SpawnSkillUnits(unitPath, myController.teamType, i);
+                }
+            }
             else
             {
                 switch (thisSkill.skillType)
@@ -385,13 +435,10 @@ namespace Battlefield
                     case SkillType.DefensiveBuff:
                         foreach (BaseCharacter item in targetUnits)
                         {
-                            Debug.Log("Adding Buff For Unit: " + item.unitInformation.unitName + " Amount of Buff: " + thisSkill.buffList.Count);
                             for (int i = 0; i < thisSkill.buffList.Count; i++)
                             {
-                                Debug.Log("[Added This Buff:" + thisSkill.buffList[i].buffName + "]");
                                 item.unitInformation.AddBuff(thisSkill.buffList[i]);
                                 item.UpdateStats();
-                                Debug.Log("[Checking BuffList Count:" + item.unitInformation.buffList.Count);
                             }
                         }
                         break;

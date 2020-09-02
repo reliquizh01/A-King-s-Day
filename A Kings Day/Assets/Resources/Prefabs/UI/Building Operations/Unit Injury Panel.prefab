@@ -64,7 +64,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7319031239135692439, guid: 4041f140d7da4df438d066843b28bb7a,
+  m_Sprite: {fileID: 2884267879102359303, guid: 882e759f8ab033e4fa88bcd4f51d2fb3,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -246,11 +246,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countText: {fileID: 2247851268110762659}
+  numberColorText: 
   curCount: 0
   targetCount: 0
   increment: 1
   startUpdating: 0
   enableColor: 0
+  preCountMesg: 
+  postCountMesg: 
 --- !u!1 &2247851268461539268
 GameObject:
   m_ObjectHideFlags: 0

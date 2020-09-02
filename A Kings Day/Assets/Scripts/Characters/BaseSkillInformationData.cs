@@ -12,6 +12,7 @@ namespace Characters
         Defensive, // Skills that helps the allies (spawnable skills)
         OffensiveBuff,  // Skills that hurts the enemies (passive addition)
         DefensiveBuff, // Skills that helps the allies (passive addition)
+        SummonUnits, // Summon Units, Either from prefab or your current selected unit.
     }
 
     public enum TriggeredBy
@@ -69,7 +70,7 @@ namespace Characters
         public TargetType targetType;
         public int skillLevel = 1;
         public bool targetAlive = true;
-
+        
         public bool statEnhanced;
         public bool spawnPrefab;
         public string prefabStringPath;
@@ -82,11 +83,12 @@ namespace Characters
         public bool isOnCooldown;
         public float curCooldown;
         public float cooldown;
-        public float effectgrowth;
+        public float cooldownLevelGrowth;
 
         // Target Inflicted means its a direct hit.
         public TargetStats targetStats;
         public float targetInflictedCount;
+        public float effectgrowth;
 
         // Buff effect are those effects with duration
         public List<BaseBuffInformationData> buffList;

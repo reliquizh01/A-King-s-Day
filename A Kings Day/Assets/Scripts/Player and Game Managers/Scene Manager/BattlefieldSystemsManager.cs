@@ -7,6 +7,7 @@ using Kingdoms;
 using SaveData;
 using KingEvents;
 using Maps;
+using Dialogue;
 
 public enum BattlefieldWinCondition
 {
@@ -96,28 +97,49 @@ public class BattlefieldSystemsManager : MonoBehaviour
     {
 
         dayInProgress = false;
-        BattlefieldSceneManager.GetInstance.battleUIInformation.attackerPanel.playerPlacement.battleTile.HideHoverTile();
-        BattlefieldSceneManager.GetInstance.battleUIInformation.defenderPanel.playerPlacement.battleTile.HideDefenderTile();
+        BattlefieldUIHandler uiHandler = BattlefieldSceneManager.GetInstance.battleUIInformation;
 
-        BattlefieldSceneManager.GetInstance.battleUIInformation.endDayOverTimer.gameObject.SetActive(true);
-        BattlefieldSceneManager.GetInstance.battleUIInformation.endDayOverTimer.StartTimer(0, 5, StopCurrentDayActions);
+        uiHandler.attackerPanel.playerPlacement.battleTile.HideHoverTile();
+        uiHandler.defenderPanel.playerPlacement.battleTile.HideDefenderTile();
+        
+        uiHandler.endDayOverTimer.gameObject.SetActive(true);
+        uiHandler.endDayOverTimer.StartTimer(0, 5, StopCurrentDayActions);
     }
     public void GoToNextDay()
     {
         dayInProgress = true;
         unitsInCamp = false;
 
-        BattlefieldSceneManager.GetInstance.battleUIInformation.dayTimer.StartTimer(minutePerDay, secondsPerDay, StartOverTimeNoSpawn);
-        BattlefieldSceneManager.GetInstance.battleUIInformation.UpdateUIInformation();
 
-        if(BattlefieldSceneManager.GetInstance.battleUIInformation.attackerPanel.controlType != PlayerControlType.Computer)
+        BattlefieldUIHandler uiHandler = BattlefieldSceneManager.GetInstance.battleUIInformation;
+
+        uiHandler.attackerPanel.leaderSlotHandler.ContinueCooldown();
+        uiHandler.defenderPanel.leaderSlotHandler.ContinueCooldown();
+        
+        uiHandler.attackerPanel.skillSlotHandler.ContinueCooldown();
+        uiHandler.defenderPanel.skillSlotHandler.ContinueCooldown();
+        
+        uiHandler.dayTimer.StartTimer(minutePerDay, secondsPerDay, StartOverTimeNoSpawn);
+        uiHandler.UpdateUIInformation();
+
+        if(uiHandler.attackerPanel.controlType != PlayerControlType.Computer)
         {
-            BattlefieldSceneManager.GetInstance.battleUIInformation.attackerPanel.playerPlacement.battleTile.ShowHoverTile();
+            uiHandler.attackerPanel.playerPlacement.battleTile.ShowHoverTile();
         }
-        if (BattlefieldSceneManager.GetInstance.battleUIInformation.defenderPanel.controlType != PlayerControlType.Computer)
+        else
         {
-            BattlefieldSceneManager.GetInstance.battleUIInformation.defenderPanel.playerPlacement.battleTile.ShowDefenderTile();
+            uiHandler.attackerPanel.ComputerPlayerControl();
         }
+
+        if (uiHandler.defenderPanel.controlType != PlayerControlType.Computer)
+        {
+            uiHandler.defenderPanel.playerPlacement.battleTile.ShowDefenderTile();
+        }
+        else
+        {
+            uiHandler.defenderPanel.ComputerPlayerControl();
+        }
+
         if (startDaySfxList != null && startDaySfxList.Count > 0)
         {
             for (int i = 0; i < startDaySfxList.Count; i++)
@@ -130,6 +152,7 @@ public class BattlefieldSystemsManager : MonoBehaviour
         {
             AudioManager.GetInstance.SetVolumeAsBackground();
         }
+
     }
     public void StopCurrentDayActions()
     {
@@ -139,6 +162,15 @@ public class BattlefieldSystemsManager : MonoBehaviour
         if (currentDay < maxDays)
         {
             currentDay += 1;
+
+            BattlefieldUIHandler uiHandler = BattlefieldSceneManager.GetInstance.battleUIInformation;
+
+            uiHandler.attackerPanel.leaderSlotHandler.PauseCooldown();
+            uiHandler.defenderPanel.leaderSlotHandler.PauseCooldown();
+
+            uiHandler.attackerPanel.skillSlotHandler.PauseCooldown();
+            uiHandler.defenderPanel.skillSlotHandler.PauseCooldown();
+
             BattlefieldSpawnManager.GetInstance.RetreatAllUnits(true, BattlefieldSceneManager.GetInstance.EndTodaysBattle);
         }
         else
@@ -168,14 +200,13 @@ public class BattlefieldSystemsManager : MonoBehaviour
         defenderConqured = BattlefieldPathManager.GetInstance.ObtainConqueredTiles(TeamType.Defender).Count;
 
         int allTiles = BattlefieldPathManager.GetInstance.ObtainPathCount();
-
+        TeamType winner = TeamType.Neutral;
         switch (winCondition)
         {
             case BattlefieldWinCondition.ConquerOrEliminateAll:
                 if(attackerConquered >= allTiles || defenderTroopPoints <= 0)
                 {
-
-                    BattlefieldSceneManager.GetInstance.battleUIInformation.ShowVictorious(TeamType.Attacker, CheckPostVictorious);
+                    winner = TeamType.Attacker;
                     if(playerTeam == TeamType.Attacker)
                     {
                         playerWon = true;
@@ -188,7 +219,7 @@ public class BattlefieldSystemsManager : MonoBehaviour
                 }
                 else if(defenderConqured >= allTiles || attackerTroopPoints <= 0)
                 {
-                    BattlefieldSceneManager.GetInstance.battleUIInformation.ShowVictorious(TeamType.Defender, CheckPostVictorious);
+                    winner = TeamType.Defender;
                     if (playerTeam == TeamType.Defender)
                     {
                         playerWon = true;
@@ -201,7 +232,7 @@ public class BattlefieldSystemsManager : MonoBehaviour
                 }
                 else if(attackerConquered > defenderConqured && currentDay >= maxDays && !dayInProgress)
                 {
-                    BattlefieldSceneManager.GetInstance.battleUIInformation.ShowVictorious(TeamType.Attacker, CheckPostVictorious);
+                    winner = TeamType.Attacker;
                     if (playerTeam == TeamType.Attacker)
                     {
                         playerWon = true;
@@ -214,7 +245,7 @@ public class BattlefieldSystemsManager : MonoBehaviour
                 }
                 else if(defenderConqured > attackerConquered && currentDay >= maxDays && !dayInProgress)
                 {
-                    BattlefieldSceneManager.GetInstance.battleUIInformation.ShowVictorious(TeamType.Defender, CheckPostVictorious);
+                    winner = TeamType.Defender;
                     if (playerTeam == TeamType.Defender)
                     {
                         playerWon = true;
@@ -232,7 +263,7 @@ public class BattlefieldSystemsManager : MonoBehaviour
                 {
 
                     Debug.Log("All Attackers Down!");
-                    BattlefieldSceneManager.GetInstance.battleUIInformation.ShowVictorious(TeamType.Defender, CheckPostVictorious);
+                    winner = TeamType.Defender;
                     if (playerTeam == TeamType.Defender)
                     {
                         playerWon = true;
@@ -246,7 +277,7 @@ public class BattlefieldSystemsManager : MonoBehaviour
                 else if(defenderTroopPoints <= 0)
                 {
                     Debug.Log("All Defenders Down!");
-                    BattlefieldSceneManager.GetInstance.battleUIInformation.ShowVictorious(TeamType.Attacker, CheckPostVictorious);
+                    winner = TeamType.Attacker;
                     if (playerTeam == TeamType.Attacker)
                     {
                         playerWon = true;
@@ -261,8 +292,7 @@ public class BattlefieldSystemsManager : MonoBehaviour
             case BattlefieldWinCondition.ConquerAll:
                 if (attackerConquered >= allTiles)
                 {
-
-                    BattlefieldSceneManager.GetInstance.battleUIInformation.ShowVictorious(TeamType.Attacker, CheckPostVictorious);
+                    winner = TeamType.Attacker;
                     if (playerTeam == TeamType.Attacker)
                     {
                         playerWon = true;
@@ -275,7 +305,7 @@ public class BattlefieldSystemsManager : MonoBehaviour
                 }
                 else if (defenderConqured >= allTiles)
                 {
-                    BattlefieldSceneManager.GetInstance.battleUIInformation.ShowVictorious(TeamType.Defender, CheckPostVictorious);
+                    winner = TeamType.Defender;
                     if (playerTeam == TeamType.Defender)
                     {
                         playerWon = true;
@@ -288,7 +318,7 @@ public class BattlefieldSystemsManager : MonoBehaviour
                 }
                 else if (attackerConquered > defenderConqured && currentDay >= maxDays && !dayInProgress)
                 {
-                    BattlefieldSceneManager.GetInstance.battleUIInformation.ShowVictorious(TeamType.Attacker, CheckPostVictorious);
+                    winner = TeamType.Attacker;
                     if (playerTeam == TeamType.Attacker)
                     {
                         playerWon = true;
@@ -301,7 +331,7 @@ public class BattlefieldSystemsManager : MonoBehaviour
                 }
                 else if (defenderConqured > attackerConquered && currentDay >= maxDays && !dayInProgress)
                 {
-                    BattlefieldSceneManager.GetInstance.battleUIInformation.ShowVictorious(TeamType.Defender, CheckPostVictorious);
+                    winner = TeamType.Defender;
                     if (playerTeam == TeamType.Attacker)
                     {
                         playerWon = true;
@@ -320,6 +350,7 @@ public class BattlefieldSystemsManager : MonoBehaviour
 
         if(someoneWon)
         {
+            BattlefieldSceneManager.GetInstance.battleUIInformation.ShowVictorious(winner, CheckPostVictorious);
             dayInProgress = false;
         }
         else
@@ -332,9 +363,23 @@ public class BattlefieldSystemsManager : MonoBehaviour
         }
     }
 
+    public void PlayPrologueResultScene()
+    {
+        if (playerWon)
+        {
+            ConversationInformationData tmp = DialogueManager.GetInstance.dialogueStorage.ObtainConversationByTitle("Prologue - Making Peace");
+            Drama.DramaticActManager.GetInstance.FadeToDark(true, () => DialogueManager.GetInstance.StartConversation(tmp, () => TransitionManager.GetInstance.LoadScene(SceneType.Courtroom)));
+        }
+        else
+        {
+            TransitionManager.GetInstance.LoadScene(SceneType.Battlefield);
+        }
+    }
     public void CheckPostVictorious()
     {
-        if(!BattlefieldSceneManager.GetInstance.isCampaignMode)
+        BattlefieldSceneManager.GetInstance.battleUIInformation.dayTimer.PauseTimer();
+
+        if (!BattlefieldSceneManager.GetInstance.isCampaignMode)
         {
             BattlefieldSceneManager.GetInstance.customBattlePanel.ResetCustomBattlePanel();
             BattlefieldSceneManager.GetInstance.customBattlePanel.gameCustomPanel.SetActive(true);
@@ -354,7 +399,7 @@ public class BattlefieldSystemsManager : MonoBehaviour
 
             ObtaincoinRewards();
 
-            if(TransitionManager.GetInstance != null && TransitionManager.GetInstance.isEngagedWithMapPoint)
+            if (TransitionManager.GetInstance != null && TransitionManager.GetInstance.isEngagedWithMapPoint)
             {
                 ObtainTerritoryRewards();
 
@@ -368,7 +413,20 @@ public class BattlefieldSystemsManager : MonoBehaviour
                     playerUnits = BattlefieldSpawnManager.GetInstance.defendingCommander;
                 }
 
+
                 BattlefieldSceneManager.GetInstance.battleUIInformation.ShowCampaignRewards(playerWon, coinRewards, enemyTerritoryName, playerUnits);
+            }
+            else
+            {
+                // TUTORIAL
+                if (TransitionManager.GetInstance != null && TransitionManager.GetInstance.isNewGame)
+                {
+                    PlayPrologueResultScene();
+                }
+                else // TRAVELLER
+                {
+
+                }
             }
 
 
@@ -411,10 +469,18 @@ public class BattlefieldSystemsManager : MonoBehaviour
                 Debug.Log("[Map Point Still Has Troops Around: " + enemyUnits.CheckTotalTroopsCount() + "]");
                 TransitionManager.GetInstance.attackedPointInformationData.troopsStationed = new List<TroopsInformation>();
                 TransitionManager.GetInstance.attackedPointInformationData.troopsStationed.AddRange(enemyUnits.unitsCarried);
+
+                TerritoryOwners pastOwner = TransitionManager.GetInstance.attackedPointInformationData.ownedBy;
+                TransitionManager.GetInstance.attackedPointInformationData.previousOwner = pastOwner;
+                TransitionManager.GetInstance.attackedPointInformationData.ownedBy = enemyUnits.teamAffiliation;
             }
             else
             {
                 TransitionManager.GetInstance.attackedPointInformationData.troopsStationed = new List<TroopsInformation>();
+
+                TerritoryOwners pastOwner = TransitionManager.GetInstance.attackedPointInformationData.ownedBy;
+                TransitionManager.GetInstance.attackedPointInformationData.previousOwner = pastOwner;
+
                 TransitionManager.GetInstance.attackedPointInformationData.ownedBy = Maps.TerritoryOwners.Player;
             }
         }
@@ -514,7 +580,7 @@ public class BattlefieldSystemsManager : MonoBehaviour
             coinRewards.Add(taxPrize);
             PlayerGameManager.GetInstance.campaignData.totalWeeklyTax += taxMoney;
         }
-        else
+        else if(TransitionManager.GetInstance.attackedPointInformationData.ownedBy == TerritoryOwners.Player)
         {
             PlayerGameManager.GetInstance.campaignData.totalWeeklyTax -= taxMoney;
         }

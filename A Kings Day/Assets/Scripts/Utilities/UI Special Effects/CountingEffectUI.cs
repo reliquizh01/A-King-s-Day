@@ -66,7 +66,6 @@ public class CountingEffectUI : MonoBehaviour
     public void SetTargetCount(int newTarget, bool startQuickly = true, Action callback = null)
     {
         targetCount = newTarget;
-        curCount = 0;
 
         afterCountCallback = callback;
 

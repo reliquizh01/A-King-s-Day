@@ -35,6 +35,7 @@ public class TroopsInformation
 public class BattlefieldCommander
 {
     public ChooseUnitMindset unitMindset = ChooseUnitMindset.AggressiveSpawning;
+    public TerritoryOwners teamAffiliation;
     public List<TroopsInformation> unitsCarried;
     public List<BaseHeroInformationData> heroesCarried;
     public int resourceAmount = 20;

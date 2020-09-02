@@ -15,6 +15,7 @@ public class BasePanelBehavior : MonoBehaviour
     public bool playOpeningOnAwake = false;
     public bool isPlaying = false;
 
+    public bool testDebug = false;
     public void Awake()
     {
         myAnim = this.GetComponent<Animation>();
@@ -26,7 +27,10 @@ public class BasePanelBehavior : MonoBehaviour
 
     public void PlayOpenAnimation()
     {
-        //Debug.Log(this.gameObject.name);
+        if(testDebug)
+        {
+            Debug.Log(this.gameObject.name + " -------------------------- ");
+        }
         if (string.IsNullOrEmpty(openAnimationName))
         {
             return;

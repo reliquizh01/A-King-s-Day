@@ -25,9 +25,13 @@ namespace Kingdoms
 
             BaseHeroInformationData newLeader = new BaseHeroInformationData();
             newLeader.unitInformation = new UnitInformationData();
-            newLeader.unitInformation = unitStorage.merchantStorage[randLdrIdx].unitInformation;
-            tmp.leaderUnit.Add(newLeader);
+            newLeader = TransitionManager.GetInstance.unitStorage.ObtainHeroBaseInformation(WieldedWeapon.Bow);
+            // TODO : CHANGE ON NEW HERO PREFABS
+            newLeader.unitInformation.prefabDataPath = "Assets/Resources/Prefabs/Unit and Items/Player.prefab";
+            newLeader.unitInformation.wieldedWeapon = WieldedWeapon.Bow;
 
+
+            tmp.leaderUnit.Add(newLeader);
             tmp.UpdateRelationship(newRelationship);
             // TRAVELLER SPEED
             tmp.travellerSpeed = 0.025f;
@@ -54,11 +58,22 @@ namespace Kingdoms
             tmp.weekSpawned = ObtainPlayerWeeklyCount();
             tmp.troopsCarried = new List<TroopsInformation>();
 
+            if(newRelationship < 0)
+            {
+                tmp.affiliatedTeam = Maps.TerritoryOwners.FurKhan;
+            }
+            else
+            {
+                tmp.affiliatedTeam = Maps.TerritoryOwners.Neutral;
+            }
+
             int randLdrIdx = UnityEngine.Random.Range(0, unitStorage.heroStorage.Count);
             tmp.leaderUnit = new List<BaseHeroInformationData>();
             BaseHeroInformationData newLeader = new BaseHeroInformationData();
-            newLeader.unitInformation = new UnitInformationData();
-            newLeader.unitInformation = unitStorage.heroStorage[randLdrIdx].unitInformation;
+            newLeader = TransitionManager.GetInstance.unitStorage.ObtainHeroBaseInformation(WieldedWeapon.Bow);
+
+            // TODO : CHANGE ON NEW HERO PREFABS
+            newLeader.unitInformation.prefabDataPath = "Assets/Resources/Prefabs/Unit and Items/Player.prefab";
             tmp.leaderUnit.Add(newLeader);
             tmp.UpdateRelationship(newRelationship);
 

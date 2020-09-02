@@ -16,7 +16,7 @@ public class BattlefieldPathHandler : MonoBehaviour
 
     public void Start()
     {
-        SetupScenePoints();
+
     }
 
     public void SetupScenePoints()

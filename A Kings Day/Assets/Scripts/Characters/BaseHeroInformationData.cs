@@ -189,7 +189,6 @@ namespace Characters
 
         public void ReceiveHealing(float healAmount, TargetStats targetStats)
         {
-            Debug.Log("We've Received a Healing for : " + targetStats + " Amount: " + healAmount);
             float checkAmount = 0;
             switch (targetStats)
             {

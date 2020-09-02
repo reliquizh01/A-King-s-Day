@@ -81,14 +81,12 @@ namespace Managers
             playerData = new PlayerKingdomData();
             playerData = PlayerGameManager.GetInstance.playerData;
 
-            // FOR TESTING ONLY
             // ADD ONBOARDING HERE ONCE BALANCING IS DONE
             if(PlayerGameManager.GetInstance != null)
             {
-                if(TransitionManager.GetInstance.isNewGame)
+                if(TransitionManager.GetInstance.isNewGame && !DramaticActManager.GetInstance.currentlyPlayingDrama)
                 {
-                    StartWeekEvents();
-                    TransitionManager.GetInstance.isNewGame = false;
+
                 }
                 else if(TransitionManager.GetInstance.currentSceneManager.sceneType == SceneType.Courtroom)
                 {
@@ -228,6 +226,11 @@ namespace Managers
         }
         public void StartWeekEvents()
         {
+            if (DramaticActManager.GetInstance.currentDrama != null)
+            { 
+                return;
+            }
+
             weeklyEvents = ((int)playerData.level + 1) * 3;
             int eventsToAdd = weeklyEvents;
             Debug.Log("-------------- STARTING WEEK EVENTS! --------------");
@@ -303,7 +306,10 @@ namespace Managers
             // Set QueueEvents
             queuedEventsList.AddRange(temp);
 
-            ResourceInformationController.GetInstance.currentPanel.weekController.UpdateEndButton(0, weeklyEvents);
+            if(ResourceInformationController.GetInstance.currentPanel != null)
+            {
+                ResourceInformationController.GetInstance.currentPanel.weekController.UpdateEndButton(0, weeklyEvents);
+            }
 
             if (TransitionManager.GetInstance.currentSceneManager != null)
             {

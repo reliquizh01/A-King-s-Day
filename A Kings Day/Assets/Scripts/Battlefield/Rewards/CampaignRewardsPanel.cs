@@ -17,6 +17,7 @@ public class CampaignRewardsPanel : MonoBehaviour
     [Header("Territory Rewards")]
     public BasePanelBehavior territoryObject;
     public TextMeshProUGUI territoryName;
+    public TextMeshProUGUI territoryStatus;
     public Image conquerorsIcon;
     public List<Sprite> conquerorSprites;
 
@@ -43,23 +44,19 @@ public class CampaignRewardsPanel : MonoBehaviour
 
     public void CheckTerritory()
     {
-        if(playerRewards.Find(x => x.resourceTitle == "Tax Prize") != null)
-        {
-            territoryObject.gameObject.SetActive(true);
-            StartCoroutine(territoryObject.WaitAnimationForAction(territoryObject.openAnimationName, CheckCoinReward));
-        }
-        else
-        {
-            CheckCoinReward();
-        }
+        territoryObject.gameObject.SetActive(true);
+        StartCoroutine(territoryObject.WaitAnimationForAction(territoryObject.openAnimationName, CheckCoinReward));
     }
 
     public void CheckCoinReward()
     {
         coinRewardObject.gameObject.SetActive(true);
         StartCoroutine(coinRewardObject.WaitAnimationForAction(coinRewardObject.openAnimationName, CheckCasualties));
+        if(playerRewards.Find(x => x.resourceTitle == "Tax Prize") != null)
+        {
+            taxEarning.SetTargetCount(playerRewards.Find(x => x.resourceTitle == "Tax Prize").rewardAmount);
+        }
 
-        taxEarning.SetTargetCount(playerRewards.Find(x => x.resourceTitle == "Tax Prize").rewardAmount);
         salvagedEarning.SetTargetCount(playerRewards.Find(x => x.resourceTitle == "Salvaged Prize").rewardAmount);
         woundedEarning.SetTargetCount(playerRewards.Find(x => x.resourceTitle == "Dead Penalty").rewardAmount);
 

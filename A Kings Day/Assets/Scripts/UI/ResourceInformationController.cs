@@ -218,6 +218,7 @@ namespace ResourceUI
         }
         public void ShowCurrentPanel(Parameters p = null)
         {
+            Debug.Log("FUCKING PUSSY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             if(currentPanel != null && !currentPanel.isShowing)
             {
                 currentPanel.gameObject.SetActive(true);
@@ -234,6 +235,11 @@ namespace ResourceUI
         }
         public void HideCurrentPanelPotentialResourceChanges()
         {
+            if(currentPanel == null)
+            {
+                return;
+            }
+
             currentPanel.HidePotentialResourceChanges();
         }
         public void HideCurrentPanel(Parameters p = null)
@@ -255,8 +261,10 @@ namespace ResourceUI
         {
             if (currentPanel != null)
             {
+                currentPanel.gameObject.SetActive(true);
                 currentPanel.isShowing = false;
-                if (currentPanel.resourcePanelType != panelType)
+
+                if(currentPanel.resourcePanelType != panelType)
                 {
                     StartCoroutine(currentPanel.myPanel.WaitAnimationForAction(currentPanel.myPanel.closeAnimationName, () => SwapDelay(panelType, extraCallBack)));
                 }
@@ -316,12 +324,13 @@ namespace ResourceUI
                 currentPanel.isShowing = true;
                 StartCoroutine(currentPanel.myPanel.WaitAnimationForAction(currentPanel.myPanel.openAnimationName, extraCallBack));
             }
-
             UpdateCurrentPanel();
         }
 
         public void SwapDelay(ResourcePanelType panelType, Action extraCallBack = null)
         {
+            if (TransitionManager.GetInstance.currentSceneManager.sceneType == SceneType.Battlefield)
+                return;
             switch (panelType)
             {
                 case ResourcePanelType.overhead:

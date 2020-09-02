@@ -100,33 +100,52 @@ namespace SaveData
                 return;
             }
             int idx = saveDataList.FindIndex(x => x._fileName == PlayerGameManager.GetInstance.playerData._fileName);
-            saveDataList[idx] = PlayerGameManager.GetInstance.playerData;
 
-            BinaryFormatter bf = new BinaryFormatter();
+            if(idx < 0)
+            {
+                saveDataList.Add(PlayerGameManager.GetInstance.playerData);
+                SavePlayerData();
+            }
+            else
+            {
+                saveDataList[idx] = PlayerGameManager.GetInstance.playerData;
 
-            bf = new BinaryFormatter();
-            FileStream file = File.Create(savePath + "/" + saveDataList[idx]._fileName);
-            bf.Serialize(file, saveDataList[idx]);
-            file.Close();
+                BinaryFormatter bf = new BinaryFormatter();
 
+                bf = new BinaryFormatter();
+                FileStream file = File.Create(savePath + "/" + saveDataList[idx]._fileName);
+                bf.Serialize(file, saveDataList[idx]);
+                file.Close();
+
+            }
             Debug.Log("------------------------------------ PLAYER DATA WAS SUCCESSFULLY SAVED! ------------");
         }
 
         public void SaveCurrentCampaignData(Parameters p = null)
         {
-            if (saveCampaignDataList == null || saveCampaignDataList.Count <= 0)
+            if (saveCampaignDataList == null || saveCampaignDataList.Count <= 0 || TransitionManager.GetInstance.isNewGame)
             {
                 return;
             }
+
             int idx = saveCampaignDataList.FindIndex(x => x._fileName == PlayerGameManager.GetInstance.campaignData._fileName);
-            saveCampaignDataList[idx] = PlayerGameManager.GetInstance.campaignData;
+            if(idx < 0)
+            {
+                saveCampaignDataList.Add(PlayerGameManager.GetInstance.campaignData);
+                SavePlayerCampaignData();
+            }
+            else
+            {
+                saveCampaignDataList[idx] = PlayerGameManager.GetInstance.campaignData;
 
-            BinaryFormatter bf = new BinaryFormatter();
+                BinaryFormatter bf = new BinaryFormatter();
 
-            bf = new BinaryFormatter();
-            FileStream file = File.Create(savePath + "/" + saveCampaignDataList[idx]._fileName);
-            bf.Serialize(file, saveCampaignDataList[idx]);
-            file.Close();
+                bf = new BinaryFormatter();
+                FileStream file = File.Create(savePath + "/" + saveCampaignDataList[idx]._fileName);
+                bf.Serialize(file, saveCampaignDataList[idx]);
+                file.Close();
+
+            }
 
             Debug.Log("------------------------------------ PLAYER CAMPAIGN DATA WAS SUCCESSFULLY SAVED! ------------");
         }
@@ -252,7 +271,6 @@ namespace SaveData
             DirectoryInfo tmp = new DirectoryInfo(savePath);
 
             List<FileInfo> savecampaignFileList = GetSaveCampaignFiles(tmp);
-            Debug.Log(saveCampaignDataList.Count);
 
             BinaryFormatter bf2 = new BinaryFormatter();
 

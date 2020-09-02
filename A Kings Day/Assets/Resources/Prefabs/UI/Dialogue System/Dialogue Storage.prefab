@@ -856,3 +856,204 @@ MonoBehaviour:
       reaction: 0
       single: Remember to check the scouting reports.
       choiceDialogues: []
+  - conversationTitle: Remember the Battlefield
+    characterNames:
+    - Player
+    - Soldier#1
+    dialoguePattern:
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: This first set of wave is nothing to worry about!
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: If only I could stay for the final wave...
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: But maan! remember this well!
+      choiceDialogues: []
+    - charName: Soldier#1
+      type: 0
+      reaction: 0
+      single: Yes Prince!
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: All wars should only last for seven days
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: On the last day we should have the highest points!
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: The winner depends on the number of units and conquered tiles
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: We then report our progress back to the capital
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: they will then provide funds for our war chest
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: They love seeing our troops conquer lands
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: So finishing the day report with alot of conquered tiles
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: will provide us more war funds
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: And of course as your commander I'll give you my all
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: I'll provide you support from the back through my set of talents
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: and once I'm ready, I'll lead the charge myself!
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: And like how I prepare, I am too waiting for your readiness
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: That's why I'd wait for everyone to get done!
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: Everyone Got it?
+      choiceDialogues: []
+    - charName: Soldier#1
+      type: 0
+      reaction: 0
+      single: Yes Sir!
+      choiceDialogues: []
+  - conversationTitle: Prologue - Making Peace
+    characterNames:
+    - Player
+    - Soldier#1
+    dialoguePattern:
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: And this is only the forward army..
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: You! make sure every enemy is dead!
+      choiceDialogues: []
+    - charName: Soldier#1
+      type: 0
+      reaction: 0
+      single: How about the prisoners?
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: No prisoners today, we can't risk inside threats from within!
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: '*Sigh...* ||I tried my best mother...I tried my best.'
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: '[So I left the kingdom, on my way to a foreign land.]'
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: A year has past and a dreadful news had reached me...
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: '[The kingdom has fallen, with minimal destruction from a war]'
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: '[And no traces of body, not even a single dead one]'
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: '[Rumors had spread throughout the continent..]'
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: The holy church and the khans are trying to recover from their losses.
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: '[With all my followers with me, I turned tail, I have to see it for
+        myself]'
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: '[And there I see the home I never stayed on...|| in ruins]'
+      choiceDialogues: []
+  - conversationTitle: Prologue - The lost throne
+    characterNames:
+    - Player
+    - Soldier#1
+    dialoguePattern:
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: Find the King! check if anyone is still alive!
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: Where did everyone go....
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: Inform the other nations  that this kingdom has its new king!
+      choiceDialogues: []
+    - charName: Soldier#1
+      type: 0
+      reaction: 0
+      single: Yes my king! Hail the new King!
+      choiceDialogues: []
+    - charName: Player
+      type: 0
+      reaction: 0
+      single: Time to return this kingdom back to its glory..
+      choiceDialogues: []

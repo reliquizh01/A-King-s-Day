@@ -64,8 +64,6 @@ public class PanelWindowManager : MonoBehaviour
 
     public void AddWindow(BasePanelWindow thisWindow)
     {
-        Debug.Log("Adding A Window Cuz Why Not : " + thisWindow.gameObject.name);
-
         if(openedWindowsList == null)
         {
             openedWindowsList = new List<BasePanelWindow>();
@@ -102,7 +100,10 @@ public class PanelWindowManager : MonoBehaviour
 
             if (thisWindow.transferEnabled)
             {
-                thisWindow.transform.parent = thisWindow.origParent;
+                if(thisWindow != null)
+                {
+                    thisWindow.transform.parent = thisWindow.origParent;
+                }
             }
             if (openedWindowsList.Count <= 0)
             {

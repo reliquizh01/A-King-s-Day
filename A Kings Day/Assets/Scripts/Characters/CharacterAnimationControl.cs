@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Kingdoms;
 
 namespace Characters
 {
@@ -17,8 +18,8 @@ namespace Characters
     {
         Up,
         Down,
-        Left,
         Right,
+        Left,
     }
     public class CharacterAnimationControl : MonoBehaviour
     {
@@ -62,41 +63,30 @@ namespace Characters
                     break;
             }
 
-            UpdateAnimator(currentState, facingDirection);
+            UpdateStateAnimator(currentState);
         }
-        public void ChangeFacingDireciton(FacingDirection newDirection)
+        public void ChangeFacingDirection(FacingDirection newDirection)
         {
-            switch (newDirection)
-            {
-                case FacingDirection.Down:
-                    if (facingDirection == 0) return;
-                    facingDirection = 0;
-                    break;
-                case FacingDirection.Up:
-                    if (facingDirection == 1) return;
-                    facingDirection = 1;
-                    break;
-                case FacingDirection.Left:
-                    if (facingDirection == 2) return;
-                    facingDirection = 2;
-                    break;
-                case FacingDirection.Right:
-                    if (facingDirection == 3) return;
-                    facingDirection = 3;
-                    break;
+            bool changeMade = false;
 
-                default:
-                    break;
+            if (facingDirection != (float)newDirection)
+            {
+                changeMade = true;
             }
 
-            UpdateAnimator(currentState, facingDirection);
+            facingDirection = (float)newDirection;
+
+            if(changeMade)
+            {
+                UpdateDirectionAnimator(facingDirection);
+            }
         }
 
         public void UpdateDeath(bool newDeathState)
         {
-            myAnimator.SetBool("Death", newDeathState);
+             myAnimator.SetBool("Death", newDeathState);
         }
-        public void UpdateAnimator(int state, float direction)
+        public void UpdateStateAnimator(int state)
         {
             if(myAnimator == null)
             {
@@ -106,12 +96,20 @@ namespace Characters
             {
                 myAnimator.SetInteger("Current State", state);
             }
-            if(paramFacingDirectionAvailable)
+        }
+
+        public void UpdateDirectionAnimator(float direction)
+        {
+            if (paramFacingDirectionAvailable)
             {
                 myAnimator.SetFloat("Facing Direction", direction);
             }
         }
 
+        public void UpdateWieldedWeapon(WieldedWeapon wieldedWeapon)
+        {
+            myAnimator.SetFloat("Weapon Wielded", (float)wieldedWeapon);
+        }
         public void UpdateBanish(bool newBanishState)
         {
             myAnimator.SetBool("Banished", newBanishState);

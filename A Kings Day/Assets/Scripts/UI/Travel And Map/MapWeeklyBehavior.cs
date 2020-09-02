@@ -18,6 +18,9 @@ public class MapWeeklyBehavior : MonoBehaviour
     public float heroFlatChance = 10;
     public float mercenaryFlatChance = 10;
     public float creaturesFlatChance = 0;
+    [Header("Test Mode")]
+    public bool TestMode = false;
+    public string ForceVisitTravellersOnPoint;
 
     public void SetupMapBehavior()
     {
@@ -31,6 +34,11 @@ public class MapWeeklyBehavior : MonoBehaviour
     public void UpdateWeeklyProgress()
     {
         if(playerCampaignData.mapPointList == null && playerCampaignData.mapPointList.Count <= 0)
+        {
+            return;
+        }
+
+        if(TransitionManager.GetInstance.isNewGame)
         {
             return;
         }
@@ -61,54 +69,57 @@ public class MapWeeklyBehavior : MonoBehaviour
     {
         yield return 0;
 
-        for (int x = 0; x < playerCampaignData.mapPointList[idx].spawnableTravellers.Count; x++)
+        if (!playerCampaignData.mapPointList[idx].isKingdomPoint)
         {
-            bool spawnNewTraveller = false;
-            BaseTravellerData newTraveller = new BaseTravellerData();
-            if(playerCampaignData.mapPointList[idx].travellersOnPoint == null)
+            for (int x = 0; x < playerCampaignData.mapPointList[idx].spawnableTravellers.Count; x++)
             {
-                playerCampaignData.mapPointList[idx].travellersOnPoint = new List<BaseTravellerData>();
-            }
-            switch (playerCampaignData.mapPointList[idx].spawnableTravellers[x])
-            {
-                case TravellerType.Invader:
-                    spawnNewTraveller = ShouldSpawnThisUnit(playerKingdomData.ObtainChances(PotentialTravellers.mercenaries) + invaderFlatChance);
-                    if (spawnNewTraveller)
-                    {
-                        newTraveller = travellerGenerator.GenerateRandomWarbandTraveller(20, -100);
-                        playerCampaignData.mapPointList[idx].travellersOnPoint.Add(newTraveller);
-                    }
-                    break;
-                case TravellerType.Merchant:
-                    spawnNewTraveller = ShouldSpawnThisUnit(playerKingdomData.ObtainChances(PotentialTravellers.randomMerchant) + merchantFlatChance);
-                    if (spawnNewTraveller)
-                    {
-                        newTraveller = travellerGenerator.GenerateRandomMerchantTraveller(20, 0);
-                        playerCampaignData.mapPointList[idx].travellersOnPoint.Add(newTraveller);
-                    }
-                    break;
-                case TravellerType.Hero:
-                    spawnNewTraveller = ShouldSpawnThisUnit(playerKingdomData.ObtainChances(PotentialTravellers.RandomHero) + heroFlatChance);
-                    // FIX HERO UNITS FIRST
-                    break;
-                case TravellerType.Warband:
-                    spawnNewTraveller = ShouldSpawnThisUnit(playerKingdomData.ObtainChances(PotentialTravellers.mercenaries) + mercenaryFlatChance);
-                    if (spawnNewTraveller)
-                    {
-                        newTraveller = travellerGenerator.GenerateRandomWarbandTraveller(20, 0);
-                        playerCampaignData.mapPointList[idx].travellersOnPoint.Add(newTraveller);
-                    }
-                    break;
-                case TravellerType.Creatures:
-                    spawnNewTraveller = ShouldSpawnThisUnit(creaturesFlatChance);
-                    break;
-                default:
-                    break;
-            }
+                bool spawnNewTraveller = false;
+                BaseTravellerData newTraveller = new BaseTravellerData();
+                if (playerCampaignData.mapPointList[idx].travellersOnPoint == null)
+                {
+                    playerCampaignData.mapPointList[idx].travellersOnPoint = new List<BaseTravellerData>();
+                }
+                switch (playerCampaignData.mapPointList[idx].spawnableTravellers[x])
+                {
+                    case TravellerType.Invader:
+                        spawnNewTraveller = ShouldSpawnThisUnit(playerKingdomData.ObtainChances(PotentialTravellers.mercenaries) + invaderFlatChance);
+                        if (spawnNewTraveller)
+                        {
+                            newTraveller = travellerGenerator.GenerateRandomWarbandTraveller(20, -100);
+                        }
+                        break;
+                    case TravellerType.Merchant:
+                        spawnNewTraveller = ShouldSpawnThisUnit(playerKingdomData.ObtainChances(PotentialTravellers.randomMerchant) + merchantFlatChance);
+                        if (spawnNewTraveller)
+                        {
+                            newTraveller = travellerGenerator.GenerateRandomMerchantTraveller(20, 0);
+                        }
+                        break;
+                    case TravellerType.Hero:
+                        spawnNewTraveller = ShouldSpawnThisUnit(playerKingdomData.ObtainChances(PotentialTravellers.RandomHero) + heroFlatChance);
+                        // FIX HERO UNITS FIRST
+                        break;
+                    case TravellerType.Warband:
+                        spawnNewTraveller = ShouldSpawnThisUnit(playerKingdomData.ObtainChances(PotentialTravellers.mercenaries) + mercenaryFlatChance);
+                        if (spawnNewTraveller)
+                        {
+                            newTraveller = travellerGenerator.GenerateRandomWarbandTraveller(20, 0);
+                        }
+                        break;
+                    case TravellerType.Creatures:
+                        spawnNewTraveller = ShouldSpawnThisUnit(creaturesFlatChance);
+                        break;
+                    default:
+                        break;
+                }
 
-            if(spawnNewTraveller)
-            {
-                Debug.Log("Spawned New Traveller in Area : " + playerCampaignData.mapPointList[idx].pointName + " Spawned this Kind : " + playerCampaignData.mapPointList[idx].spawnableTravellers[x]);
+                if (spawnNewTraveller)
+                {
+                    newTraveller.affiliatedTeam = playerCampaignData.mapPointList[idx].ownedBy;
+                    newTraveller.originalSpawnPoint = playerCampaignData.mapPointList[idx].pointName;
+                    playerCampaignData.mapPointList[idx].travellersOnPoint.Add(newTraveller);
+                    Debug.Log("Spawned New Traveller in Area : " + playerCampaignData.mapPointList[idx].pointName + " Spawned this Kind : " + playerCampaignData.mapPointList[idx].spawnableTravellers[x]);
+                }
             }
         }
 

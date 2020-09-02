@@ -12,7 +12,8 @@ namespace Drama
     public enum DramaSceneType
     {
         LetOtherUnitsStay,
-        ClearAllBesideActors,
+        BanishAllActors,
+        ClearAllCharacters,
     }
 
     public enum MethodOfPositioningActors
@@ -26,7 +27,7 @@ namespace Drama
     public enum DramaActionType
     {
         MakeActorMove,
-        ShowBriefConversation,
+        ShowConversation,
         BanishActor,
         ShowTabCover,
         HideTabCover,
@@ -58,8 +59,10 @@ namespace Drama
         public float delayBeforeStart;
         public SceneType loadThisScene = (SceneType)0;
         [Header("Actor Mechanics")]
+        public bool stayOnLastState = false;
         public int actorPositionIdx;
         public List<CharacterStates> characterStates;
+        public List<float> facingDirection;
         public List<Vector3> actorsPosition;
 
         [Header("Conversation Mechanics")]
@@ -80,7 +83,7 @@ namespace Drama
                         actorPositionIdx += 1;
                     }
                     break;
-                case DramaActionType.ShowBriefConversation:
+                case DramaActionType.ShowConversation:
                     actionFinish = true;
                     break;
 

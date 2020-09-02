@@ -80,7 +80,7 @@ public class BalconyTutorialController : MonoBehaviour
             if (fromCreationScene)
             {
                 // Summon Monster
-                BalconySceneManager.GetInstance.travelSystem.SummonRandomTraveller(TravelLocation.ForestOfRetsnom, TravellerType.Invader, 20);
+                BalconySceneManager.GetInstance.travelSystem.SummonRandomTraveller(TravelLocation.ForestOfRetsnom, TravellerType.Invader, 2); // 20
                 prologueBandit = BalconySceneManager.GetInstance.travelSystem.spawnedUnits[BalconySceneManager.GetInstance.travelSystem.spawnedUnits.Count - 1];
                 prologueBandit.clickDetector.isClickable = false;
             }

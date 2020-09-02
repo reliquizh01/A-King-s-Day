@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Characters;
 using Utilities;
+using Drama;
+using Kingdoms;
+using SaveData;
 
 namespace Managers
 {
@@ -53,8 +56,15 @@ namespace Managers
         public override void PreOpenManager()
         {
             base.PreOpenManager();
+            if(TransitionManager.GetInstance.isNewGame)
+            {
+                interactionHandler.SwitchInteractableClickables(false);
+                PlaceGuardOutside();
+                Destroy(player.gameObject);
 
-            if(PlayerGameManager.GetInstance != null)
+                DramaticActManager.GetInstance.FadeToClear(true, ()=> DramaticActManager.GetInstance.PlayScene("[Part 5]Prologue - The Lost Throne", FinishPrologueSetupTrueNewGame));
+            }
+            else if(PlayerGameManager.GetInstance != null)
             {
                 if(PlayerGameManager.GetInstance.playerData.queuedDataEventsList == null)
                 {
@@ -70,6 +80,53 @@ namespace Managers
             }
         }
 
+        public void FinishPrologueSetupTrueNewGame()
+        {
+            // Player Data
+            PlayerGameManager.GetInstance.ReceiveData(SaveData.SaveLoadManager.GetInstance.inheritanceData);
+            // Campaign Data
+            PlayerCampaignData temp = new PlayerCampaignData();
+            temp.fileData = true;
+            temp.travellerList = new List<BaseTravellerData>();
+            temp.mapPointList = new List<Maps.MapPointInformationData>();
+            temp.mapPointList.AddRange(TransitionManager.GetInstance.kingdomMapStorage.mapPointsStorage);
+            // Save New Data
+            PlayerGameManager.GetInstance.ReceiveCampaignData(temp);
+
+            
+
+
+            base.PreOpenManager();
+            if (PlayerGameManager.GetInstance.playerData.queuedDataEventsList == null)
+            {
+                PlayerGameManager.GetInstance.playerData.queuedDataEventsList = new List<KingEvents.EventDecisionData>();
+            }
+
+
+            player = SpawnManager.GetInstance.spawnedCharacterUnits.Find(x => x.unitInformation.unitName == "Player");
+            kingsSeat.OnMouseDown();
+
+            if (PlayerGameManager.GetInstance.playerData.queuedDataEventsList == null)
+            {
+                PlayerGameManager.GetInstance.playerData.queuedDataEventsList = new List<KingEvents.EventDecisionData>();
+            }
+
+            TransitionManager.GetInstance.isNewGame = false;
+            TransitionManager.GetInstance.playingPrologue = false;
+
+            interactionHandler.SwitchInteractableClickables(true);
+
+            if (AudioManager.GetInstance != null)
+            {
+                AudioManager.GetInstance.PlayThisBackGroundMusic(BackgroundMusicType.courtroomDrama);
+            }
+
+            KingdomManager.GetInstance.AllowStartEvent();
+            KingdomManager.GetInstance.StartWeekEvents();
+
+            ResourceUI.ResourceInformationController.GetInstance.ShowResourcePanel(ResourceUI.ResourcePanelType.overhead);
+            ResourceUI.ResourceInformationController.GetInstance.ShowWeekendPanel();
+        }
         public override void StartManager()
         {
             base.StartManager();
@@ -86,9 +143,11 @@ namespace Managers
                     if (PlayerGameManager.GetInstance.playerData.eventFinished < 3)
                     {
                         KingdomManager.GetInstance.AllowStartEvent();
+
                     }
                 }
             }
+
         }
         public override void PreCloseManager()
         {
@@ -109,8 +168,8 @@ namespace Managers
         }
         public void PlaceGuardOutside()
         {
-            leftGuard.SpawnInThisPosition(scenePointHandler.scenePoints[5]);
-            rightGuard.SpawnInThisPosition(scenePointHandler.scenePoints[5]);
+            leftGuard.SpawnInThisPosition(scenePointHandler.scenePoints[5], true);
+            rightGuard.SpawnInThisPosition(scenePointHandler.scenePoints[5], true);
             guardsOutside = true;
         }
 
@@ -144,10 +203,12 @@ namespace Managers
                 if(prevGate != null)
                 {
                     player.SpawnInThisPosition(prevGate, directToOffset);
+                    player.OrderToFace(FacingDirection.Left);
                 }
                 else
                 {
                     player.SpawnInThisPosition(kingsSeat);
+                    player.OrderToFace(FacingDirection.Down);
                 }
                 if (GameUIManager.GetInstance != null)
                 {

@@ -81,6 +81,12 @@ namespace Maps
             }
 
         }
+        public void SwitchMapSelectedButton(bool switchTo)
+        {
+            myBtn.enabled = switchTo;
+            attackButton.enabled = switchTo;
+            scoutButton.enabled = switchTo;
+        }
         public void OnPointSelected()
         {
             mapPoint.SetActive(true);
@@ -222,7 +228,8 @@ namespace Maps
             {
                 return;
             }
-            StartCoroutine(sendTroopsPage.myPanel.WaitAnimationForAction(sendTroopsPage.myPanel.closeAnimationName, () => sendTroopsPage.gameObject.SetActive(false)));            
+            StartCoroutine(sendTroopsPage.myPanel.WaitAnimationForAction(sendTroopsPage.myPanel.closeAnimationName, () => sendTroopsPage.gameObject.SetActive(false)));
+            SwitchMapSelectedButton(true);
         }
         public void SendTroopsToBattle()
         {

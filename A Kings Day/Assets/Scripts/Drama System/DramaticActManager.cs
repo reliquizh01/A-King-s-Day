@@ -44,6 +44,7 @@ namespace Drama
         public DarkFaderEffectsUI darkFader;
 
         [Header("Drama Mechanics")]
+        public bool currentlyPlayingDrama = false;
         public int curActiveFrameIdx = 0;
         public int curActionIdx = 0;
         [Header("Action Delay Mechanics")]
@@ -60,20 +61,38 @@ namespace Drama
                 return;
             }
 
+            currentlyPlayingDrama = true;
             // Drama Storage
             currentDrama = dramaStorage.ObtainDramaByTitle(sceneTitle);
             curActiveFrameIdx = 0;
 
+            SetUpScene();
             SummonActors();
             AdjustScene();
             PlayFrame();
             afterCurrentSceneCallback = newAfterCallBack;
+
+            if(!TransitionManager.GetInstance.isNewGame)
+            {
+                TransitionManager.GetInstance.currentSceneManager.interactionHandler.SwitchInteractableClickables(false);
+                TransitionManager.GetInstance.currentSceneManager.scenePointHandler.SwitchScenePointsInteraction(false);
+            }
         }
 
-        public void Update()
+        public void SetUpScene()
         {
-            
+            switch (currentDrama.sceneType)
+            {
+                case DramaSceneType.LetOtherUnitsStay:
+                    break;
+                case DramaSceneType.BanishAllActors:
+                    EventBroadcaster.Instance.PostEvent(EventNames.HIDE_ALL_UNKNOWN_ACTORS);
+                    break;
+                default:
+                    break;
+            }
         }
+
         public void PlayFrame()
         {
             for (int i = 0; i < currentDrama.actionsPerFrame[currentDrama.currentFrameIdx].actionsOnFrameList.Count; i++)
@@ -88,38 +107,66 @@ namespace Drama
                 return;
             }
 
+            if(string.IsNullOrEmpty(currentDrama.scenarioName))
+            {
+                return;
+            }
+
             if(!currentDrama.CurrentFrameFinish())
             {
                 return;
             }
 
-            if (curActiveFrameIdx < currentDrama.actionsPerFrame.Count-1)
+            int lessIdx = currentDrama.actionsPerFrame.Count - 1;
+            if (curActiveFrameIdx < lessIdx)
             {
                 curActiveFrameIdx += 1;
                 currentDrama.currentFrameIdx += 1;
+
+                if(currentDrama.currentFrameIdx > currentDrama.actionsPerFrame.Count-1)
+                {
+                    return;
+                }
+
                 if(currentDrama.actionsPerFrame[currentDrama.currentFrameIdx].actionsOnFrameList == null)
                 {
                     return;
                 }
+
+                if (currentDrama.actionsPerFrame[currentDrama.currentFrameIdx].actionsOnFrameList.Count <= 0)
+                {
+                    return;
+                }
+
                 for (int i = 0; i < currentDrama.actionsPerFrame[currentDrama.currentFrameIdx].actionsOnFrameList.Count; i++)
                 {
                     EnactAction(currentDrama.actionsPerFrame[currentDrama.currentFrameIdx].actionsOnFrameList[i]);
                 }
             }
-            else if(curActiveFrameIdx >= currentDrama.actionsPerFrame.Count-1)
+            else if(curActiveFrameIdx >= lessIdx)
             {
-                if(currentDrama.actionsPerFrame[currentDrama.currentFrameIdx].callNextStory)
+
+                if (currentDrama.actionsPerFrame[currentDrama.currentFrameIdx].callNextStory)
                 {
                     PlayScene(currentDrama.actionsPerFrame[currentDrama.currentFrameIdx].nextDramaTitle);
+                    curActiveFrameIdx = 0;
                 }
-
+                else
+                {
+                    curActiveFrameIdx = 0;
+                    currentDrama = null;
+                    currentlyPlayingDrama = false;
+                    if (!TransitionManager.GetInstance.isNewGame)
+                    {
+                        TransitionManager.GetInstance.currentSceneManager.interactionHandler.SwitchInteractableClickables(true);
+                        TransitionManager.GetInstance.currentSceneManager.scenePointHandler.SwitchScenePointsInteraction(true);
+                    }
+                }
                 if(afterCurrentSceneCallback != null)
                 {
                     afterCurrentSceneCallback();
                     afterCurrentSceneCallback = null;
                 }
-                curActiveFrameIdx = 0;
-                currentDrama = null;
             }
 
         }
@@ -146,7 +193,16 @@ namespace Drama
                             return;
 
                         BaseCharacter thisChar = actionActor.GetComponent<BaseCharacter>();
-                        if(thisChar == null)
+                        if(thisAction.stayOnLastState)
+                        {
+                            thisChar.isActing = true;
+                        }
+                        else
+                        {
+                            thisChar.isActing = false;
+                        }
+
+                        if (thisChar == null)
                         {
                            // Debug.LogError("BaseCharacter Not Found, Check Unit");
                             return;
@@ -163,11 +219,13 @@ namespace Drama
                             ScenePointBehavior tmp = ScenePointPathfinder.GetInstance.ObtainNearestScenePoint(thisAction.actorsPosition[0]);
                             thisChar.SpawnInThisPosition(tmp);
                             CheckNextMove(thisChar, thisAction);
+                            thisChar.OrderToFace((FacingDirection)thisAction.facingDirection[thisAction.actorPositionIdx]);
                         }
                         else
                         {
                             ScenePointBehavior tmp = ScenePointPathfinder.GetInstance.ObtainNearestScenePoint(thisAction.actorsPosition[1]);
                             thisChar.OrderMovement(tmp, () => CheckNextMove(thisChar, thisAction));
+                            thisChar.OrderToFace((FacingDirection)thisAction.facingDirection[thisAction.actorPositionIdx]);
                         }
                     }
                     else if(thisAction.thisActor.actorType == DramaActorType.Tools)
@@ -207,7 +265,7 @@ namespace Drama
                     thisChar.OrderToReveal();
                     CheckNextMove(thisAction);
                 }
-                else if(thisAction.actionType == DramaActionType.ShowBriefConversation)
+                else if(thisAction.actionType == DramaActionType.ShowConversation)
                 {
                     if (DialogueManager.GetInstance == null)
                         return;
@@ -242,14 +300,17 @@ namespace Drama
                     if (TransitionManager.GetInstance == null)
                         return;
 
-                    currentDrama = null;
                     DialogueManager.GetInstance.afterConversationCallBack.Clear();
                     
-                    TransitionManager.GetInstance.LoadScene(thisAction.loadThisScene);
+                    TransitionManager.GetInstance.LoadScene(thisAction.loadThisScene, ClearDrama);
                 }
             }
         }
 
+        public void ClearDrama()
+        {
+            currentDrama = null;
+        }
         public void FadeToDark(bool fadeAllCharacters, Action callBack)
         {
 
@@ -313,6 +374,8 @@ namespace Drama
             }
             ScenePointBehavior tmp = ScenePointPathfinder.GetInstance.ObtainNearestScenePoint(thisAction.actorsPosition[thisAction.actorPositionIdx]);
             thisCharacter.OrderMovement(tmp, () => CheckNextMove(thisCharacter, thisAction));
+            thisCharacter.OrderToFace((FacingDirection)thisAction.facingDirection[thisAction.actorPositionIdx]);
+            thisCharacter.UpdateCharacterState(thisAction.characterStates[thisAction.actorPositionIdx]);
         }
 
         public void CheckNextMove(BaseToolBehavior thisTool, DramaAction thisAction)

@@ -78,7 +78,7 @@ public class BaseVisualSkillBehavior : MonoBehaviour
                     {
                         targetUnits[i].ReceiveDamage(dmgCount, UnitAttackType.SPELL, skillInformation.targetStats);
                     }
-                    else;
+                    else
                     {
                         targetUnits[i].ReceiveHealing(dmgCount, UnitAttackType.SPELL, skillInformation.targetStats);
                     }

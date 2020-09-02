@@ -26,9 +26,11 @@ namespace Maps
         public int population;
         public int coinTax;
         public TerritoryOwners ownedBy;
+        public TerritoryOwners previousOwner;
         public MapType mapType;
         public bool visibleToPlayer;
         public bool isBeingAttacked;
+        public bool isKingdomPoint;
 
         [Header("Travellers Temporarily In the Place")]
         public List<BaseTravellerData> travellersOnPoint;

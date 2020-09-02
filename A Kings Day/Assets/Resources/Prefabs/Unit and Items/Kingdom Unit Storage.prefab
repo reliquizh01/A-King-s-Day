@@ -66,6 +66,9 @@ MonoBehaviour:
   - skillName: March Forward
     skillSprite: {fileID: -2236705860152388731, guid: 592c18cfaabad6c468db0b3e1269d659,
       type: 3}
+  - skillName: Summon Phalanx!
+    skillSprite: {fileID: -7282127889764777548, guid: 592c18cfaabad6c468db0b3e1269d659,
+      type: 3}
   heroStorage:
   - heroRarity: 0
     isHeroBaseState: 1
@@ -83,7 +86,7 @@ MonoBehaviour:
       minDamage: 2
       maxDamage: 3
       range: 2
-      unitCooldown: 1
+      unitCooldown: 20
       healcost: 5
       unitPrice: 5
       blockProjectile: 0
@@ -98,7 +101,26 @@ MonoBehaviour:
     damageGrowthRate: 3
     upgradesAdded: 0
     baseHeroCoinPrice: 0
-    skillsList: []
+    skillsList:
+    - skillName: Summon Phalanx!
+      skillType: 4
+      targetType: 0
+      skillLevel: 1
+      targetAlive: 1
+      statEnhanced: 0
+      spawnPrefab: 0
+      prefabStringPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+      affectedArea: 2
+      maxRange: 5
+      skillDurationOnTile: 0
+      isOnCooldown: 1
+      curCooldown: 0
+      cooldown: 25
+      cooldownLevelGrowth: 0.5
+      targetStats: 0
+      targetInflictedCount: 0
+      effectgrowth: 1
+      buffList: []
     equipments: []
   - heroRarity: 0
     isHeroBaseState: 1
@@ -116,7 +138,7 @@ MonoBehaviour:
       minDamage: 3
       maxDamage: 4
       range: 1
-      unitCooldown: 1
+      unitCooldown: 20
       healcost: 5
       unitPrice: 5
       blockProjectile: 0
@@ -146,9 +168,10 @@ MonoBehaviour:
       isOnCooldown: 0
       curCooldown: 0
       cooldown: 20
-      effectgrowth: 0
+      cooldownLevelGrowth: 0
       targetStats: 2
       targetInflictedCount: 0
+      effectgrowth: 0
       buffList:
       - buffName: Weak SPD Boost
         duration: 30
@@ -183,7 +206,7 @@ MonoBehaviour:
       minDamage: 1
       maxDamage: 2
       range: 6
-      unitCooldown: 1
+      unitCooldown: 20
       healcost: 5
       unitPrice: 5
       blockProjectile: 0
@@ -213,9 +236,10 @@ MonoBehaviour:
       isOnCooldown: 0
       curCooldown: 0
       cooldown: 5
-      effectgrowth: 2
+      cooldownLevelGrowth: 0
       targetStats: 0
-      targetInflictedCount: 2
+      targetInflictedCount: -2
+      effectgrowth: 2
       buffList: []
     equipments: []
   - heroRarity: 0
@@ -234,7 +258,7 @@ MonoBehaviour:
       minDamage: 7
       maxDamage: 9
       range: 4
-      unitCooldown: 1
+      unitCooldown: 20
       healcost: 5
       unitPrice: 5
       blockProjectile: 0
@@ -444,9 +468,10 @@ MonoBehaviour:
     isOnCooldown: 0
     curCooldown: 0
     cooldown: 20
-    effectgrowth: 0
+    cooldownLevelGrowth: 0
     targetStats: 2
     targetInflictedCount: 0
+    effectgrowth: 0
     buffList:
     - buffName: Weak SPD Boost
       duration: 30
@@ -478,9 +503,29 @@ MonoBehaviour:
     isOnCooldown: 0
     curCooldown: 0
     cooldown: 5
-    effectgrowth: 2
+    cooldownLevelGrowth: 0
     targetStats: 0
-    targetInflictedCount: 2
+    targetInflictedCount: -2
+    effectgrowth: 2
+    buffList: []
+  - skillName: Summon Phalanx!
+    skillType: 4
+    targetType: 0
+    skillLevel: 1
+    targetAlive: 1
+    statEnhanced: 0
+    spawnPrefab: 0
+    prefabStringPath: Assets/Resources/Prefabs/Unit and Items/Spearman.prefab
+    affectedArea: 2
+    maxRange: 5
+    skillDurationOnTile: 0
+    isOnCooldown: 1
+    curCooldown: 0
+    cooldown: 25
+    cooldownLevelGrowth: 0.5
+    targetStats: 0
+    targetInflictedCount: 0
+    effectgrowth: 1
     buffList: []
   buffStorage:
   - buffName: Minor HP Buff

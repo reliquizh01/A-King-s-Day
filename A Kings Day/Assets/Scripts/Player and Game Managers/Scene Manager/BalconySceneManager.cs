@@ -7,6 +7,8 @@ using Kingdoms;
 using Drama;
 using Dialogue;
 using Balcony;
+using ResourceUI;
+using Characters;
 
 namespace Managers
 {
@@ -72,21 +74,24 @@ namespace Managers
             {
                 if(!TransitionManager.GetInstance.isNewGame)
                 {
+                    scenePointHandler.SwitchScenePointsInteraction(false);
                     // Player Data Check
                     InitializeBalconyPlayerData();
                     // Player Campaign Data
                     InitializeBalconyCampaignData();
                     TransitionManager.GetInstance.SetAsCurrentManager(SceneType.Balcony);
+                    interactionHandler.SetupInteractablesInformation();
                 }
-
-                if (TransitionManager.GetInstance.isNewGame)
+                else
                 {
+                    if (TransitionManager.GetInstance.shortCutTestDebug)
+                    {
+                        ShortcutTest();
+                    }
                     interactionHandler.SwitchInteractableClickables(false);
                     MakeAllBuildingsFixed();
                     StartCoroutine(DelayPrologueDrama());
                 }
-
-                interactionHandler.SetupInteractablesInformation();
 
                 if (PlayerGameManager.GetInstance != null)
                 {
@@ -99,6 +104,43 @@ namespace Managers
             }
         }
 
+        public void ShortcutTest()
+        {
+            PlayerGameManager.GetInstance.ReceiveTroops(25, "Recruit");
+            PlayerGameManager.GetInstance.ReceiveTroops(15, "Archer");
+            PlayerGameManager.GetInstance.ReceiveTroops(20, "Swordsman");
+            PlayerGameManager.GetInstance.ReceiveTroops(20, "Spearman");
+
+            ResourceInformationController.GetInstance.UpdateCurrentPanel();
+
+            BaseHeroInformationData playerAsHero = new BaseHeroInformationData();
+            playerAsHero = TransitionManager.GetInstance.unitStorage.ObtainHeroBaseInformation(WieldedWeapon.Spear);
+            playerAsHero.unitInformation.unitName = "Player";
+            playerAsHero.unitInformation.prefabDataPath = "Assets/Resources/Prefabs/Unit and Items/Player.prefab";
+
+            PlayerGameManager.GetInstance.playerData.myHeroes = new List<BaseHeroInformationData>();
+            PlayerGameManager.GetInstance.playerData.tavernHeroes = new List<BaseHeroInformationData>();
+
+            BaseHeroInformationData tmp = new BaseHeroInformationData();
+            tmp.unitInformation = playerAsHero.unitInformation;
+            tmp.heroLevel = playerAsHero.heroLevel;
+            tmp.heroRarity = playerAsHero.heroRarity;
+
+            tmp.healthGrowthRate = playerAsHero.healthGrowthRate;
+            tmp.damageGrowthRate = playerAsHero.damageGrowthRate;
+            tmp.speedGrowthRate = playerAsHero.speedGrowthRate;
+
+
+            tmp.skillsList = new List<BaseSkillInformationData>();
+            for (int i = 0; i < playerAsHero.skillsList.Count; i++)
+            {
+                BaseSkillInformationData tmpSkill = new BaseSkillInformationData();
+                tmpSkill = playerAsHero.skillsList[i];
+                tmp.skillsList.Add(tmpSkill);
+            }
+
+            PlayerGameManager.GetInstance.playerData.myHeroes.Add(tmp);
+        }
         IEnumerator DelayPrologueDrama()
         {
             yield return new WaitForSeconds(2);
@@ -131,6 +173,7 @@ namespace Managers
         public void InitializeBalconyPlayerData()
         {
             PlayerKingdomData playerData = PlayerGameManager.GetInstance.playerData;
+
             if (!playerData.balconyBuildingsAdded)
             {
                 if (playerData.buildingInformationData == null)
@@ -176,7 +219,7 @@ namespace Managers
             else
             {
                 player.SpawnInThisPosition(entryPoint);
-                player.OrderMovement(balconyPoint);
+                player.OrderMovement(balconyPoint, ()=> player.OrderToFace(Characters.FacingDirection.Right));
             }
         }
         // PROLOGUE STUFF

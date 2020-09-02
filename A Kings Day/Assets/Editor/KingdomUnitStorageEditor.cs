@@ -520,11 +520,14 @@ public class KingdomUnitStorageEditor : EditorWindow
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();    
-        GUILayout.Label("[HP]", EditorStyles.boldLabel, GUILayout.Width(40));
-        GUILayout.Label("HP:", EditorStyles.boldLabel, GUILayout.Width(40));
-        currentHeroData.unitInformation.maxHealth= EditorGUILayout.IntField((int)currentHeroData.unitInformation.maxHealth, GUILayout.MaxWidth(75));
+        GUILayout.Label("[HP]", EditorStyles.boldLabel, GUILayout.Width(30));
+        GUILayout.Label("HP:", EditorStyles.boldLabel, GUILayout.Width(30));
+        currentHeroData.unitInformation.maxHealth= EditorGUILayout.IntField((int)currentHeroData.unitInformation.maxHealth, GUILayout.MaxWidth(45));
         GUILayout.Label("Price:", EditorStyles.boldLabel, GUILayout.Width(40));
-        currentHeroData.baseHeroCoinPrice = EditorGUILayout.IntField(currentHeroData.baseHeroCoinPrice, GUILayout.MaxWidth(66));
+        currentHeroData.baseHeroCoinPrice = EditorGUILayout.IntField(currentHeroData.baseHeroCoinPrice, GUILayout.MaxWidth(40));
+        GUILayout.Label("CD:", EditorStyles.boldLabel, GUILayout.Width(40));
+        currentHeroData.unitInformation.unitCooldown = EditorGUILayout.IntField(currentHeroData.unitInformation.unitCooldown, GUILayout.MaxWidth(30));
+
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
@@ -928,6 +931,10 @@ public class KingdomUnitStorageEditor : EditorWindow
         {
             GUILayout.Label("[Buff Based Skill]", GUILayout.MaxWidth(140));
         }
+        else if(currentSkillData.skillType == SkillType.SummonUnits)
+        {
+            GUILayout.Label("[Summon Based Skill]", GUILayout.MaxWidth(140));
+        }
         else
         {
             GUILayout.Label("Hit Stat:", EditorStyles.boldLabel, GUILayout.Width(50));
@@ -941,6 +948,10 @@ public class KingdomUnitStorageEditor : EditorWindow
         if(currentSkillData.buffList != null && currentSkillData.buffList.Count > 0)
         {
             GUILayout.Label("[Buff Based Skill]", GUILayout.MaxWidth(140));
+        }
+        else if (currentSkillData.skillType == SkillType.SummonUnits)
+        {
+            GUILayout.Label("[Summon Based Skill]", GUILayout.MaxWidth(140));
         }
         else
         {
@@ -957,15 +968,29 @@ public class KingdomUnitStorageEditor : EditorWindow
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
-        GUILayout.Label("Cooldown:", EditorStyles.boldLabel, GUILayout.Width(50));
-        currentSkillData.cooldown = EditorGUILayout.IntField((int)currentSkillData.cooldown, GUILayout.MaxWidth(65));
-        GUILayout.Label("Level Growth:", EditorStyles.boldLabel, GUILayout.Width(90));
-        currentSkillData.effectgrowth = EditorGUILayout.FloatField(currentSkillData.effectgrowth, GUILayout.MaxWidth(60));
+        GUILayout.Label("Cooldown:", EditorStyles.boldLabel, GUILayout.Width(70));
+        currentSkillData.cooldown = EditorGUILayout.IntField((int)currentSkillData.cooldown, GUILayout.MaxWidth(45));
+        GUILayout.Label("Start On Cooldown:", EditorStyles.boldLabel, GUILayout.Width(120));
+        currentSkillData.isOnCooldown = EditorGUILayout.Toggle(currentSkillData.isOnCooldown, GUILayout.Width(20));
         GUILayout.EndHorizontal();
 
+        GUILayout.BeginHorizontal();
+        if(currentSkillData.skillType != SkillType.SummonUnits)
+        {
+            GUILayout.Label("Effect Growth:", EditorStyles.boldLabel, GUILayout.Width(90));
+            currentSkillData.effectgrowth = EditorGUILayout.FloatField(currentSkillData.effectgrowth, GUILayout.MaxWidth(60));
+        }
+        else
+        {
+            GUILayout.Label("[Summon Based Skill]", GUILayout.Width(150));
+        }
+        GUILayout.Label("CD Growth:", EditorStyles.boldLabel, GUILayout.Width(70));
+        currentSkillData.cooldownLevelGrowth = EditorGUILayout.FloatField(currentSkillData.cooldownLevelGrowth, GUILayout.MaxWidth(45));
+        GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
-        if (currentSkillData.skillType != SkillType.DefensiveBuff && currentSkillData.skillType != SkillType.OffensiveBuff)
+        if (currentSkillData.skillType != SkillType.DefensiveBuff && currentSkillData.skillType != SkillType.OffensiveBuff
+            && currentSkillData.skillType != SkillType.SummonUnits)
         {
             if (!string.IsNullOrEmpty(currentSkillData.prefabStringPath))
             {
@@ -978,7 +1003,7 @@ public class KingdomUnitStorageEditor : EditorWindow
 
             GUILayout.Label("Prefab:", EditorStyles.boldLabel, GUILayout.Width(50));
             EditorGUI.BeginChangeCheck();
-            currentSkillPrefab = (Object)EditorGUILayout.ObjectField(currentSkillPrefab, typeof(Object), true, GUILayout.MaxWidth(225));
+            currentSkillPrefab = (Object)EditorGUILayout.ObjectField(currentSkillPrefab, typeof(Object), true, GUILayout.MaxWidth(220));
             if (EditorGUI.EndChangeCheck())
             {
                 if (currentSkillPrefab != null)
@@ -992,6 +1017,32 @@ public class KingdomUnitStorageEditor : EditorWindow
                     currentSkillData.prefabStringPath = "";
                     currentSkillData.spawnPrefab = false;
                 }
+            }
+        }
+        else if(currentSkillData.skillType == SkillType.SummonUnits)
+        {
+            List<string> unitNameList = new List<string>();
+            for (int i = 0; i < curUnitStorageData.basicUnitStorage.Count; i++)
+            {
+                unitNameList.Add(curUnitStorageData.basicUnitStorage[i].unitName);
+            }
+            int selectedItem = curUnitStorageData.basicUnitStorage.FindIndex(x => x.prefabDataPath == currentSkillData.prefabStringPath);
+            if(string.IsNullOrEmpty(currentSkillData.prefabStringPath))
+            {
+                if(selectedItem == -1)
+                {
+                    selectedItem = 0;
+                }
+            }
+
+            selectedItem = EditorGUILayout.Popup(selectedItem, unitNameList.ToArray(), GUILayout.MaxWidth(200));
+            currentSkillData.prefabStringPath = curUnitStorageData.basicUnitStorage[selectedItem].prefabDataPath;
+
+            bool removeBuff = GUILayout.Button("-", GUILayout.Width(72));
+
+            if (removeBuff)
+            {
+                currentSkillData.prefabStringPath = "";
             }
         }
         GUILayout.EndHorizontal();

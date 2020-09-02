@@ -5,6 +5,8 @@ using UnityEngine.Animations;
 using KingEvents;
 using Managers;
 using System;
+using Kingdoms;
+using Utilities;
 
 namespace Characters
 {
@@ -15,13 +17,13 @@ namespace Characters
         public CharacterRange myRange;
         public CharacterAnimationControl myAnimation;
         public CharacterAudioControl mySfx;
+        public OverheadHealth2DUI overheadHealthbar;
 
-        public bool isKing = false;
-        public bool isMainCharacter = false;
-        public bool isGuest = false;
         public bool isLeaving = false;
+        public bool isActing = false;
 
         [Header("Unit Information")]
+        public bool isLeadingHero = false;
         public UnitInformationData unitInformation;
         public bool isFighting;
         public bool canReturnToCamp;
@@ -29,17 +31,45 @@ namespace Characters
         public bool canStagger;
         private Action reachedCallback;
         public bool isBanishing = false;
+
+        [Header("Hero Mechanics")]
+        public bool canRegenerate = false;
+        public float regenPerSec = 0.015f;
+
+        public void Awake()
+        {
+            if(EventBroadcaster.Instance != null)
+            {
+                EventBroadcaster.Instance.AddObserver(EventNames.HIDE_ALL_UNKNOWN_ACTORS, OrderToBanish);
+            }
+        }
         public void Start()
         {
-            if(isKing)
+            if(SpawnManager.GetInstance != null && SpawnManager.GetInstance.spawnedCharacterUnits != null)
             {
-                isMainCharacter = true;
+                if(SpawnManager.GetInstance.spawnedCharacterUnits.Count > 0 && SpawnManager.GetInstance.spawnedCharacterUnits.Find(x => x == this) == null)
+                {
+                    SpawnManager.GetInstance.spawnedCharacterUnits.Add(this);
+                    
+                }
             }
         }
 
+        public void OnDestroy()
+        {
+            EventBroadcaster.Instance.RemoveActionAtObserver(EventNames.HIDE_ALL_UNKNOWN_ACTORS, OrderToBanish);
+        }
         public void Update()
         {
-            if(myMovements.isMoving)
+            if(canRegenerate)
+            {
+                ReceiveHealing(regenPerSec, UnitAttackType.SPELL, TargetStats.health);
+                if(unitInformation.curhealth >= unitInformation.maxHealth)
+                {
+                    canRegenerate = false;
+                }
+            }
+            if(myMovements.isMoving && !isActing)
             {
                 UpdateMovementFacingDirection();
             }
@@ -117,6 +147,8 @@ namespace Characters
             unitInformation.morale = newUnitInformation.morale;
             unitInformation.currentState = newUnitInformation.currentState;
 
+            unitInformation.wieldedWeapon = newUnitInformation.wieldedWeapon;
+
             unitInformation.buffList = new List<BaseBuffInformationData>();
             if(newUnitInformation.buffList != null && newUnitInformation.buffList.Count > 0)
             {
@@ -127,6 +159,10 @@ namespace Characters
                 }
             }
 
+            myRange.myCharacter = this;
+            myRange.UpdateTotalRange();
+
+            ChangeWeaponWield(unitInformation.wieldedWeapon);
             UpdateStats();
         }
 
@@ -145,18 +181,21 @@ namespace Characters
             myMovements.isMoving = false;
             myMovements.SetTarget(thisLocation, callBack);
 
-            UpdateMovementFacingDirection();
-            UpdateCharacterState(CharacterStates.Walking);
+            if(!isActing)
+            {
+                UpdateMovementFacingDirection();
+                UpdateCharacterState(CharacterStates.Walking);
+            }
         }
 
-        public void OrderMovement(Vector2 newPosition, Action callback = null)
+        public void ChangeWeaponWield(WieldedWeapon wieldedWeapon)
         {
-
+            myAnimation.UpdateWieldedWeapon(wieldedWeapon);
         }
 
         public void OrderToFace(FacingDirection newDirection)
         {
-            myAnimation.ChangeFacingDireciton(newDirection);
+            myAnimation.ChangeFacingDirection(newDirection);
         }
 
         public void SetAsBanish()
@@ -164,7 +203,7 @@ namespace Characters
             isBanishing = true;
             myAnimation.characterSprite.color = new Color(1, 1, 1, 0.0f);
         }
-        public void OrderToBanish()
+        public void OrderToBanish(Parameters p = null)
         {
             isBanishing = true;
             myAnimation.UpdateBanish(isBanishing);
@@ -176,6 +215,11 @@ namespace Characters
         }
         public void UpdateMovementFacingDirection()
         {
+            if(isActing)
+            {
+                return;
+            }
+
             if((Vector2)transform.position != myMovements.targetPos)
             {
                 // SAME X POSITION ( MOVE CHARACTER BASED )
@@ -183,22 +227,22 @@ namespace Characters
                 {
                     if(transform.position.y > myMovements.targetPos.y)
                     {
-                        myAnimation.ChangeFacingDireciton(FacingDirection.Down);
+                        myAnimation.ChangeFacingDirection(FacingDirection.Down);
                     }
                     else
                     {
-                        myAnimation.ChangeFacingDireciton(FacingDirection.Up);
+                        myAnimation.ChangeFacingDirection(FacingDirection.Up);
                     }
                 }
                 else
                 {
                     if (transform.position.x > myMovements.targetPos.x)
                     {
-                        myAnimation.ChangeFacingDireciton(FacingDirection.Right);
+                        myAnimation.ChangeFacingDirection(FacingDirection.Left);
                     }
                     else
                     {
-                        myAnimation.ChangeFacingDireciton(FacingDirection.Left);
+                        myAnimation.ChangeFacingDirection(FacingDirection.Right);
                     }
                 }
             }
@@ -260,6 +304,9 @@ namespace Characters
 
                     break;
                 case CharacterStates.Injured_State:
+                    if (isLeadingHero)
+                        break;
+
                     myAnimation.UpdateDeath(true);
                     myAnimation.ChangeState(newState);
                     break;
@@ -348,6 +395,11 @@ namespace Characters
         public void ReceiveHealing(float amount, UnitAttackType attackType, TargetStats targetStats)
         {
             unitInformation.ReceiveHealing(amount, targetStats);
+
+            if (targetStats == TargetStats.health)
+            {
+                overheadHealthbar.UpdateHealthBar(unitInformation.curhealth, unitInformation.maxHealth);
+            }
         }
         public void ReceiveDamage(float amount, UnitAttackType attackType, TargetStats targetStats)
         {
@@ -424,13 +476,25 @@ namespace Characters
                 default:
                     break;
             }
+
+
+
+            amount = Mathf.Abs(amount);
             unitInformation.ReceiveDamage(amount, targetStats);
 
-            //Debug.Log("[ DAMAGE RECEIVED : " + amount + " RECEIVED BY:"+ unitInformation.unitName + " ]");
-            if(unitInformation.currentState == UnitState.Dead || unitInformation.currentState == UnitState.Injured)
+            if(targetStats == TargetStats.health)
             {
-                UpdateCharacterState(CharacterStates.Injured_State);
-                mySfx.PlayInjuredOrDead();
+                overheadHealthbar.UpdateHealthBar(unitInformation.curhealth, unitInformation.maxHealth, true);;
+            }
+
+            //Debug.Log("[ DAMAGE RECEIVED : " + amount + " RECEIVED BY:"+ unitInformation.unitName + " ]");
+            if(!isLeadingHero)
+            {
+                if (unitInformation.currentState == UnitState.Dead || unitInformation.currentState == UnitState.Injured)
+                {
+                    UpdateCharacterState(CharacterStates.Injured_State);
+                    mySfx.PlayInjuredOrDead();
+                }
             }
 
             if(unitInformation.currentState != UnitState.Healthy)

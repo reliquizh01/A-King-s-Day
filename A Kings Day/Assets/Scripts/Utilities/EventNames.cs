@@ -37,5 +37,8 @@ namespace Utilities
 
         // WEEKLY PGROESS
         public const string WEEKLY_UPDATE = "WEEKLY_UPDATE";
+
+        // ACTING
+        public const string HIDE_ALL_UNKNOWN_ACTORS = "HIDE_ALL_UNKNOWN_ACTORS";
     }
 }

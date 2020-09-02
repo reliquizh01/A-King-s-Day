@@ -238,7 +238,7 @@ namespace Characters
             }
             pathIdx = 0;
 
-            if (myCharacter != null)
+            if (myCharacter != null && !myCharacter.isActing)
             {
                 myCharacter.UpdateCharacterState(CharacterStates.Idle);
                 if (myCharacter.isFighting)
@@ -369,7 +369,6 @@ namespace Characters
                 FinishPathMovement();
                 return;
             }
-
 
             SetNewTargetPoint(thisPoint);
             pathIdx = 0;

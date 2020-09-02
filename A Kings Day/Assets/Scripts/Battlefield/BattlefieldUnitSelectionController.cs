@@ -37,6 +37,7 @@ namespace Battlefield
         public bool canChangeSummon = true;
         [Header("Skill Slot Mechanics")]
         public BattlefieldSkillsHandler skillSlotHandler;
+        public SummonHeroSlotHandler leaderSlotHandler;
 
         [Header("Resource Information")]
         public CountingEffectUI warChestCount;
@@ -72,6 +73,7 @@ namespace Battlefield
                 }
             }
             skillSlotHandler.myController = this;
+            leaderSlotHandler.myController = this;
 
             if (BattlefieldSceneManager.GetInstance != null && !BattlefieldSceneManager.GetInstance.isCampaignMode)
             {
@@ -96,6 +98,8 @@ namespace Battlefield
                 unitList[0].SetAsSelected();
                 selectedUnit = unitList[0];
             }
+
+            skillSlotHandler.myPanel.PlayOpenAnimation();
         }
 
         public void Update()
@@ -230,6 +234,14 @@ namespace Battlefield
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 SummonUnit();
+            }
+            if(Input.GetKeyDown(KeyCode.R))
+            {
+                if(!leaderSlotHandler.allowSpawning)
+                {
+                    return;
+                }
+                SummonLeader();
             }
         }
 
@@ -385,44 +397,207 @@ namespace Battlefield
             {
                 return;
             }
-
-            curColumnIdx = computerAI.ChooseLane();
-            SetPointBehavior(isAttacker);
+            
 
             if(canChangeSummon)
             {
+                curColumnIdx = computerAI.ChooseLane();
+                SetPointBehavior(isAttacker);
+
                 int idx = computerAI.ChooseNextUnitIndex();
 
                 if(idx >= 0)
                 {
                     SetUnitPanelAsSelected(idx);
                 }
+                canChangeSummon = false;
             }
-
-            SummonUnit();
+            else
+            {
+                canChangeSummon = true;
+                SummonUnit();
+            }
+            ComputerPlayerSkillControl();
         }
 
-        public void CampaignControls()
+        public void ComputerPlayerSkillControl()
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if(currentCommander.heroesCarried == null ||
+                currentCommander.heroesCarried.Count <= 0)
             {
-                SetUnitPanelAsSelected(0);
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                SetUnitPanelAsSelected(1);
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                SetUnitPanelAsSelected(2);
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                SetUnitPanelAsSelected(3);
+                return;
             }
 
+            if(!BattlefieldSystemsManager.GetInstance.dayInProgress)
+            {
+                return;
+            }
+
+            for (int i = 0; i < currentCommander.heroesCarried[0].skillsList.Count; i++)
+            {
+                BaseSkillInformationData thisSkill = currentCommander.heroesCarried[0].skillsList[i];
+
+                switch (thisSkill.skillType)
+                {
+                    // SKILLS THAT REQUIRE KNOWLEDGE
+                    case SkillType.Defensive:
+                    case SkillType.DefensiveBuff:
+                        if (thisSkill.targetType == TargetType.UnitOnTiles)
+                        {
+                            // Check how many Tiles have units on it.
+                            int tileWithAllies = 0;
+                            switch (teamType)
+                            {
+                                case TeamType.Defender:
+                                    tileWithAllies = BattlefieldPathManager.GetInstance.pathsWithDefender.Count;
+                                    break;
+                                case TeamType.Attacker:
+                                    tileWithAllies = BattlefieldPathManager.GetInstance.pathsWithAttacker.Count;
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                            int halfOfMaxTarget = (thisSkill.maxRange / 2);
+                            if (tileWithAllies > halfOfMaxTarget)
+                            {
+                                skillSlotHandler.curSkillIdx = i;
+                                skillSlotHandler.ActivateThisSkill(i);
+                            }
+                        }
+                        else if(thisSkill.targetType == TargetType.UnitOnly)
+                        {
+                            int unitsLeft = BattlefieldSpawnManager.GetInstance.CountSpawnedUnits(isAttacker, false);
+                            if(unitsLeft > 0)
+                            {
+                                skillSlotHandler.curSkillIdx = i;
+                                skillSlotHandler.ActivateThisSkill(i);
+                            }
+                        }
+                        else
+                        {
+                            skillSlotHandler.curSkillIdx = i;
+                            skillSlotHandler.ActivateThisSkill(i);
+                        }
+                        break;
+                    case SkillType.Offensive:
+                    case SkillType.OffensiveBuff:
+                        if (thisSkill.targetType == TargetType.UnitOnTiles)
+                        {
+                            // Check how many Tiles have units on it.
+                            int tilesWithEnemies = 0;
+                            switch (teamType)
+                            {
+                                case TeamType.Neutral:
+                                    tilesWithEnemies = BattlefieldPathManager.GetInstance.pathsWithAttacker.Count + BattlefieldPathManager.GetInstance.pathsWithDefender.Count;
+                                    break;
+                                case TeamType.Defender:
+                                    tilesWithEnemies = BattlefieldPathManager.GetInstance.pathsWithAttacker.Count;
+                                    break;
+                                case TeamType.Attacker:
+                                    tilesWithEnemies = BattlefieldPathManager.GetInstance.pathsWithDefender.Count;
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                            int halfOfMaxTarget = (thisSkill.maxRange / 2);
+                            if (tilesWithEnemies > halfOfMaxTarget)
+                            {
+                                skillSlotHandler.curSkillIdx = i;
+                                skillSlotHandler.ActivateThisSkill(i);
+                            }
+                        }
+                        else if(thisSkill.targetType == TargetType.UnitOnly)
+                        {
+                            int unitsLeft = BattlefieldSpawnManager.GetInstance.CountSpawnedUnits(!isAttacker, false);
+                            if (unitsLeft > 0)
+                            {
+                                skillSlotHandler.curSkillIdx = i;
+                                skillSlotHandler.ActivateThisSkill(i);
+                            }
+                        }
+                        else
+                        {
+                            skillSlotHandler.curSkillIdx = i;
+                            skillSlotHandler.ActivateThisSkill(i);
+                        }
+                        break;
+                        
+
+
+                        break;
+
+                    // SKILL THAT CAN BE QUICK CASTED.
+                    case SkillType.SummonUnits:
+
+                        skillSlotHandler.curSkillIdx = i;
+                        skillSlotHandler.ActivateThisSkill(i);
+
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+
+            ComputerSummonLeaderControl();
         }
 
+        public void ComputerSummonLeaderControl()
+        {
+            if(!leaderSlotHandler.allowSpawning)
+            {
+                return;
+            }
+
+            if(!BattlefieldSystemsManager.GetInstance.dayInProgress)
+            {
+                return;
+            }
+
+            BaseCharacter computerLeader = null;
+
+            switch (teamType)
+            {
+                case TeamType.Defender:
+                    computerLeader = BattlefieldSpawnManager.GetInstance.defenderHeroLeader;
+                    break;
+                case TeamType.Attacker:
+                    computerLeader = BattlefieldSpawnManager.GetInstance.attackerHeroLeader;
+                    break;
+                default:
+                    break;
+            }
+
+            float checkHpByHalf = computerLeader.unitInformation.curhealth * 0.5f;
+
+            if(computerLeader.unitInformation.curhealth > checkHpByHalf)
+            {
+                SummonLeader();
+            }
+        }
+        public void SummonLeader()
+        {
+            if(!TransitionManager.GetInstance.isNewGame)
+            {
+                if (!BattlefieldSystemsManager.GetInstance.dayInProgress)
+                {
+                    return;
+                }
+
+                if (BattlefieldSpawnManager.GetInstance == null)
+                {
+                    return;
+                }
+            }
+
+            ScenePointBehavior spawn = BattlefieldPathManager.GetInstance.ObtainSpawnPoint(curColumnIdx, isAttacker);
+            ScenePointBehavior target = BattlefieldPathManager.GetInstance.ObtainTargetPoint(curColumnIdx, isAttacker);
+
+            BattlefieldSpawnManager.GetInstance.SpawnLeaderToBattle(teamType, spawn, target);
+            leaderSlotHandler.SummonHero();
+        }
         public void SummonUnit()
         {
             if (!BattlefieldSystemsManager.GetInstance.dayInProgress)
@@ -443,27 +618,39 @@ namespace Battlefield
                 return;
             }
 
-            bool canSpawn = BattlefieldSpawnManager.GetInstance.CheckIfUnitsAvailable(isAttacker, currentSelectedIdx);
+            Debug.Log("Summoning Unit");
 
-            // Check if Can Spawn
+            bool canSpawn = BattlefieldSpawnManager.GetInstance.CheckIfUnitsAvailable(isAttacker, currentSelectedIdx);
             if(canSpawn)
             {
+                if(BattlefieldPathManager.GetInstance == null)
+                {
+                    return;
+                }
                 ScenePointBehavior spawn = BattlefieldPathManager.GetInstance.ObtainSpawnPoint(curColumnIdx, isAttacker);
                 ScenePointBehavior target = BattlefieldPathManager.GetInstance.ObtainTargetPoint(curColumnIdx, isAttacker);
 
                 BattlefieldSpawnManager.GetInstance.SpawnUnit(currentSelectedIdx, spawn, target, isAttacker);
-                BattlefieldSceneManager.GetInstance.battleUIInformation.UpdateUnitPanels();
-
                 for (int i = 0; i < unitList.Count; i++)
                 {
                     unitList[i].ResetCooldown();
                 }
+            }
+            /*
+            // Check if Can Spawn
+            if(canSpawn)
+            {
+                Debug.Log("OBtaining Spawn Points");
+
+
+                BattlefieldSceneManager.GetInstance.battleUIInformation.UpdateUnitPanels();
+
                 canChangeSummon = true;
             }
             else
             {
-
-            }
+                // Create Reaction if unit is wrongly clicked.
+            }*/
 
         }
 

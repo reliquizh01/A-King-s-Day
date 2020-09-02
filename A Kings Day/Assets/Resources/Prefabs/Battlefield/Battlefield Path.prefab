@@ -309,18 +309,28 @@ PrefabInstance:
     - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: neighborPoints.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: neighborPoints.Array.data[0]
       value: 
       objectReference: {fileID: 4525687458811147920}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 5117097529672400108}
     - target: {fileID: 8776932739690542270, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: m_Name
-      value: Battlefield Tile (13)
+      value: Battlefield Tile -1
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932740524988692, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: myController
+      value: 
+      objectReference: {fileID: 517865795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6755f9d27e65d945b23ec90508a7acb, type: 3}
 --- !u!4 &8380766395958076473 stripped
@@ -406,18 +416,28 @@ PrefabInstance:
     - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: neighborPoints.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: neighborPoints.Array.data[0]
       value: 
       objectReference: {fileID: 4525687460857918120}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 4525687460855842357}
     - target: {fileID: 8776932739690542270, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: m_Name
       value: Battlefield Tile (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932740524988692, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: myController
+      value: 
+      objectReference: {fileID: 517865795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6755f9d27e65d945b23ec90508a7acb, type: 3}
 --- !u!4 &6595524044330964887 stripped
@@ -503,18 +523,28 @@ PrefabInstance:
     - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: neighborPoints.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: neighborPoints.Array.data[0]
       value: 
-      objectReference: {fileID: 4525687458811147920}
+      objectReference: {fileID: 8380766395958076475}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 4525687460332578638}
     - target: {fileID: 8776932739690542270, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: m_Name
       value: Battlefield Tile
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932740524988692, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: myController
+      value: 
+      objectReference: {fileID: 517865795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6755f9d27e65d945b23ec90508a7acb, type: 3}
 --- !u!4 &5117097529672400110 stripped
@@ -597,11 +627,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 4525687459774772724}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 4525687459740561666}
     - target: {fileID: 8776932739690542270, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: m_Name
       value: Battlefield Tile (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932740524988692, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: myController
+      value: 
+      objectReference: {fileID: 517865795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6755f9d27e65d945b23ec90508a7acb, type: 3}
 --- !u!4 &4525687459073953606 stripped
@@ -684,11 +734,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 4525687460332578638}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 4525687460228240837}
     - target: {fileID: 8776932739690542270, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: m_Name
       value: Battlefield Tile (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932740524988692, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: myController
+      value: 
+      objectReference: {fileID: 517865795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6755f9d27e65d945b23ec90508a7acb, type: 3}
 --- !u!4 &4525687459268871779 stripped
@@ -771,11 +841,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 4525687459740561666}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 4525687460540717436}
     - target: {fileID: 8776932739690542270, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: m_Name
       value: Battlefield Tile (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932740524988692, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: myController
+      value: 
+      objectReference: {fileID: 517865795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6755f9d27e65d945b23ec90508a7acb, type: 3}
 --- !u!4 &4525687458836761209 stripped
@@ -861,13 +951,13 @@ PrefabInstance:
     - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: neighborPoints.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: neighborPoints.Array.data[0]
       value: 
-      objectReference: {fileID: 5117097529672400108}
+      objectReference: {fileID: 8380766395958076475}
     - target: {fileID: 8776932739690542270, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: m_Name
@@ -878,6 +968,11 @@ PrefabInstance:
       propertyPath: tileConquerable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932740524988692, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: myController
+      value: 
+      objectReference: {fileID: 517865795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6755f9d27e65d945b23ec90508a7acb, type: 3}
 --- !u!114 &4525687458811147920 stripped
@@ -960,11 +1055,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 4525687460228240837}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 4525687459774772724}
     - target: {fileID: 8776932739690542270, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: m_Name
       value: Battlefield Tile (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932740524988692, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: myController
+      value: 
+      objectReference: {fileID: 517865795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6755f9d27e65d945b23ec90508a7acb, type: 3}
 --- !u!4 &4525687459001545828 stripped
@@ -1047,11 +1162,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 4525687459001545830}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 4525687459073953604}
     - target: {fileID: 8776932739690542270, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: m_Name
       value: Battlefield Tile (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932740524988692, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: myController
+      value: 
+      objectReference: {fileID: 517865795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6755f9d27e65d945b23ec90508a7acb, type: 3}
 --- !u!114 &4525687459774772724 stripped
@@ -1134,11 +1269,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 4525687459073953604}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 4525687458836761211}
     - target: {fileID: 8776932739690542270, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: m_Name
       value: Battlefield Tile (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932740524988692, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: myController
+      value: 
+      objectReference: {fileID: 517865795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6755f9d27e65d945b23ec90508a7acb, type: 3}
 --- !u!114 &4525687459740561666 stripped
@@ -1221,11 +1376,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 4525687460540717436}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 4525687460855842357}
     - target: {fileID: 8776932739690542270, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: m_Name
       value: Battlefield Tile (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932740524988692, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: myController
+      value: 
+      objectReference: {fileID: 517865795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6755f9d27e65d945b23ec90508a7acb, type: 3}
 --- !u!114 &4525687459408888858 stripped
@@ -1308,11 +1483,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 4525687459268871777}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 4525687459001545830}
     - target: {fileID: 8776932739690542270, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: m_Name
       value: Battlefield Tile (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932740524988692, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: myController
+      value: 
+      objectReference: {fileID: 517865795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6755f9d27e65d945b23ec90508a7acb, type: 3}
 --- !u!114 &4525687460228240837 stripped
@@ -1395,11 +1590,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 5117097529672400108}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 4525687459268871777}
     - target: {fileID: 8776932739690542270, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: m_Name
       value: Battlefield Tile (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932740524988692, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: myController
+      value: 
+      objectReference: {fileID: 517865795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6755f9d27e65d945b23ec90508a7acb, type: 3}
 --- !u!4 &4525687460332578636 stripped
@@ -1485,18 +1700,28 @@ PrefabInstance:
     - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: neighborPoints.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: neighborPoints.Array.data[0]
       value: 
-      objectReference: {fileID: 4525687460857918120}
+      objectReference: {fileID: 4525687459408888858}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 6595524044330964885}
     - target: {fileID: 8776932739690542270, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: m_Name
       value: Battlefield Tile (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932740524988692, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: myController
+      value: 
+      objectReference: {fileID: 517865795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6755f9d27e65d945b23ec90508a7acb, type: 3}
 --- !u!114 &4525687460855842357 stripped
@@ -1599,6 +1824,11 @@ PrefabInstance:
       propertyPath: tileConquerable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932740524988692, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: myController
+      value: 
+      objectReference: {fileID: 517865795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6755f9d27e65d945b23ec90508a7acb, type: 3}
 --- !u!4 &4525687460857918122 stripped
@@ -1681,11 +1911,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 4525687458836761211}
+    - target: {fileID: 8776932739690542243, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: neighborPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 4525687459408888858}
     - target: {fileID: 8776932739690542270, guid: e6755f9d27e65d945b23ec90508a7acb,
         type: 3}
       propertyPath: m_Name
       value: Battlefield Tile (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 8776932740524988692, guid: e6755f9d27e65d945b23ec90508a7acb,
+        type: 3}
+      propertyPath: myController
+      value: 
+      objectReference: {fileID: 517865795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6755f9d27e65d945b23ec90508a7acb, type: 3}
 --- !u!4 &4525687460540717438 stripped

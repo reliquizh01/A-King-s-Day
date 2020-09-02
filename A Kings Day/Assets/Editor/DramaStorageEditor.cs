@@ -693,7 +693,7 @@ namespace Drama
                         case DramaActionType.MakeActorMove:
                             btnTitle = "[" + curFrame.actionsOnFrameList[i].thisActor.characterName + "] Moving";
                             break;
-                        case DramaActionType.ShowBriefConversation:
+                        case DramaActionType.ShowConversation:
                             btnTitle = "Start Conversation";
                             break;
                         case DramaActionType.BanishActor:
@@ -775,9 +775,12 @@ namespace Drama
             {
                 GUILayout.BeginHorizontal();
                 GUILayout.Label("Action Type:", GUILayout.Width(75));
-                curAction.actionType = (DramaActionType)EditorGUILayout.EnumPopup(curAction.actionType, GUILayout.MaxWidth(170));
+                curAction.actionType = (DramaActionType)EditorGUILayout.EnumPopup(curAction.actionType, GUILayout.MaxWidth(120));
                 GUILayout.Label("Start After(Seconds):", GUILayout.Width(120));
-                curAction.delayBeforeStart = EditorGUILayout.FloatField(curAction.delayBeforeStart, GUILayout.MaxWidth(70));
+                curAction.delayBeforeStart = EditorGUILayout.FloatField(curAction.delayBeforeStart, GUILayout.MaxWidth(30));
+                GUILayout.Label("Stay On Act:", GUILayout.Width(73));
+                curAction.stayOnLastState = EditorGUILayout.Toggle(curAction.stayOnLastState, GUILayout.MaxWidth(18));
+
                 GUILayout.EndHorizontal();
                 if (curAction.actionType == DramaActionType.MakeActorMove)
                 {
@@ -816,7 +819,7 @@ namespace Drama
                     {
                         GUILayout.Label("Actor:", GUILayout.MaxWidth(40));
                         selectedActorActionIdx = EditorGUILayout.Popup(selectedActorActionIdx, actorNames.ToArray(), GUILayout.MaxWidth(160));
-                        GUILayout.Label("Quick Place Position:", GUILayout.MaxWidth(122));
+                        GUILayout.Label("Read Position:", GUILayout.MaxWidth(85));
                         easyPlacePosition = (GameObject)EditorGUILayout.ObjectField(easyPlacePosition, typeof(Object), true, GUILayout.MaxWidth(112));
                         if (curAction.thisActor.characterName != curDrama.actors[selectedActorActionIdx].characterName)
                         {
@@ -829,7 +832,7 @@ namespace Drama
                     GUILayout.EndHorizontal();
 
                     GUILayout.BeginHorizontal();
-                    GUILayout.Box("Actor Positions", titleText, GUILayout.Width(400), GUILayout.Height(20));
+                    GUILayout.Box("Actor Positions FACING GUIDE: UP[0] DOWN[1] RIGHT[2] LEFT[3]", titleText, GUILayout.Width(400), GUILayout.Height(20));
                     bool addNewPosition = GUILayout.Button("+", GUILayout.MaxWidth(50), GUILayout.MaxHeight(17));
                     if (addNewPosition)
                     {
@@ -843,14 +846,24 @@ namespace Drama
                         }
                         curAction.actorsPosition.Add(new Vector2());
                         curAction.characterStates.Add(new CharacterStates());
+                        curAction.facingDirection.Add(0);
                     }
                     GUILayout.EndHorizontal();
 
+                    if(curAction.facingDirection == null)
+                    {
+                        curAction.facingDirection = new List<float>();
+                        for (int i = 0; i < curAction.actorsPosition.Count; i++)
+                        {
+                            curAction.facingDirection.Add(0);
+                        }
+                    }
                     if (curAction.actorsPosition != null && curAction.actorsPosition.Count > 0)
                     {
                         int actionToRemove = -1;
                         for (int i = 0; i < curAction.actorsPosition.Count; i++)
                         {
+                            curAction.facingDirection.Add(0.0f);
                             GUILayout.BeginHorizontal();
 
                             float x = curAction.actorsPosition[i].x;
@@ -858,22 +871,39 @@ namespace Drama
                             float z = curAction.actorsPosition[i].z;
 
                             GUILayout.Label("x:", GUILayout.MaxWidth(15));
-                            x = EditorGUILayout.FloatField(x, GUILayout.MaxWidth(50));
+                            x = EditorGUILayout.FloatField(x, GUILayout.MaxWidth(45));
                             GUILayout.Label("y:", GUILayout.MaxWidth(15));
-                            y = EditorGUILayout.FloatField(y, GUILayout.MaxWidth(50));
+                            y = EditorGUILayout.FloatField(y, GUILayout.MaxWidth(45));
                             GUILayout.Label("z:", GUILayout.MaxWidth(15));
-                            z = EditorGUILayout.FloatField(z, GUILayout.MaxWidth(50));
+                            z = EditorGUILayout.FloatField(z, GUILayout.MaxWidth(45));
 
+                            // CHARACTER STATE
                             curAction.actorsPosition[i] = new Vector3(x, y, z);
 
                             curAction.characterStates[i] = (CharacterStates)EditorGUILayout.EnumPopup(curAction.characterStates[i], GUILayout.MaxWidth(70));
 
-                            bool readQuickCharacter = GUILayout.Button((easyPlacePosition == null) ? "[No Q. Character]" : "Read Character", GUILayout.Width(115));
+                            // FACING DIRECTION
+                            if (curAction.facingDirection == null)
+                            {
+                                curAction.facingDirection = new List<float>();
+                            }
+                            if(curAction.facingDirection.Count-1 < i)
+                            {
+                                curAction.facingDirection.Add(0);
+                            }
+                            else
+                            {
+                                GUILayout.Label("Face:", GUILayout.MaxWidth(40));
+                                curAction.facingDirection[i] = EditorGUILayout.FloatField(curAction.facingDirection[i], GUILayout.MaxWidth(20));
+                            }
+
+                            // QUICKLY PLACE POSITION OF ACTOR
+                            bool readQuickCharacter = GUILayout.Button((easyPlacePosition == null) ? "[No Guide]" : "Read Guide", GUILayout.Width(70));
                             if (readQuickCharacter)
                             {
                                 curAction.actorsPosition[i] = easyPlacePosition.transform.position;
                             }
-                            bool removeAction = GUILayout.Button("-", GUILayout.Width(50));
+                            bool removeAction = GUILayout.Button("-", GUILayout.Width(30));
                             if (removeAction)
                             {
                                 actionToRemove = i;
@@ -887,7 +917,7 @@ namespace Drama
 
                     }
                 }
-                else if (curAction.actionType == DramaActionType.ShowBriefConversation)
+                else if (curAction.actionType == DramaActionType.ShowConversation)
                 {
                     GUILayout.BeginHorizontal();
                     GUILayout.Label("Conversation Title:", GUILayout.MaxWidth(120));

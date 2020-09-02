@@ -24,6 +24,7 @@ namespace Kingdoms
     }
     public class TravellingSystem : MonoBehaviour
     {
+        public bool testMode = false;
         [Header("Unit Storage")]
         public KingdomUnitStorage unitStorage;
         public TravellerGenerator travellerGenerator;
@@ -42,19 +43,21 @@ namespace Kingdoms
         }
         public void Update()
         {
-            if(Input.GetKeyDown(KeyCode.A))
+#if UNITY_EDITOR
+            if(testMode)
             {
-                SummonRandomTraveller(TravelLocation.ForestOfRetsnom, TravellerType.Invader, 4);
+                if(Input.GetKeyDown(KeyCode.A))
+                {
+                    SummonRandomTraveller(TravelLocation.ForestOfRetsnom, TravellerType.Invader, 4);
+                }
             }
+#endif
         }
 
         public void SummonSpecificTraveller(BaseTravellerData travellerData, bool newSummon = true)
         {
             ScenePointBehavior spawnPoint = TransitionManager.GetInstance.currentSceneManager.ObtainScenePoint(travellerData.currentScenePoint);
-            if(spawnPoint == null)
-            {
-                Debug.Log("WEIRD THERE'S NO " + travellerData.currentScenePoint);
-            }
+
             GameObject tmp = null;
             tmp = GameObject.Instantiate(basicInvaderPrefab, spawnPoint.transform.position, Quaternion.identity, null);
 
@@ -80,6 +83,7 @@ namespace Kingdoms
                         SaveData.SaveLoadManager.GetInstance.SaveCurrentCampaignData();
                     }
                 }
+                temp.TravelMovement(frontGate);
             }
         }
         public void SummonRandomTraveller(TravelLocation startingPoint, TravellerType travellerType, int unitCount)

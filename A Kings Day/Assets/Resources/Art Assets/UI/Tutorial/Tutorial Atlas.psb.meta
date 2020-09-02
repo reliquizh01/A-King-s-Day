@@ -85,9 +85,74 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  mosaicSpriteImportData: []
-  rigSpriteImportData:
-  - name: Week Counter_Tutorial
+  mosaicSpriteImportData:
+  - name: War Chest
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 475
+      width: 823
+      height: 463
+    spriteID: 12a616fcd4625474f9f132bb32e930fa
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1, y: 457}
+  - name: Spawn Units
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 946
+      width: 823
+      height: 463
+    spriteID: 1ca1ae937960f734286a912a79154d94
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1, y: 928}
+  - name: Victory Slider
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1417
+      width: 823
+      height: 463
+    spriteID: a68ac4744fb812f4fa79b2c5c18c8480
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1, y: 1399}
+  - name: Skills
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -96,6 +161,139 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
+      width: 824
+      height: 463
+    spriteID: 1b7973dd63762994b83567ad09bbbe60
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: -14}
+  - name: Week Counter
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1888
+      width: 823
+      height: 463
+    spriteID: 3a98cf7043e23f74bba1811ceb68a6e5
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1, y: 1870}
+  - name: Troops
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2359
+      width: 823
+      height: 463
+    spriteID: 07e0e9f2013f42e49b900ebe81e0a6ec
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1, y: 2341}
+  - name: Population
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2830
+      width: 823
+      height: 463
+    spriteID: 9074056e8bf0ae64d8e810174316398a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1, y: 2812}
+  - name: Coins
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3301
+      width: 823
+      height: 463
+    spriteID: 49b5e648613aaef47b7191e296f02584
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1, y: 3283}
+  - name: Food
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 836
+      y: 4
+      width: 823
+      height: 463
+    spriteID: 9d6a2ca1548950e4cb6e451b4460a4c1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 831, y: -14}
+  rigSpriteImportData:
+  - name: Week Counter_Tutorial
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 835
+      y: 475
       width: 823
       height: 463
     spriteID: 7d2434662a4f2874da6a251d68f97131
@@ -108,7 +306,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -1, y: -14}
+    uvTransform: {x: 830, y: 457}
   - name: Troops_Tutorial
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -116,8 +314,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 835
-      y: 4
+      x: 4
+      y: 946
       width: 823
       height: 463
     spriteID: 132e2b60c9e2cb246af8f185cbe162cb
@@ -130,7 +328,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 830, y: -14}
+    uvTransform: {x: -1, y: 928}
   - name: Population_Tutorial
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -138,8 +336,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 475
+      x: 835
+      y: 946
       width: 823
       height: 463
     spriteID: 5f5fbf3db1db8ee49b958d73d88cf77f
@@ -152,7 +350,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -1, y: 457}
+    uvTransform: {x: 830, y: 928}
   - name: Coins_Tutorial
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -160,8 +358,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 835
-      y: 475
+      x: 4
+      y: 1417
       width: 823
       height: 463
     spriteID: 3504fd4aaab050f4d824ef1a5bbc8b27
@@ -174,7 +372,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 830, y: 457}
+    uvTransform: {x: -1, y: 1399}
   - name: Food_Tutorial
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -182,8 +380,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 946
+      x: 835
+      y: 1417
       width: 823
       height: 463
     spriteID: 1b4d72b1cecf56d49a1a3f3cc3fe183a
@@ -196,7 +394,73 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -1, y: 928}
+    uvTransform: {x: 830, y: 1399}
+  - name: Spawn Units
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 823
+      height: 463
+    spriteID: 452e48b174a63b64c97d5b96eae3174b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1, y: -14}
+  - name: Victory Slider
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 835
+      y: 4
+      width: 823
+      height: 463
+    spriteID: 4133336322651624caf577d121b7216d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 830, y: -14}
+  - name: Skills
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 475
+      width: 823
+      height: 463
+    spriteID: 1948b646881a2b74997a8023bce1f23c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1, y: 457}
   platformSettings:
   - name: Default
     overridden: 1
@@ -209,11 +473,22 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
+  - name: PC, Mac & Linux Standalone
+    overridden: 1
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
-  importedTextureWidth: 2048
+  importedTextureWidth: 1024
   importedTextureHeight: 2048
   documentSize: {x: 840, y: 500}
   paperDollMode: 0
@@ -221,47 +496,159 @@ ScriptedImporter:
   spriteCategoryList:
     categories: []
   textureActualWidth: 2048
-  textureActualHeight: 2048
+  textureActualHeight: 4096
   spritePackingTag: 
   resliceFromLayer: 0
-  characterMode: 1
-  mosaicPSDLayers: []
-  rigPSDLayers:
+  characterMode: 0
+  mosaicPSDLayers:
+  - name: Battlefield Tutorial
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 10
+    mosaicPosition: {x: 0, y: 0}
+  - name: War Chest
+    spriteName: War Chest
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 12a616fcd4625474f9f132bb32e930fa
+    layerID: 15
+    mosaicPosition: {x: 4, y: 475}
+  - name: Spawn Units
+    spriteName: Spawn Units
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 1ca1ae937960f734286a912a79154d94
+    layerID: 13
+    mosaicPosition: {x: 4, y: 946}
+  - name: Victory Slider
+    spriteName: Victory Slider
+    isGroup: 0
+    parentIndex: 0
+    spriteID: a68ac4744fb812f4fa79b2c5c18c8480
+    layerID: 12
+    mosaicPosition: {x: 4, y: 1417}
+  - name: Skills
+    spriteName: Skills
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 1b7973dd63762994b83567ad09bbbe60
+    layerID: 14
+    mosaicPosition: {x: 4, y: 4}
+  - name: Resources Tutorial
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 8
+    mosaicPosition: {x: 0, y: 0}
   - name: Week Counter
     spriteName: Week Counter
     isGroup: 0
-    parentIndex: -1
-    spriteID: 7d2434662a4f2874da6a251d68f97131
+    parentIndex: 5
+    spriteID: 3a98cf7043e23f74bba1811ceb68a6e5
     layerID: 6
-    mosaicPosition: {x: 4, y: 4}
+    mosaicPosition: {x: 4, y: 1888}
   - name: Troops
     spriteName: Troops
     isGroup: 0
-    parentIndex: -1
-    spriteID: 132e2b60c9e2cb246af8f185cbe162cb
+    parentIndex: 5
+    spriteID: 07e0e9f2013f42e49b900ebe81e0a6ec
     layerID: 5
-    mosaicPosition: {x: 835, y: 4}
+    mosaicPosition: {x: 4, y: 2359}
   - name: Population
     spriteName: Population
     isGroup: 0
-    parentIndex: -1
-    spriteID: 5f5fbf3db1db8ee49b958d73d88cf77f
+    parentIndex: 5
+    spriteID: 9074056e8bf0ae64d8e810174316398a
     layerID: 4
-    mosaicPosition: {x: 4, y: 475}
+    mosaicPosition: {x: 4, y: 2830}
   - name: Coins
     spriteName: Coins
     isGroup: 0
-    parentIndex: -1
-    spriteID: 3504fd4aaab050f4d824ef1a5bbc8b27
+    parentIndex: 5
+    spriteID: 49b5e648613aaef47b7191e296f02584
     layerID: 3
-    mosaicPosition: {x: 835, y: 475}
+    mosaicPosition: {x: 4, y: 3301}
   - name: Food
     spriteName: Food
     isGroup: 0
+    parentIndex: 5
+    spriteID: 9d6a2ca1548950e4cb6e451b4460a4c1
+    layerID: 2
+    mosaicPosition: {x: 836, y: 4}
+  rigPSDLayers:
+  - name: Battlefield Tutorial
+    spriteName: 
+    isGroup: 1
     parentIndex: -1
+    spriteID: 
+    layerID: 10
+    mosaicPosition: {x: 0, y: 0}
+  - name: Spawn Units
+    spriteName: Spawn Units
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 452e48b174a63b64c97d5b96eae3174b
+    layerID: 13
+    mosaicPosition: {x: 4, y: 4}
+  - name: Victory Slider
+    spriteName: Victory Slider
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 4133336322651624caf577d121b7216d
+    layerID: 12
+    mosaicPosition: {x: 835, y: 4}
+  - name: Skills
+    spriteName: Skills
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 1948b646881a2b74997a8023bce1f23c
+    layerID: 14
+    mosaicPosition: {x: 4, y: 475}
+  - name: Resources Tutorial
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 8
+    mosaicPosition: {x: 0, y: 0}
+  - name: Week Counter
+    spriteName: Week Counter
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 7d2434662a4f2874da6a251d68f97131
+    layerID: 6
+    mosaicPosition: {x: 835, y: 475}
+  - name: Troops
+    spriteName: Troops
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 132e2b60c9e2cb246af8f185cbe162cb
+    layerID: 5
+    mosaicPosition: {x: 4, y: 946}
+  - name: Population
+    spriteName: Population
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 5f5fbf3db1db8ee49b958d73d88cf77f
+    layerID: 4
+    mosaicPosition: {x: 835, y: 946}
+  - name: Coins
+    spriteName: Coins
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 3504fd4aaab050f4d824ef1a5bbc8b27
+    layerID: 3
+    mosaicPosition: {x: 4, y: 1417}
+  - name: Food
+    spriteName: Food
+    isGroup: 0
+    parentIndex: 4
     spriteID: 1b4d72b1cecf56d49a1a3f3cc3fe183a
     layerID: 2
-    mosaicPosition: {x: 4, y: 946}
+    mosaicPosition: {x: 835, y: 1417}
   characterData:
     bones: []
     parts: []

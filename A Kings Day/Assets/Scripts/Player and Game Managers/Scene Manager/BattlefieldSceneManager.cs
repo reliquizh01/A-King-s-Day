@@ -28,7 +28,7 @@ namespace Managers
         }
         #endregion
 
-
+        public BattlefieldTutorialController battlefieldTutorial;
         [Header("Battlefield Information")]
         public CustomBattlePanelHandler customBattlePanel;
         public BattlefieldSpawnManager spawnManager;
@@ -50,26 +50,36 @@ namespace Managers
         {
             base.PreOpenManager();
 
-            if(TransitionManager.GetInstance != null && TransitionManager.GetInstance.previousScene != SceneType.Opening)
+            if(TransitionManager.GetInstance.isNewGame)
             {
-
+                EventBroadcaster.Instance.PostEvent(EventNames.HIDE_RESOURCES);
+                BattlefieldPathManager.GetInstance.SetupFieldPaths();
+                InitializeCampaignBattles(true);
+                battlefieldTutorial.StartBattlefieldTutorial(true);
                 isCampaignMode = true;
-
-                if (TransitionManager.GetInstance != null)
-                {
-                    HideCustomBattlePanel();
-                    TransitionManager.GetInstance.RemoveLoading(InitializeCampaignBattles);
-                }
             }
             else
             {
-                Debug.Log("FUCKING PUSSY");
-                ShowCustomBattlePanel();
+                if(TransitionManager.GetInstance != null && TransitionManager.GetInstance.previousScene != SceneType.Opening)
+                {
+
+                    isCampaignMode = true;
+
+                    if (TransitionManager.GetInstance != null)
+                    {
+                        HideCustomBattlePanel();
+                        TransitionManager.GetInstance.RemoveLoading(()=> InitializeCampaignBattles());
+                    }
+                }
+                else
+                {
+                    ShowCustomBattlePanel();
+                }
             }
             Loaded = true;
         }
 
-        public void InitializeCampaignBattles()
+        public void InitializeCampaignBattles(bool isFromCreationScene = false)
         {
             if (!TransitionManager.GetInstance.isEngagedWithTraveller &&
                 !TransitionManager.GetInstance.isEngagedWithMapPoint)
@@ -100,11 +110,11 @@ namespace Managers
                     {
                         enemyCommander = ObtainCampaignMapPointEnemyCommander();
                     }
-                }
+                }   
                 // TRAVELLER
                 else
                 {
-                    if(!string.IsNullOrEmpty(TransitionManager.GetInstance.attackedTravellerData.travellersName))
+                    if(TransitionManager.GetInstance.attackedTravellerData.ObtainTotalUnitCount() > 0)
                     {
                         Debug.Log("Initializing Battle Thru Traveller");
                         enemyCommander = BattlefieldCommander.ConvertTravellerToCommander(TransitionManager.GetInstance.attackedTravellerData);
@@ -158,14 +168,14 @@ namespace Managers
 
             }
 
-            InitializeArea();
+            InitializeArea(isFromCreationScene);
         }
-
         public BattlefieldCommander ObtainCampaignMapPointEnemyCommander()
         {
             BattlefieldCommander enemyCommander = new BattlefieldCommander();
             List<BaseTravellerData> enemyOnPointTravellerList = new List<BaseTravellerData>();
             enemyOnPointTravellerList.AddRange(TransitionManager.GetInstance.attackedPointInformationData.travellersOnPoint.FindAll(x => x.relationship < 0));
+            enemyCommander.teamAffiliation = TransitionManager.GetInstance.attackedPointInformationData.ownedBy;
 
             // CONVERT ALL HATEFUL UNITS IN THE POINT TO 1 TRAVELLER
             BaseTravellerData enemyTravellers = new BaseTravellerData();
@@ -220,7 +230,7 @@ namespace Managers
 
             InitializeArea();
         }
-        public void InitializeArea()
+        public void InitializeArea(bool isFromCreationScene = false)
         {
             battleUIInformation.SetUnitPanels(spawnManager.attackingCommander, spawnManager.defendingCommander);
 
@@ -234,7 +244,11 @@ namespace Managers
                 battleUIInformation.SetDefenderLeaderSkill(spawnManager.defendingCommander.heroesCarried[0]);
             }
 
-            BattlefieldSystemsManager.GetInstance.StartDay();
+            if(!isFromCreationScene)
+            {
+                BattlefieldSystemsManager.GetInstance.StartDay();
+            }
+            BattlefieldSpawnManager.GetInstance.SummonTeamHeroes();
         }
 
 

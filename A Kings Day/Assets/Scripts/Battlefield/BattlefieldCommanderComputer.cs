@@ -80,7 +80,6 @@ namespace Battlefield
         {
             if (!BattlefieldSystemsManager.GetInstance.dayInProgress)
             {
-                
                 return -1;
             }
 

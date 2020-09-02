@@ -27,6 +27,7 @@ public class TravellersReportController : MonoBehaviour
     private float delayCounter = 0;
     private float delayMaxCount = 0.25f;
     private bool startMoving = false;
+    private bool engagedToBattle = false;
 
     [Header("Visual Mechanics")]
     public GameObject noActionsTaken;
@@ -43,7 +44,7 @@ public class TravellersReportController : MonoBehaviour
     public void Start()
     {
         centerRectPos = new Vector2(Screen.width * 0.5f, Screen.height * 0.5f);
-        myWindow.parentCloseCallback = CloseTravellerReport;
+        myWindow.parentCloseCallback = () => CloseTravellerReport();
     }
     public void Update()
     {
@@ -88,6 +89,7 @@ public class TravellersReportController : MonoBehaviour
     }
     public void ShowTravellerReport(BaseTravellerBehavior thisTraveller)
     {
+        EventBroadcaster.Instance.PostEvent(EventNames.HIDE_RESOURCES);
         EventBroadcaster.Instance.PostEvent(EventNames.ENABLE_TAB_COVER);
         ResourceInformationController.GetInstance.ShowResourcePanel(ResourcePanelType.side);
         StartCoroutine(myPanel.WaitAnimationForAction(myPanel.openAnimationName, SetupActionReport));
@@ -108,9 +110,17 @@ public class TravellersReportController : MonoBehaviour
         isShowing = false;
         isTransitioning = true;
 
+        if(!engagedToBattle)
+        {
+            EventBroadcaster.Instance.PostEvent(EventNames.SHOW_RESOURCES);
+        }
+
         EventBroadcaster.Instance.PostEvent(EventNames.DISABLE_TAB_COVER);
         ResourceInformationController.GetInstance.ShowResourcePanel(ResourcePanelType.overhead);
-        StartCoroutine(myPanel.WaitAnimationForAction(myPanel.closeAnimationName, ResetTravellerReport));
+        if(!engagedToBattle)
+        {
+            StartCoroutine(myPanel.WaitAnimationForAction(myPanel.closeAnimationName, ResetTravellerReport));
+        }
 
     }
     public void ResetTravellerReport()
@@ -341,10 +351,14 @@ public class TravellersReportController : MonoBehaviour
                 {
                     return;
                 }
+                EventBroadcaster.Instance.PostEvent(EventNames.HIDE_RESOURCES);
                 prePurpose = "Their intentions were bad! so we decided to.||..";
                 tmp += "Engaged In battle!";
-                EventBroadcaster.Instance.PostEvent(EventNames.HIDE_RESOURCES);
-                TransitionManager.GetInstance.FaceTravellerInBattle(currentTravellerReport.myTravellerData, false);
+
+                PlayerGameManager.GetInstance.unitsToSend = PlayerGameManager.GetInstance.ConvertWholeGarrisonAsTraveller();
+                StartCoroutine(myPanel.WaitAnimationForAction(myPanel.closeAnimationName, () => TransitionManager.GetInstance.FaceTravellerInBattle(currentTravellerReport.myTravellerData, false)));
+
+                engagedToBattle = true;
                 break;
 
             default:

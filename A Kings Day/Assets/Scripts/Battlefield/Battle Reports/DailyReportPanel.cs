@@ -344,7 +344,10 @@ namespace Battlefield
 
             for (int i = 0; i < injuredUnitsList.Count; i++)
             {
-                injuredUnitsList[i].unitIcon.sprite = BattlefieldSpawnManager.GetInstance.unitStorage.GetUnitIcon(currentCommander.unitsCarried[i].unitInformation.unitName);
+                if(i <= (currentCommander.unitsCarried.Count-1))
+                {
+                    injuredUnitsList[i].unitIcon.sprite = BattlefieldSpawnManager.GetInstance.unitStorage.GetUnitIcon(currentCommander.unitsCarried[i].unitInformation.unitName);
+                }
             }
         }
 

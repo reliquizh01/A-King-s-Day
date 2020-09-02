@@ -27,7 +27,14 @@ namespace Battlefield
         public List<BattlefieldPathHandler> fieldPaths;
         public List<ScenePointBehavior> pathsWithAttacker;
         public List<ScenePointBehavior> pathsWithDefender;
+        [Header("Hero Spawn Points")]
+        public ScenePointBehavior defenderHeroSpawnpoint;
+        public ScenePointBehavior attackerHeroSpawnpoint;
 
+        public void SetupFieldPaths()
+        {
+
+        }
         public void AddPathWithAttacker(ScenePointBehavior thisPoint)
         {
             if(pathsWithAttacker == null)
