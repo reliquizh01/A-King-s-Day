@@ -989,6 +989,10 @@ public class KingdomUnitStorageEditor : EditorWindow
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
+        GUILayout.Label("Description:", EditorStyles.boldLabel, GUILayout.Width(75));
+        currentSkillData.skillDescription = EditorGUILayout.TextField(currentSkillData.skillDescription, GUILayout.MaxWidth(195));
+        GUILayout.EndHorizontal();
+        GUILayout.BeginHorizontal();
         if (currentSkillData.skillType != SkillType.DefensiveBuff && currentSkillData.skillType != SkillType.OffensiveBuff
             && currentSkillData.skillType != SkillType.SummonUnits)
         {

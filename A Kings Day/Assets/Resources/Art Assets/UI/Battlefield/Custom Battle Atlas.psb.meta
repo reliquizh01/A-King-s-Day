@@ -1,0 +1,662 @@
+fileFormatVersion: 2
+guid: 796cbe2e5b7b6b24aa2fa39a95fbfef6
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    nPOTScale: 1
+    sRGBTexture: 0
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData:
+  - name: Hero Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 670
+      y: 4
+      width: 90
+      height: 326
+    spriteID: 61a537b3be834e64fbcb95d9b5f4a01a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -4, y: -87}
+  - name: Name Panel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 844
+      y: 4
+      width: 83
+      height: 15
+    spriteID: c46c0ab66763d154381013d52d60a485
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 527, y: -445}
+  - name: Count Panel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 797
+      y: 66
+      width: 24
+      height: 17
+    spriteID: 019ddb2de5ced26429c8cb064cd4ca29
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 512, y: -382}
+  - name: Add Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 66
+      width: 21
+      height: 33
+    spriteID: 0501c2d0071731a41bded3aa285d9bbe
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 548, y: -374}
+  - name: Remove Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 107
+      width: 21
+      height: 33
+    spriteID: 20dd132f9fbeca0469e698591252e88b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 586, y: -334}
+  - name: V S
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 658
+      height: 330
+    spriteID: d9ebbba805186424f83e8e2dc8ce6939
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -4, y: -84}
+  - name: Stat Bar Fill
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 844
+      y: 27
+      width: 60
+      height: 5
+    spriteID: bffcd31073971d44fa99c7dfbd369cc9
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 359, y: -429}
+  - name: Stat Bar
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 844
+      y: 40
+      width: 60
+      height: 5
+    spriteID: f8e709115c5727f418d6295c00d76662
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 431, y: -416}
+  - name: Character Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 4
+      width: 68
+      height: 54
+    spriteID: 4bd702266713bc249a0a68f8804198ad
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 691, y: -427}
+  rigSpriteImportData:
+  - name: Hero Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 670
+      y: 4
+      width: 90
+      height: 326
+    spriteID: ec5611f1233a91643a3f21f825b18e35
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -4, y: -87}
+  - name: Name Panel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 106
+      width: 83
+      height: 15
+    spriteID: f6dc8f53b2b9be749bcd77c0a07414e8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 451, y: -343}
+  - name: Count Panel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 797
+      y: 129
+      width: 24
+      height: 17
+    spriteID: 11f9fed8062961948a669cf4064fb350
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 512, y: -319}
+  - name: Add Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 129
+      width: 21
+      height: 33
+    spriteID: 5fa1ff67bdbfe394794d552d9eb47e42
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 548, y: -311}
+  - name: Remove Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 170
+      width: 21
+      height: 33
+    spriteID: 0facf6615da09df428386776c63b77fc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 586, y: -271}
+  - name: V S
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 658
+      height: 330
+    spriteID: 202c2694e453d6d47b19647ae3cdaf15
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -4, y: -84}
+  - name: Stat Bar Fill
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 829
+      y: 129
+      width: 60
+      height: 5
+    spriteID: 74f01e01621dcd64f97752ae6ba0b760
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 344, y: -327}
+  - name: Stat Bar
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 829
+      y: 142
+      width: 60
+      height: 5
+    spriteID: f9ad33bfe55a9df4487f32845b9391b2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 416, y: -314}
+  - name: Character Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 4
+      width: 145
+      height: 94
+    spriteID: 75528a33741c8314b81167f059815496
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 768, y: -427}
+  platformSettings:
+  - name: Default
+    overridden: 1
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: PC, Mac & Linux Standalone
+    overridden: 1
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 1024
+  importedTextureHeight: 1024
+  documentSize: {x: 775, y: 525}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 1024
+  textureActualHeight: 1024
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 0
+  mosaicPSDLayers:
+  - name: Hero Icon
+    spriteName: Hero Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 61a537b3be834e64fbcb95d9b5f4a01a
+    layerID: 10
+    mosaicPosition: {x: 670, y: 4}
+  - name: Name Panel
+    spriteName: Name Panel
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c46c0ab66763d154381013d52d60a485
+    layerID: 9
+    mosaicPosition: {x: 844, y: 4}
+  - name: Count Panel
+    spriteName: Count Panel
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 019ddb2de5ced26429c8cb064cd4ca29
+    layerID: 6
+    mosaicPosition: {x: 797, y: 66}
+  - name: Add Icon
+    spriteName: Add Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0501c2d0071731a41bded3aa285d9bbe
+    layerID: 5
+    mosaicPosition: {x: 768, y: 66}
+  - name: Remove Icon
+    spriteName: Remove Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 20dd132f9fbeca0469e698591252e88b
+    layerID: 4
+    mosaicPosition: {x: 768, y: 107}
+  - name: V S
+    spriteName: V S
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d9ebbba805186424f83e8e2dc8ce6939
+    layerID: 3
+    mosaicPosition: {x: 4, y: 4}
+  - name: Stat Bar Fill
+    spriteName: Stat Bar Fill
+    isGroup: 0
+    parentIndex: -1
+    spriteID: bffcd31073971d44fa99c7dfbd369cc9
+    layerID: 8
+    mosaicPosition: {x: 844, y: 27}
+  - name: Stat Bar
+    spriteName: Stat Bar
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f8e709115c5727f418d6295c00d76662
+    layerID: 7
+    mosaicPosition: {x: 844, y: 40}
+  - name: Character Icon
+    spriteName: Character Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 4bd702266713bc249a0a68f8804198ad
+    layerID: 2
+    mosaicPosition: {x: 768, y: 4}
+  rigPSDLayers:
+  - name: Hero Icon
+    spriteName: Hero Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ec5611f1233a91643a3f21f825b18e35
+    layerID: 10
+    mosaicPosition: {x: 670, y: 4}
+  - name: Name Panel
+    spriteName: Name Panel
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f6dc8f53b2b9be749bcd77c0a07414e8
+    layerID: 9
+    mosaicPosition: {x: 768, y: 106}
+  - name: Count Panel
+    spriteName: Count Panel
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 11f9fed8062961948a669cf4064fb350
+    layerID: 6
+    mosaicPosition: {x: 797, y: 129}
+  - name: Add Icon
+    spriteName: Add Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5fa1ff67bdbfe394794d552d9eb47e42
+    layerID: 5
+    mosaicPosition: {x: 768, y: 129}
+  - name: Remove Icon
+    spriteName: Remove Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0facf6615da09df428386776c63b77fc
+    layerID: 4
+    mosaicPosition: {x: 768, y: 170}
+  - name: V S
+    spriteName: V S
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 202c2694e453d6d47b19647ae3cdaf15
+    layerID: 3
+    mosaicPosition: {x: 4, y: 4}
+  - name: Stat Bar Fill
+    spriteName: Stat Bar Fill
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 74f01e01621dcd64f97752ae6ba0b760
+    layerID: 8
+    mosaicPosition: {x: 829, y: 129}
+  - name: Stat Bar
+    spriteName: Stat Bar
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f9ad33bfe55a9df4487f32845b9391b2
+    layerID: 7
+    mosaicPosition: {x: 829, y: 142}
+  - name: Character Icon
+    spriteName: Character Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 75528a33741c8314b81167f059815496
+    layerID: 2
+    mosaicPosition: {x: 768, y: 4}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: Custom Battle Atlas Texture
+  prefabAssetName: Custom Battle Atlas Prefab
+  spriteLibAssetName: Custom Battle Atlas Sprite Lib
+  secondarySpriteTextures: []

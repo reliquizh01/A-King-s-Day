@@ -52,6 +52,7 @@ namespace Managers
             base.PreOpenManager();
             Loaded = true;
             kingdomCreationManager.PreOpenManager();
+            AudioManager.GetInstance.PlayThisBackGroundMusic(BackgroundMusicType.courtroomDrama);
 
             if(TransitionManager.GetInstance != null)
             {
@@ -66,8 +67,7 @@ namespace Managers
             PlayerGameManager.GetInstance.ReceiveTroops(20, "Swordsman");
             PlayerGameManager.GetInstance.ReceiveTroops(20, "Spearman");
 
-            kingdomCreationManager.creationView.myPanel.PlayCloseAnimation();
-            kingdomCreationManager.creationView.playPrologueTab.CloseWindow();
+
             StopPathScrolling();
             if (DramaticActManager.GetInstance != null)
             {

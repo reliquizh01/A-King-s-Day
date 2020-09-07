@@ -271,6 +271,8 @@ namespace Drama
                         return;
 
                     ConversationInformationData thisConversation = DialogueManager.GetInstance.dialogueStorage.ObtainConversationByTitle(thisAction.conversationTitle);
+                    thisConversation.conversingActors = new List<BaseCharacter>();
+
                     DialogueManager.GetInstance.StartConversation(thisConversation, ()=> CheckNextMove(thisAction));
                 }
                 else if(thisAction.actionType == DramaActionType.ShowTabCover)

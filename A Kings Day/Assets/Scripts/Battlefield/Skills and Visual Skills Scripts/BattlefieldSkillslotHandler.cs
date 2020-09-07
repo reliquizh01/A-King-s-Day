@@ -19,15 +19,46 @@ namespace Battlefield
         public GameObject selectedIconArrow;
         public Image skillIcon;
         public Sprite EmptyIcon;
-
+        public int skillIdx;
+        public TextMeshProUGUI nextSkill, prevSkill, activateSkill;
         [Header("Skill Counter")]
         public TimerUI cdCounter;
         public bool startCounting;
 
-        public void SetAsSkill(BaseSkillInformationData newSkill)
+        public void SetupController(PlayerControlType playerControlType)
         {
-            currentSkill = new BaseSkillInformationData();
-            currentSkill = newSkill;
+            switch (playerControlType)
+            {
+                case PlayerControlType.PlayerOne:
+                    nextSkill.transform.parent.gameObject.SetActive(true);
+                    prevSkill.transform.parent.gameObject.SetActive(true);
+
+                    nextSkill.text = "E";
+                    prevSkill.text = "Q";
+                    activateSkill.text = "F";
+                    break;
+
+                case PlayerControlType.PlayerTwo:
+                    nextSkill.transform.parent.gameObject.SetActive(true);
+                    prevSkill.transform.parent.gameObject.SetActive(true);
+
+                    nextSkill.text = "7";
+                    prevSkill.text = "8";
+                    activateSkill.text = "9";
+                    break;
+
+                case PlayerControlType.Computer:
+                    nextSkill.transform.parent.gameObject.SetActive(false);
+                    prevSkill.transform.parent.gameObject.SetActive(false);
+                    activateSkill.text = "-";
+                    break;
+                default:
+                    break;
+            }
+        }
+        public void SetAsSkill()
+        {
+            currentSkill = myController.currentHero.skillsList[skillIdx];
             
             if(currentSkill.isOnCooldown)
             {
@@ -36,7 +67,7 @@ namespace Battlefield
 
             if(BattlefieldSpawnManager.GetInstance != null)
             {
-                skillIcon.sprite = BattlefieldSpawnManager.GetInstance.unitStorage.GetSkillIcon(newSkill.skillName);
+                skillIcon.sprite = BattlefieldSpawnManager.GetInstance.unitStorage.GetSkillIcon(currentSkill.skillName);
             }
         }
 
@@ -55,7 +86,6 @@ namespace Battlefield
 
         public void SetOnCooldown()
         {
-            currentSkill.isOnCooldown = true;
             startCounting = true;
 
             cdCounter.gameObject.SetActive(true);
@@ -64,9 +94,15 @@ namespace Battlefield
 
         public void EnableSkill()
         {
-            currentSkill.isOnCooldown = false;
+            isClickable = true;
+            startCounting = false;
             cdCounter.gameObject.SetActive(false);
-            
+
+            if (myController.myController.controlType == PlayerControlType.PlayerOne)
+            {
+                Debug.Log("Skill is now Enabled and CurrentSkill On CD:" + currentSkill.isOnCooldown);
+            }
+
             if(myController.myController.controlType == PlayerControlType.Computer)
             {
                 myController.myController.ComputerPlayerSkillControl();

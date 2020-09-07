@@ -288,7 +288,7 @@ MonoBehaviour:
   - {x: -0.012554269, y: 0.0054362155, z: 0}
   m_ShapePathHash: 2053822741
   m_Mesh: {fileID: 0}
-  m_InstanceId: 84306
+  m_InstanceId: 41692
 --- !u!1 &2821546750656455054
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,6 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65a7982d30cf7954eb3f5aa6601003ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCharacter: {fileID: 0}
   distForReach: 0.0025
   isTest: 0
   isMoving: 0
@@ -546,10 +547,12 @@ MonoBehaviour:
   myAnimation: {fileID: 4153552887913288208}
   mySfx: {fileID: 8255331543233121114}
   overheadHealthbar: {fileID: 349164965875885232}
-  isKing: 0
-  isMainCharacter: 0
-  isGuest: 0
   isLeaving: 0
+  isActing: 0
+  characterIcon: {fileID: -3589207286553114380, guid: 882e759f8ab033e4fa88bcd4f51d2fb3,
+    type: 3}
+  projectileAttack: {fileID: 0}
+  isLeadingHero: 0
   unitInformation:
     unitName: Archer
     unitGenericName: 
@@ -577,6 +580,8 @@ MonoBehaviour:
   teamType: 0
   canStagger: 0
   isBanishing: 0
+  canRegenerate: 0
+  regenPerSec: 0.015
 --- !u!61 &832775072519208600
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -636,6 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa67b5b39fef404aaaeb0f4075d3e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCharacter: {fileID: 0}
   totalRange: 0
   distancePerRange: 0.3
   enemiesInRange: []
@@ -1210,9 +1216,9 @@ MonoBehaviour:
   showHealthbar: 0
   healthBarParent: {fileID: 7051573555431980465}
   incrementSpeed: 0.0075
-  updateHealthbar: 0
+  initialBarUpdate: 0
   mHealthBarOverHead: {fileID: 6085470685460350790}
-  updateAfterDamageOverhead: 0
+  secondBarUpdate: 0
   mHealthAfterDamageOverhead: {fileID: 8197085203543788490}
   curHealthCount: 0
   targetHealthCount: 0

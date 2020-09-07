@@ -27,7 +27,12 @@ public class BasePanelBehavior : MonoBehaviour
 
     public void PlayOpenAnimation()
     {
-        if(testDebug)
+        if(myAnim.GetClipCount() <= 0)
+        {
+            return;
+        }
+
+        if (testDebug)
         {
             Debug.Log(this.gameObject.name + " -------------------------- ");
         }

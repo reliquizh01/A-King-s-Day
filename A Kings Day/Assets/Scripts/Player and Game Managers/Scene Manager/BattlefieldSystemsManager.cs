@@ -104,6 +104,12 @@ public class BattlefieldSystemsManager : MonoBehaviour
         
         uiHandler.endDayOverTimer.gameObject.SetActive(true);
         uiHandler.endDayOverTimer.StartTimer(0, 5, StopCurrentDayActions);
+
+        uiHandler.attackerPanel.leaderSlotHandler.cdCounter.PauseTimer();
+        uiHandler.defenderPanel.leaderSlotHandler.cdCounter.PauseTimer();
+
+        uiHandler.attackerPanel.skillSlotHandler.PauseCooldown();
+        uiHandler.defenderPanel.skillSlotHandler.PauseCooldown();
     }
     public void GoToNextDay()
     {
@@ -367,8 +373,18 @@ public class BattlefieldSystemsManager : MonoBehaviour
     {
         if (playerWon)
         {
+            BattlefieldSpawnManager.GetInstance.HideAllUnitsHealthBar();
+            BattlefieldUIHandler uiHandler = BattlefieldSceneManager.GetInstance.battleUIInformation;
+            uiHandler.attackerPanel.skillSlotHandler.myPanel.PlayCloseAnimation();
+            uiHandler.defenderPanel.skillSlotHandler.myPanel.PlayCloseAnimation();
+
+            uiHandler.attackerPanel.leaderSlotHandler.myPanel.PlayCloseAnimation();
+            uiHandler.defenderPanel.leaderSlotHandler.myPanel.PlayCloseAnimation();
+
+            uiHandler.myPanel.PlayCloseAnimation();
             ConversationInformationData tmp = DialogueManager.GetInstance.dialogueStorage.ObtainConversationByTitle("Prologue - Making Peace");
             Drama.DramaticActManager.GetInstance.FadeToDark(true, () => DialogueManager.GetInstance.StartConversation(tmp, () => TransitionManager.GetInstance.LoadScene(SceneType.Courtroom)));
+
         }
         else
         {
@@ -378,6 +394,15 @@ public class BattlefieldSystemsManager : MonoBehaviour
     public void CheckPostVictorious()
     {
         BattlefieldSceneManager.GetInstance.battleUIInformation.dayTimer.PauseTimer();
+
+        if(playerWon)
+        {
+            AudioManager.GetInstance.PlayThisBackGroundMusic(BackgroundMusicType.WinInBattle);
+        }
+        else
+        {
+            AudioManager.GetInstance.PlayThisBackGroundMusic(BackgroundMusicType.DefeatInBattle);
+        }
 
         if (!BattlefieldSceneManager.GetInstance.isCampaignMode)
         {
@@ -394,11 +419,13 @@ public class BattlefieldSystemsManager : MonoBehaviour
             BattlefieldSpawnManager.GetInstance.RetreatAllUnits();
             unitsInCamp = true;
 
-            ReturnUnitsToPlayerData();
-            ReturnUnitsToEnemyData();
+            if (TransitionManager.GetInstance != null && !TransitionManager.GetInstance.isNewGame)
+            {
+                ReturnUnitsToPlayerData();
+                ReturnUnitsToEnemyData();
 
-            ObtaincoinRewards();
-
+                ObtaincoinRewards();
+            }
             if (TransitionManager.GetInstance != null && TransitionManager.GetInstance.isEngagedWithMapPoint)
             {
                 ObtainTerritoryRewards();
@@ -413,7 +440,6 @@ public class BattlefieldSystemsManager : MonoBehaviour
                     playerUnits = BattlefieldSpawnManager.GetInstance.defendingCommander;
                 }
 
-
                 BattlefieldSceneManager.GetInstance.battleUIInformation.ShowCampaignRewards(playerWon, coinRewards, enemyTerritoryName, playerUnits);
             }
             else
@@ -421,6 +447,7 @@ public class BattlefieldSystemsManager : MonoBehaviour
                 // TUTORIAL
                 if (TransitionManager.GetInstance != null && TransitionManager.GetInstance.isNewGame)
                 {
+
                     PlayPrologueResultScene();
                 }
                 else // TRAVELLER
@@ -428,9 +455,8 @@ public class BattlefieldSystemsManager : MonoBehaviour
 
                 }
             }
-
-
         }
+
     }
 
     #region CAMPAIGN_SYSTEM_MECHANICS

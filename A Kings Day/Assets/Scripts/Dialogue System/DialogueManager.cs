@@ -200,6 +200,10 @@ namespace Dialogue
                 tmpWriter.isDialogueMesg = true;
                 tmpWriter.deliveryType = myDeliveryType;
                 tmpWriter.intervalPerLetter = mesgSpeed;
+
+                Sprite talkingIcon = TransitionManager.GetInstance.unitStorage.GetUnitIcon(currentConversation.dialoguePattern[currentDialogueIdx].charName);
+                characterIcon.sprite = talkingIcon;
+
                 if(currentDialogueIdx < currentConversation.dialoguePattern.Count-1)
                 {
                     tmpWriter.SetTypeWriterMessage(currentConversation.dialoguePattern[currentDialogueIdx].GetDialogue(), true, () => FadeAndSummonLastSentence(tmpWriter), ShowEffects);

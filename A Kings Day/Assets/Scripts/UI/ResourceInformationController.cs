@@ -141,7 +141,6 @@ namespace ResourceUI
             }
             if(currentPanel == null)
             {
-                Debug.Log("[No Current Panel Available]");
                 return;
             }
 
@@ -149,7 +148,7 @@ namespace ResourceUI
             currentPanel.coinControl.ShowWarning();
             currentPanel.troopControl.ShowWarning();
             currentPanel.villagerControl.ShowWarning();
-
+            
             PlayerGameManager manager = PlayerGameManager.GetInstance;
             
             // COIN WARNING

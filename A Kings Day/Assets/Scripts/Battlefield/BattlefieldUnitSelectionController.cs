@@ -83,7 +83,7 @@ namespace Battlefield
                     curColumnIdx = attackerColumnIdx;
                     curRowIdx = attackerRowIdx;
 
-                    SetPointBehavior(isAttacker);
+                    SetPointBehavior();
 
                 }
                 else
@@ -91,7 +91,7 @@ namespace Battlefield
                     curColumnIdx = defenderColumnIdx;
                     curRowIdx = defenderRowIdx;
 
-                    SetPointBehavior(isAttacker);
+                    SetPointBehavior();
 
                 }
 
@@ -297,7 +297,7 @@ namespace Battlefield
                     break;
             }
             curCountDelaySelectMove = 0;
-            SetPointBehavior(isAttacker);
+            SetPointBehavior();
         }
         public void PlayerTwoControls()
         {
@@ -389,7 +389,16 @@ namespace Battlefield
             {
                 SummonUnit();
             }
-        }
+
+            if (Input.GetKeyDown(KeyCode.Keypad6))
+            {
+                if (!leaderSlotHandler.allowSpawning)
+                {
+                    return;
+                }
+                SummonLeader();
+            }
+        }   
 
         public void ComputerPlayerControl()
         {
@@ -402,13 +411,20 @@ namespace Battlefield
             if(canChangeSummon)
             {
                 curColumnIdx = computerAI.ChooseLane();
-                SetPointBehavior(isAttacker);
+                SetPointBehavior();
 
                 int idx = computerAI.ChooseNextUnitIndex();
 
                 if(idx >= 0)
                 {
-                    SetUnitPanelAsSelected(idx);
+                    if(currentCommander.unitsCarried[idx].totalUnitsAvailableForDeployment > 0)
+                    {
+                        SetUnitPanelAsSelected(idx);
+                    }
+                    else
+                    {
+                        idx = computerAI.ChooseNextUnitIndex();
+                    }
                 }
                 canChangeSummon = false;
             }
@@ -417,10 +433,11 @@ namespace Battlefield
                 canChangeSummon = true;
                 SummonUnit();
             }
-            ComputerPlayerSkillControl();
+
+            ComputerPlayerSkillControl(true);
         }
 
-        public void ComputerPlayerSkillControl()
+        public void ComputerPlayerSkillControl(bool disregardSummon = false)
         {
             if(currentCommander.heroesCarried == null ||
                 currentCommander.heroesCarried.Count <= 0)
@@ -436,6 +453,11 @@ namespace Battlefield
             for (int i = 0; i < currentCommander.heroesCarried[0].skillsList.Count; i++)
             {
                 BaseSkillInformationData thisSkill = currentCommander.heroesCarried[0].skillsList[i];
+
+                if(skillSlotHandler.skillSlotList[i].cdCounter.gameObject.activeInHierarchy)
+                {
+                    continue;
+                }
 
                 switch (thisSkill.skillType)
                 {
@@ -541,6 +563,10 @@ namespace Battlefield
 
             }
 
+            if(!disregardSummon)
+            {
+                ComputerPlayerControl();
+            }
             ComputerSummonLeaderControl();
         }
 
@@ -635,6 +661,7 @@ namespace Battlefield
                 {
                     unitList[i].ResetCooldown();
                 }
+                BattlefieldSceneManager.GetInstance.battleUIInformation.UpdateUnitPanels();
             }
             /*
             // Check if Can Spawn
@@ -672,7 +699,9 @@ namespace Battlefield
         public void SetControlType(PlayerControlType curController,bool isAttacker)
         {
             controlType = curController;
-            if(controlType == PlayerControlType.Computer)
+            teamType = (isAttacker) ? TeamType.Attacker : TeamType.Defender;
+            BattlefieldUIHandler myHandler = BattlefieldSceneManager.GetInstance.battleUIInformation;
+            if (controlType == PlayerControlType.Computer)
             {
                 isComputer = true;
             }
@@ -686,23 +715,27 @@ namespace Battlefield
                 {
                     curColumnIdx = attackerColumnIdx;
                     curRowIdx = attackerRowIdx;
-                    SetPointBehavior(isAttacker);
+                    SetPointBehavior();
                 }
                 else
                 {
                     curColumnIdx = defenderColumnIdx;
                     curRowIdx = defenderRowIdx;
 
-                    SetPointBehavior(isAttacker);
+                    SetPointBehavior();
                 }
 
 
                 unitList[0].SetAsSelected();
                 selectedUnit = unitList[0];
             }
+
+            skillSlotHandler.SetupSkillSlots();
         }
-        public void SetPointBehavior(bool isAttacker)
+        public void SetPointBehavior()
         {
+            bool isAttacker = (teamType == TeamType.Attacker)? true: false;
+            
             ScenePointBehavior tmp = null;
             ScenePointBehavior prev = null;
             if (!isAttacker)

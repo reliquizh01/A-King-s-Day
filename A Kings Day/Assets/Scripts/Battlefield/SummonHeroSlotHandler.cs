@@ -10,6 +10,7 @@ public class SummonHeroSlotHandler : MonoBehaviour
 {
     public BattlefieldUnitSelectionController myController;
     public BasePanelBehavior myPanel;
+    public TextMeshProUGUI heroSummonText;
     public Image spawnIcon;
     public Sprite EmptyIcon;
     public Sprite heroSummonIcon;
@@ -30,6 +31,20 @@ public class SummonHeroSlotHandler : MonoBehaviour
 
         cdCounter.gameObject.SetActive(true);
         cdCounter.StartTimer(0, maxCounter, AllowHeroSpawn);
+        switch (myController.controlType)
+        {
+            case PlayerControlType.PlayerOne:
+                heroSummonText.text = "R";
+                break;
+            case PlayerControlType.PlayerTwo:
+                heroSummonText.text = "6";
+                break;
+            case PlayerControlType.Computer:
+                heroSummonText.text = "-";
+                break;
+            default:
+                break;
+        }
     }
     public void AllowHeroSpawn()
     {

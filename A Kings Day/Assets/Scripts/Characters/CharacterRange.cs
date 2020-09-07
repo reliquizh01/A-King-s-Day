@@ -55,20 +55,14 @@ namespace Characters
             Gizmos.DrawLine(transform.position, endLine);
         }
 
-        public void UniqueAttackTypeBehavior()
-        {
-            // Prioritize Nearest
-            if (myCharacter.unitInformation.attackType == UnitAttackType.RANGE)
-            {
-                enemiesInRange.Clear();
-            }
-        }
         public void CheckAttackRange()
         {
             Vector2 direction = myCharacter.myMovements.CheckDirection();
 
-            UniqueAttackTypeBehavior();
-
+            if (enemiesInRange != null)
+            {
+                enemiesInRange.Clear();
+            }
             RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, direction, totalRange);
             if(enemiesInRange == null)
             {

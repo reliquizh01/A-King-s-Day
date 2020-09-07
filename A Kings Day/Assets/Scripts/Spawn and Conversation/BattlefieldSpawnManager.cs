@@ -107,8 +107,10 @@ namespace Managers
                         BaseCharacter heroCharacter = tmp.GetComponent<BaseCharacter>();
                         heroCharacter.OrderToFace(FacingDirection.Left);
                         heroCharacter.SpawnInThisPosition(atkSpawnPoint);
+
                         heroCharacter.OrderMovement(atkSpawnPoint.neighborPoints[0]);
                         heroCharacter.isLeadingHero = true;
+                        //heroCharacter.canReturnToCamp = true;
 
                         heroCharacter.teamType = TeamType.Attacker;
                         BattlefieldSceneManager.GetInstance.battleUIInformation.attackerPanel.leaderSlotHandler.SetupHeroSpawn(heroCharacter.unitInformation.unitCooldown);
@@ -131,10 +133,13 @@ namespace Managers
                         tmp = GameObject.Instantiate((GameObject)Resources.Load(unitPath, typeof(GameObject)), defSpawnPoint.transform.position, Quaternion.identity, null);
 
                         BaseCharacter heroCharacter = tmp.GetComponent<BaseCharacter>();
+
                         heroCharacter.OrderToFace(FacingDirection.Right);
                         heroCharacter.SpawnInThisPosition(defSpawnPoint);
+
                         heroCharacter.OrderMovement(defSpawnPoint.neighborPoints[0]);
                         heroCharacter.isLeadingHero = true;
+                        //heroCharacter.canReturnToCamp = true;
 
                         heroCharacter.teamType = TeamType.Defender;
                         BattlefieldSceneManager.GetInstance.battleUIInformation.defenderPanel.leaderSlotHandler.SetupHeroSpawn(heroCharacter.unitInformation.unitCooldown);
@@ -282,10 +287,11 @@ namespace Managers
                 ScenePointBehavior spawnPoint = BattlefieldPathManager.GetInstance.defenderHeroSpawnpoint;
                 thisUnit.ReceiveHealing(0.1f, UnitAttackType.SPELL, TargetStats.health);
 
-                if (lastState == UnitState.Dead)
+
+                if (lastState == UnitState.Dead || lastState == UnitState.Injured)
                 {
                     unitCooldown += 30;
-                    thisUnit.UpdateCharacterState(CharacterStates.Injured_State);
+                    thisUnit.unitInformation.currentState = UnitState.Healthy;
                 }
 
 
@@ -300,11 +306,12 @@ namespace Managers
             else if (atkUnit != null)
             {
                 idx = attackingCommander.unitsCarried.FindIndex(x => x.unitInformation.unitName == atkUnit.unitInformation.unitGenericName);
-                if(idx >= 0)
+                if(idx >= 0 && atkUnit.canReturnToCamp)
                 {
                     switch (lastState)
                     {
                         case UnitState.Healthy:
+                            
                             attackingCommander.unitsCarried[idx].totalUnitsAvailableForDeployment += 1;
                             attackerSpawnedUnits.Remove(thisUnit);
                             DestroyImmediate(thisUnit.gameObject);
@@ -330,11 +337,17 @@ namespace Managers
                             break;
                     }
                 }
+                else
+                {
+                    attackerSpawnedUnits.Remove(thisUnit);
+                    Destroy(thisUnit.gameObject);
+                }
+
             }
             else if(defUnit != null)
             {
                 idx = defendingCommander.unitsCarried.FindIndex(x => x.unitInformation.unitName == thisUnit.unitInformation.unitGenericName);
-                if (idx >= 0)
+                if (idx >= 0 && thisUnit.canReturnToCamp)
                 {
                     switch (lastState)
                     {
@@ -363,6 +376,11 @@ namespace Managers
                         default:
                             break;
                     }
+                }
+                else
+                {
+                    defenderSpawnedUnits.Remove(thisUnit);
+                    Destroy(thisUnit.gameObject);
                 }
             }
 
@@ -507,19 +525,20 @@ namespace Managers
                     if(tmp.GetComponent<BaseCharacter>() != null)
                     {
                         attackerSpawnedUnits.Add(tmp.GetComponent<BaseCharacter>());
-                        attackerSpawnedUnits[attackerSpawnedUnits.Count - 1].SpawnInThisPosition(spawnPoint, true);
-                        attackerSpawnedUnits[attackerSpawnedUnits.Count - 1].SetupCharacter(attackingCommander.unitsCarried[unitIdx].unitInformation);
-                        attackerSpawnedUnits[attackerSpawnedUnits.Count - 1].isFighting = true;
-                        attackerSpawnedUnits[attackerSpawnedUnits.Count - 1].overheadHealthbar.SetupHealthBar(attackerSpawnedUnits[attackerSpawnedUnits.Count - 1].unitInformation.curhealth, attackerSpawnedUnits[attackerSpawnedUnits.Count - 1].unitInformation.maxHealth);
-                        attackerSpawnedUnits[attackerSpawnedUnits.Count - 1].canReturnToCamp = true;
-                        attackerSpawnedUnits[attackerSpawnedUnits.Count - 1].teamType = TeamType.Attacker;
-                        attackerSpawnedUnits[attackerSpawnedUnits.Count - 1].overheadHealthbar.gameObject.SetActive(true);
-                        attackerSpawnedUnits[attackerSpawnedUnits.Count - 1].OrderMovement(targetPoint);
+                        int idx = attackerSpawnedUnits.Count - 1;
+                        attackerSpawnedUnits[idx].SpawnInThisPosition(spawnPoint, true);
+                        attackerSpawnedUnits[idx].SetupCharacter(attackingCommander.unitsCarried[unitIdx].unitInformation);
+                        attackerSpawnedUnits[idx].isFighting = true;
+                        attackerSpawnedUnits[idx].overheadHealthbar.SetupHealthBar(attackerSpawnedUnits[idx].unitInformation.curhealth, attackerSpawnedUnits[idx].unitInformation.maxHealth);
+                        attackerSpawnedUnits[idx].canReturnToCamp = true;
+                        attackerSpawnedUnits[idx].teamType = TeamType.Attacker;
+                        attackerSpawnedUnits[idx].overheadHealthbar.gameObject.SetActive(true);
+                        attackerSpawnedUnits[idx].OrderMovement(targetPoint);
                         if(attackingCommander.spawnBuffsList != null && attackingCommander.spawnBuffsList.Count > 0)
                         {
                             for (int i = 0; i < attackingCommander.spawnBuffsList.Count; i++)
                             {
-                                attackerSpawnedUnits[attackerSpawnedUnits.Count - 1].AddBuff(attackingCommander.spawnBuffsList[i]);
+                                attackerSpawnedUnits[idx].AddBuff(attackingCommander.spawnBuffsList[i]);
                             }
                         }
 
@@ -555,13 +574,14 @@ namespace Managers
                     if (tmp.GetComponent<BaseCharacter>() != null)
                     {
                         defenderSpawnedUnits.Add(tmp.GetComponent<BaseCharacter>());
-                        defenderSpawnedUnits[defenderSpawnedUnits.Count - 1].SpawnInThisPosition(spawnPoint, true);
-                        defenderSpawnedUnits[defenderSpawnedUnits.Count - 1].SetupCharacter(defendingCommander.unitsCarried[unitIdx].unitInformation);
-                        defenderSpawnedUnits[defenderSpawnedUnits.Count - 1].overheadHealthbar.gameObject.SetActive(true);
-                        defenderSpawnedUnits[defenderSpawnedUnits.Count - 1].overheadHealthbar.SetupHealthBar(defenderSpawnedUnits[defenderSpawnedUnits.Count - 1].unitInformation.curhealth, defenderSpawnedUnits[defenderSpawnedUnits.Count - 1].unitInformation.maxHealth);
-                        defenderSpawnedUnits[defenderSpawnedUnits.Count - 1].canReturnToCamp = true;
-                        defenderSpawnedUnits[defenderSpawnedUnits.Count - 1].teamType = TeamType.Defender;
-                        defenderSpawnedUnits[defenderSpawnedUnits.Count - 1].isFighting = true;
+                        int idx = defenderSpawnedUnits.Count - 1;
+                        defenderSpawnedUnits[idx].SpawnInThisPosition(spawnPoint, true);
+                        defenderSpawnedUnits[idx].SetupCharacter(defendingCommander.unitsCarried[unitIdx].unitInformation);
+                        defenderSpawnedUnits[idx].overheadHealthbar.gameObject.SetActive(true);
+                        defenderSpawnedUnits[idx].overheadHealthbar.SetupHealthBar(defenderSpawnedUnits[idx].unitInformation.curhealth, defenderSpawnedUnits[idx].unitInformation.maxHealth);
+                        defenderSpawnedUnits[idx].canReturnToCamp = true;
+                        defenderSpawnedUnits[idx].teamType = TeamType.Defender;
+                        defenderSpawnedUnits[idx].isFighting = true;
 
 
                         Debug.Log("TargetPoint: " + targetPoint.gameObject.name + " Parent: " + targetPoint.transform.parent.gameObject.name);
@@ -573,12 +593,12 @@ namespace Managers
                             Debug.Log("Path Point Count: " + pathPoints.Count);
                         }
 
-                         defenderSpawnedUnits[defenderSpawnedUnits.Count - 1].OrderMovement(targetPoint);
+                         defenderSpawnedUnits[idx].OrderMovement(targetPoint);
                         if (defendingCommander.spawnBuffsList != null && defendingCommander.spawnBuffsList.Count > 0)
                         {
                             for (int i = 0; i < defendingCommander.spawnBuffsList.Count; i++)
                             {
-                                defenderSpawnedUnits[defenderSpawnedUnits.Count - 1].AddBuff(defendingCommander.spawnBuffsList[i]);
+                                defenderSpawnedUnits[idx].AddBuff(defendingCommander.spawnBuffsList[i]);
                             }
                         }
                     }
@@ -773,13 +793,37 @@ namespace Managers
             }
         }
 
+        public void HideAllUnitsHealthBar()
+        {
+            for (int i = 0; i < attackerSpawnedUnits.Count; i++)
+            {
+                attackerSpawnedUnits[i].overheadHealthbar.gameObject.SetActive(false);
+            }
+
+            if(attackerHeroLeader != null)
+            {
+                attackerHeroLeader.gameObject.SetActive(false);
+            }
+
+            if(defenderHeroLeader != null)
+            {
+                defenderHeroLeader.gameObject.SetActive(false);
+            }
+        }
         public void RetreatAllUnits(bool fullheal = false, Action newRetreatAll = null)
         {
             int column = -1;
             ScenePointBehavior returnToThisPoint = null;
             endCurrentBattleCallback = newRetreatAll;
 
-            if(attackerSpawnedUnits.Count > 0 && defenderSpawnedUnits.Count > 0
+            if(attackerSpawnedUnits == null && defenderSpawnedUnits == null)
+            {
+                if (endCurrentBattleCallback != null)
+                {
+                    endCurrentBattleCallback();
+                }
+            }
+            else if(attackerSpawnedUnits.Count > 0 && defenderSpawnedUnits.Count > 0
                 && attackerSpawnedUnits.Find(x => x.unitInformation.curhealth > 0) == null
                 && defenderSpawnedUnits.Find(x => x.unitInformation.curhealth > 0) == null)
                 

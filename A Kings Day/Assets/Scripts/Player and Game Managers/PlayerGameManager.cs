@@ -84,7 +84,6 @@ namespace Managers
         }
         public void WeeklyResourceProductionUpdate(Parameters p = null)
         {
-            Debug.Log("Updating ResourceProduction ----------------");
             foodBehavior.UpdateWeeklyProgress();
 
             troopBehavior.UpdateWeeklyProgress();

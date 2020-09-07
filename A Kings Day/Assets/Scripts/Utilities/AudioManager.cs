@@ -16,6 +16,9 @@ namespace Managers
         openingTheme,
         battlefieldPreparation1,
         courtroomDrama,
+        DefeatInBattle,
+        WinInBattle,
+        BalconyVibes,
     }
 
     [System.Serializable]

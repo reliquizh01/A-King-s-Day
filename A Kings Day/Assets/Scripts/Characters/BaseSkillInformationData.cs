@@ -66,6 +66,7 @@ namespace Characters
     public class BaseSkillInformationData
     {
         public string skillName;
+        public string skillDescription;
         public SkillType skillType;
         public TargetType targetType;
         public int skillLevel = 1;

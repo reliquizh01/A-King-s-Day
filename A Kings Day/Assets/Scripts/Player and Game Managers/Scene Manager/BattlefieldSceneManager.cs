@@ -216,6 +216,9 @@ namespace Managers
         public void ShowCustomBattlePanel()
         {
             customizePanel.gameObject.SetActive(true);
+
+            SwitchAttackerControls(PlayerControlType.Computer);
+            SwitchDefenderControls(PlayerControlType.PlayerOne);
         }
         public void HideCustomBattlePanel()
         {

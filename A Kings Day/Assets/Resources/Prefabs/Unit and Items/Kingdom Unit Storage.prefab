@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitIconsList:
-  - unitName: Recruit
-    unitSprite: {fileID: 3184765230846651541, guid: 882e759f8ab033e4fa88bcd4f51d2fb3,
+  - unitName: Unknown
+    unitSprite: {fileID: 2884267879102359303, guid: 882e759f8ab033e4fa88bcd4f51d2fb3,
       type: 3}
   - unitName: Swordsman
     unitSprite: {fileID: 632991196482339037, guid: 882e759f8ab033e4fa88bcd4f51d2fb3,
@@ -57,7 +57,16 @@ MonoBehaviour:
     unitSprite: {fileID: -3589207286553114380, guid: 882e759f8ab033e4fa88bcd4f51d2fb3,
       type: 3}
   - unitName: Player
-    unitSprite: {fileID: 4666018043052453735, guid: 0149bbc7bc9cbd34d98f124de47bfce3,
+    unitSprite: {fileID: -8013564237659998187, guid: 882e759f8ab033e4fa88bcd4f51d2fb3,
+      type: 3}
+  - unitName: Old King
+    unitSprite: {fileID: 7281002821916926902, guid: 882e759f8ab033e4fa88bcd4f51d2fb3,
+      type: 3}
+  - unitName: Counsellor
+    unitSprite: {fileID: -70024052441844880, guid: 882e759f8ab033e4fa88bcd4f51d2fb3,
+      type: 3}
+  - unitName: Recruit
+    unitSprite: {fileID: 3184765230846651541, guid: 882e759f8ab033e4fa88bcd4f51d2fb3,
       type: 3}
   skillIconList:
   - skillName: Archer Barrage
@@ -103,6 +112,7 @@ MonoBehaviour:
     baseHeroCoinPrice: 0
     skillsList:
     - skillName: Summon Phalanx!
+      skillDescription: Summon 1 Spearman in all lanes.
       skillType: 4
       targetType: 0
       skillLevel: 1
@@ -155,6 +165,7 @@ MonoBehaviour:
     baseHeroCoinPrice: 0
     skillsList:
     - skillName: March Forward
+      skillDescription: Units will get SPD and HP boost.
       skillType: 3
       targetType: 0
       skillLevel: 1
@@ -223,6 +234,7 @@ MonoBehaviour:
     baseHeroCoinPrice: 0
     skillsList:
     - skillName: Archer Barrage
+      skillDescription: Hit 3 Units with Arrows (2 DMG)
       skillType: 0
       targetType: 0
       skillLevel: 1
@@ -254,9 +266,9 @@ MonoBehaviour:
       curhealth: 0
       maxHealth: 8
       curSpeed: 0
-      origSpeed: 0.1
-      minDamage: 7
-      maxDamage: 9
+      origSpeed: 0.3
+      minDamage: 3
+      maxDamage: 4
       range: 4
       unitCooldown: 20
       healcost: 5
@@ -455,6 +467,7 @@ MonoBehaviour:
     buffList: []
   skillStorage:
   - skillName: March Forward
+    skillDescription: Units will get SPD and HP boost.
     skillType: 3
     targetType: 0
     skillLevel: 1
@@ -490,6 +503,7 @@ MonoBehaviour:
       tickingBuff: 0
       tickerCounter: 0
   - skillName: Archer Barrage
+    skillDescription: Hit 3 Units with Arrows (2 DMG)
     skillType: 0
     targetType: 0
     skillLevel: 1
@@ -509,6 +523,7 @@ MonoBehaviour:
     effectgrowth: 2
     buffList: []
   - skillName: Summon Phalanx!
+    skillDescription: Summon 1 Spearman in all lanes.
     skillType: 4
     targetType: 0
     skillLevel: 1

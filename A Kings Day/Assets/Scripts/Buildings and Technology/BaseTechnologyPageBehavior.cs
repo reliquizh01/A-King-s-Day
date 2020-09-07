@@ -104,13 +104,14 @@ namespace Technology
         }
         public void UpgradeTech()
         {
-            if(TransitionManager.GetInstance.isNewGame)
+            if (TransitionManager.GetInstance.isNewGame)
             {
                 BalconyManager.GetInstance.techTab.HideTechnologyTab();
                 BalconySceneManager.GetInstance.balconyTutorial.StartInvasionTutorial();
-            }
 
-            int coinCost = currentTechs[selectedIdx].goldLevelRequirements[currentTechs[selectedIdx].currentLevel];
+                PlayerGameGuide.GetInstance.HideGuideText();
+            }
+                int coinCost = currentTechs[selectedIdx].goldLevelRequirements[currentTechs[selectedIdx].currentLevel];
             if(PlayerGameManager.GetInstance == null)
             {
                 return;

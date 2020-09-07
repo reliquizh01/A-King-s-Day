@@ -506,9 +506,9 @@ MonoBehaviour:
   showHealthbar: 0
   healthBarParent: {fileID: 6721366034478208555}
   incrementSpeed: 0.0075
-  updateHealthbar: 0
+  initialBarUpdate: 0
   mHealthBarOverHead: {fileID: 1825345583591566377}
-  updateAfterDamageOverhead: 0
+  secondBarUpdate: 0
   mHealthAfterDamageOverhead: {fileID: 2431084171191989660}
   curHealthCount: 0
   targetHealthCount: 0
@@ -654,7 +654,7 @@ MonoBehaviour:
   - {x: -0.012554269, y: 0.0054362155, z: 0}
   m_ShapePathHash: 2053822741
   m_Mesh: {fileID: 0}
-  m_InstanceId: 85308
+  m_InstanceId: 41246
 --- !u!1 &6721366034478208555
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,10 +792,11 @@ MonoBehaviour:
   myAnimation: {fileID: 8781019011592093385}
   mySfx: {fileID: 8024226531898971872}
   overheadHealthbar: {fileID: 6337774254159014438}
-  isKing: 0
-  isMainCharacter: 0
-  isGuest: 0
   isLeaving: 0
+  isActing: 0
+  characterIcon: {fileID: 632991196482339037, guid: 882e759f8ab033e4fa88bcd4f51d2fb3,
+    type: 3}
+  isLeadingHero: 0
   unitInformation:
     unitName: Swordsman
     unitGenericName: 
@@ -823,6 +824,8 @@ MonoBehaviour:
   teamType: 0
   canStagger: 0
   isBanishing: 0
+  canRegenerate: 0
+  regenPerSec: 0.015
 --- !u!114 &8781019011592093385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -900,6 +903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa67b5b39fef404aaaeb0f4075d3e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCharacter: {fileID: 0}
   totalRange: 0
   distancePerRange: 0.3
   enemiesInRange: []

@@ -280,7 +280,7 @@ MonoBehaviour:
   - {x: -0.0051574335, y: -0.03492707, z: 0}
   m_ShapePathHash: 567193456
   m_Mesh: {fileID: 0}
-  m_InstanceId: 262384
+  m_InstanceId: 40004
 --- !u!1 &2993959059084150385
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,6 +533,11 @@ MonoBehaviour:
   overheadHealthbar: {fileID: 894031340115110980}
   isLeaving: 0
   isActing: 0
+  characterIcon: {fileID: -8013564237659998187, guid: 882e759f8ab033e4fa88bcd4f51d2fb3,
+    type: 3}
+  projectileAttack: {fileID: 2119242634980098876, guid: 647e715798d64c04faf67a97d27cf8c5,
+    type: 3}
+  isLeadingHero: 0
   unitInformation:
     unitName: Player
     unitGenericName: Player
@@ -560,6 +565,8 @@ MonoBehaviour:
   teamType: 0
   canStagger: 0
   isBanishing: 0
+  canRegenerate: 0
+  regenPerSec: 0.015
 --- !u!114 &3816807695709472544
 MonoBehaviour:
   m_ObjectHideFlags: 0

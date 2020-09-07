@@ -99,12 +99,14 @@ namespace Battlefield
 
             if (controlType == PlayerControlType.PlayerTwo)
             {
+                computerControlled = false;
                 readyTooltipObject.SetActive(true);
                 readyLeft.text = "<-";
                 readyRight.text = "->";
             }
             else if(controlType == PlayerControlType.PlayerOne)
             {
+                computerControlled = false;
                 readyTooltipObject.SetActive(true);
                 readyLeft.text = "A";
                 readyRight.text = "D";

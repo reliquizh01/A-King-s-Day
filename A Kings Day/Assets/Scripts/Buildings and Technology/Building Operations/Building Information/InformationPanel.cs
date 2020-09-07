@@ -117,11 +117,20 @@ public class InformationPanel : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public virtual void OnPointerEnter(PointerEventData eventData)
     {
+        if (myController == null)
+        {
+            return;
+        }
+
         myController.ShowPanelAddedInformation(localIdx, addedInfoMessage);
     }
 
     public virtual void OnPointerExit(PointerEventData eventData)
     {
+        if(myController == null)
+        {
+            return;
+        }
         myController.HideAddedInformation();
     }
     public virtual void ResetCounter()

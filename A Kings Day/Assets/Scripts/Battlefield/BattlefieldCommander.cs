@@ -53,19 +53,19 @@ public class BattlefieldCommander
 
         TroopsInformation tmp = new TroopsInformation();
         tmp.unitInformation = BattlefieldSceneManager.GetInstance.spawnManager.unitStorage.basicUnitStorage.Find(x => x.unitName == "Recruit");
-        tmp.totalUnitCount = 0;
+        tmp.totalUnitCount = 10;
 
         TroopsInformation tmp1 = new TroopsInformation();
         tmp1.unitInformation = BattlefieldSceneManager.GetInstance.spawnManager.unitStorage.basicUnitStorage.Find(x => x.unitName == "Swordsman");
-        tmp1.totalUnitCount = 0;
+        tmp1.totalUnitCount = 10;
 
         TroopsInformation tmp2 = new TroopsInformation();
         tmp2.unitInformation = BattlefieldSceneManager.GetInstance.spawnManager.unitStorage.basicUnitStorage.Find(x => x.unitName == "Spearman");
-        tmp2.totalUnitCount = 0;
+        tmp2.totalUnitCount = 10;
 
         TroopsInformation tmp3 = new TroopsInformation();
         tmp3.unitInformation = BattlefieldSceneManager.GetInstance.spawnManager.unitStorage.basicUnitStorage.Find(x => x.unitName == "Archer");
-        tmp3.totalUnitCount = 0;
+        tmp3.totalUnitCount = 10;
 
         unitsCarried.Add(tmp); unitsCarried.Add(tmp1); unitsCarried.Add(tmp2);
         unitsCarried.Add(tmp3);

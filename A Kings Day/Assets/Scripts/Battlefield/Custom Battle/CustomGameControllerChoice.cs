@@ -11,80 +11,27 @@ public class CustomGameControllerChoice : MonoBehaviour
     public PlayerControlType currentControlType;
     public bool isAttacker;
 
-    public void SwitchToAIController(bool userInteraction)
+    public void SwitchToThisControl(PlayerControlType playerControlType)
     {
-        aiIcon.gameObject.SetActive(true);
-        numpadIcon.gameObject.SetActive(false);
-        keyboardIcon.gameObject.SetActive(false);
-        currentControlType = PlayerControlType.Computer;
-
-        if(isAttacker)
+        switch (playerControlType)
         {
-            myController.SwitchAttackerControl(currentControlType);
-        }
-        else
-        {
-            myController.SwitchDefenderControl(currentControlType);
-        }
-    }
-
-    public void SwitchToNumpadController(bool userInteraction)
-    {
-
-        aiIcon.gameObject.SetActive(false);
-        numpadIcon.gameObject.SetActive(true);
-        keyboardIcon.gameObject.SetActive(false);
-        currentControlType = PlayerControlType.PlayerTwo;
-
-        if (currentControlType == PlayerControlType.Computer)
-            return;
-
-
-        if (isAttacker)
-        {
-            if (userInteraction)
-            {
-                myController.defenderControl.SwitchToKeyboardController(false);
-            }
-            myController.SwitchAttackerControl(currentControlType);
-        }
-        else
-        {
-            if (userInteraction)
-            {
-                myController.attackerControl.SwitchToKeyboardController(false);
-            }
-            myController.SwitchDefenderControl(currentControlType);
-        }
-    }
-
-    public void SwitchToKeyboardController(bool userInteraction)
-    {
-
-        aiIcon.gameObject.SetActive(false);
-        numpadIcon.gameObject.SetActive(false);
-        keyboardIcon.gameObject.SetActive(true);
-        currentControlType = PlayerControlType.PlayerOne;
-
-
-        if (currentControlType == PlayerControlType.Computer)
-            return;
-
-        if (isAttacker)
-        {
-            if (userInteraction)
-            {
-                myController.defenderControl.SwitchToNumpadController(false);
-            }
-            myController.SwitchAttackerControl(currentControlType);
-        }
-        else
-        {
-            if (userInteraction)
-            {
-                myController.attackerControl.SwitchToNumpadController(false);
-            }
-            myController.SwitchDefenderControl(currentControlType);
+            case PlayerControlType.PlayerOne:
+                keyboardIcon.gameObject.SetActive(true);
+                numpadIcon.gameObject.SetActive(false);
+                aiIcon.gameObject.SetActive(false);
+                break;
+            case PlayerControlType.PlayerTwo:
+                keyboardIcon.gameObject.SetActive(false);
+                numpadIcon.gameObject.SetActive(true);
+                aiIcon.gameObject.SetActive(false);
+                break;
+            case PlayerControlType.Computer:
+                keyboardIcon.gameObject.SetActive(false);
+                numpadIcon.gameObject.SetActive(false);
+                aiIcon.gameObject.SetActive(true);
+                break;
+            default:
+                break;
         }
     }
 }

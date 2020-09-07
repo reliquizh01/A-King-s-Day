@@ -618,7 +618,7 @@ MonoBehaviour:
   - {x: -0.012554269, y: 0.0054362155, z: 0}
   m_ShapePathHash: 2053822741
   m_Mesh: {fileID: 0}
-  m_InstanceId: 85110
+  m_InstanceId: 41048
 --- !u!1 &5570425316628357782
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,10 +797,11 @@ MonoBehaviour:
   myAnimation: {fileID: 7791683919111570989}
   mySfx: {fileID: 2295657470476738738}
   overheadHealthbar: {fileID: 7343354064094540053}
-  isKing: 0
-  isMainCharacter: 0
-  isGuest: 0
   isLeaving: 0
+  isActing: 0
+  characterIcon: {fileID: 7075695095950087092, guid: 882e759f8ab033e4fa88bcd4f51d2fb3,
+    type: 3}
+  isLeadingHero: 0
   unitInformation:
     unitName: Spearman
     unitGenericName: 
@@ -828,6 +829,8 @@ MonoBehaviour:
   teamType: 0
   canStagger: 0
   isBanishing: 0
+  canRegenerate: 0
+  regenPerSec: 0.015
 --- !u!61 &6042270355377441590
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -887,6 +890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa67b5b39fef404aaaeb0f4075d3e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCharacter: {fileID: 0}
   totalRange: 0
   distancePerRange: 0.3
   enemiesInRange: []
@@ -1096,9 +1100,9 @@ MonoBehaviour:
   showHealthbar: 0
   healthBarParent: {fileID: 9149946645976868020}
   incrementSpeed: 0.0075
-  updateHealthbar: 0
+  initialBarUpdate: 0
   mHealthBarOverHead: {fileID: 8052614546491383699}
-  updateAfterDamageOverhead: 0
+  secondBarUpdate: 0
   mHealthAfterDamageOverhead: {fileID: 7103891080665464423}
   curHealthCount: 0
   targetHealthCount: 0

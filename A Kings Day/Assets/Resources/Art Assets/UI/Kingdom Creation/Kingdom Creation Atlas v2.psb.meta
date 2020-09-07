@@ -137,8 +137,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 211
-      y: 323
+      x: 234
+      y: 203
       width: 18
       height: 14
     spriteID: c3a1e6a1fa81a82409fa29d2bf8d6d0d
@@ -151,7 +151,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 27, y: 91}
+    uvTransform: {x: 50, y: -29}
   - name: Number border
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -204,7 +204,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 234
-      y: 203
+      y: 225
       width: 18
       height: 14
     spriteID: cbbd3e149e6bc2548bb015b5eb1a1848
@@ -217,7 +217,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 29, y: -29}
+    uvTransform: {x: 29, y: -7}
   - name: Family Crest Handle
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -416,6 +416,28 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -31, y: 435}
+  - name: Skill Button Clicked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 211
+      y: 323
+      width: 18
+      height: 14
+    spriteID: 1c878b8ae47c7744da5d6149cc1e9e31
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -18, y: 91}
   rigSpriteImportData:
   - name: Wall Creation Background
     originalName: 
@@ -786,13 +808,20 @@ ScriptedImporter:
     spriteID: c7c1343fccf46cc4b896439994fb2d1d
     layerID: 3
     mosaicPosition: {x: 4, y: 323}
+  - name: Skill Button Clicked
+    spriteName: Skill Button Clicked
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1c878b8ae47c7744da5d6149cc1e9e31
+    layerID: 19
+    mosaicPosition: {x: 211, y: 323}
   - name: Arrow Button Clicked
     spriteName: Arrow Button Clicked
     isGroup: 0
     parentIndex: -1
     spriteID: c3a1e6a1fa81a82409fa29d2bf8d6d0d
     layerID: 5
-    mosaicPosition: {x: 211, y: 323}
+    mosaicPosition: {x: 234, y: 203}
   - name: Number border
     spriteName: Number border
     isGroup: 0
@@ -813,7 +842,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: cbbd3e149e6bc2548bb015b5eb1a1848
     layerID: 7
-    mosaicPosition: {x: 234, y: 203}
+    mosaicPosition: {x: 234, y: 225}
   - name: Family Crest Handle
     spriteName: Family Crest Handle
     isGroup: 0
@@ -831,35 +860,35 @@ ScriptedImporter:
   - name: Orb_Shine_5
     spriteName: Orb_Shine_5
     isGroup: 0
-    parentIndex: 8
+    parentIndex: 9
     spriteID: e9760ce20b38ce4438ae6ee0305ca755
     layerID: 16
     mosaicPosition: {x: 172, y: 203}
   - name: Orb_Shine_4
     spriteName: Orb_Shine_4
     isGroup: 0
-    parentIndex: 8
+    parentIndex: 9
     spriteID: de47d250cc2450245a3505f25207ce48
     layerID: 15
     mosaicPosition: {x: 4, y: 354}
   - name: Orb_Shine_3
     spriteName: Orb_Shine_3
     isGroup: 0
-    parentIndex: 8
+    parentIndex: 9
     spriteID: be320948cb07d1d4284945d7952cc06c
     layerID: 14
     mosaicPosition: {x: 66, y: 354}
   - name: Orb_Shine_2
     spriteName: Orb_Shine_2
     isGroup: 0
-    parentIndex: 8
+    parentIndex: 9
     spriteID: a1136e6be1088464ea018252dc4e841f
     layerID: 13
     mosaicPosition: {x: 128, y: 354}
   - name: Orb_Shine_1
     spriteName: Orb_Shine_1
     isGroup: 0
-    parentIndex: 8
+    parentIndex: 9
     spriteID: dd93e973094dc0a4b92488917c73d378
     layerID: 12
     mosaicPosition: {x: 190, y: 354}

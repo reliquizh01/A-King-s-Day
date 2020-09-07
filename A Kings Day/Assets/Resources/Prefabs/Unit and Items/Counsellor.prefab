@@ -170,7 +170,7 @@ MonoBehaviour:
   - {x: -0.008414416, y: -0.025128454, z: 0}
   m_ShapePathHash: 12876332
   m_Mesh: {fileID: 0}
-  m_InstanceId: -43596
+  m_InstanceId: 41590
 --- !u!1 &2071806621059495473
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,14 +369,17 @@ MonoBehaviour:
   myRange: {fileID: 4081897647537995047}
   myAnimation: {fileID: 7681760326474552018}
   mySfx: {fileID: 4736232113351861743}
-  isKing: 0
-  isMainCharacter: 0
-  isGuest: 0
+  overheadHealthbar: {fileID: 0}
   isLeaving: 0
+  isActing: 0
+  characterIcon: {fileID: -70024052441844880, guid: 882e759f8ab033e4fa88bcd4f51d2fb3,
+    type: 3}
+  isLeadingHero: 0
   unitInformation:
     unitName: Counsellor
     unitGenericName: Counsellor
     attackType: 0
+    wieldedWeapon: 0
     curhealth: 20
     maxHealth: 20
     curSpeed: 0.75
@@ -386,6 +389,7 @@ MonoBehaviour:
     range: 0
     unitCooldown: 20
     healcost: 5
+    unitPrice: 5
     blockProjectile: 0
     blockMelee: 0
     prefabDataPath: 
@@ -398,6 +402,8 @@ MonoBehaviour:
   teamType: 0
   canStagger: 1
   isBanishing: 0
+  canRegenerate: 0
+  regenPerSec: 0.015
 --- !u!114 &4081897647537995047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,6 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa67b5b39fef404aaaeb0f4075d3e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCharacter: {fileID: 0}
   totalRange: 0
   distancePerRange: 0.3
   enemiesInRange: []

@@ -10,6 +10,8 @@ namespace Characters
 
     public class CharacterMovement : MonoBehaviour
     {
+        public BaseCharacter myCharacter;
+
         public float distForReach = 0.0025f;
         public bool isTest = false;
         public bool isMoving = false;
@@ -20,18 +22,21 @@ namespace Characters
         public List<ScenePointBehavior> pathToTargetPoint = new List<ScenePointBehavior>();
         [SerializeField] private int pathIdx = 0;
         [SerializeField] public Vector2 targetPos;
-        private BaseCharacter myCharacter;
         public List<ScenePointBehavior> queuePoints;
 
         List<Action> reachLastTargetCallback = null;
-        public void Start()
+
+        public void Awake()
         {
             if (GetComponent<BaseCharacter>() != null)
             {
                 myCharacter = GetComponent<BaseCharacter>();
-                speed = myCharacter.unitInformation.curSpeed;
+                Debug.Log("This one should get called last : " + myCharacter.unitInformation.unitGenericName);
+                speed = myCharacter.unitInformation.RealSpeed;
             }
-
+        }
+        public void Start()
+        {
             if (pathToTargetPoint == null && currentTargetPoint != null)
             {
                 targetPos = currentTargetPoint.transform.position;
@@ -362,6 +367,10 @@ namespace Characters
             }
             else
             {
+                if(myCharacter != null)
+                {
+                    Debug.Log("[" + myCharacter.unitInformation.unitName + "]");
+                }
                 targetDist = Vector2.Distance(transform.position, thisPoint.transform.position);
             }
             if (targetDist <= distForReach)

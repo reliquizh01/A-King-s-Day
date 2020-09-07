@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using Utilities;
 
 
 public class TypeWriterEffectUI : MonoBehaviour
@@ -63,7 +64,7 @@ public class TypeWriterEffectUI : MonoBehaviour
 
             if (allowMesgControl)
             {
-                if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
+                if (Input.GetKeyDown(UtilitiesCommandObserver.GetInstance.GetKey("SKIP_WHOLE_CONVERSATION")) || Input.GetKeyDown(KeyCode.Return))
                 {
                     if(isDialogueMesg && Time.timeScale == 0)
                     {
@@ -91,7 +92,7 @@ public class TypeWriterEffectUI : MonoBehaviour
         {
             if (deliveryType == DialogueDeliveryType.EnterAfterEachSpeech)
             {
-                if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
+                if (Input.GetKeyDown(UtilitiesCommandObserver.GetInstance.GetKey("SKIP_WHOLE_CONVERSATION")) || Input.GetKeyDown(KeyCode.Return))
                 {
                     if (!isDialogueMesg && Time.timeScale == 0)
                     {

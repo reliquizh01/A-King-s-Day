@@ -96,8 +96,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 97
+      x: 27
+      y: 46
       width: 13
       height: 18
     spriteID: f4d370c0c5402384a9df2b5785e1abbf
@@ -110,7 +110,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -38, y: -283}
+    uvTransform: {x: -15, y: -334}
   - name: Archer Icon
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -118,8 +118,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 25
-      y: 97
+      x: 27
+      y: 72
       width: 13
       height: 18
     spriteID: aa132bfee914b3344b3ca34685eb842a
@@ -132,7 +132,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 2, y: -283}
+    uvTransform: {x: 4, y: -308}
   - name: Recruit Icon
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -140,8 +140,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 72
+      x: 46
+      y: 4
       width: 14
       height: 17
     spriteID: 792a38ebcce4b3f4fa7f08880b8f9661
@@ -154,7 +154,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -55, y: -308}
+    uvTransform: {x: -13, y: -376}
   - name: Swordsman Icon
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -162,7 +162,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 26
+      x: 48
       y: 46
       width: 12
       height: 18
@@ -176,7 +176,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 23, y: -334}
+    uvTransform: {x: 45, y: -334}
   - name: Unknown Human Icon
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -185,7 +185,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 46
+      y: 100
       width: 14
       height: 18
     spriteID: 2674f2621633370478ca5b7ae4896b6b
@@ -198,7 +198,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -77, y: -334}
+    uvTransform: {x: -77, y: -280}
   - name: Unknown Hero Icon
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -221,6 +221,72 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 2, y: -336}
+  - name: Old Kings Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 74
+      width: 15
+      height: 18
+    spriteID: df4e4ed29f64d7a489d9be41aa73faf1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -116, y: -306}
+  - name: Player Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 27
+      y: 98
+      width: 11
+      height: 18
+    spriteID: 554ce8652e0c8624e9a3ebc37d860377
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -75, y: -282}
+  - name: Counsellor Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 46
+      width: 15
+      height: 20
+    spriteID: bc665a12097c942458a7d814a0333e81
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -138, y: -334}
   rigSpriteImportData:
   - name: Spearman Icon
     originalName: 
@@ -356,14 +422,35 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: f4d370c0c5402384a9df2b5785e1abbf
     layerID: 6
-    mosaicPosition: {x: 4, y: 97}
+    mosaicPosition: {x: 27, y: 46}
   - name: Archer Icon
     spriteName: Archer Icon
     isGroup: 0
     parentIndex: -1
     spriteID: aa132bfee914b3344b3ca34685eb842a
     layerID: 4
-    mosaicPosition: {x: 25, y: 97}
+    mosaicPosition: {x: 27, y: 72}
+  - name: Counsellor Icon
+    spriteName: Counsellor Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: bc665a12097c942458a7d814a0333e81
+    layerID: 16
+    mosaicPosition: {x: 4, y: 46}
+  - name: Old Kings Icon
+    spriteName: Old Kings Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: df4e4ed29f64d7a489d9be41aa73faf1
+    layerID: 15
+    mosaicPosition: {x: 4, y: 74}
+  - name: Player Icon
+    spriteName: Player Icon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 554ce8652e0c8624e9a3ebc37d860377
+    layerID: 14
+    mosaicPosition: {x: 27, y: 98}
   - name: Unknown Hero Icon
     spriteName: Unknown Hero Icon
     isGroup: 0
@@ -377,21 +464,21 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 2674f2621633370478ca5b7ae4896b6b
     layerID: 10
-    mosaicPosition: {x: 4, y: 46}
+    mosaicPosition: {x: 4, y: 100}
   - name: Recruit Icon
     spriteName: Recruit Icon
     isGroup: 0
     parentIndex: -1
     spriteID: 792a38ebcce4b3f4fa7f08880b8f9661
     layerID: 7
-    mosaicPosition: {x: 4, y: 72}
+    mosaicPosition: {x: 46, y: 4}
   - name: Swordsman Icon
     spriteName: Swordsman Icon
     isGroup: 0
     parentIndex: -1
     spriteID: 64b92e76cb2485446ac45cdad511dc85
     layerID: 2
-    mosaicPosition: {x: 26, y: 46}
+    mosaicPosition: {x: 48, y: 46}
   rigPSDLayers:
   - name: Spearman Icon
     spriteName: Spearman Icon

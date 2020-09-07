@@ -45,7 +45,6 @@ public class OpeningManager : BaseManager
     public override void PreOpenManager()
     {
         base.PreOpenManager();
-        panelBehaviour.PlayOpenAnimation();
     }
     public void OpenOptions()
     {

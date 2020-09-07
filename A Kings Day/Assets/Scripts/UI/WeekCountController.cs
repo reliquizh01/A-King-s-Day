@@ -37,6 +37,11 @@ namespace ResourceUI
             }
             if (cur >= target)
             {
+                if(TransitionManager.GetInstance.isNewGame)
+                {
+                    PlayerGameGuide.GetInstance.ShowGuideText("Press End Week to proceed to Next Week");
+                    endWeekBtnText.AddTransition(() => PlayerGameGuide.GetInstance.HideGuideText(), true);
+                }
                 endWeekBtnText.text.text = "END WEEK";
                 if(beforeEndClickCallback != null)
                 {
@@ -62,6 +67,7 @@ namespace ResourceUI
 
             if(KingdomManager.GetInstance.isPrologue)
             {
+                Debug.Log("WE KNOW ITS IN PROLOGUE!");
                 KingdomManager.GetInstance.isPrologue = false;
                 KingdomManager.GetInstance.EndPrologueEvents(PrologueWeeklyResult);
             }

@@ -22,6 +22,9 @@ namespace Characters
         public bool isLeaving = false;
         public bool isActing = false;
 
+        [Header("Prefab Information")]
+        public Sprite characterIcon;
+        public GameObject projectileAttack;
         [Header("Unit Information")]
         public bool isLeadingHero = false;
         public UnitInformationData unitInformation;
@@ -43,6 +46,7 @@ namespace Characters
                 EventBroadcaster.Instance.AddObserver(EventNames.HIDE_ALL_UNKNOWN_ACTORS, OrderToBanish);
             }
         }
+
         public void Start()
         {
             if(SpawnManager.GetInstance != null && SpawnManager.GetInstance.spawnedCharacterUnits != null)
@@ -59,6 +63,7 @@ namespace Characters
         {
             EventBroadcaster.Instance.RemoveActionAtObserver(EventNames.HIDE_ALL_UNKNOWN_ACTORS, OrderToBanish);
         }
+
         public void Update()
         {
             if(canRegenerate)
@@ -162,6 +167,9 @@ namespace Characters
             myRange.myCharacter = this;
             myRange.UpdateTotalRange();
 
+            Debug.Log("But this one keeps on coming in last");
+            myMovements.speed = unitInformation.RealSpeed;
+
             ChangeWeaponWield(unitInformation.wieldedWeapon);
             UpdateStats();
         }
@@ -178,8 +186,20 @@ namespace Characters
         }
         public void OrderMovement(ScenePointBehavior thisLocation, Action callBack = null)
         {
-            myMovements.isMoving = false;
-            myMovements.SetTarget(thisLocation, callBack);
+            if(this == null)
+            {
+                return;
+            }
+
+            if(isLeadingHero)
+            {
+                Debug.Log("ARE YOU TRYING TO ORDER ME AROUND!");
+            }
+            if(myMovements != null)
+            {
+                myMovements.isMoving = false;
+                myMovements.SetTarget(thisLocation, callBack);
+            }
 
             if(!isActing)
             {
@@ -307,8 +327,11 @@ namespace Characters
                     if (isLeadingHero)
                         break;
 
-                    myAnimation.UpdateDeath(true);
-                    myAnimation.ChangeState(newState);
+                    if(myAnimation != null)
+                    {
+                        myAnimation.UpdateDeath(true);
+                        myAnimation.ChangeState(newState);
+                    }
                     break;
                 default:
                     break;
@@ -388,10 +411,18 @@ namespace Characters
             }
             else if(unitInformation.attackType == UnitAttackType.SPELL)
             {
-
+                SummonProjectile();
             }
         }
 
+        public void SummonProjectile()
+        {
+            GameObject tmp = (GameObject)Instantiate(projectileAttack, transform.position, Quaternion.identity);
+            BaseVisualSkillBehavior skillTmp = tmp.GetComponent<BaseVisualSkillBehavior>();
+
+            skillTmp.InitializeProjectileNormalBehavior(this);
+
+        }
         public void ReceiveHealing(float amount, UnitAttackType attackType, TargetStats targetStats)
         {
             unitInformation.ReceiveHealing(amount, targetStats);
@@ -521,12 +552,9 @@ namespace Characters
         }
         public void ReturnThisUnit()
         {
-            if(canReturnToCamp)
-            {
-                BattlefieldSpawnManager.GetInstance.RemoveThisUnit(this, unitInformation.currentState);
-            }
+            BattlefieldSpawnManager.GetInstance.RemoveThisUnit(this, unitInformation.currentState);
 
-            if(BattlefieldSceneManager.GetInstance != null)
+            if (BattlefieldSceneManager.GetInstance != null)
             {
                 BattlefieldSceneManager.GetInstance.battleUIInformation.UpdateUnitPanels();
             }

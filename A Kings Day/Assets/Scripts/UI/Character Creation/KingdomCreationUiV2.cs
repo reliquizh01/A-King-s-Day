@@ -377,6 +377,13 @@ public class KingdomCreationUiV2 : MonoBehaviour
 
     public void PlayPrologue()
     {
+        PlayerKingdomData tmp = new PlayerKingdomData();
+        tmp = temporaryKingdom;
+
+        SaveLoadManager.GetInstance.inheritanceData = new PlayerKingdomData();
+        SaveLoadManager.GetInstance.inheritanceData = tmp;
+        Debug.Log("CONVERTING INHERITANCE TO SAVELOAD MANAGER");
+
         myPanel.PlayCloseAnimation();
         if(CreationSceneManager.GetInstance != null)
         {
@@ -385,8 +392,6 @@ public class KingdomCreationUiV2 : MonoBehaviour
         }
         playPrologueTab.CloseWindow();
 
-        SaveLoadManager.GetInstance.inheritanceData = new PlayerKingdomData();
-        SaveLoadManager.GetInstance.inheritanceData = temporaryKingdom;
 
 
     }

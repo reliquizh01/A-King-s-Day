@@ -32,7 +32,7 @@ public class BattlefieldTutorialController : MonoBehaviour
         temp3.potentialCallback = () => ShowWarChestTutorial();
 
         DialogueIndexReaction temp4 = new DialogueIndexReaction();
-        temp4.dialogueIndex = 12;
+        temp4.dialogueIndex = 11;
         temp4.potentialCallback = () => DialogueManager.GetInstance.MovePanelUp();
 
         DialogueIndexReaction temp5 = new DialogueIndexReaction();
@@ -40,7 +40,7 @@ public class BattlefieldTutorialController : MonoBehaviour
         temp5.potentialCallback = () => ShowSkillsTutorial();
 
         DialogueIndexReaction temp6 = new DialogueIndexReaction();
-        temp6.dialogueIndex = 15;
+        temp6.dialogueIndex = 14;
         temp6.potentialCallback = () => DialogueManager.GetInstance.MovePanelDown();
 
         DialogueIndexReaction temp7 = new DialogueIndexReaction();

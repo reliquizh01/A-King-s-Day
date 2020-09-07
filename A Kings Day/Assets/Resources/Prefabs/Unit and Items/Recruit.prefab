@@ -431,10 +431,11 @@ MonoBehaviour:
   myAnimation: {fileID: 2217955040612141418}
   mySfx: {fileID: 3883967693269745239}
   overheadHealthbar: {fileID: 5554732699777305695}
-  isKing: 0
-  isMainCharacter: 0
-  isGuest: 0
   isLeaving: 0
+  isActing: 0
+  characterIcon: {fileID: 3184765230846651541, guid: 882e759f8ab033e4fa88bcd4f51d2fb3,
+    type: 3}
+  isLeadingHero: 0
   unitInformation:
     unitName: Recruit
     unitGenericName: 
@@ -462,6 +463,8 @@ MonoBehaviour:
   teamType: 0
   canStagger: 1
   isBanishing: 0
+  canRegenerate: 0
+  regenPerSec: 0.015
 --- !u!114 &5546475695159125663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,6 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa67b5b39fef404aaaeb0f4075d3e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCharacter: {fileID: 0}
   totalRange: 0
   distancePerRange: 0.3
   enemiesInRange: []
@@ -808,9 +812,9 @@ MonoBehaviour:
   showHealthbar: 0
   healthBarParent: {fileID: 6010018296282551245}
   incrementSpeed: 0.0075
-  updateHealthbar: 0
+  initialBarUpdate: 0
   mHealthBarOverHead: {fileID: 7822009914626913937}
-  updateAfterDamageOverhead: 0
+  secondBarUpdate: 0
   mHealthAfterDamageOverhead: {fileID: 2286689482386917726}
   curHealthCount: 0
   targetHealthCount: 0

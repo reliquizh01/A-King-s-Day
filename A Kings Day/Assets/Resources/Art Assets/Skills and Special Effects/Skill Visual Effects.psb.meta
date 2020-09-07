@@ -108,6 +108,28 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -12, y: -433}
+  - name: Fire_Spell
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 28
+      width: 12
+      height: 6
+    spriteID: aa6f584d840879c479cb55de0c57bbdf
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -72, y: -421}
   rigSpriteImportData:
   - name: Arrow_Type1
     originalName: 
@@ -159,18 +181,25 @@ ScriptedImporter:
   documentAlignment: 7
   importHiddenLayers: 0
   importedTextureWidth: 32
-  importedTextureHeight: 32
+  importedTextureHeight: 64
   documentSize: {x: 819, y: 467}
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
     categories: []
   textureActualWidth: 32
-  textureActualHeight: 32
+  textureActualHeight: 64
   spritePackingTag: 
   resliceFromLayer: 0
   characterMode: 0
   mosaicPSDLayers:
+  - name: Fire_Spell
+    spriteName: Fire_Spell
+    isGroup: 0
+    parentIndex: -1
+    spriteID: aa6f584d840879c479cb55de0c57bbdf
+    layerID: 4
+    mosaicPosition: {x: 4, y: 28}
   - name: Arrow_Type1
     spriteName: Arrow_Type1
     isGroup: 0

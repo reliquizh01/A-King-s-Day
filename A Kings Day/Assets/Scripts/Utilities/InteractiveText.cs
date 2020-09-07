@@ -16,6 +16,12 @@ public enum TextStates
     Deleted,
     TimerText, // To be Implemented
 }
+
+public class CallBackInteraction
+{
+    public Action callBack;
+    public bool isOneTime;
+}
 public class InteractiveText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public TextMeshProUGUI text;
@@ -38,7 +44,7 @@ public class InteractiveText : MonoBehaviour, IPointerEnterHandler, IPointerExit
     [SerializeField] private float currentblinkInterval = 0f;
     [SerializeField] private float blinkInterval = 0.35f;
     // Callbacks
-    private List<Action> callbacks = new List<Action>();
+    private List<CallBackInteraction> callbacks = new List<CallBackInteraction>();
     private Action hoverCallback, exitCallback;
 
     public void Awake()
@@ -126,18 +132,37 @@ public class InteractiveText : MonoBehaviour, IPointerEnterHandler, IPointerExit
     {
         isClicked = false;
     }
-    public void AddTransition(Action callback)
+    public void AddTransition(Action callback, bool isOneTime = false)
     {
-        callbacks.Add(callback);
+        CallBackInteraction tmp = new CallBackInteraction();
+        tmp.callBack = callback;
+        tmp.isOneTime = isOneTime;
+
+        if(callbacks == null)
+        {
+            callbacks = new List<CallBackInteraction>();
+        }
+
+        callbacks.Add(tmp);
     }
 
     public void CallTransition()
     {
         if(callbacks != null && callbacks.Count > 0)
         {
+            List<CallBackInteraction> removeThisCallbacks = new List<CallBackInteraction>();
             for (int i = 0; i < callbacks.Count; i++)
             {
-                callbacks[i].Invoke();
+                callbacks[i].callBack.Invoke();
+                if(callbacks[i].isOneTime)
+                {
+                    removeThisCallbacks.Add(callbacks[i]);
+                }
+            }
+
+            if(removeThisCallbacks.Count > 0)
+            {
+                callbacks.RemoveAll(x => removeThisCallbacks.Contains(x));
             }
         }
     }

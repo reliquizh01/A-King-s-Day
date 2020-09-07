@@ -61,6 +61,11 @@ namespace ResourceUI
 
         public void OpenTravelMap()
         {
+            if(TransitionManager.GetInstance.isNewGame)
+            {
+                return;
+            }
+
             EventBroadcaster.Instance.PostEvent(EventNames.OPEN_MAP_TAB);
             EventBroadcaster.Instance.PostEvent(EventNames.HIDE_RESOURCES);
         }

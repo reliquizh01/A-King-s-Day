@@ -359,6 +359,11 @@ public class TravellersReportController : MonoBehaviour
                 StartCoroutine(myPanel.WaitAnimationForAction(myPanel.closeAnimationName, () => TransitionManager.GetInstance.FaceTravellerInBattle(currentTravellerReport.myTravellerData, false)));
 
                 engagedToBattle = true;
+
+                if (TransitionManager.GetInstance.isNewGame)
+                {
+                    PlayerGameGuide.GetInstance.HideGuideText();
+                }
                 break;
 
             default:

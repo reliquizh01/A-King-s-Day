@@ -29,9 +29,18 @@ namespace Battlefield
                 for (int i = 0; i < skillSlotList.Count; i++)
                 {
                     skillSlotList[i].myController = this;
+                    
                 }
             }
             
+        }
+
+        public void SetupSkillSlots()
+        {
+            for (int i = 0; i < skillSlotList.Count; i++)
+            {
+                skillSlotList[i].SetupController(myController.controlType);
+            }
         }
         public void Update()
         {
@@ -93,7 +102,7 @@ namespace Battlefield
                     }
                     UpdateSelectedSkillSlot();
                 }
-                else if (Input.GetKeyDown(KeyCode.Keypad9))
+                else if (Input.GetKeyDown(KeyCode.Keypad8))
                 {
                     if (curSkillIdx >= skillSlotList.Count - 1)
                     {
@@ -106,7 +115,7 @@ namespace Battlefield
                     UpdateSelectedSkillSlot();
                 }
 
-                if (Input.GetKeyDown(KeyCode.Keypad6))
+                if (Input.GetKeyDown(KeyCode.Keypad9))
                 {
                     ActivateThisSkill(curSkillIdx);
                 }
@@ -137,12 +146,15 @@ namespace Battlefield
 
             for (int i = 0; i < skillSlotList.Count; i++)
             {
-                if(i <= currentHero.skillsList.Count-1)
+                skillSlotList[i].myController = this;
+                if (i <= currentHero.skillsList.Count-1)
                 {
-                    skillSlotList[i].SetAsSkill(currentHero.skillsList[i]);
+                    skillSlotList[i].skillIdx = i;
+                    skillSlotList[i].SetAsSkill();
                 }
                 else
                 {
+                    skillSlotList[i].skillIdx = i;
                     skillSlotList[i].SetAsEmpty();
                 }
             }
@@ -152,7 +164,7 @@ namespace Battlefield
         {
             for (int i = 0; i < skillSlotList.Count; i++)
             {
-                skillSlotList[i].cdCounter.startTimer = false;
+                skillSlotList[i].cdCounter.PauseTimer();
             }
         }
 
@@ -160,10 +172,7 @@ namespace Battlefield
         {
             for (int i = 0; i < skillSlotList.Count; i++)
             {
-                if(!skillSlotList[i].isClickable)
-                {
-                    skillSlotList[i].cdCounter.startTimer = true;
-                }
+                skillSlotList[i].cdCounter.startTimer = true;
             }
         }
 
@@ -185,14 +194,22 @@ namespace Battlefield
 
             if (idx > (currentHero.skillsList.Count-1))
             {
+                Debug.Log("idx is greater than skillslist");
+                return;
+            }
+
+            if(!BattlefieldSystemsManager.GetInstance.dayInProgress)
+            {
+                Debug.Log("Day Still In Progress");
                 return;
             }
 
             BaseSkillInformationData thisSkill = new BaseSkillInformationData();
             thisSkill = currentHero.skillsList[idx];
 
-            if(thisSkill.isOnCooldown)
+            if(skillSlotList[idx].cdCounter.gameObject.activeInHierarchy)
             {
+                Debug.Log("Skill is in Cooldown");
                 return;
             }
             Debug.Log("-------------------[ ACTIVATING INDEX SKILL #" + idx + " RIGHT NOW! ]---------------------------------");
@@ -213,12 +230,10 @@ namespace Battlefield
                 case SkillType.OffensiveBuff: // All Enemies on the boar
                     if (myController.teamType == TeamType.Attacker)
                     {
-                        Debug.Log("Target Position is Defender!");
                         targetTeam = TeamType.Defender;
                     }
                     else
                     {
-                        Debug.Log("Target Position is Attacker!");
                         targetTeam = TeamType.Attacker;
                     }
                     break;
@@ -340,7 +355,6 @@ namespace Battlefield
                         }
 
                         targetTiles[0].battleTile.AddSkillOnTile(skillBehavior);
-                        skillSlotList[idx].SetOnCooldown();
                         break;
 
                     case AreaAffected.Row:

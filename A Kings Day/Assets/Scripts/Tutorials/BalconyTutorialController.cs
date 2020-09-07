@@ -68,7 +68,7 @@ public class BalconyTutorialController : MonoBehaviour
         callBacks.Add(temp7);
         callBacks.Add(temp8);
 
-        if(TransitionManager.GetInstance != null)
+        if (TransitionManager.GetInstance != null)
         {
             TransitionManager.GetInstance.HideTabCover();
         }
@@ -80,7 +80,7 @@ public class BalconyTutorialController : MonoBehaviour
             if (fromCreationScene)
             {
                 // Summon Monster
-                BalconySceneManager.GetInstance.travelSystem.SummonRandomTraveller(TravelLocation.ForestOfRetsnom, TravellerType.Invader, 2); // 20
+                BalconySceneManager.GetInstance.travelSystem.SummonRandomTraveller(TravelLocation.ForestOfRetsnom, TravellerType.Invader, 20); // 20
                 prologueBandit = BalconySceneManager.GetInstance.travelSystem.spawnedUnits[BalconySceneManager.GetInstance.travelSystem.spawnedUnits.Count - 1];
                 prologueBandit.clickDetector.isClickable = false;
             }
@@ -207,7 +207,7 @@ public class BalconyTutorialController : MonoBehaviour
         HousingTut.SetActive(false);
         marketTut.SetActive(false);
 
-        if(DialogueManager.GetInstance != null)
+        if (DialogueManager.GetInstance != null)
         {
             DialogueManager.GetInstance.MovePanelDown();
         }
@@ -308,8 +308,11 @@ public class BalconyTutorialController : MonoBehaviour
         barracks.optionHandler.buildingOptions.Find(x => x.type == BuildingOptionType.Upgrade).SetInteraction(false);
         barracks.optionHandler.buildingOptions.Find(x => x.type == BuildingOptionType.Use).SetInteraction(false);
 
+        if (TransitionManager.GetInstance.isNewGame)
+        {
+            PlayerGameGuide.GetInstance.ShowGuideText("Click the Barracks and Research Something");
+        }
     }
-
     public void StartInvasionTutorial()
     {
         ShowEnemyInvasionTut();
@@ -323,5 +326,10 @@ public class BalconyTutorialController : MonoBehaviour
         prologueBandit.clickDetector.isClickable = true;
         enemyTut.SetActive(false);
         barracksTut.SetActive(false);
+
+        if (TransitionManager.GetInstance.isNewGame)
+        {
+            PlayerGameGuide.GetInstance.ShowGuideText("Attack the Invaders by Clicking them.");
+        }
     }
 }

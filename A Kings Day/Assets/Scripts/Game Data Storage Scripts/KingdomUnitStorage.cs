@@ -51,7 +51,6 @@ namespace Characters
             {
                 icon = unitIconsList.Find(x => x.unitName == unitName).unitSprite;
             }
-
             return icon;
         }
 

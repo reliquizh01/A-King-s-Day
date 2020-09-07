@@ -115,7 +115,7 @@ MonoBehaviour:
   - {x: -0.048518356, y: -0.010456204, z: 0}
   m_ShapePathHash: 743387178
   m_Mesh: {fileID: 0}
-  m_InstanceId: -47976
+  m_InstanceId: 41990
 --- !u!1 &576882093256800607
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,14 +229,17 @@ MonoBehaviour:
   myRange: {fileID: 3070589841430188226}
   myAnimation: {fileID: 4287472815274104340}
   mySfx: {fileID: 3360706655368972313}
-  isKing: 1
-  isMainCharacter: 0
-  isGuest: 0
+  overheadHealthbar: {fileID: 0}
   isLeaving: 0
+  isActing: 0
+  characterIcon: {fileID: 7281002821916926902, guid: 882e759f8ab033e4fa88bcd4f51d2fb3,
+    type: 3}
+  isLeadingHero: 0
   unitInformation:
     unitName: Old King
     unitGenericName: Old King
     attackType: 0
+    wieldedWeapon: 0
     curhealth: 5
     maxHealth: 5
     curSpeed: 0.75
@@ -246,6 +249,7 @@ MonoBehaviour:
     range: 0
     unitCooldown: 1
     healcost: 5
+    unitPrice: 5
     blockProjectile: 0
     blockMelee: 0
     prefabDataPath: 
@@ -258,6 +262,8 @@ MonoBehaviour:
   teamType: 0
   canStagger: 0
   isBanishing: 0
+  canRegenerate: 0
+  regenPerSec: 0.015
 --- !u!114 &3360706655368972313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa67b5b39fef404aaaeb0f4075d3e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCharacter: {fileID: 0}
   totalRange: 0
   distancePerRange: 0.3
   enemiesInRange: []

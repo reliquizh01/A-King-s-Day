@@ -4,16 +4,27 @@ using UnityEngine;
 using Managers;
 using Utilities;
 using Battlefield;
+using Characters;
+using System;
 
 public class CustomBattlePanelHandler : MonoBehaviour
 {
     public GameObject gameConditionPanel;
     public GameObject gameCustomPanel;
 
-    BattlefieldCommander attackingCommander, defendingCommander;
+    public BattlefieldCommander attackingCommander, defendingCommander;
 
-    public List<MultiCountInformationPanel> attackersPanel;
-    public List<MultiCountInformationPanel> defendersPanel;
+    [Header("Attackers")]
+    public int curAtkIdx;
+    public int attackerControlIdx;
+    public CustomHeroPanel attackingLeader;
+    public List<CustomUnitPanel> attackersPanel;
+    [Header("Defenders")]
+    public int curDefIdx;
+    public int defenderControlIdx;
+    public CustomHeroPanel defendingLeader;
+    public List<CustomUnitPanel> defendersPanel;
+
 
     public CustomGameControllerChoice attackerControl, defenderControl;
 
@@ -23,28 +34,181 @@ public class CustomBattlePanelHandler : MonoBehaviour
         ResetCustomBattlePanel();
     }
 
-    public void SwitchAttackerControl(PlayerControlType newControl)
+    public void SwitchAttackerControl(bool next)
     {
-        if(BattlefieldSceneManager.GetInstance != null)
+        if (next)
         {
-            BattlefieldSceneManager.GetInstance.SwitchAttackerControls(newControl);
+            if (attackerControlIdx < Enum.GetNames(typeof(PlayerControlType)).Length - 1)
+            {
+                attackerControlIdx += 1;
+            }
+            else
+            {
+                attackerControlIdx = 0;
+            }
         }
-    }
+        else
+        {
+            if (attackerControlIdx <= 0)
+            {
+                attackerControlIdx = Enum.GetNames(typeof(PlayerControlType)).Length - 1;
+            }
+            else
+            {
+                attackerControlIdx -= 1;
+            }
+        }
 
-    public void SwitchDefenderControl(PlayerControlType newControl)
-    {
         if (BattlefieldSceneManager.GetInstance != null)
         {
-            BattlefieldSceneManager.GetInstance.SwitchDefenderControls(newControl);
+            BattlefieldSceneManager.GetInstance.SwitchAttackerControls((PlayerControlType)attackerControlIdx);
+        }
+        attackerControl.SwitchToThisControl((PlayerControlType)attackerControlIdx);
+    }
+
+    public void SwitchDefenderControl(bool next)
+    {
+        if(next)
+        {
+            if (defenderControlIdx < Enum.GetNames(typeof(PlayerControlType)).Length-1)
+            {
+                defenderControlIdx += 1;
+            }
+            else
+            {
+                defenderControlIdx = 0;
+            }
+        }
+        else
+        {
+            if (defenderControlIdx <= 0)
+            {
+                defenderControlIdx = Enum.GetNames(typeof(PlayerControlType)).Length - 1;
+            }
+            else
+            {
+                defenderControlIdx -= 1;
+            }
+        }
+        if (BattlefieldSceneManager.GetInstance != null)
+        {
+            BattlefieldSceneManager.GetInstance.SwitchDefenderControls((PlayerControlType)defenderControlIdx);
+        }
+
+        defenderControl.SwitchToThisControl((PlayerControlType)defenderControlIdx);
+    }
+
+    public void NextHeroInformation(bool isAttacker)
+    {
+        
+        if(isAttacker)
+        {
+            if(curAtkIdx >= TransitionManager.GetInstance.unitStorage.heroStorage.Count-1)
+            {
+                curAtkIdx = 0;
+            }
+            else
+            {
+                curAtkIdx += 1;
+            }
+            BaseHeroInformationData newHero = BattlefieldSpawnManager.GetInstance.unitStorage.heroStorage[curAtkIdx];
+            // TEMPORARY UNTIL PREFABS FOR UNIQUE HEROES ARE CREATED
+            newHero.unitInformation.unitName = "Player";
+            newHero.unitInformation.prefabDataPath = "Assets/Resources/Prefabs/Unit and Items/Player.prefab";
+
+
+            attackingLeader.SetupHero(newHero);
+        }
+        else
+        {
+            if (curDefIdx >= TransitionManager.GetInstance.unitStorage.heroStorage.Count - 1)
+            {
+                curDefIdx = 0;
+            }
+            else
+            {
+                curDefIdx += 1;
+            }
+            BaseHeroInformationData newHero = BattlefieldSpawnManager.GetInstance.unitStorage.heroStorage[curDefIdx];
+            // TEMPORARY UNTIL PREFABS FOR UNIQUE HEROES ARE CREATED
+            newHero.unitInformation.unitName = "Player";
+            newHero.unitInformation.prefabDataPath = "Assets/Resources/Prefabs/Unit and Items/Player.prefab";
+
+
+            defendingLeader.SetupHero(newHero);
+
         }
     }
 
+    public void PreviousHeroInformation(bool isAttacker)
+    {
+
+        if (isAttacker)
+        {
+            if (curAtkIdx <= 0)
+            {
+                curAtkIdx = BattlefieldSpawnManager.GetInstance.unitStorage.heroStorage.Count - 1;
+            }
+            else
+            {
+                curAtkIdx -= 1;
+            }
+
+            BaseHeroInformationData newHero = BattlefieldSpawnManager.GetInstance.unitStorage.heroStorage[curAtkIdx];
+            attackingLeader.SetupHero(newHero);
+            // TEMPORARY UNTIL PREFABS FOR UNIQUE HEROES ARE CREATED
+            newHero.unitInformation.unitName = "Player";
+            newHero.unitInformation.prefabDataPath = "Assets/Resources/Prefabs/Unit and Items/Player.prefab";
+        }
+        else
+        {
+            if (curDefIdx <= 0)
+            {
+                curDefIdx = BattlefieldSpawnManager.GetInstance.unitStorage.heroStorage.Count - 1;
+            }
+            else
+            {
+                curDefIdx -= 1;
+            }
+            BaseHeroInformationData newHero = BattlefieldSpawnManager.GetInstance.unitStorage.heroStorage[curDefIdx];
+            defendingLeader.SetupHero(newHero);
+            // TEMPORARY UNTIL PREFABS FOR UNIQUE HEROES ARE CREATED
+            newHero.unitInformation.unitName = "Player";
+            newHero.unitInformation.prefabDataPath = "Assets/Resources/Prefabs/Unit and Items/Player.prefab";
+
+        }
+    }
     public void ResetCustomBattlePanel()
     {
+
         attackingCommander = new BattlefieldCommander();
+        curAtkIdx = 0;
+        attackerControlIdx = 2;
+        attackerControl.SwitchToThisControl((PlayerControlType)attackerControlIdx);
+
+        BaseHeroInformationData newHero = BattlefieldSpawnManager.GetInstance.unitStorage.heroStorage[curAtkIdx];
+        // TEMPORARY UNTIL PREFABS FOR UNIQUE HEROES ARE CREATED
+        newHero.unitInformation.unitName = "Player";
+        newHero.unitInformation.prefabDataPath = "Assets/Resources/Prefabs/Unit and Items/Player.prefab";
+
+        attackingLeader.SetupHero(newHero);
         attackingCommander.SetupBasicCommander();
+
+
         defendingCommander = new BattlefieldCommander();
+        curAtkIdx = 0;
+        defenderControlIdx = 0;
+        defenderControl.SwitchToThisControl((PlayerControlType)defenderControlIdx);
+
+        BaseHeroInformationData startHero = BattlefieldSpawnManager.GetInstance.unitStorage.heroStorage[curDefIdx];
+        // TEMPORARY UNTIL PREFABS FOR UNIQUE HEROES ARE CREATED
+        startHero.unitInformation.unitName = "Player";
+        startHero.unitInformation.prefabDataPath = "Assets/Resources/Prefabs/Unit and Items/Player.prefab";
+
+        defendingLeader.SetupHero(startHero);
         defendingCommander.SetupBasicCommander();
+
+
         gameConditionPanel.SetActive(false);
 
         SetupCustomBattlePanel();
@@ -83,10 +247,11 @@ public class CustomBattlePanelHandler : MonoBehaviour
             tmp.Add((float)attackingCommander.unitsCarried[i].unitInformation.maxHealth);
             tmp.Add((float)attackingCommander.unitsCarried[i].unitInformation.maxDamage);
             tmp.Add((float)attackingCommander.unitsCarried[i].unitInformation.origSpeed);
-            tmp.Add(0);
+            tmp.Add((float)attackingCommander.unitsCarried[i].unitInformation.range);
+            tmp.Add((float)attackingCommander.unitsCarried[i].totalUnitCount);
 
-            attackersPanel[i].SetMultiCounter(tmp, attackingCommander.unitsCarried[i].unitInformation.unitName);
-            attackersPanel[i].panelIcon.sprite = BattlefieldSpawnManager.GetInstance.unitStorage.GetUnitIcon(attackingCommander.unitsCarried[i].unitInformation.unitName);
+            attackersPanel[i].multiCounter.SetMultiCounter(tmp, attackingCommander.unitsCarried[i].unitInformation.unitName);
+            attackersPanel[i].multiCounter.panelIcon.sprite = BattlefieldSpawnManager.GetInstance.unitStorage.GetUnitIcon(attackingCommander.unitsCarried[i].unitInformation.unitName);
 
         }
 
@@ -96,10 +261,11 @@ public class CustomBattlePanelHandler : MonoBehaviour
             tmp.Add((float)defendingCommander.unitsCarried[i].unitInformation.maxHealth);
             tmp.Add((float)defendingCommander.unitsCarried[i].unitInformation.maxDamage);
             tmp.Add((float)defendingCommander.unitsCarried[i].unitInformation.origSpeed);
-            tmp.Add(0);
-
-            defendersPanel[i].SetMultiCounter(tmp, defendingCommander.unitsCarried[i].unitInformation.unitName);
-            defendersPanel[i].panelIcon.sprite = BattlefieldSpawnManager.GetInstance.unitStorage.GetUnitIcon(defendingCommander.unitsCarried[i].unitInformation.unitName);
+            tmp.Add((float)defendingCommander.unitsCarried[i].unitInformation.range);
+            tmp.Add((float)defendingCommander.unitsCarried[i].totalUnitCount);
+            Debug.Log("Setting it up for defender: " + i + " Count: " + defendingCommander.unitsCarried[i].totalUnitCount);
+            defendersPanel[i].multiCounter.SetMultiCounter(tmp, defendingCommander.unitsCarried[i].unitInformation.unitName);
+            defendersPanel[i].multiCounter.panelIcon.sprite = BattlefieldSpawnManager.GetInstance.unitStorage.GetUnitIcon(defendingCommander.unitsCarried[i].unitInformation.unitName);
         }
 
     }
@@ -115,8 +281,8 @@ public class CustomBattlePanelHandler : MonoBehaviour
         attackingCommander.unitsCarried[idx].totalUnitCount += increase;
         attackingCommander.unitsCarried[idx].totalUnitsAvailableForDeployment += increase;
 
-        attackersPanel[idx].multiCountPanels[attackersPanel[idx].multiCountPanels.Count - 1].text = attackingCommander.unitsCarried[idx].totalUnitCount.ToString();
-    }
+        attackersPanel[idx].multiCounter.multiCountPanels[attackersPanel[idx].multiCounter.multiCountPanels.Count - 1].text = attackingCommander.unitsCarried[idx].totalUnitCount.ToString();
+    }                      
     public void DecreaseUnitIndexAttack(int idx)
     {
         if (attackingCommander.unitsCarried[idx].totalUnitCount == 0)
@@ -138,7 +304,7 @@ public class CustomBattlePanelHandler : MonoBehaviour
         attackingCommander.unitsCarried[idx].totalUnitCount -= decrease;
         attackingCommander.unitsCarried[idx].totalUnitsAvailableForDeployment -= decrease;
 
-        attackersPanel[idx].multiCountPanels[attackersPanel[idx].multiCountPanels.Count - 1].text = attackingCommander.unitsCarried[idx].totalUnitCount.ToString();
+        attackersPanel[idx].multiCounter.multiCountPanels[attackersPanel[idx].multiCounter.multiCountPanels.Count - 1].text = attackingCommander.unitsCarried[idx].totalUnitCount.ToString();
     }
 
     public void IncreaseUnitIndexDefenders(int idx)
@@ -152,7 +318,7 @@ public class CustomBattlePanelHandler : MonoBehaviour
         defendingCommander.unitsCarried[idx].totalUnitCount += increase;
         defendingCommander.unitsCarried[idx].totalUnitsAvailableForDeployment += increase;
 
-        defendersPanel[idx].multiCountPanels[attackersPanel[idx].multiCountPanels.Count - 1].text = defendingCommander.unitsCarried[idx].totalUnitCount.ToString();
+        defendersPanel[idx].multiCounter.multiCountPanels[attackersPanel[idx].multiCounter.multiCountPanels.Count - 1].text = defendingCommander.unitsCarried[idx].totalUnitCount.ToString();
     }
 
     public void DecreaseUnitIndexDefenders(int idx)
@@ -176,7 +342,7 @@ public class CustomBattlePanelHandler : MonoBehaviour
         defendingCommander.unitsCarried[idx].totalUnitCount -= decrease;
         defendingCommander.unitsCarried[idx].totalUnitsAvailableForDeployment -= decrease;
 
-        defendersPanel[idx].multiCountPanels[attackersPanel[idx].multiCountPanels.Count - 1].text = defendingCommander.unitsCarried[idx].totalUnitCount.ToString();
+        defendersPanel[idx].multiCounter.multiCountPanels[attackersPanel[idx].multiCounter.multiCountPanels.Count - 1].text = defendingCommander.unitsCarried[idx].totalUnitCount.ToString();
 
     }
 
@@ -203,7 +369,12 @@ public class CustomBattlePanelHandler : MonoBehaviour
     public void StartBattle()
     {
         gameConditionPanel.SetActive(false);
+        BaseHeroInformationData thisHero = BattlefieldSpawnManager.GetInstance.unitStorage.heroStorage[curAtkIdx];
+        attackingCommander.heroesCarried.Add(thisHero);
         BattlefieldSpawnManager.GetInstance.SetupAttackingCommander(attackingCommander);
+
+        BaseHeroInformationData newHero = BattlefieldSpawnManager.GetInstance.unitStorage.heroStorage[curDefIdx];
+        defendingCommander.heroesCarried.Add(newHero);
         BattlefieldSpawnManager.GetInstance.SetupDefendingCommander(defendingCommander);
         BattlefieldSceneManager.GetInstance.PreBattleStart();
     }

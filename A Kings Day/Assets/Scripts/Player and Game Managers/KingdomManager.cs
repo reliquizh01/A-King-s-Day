@@ -185,7 +185,6 @@ namespace Managers
 
         public void ProceedToNextWeek()
         {
-            Debug.Log("Where are you coming from!");
             eventFinished = 0;
             //Debug.Log("Last Week Count: " + PlayerGameManager.GetInstance.playerData.weekCount);
             PlayerGameManager.GetInstance.playerData.weekCount += 1;
@@ -506,7 +505,6 @@ namespace Managers
             }
 
 
-            Debug.Log("Current Event is Arc :" + currentEvent.isStoryArc);
             if(currentEvent.isStoryArc)
             {
                 if(currentStory == null || string.IsNullOrEmpty(currentStory.storyTitle))
@@ -519,7 +517,6 @@ namespace Managers
                 }
             }
 
-            Debug.Log("Rewarding Event");
             currentEvent = null;
             allowStartEvent = false;
             eventFinished += 1;

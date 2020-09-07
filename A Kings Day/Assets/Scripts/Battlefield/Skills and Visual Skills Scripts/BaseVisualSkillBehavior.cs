@@ -9,13 +9,14 @@ public class BaseVisualSkillBehavior : MonoBehaviour
 {
     public TileConversionHandler myParent;
     public Animation myAnim;
-    
+
     public TeamType curSkillOwner;
     public TeamType targetTeam;
 
     public TargetType curTargetType;
     public TargetStats curTargetStat;
 
+    public SkillType skillType;
     public BaseSkillInformationData skillInformation;
     public List<BaseBuffInformationData> tileBuffList;
 
@@ -23,6 +24,24 @@ public class BaseVisualSkillBehavior : MonoBehaviour
     public TileConversionHandler targetTile;
     public float skillDuration;
 
+    [Header("Projecitle Behavior")]
+    public SpriteRenderer projectileVisualSprite;
+    public bool startMoving = false;
+    public float projectileSpeed = 0.025f;
+    public Vector2 targetPos;
+
+    public void Update()
+    {
+        if(startMoving)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, targetPos, projectileSpeed * Time.deltaTime);
+            float dist = Vector2.Distance(transform.position, targetPos);
+            if(dist < 0.015f)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+    }
     public void InitializeUnitOnlyTargetBehavior(List<BaseCharacter> newTargetUnits, BaseSkillInformationData newSkillInformation, TeamType ownerTeam, TeamType newTargetTeam)
     {
         skillInformation = new BaseSkillInformationData();
@@ -64,6 +83,52 @@ public class BaseVisualSkillBehavior : MonoBehaviour
 
         tileBuffList = new List<BaseBuffInformationData>();
         tileBuffList.AddRange(buffToAddOnTile);
+    }
+
+    public void InitializeProjectileNormalBehavior(BaseCharacter spellCaster)
+    {
+        curTargetStat = TargetStats.health;
+        curTargetType = TargetType.UnitOnly;
+        curSkillOwner = spellCaster.teamType;
+
+        skillInformation = new BaseSkillInformationData();
+        skillInformation.targetInflictedCount = -UnityEngine.Random.Range(spellCaster.unitInformation.minDamage, spellCaster.unitInformation.maxDamage);
+        skillInformation.targetStats = TargetStats.health;
+        skillInformation.targetType = TargetType.UnitOnly;
+        skillInformation.targetAlive = true;
+
+        targetPos = spellCaster.myMovements.currentTargetPoint.transform.position;
+
+        if(targetPos.x > transform.position.x)
+        {
+            projectileVisualSprite.flipX = true;
+        }
+        else
+        {
+            projectileVisualSprite.flipX = false;
+        }
+
+        startMoving = true;
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        BaseCharacter tmp = collision.gameObject.GetComponent<BaseCharacter>();
+
+        if (tmp == null)
+            return;
+
+        if (tmp.teamType == curSkillOwner)
+            return;
+
+        if (skillInformation.targetInflictedCount < 0)
+            tmp.ReceiveDamage(skillInformation.targetInflictedCount, UnitAttackType.SPELL, skillInformation.targetStats);
+        else
+        {
+            tmp.ReceiveHealing(skillInformation.targetInflictedCount, UnitAttackType.SPELL, skillInformation.targetStats);
+        }
+
+        Destroy(this.gameObject);
     }
 
     public void DeliverSkillEffect()

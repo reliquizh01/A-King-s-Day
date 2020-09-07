@@ -58,13 +58,21 @@ MonoBehaviour:
     eventDecision:
     - optionDescription: '[Believe your captain] very well, imprison them.'
       rewards:
-      - resourceType: 0
+      - resourceTitle: 
+        resourceType: 0
+        unitName: 
         rewardAmount: -5
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 1
     - optionDescription: '[Trust Instinct] Are you from this lands? Enslave them!'
       rewards:
-      - resourceType: 2
+      - resourceTitle: 
+        resourceType: 2
+        unitName: 
         rewardAmount: 3
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 1
   - title: A Noble Merchant
     eventType: 0
@@ -80,12 +88,24 @@ MonoBehaviour:
     eventDecision:
     - optionDescription: Very well, all the rights are yours.
       rewards:
-      - resourceType: 3
+      - resourceTitle: 
+        resourceType: 3
+        unitName: 
         rewardAmount: 20
-      - resourceType: 1
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 1
+        unitName: 
         rewardAmount: 5
-      - resourceType: 2
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 2
+        unitName: 
         rewardAmount: 10
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 1
   - title: Celebrating the night
     eventType: 0
@@ -101,19 +121,39 @@ MonoBehaviour:
     eventDecision:
     - optionDescription: Very well.
       rewards:
-      - resourceType: 3
+      - resourceTitle: 
+        resourceType: 3
+        unitName: 
         rewardAmount: -5
-      - resourceType: 2
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 2
+        unitName: 
         rewardAmount: 10
-      - resourceType: 0
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 0
+        unitName: 
         rewardAmount: -10
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 0
     - optionDescription: I can only give them my blessing.
       rewards:
-      - resourceType: 0
+      - resourceTitle: 
+        resourceType: 0
+        unitName: 
         rewardAmount: -10
-      - resourceType: 2
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 2
+        unitName: 
         rewardAmount: 1
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 0
     - optionDescription: Bah! we have other things to use them on!
       rewards: []
@@ -132,24 +172,48 @@ MonoBehaviour:
     eventDecision:
     - optionDescription: So be it, bring our men for your disposal.
       rewards:
-      - resourceType: 0
+      - resourceTitle: 
+        resourceType: 0
+        unitName: 
         rewardAmount: -5
-      - resourceType: 1
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 1
+        unitName: 
         rewardAmount: -3
-      - resourceType: 2
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 2
+        unitName: 
         rewardAmount: 1
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 0
     - optionDescription: Very well, but you'll go on your own.
       rewards:
-      - resourceType: 0
+      - resourceTitle: 
+        resourceType: 0
+        unitName: 
         rewardAmount: -1
-      - resourceType: 2
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 2
+        unitName: 
         rewardAmount: -1
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 0
     - optionDescription: No, we need all the men here,  for now.
       rewards:
-      - resourceType: 2
+      - resourceTitle: 
+        resourceType: 2
+        unitName: 
         rewardAmount: 1
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 0
   - title: An old rival
     eventType: 0
@@ -165,28 +229,60 @@ MonoBehaviour:
     eventDecision:
     - optionDescription: '[Attack]Prepare your men, leave no life behind.'
       rewards:
-      - resourceType: 1
+      - resourceTitle: 
+        resourceType: 1
+        unitName: 
         rewardAmount: -15
-      - resourceType: 0
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 0
+        unitName: 
         rewardAmount: -5
-      - resourceType: 3
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 3
+        unitName: 
         rewardAmount: 20
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 1
     - optionDescription: '[Diplomacy]Send an envoy, this is our land.'
       rewards:
-      - resourceType: 1
+      - resourceTitle: 
+        resourceType: 1
+        unitName: 
         rewardAmount: -1
-      - resourceType: 3
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 3
+        unitName: 
         rewardAmount: -1
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 2
     - optionDescription: Starve them! burn their food at night!
       rewards:
-      - resourceType: 1
+      - resourceTitle: 
+        resourceType: 1
+        unitName: 
         rewardAmount: -10
-      - resourceType: 3
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 3
+        unitName: 
         rewardAmount: -5
-      - resourceType: 2
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 2
+        unitName: 
         rewardAmount: -5
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 1
     - optionDescription: Leave them be.
       rewards: []
@@ -206,19 +302,39 @@ MonoBehaviour:
     eventDecision:
     - optionDescription: Very well, Start digging.
       rewards:
-      - resourceType: 2
+      - resourceTitle: 
+        resourceType: 2
+        unitName: 
         rewardAmount: -3
-      - resourceType: 1
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 1
+        unitName: 
         rewardAmount: -5
-      - resourceType: 0
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 0
+        unitName: 
         rewardAmount: -3
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 0
     - optionDescription: Verify the stone, send it home!
       rewards:
-      - resourceType: 1
+      - resourceTitle: 
+        resourceType: 1
+        unitName: 
         rewardAmount: -5
-      - resourceType: 0
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 0
+        unitName: 
         rewardAmount: -5
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 0
   - title: A Ghostly Rumor
     eventType: 0
@@ -234,20 +350,36 @@ MonoBehaviour:
     eventDecision:
     - optionDescription: Feed their souls! hire a priest from home.
       rewards:
-      - resourceType: 3
+      - resourceTitle: 
+        resourceType: 3
+        unitName: 
         rewardAmount: -2
-      - resourceType: 0
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 0
+        unitName: 
         rewardAmount: -2
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 0
     - optionDescription: Feed their bellies, it'll keep them sane.
       rewards:
-      - resourceType: 0
+      - resourceTitle: 
+        resourceType: 0
+        unitName: 
         rewardAmount: -10
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 0
     - optionDescription: Spread the coins, keep them calm.
       rewards:
-      - resourceType: 3
+      - resourceTitle: 
+        resourceType: 3
+        unitName: 
         rewardAmount: -5
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 0
   - title: Excessive Income
     eventType: 0
@@ -262,13 +394,21 @@ MonoBehaviour:
     eventDecision:
     - optionDescription: Please do
       rewards:
-      - resourceType: 3
+      - resourceTitle: 
+        resourceType: 3
+        unitName: 
         rewardAmount: 5
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 0
     - optionDescription: We need the food.
       rewards:
-      - resourceType: 0
+      - resourceTitle: 
+        resourceType: 0
+        unitName: 
         rewardAmount: 10
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 0
   - title: Goods to sell
     eventType: 0
@@ -283,13 +423,21 @@ MonoBehaviour:
     eventDecision:
     - optionDescription: Very well.
       rewards:
-      - resourceType: 3
+      - resourceTitle: 
+        resourceType: 3
+        unitName: 
         rewardAmount: 5
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 0
     - optionDescription: We need the food
       rewards:
-      - resourceType: 0
+      - resourceTitle: 
+        resourceType: 0
+        unitName: 
         rewardAmount: 10
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 0
   - title: A horde approaching
     eventType: 0
@@ -308,29 +456,57 @@ MonoBehaviour:
     eventDecision:
     - optionDescription: prepare them both, clean them up!
       rewards:
-      - resourceType: 0
+      - resourceTitle: 
+        resourceType: 0
+        unitName: 
         rewardAmount: -3
-      - resourceType: 3
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 3
+        unitName: 
         rewardAmount: -1
-      - resourceType: 2
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 2
+        unitName: 
         rewardAmount: -2
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 2
     - optionDescription: Send an envoy, ask what they want.
       rewards:
-      - resourceType: 1
+      - resourceTitle: 
+        resourceType: 1
+        unitName: 
         rewardAmount: -2
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 2
     - optionDescription: Send an envoy with offering, enough gold and food maybe.
       rewards:
-      - resourceType: 0
+      - resourceTitle: 
+        resourceType: 0
+        unitName: 
         rewardAmount: -5
-      - resourceType: 3
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 3
+        unitName: 
         rewardAmount: -5
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 2
     - optionDescription: Prepare the army! we shall face them!
       rewards:
-      - resourceType: 1
+      - resourceTitle: 
+        resourceType: 1
+        unitName: 
         rewardAmount: -20
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 2
   - title: Wavering Rival
     eventType: 0
@@ -347,24 +523,48 @@ MonoBehaviour:
     eventDecision:
     - optionDescription: Accept the people, we need them.
       rewards:
-      - resourceType: 0
+      - resourceTitle: 
+        resourceType: 0
+        unitName: 
         rewardAmount: -8
-      - resourceType: 2
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 2
+        unitName: 
         rewardAmount: 16
-      - resourceType: 3
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 3
+        unitName: 
         rewardAmount: 10
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 2
     - optionDescription: Send them back, but take a coin for every men.
       rewards:
-      - resourceType: 1
+      - resourceTitle: 
+        resourceType: 1
+        unitName: 
         rewardAmount: -5
-      - resourceType: 3
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 3
+        unitName: 
         rewardAmount: 26
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 2
     - optionDescription: Raze and loot them, we cant feed them all!
       rewards:
-      - resourceType: 3
+      - resourceTitle: 
+        resourceType: 3
+        unitName: 
         rewardAmount: 30
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 2
   - title: People's Hero
     eventType: 0
@@ -380,8 +580,12 @@ MonoBehaviour:
     eventDecision:
     - optionDescription: This is a nice culture to sustain, heroism.
       rewards:
-      - resourceType: 1
+      - resourceTitle: 
+        resourceType: 1
+        unitName: 
         rewardAmount: 5
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 0
   - title: Stolen Goods
     eventType: 0
@@ -397,12 +601,24 @@ MonoBehaviour:
     eventDecision:
     - optionDescription: Pay the merchants! I want this prisoner's head!
       rewards:
-      - resourceType: 3
+      - resourceTitle: 
+        resourceType: 3
+        unitName: 
         rewardAmount: -8
-      - resourceType: 1
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 1
+        unitName: 
         rewardAmount: -2
-      - resourceType: 2
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 2
+        unitName: 
         rewardAmount: -2
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 2
   - title: New Realm, New Alliance
     eventType: 0
@@ -418,14 +634,30 @@ MonoBehaviour:
     eventDecision:
     - optionDescription: Alright.
       rewards:
-      - resourceType: 3
+      - resourceTitle: 
+        resourceType: 3
+        unitName: 
         rewardAmount: 5
-      - resourceType: 1
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 1
+        unitName: 
         rewardAmount: 2
-      - resourceType: 0
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 0
+        unitName: 
         rewardAmount: 2
-      - resourceType: 2
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 2
+        unitName: 
         rewardAmount: 3
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 3
     - optionDescription: This vast lands is ours! prepare to march! this is war!
       rewards: []
@@ -444,12 +676,24 @@ MonoBehaviour:
     eventDecision:
     - optionDescription: Prepare the smoke signals, we should know if they trespass.
       rewards:
-      - resourceType: 1
+      - resourceTitle: 
+        resourceType: 1
+        unitName: 
         rewardAmount: -20
-      - resourceType: 3
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 3
+        unitName: 
         rewardAmount: -10
-      - resourceType: 0
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 0
+        unitName: 
         rewardAmount: -3
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 0
     - optionDescription: "The crest is a trusted ally, no need to worry [ignorant].\t"
       rewards: []
@@ -467,15 +711,27 @@ MonoBehaviour:
     eventDecision:
     - optionDescription: Give them what they want!
       rewards:
-      - resourceType: 0
+      - resourceTitle: 
+        resourceType: 0
+        unitName: 
         rewardAmount: -500
-      - resourceType: 3
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 3
+        unitName: 
         rewardAmount: -1000
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 0
     - optionDescription: Their wrath is old! their ruler is dead! Let them come!
       rewards:
-      - resourceType: 3
+      - resourceTitle: 
+        resourceType: 3
+        unitName: 
         rewardAmount: 300
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 0
   - title: Unexpected Crusade
     eventType: 0
@@ -492,17 +748,33 @@ MonoBehaviour:
     - optionDescription: Another pilgrimage, the gate's were all myths! let them
         in!
       rewards:
-      - resourceType: 0
+      - resourceTitle: 
+        resourceType: 0
+        unitName: 
         rewardAmount: -40
-      - resourceType: 3
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 3
+        unitName: 
         rewardAmount: 300
-      - resourceType: 1
+        potentialTraveller: 0
+        multiplied: 0
+      - resourceTitle: 
+        resourceType: 1
+        unitName: 
         rewardAmount: 30
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 0
     - optionDescription: We dont have food for them, tell them to bring their own.
       rewards:
-      - resourceType: 1
+      - resourceTitle: 
+        resourceType: 1
+        unitName: 
         rewardAmount: 30
+        potentialTraveller: 0
+        multiplied: 0
       nextArcIdx: 0
   storyArcEvents:
   - startingWeek: 3
@@ -530,13 +802,21 @@ MonoBehaviour:
       eventDecision:
       - optionDescription: '[Believe your captain] very well, imprison them.'
         rewards:
-        - resourceType: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: -5
+          potentialTraveller: 0
+          multiplied: 0
         nextArcIdx: 1
       - optionDescription: '[Trust Instinct] Are you from this lands? Enslave them!'
         rewards:
-        - resourceType: 2
+        - resourceTitle: 
+          resourceType: 2
+          unitName: 
           rewardAmount: 3
+          potentialTraveller: 0
+          multiplied: 0
         nextArcIdx: 1
     - title: A horde approaching
       eventType: 0
@@ -555,29 +835,57 @@ MonoBehaviour:
       eventDecision:
       - optionDescription: prepare them both, clean them up!
         rewards:
-        - resourceType: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: -3
-        - resourceType: 3
+          potentialTraveller: 0
+          multiplied: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -1
-        - resourceType: 2
+          potentialTraveller: 0
+          multiplied: 0
+        - resourceTitle: 
+          resourceType: 2
+          unitName: 
           rewardAmount: -2
+          potentialTraveller: 0
+          multiplied: 0
         nextArcIdx: 0
       - optionDescription: Send an envoy, ask what they want.
         rewards:
-        - resourceType: 1
+        - resourceTitle: 
+          resourceType: 1
+          unitName: 
           rewardAmount: -2
+          potentialTraveller: 0
+          multiplied: 0
         nextArcIdx: 0
       - optionDescription: Send an envoy with offering, enough gold and food maybe.
         rewards:
-        - resourceType: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: -5
-        - resourceType: 3
+          potentialTraveller: 0
+          multiplied: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -5
+          potentialTraveller: 0
+          multiplied: 0
         nextArcIdx: 0
       - optionDescription: Prepare the army! we shall face them!
         rewards:
-        - resourceType: 1
+        - resourceTitle: 
+          resourceType: 1
+          unitName: 
           rewardAmount: -20
+          potentialTraveller: 0
+          multiplied: 0
         nextArcIdx: 0
     eventIntervals: 0300000000000000
     eventBoosts:
@@ -610,12 +918,24 @@ MonoBehaviour:
       eventDecision:
       - optionDescription: Very well, all the rights are yours.
         rewards:
-        - resourceType: 3
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: 20
-        - resourceType: 1
+          potentialTraveller: 0
+          multiplied: 0
+        - resourceTitle: 
+          resourceType: 1
+          unitName: 
           rewardAmount: 5
-        - resourceType: 2
+          potentialTraveller: 0
+          multiplied: 0
+        - resourceTitle: 
+          resourceType: 2
+          unitName: 
           rewardAmount: 10
+          potentialTraveller: 0
+          multiplied: 0
         nextArcIdx: 1
     - title: Stolen Goods
       eventType: 0
@@ -631,12 +951,24 @@ MonoBehaviour:
       eventDecision:
       - optionDescription: Pay the merchants! I want this prisoner's head!
         rewards:
-        - resourceType: 3
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -8
-        - resourceType: 1
+          potentialTraveller: 0
+          multiplied: 0
+        - resourceTitle: 
+          resourceType: 1
+          unitName: 
           rewardAmount: -2
-        - resourceType: 2
+          potentialTraveller: 0
+          multiplied: 0
+        - resourceTitle: 
+          resourceType: 2
+          unitName: 
           rewardAmount: -2
+          potentialTraveller: 0
+          multiplied: 0
         nextArcIdx: 0
     eventIntervals: 03000000050000000000000000000000
     eventBoosts:
@@ -670,28 +1002,60 @@ MonoBehaviour:
       eventDecision:
       - optionDescription: '[Attack]Prepare your men, leave no life behind.'
         rewards:
-        - resourceType: 1
+        - resourceTitle: 
+          resourceType: 1
+          unitName: 
           rewardAmount: -15
-        - resourceType: 0
+          potentialTraveller: 0
+          multiplied: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: -5
-        - resourceType: 3
+          potentialTraveller: 0
+          multiplied: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: 20
+          potentialTraveller: 0
+          multiplied: 0
         nextArcIdx: 1
       - optionDescription: '[Diplomacy]Send an envoy, this is our land.'
         rewards:
-        - resourceType: 1
+        - resourceTitle: 
+          resourceType: 1
+          unitName: 
           rewardAmount: -1
-        - resourceType: 3
+          potentialTraveller: 0
+          multiplied: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -1
+          potentialTraveller: 0
+          multiplied: 0
         nextArcIdx: 2
       - optionDescription: Starve them! burn their food at night!
         rewards:
-        - resourceType: 1
+        - resourceTitle: 
+          resourceType: 1
+          unitName: 
           rewardAmount: -10
-        - resourceType: 3
+          potentialTraveller: 0
+          multiplied: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: -5
-        - resourceType: 2
+          potentialTraveller: 0
+          multiplied: 0
+        - resourceTitle: 
+          resourceType: 2
+          unitName: 
           rewardAmount: -5
+          potentialTraveller: 0
+          multiplied: 0
         nextArcIdx: 1
       - optionDescription: Leave them be.
         rewards: []
@@ -711,24 +1075,48 @@ MonoBehaviour:
       eventDecision:
       - optionDescription: Accept the people, we need them.
         rewards:
-        - resourceType: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: -8
-        - resourceType: 2
+          potentialTraveller: 0
+          multiplied: 0
+        - resourceTitle: 
+          resourceType: 2
+          unitName: 
           rewardAmount: 16
-        - resourceType: 3
+          potentialTraveller: 0
+          multiplied: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: 10
+          potentialTraveller: 0
+          multiplied: 0
         nextArcIdx: 2
       - optionDescription: Send them back, but take a coin for every men.
         rewards:
-        - resourceType: 1
+        - resourceTitle: 
+          resourceType: 1
+          unitName: 
           rewardAmount: -5
-        - resourceType: 3
+          potentialTraveller: 0
+          multiplied: 0
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: 26
+          potentialTraveller: 0
+          multiplied: 0
         nextArcIdx: 2
       - optionDescription: Raze and loot them, we cant feed them all!
         rewards:
-        - resourceType: 3
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: 30
+          potentialTraveller: 0
+          multiplied: 0
         nextArcIdx: 2
     - title: New Realm, New Alliance
       eventType: 0
@@ -744,14 +1132,30 @@ MonoBehaviour:
       eventDecision:
       - optionDescription: Alright.
         rewards:
-        - resourceType: 3
+        - resourceTitle: 
+          resourceType: 3
+          unitName: 
           rewardAmount: 5
-        - resourceType: 1
+          potentialTraveller: 0
+          multiplied: 0
+        - resourceTitle: 
+          resourceType: 1
+          unitName: 
           rewardAmount: 2
-        - resourceType: 0
+          potentialTraveller: 0
+          multiplied: 0
+        - resourceTitle: 
+          resourceType: 0
+          unitName: 
           rewardAmount: 2
-        - resourceType: 2
+          potentialTraveller: 0
+          multiplied: 0
+        - resourceTitle: 
+          resourceType: 2
+          unitName: 
           rewardAmount: 3
+          potentialTraveller: 0
+          multiplied: 0
         nextArcIdx: 3
       - optionDescription: This vast lands is ours! prepare to march! this is war!
         rewards: []

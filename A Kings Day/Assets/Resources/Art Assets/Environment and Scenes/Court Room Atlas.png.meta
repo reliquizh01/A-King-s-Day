@@ -97,13 +97,13 @@ TextureImporter:
     second: Court Room Atlas_15
   - first:
       213: -1100620178438217858
-    second: Court Room Atlas_16
+    second: Skull
   - first:
       213: -8208029061045179654
-    second: Court Room Atlas_17
+    second: Crown
   - first:
       213: -7298398704221604760
-    second: Court Room Atlas_18
+    second: Skeleton_Body
   - first:
       213: 2713547290205375457
     second: Carpet_TIle_1
@@ -744,7 +744,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Court Room Atlas_16
+      name: Skull
       rect:
         serializedVersion: 2
         x: 42
@@ -765,7 +765,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Court Room Atlas_17
+      name: Crown
       rect:
         serializedVersion: 2
         x: 57
@@ -786,7 +786,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Court Room Atlas_18
+      name: Skeleton_Body
       rect:
         serializedVersion: 2
         x: 78

@@ -145,6 +145,7 @@ MonoBehaviour:
     currentFrameIdx: 0
     actionsPerFrame: []
   darkFader: {fileID: 7559086909590513719}
+  currentlyPlayingDrama: 0
   curActiveFrameIdx: 0
   curActionIdx: 0
   addDelayForAction: 0
@@ -207,7 +208,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 8
   m_TargetDisplay: 0
 --- !u!114 &7559086911278408234
 MonoBehaviour:

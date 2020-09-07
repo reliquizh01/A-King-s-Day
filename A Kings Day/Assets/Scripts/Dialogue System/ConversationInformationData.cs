@@ -78,5 +78,8 @@ namespace Dialogue
 
         [Header("Conversation Mechanics")]
         public List<DialogueBy> dialoguePattern;
+
+        [Header("Conversation Members")]
+        public List<BaseCharacter> conversingActors;
     }
 }
